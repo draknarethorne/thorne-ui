@@ -54,7 +54,8 @@
 			"naumovs.color-picker",
 			"yzhang.markdown-all-in-one",
 			"EditorConfig.EditorConfig",
-			"DotJoshJohnson.xml"
+			"DotJoshJohnson.xml",
+			"GitHub.vscode-pull-request-github"
 		]
 	}
 }

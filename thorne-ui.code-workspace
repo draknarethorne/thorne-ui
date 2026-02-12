@@ -39,7 +39,10 @@
 		},
 		"terminal.integrated.env.osx": {
 			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
-		}
+		},
+		"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+		"python.terminal.activateEnvironment": true,
+		"python.analysis.typeCheckingMode": "basic"
 	},
 	"extensions": {
 		"recommendations": [

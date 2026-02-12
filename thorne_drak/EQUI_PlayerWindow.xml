@@ -1,0 +1,951 @@
+<?xml version="1.0"?>
+<XML ID="EQInterfaceDefinitionLanguage">
+	<Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes"/>
+	<!--
+		Thorne UI Player Window (Jan 2026) by Draknare Thorne:
+		- Complete redesign with blended design elements
+		- Design: Infiniti-Blue gauge styling, duxaUI icon methodology, vert stats layout
+		- Enhanced visual presentation and information density
+		- Status: First Draft Implementation - AA and XP Bottom configuration
+	-->
+
+	<!-- ====================================================================== -->
+	<!-- ATTACK INDICATOR (combat state border) -->
+	<!-- ====================================================================== -->
+  <TextureInfo item="AttackIndicator.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+
+  <Ui2DAnimation item="A_AttackIndicator">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>AttackIndicator.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>135</CX>
+        <CY>96</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <StaticAnimation item="A_AttackIndicatorAnim">
+    <ScreenID>A_AttackIndicatorAnim</ScreenID>
+    <Animation>A_AttackIndicator</Animation>
+    <Size>
+      <CX>0</CX>
+      <CY>0</CY>
+    </Size>
+  </StaticAnimation>
+
+	<!-- ====================================================================== -->
+	<!-- PLAYER NAME LABEL (top-left) -->
+	<!-- ====================================================================== -->
+	
+	<Label item="PW_PlayerName">
+		<ScreenID>PW_PlayerName</ScreenID>
+		<EQType>1</EQType>
+		<Location>
+			<X>5</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>100</CX>
+			<CY>14</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- PLAYER CLASS LABEL (top-right, after name, before level) -->
+	<!-- ====================================================================== -->
+	
+	<Label item="PW_PlayerClass">
+		<ScreenID>PW_PlayerClass</ScreenID>
+		<EQType>3</EQType>
+		<Location>
+			<X>107</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>90</CX>
+			<CY>14</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- PLAYER LEVEL VALUE (top-right) -->
+	<!-- ====================================================================== -->
+	<!-- Level label removed - redundant since max level is 60 (2 digits) -->
+	<!--
+	<Label item="PW_LevelLabel">
+		<ScreenID>PW_LevelLabel</ScreenID>
+		<Location>
+			<X>165</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>35</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>Level</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+	</Label>
+	-->
+
+	<Label item="PW_PlayerLevel">
+		<ScreenID>PW_PlayerLevel</ScreenID>
+		<EQType>2</EQType>
+		<Location>
+			<X>200</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>14</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- HP GAUGE -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Gauge_HP">
+		<ScreenID>PW_Gauge_HP</ScreenID>
+		<EQType>1</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>26</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>15</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint>
+			<R>255</R>
+			<G>0</G>
+			<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>220</R>
+			<G>220</G>
+			<B>0</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_Tall</Background>
+			<Fill>A_GaugeFill_Tall</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<Label item="PW_HP_Values">
+		<ScreenID>PW_HP_Values</ScreenID>
+		<EQType>70</EQType>
+		<Location>
+			<X>170</X>
+			<Y>26</Y>
+		</Location>
+		<Size>
+			<CX>50</CX>
+			<CY>12</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>100</G>
+			<B>100</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+	</Label>
+
+	<!-- HP Percent -->
+	<Label item="PW_HP_Pct">
+		<ScreenID>PW_HP_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>19</EQType>
+		<Location>
+			<X>123</X>
+			<Y>26</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_HP_PctSign">
+		<ScreenID>PW_HP_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>26</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- MANA GAUGE -->
+	<!-- ====================================================================== -->
+	
+	<Gauge item="PW_Gauge_Mana">
+		<ScreenID>PW_Gauge_Mana</ScreenID>
+		<EQType>2</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>15</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint>
+			<R>30</R>
+			<G>30</G>
+			<B>255</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>220</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_Tall</Background>
+			<Fill>A_GaugeFill_Tall</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<Label item="PW_Mana_Values">
+		<ScreenID>PW_Mana_Values</ScreenID>
+		<EQType>80</EQType>
+		<Location>
+			<X>170</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>50</CX>
+			<CY>12</CY>
+		</Size>
+		<TextColor>
+			<R>100</R>
+			<G>150</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+	</Label>
+
+	<!-- Mana Percent -->
+	<Label item="PW_Mana_Pct">
+		<ScreenID>PW_Mana_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>20</EQType>
+		<Location>
+			<X>123</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_Mana_PctSign">
+		<ScreenID>PW_Mana_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- MANA TICK (mana regen timer - positioned after Mana) -->
+	<!-- Zeal addon feature - represents mana regeneration countdown -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Mana_Tick">
+		<ScreenID>ManaTick</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>52</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>8</CY>
+		</Size>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<TextOffsetX>-500</TextOffsetX>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>true</Style_Transparent>
+		<FillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>220</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>220</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<EQType>24</EQType>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeLinesFill_Tall</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- ====================================================================== -->
+	<!-- STAMINA GAUGE -->
+	<!-- ====================================================================== -->
+	
+	<Gauge item="PW_Gauge_Stamina">
+		<ScreenID>PW_Gauge_Stamina</ScreenID>
+		<EQType>3</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>63</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>8</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Stamina</TooltipReference>
+		<FillTint>
+			<R>240</R>
+			<G>240</G>
+			<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>0</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_Tall</Background>
+			<Fill>A_GaugeFill_Tall</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Stamina Percent -->
+	<Label item="PW_Stamina_Pct">
+		<ScreenID>PW_Stamina_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>21</EQType>
+		<Location>
+			<X>123</X>
+			<Y>60</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_Stamina_PctSign">
+		<ScreenID>PW_Stamina_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>60</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- EXPERIENCE GAUGE -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Gauge_XP">
+		<ScreenID>PW_Gauge_XP</ScreenID>
+		<EQType>4</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>77</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>15</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Experience</TooltipReference>
+		<FillTint>
+			<R>220</R>
+			<G>150</G>
+			<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>80</G>
+			<B>220</B>
+		</LinesFillTint>
+		<DrawLinesFill>true</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_Tall</Background>
+			<Fill>A_GaugeFill_Tall</Fill>
+			<Lines>A_GaugeLines_Tall_Dark</Lines>
+			<LinesFill>A_GaugeLines_Tall</LinesFill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- XP Percent -->
+	<Label item="PW_XP_Pct">
+		<ScreenID>PW_XP_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>26</EQType>
+		<Location>
+			<X>123</X>
+			<Y>77</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_XP_PctSign">
+		<ScreenID>PW_XP_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>77</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- XP per hour readout (XP/H xxx%) -->
+	<Label item="PW_XP_PerHour_Label">
+		<ScreenID>PW_XP_PerHour_Label</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>164</X>
+			<Y>77</Y>
+		</Location>
+		<Size>
+			<CX>30</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>XP/H</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+	<Label item="PW_XP_PerHour_Value">
+		<ScreenID>PW_XP_PerHour_Value</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>81</EQType>
+		<Location>
+			<X>194</X>
+			<Y>77</Y>
+		</Location>
+		<Size>
+			<CX>21</CX>
+			<CY>12</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- XP/H percent sign -->
+	<Label item="PW_XP_PerHour_PctSign">
+		<ScreenID>PW_XP_PerHour_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>215</X>
+			<Y>77</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- ALTERNATE ADVANCEMENT GAUGE -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Gauge_AAXP">
+		<ScreenID>PW_Gauge_AAXP</ScreenID>
+		<EQType>5</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>15</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>AA Experience</TooltipReference>
+		<FillTint>
+			<R>220</R>
+			<G>200</G>
+			<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>80</G>
+			<B>220</B>
+		</LinesFillTint>
+		<DrawLinesFill>true</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_Tall</Background>
+			<Fill>A_GaugeFill_Tall</Fill>
+			<Lines>A_GaugeLines_Tall_Dark</Lines>
+			<LinesFill>A_GaugeLines_Tall</LinesFill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- AA XP Percent -->
+	<Label item="PW_AAXP_Pct">
+		<ScreenID>PW_AAXP_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>27</EQType>
+		<Location>
+			<X>123</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_AAXP_PctSign">
+		<ScreenID>PW_AAXP_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- AA Current Points (unspent) -->
+	<Label item="PW_AA_Current">
+		<ScreenID>PW_AA_Current</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>36</EQType>
+		<Location>
+			<X>168</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- AA Divider -->
+	<Label item="PW_AA_Divider">
+		<ScreenID>PW_AA_Divider</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>195</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>8</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>/</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+	</Label>
+
+	<!-- AA Total Points (spent) -->
+	<Label item="PW_AA_Total">
+		<ScreenID>PW_AA_Total</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>37</EQType>
+		<Location>
+			<X>203</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- PET HEALTH GAUGE (conditional on active pet) -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Gauge_PetHP">
+		<ScreenID>PW_Gauge_PetHP</ScreenID>
+		<EQType>16</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>15</CY>
+		</Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Health</TooltipReference>
+		<FillTint>
+			<R>200</R>
+			<G>80</G>
+			<B>200</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>0</G>
+			<B>0</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_Tall</Background>
+			<Fill>A_GaugeFill_Tall</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Pet HP Percent (aligns to same column as player percentages) -->
+	<Label item="PW_Pet_Pct">
+		<ScreenID>PW_Pet_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>69</EQType>
+		<Location>
+			<X>123</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_Pet_PctSign">
+		<ScreenID>PW_Pet_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+	<!-- Pet HP Value (dummy - client doesn't provide actual value, but label needed for tooltip reference) -->
+	<Label item="Pet_HP">
+		<ScreenID>PetHP</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>0</X>
+			<Y>0</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+
+	<!-- ====================================================================== -->
+	<!-- SCREEN DEFINITION AND UI ELEMENTS -->
+	<!-- ====================================================================== -->
+
+	<Screen item="PlayerWindow">
+		<ScreenID>PlayerWindow</ScreenID>
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>10</X>
+			<Y>10</Y>
+		</Location>
+		<Size>
+			<CX>234</CX>
+			<CY>142</CY>
+		</Size>
+		<Text>Player</Text>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+		<Style_Titlebar>false</Style_Titlebar>
+		<Style_Closebox>false</Style_Closebox>
+		<Style_Minimizebox>false</Style_Minimizebox>
+		<Style_Border>true</Style_Border>
+		<Style_Sizable>false</Style_Sizable>
+
+		<!-- Attack Indicator -->
+		<Pieces>A_AttackIndicatorAnim</Pieces>
+
+		<!-- Player identity -->
+		<Pieces>PW_PlayerName</Pieces>
+		<Pieces>PW_PlayerClass</Pieces>
+		<Pieces>PW_PlayerLevel</Pieces>
+
+		<!-- Resource gauges with labels -->
+		<Pieces>PW_Gauge_HP</Pieces>
+		<Pieces>PW_HP_Pct</Pieces>
+		<Pieces>PW_HP_PctSign</Pieces>
+		<Pieces>PW_HP_Values</Pieces>
+
+		<Pieces>PW_Gauge_Mana</Pieces>
+		<Pieces>PW_Mana_Pct</Pieces>
+		<Pieces>PW_Mana_PctSign</Pieces>
+		<Pieces>PW_Mana_Values</Pieces>
+		<Pieces>PW_Mana_Tick</Pieces>
+
+		<Pieces>PW_Gauge_Stamina</Pieces>
+		<Pieces>PW_Stamina_Pct</Pieces>
+		<Pieces>PW_Stamina_PctSign</Pieces>
+
+		<Pieces>PW_Gauge_XP</Pieces>
+		<Pieces>PW_XP_Pct</Pieces>
+		<Pieces>PW_XP_PctSign</Pieces>
+		<Pieces>PW_XP_PerHour_Label</Pieces>
+		<Pieces>PW_XP_PerHour_Value</Pieces>
+		<Pieces>PW_XP_PerHour_PctSign</Pieces>
+
+		<Pieces>PW_Gauge_AAXP</Pieces>
+		<Pieces>PW_AAXP_Pct</Pieces>
+		<Pieces>PW_AAXP_PctSign</Pieces>
+		<Pieces>PW_AA_Current</Pieces>
+		<Pieces>PW_AA_Divider</Pieces>
+		<Pieces>PW_AA_Total</Pieces>
+
+		<Pieces>PW_Gauge_PetHP</Pieces>
+		<Pieces>PW_Pet_Pct</Pieces>
+		<Pieces>PW_Pet_PctSign</Pieces>
+		 <!-- Dummy for client-->
+		<Pieces>Pet_HP</Pieces>
+	</Screen>
+
+</XML>

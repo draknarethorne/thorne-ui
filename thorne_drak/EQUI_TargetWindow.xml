@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<XML ID="EQInterfaceDefinitionLanguage">
+  <Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes" />
+  <!-- Original: Nov 2023 Lunakin Oval Target modified by Brujoloco for QQQuarm : Mana Version -->
+  <!-- May 2025: Conversion from Old code to Zeal code, mana is exact now -->
+  <!-- Love to all from Brujoloco!-->
+  <!-- 
+    Thorne UI Modifications (Feb 2026) by Draknare Thorne:
+    - Added player HP gauge (EQType 1) at X=4, 122x15px with red fill RGB(255,0,0)
+    - Added player Mana gauge (EQType 2) at X=146, 122x15px with blue fill RGB(30,30,255)
+    - Added HP percentage display (EQType 19) on left side with % sign
+    - Added Mana percentage display (EQType 20) on right side with % sign
+    - Implemented symmetric layout with balanced spacing
+    - Increased window height from 50px to 70px to accommodate player gauges
+    - Adjusted target gauge offsets (HP: GaugeOffsetY=31, Casting: GaugeOffsetY=46)
+    - Configured z-order rendering (player gauges behind target gauges)
+    - Colors matched to Player Window for consistency
+    - Mana color standardization: RGB(100,150,255) for "Thorne blue"
+    - Part of Phase 5 Target Window enhancements
+    
+    Phase 6 Experimental Additions (Feb 2026):
+    - Added player weight display (EQType 24/25) centered between HP/Mana gauges
+    - Position: X=90-147, Y=20 (vertically centered in gauge area)
+    - Format: "999/999" (current/max) in compact Font 2
+    - EXPERIMENTAL: May be removed if cluttered or not useful in testing
+  -->
+  <Label item="necessary">
+    <ScreenID>HPPercLabel</ScreenID>
+    <Font>2</Font>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>1</CX>
+      <CY>1</CY>
+    </Size>
+    <AlignCenter>true</AlignCenter>
+    <Location>
+      <X>0</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+  <Label item="TW_HP_Pct">
+    <ScreenID>A_Label</ScreenID>
+    <Font>2</Font>
+    <EQType>19</EQType>
+    <Text>100</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>25</CX>
+      <CY>15</CY>
+    </Size>
+    <NoWrap>true</NoWrap>
+    <AlignRight>true</AlignRight>
+    <Location>
+      <X>-1</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+  <Label item="TW_HP_PctSign">
+    <ScreenID>A_Label</ScreenID>
+    <Font>2</Font>
+    <Text>%</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>16</CX>
+      <CY>15</CY>
+    </Size>
+    <NoWrap>true</NoWrap>
+    <Location>
+      <X>24</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+  <Label item="TW_Mana_Pct">
+    <ScreenID>A_Label</ScreenID>
+    <Font>2</Font>
+    <EQType>20</EQType>
+    <Text>100</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>25</CX>
+      <CY>15</CY>
+    </Size>
+    <NoWrap>true</NoWrap>
+    <AlignRight>true</AlignRight>
+    <Location>
+      <X>216</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+  <Label item="TW_Mana_PctSign">
+    <ScreenID>A_Label</ScreenID>
+    <Font>2</Font>
+    <Text>%</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>16</CX>
+      <CY>15</CY>
+    </Size>
+    <NoWrap>true</NoWrap>
+    <Location>
+      <X>241</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+  <!-- EXPERIMENTAL: Player Weight Display (centered between HP/Mana gauges) -->
+  <!-- Current Weight (right-aligned, EQType 24) -->
+  <Label item="TW_Weight_Current">
+    <ScreenID>TW_Weight_Current</ScreenID>
+    <Font>2</Font>
+    <EQType>24</EQType>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>99</X>
+      <Y>18</Y>
+    </Location>
+    <Size>
+      <CX>25</CX>
+      <CY>13</CY>
+    </Size>
+    <Text>999</Text>
+    <TooltipReference>Player Weight (Current)</TooltipReference>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignRight>true</AlignRight>
+  </Label>
+  <!-- Weight Divider "/" -->
+  <Label item="TW_Weight_Divider">
+    <ScreenID>TW_Weight_Divider</ScreenID>
+    <Font>2</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>123</X>
+      <Y>18</Y>
+    </Location>
+    <Size>
+      <CX>7</CX>
+      <CY>13</CY>
+    </Size>
+    <Text>/</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>true</AlignCenter>
+  </Label>
+  <!-- Max Weight (left-aligned, EQType 25) -->
+  <Label item="TW_Weight_Max">
+    <ScreenID>TW_Weight_Max</ScreenID>
+    <Font>2</Font>
+    <EQType>25</EQType>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>129</X>
+      <Y>18</Y>
+    </Location>
+    <Size>
+      <CX>25</CX>
+      <CY>13</CY>
+    </Size>
+    <Text>999</Text>
+    <TooltipReference>Player Weight (Max)</TooltipReference>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignLeft>true</AlignLeft>
+  </Label>
+  <Label item="TW_HP_Values">
+    <ScreenID>A_Label</ScreenID>
+    <Font>4</Font>
+    <Text>12000/12000</Text>
+    <TextColor>
+      <R>255</R>
+      <G>100</G>
+      <B>100</B>
+    </TextColor>
+    <Size>
+      <CX>81</CX>
+      <CY>15</CY>
+    </Size>
+    <AlignCenter>true</AlignCenter>
+    <Location>
+      <X>36</X>
+      <Y>0</Y>
+    </Location>
+    <EQType>70</EQType>
+  </Label>
+  <Label item="TW_TargetHP_Pct">
+    <ScreenID>HPLabel</ScreenID>
+    <Font>5</Font>
+    <EQType>29</EQType>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>204</X>
+      <Y>34</Y>
+    </Location>
+    <Size>
+      <CX>30</CX>
+      <CY>15</CY>
+    </Size>
+    <Text>100</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>true</AlignRight>
+    <AlignLeft>false</AlignLeft>
+  </Label>
+  <!-- Target HP Percentage Sign -->
+  <Label item="TW_TargetHP_PctSign">
+    <ScreenID>HPLabel_Sign</ScreenID>
+    <Font>5</Font>
+    <Text>%</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>16</CX>
+      <CY>15</CY>
+    </Size>
+    <NoWrap>true</NoWrap>
+    <Location>
+      <X>237</X>
+      <Y>34</Y>
+    </Location>
+  </Label>
+  <Label item="TW_Mana_Values">
+    <ScreenID>TW_Mana_Values</ScreenID>
+    <EQType>80</EQType>
+    <Font>4</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>140</X>
+      <Y>0</Y>
+    </Location>
+    <Size>
+      <CX>81</CX>
+      <CY>15</CY>
+    </Size>
+    <Text>100</Text>
+    <TextColor>
+      <R>150</R>
+      <G>150</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>true</AlignCenter>
+    <AlignRight>false</AlignRight>
+    <AlignLeft>false</AlignLeft>
+    <Font>5</Font>
+  </Label>
+  <TextureInfo item="ovalbar.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>32</CY>
+    </Size>
+  </TextureInfo>
+	<TextureInfo item = "TargetBox.tga">
+		<Size>
+			<CX>128</CX>
+			<CY>32</CY>
+		</Size>
+	</TextureInfo>
+
+	<Ui2DAnimation item = "A_TargetBox">
+		<Cycle>false</Cycle>
+		<Frames>
+			<Texture>TargetBox.tga</Texture>
+			<Location>
+				<X>0</X>
+				<Y>0</Y>
+			</Location>
+			<Size>
+				<CX>116</CX>
+				<CY>28</CY>
+			</Size>
+		</Frames>
+	</Ui2DAnimation>
+
+	<StaticAnimation item = "A_TargetBoxStaticAnim">
+		<ScreenID>A_TargetBoxStaticAnim</ScreenID>
+		<Animation>A_TargetBox</Animation>
+	</StaticAnimation>
+
+  <Ui2DAnimation item="A_OvalTarFill">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>ovalbar.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>15</Y>
+      </Location>
+      <Size>
+        <CX>250</CX>
+        <CY>15</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OvalTarBG">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>ovalbar.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>250</CX>
+        <CY>15</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <!-- Pet Health Gauge (standard 122x8 version for Target Window) -->
+  <Gauge item="TW_PetHealth_Gauge">
+    <ScreenID>PetHealth_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>24</Y>
+    </Location>
+    <Size>
+      <CX>122</CX>
+      <CY>8</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetY>-50</TextOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>80</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>150</R>
+      <G>60</G>
+      <B>150</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>16</EQType>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground</Background>
+      <Fill>A_GaugeFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Mana Tick Gauge (standard size for compact Target Window) -->
+  <Gauge item="TW_ManaTick_Gauge">
+    <ScreenID>ManaTick_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>148</X>
+      <Y>21</Y>
+    </Location>
+    <Size>
+      <CX>103</CX>
+      <CY>8</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetY>-50</TextOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>24</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLinesFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Experimental: Player HP and Mana Gauges on Target Window -->
+  <Gauge item="TW_PlayerHP_Gauge">
+    <ScreenID>PlayerHP_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>16</Y>
+    </Location>
+    <Size>
+      <CX>122</CX>
+      <CY>8</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetY>-50</TextOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint>
+      <R>255</R>
+      <G>0</G>
+      <B>0</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>180</R>
+      <G>70</G>
+      <B>70</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>1</EQType>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground</Background>
+      <Fill>A_GaugeFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Gauge item="TW_PlayerMana_Gauge">
+    <ScreenID>PlayerMana_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>148</X>
+      <Y>16</Y>
+    </Location>
+    <Size>
+      <CX>122</CX>
+      <CY>8</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetY>-50</TextOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint>
+      <R>30</R>
+      <G>30</G>
+      <B>255</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>70</R>
+      <G>105</G>
+      <B>180</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>2</EQType>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground</Background>
+      <Fill>A_GaugeFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Gauge item="TW_TargetHP_Gauge">
+    <ScreenID>TargetHP</ScreenID>
+    <Font>4</Font>
+    <TextColor>
+      <R>240</R>
+      <G>240</G>
+      <B>240</B>
+    </TextColor>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>1</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>60</CY>
+    </Size>
+    <GaugeOffsetY>35</GaugeOffsetY>
+    <TextOffsetX>5</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <TooltipReference />
+    <FillTint>
+      <R>240</R>
+      <G>0</G>
+      <B>0</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>220</R>
+      <G>220</G>
+      <B>0</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>6</EQType>
+    <GaugeDrawTemplate>
+      <Background>A_OvalTarBG</Background>
+      <Fill>A_OvalTarFill</Fill>
+    </GaugeDrawTemplate>
+    <TextOffsetY>33</TextOffsetY>
+  </Gauge>
+  <Gauge item="TW_TargetCasting_Gauge">
+    <ScreenID>Target_Casting_Gauge</ScreenID>
+    <Font>4</Font>
+    <TextColor>
+      <R>240</R>
+      <G>240</G>
+      <B>240</B>
+    </TextColor>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>1</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>60</CY>
+    </Size>
+    <GaugeOffsetY>48</GaugeOffsetY>
+    <TextOffsetX>5</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <TooltipReference />
+    <FillTint>
+      <R>240</R>
+      <G>0</G>
+      <B>240</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>220</R>
+      <G>220</G>
+      <B>0</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>7</EQType>
+    <GaugeDrawTemplate>
+      <Background>A_OvalTarBG</Background>
+      <Fill>A_OvalTarFill</Fill>
+    </GaugeDrawTemplate>
+    <TextOffsetY>46</TextOffsetY>
+  </Gauge>
+  <Screen item="TargetWindow">
+    <ScreenID />
+    <RelativePosition>false</RelativePosition>
+    <Location>
+      <X>516</X>
+      <Y>242</Y>
+    </Location>
+    <Size>
+      <CX>260</CX>
+      <CY>76</CY>
+    </Size>
+    <Text>Target</Text>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <TooltipReference>Your Current Target</TooltipReference>
+    <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+    <Style_Titlebar>false</Style_Titlebar>
+    <Style_Closebox>false</Style_Closebox>
+    <Style_Minimizebox>false</Style_Minimizebox>
+    <Style_Border>true</Style_Border>
+    <Style_Sizable>false</Style_Sizable>
+    <Pieces>TW_PlayerHP_Gauge</Pieces>
+    <Pieces>TW_PetHealth_Gauge</Pieces>
+    <Pieces>TW_PlayerMana_Gauge</Pieces>
+    <Pieces>TW_ManaTick_Gauge</Pieces>
+    <Pieces>TW_TargetHP_Gauge</Pieces>
+    <Pieces>TW_TargetCasting_Gauge</Pieces>
+    <Pieces>TW_Mana_Values</Pieces>
+    <Pieces>TW_TargetHP_Pct</Pieces>
+    <Pieces>TW_TargetHP_PctSign</Pieces>
+    <Pieces>TW_HP_Values</Pieces>
+    <Pieces>TW_Mana_Pct</Pieces>
+    <Pieces>TW_Mana_PctSign</Pieces>
+    <Pieces>TW_HP_Pct</Pieces>
+    <Pieces>TW_HP_PctSign</Pieces>
+    <Pieces>TW_Weight_Current</Pieces>
+    <Pieces>TW_Weight_Divider</Pieces>
+    <Pieces>TW_Weight_Max</Pieces>
+    <Pieces>A_TargetBoxStaticAnim</Pieces>
+    <Pieces>necessary</Pieces>
+  </Screen>
+</XML>

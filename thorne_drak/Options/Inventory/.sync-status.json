@@ -1,0 +1,9 @@
+{
+  "window": "Inventory",
+  "description": "Inventory window for item management",
+  "default_variant": "Default",
+  "last_sync_date": "2026-02-03",
+  "last_sync_commit": "5c0eb41",
+  "in_sync": true,
+  "notes": "Initial sync - Default copy created and all variants established"
+}

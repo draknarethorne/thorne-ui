@@ -1,0 +1,166 @@
+{
+  "description": "Icon coordinate mappings for stat icon generation",
+  "note": "Fill in coordinates for each icon variant. Icons are extracted as 24x24 and resized to 22x22.",
+  
+  "AC": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Armor Class"
+  },
+  
+  "ATK": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Attack"
+  },
+  
+  "HP": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Hit Points - look for red heart or healing icon"
+  },
+  
+  "MANA": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Mana Points - look for blue orb or flask"
+  },
+  
+  "STA": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Stamina - look for lungs or wind icon"
+  },
+  
+  "Weight": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Character Weight - look for scale or container"
+  },
+  
+  "Fire": {
+    "file": "gemicons01.tga",
+    "x": 48,
+    "y": 120,
+    "w": 24,
+    "h": 24,
+    "description": "Fire Resistance - already established"
+  },
+  
+  "Cold": {
+    "file": "gemicons01.tga",
+    "x": 168,
+    "y": 120,
+    "w": 24,
+    "h": 24,
+    "description": "Cold Resistance - already established"
+  },
+  
+  "Magic": {
+    "file": "gemicons01.tga",
+    "x": 216,
+    "y": 144,
+    "w": 24,
+    "h": 24,
+    "description": "Magic Resistance - already established"
+  },
+  
+  "Poison": {
+    "file": "gemicons01.tga",
+    "x": 24,
+    "y": 144,
+    "w": 24,
+    "h": 24,
+    "description": "Poison Resistance - already established"
+  },
+  
+  "Disease": {
+    "file": "gemicons01.tga",
+    "x": 120,
+    "y": 144,
+    "w": 24,
+    "h": 24,
+    "description": "Disease Resistance - already established"
+  },
+  
+  "Reserve": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Reserve slot"
+  },
+  
+  "STR": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Strength - look for fist or sword icon"
+  },
+  
+  "INT": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Intelligence - look for book or scroll"
+  },
+  
+  "WIS": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Wisdom - look for eye or spirit icon"
+  },
+  
+  "AGI": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Agility - look for lightning or movement"
+  },
+  
+  "DEX": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Dexterity - look for crosshair or precision"
+  },
+  
+  "CHA": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Charisma - look for star or sparkle"
+  }
+}

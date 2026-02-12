@@ -1,0 +1,157 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'    # Standard releases (e.g., v0.6.3)
+      - 'v*.*.*-*'  # Pre-releases (e.g., v0.6.3-rc.1)
+      - 'v*_*_*'    # Legacy underscore tags (e.g., v0_6_3)
+      - 'v*_*_*-*'  # Legacy underscore pre-releases (e.g., v0_6_3-pre)
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for changelog generation
+      
+      - name: Extract version from tag
+        id: get_version
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          VERSION=${TAG#v}
+          VERSION=${VERSION//_/.}
+
+          PRERELEASE=false
+          if [[ "$TAG" == *"-"* || "$TAG" == *_pre* || "$TAG" == *_rc* || "$TAG" == *_beta* || "$TAG" == *_alpha* ]]; then
+            PRERELEASE=true
+          fi
+
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "TAG=$TAG" >> $GITHUB_OUTPUT
+          echo "PRERELEASE=$PRERELEASE" >> $GITHUB_OUTPUT
+      
+      - name: Generate changelog
+        id: changelog
+        run: |
+          # Get the previous tag
+          PREV_TAG=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1) 2>/dev/null || echo "")
+          
+          if [ -z "$PREV_TAG" ]; then
+            # First release - get all commits
+            COMMITS=$(git log --pretty=format:"- %s (%h)" --no-merges)
+          else
+            # Get commits since previous tag
+            COMMITS=$(git log ${PREV_TAG}..HEAD --pretty=format:"- %s (%h)" --no-merges)
+          fi
+          
+          # Save to file for multi-line handling
+          echo "$COMMITS" > changelog.txt
+      
+      - name: Create UI package
+        run: |
+          VERSION=${{ steps.get_version.outputs.VERSION }}
+          
+          # Create release directory
+          mkdir -p releases
+          
+          # Package thorne_drak (primary release variant)
+          if [ -d "thorne_drak" ]; then
+            echo "Packaging thorne_drak..."
+            zip -r "releases/thorne_drak-v${VERSION}.zip" "thorne_drak/" -x "*.git*" "*.md"
+          fi
+          
+          # Create a complete package with thorne_drak and documentation
+          echo "Creating complete package..."
+          zip -r "releases/thorne-ui-v${VERSION}.zip" \
+            .docs/ \
+            default/ \
+            thorne_drak/ \
+            zeal/ \
+            README.md \
+            DEVELOPMENT.md \
+            -x "*.git*" "*TODO.md"
+      
+      - name: Create Release Notes
+        id: release_notes
+        run: |
+          VERSION=${{ steps.get_version.outputs.VERSION }}
+          
+          # Create release notes
+          cat > release_notes.md << 'EOF'
+          # Thorne UI v$VERSION
+          
+          Custom UI files for **TAKP Quarm Server** (PoP-era EverQuest).
+          
+          ## Installation
+          
+          1. Download `thorne_drak-v$VERSION.zip`
+          2. Extract the zip file to your TAKP installation directory: `<TAKP Install>/uifiles/`
+          3. In-game, use the command: `/loadskin thorne_drak`
+          4. The UI will automatically reload with the new skin
+          
+          ## About Thorne Drak UI
+          
+          **Gameplay-focused UI design** built for 1920x1080 resolution and larger, keeping critical information visible without clutter.
+          
+          **Key Features:**
+          - Tabbed windows for fast access to core info
+          - 45x45px slot sizing for easier clicking
+          - Redesigned merchant/loot grids with improved visibility
+          - Horizontal bag layout with clear visual feedback
+          - Always-visible player/pet/group information
+
+          ## Credits & Inspiration
+
+          - **Origin**: QQQuarm mod and its contributors
+          - **Inspiration**: Nillipuss UI (feature ideas and polish targets)
+          - **References**: DuxaUI, Infiniti-Blue, QQ/QQQuarm, vert, zeal, default UI
+          - **Custom work**: Layouts, documentation, and textures by **Draknare Thorne**
+          
+          ## What's New
+          
+          EOF
+          
+          # Add changelog
+          cat changelog.txt >> release_notes.md
+          
+          # Add footer
+          cat >> release_notes.md << 'EOF'
+          
+          ## Documentation
+          
+          - [README.md](https://github.com/draknarethorne/thorne-ui/blob/main/README.md) - Project overview and features
+          - [STANDARDS.md](https://github.com/draknarethorne/thorne-ui/blob/main/.docs/STANDARDS.md) - UI development standards
+          - [DEVELOPMENT.md](https://github.com/draknarethorne/thorne-ui/blob/main/DEVELOPMENT.md) - Development guide
+          - [VERSION-MANAGEMENT.md](https://github.com/draknarethorne/thorne-ui/blob/main/.docs/VERSION-MANAGEMENT.md) - Version control system
+          
+          ## Support
+          
+          For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/draknarethorne/thorne-ui).
+          
+          ---
+          
+          **Maintainer**: Draknare Thorne  
+          **License**: Custom UI for personal use with The Al'Kabor Project
+          EOF
+          
+          # Replace $VERSION placeholder
+          sed -i "s/\$VERSION/$VERSION/g" release_notes.md
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Thorne UI ${{ steps.get_version.outputs.TAG }}
+          body_path: release_notes.md
+          files: releases/*.zip
+          draft: false
+          prerelease: ${{ steps.get_version.outputs.PRERELEASE == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

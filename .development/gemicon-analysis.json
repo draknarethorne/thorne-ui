@@ -1,0 +1,106 @@
+{
+  "source_directory": "default",
+  "gemicon_files": {
+    "gemicons01.tga": {
+      "file": "gemicons01.tga",
+      "dimensions": "256x256",
+      "size_bytes": 262188,
+      "format": "TGA",
+      "estimated_icon_size": "24x24",
+      "estimated_grid": "10-11 columns x 10-11 rows",
+      "estimated_icon_count": "100-120"
+    },
+    "gemicons02.tga": {
+      "file": "gemicons02.tga",
+      "dimensions": "256x256",
+      "size_bytes": 262188,
+      "format": "TGA",
+      "estimated_icon_size": "24x24",
+      "estimated_grid": "10-11 columns x 10-11 rows",
+      "estimated_icon_count": "100-120"
+    },
+    "gemicons03.tga": {
+      "file": "gemicons03.tga",
+      "dimensions": "256x256",
+      "size_bytes": 262162,
+      "format": "TGA",
+      "estimated_icon_size": "24x24",
+      "estimated_grid": "10-11 columns x 10-11 rows",
+      "estimated_icon_count": "100-120"
+    }
+  },
+  "missing_stat_icons": {
+    "HP": "Hit Points (usually heart icon)",
+    "MANA": "Mana Points (usually blue orb/flask)",
+    "STA": "Stamina (usually circular breath/lung icon)",
+    "Weight": "Character Weight (usually scale icon)",
+    "STR": "Strength (usually fist/sword)",
+    "INT": "Intelligence (usually book/scroll)",
+    "WIS": "Wisdom (usually eye/spirit)",
+    "AGI": "Agility (usually lightning/movement)",
+    "DEX": "Dexterity (usually hand/precision)",
+    "CHA": "Charisma (usually star/force)"
+  },
+  "stat_icon_positions": {
+    "HP": {
+      "x": 10,
+      "y": 70,
+      "col": 1,
+      "row": 3
+    },
+    "MANA": {
+      "x": 10,
+      "y": 100,
+      "col": 1,
+      "row": 4
+    },
+    "STA": {
+      "x": 10,
+      "y": 130,
+      "col": 1,
+      "row": 5
+    },
+    "Weight": {
+      "x": 10,
+      "y": 160,
+      "col": 1,
+      "row": 6
+    },
+    "STR": {
+      "x": 170,
+      "y": 10,
+      "col": 3,
+      "row": 1
+    },
+    "INT": {
+      "x": 170,
+      "y": 40,
+      "col": 3,
+      "row": 2
+    },
+    "WIS": {
+      "x": 170,
+      "y": 70,
+      "col": 3,
+      "row": 3
+    },
+    "AGI": {
+      "x": 170,
+      "y": 100,
+      "col": 3,
+      "row": 4
+    },
+    "DEX": {
+      "x": 170,
+      "y": 130,
+      "col": 3,
+      "row": 5
+    },
+    "CHA": {
+      "x": 170,
+      "y": 160,
+      "col": 3,
+      "row": 6
+    }
+  }
+}

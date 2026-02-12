@@ -1,0 +1,57 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/*.backup_*": true,
+			"**/*.bak": true,
+			"**/*.old": true,
+		},
+		"search.exclude": {
+			"**/*.backup_*": true,
+			"**/*.bak": true,
+			"**/*.old": true,
+		},
+		"files.associations": {
+			"*.xml": "xml",
+			"*.tga": "image",
+			"*.cur": "image"
+		},
+		"git.enabled": true,
+		"git.autofetch": true,
+		"git.confirmSync": false,
+		"editor.formatOnSave": false,
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"files.trimTrailingWhitespace": false,
+		"files.insertFinalNewline": false,
+		"workbench.colorCustomizations": {
+			"editorRuler.foreground": "#444444"
+		},
+		"terminal.integrated.env.windows": {
+			"PATH": "C:\\TAKP\\uifiles\\.bin;C:\\TAKP\\uifiles;${env:PATH}"
+		},
+		"terminal.integrated.env.linux": {
+			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
+		},
+		"terminal.integrated.env.osx": {
+			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"redhat.vscode-xml",
+			"donjayamanne.githistory",
+			"ms-python.python",
+			"ms-vscode.powershell",
+			"foxundermoon.shell-format",
+			"naumovs.color-picker",
+			"yzhang.markdown-all-in-one",
+			"EditorConfig.EditorConfig",
+			"DotJoshJohnson.xml"
+		]
+	}
+}

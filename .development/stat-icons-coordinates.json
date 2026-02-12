@@ -1,0 +1,1002 @@
+{
+  "description": "Master stat icon coordinate mapping",
+  "template_size": "256\u00d7256 RGBA",
+  "icon_size": "22\u00d722",
+  "abbreviations": {
+    "stats": {
+      "AC": "Armor Class",
+      "ATK": "Attack Power",
+      "HP": "Hit Points",
+      "ST": "Stamina (STA)",
+      "WT": "Weight",
+      "MP": "Mana (MANA)"
+    },
+    "resistances": {
+      "FR": "Fire Resistance",
+      "CR": "Cold Resistance",
+      "MR": "Magic Resistance",
+      "PR": "Poison Resistance",
+      "DR": "Disease Resistance",
+      "RV": "Reserved"
+    },
+    "attributes": {
+      "STR": "Strength (STR)",
+      "INT": "Intelligence (INT)",
+      "WIS": "Wisdom (WIS)",
+      "AGI": "Agility (AGI)",
+      "DEX": "Dexterity (DEX)",
+      "CHA": "Charisma (CHA)"
+    }
+  },
+  "layout": {
+    "AC": {
+      "col": 1,
+      "x": 10,
+      "y": 10,
+      "row": 1,
+      "abbr": "AC",
+      "description": "Armor Class"
+    },
+    "ATK": {
+      "col": 1,
+      "x": 10,
+      "y": 40,
+      "row": 2,
+      "abbr": "ATK",
+      "description": "Attack Power"
+    },
+    "HP": {
+      "col": 1,
+      "x": 10,
+      "y": 70,
+      "row": 3,
+      "abbr": "HP",
+      "description": "Hit Points"
+    },
+    "MANA": {
+      "col": 1,
+      "x": 10,
+      "y": 100,
+      "row": 4,
+      "abbr": "MP",
+      "description": "Mana Points"
+    },
+    "STA": {
+      "col": 1,
+      "x": 10,
+      "y": 130,
+      "row": 5,
+      "abbr": "ST",
+      "description": "Stamina"
+    },
+    "Weight": {
+      "col": 1,
+      "x": 10,
+      "y": 160,
+      "row": 6,
+      "abbr": "WT",
+      "description": "Weight"
+    },
+    "Fire": {
+      "col": 2,
+      "x": 90,
+      "y": 10,
+      "row": 1,
+      "abbr": "FR",
+      "description": "Fire Resistance"
+    },
+    "Cold": {
+      "col": 2,
+      "x": 90,
+      "y": 40,
+      "row": 2,
+      "abbr": "CR",
+      "description": "Cold Resistance"
+    },
+    "Magic": {
+      "col": 2,
+      "x": 90,
+      "y": 70,
+      "row": 3,
+      "abbr": "MR",
+      "description": "Magic Resistance"
+    },
+    "Poison": {
+      "col": 2,
+      "x": 90,
+      "y": 100,
+      "row": 4,
+      "abbr": "PR",
+      "description": "Poison Resistance"
+    },
+    "Disease": {
+      "col": 2,
+      "x": 90,
+      "y": 130,
+      "row": 5,
+      "abbr": "DR",
+      "description": "Disease Resistance"
+    },
+    "Reserve": {
+      "col": 2,
+      "x": 90,
+      "y": 160,
+      "row": 6,
+      "abbr": "RV",
+      "description": "Reserved"
+    },
+    "STR": {
+      "col": 3,
+      "x": 170,
+      "y": 10,
+      "row": 1,
+      "abbr": "STR",
+      "description": "Strength"
+    },
+    "INT": {
+      "col": 3,
+      "x": 170,
+      "y": 40,
+      "row": 2,
+      "abbr": "INT",
+      "description": "Intelligence"
+    },
+    "WIS": {
+      "col": 3,
+      "x": 170,
+      "y": 70,
+      "row": 3,
+      "abbr": "WIS",
+      "description": "Wisdom"
+    },
+    "AGI": {
+      "col": 3,
+      "x": 170,
+      "y": 100,
+      "row": 4,
+      "abbr": "AGI",
+      "description": "Agility"
+    },
+    "DEX": {
+      "col": 3,
+      "x": 170,
+      "y": 130,
+      "row": 5,
+      "abbr": "DEX",
+      "description": "Dexterity"
+    },
+    "CHA": {
+      "col": 3,
+      "x": 170,
+      "y": 160,
+      "row": 6,
+      "abbr": "CHA",
+      "description": "Charisma"
+    }
+  },
+  "files": {
+    "stat_icon_pieces01.tga": {
+      "file": "stat_icon_pieces01.tga",
+      "description": "Icons from vert/window_pieces06.tga (22\u00d722 native size)",
+      "size": "256\u00d7256 RGBA",
+      "icons": {
+        "AC": {
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "column": 1,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 205,
+            "original_y": 85,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "AC",
+          "description": "Armor Class"
+        },
+        "ATK": {
+          "position": {
+            "x": 10,
+            "y": 40
+          },
+          "column": 1,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 231,
+            "original_y": 85,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "ATK",
+          "description": "Attack Power"
+        },
+        "HP": {
+          "position": {
+            "x": 10,
+            "y": 70
+          },
+          "column": 1,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "HP",
+          "description": "Hit Points"
+        },
+        "MANA": {
+          "position": {
+            "x": 10,
+            "y": 100
+          },
+          "column": 1,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "MP",
+          "description": "Mana Points"
+        },
+        "STA": {
+          "position": {
+            "x": 10,
+            "y": 130
+          },
+          "column": 1,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "ST",
+          "description": "Stamina"
+        },
+        "Weight": {
+          "position": {
+            "x": 10,
+            "y": 160
+          },
+          "column": 1,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "WT",
+          "description": "Weight"
+        },
+        "Fire": {
+          "position": {
+            "x": 90,
+            "y": 10
+          },
+          "column": 2,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 231,
+            "original_y": 137,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "FR",
+          "description": "Fire Resistance"
+        },
+        "Cold": {
+          "position": {
+            "x": 90,
+            "y": 40
+          },
+          "column": 2,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 231,
+            "original_y": 111,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "CR",
+          "description": "Cold Resistance"
+        },
+        "Magic": {
+          "position": {
+            "x": 90,
+            "y": 70
+          },
+          "column": 2,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 231,
+            "original_y": 189,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "MR",
+          "description": "Magic Resistance"
+        },
+        "Poison": {
+          "position": {
+            "x": 90,
+            "y": 100
+          },
+          "column": 2,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 231,
+            "original_y": 215,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "PR",
+          "description": "Poison Resistance"
+        },
+        "Disease": {
+          "position": {
+            "x": 90,
+            "y": 130
+          },
+          "column": 2,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 231,
+            "original_y": 163,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "DR",
+          "description": "Disease Resistance"
+        },
+        "Reserve": {
+          "position": {
+            "x": 90,
+            "y": 160
+          },
+          "column": 2,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "RV",
+          "description": "Reserved"
+        },
+        "STR": {
+          "position": {
+            "x": 170,
+            "y": 10
+          },
+          "column": 3,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 179,
+            "original_y": 85,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "STR",
+          "description": "Strength"
+        },
+        "INT": {
+          "position": {
+            "x": 170,
+            "y": 40
+          },
+          "column": 3,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 179,
+            "original_y": 137,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "INT",
+          "description": "Intelligence"
+        },
+        "WIS": {
+          "position": {
+            "x": 170,
+            "y": 70
+          },
+          "column": 3,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert/window_pieces06.tga",
+            "original_x": 205,
+            "original_y": 111,
+            "original_size": "22\u00d722"
+          },
+          "abbr": "WIS",
+          "description": "Wisdom"
+        },
+        "AGI": {
+          "position": {
+            "x": 170,
+            "y": 100
+          },
+          "column": 3,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "AGI",
+          "description": "Agility"
+        },
+        "DEX": {
+          "position": {
+            "x": 170,
+            "y": 130
+          },
+          "column": 3,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "DEX",
+          "description": "Dexterity"
+        },
+        "CHA": {
+          "position": {
+            "x": 170,
+            "y": 160
+          },
+          "column": 3,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "CHA",
+          "description": "Charisma"
+        }
+      }
+    },
+    "stat_icon_pieces02.tga": {
+      "file": "stat_icon_pieces02.tga",
+      "description": "Resist icons from vert-blue/gemicons01.tga (24\u00d724 resized to 22\u00d722)",
+      "size": "256\u00d7256 RGBA",
+      "icons": {
+        "AC": {
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "column": 1,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "AC",
+          "description": "Armor Class"
+        },
+        "ATK": {
+          "position": {
+            "x": 10,
+            "y": 40
+          },
+          "column": 1,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "ATK",
+          "description": "Attack Power"
+        },
+        "HP": {
+          "position": {
+            "x": 10,
+            "y": 70
+          },
+          "column": 1,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "HP",
+          "description": "Hit Points"
+        },
+        "MANA": {
+          "position": {
+            "x": 10,
+            "y": 100
+          },
+          "column": 1,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "MP",
+          "description": "Mana Points"
+        },
+        "STA": {
+          "position": {
+            "x": 10,
+            "y": 130
+          },
+          "column": 1,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "ST",
+          "description": "Stamina"
+        },
+        "Weight": {
+          "position": {
+            "x": 10,
+            "y": 160
+          },
+          "column": 1,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "WT",
+          "description": "Weight"
+        },
+        "Fire": {
+          "position": {
+            "x": 90,
+            "y": 10
+          },
+          "column": 2,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert-blue/gemicons01.tga",
+            "original_x": 48,
+            "original_y": 120,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "FR",
+          "description": "Fire Resistance"
+        },
+        "Cold": {
+          "position": {
+            "x": 90,
+            "y": 40
+          },
+          "column": 2,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert-blue/gemicons01.tga",
+            "original_x": 168,
+            "original_y": 120,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "CR",
+          "description": "Cold Resistance"
+        },
+        "Magic": {
+          "position": {
+            "x": 90,
+            "y": 70
+          },
+          "column": 2,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert-blue/gemicons01.tga",
+            "original_x": 216,
+            "original_y": 144,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "MR",
+          "description": "Magic Resistance"
+        },
+        "Poison": {
+          "position": {
+            "x": 90,
+            "y": 100
+          },
+          "column": 2,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert-blue/gemicons01.tga",
+            "original_x": 24,
+            "original_y": 144,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "PR",
+          "description": "Poison Resistance"
+        },
+        "Disease": {
+          "position": {
+            "x": 90,
+            "y": 130
+          },
+          "column": 2,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "vert-blue/gemicons01.tga",
+            "original_x": 120,
+            "original_y": 144,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "DR",
+          "description": "Disease Resistance"
+        },
+        "Reserve": {
+          "position": {
+            "x": 90,
+            "y": 160
+          },
+          "column": 2,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "RV",
+          "description": "Reserved"
+        },
+        "STR": {
+          "position": {
+            "x": 170,
+            "y": 10
+          },
+          "column": 3,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "STR",
+          "description": "Strength"
+        },
+        "INT": {
+          "position": {
+            "x": 170,
+            "y": 40
+          },
+          "column": 3,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "INT",
+          "description": "Intelligence"
+        },
+        "WIS": {
+          "position": {
+            "x": 170,
+            "y": 70
+          },
+          "column": 3,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "WIS",
+          "description": "Wisdom"
+        },
+        "AGI": {
+          "position": {
+            "x": 170,
+            "y": 100
+          },
+          "column": 3,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "AGI",
+          "description": "Agility"
+        },
+        "DEX": {
+          "position": {
+            "x": 170,
+            "y": 130
+          },
+          "column": 3,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "DEX",
+          "description": "Dexterity"
+        },
+        "CHA": {
+          "position": {
+            "x": 170,
+            "y": 160
+          },
+          "column": 3,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "CHA",
+          "description": "Charisma"
+        }
+      }
+    },
+    "stat_icon_pieces03.tga": {
+      "file": "stat_icon_pieces03.tga",
+      "description": "Resist icons from default/gemicons01.tga (24\u00d724 resized to 22\u00d722)",
+      "size": "256\u00d7256 RGBA",
+      "icons": {
+        "AC": {
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "column": 1,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "AC",
+          "description": "Armor Class"
+        },
+        "ATK": {
+          "position": {
+            "x": 10,
+            "y": 40
+          },
+          "column": 1,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "ATK",
+          "description": "Attack Power"
+        },
+        "HP": {
+          "position": {
+            "x": 10,
+            "y": 70
+          },
+          "column": 1,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "HP",
+          "description": "Hit Points"
+        },
+        "MANA": {
+          "position": {
+            "x": 10,
+            "y": 100
+          },
+          "column": 1,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "MP",
+          "description": "Mana Points"
+        },
+        "STA": {
+          "position": {
+            "x": 10,
+            "y": 130
+          },
+          "column": 1,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "ST",
+          "description": "Stamina"
+        },
+        "Weight": {
+          "position": {
+            "x": 10,
+            "y": 160
+          },
+          "column": 1,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "WT",
+          "description": "Weight"
+        },
+        "Fire": {
+          "position": {
+            "x": 90,
+            "y": 10
+          },
+          "column": 2,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "default/gemicons01.tga",
+            "original_x": 48,
+            "original_y": 120,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "FR",
+          "description": "Fire Resistance"
+        },
+        "Cold": {
+          "position": {
+            "x": 90,
+            "y": 40
+          },
+          "column": 2,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "default/gemicons01.tga",
+            "original_x": 168,
+            "original_y": 120,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "CR",
+          "description": "Cold Resistance"
+        },
+        "Magic": {
+          "position": {
+            "x": 90,
+            "y": 70
+          },
+          "column": 2,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "default/gemicons01.tga",
+            "original_x": 216,
+            "original_y": 144,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "MR",
+          "description": "Magic Resistance"
+        },
+        "Poison": {
+          "position": {
+            "x": 90,
+            "y": 100
+          },
+          "column": 2,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "default/gemicons01.tga",
+            "original_x": 24,
+            "original_y": 144,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "PR",
+          "description": "Poison Resistance"
+        },
+        "Disease": {
+          "position": {
+            "x": 90,
+            "y": 130
+          },
+          "column": 2,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "extracted",
+          "source": {
+            "file": "default/gemicons01.tga",
+            "original_x": 120,
+            "original_y": 144,
+            "original_size": "24\u00d724"
+          },
+          "abbr": "DR",
+          "description": "Disease Resistance"
+        },
+        "Reserve": {
+          "position": {
+            "x": 90,
+            "y": 160
+          },
+          "column": 2,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "RV",
+          "description": "Reserved"
+        },
+        "STR": {
+          "position": {
+            "x": 170,
+            "y": 10
+          },
+          "column": 3,
+          "row": 1,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "STR",
+          "description": "Strength"
+        },
+        "INT": {
+          "position": {
+            "x": 170,
+            "y": 40
+          },
+          "column": 3,
+          "row": 2,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "INT",
+          "description": "Intelligence"
+        },
+        "WIS": {
+          "position": {
+            "x": 170,
+            "y": 70
+          },
+          "column": 3,
+          "row": 3,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "WIS",
+          "description": "Wisdom"
+        },
+        "AGI": {
+          "position": {
+            "x": 170,
+            "y": 100
+          },
+          "column": 3,
+          "row": 4,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "AGI",
+          "description": "Agility"
+        },
+        "DEX": {
+          "position": {
+            "x": 170,
+            "y": 130
+          },
+          "column": 3,
+          "row": 5,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "DEX",
+          "description": "Dexterity"
+        },
+        "CHA": {
+          "position": {
+            "x": 170,
+            "y": 160
+          },
+          "column": 3,
+          "row": 6,
+          "size": "22\u00d722",
+          "type": "placeholder",
+          "source": null,
+          "abbr": "CHA",
+          "description": "Charisma"
+        }
+      }
+    }
+  }
+}

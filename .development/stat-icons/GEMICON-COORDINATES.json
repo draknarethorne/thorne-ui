@@ -1,0 +1,649 @@
+{
+  "description": "Gemicon coordinate mappings extracted from EverQuest UI files",
+  "generated_by": "extract_gemicon_coordinates.py",
+  "textures": {
+    "gemicons01.tga": {
+      "description": "Icons from gemicons01.tga",
+      "dimensions": "256x256",
+      "animations": {
+        "A_ColdImage": {
+          "variants": [
+            "duxaUI",
+            "vert-blue"
+          ],
+          "frames": [
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_PlayerWindow.xml",
+              "x": 168,
+              "y": 120,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            },
+            {
+              "variant": "duxaUI",
+              "file": "duxaUI\\EQUI_PlayerWindow.xml",
+              "x": 144,
+              "y": 0,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            }
+          ]
+        },
+        "A_DiseaseImage": {
+          "variants": [
+            "duxaUI",
+            "vert-blue"
+          ],
+          "frames": [
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_PlayerWindow.xml",
+              "x": 120,
+              "y": 144,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            },
+            {
+              "variant": "duxaUI",
+              "file": "duxaUI\\EQUI_PlayerWindow.xml",
+              "x": 24,
+              "y": 0,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            }
+          ]
+        },
+        "A_FireImage": {
+          "variants": [
+            "duxaUI",
+            "vert-blue"
+          ],
+          "frames": [
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_PlayerWindow.xml",
+              "x": 48,
+              "y": 120,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            },
+            {
+              "variant": "duxaUI",
+              "file": "duxaUI\\EQUI_PlayerWindow.xml",
+              "x": 24,
+              "y": 120,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            }
+          ]
+        },
+        "A_MagicImage": {
+          "variants": [
+            "duxaUI",
+            "vert-blue"
+          ],
+          "frames": [
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_PlayerWindow.xml",
+              "x": 216,
+              "y": 144,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            },
+            {
+              "variant": "duxaUI",
+              "file": "duxaUI\\EQUI_PlayerWindow.xml",
+              "x": 216,
+              "y": 24,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            }
+          ]
+        },
+        "A_PoisonImage": {
+          "variants": [
+            "duxaUI",
+            "vert-blue"
+          ],
+          "frames": [
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_PlayerWindow.xml",
+              "x": 24,
+              "y": 144,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            },
+            {
+              "variant": "duxaUI",
+              "file": "duxaUI\\EQUI_PlayerWindow.xml",
+              "x": 24,
+              "y": 48,
+              "width": 24,
+              "height": 24,
+              "is_grid": false,
+              "cell_width": null,
+              "cell_height": null
+            }
+          ]
+        },
+        "A_SpellGems": {
+          "variants": [
+            "QQ",
+            "default",
+            "vert",
+            "duxaUI",
+            "vert-blue",
+            "thorne_drak"
+          ],
+          "frames": [
+            {
+              "variant": "default",
+              "file": "default\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "vert",
+              "file": "vert\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "duxaUI",
+              "file": "duxaUI\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "QQ",
+              "file": "QQ\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 36,
+              "cell_height": 28
+            },
+            {
+              "variant": "thorne_drak",
+              "file": "thorne_drak\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            }
+          ]
+        }
+      }
+    },
+    "gemicons02.tga": {
+      "description": "Icons from gemicons02.tga",
+      "dimensions": "256x256",
+      "animations": {
+        "A_SpellGems": {
+          "variants": [
+            "QQ",
+            "default",
+            "vert",
+            "duxaUI",
+            "vert-blue",
+            "thorne_drak"
+          ],
+          "frames": [
+            {
+              "variant": "default",
+              "file": "default\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "vert",
+              "file": "vert\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "duxaUI",
+              "file": "duxaUI\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            },
+            {
+              "variant": "QQ",
+              "file": "QQ\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 36,
+              "cell_height": 28
+            },
+            {
+              "variant": "thorne_drak",
+              "file": "thorne_drak\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            }
+          ]
+        }
+      }
+    },
+    "gemicons03.tga": {
+      "description": "Icons from gemicons03.tga",
+      "dimensions": "256x256",
+      "animations": {
+        "A_SpellGems": {
+          "variants": [
+            "vert-blue"
+          ],
+          "frames": [
+            {
+              "variant": "vert-blue",
+              "file": "vert-blue\\EQUI_Animations.xml",
+              "x": 0,
+              "y": 0,
+              "width": 256,
+              "height": 256,
+              "is_grid": true,
+              "cell_width": 24,
+              "cell_height": 24
+            }
+          ]
+        }
+      }
+    }
+  },
+  "all_icons": [
+    {
+      "name": "A_ColdImage",
+      "texture": "gemicons01.tga",
+      "x": 144,
+      "y": 0,
+      "width": 24,
+      "height": 24,
+      "file": "duxaUI\\EQUI_PlayerWindow.xml",
+      "variant": "duxaUI",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_ColdImage",
+      "texture": "gemicons01.tga",
+      "x": 168,
+      "y": 120,
+      "width": 24,
+      "height": 24,
+      "file": "vert-blue\\EQUI_PlayerWindow.xml",
+      "variant": "vert-blue",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_DiseaseImage",
+      "texture": "gemicons01.tga",
+      "x": 24,
+      "y": 0,
+      "width": 24,
+      "height": 24,
+      "file": "duxaUI\\EQUI_PlayerWindow.xml",
+      "variant": "duxaUI",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_DiseaseImage",
+      "texture": "gemicons01.tga",
+      "x": 120,
+      "y": 144,
+      "width": 24,
+      "height": 24,
+      "file": "vert-blue\\EQUI_PlayerWindow.xml",
+      "variant": "vert-blue",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_FireImage",
+      "texture": "gemicons01.tga",
+      "x": 24,
+      "y": 120,
+      "width": 24,
+      "height": 24,
+      "file": "duxaUI\\EQUI_PlayerWindow.xml",
+      "variant": "duxaUI",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_FireImage",
+      "texture": "gemicons01.tga",
+      "x": 48,
+      "y": 120,
+      "width": 24,
+      "height": 24,
+      "file": "vert-blue\\EQUI_PlayerWindow.xml",
+      "variant": "vert-blue",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_MagicImage",
+      "texture": "gemicons01.tga",
+      "x": 216,
+      "y": 24,
+      "width": 24,
+      "height": 24,
+      "file": "duxaUI\\EQUI_PlayerWindow.xml",
+      "variant": "duxaUI",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_MagicImage",
+      "texture": "gemicons01.tga",
+      "x": 216,
+      "y": 144,
+      "width": 24,
+      "height": 24,
+      "file": "vert-blue\\EQUI_PlayerWindow.xml",
+      "variant": "vert-blue",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_PoisonImage",
+      "texture": "gemicons01.tga",
+      "x": 24,
+      "y": 48,
+      "width": 24,
+      "height": 24,
+      "file": "duxaUI\\EQUI_PlayerWindow.xml",
+      "variant": "duxaUI",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_PoisonImage",
+      "texture": "gemicons01.tga",
+      "x": 24,
+      "y": 144,
+      "width": 24,
+      "height": 24,
+      "file": "vert-blue\\EQUI_PlayerWindow.xml",
+      "variant": "vert-blue",
+      "is_grid": false,
+      "cell_width": null,
+      "cell_height": null
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons01.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "QQ\\EQUI_Animations.xml",
+      "variant": "QQ",
+      "is_grid": true,
+      "cell_width": 36,
+      "cell_height": 28
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons01.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "default\\EQUI_Animations.xml",
+      "variant": "default",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons01.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "duxaUI\\EQUI_Animations.xml",
+      "variant": "duxaUI",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons01.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "thorne_drak\\EQUI_Animations.xml",
+      "variant": "thorne_drak",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons01.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "vert\\EQUI_Animations.xml",
+      "variant": "vert",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons01.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "vert-blue\\EQUI_Animations.xml",
+      "variant": "vert-blue",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons02.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "QQ\\EQUI_Animations.xml",
+      "variant": "QQ",
+      "is_grid": true,
+      "cell_width": 36,
+      "cell_height": 28
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons02.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "default\\EQUI_Animations.xml",
+      "variant": "default",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons02.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "duxaUI\\EQUI_Animations.xml",
+      "variant": "duxaUI",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons02.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "thorne_drak\\EQUI_Animations.xml",
+      "variant": "thorne_drak",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons02.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "vert\\EQUI_Animations.xml",
+      "variant": "vert",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons02.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "vert-blue\\EQUI_Animations.xml",
+      "variant": "vert-blue",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    },
+    {
+      "name": "A_SpellGems",
+      "texture": "gemicons03.tga",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256,
+      "file": "vert-blue\\EQUI_Animations.xml",
+      "variant": "vert-blue",
+      "is_grid": true,
+      "cell_width": 24,
+      "cell_height": 24
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "stat_icon_pieces01.tga": {
+    "description": "Stat and resist icons extracted from vert UI",
+    "source": "vert/window_pieces06.tga",
+    "size": "256x256",
+    "icons": {
+      "AC": {
+        "x": 10,
+        "y": 10,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 205,
+          "y": 85
+        }
+      },
+      "ATK": {
+        "x": 10,
+        "y": 40,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 231,
+          "y": 85
+        }
+      },
+      "STR": {
+        "x": 10,
+        "y": 70,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 179,
+          "y": 85
+        }
+      },
+      "WIS": {
+        "x": 10,
+        "y": 100,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 205,
+          "y": 111
+        }
+      },
+      "INT": {
+        "x": 10,
+        "y": 130,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 179,
+          "y": 137
+        }
+      },
+      "Fire": {
+        "x": 90,
+        "y": 10,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 231,
+          "y": 137
+        }
+      },
+      "Cold": {
+        "x": 90,
+        "y": 40,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 231,
+          "y": 111
+        }
+      },
+      "Magic": {
+        "x": 90,
+        "y": 70,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 231,
+          "y": 189
+        }
+      },
+      "Poison": {
+        "x": 90,
+        "y": 100,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 231,
+          "y": 215
+        }
+      },
+      "Disease": {
+        "x": 90,
+        "y": 130,
+        "width": 22,
+        "height": 22,
+        "source": {
+          "file": "vert/window_pieces06.tga",
+          "x": 231,
+          "y": 163
+        }
+      }
+    }
+  },
+  "stat_icon_pieces02.tga": {
+    "description": "Resist icons from vert-blue gemicons01.tga (24x24 size)",
+    "source_file": "vert-blue/gemicons01.tga",
+    "dimensions": "256x256",
+    "format": "RGBA TGA",
+    "icon_size": 24,
+    "icons": {
+      "Fire": {
+        "source_x": 48,
+        "source_y": 120,
+        "output_x": 10,
+        "output_y": 10,
+        "width": 24,
+        "height": 24
+      },
+      "Cold": {
+        "source_x": 168,
+        "source_y": 120,
+        "output_x": 10,
+        "output_y": 50,
+        "width": 24,
+        "height": 24
+      },
+      "Magic": {
+        "source_x": 216,
+        "source_y": 144,
+        "output_x": 10,
+        "output_y": 90,
+        "width": 24,
+        "height": 24
+      },
+      "Poison": {
+        "source_x": 24,
+        "source_y": 144,
+        "output_x": 10,
+        "output_y": 130,
+        "width": 24,
+        "height": 24
+      },
+      "Disease": {
+        "source_x": 120,
+        "source_y": 144,
+        "output_x": 10,
+        "output_y": 170,
+        "width": 24,
+        "height": 24
+      }
+    }
+  },
+  "stat_icon_pieces03.tga": {
+    "description": "Resist icons from default gemicons01.tga (24x24 size)",
+    "source_file": "default/gemicons01.tga",
+    "dimensions": "256x256",
+    "format": "RGBA TGA",
+    "icon_size": 24,
+    "icons": {
+      "Fire": {
+        "source_x": 48,
+        "source_y": 120,
+        "output_x": 10,
+        "output_y": 10,
+        "width": 24,
+        "height": 24
+      },
+      "Cold": {
+        "source_x": 168,
+        "source_y": 120,
+        "output_x": 10,
+        "output_y": 50,
+        "width": 24,
+        "height": 24
+      },
+      "Magic": {
+        "source_x": 216,
+        "source_y": 144,
+        "output_x": 10,
+        "output_y": 90,
+        "width": 24,
+        "height": 24
+      },
+      "Poison": {
+        "source_x": 24,
+        "source_y": 144,
+        "output_x": 10,
+        "output_y": 130,
+        "width": 24,
+        "height": 24
+      },
+      "Disease": {
+        "source_x": 120,
+        "source_y": 144,
+        "output_x": 10,
+        "output_y": 170,
+        "width": 24,
+        "height": 24
+      }
+    }
+  },
+  "layout_specification": {
+    "stat_icon_pieces01": {
+      "description": "Multi-column layout with 20x20 icons",
+      "columns": {
+        "column_1": {
+          "x_position": 5,
+          "icons": [
+            "AC",
+            "ATK",
+            "HP",
+            "MANA",
+            "Weight"
+          ],
+          "description": "Combat and inventory stats"
+        },
+        "column_2": {
+          "x_position": 60,
+          "icons": [
+            "Fire",
+            "Cold",
+            "Magic",
+            "Poison",
+            "Disease"
+          ],
+          "description": "Resist icons"
+        },
+        "column_3": {
+          "x_position": 120,
+          "icons": [
+            "STR",
+            "STA",
+            "AGI",
+            "DEX",
+            "WIS",
+            "INT",
+            "CHA"
+          ],
+          "description": "Character stat icons"
+        }
+      },
+      "spacing": {
+        "column_gap": "20px between columns",
+        "vertical_gap_col1_col2": "20px",
+        "vertical_gap_col3": "18px (7 stats need tighter spacing)"
+      }
+    },
+    "stat_icon_pieces02_and_03": {
+      "description": "Single-column vertical layout with 24x24 resist icons",
+      "layout": "Vertical column at x=10",
+      "icons": [
+        {
+          "name": "Fire",
+          "y": 10
+        },
+        {
+          "name": "Cold",
+          "y": 50
+        },
+        {
+          "name": "Magic",
+          "y": 90
+        },
+        {
+          "name": "Poison",
+          "y": 130
+        },
+        {
+          "name": "Disease",
+          "y": 170
+        }
+      ],
+      "spacing": {
+        "vertical_gap": "40px total (24px icon + 16px space)"
+      },
+      "note": "Both files use identical layout for easy switching in XML"
+    }
+  }
+}

@@ -32,7 +32,7 @@
 			"editorRuler.foreground": "#444444"
 		},
 		"terminal.integrated.env.windows": {
-			"PATH": "C:\\TAKP\\uifiles\\.bin;C:\\TAKP\\uifiles;${env:PATH}"
+			"PATH": "${workspaceFolder}\\.bin;${workspaceFolder};${env:PATH}"
 		},
 		"terminal.integrated.env.linux": {
 			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"

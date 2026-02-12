@@ -72,9 +72,7 @@ jobs:
           echo "Creating complete package..."
           zip -r "releases/thorne-ui-v${VERSION}.zip" \
             .docs/ \
-            default/ \
             thorne_drak/ \
-            zeal/ \
             README.md \
             DEVELOPMENT.md \
             -x "*.git*" "*TODO.md"

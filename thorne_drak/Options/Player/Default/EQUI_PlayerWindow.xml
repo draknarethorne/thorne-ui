@@ -489,9 +489,9 @@
 			<B>0</B>
 		</FillTint>
 		<LinesFillTint>
-			<R>0</R>
-			<G>80</G>
-			<B>220</B>
+			<R>100</R>
+			<G>160</G>
+			<B>255</B>
 		</LinesFillTint>
 		<DrawLinesFill>true</DrawLinesFill>
 		<GaugeDrawTemplate>

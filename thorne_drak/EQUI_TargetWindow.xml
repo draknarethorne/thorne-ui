@@ -529,6 +529,22 @@
     </GaugeDrawTemplate>
   </Gauge>
 
+  <!-- Target HP Background -->
+  <StaticAnimation item="TW_TargetHP_BG">
+    <ScreenID>TargetHP_BG</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>36</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>16</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Animation>A_OvalTarBG</Animation>
+  </StaticAnimation>
+
   <Gauge item="TW_TargetHP_Gauge">
     <ScreenID>TargetHP</ScreenID>
     <Font>4</Font>

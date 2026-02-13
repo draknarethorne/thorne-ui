@@ -489,6 +489,16 @@
 			<G>160</G>
 			<B>255</B>
 		</LinesFillTint>
+		<DrawLinesFill>true</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_Tall</Background>
+			<Fill>A_GaugeFill_Tall</Fill>
+			<Lines>A_GaugeLines_Tall</Lines>
+			<LinesFill>A_GaugeLinesFill_Tall</LinesFill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- XP Percent -->
 	<Label item="PW_XP_Pct">
 		<ScreenID>PW_XP_Pct</ScreenID>
 		<RelativePosition>true</RelativePosition>

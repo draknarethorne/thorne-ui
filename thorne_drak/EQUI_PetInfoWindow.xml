@@ -215,12 +215,12 @@
 		<Font>1</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>127</X>
-			<Y>23</Y>
+			<X>125</X>
+			<Y>20</Y>
 		</Location>
 		<Size>
-			<CX>18</CX>
-			<CY>6</CY>
+			<CX>24</CX>
+			<CY>10</CY>
 		</Size>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -230,7 +230,7 @@
 		<!--<RadioGroup/>-->
 		<Text>X</Text>
 		<TextColor>
-				<R>240</R>
+				<R>255</R>
 				<G>100</G>
 				<B>100</B>
 		</TextColor>

@@ -576,7 +576,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>36</Y>
+      <Y>1</Y>
     </Location>
     <Size>
       <CX>250</CX>
@@ -592,7 +592,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>37</Y>
+      <Y>2</Y>
     </Location>
     <Size>
       <CX>240</CX>

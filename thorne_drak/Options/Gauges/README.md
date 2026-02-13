@@ -169,15 +169,16 @@ Only available in **Thorne/** variant. Provides taller gauges for primary resour
 
 | Component | Y Position | Height | Animation Name | Purpose |
 |-----------|------------|--------|----------------|---------|
-| Background | 1 | 15px | `A_GaugeBackground_Tall` | Tall gauge background |
-| Fill | 16 | 15px | `A_GaugeFill_Tall` | Tall colored fill |
-| Lines (light) | 31 | 15px | `A_GaugeLines_Tall` | Light grid overlay |
-| Lines (dark) | 46 | 16px | `A_GaugeLines_Tall_Dark` | Dark grid overlay |
+| Background | 0 | 15px | `A_GaugeBackground_Tall` | Tall gauge background |
+| Fill | 15 | 15px | `A_GaugeFill_Tall` | Tall colored fill |
+| Lines | 30 | 15px | `A_GaugeLines_Tall` | Grid overlay lines |
+| LinesFill | 45 | 15px | `A_GaugeLinesFill_Tall` | Combined lines+fill |
 
 **Used By:**
 - HP gauge (15px height)
 - Mana gauge (15px height)
-- Experience gauge (15px height, dark lines)
+- Experience gauge (15px height, with DrawLinesFill)
+- AA Experience gauge (15px height, with DrawLinesFill)
 
 ---
 

@@ -140,6 +140,12 @@
       <CY>64</CY>
     </Size>
   </TextureInfo>
+  <TextureInfo item="gauge_pieces01_wide.tga">
+    <Size>
+      <CX>120</CX>
+      <CY>32</CY>
+    </Size>
+  </TextureInfo>
   <TextureInfo item="classic_pieces01.tga">
     <Size>
       <CX>256</CX>
@@ -4894,7 +4900,7 @@
       </Location>
       <Size>
         <CX>120</CX>
-        <CY>15</CY>
+        <CY>16</CY>
       </Size>
       <Hotspot>
         <X>0</X>
@@ -4913,7 +4919,7 @@
       </Location>
       <Size>
         <CX>120</CX>
-        <CY>15</CY>
+        <CY>16</CY>
       </Size>
       <Hotspot>
         <X>0</X>
@@ -4928,11 +4934,11 @@
       <Texture>gauge_pieces01_tall.tga</Texture>
       <Location>
         <X>0</X>
-        <Y>31</Y>
+        <Y>32</Y>
       </Location>
       <Size>
         <CX>120</CX>
-        <CY>15</CY>
+        <CY>16</CY>
       </Size>
       <Hotspot>
         <X>0</X>
@@ -4941,17 +4947,94 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_GaugeLines_Tall_Dark">
+  <Ui2DAnimation item="A_GaugeLinesFill_Tall">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>gauge_pieces01_tall.tga</Texture>
       <Location>
         <X>0</X>
-        <Y>47</Y>
+        <Y>48</Y>
       </Location>
       <Size>
         <CX>120</CX>
-        <CY>15</CY>
+        <CY>16</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <!-- Wide gauges (120x8 - horizontal 2x stretch) -->
+  <Ui2DAnimation item="A_GaugeBackground_Wide">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>8</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_GaugeFill_Wide">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>8</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>8</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_GaugeLines_Wide">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>8</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_GaugeLinesFill_Wide">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>24</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>8</CY>
       </Size>
       <Hotspot>
         <X>0</X>

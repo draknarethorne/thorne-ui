@@ -285,7 +285,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -386,7 +386,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -529,8 +529,8 @@
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_Wide</Background>
+			<Fill>A_GaugeFill_Wide</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -541,7 +541,7 @@
 		<EQType>21</EQType>
 		<Location>
 			<X>123</X>
-			<Y>60</Y>
+			<Y>63</Y>
 		</Location>
 		<Size>
 			<CX>25</CX>
@@ -562,7 +562,7 @@
 		<Font>2</Font>
 		<Location>
 			<X>148</X>
-			<Y>60</Y>
+			<Y>63</Y>
 		</Location>
 		<Size>
 			<CX>16</CX>
@@ -592,7 +592,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -614,8 +614,8 @@
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_Tall</Background>
 			<Fill>A_GaugeFill_Tall</Fill>
-			<Lines>A_GaugeLines_Tall_Dark</Lines>
-			<LinesFill>A_GaugeLines_Tall</LinesFill>
+			<Lines>A_GaugeLines_Tall</Lines>
+			<LinesFill>A_GaugeLinesFill_Tall</LinesFill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -741,7 +741,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -763,8 +763,8 @@
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_Tall</Background>
 			<Fill>A_GaugeFill_Tall</Fill>
-			<Lines>A_GaugeLines_Tall_Dark</Lines>
-			<LinesFill>A_GaugeLines_Tall</LinesFill>
+			<Lines>A_GaugeLines_Tall</Lines>
+			<LinesFill>A_GaugeLinesFill_Tall</LinesFill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -912,7 +912,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
 		<TextOffsetY>0</TextOffsetY>

@@ -948,7 +948,7 @@
       <Y>16</Y>
     </Location>
     <Size>
-      <CX>100</CX>
+      <CX>102</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetY>0</GaugeOffsetY>
@@ -1052,7 +1052,7 @@
       <Y>40</Y>
     </Location>
     <Size>
-      <CX>100</CX>
+      <CX>102</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetY>0</GaugeOffsetY>
@@ -2268,7 +2268,7 @@
   <!-- MODULAR ZONE ARCHITECTURE - 9 SUBWINDOWS -->
   <!-- Layout: 420x440px with independent zones  -->
   <!-- ========================================== -->
-  <!-- ZONE 1: Player Info (100x60) - Name, Level, Class, Deity -->
+  <!-- ZONE 1: Player Info (105x60) - Name, Level, Class, Deity -->
   <Screen item="IW_PlayerInfo_Wnd">
     <ScreenID>IW_PlayerInfo_Wnd</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -2277,7 +2277,7 @@
       <Y>4</Y>
     </Location>
     <Size>
-      <CX>100</CX>
+      <CX>105</CX>
       <CY>60</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
@@ -2288,7 +2288,7 @@
     <Pieces>IW_Class</Pieces>
     <Pieces>IW_Deity</Pieces>
   </Screen>
-  <!-- ZONE 2: Progression (100x70) - XP/AA gauges with percentages -->
+  <!-- ZONE 2: Progression (105x70) - XP/AA gauges with percentages -->
   <Screen item="IW_Progression_Wnd">
     <ScreenID>IW_Progression_Wnd</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -2297,7 +2297,7 @@
       <Y>68</Y>
     </Location>
     <Size>
-      <CX>100</CX>
+      <CX>105</CX>
       <CY>70</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
@@ -2318,7 +2318,7 @@
     <Pieces>IW_AltAdvDivider</Pieces>
     <Pieces>IW_AltAdvTotal</Pieces>
   </Screen>
-  <!-- ZONE 3: ClassAnim (100x160) - Character model display -->
+  <!-- ZONE 3: ClassAnim (105x160) - Character model display -->
   <Screen item="IW_ClassAnim_Wnd">
     <ScreenID>IW_ClassAnim_Wnd</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -2327,7 +2327,7 @@
       <Y>138</Y>
     </Location>
     <Size>
-      <CX>100</CX>
+      <CX>105</CX>
       <CY>160</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>

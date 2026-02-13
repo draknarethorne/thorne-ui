@@ -362,7 +362,7 @@
       <Y>24</Y>
     </Location>
     <Size>
-      <CX>122</CX>
+      <CX>250</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
@@ -394,12 +394,12 @@
     <ScreenID>AttackTick_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>2</X>
-      <Y>32</Y>
+      <X>1</X>
+      <Y>24</Y>
     </Location>
     <Size>
-      <CX>122</CX>
-      <CY>8</CY>
+      <CX>258</CX>
+      <CY>12</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
@@ -569,8 +569,45 @@
     </GaugeDrawTemplate>
     <TextOffsetY>33</TextOffsetY>
   </Gauge>
-  <Gauge item="TW_TargetCasting_Gauge">
-    <ScreenID>Target_Casting_Gauge</ScreenID>
+
+  <!-- Target Casting Spell Name and Background -->
+  <StaticAnimation item="TW_Casting_SpellName_BG">
+    <ScreenID>Casting_SpellName_BG</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>36</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>12</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Animation>A_OvalTarBG</Animation>
+  </StaticAnimation>
+
+  <Label item="TW_Casting_Spell_Name">
+    <ScreenID>Casting_Spell_Name</ScreenID>
+    <Font>2</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>5</X>
+      <Y>37</Y>
+    </Location>
+    <Size>
+      <CX>240</CX>
+      <CY>10</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <EQType>134</EQType>
+  </Label>
+
+  <Gauge item="TW_Casting_Gauge">
+    <ScreenID>Casting_Gauge</ScreenID>
     <Font>4</Font>
     <TextColor>
       <R>240</R>
@@ -638,7 +675,9 @@
     <Pieces>TW_PlayerMana_Gauge</Pieces>
     <Pieces>TW_ManaTick_Gauge</Pieces>
     <Pieces>TW_TargetHP_Gauge</Pieces>
-    <Pieces>TW_TargetCasting_Gauge</Pieces>
+    <Pieces>TW_Casting_SpellName_BG</Pieces>
+    <Pieces>TW_Casting_Spell_Name</Pieces>
+    <Pieces>TW_Casting_Gauge</Pieces>
     <Pieces>TW_Mana_Values</Pieces>
     <Pieces>TW_TargetHP_Pct</Pieces>
     <Pieces>TW_TargetHP_PctSign</Pieces>

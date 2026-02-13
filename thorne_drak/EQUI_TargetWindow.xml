@@ -570,9 +570,9 @@
     <TextOffsetY>33</TextOffsetY>
   </Gauge>
 
-  <!-- Target Casting Spell Name and Background -->
-  <StaticAnimation item="TW_Casting_SpellName_BG">
-    <ScreenID>Casting_SpellName_BG</ScreenID>
+  <!-- Target Casting Background -->
+  <StaticAnimation item="TW_Casting_BG">
+    <ScreenID>Casting_BG</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
@@ -675,7 +675,7 @@
     <Pieces>TW_PlayerMana_Gauge</Pieces>
     <Pieces>TW_ManaTick_Gauge</Pieces>
     <Pieces>TW_TargetHP_Gauge</Pieces>
-    <Pieces>TW_Casting_SpellName_BG</Pieces>
+    <Pieces>TW_Casting_BG</Pieces>
     <Pieces>TW_Casting_Spell_Name</Pieces>
     <Pieces>TW_Casting_Gauge</Pieces>
     <Pieces>TW_Mana_Values</Pieces>

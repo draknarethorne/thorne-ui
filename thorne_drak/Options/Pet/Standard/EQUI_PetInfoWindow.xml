@@ -215,11 +215,11 @@
 		<Font>1</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>130</X>
+			<X>127</X>
 			<Y>23</Y>
 		</Location>
 		<Size>
-			<CX>28</CX>
+			<CX>18</CX>
 			<CY>6</CY>
 		</Size>
 		<Style_VScroll>false</Style_VScroll>

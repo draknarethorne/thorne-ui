@@ -94,5 +94,3 @@ echo.
 echo thorne_drak UI is ready to test in TAKP
 echo In-game command: /loadskin thorne_drak
 echo.
-
-pause

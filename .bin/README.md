@@ -1,0 +1,148 @@
+# Thorne UI Build Scripts
+
+Central index of all build and utility scripts for Thorne UI development.
+
+## Scripts Overview
+
+### Gauge Management
+
+**[regen_gauges.py](regen_gauges.md)** - Gauge texture generation and deployment
+
+- Regenerates tall (120×64) and wide (120×32) gauge textures
+- Automatic TGA format fixing (PNG→TGA conversion)
+- Smart deployment (copies to thorne_drak/ and thorne_dev/)
+- Single variant (copies to root) or multi-variant (Thorne to root)
+
+```bash
+python .bin/regen_gauges.py Thorne        # Single variant deployment
+python .bin/regen_gauges.py root Bars Basic  # Regenerate multiple
+python .bin/regen_gauges.py --help        # Usage help
+```
+
+📖 **For comprehensive usage guide, see [regen_gauges.md](regen_gauges.md)**
+
+---
+
+### Stat Icon Management
+
+**[regen_stat_icons.py](regen_stat_icons.md)** - Generate stat icon textures with abbreviations
+
+- Extracts icons from gemicon files
+- Flexible JSON configuration for icon coordinates
+- Generates abbreviation labels (optional)
+- Creates placeholder graphics for missing icons
+
+```bash
+# Basic: Extract icons and generate texture
+python .bin/regen_stat_icons.py \
+  --source-dir thorne_drak/Options/Icons/Classic \
+  --output thorne_drak/stat_icon_pieces01.tga
+
+# With abbreviations
+python .bin/regen_stat_icons.py \
+  --source-dir thorne_drak/Options/Icons/Classic \
+  --output thorne_drak/stat_icon_pieces01.tga \
+  --add-abbreviations
+```
+
+📖 **For comprehensive usage guide, see [regen_stat_icons.md](regen_stat_icons.md)**
+
+**Supporting tools:**
+- `add_abbreviations_to_textures.py` - Add abbreviations to existing textures
+- `validate_stat_icons.py` - Validate stat icon texture files
+
+---
+
+### Texture Utilities
+
+**fix_tga_files.py** - Convert mislabeled PNG files to proper TGA format
+
+```bash
+python .bin/fix_tga_files.py <directory>     # Fix all .tga files in directory
+python .bin/fix_tga_files.py --help          # Show options
+```
+
+---
+
+### Options Management Tools
+
+Advanced utilities for managing UI variants in the `Options/` directory. These tools fall into two categories:
+
+**Auditors** (read-only, analyze current state):
+- `options_default_compare.py` - Show which variants differ from Default
+- `options_duplicate_detector.py` - Find identical/redundant variant files
+- `options_readme_checker.py` - Validate README documentation quality
+
+**Operators** (modify files, use with care):
+- `options_default_sync.py` - Backup working files to Default/ directory
+- `options_generate_readme.py` - Auto-generate README templates for variants
+- `options_fix_readme.py` - Auto-fix README formatting and structure
+
+#### Typical Workflow
+
+1. **Audit first** (read-only, safe):
+   ```bash
+   python .bin/options_default_compare.py     # See which files differ
+   python .bin/options_duplicate_detector.py  # Find redundant variants
+   python .bin/options_readme_checker.py      # Check documentation
+   ```
+
+2. **Operate with caution** (modifying):
+   ```bash
+   python .bin/options_default_sync.py        # Backup to Default/
+   python .bin/options_generate_readme.py     # Create README templates
+   python .bin/options_fix_readme.py          # Fix existing READMEs
+   ```
+
+#### Running Options Tools
+
+All tools support `--help`:
+```bash
+python .bin/options_default_compare.py --help
+python .bin/options_default_sync.py --help
+python .bin/options_duplicate_detector.py --help
+python .bin/options_generate_readme.py --help
+python .bin/options_fix_readme.py --help
+python .bin/options_readme_checker.py --help
+```
+
+**Note:** Each tool serves a specific purpose. They are kept separate (not consolidated) for safety and clarity - particularly the destructive `sync` operation.
+
+---
+
+## Batch Deployment
+
+**sync-thorne-ui.bat** - Full UI sync from source to TAKP testing directory
+
+```bash
+.\sync-thorne-ui.bat
+```
+
+Syncs entire `thorne_drak/` to `C:\TAKP\uifiles\thorne_dev\` for in-game testing.
+
+**Use when:** Testing full UI changes, ready to commit to git
+
+**Don't use when:** Making quick gauge tweaks (use `regen_gauges.py` instead)
+
+---
+
+## Documentation Standards
+
+All scripts follow the pattern defined in [STANDARDS.md](STANDARDS.md):
+
+- **Simple scripts**: One-liner + `--help` in README.md
+- **Complex scripts**: Individual `.md` file + `--help` in script
+- **Tool categories**: Grouped by function with cross-references
+
+---
+
+## Quick Reference
+
+| Task | Command |
+|------|---------|
+| Regen + test gauges | `python .bin/regen_gauges.py Thorne` |
+| Full sync to TAKP | `.\sync-thorne-ui.bat` |
+| Fix TGA files | `python .bin/fix_tga_files.py <dir>` |
+| Generate stat icons | See `generate_stat_icons.py --help` |
+| Get help | `python .bin/<script>.py --help` |
+

@@ -98,42 +98,79 @@ class SkeletalReadmeGenerator:
 
 
 def main():
-    # Parse arguments
-    window_name = None
-    variant_name = None
-    xml_file = None
+    import argparse
     
-    if "--window" in sys.argv:
-        idx = sys.argv.index("--window")
-        if idx + 1 < len(sys.argv):
-            window_name = sys.argv[idx + 1]
+    parser = argparse.ArgumentParser(
+        prog="options_generate_readme.py",
+        description="""
+Generate Skeletal README Templates for UI Variants
+
+Auto-creates README.md template files for new window variants with standard
+sections, descriptions, and metadata. Useful for getting organized documentation
+quickly without manual formatting.
+
+FEATURES:
+  ✓ Standard README structure with sections for all variants
+  ✓ Automatic metadata (window name, variant name, XML file)
+  ✓ Ready-to-edit templates with placeholder text
+  ✓ Preserves existing files (won't overwrite)
+""",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+EXAMPLES:
+
+  # Generate for Player window Custom Layout variant
+  python .bin/options_generate_readme.py \\
+    --window Player \\
+    --variant "Custom Layout"
+
+  # With custom XML filename
+  python .bin/options_generate_readme.py \\
+    --window Target \\
+    --variant "Minimal HUD" \\
+    --xml EQUI_TargetWindow.xml
+
+  # Generate for Inventory variant
+  python .bin/options_generate_readme.py \\
+    --window Inventory \\
+    --variant "Grid Layout 6x4"
+
+CREATED:\
+  <Window>/<Variant>/README.md with:
+    - Overview of variant purpose
+    - Key modifications from Default
+    - Customization instructions
+    - Usage recommendations
+"""
+    )
     
-    if "--variant" in sys.argv:
-        idx = sys.argv.index("--variant")
-        if idx + 1 < len(sys.argv):
-            variant_name = sys.argv[idx + 1]
+    parser.add_argument(
+        "--window", "-w",
+        required=True,
+        metavar="NAME",
+        help="Window name (e.g., Player, Target, Inventory)"
+    )
+    parser.add_argument(
+        "--variant", "-v",
+        required=True,
+        metavar="NAME",
+        help="Variant name (e.g., 'Custom Layout', 'Minimal HUD')"
+    )
+    parser.add_argument(
+        "--xml",
+        metavar="FILE",
+        help="XML filename (default: EQUI_Window.xml)"
+    )
     
-    if "--xml" in sys.argv:
-        idx = sys.argv.index("--xml")
-        if idx + 1 < len(sys.argv):
-            xml_file = sys.argv[idx + 1]
+    args = parser.parse_args()
     
     # Determine workspace root
     script_dir = Path(__file__).parent
     workspace_root = script_dir.parent
     
-    # Validate
-    if not window_name or not variant_name:
-        print("Usage:")
-        print("  python generate_skeletal_readme.py --window WindowName --variant \"Variant Name\" [--xml EQUI_File.xml]")
-        print()
-        print("Example:")
-        print("  python generate_skeletal_readme.py --window Target --variant \"Custom Layout\"")
-        sys.exit(1)
-    
     # Generate
     generator = SkeletalReadmeGenerator(workspace_root)
-    if generator.generate(window_name, variant_name, xml_file or "EQUI_Window.xml"):
+    if generator.generate(args.window, args.variant, args.xml or "EQUI_Window.xml"):
         sys.exit(0)
     else:
         sys.exit(1)

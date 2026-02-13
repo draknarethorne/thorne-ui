@@ -24,6 +24,40 @@ Wide gauge sections (120px wide, 8px tall each, 2x horizontal scale):
 from PIL import Image
 from pathlib import Path
 import sys
+import shutil
+
+
+def is_png_file(file_path):
+    """Check if a .tga file is actually PNG format"""
+    try:
+        with open(file_path, 'rb') as f:
+            header = f.read(8)
+            # PNG signature: 89 50 4E 47 0D 0A 1A 0A
+            return header.startswith(b'\x89PNG\r\n\x1a\n')
+    except Exception:
+        return False
+
+
+def fix_tga_file(file_path):
+    """Convert PNG file (mislabeled as .tga) to proper TGA format if needed"""
+    if not file_path.exists():
+        return False
+    
+    if not is_png_file(file_path):
+        # Already valid TGA
+        return False
+    
+    # Convert PNG to TGA
+    try:
+        img = Image.open(file_path)
+        if img.mode != 'RGBA':
+            img = img.convert('RGBA')
+        img.save(str(file_path), format='TGA')
+        print(f"  Fixed: {file_path.name} (converted from PNG to TGA)")
+        return True
+    except Exception as e:
+        print(f"  ERROR: Failed to fix {file_path.name}: {e}")
+        return False
 
 def regenerate_tall_gauge(variant_dir):
     """Regenerate tall gauge by properly scaling each section."""
@@ -34,6 +68,9 @@ def regenerate_tall_gauge(variant_dir):
     if not std_file.exists():
         print(f"ERROR: {std_file} not found")
         return False
+    
+    # Fix source TGA file if it's actually PNG
+    fix_tga_file(std_file)
     
     print(f"Processing {variant_dir.name}...")
     
@@ -51,19 +88,24 @@ def regenerate_tall_gauge(variant_dir):
     
     # Scale sections preserving single-pixel top/bottom borders
     # For each 8px section: top border (1px) + middle (6px→14px) + bottom border (1px) = 16px
-    def scale_with_borders(section, width, use_lanczos=True):
+    def scale_with_borders(section, width, interp_method="BILINEAR"):
         """Scale 8px section to 16px preserving 1px top/bottom borders.
         
         Args:
-            use_lanczos: If True, use LANCZOS for smooth gradients (backgrounds/fills).
-                        If False, use NEAREST for crisp edges (lines).
+            interp_method: Interpolation for middle section.
+                          "BILINEAR" (default), "LANCZOS", or "NEAREST"
         """
         top = section.crop((0, 0, width, 1))  # Y=0: 1px border
         middle = section.crop((0, 1, width, 7))  # Y=1-6: 6px content
         bottom = section.crop((0, 7, width, 8))  # Y=7: 1px border
         
         # Choose interpolation method
-        interp = Image.Resampling.LANCZOS if use_lanczos else Image.Resampling.NEAREST
+        if interp_method == "LANCZOS":
+            interp = Image.Resampling.LANCZOS
+        elif interp_method == "NEAREST":
+            interp = Image.Resampling.NEAREST
+        else:  # Default to BILINEAR
+            interp = Image.Resampling.BILINEAR
         
         # Scale middle from 6px to 14px height
         middle_scaled = middle.resize((120, 14), interp)
@@ -80,12 +122,12 @@ def regenerate_tall_gauge(variant_dir):
         
         return result
     
-    bg_tall = scale_with_borders(bg, std_width, use_lanczos=True)
-    fill_tall = scale_with_borders(fill, std_width, use_lanczos=True)
-    lines_tall = scale_with_borders(lines, std_width, use_lanczos=False)
-    linesfill_tall = scale_with_borders(linesfill, std_width, use_lanczos=False)
+    bg_tall = scale_with_borders(bg, std_width, interp_method="BILINEAR")
+    fill_tall = scale_with_borders(fill, std_width, interp_method="BILINEAR")
+    lines_tall = scale_with_borders(lines, std_width, interp_method="NEAREST")
+    linesfill_tall = scale_with_borders(linesfill, std_width, interp_method="NEAREST")
     
-    interp_note = "LANCZOS for Background/Fill smoothness, NEAREST for crisp Lines"
+    interp_note = "BILINEAR for Background/Fill, NEAREST for crisp Lines"
     print(f"  Scaled: 1px borders (NEAREST) + 14px middle ({interp_note})")
     
     # Create new 120x64 image
@@ -117,6 +159,10 @@ def regenerate_wide_gauge(variant_dir):
         print(f"ERROR: {std_file} not found")
         return False
     
+    # Fix source TGA file if it's actually PNG (note: only fix once on first call)
+    # This is safe to call multiple times per variant since fix returns early if already valid
+    fix_tga_file(std_file)
+    
     print(f"Processing {variant_dir.name} (WIDE)...")
     
     # Load standard gauge
@@ -133,12 +179,12 @@ def regenerate_wide_gauge(variant_dir):
     
     # Scale sections horizontally preserving single-pixel left/right borders
     # For each section: left border (1px) + middle (58px→118px) + right border (1px) = 120px
-    def scale_horizontal_with_borders(section, target_width=120, use_lanczos=True):
+    def scale_horizontal_with_borders(section, target_width=120, interp_method="BILINEAR"):
         """Horizontally scale section to 120px preserving 1px left/right borders.
         
         Args:
-            use_lanczos: If True, use LANCZOS for smooth gradients (backgrounds/fills).
-                        If False, use NEAREST for crisp edges (lines).
+            interp_method: Interpolation for middle section.
+                          "BILINEAR" (default), "LANCZOS", or "NEAREST"
         """
         width, height = section.size
         
@@ -148,7 +194,12 @@ def regenerate_wide_gauge(variant_dir):
         right = section.crop((width-1, 0, width, height))  # X=width-1: 1px border
         
         # Choose interpolation method
-        interp = Image.Resampling.LANCZOS if use_lanczos else Image.Resampling.NEAREST
+        if interp_method == "LANCZOS":
+            interp = Image.Resampling.LANCZOS
+        elif interp_method == "NEAREST":
+            interp = Image.Resampling.NEAREST
+        else:  # Default to BILINEAR
+            interp = Image.Resampling.BILINEAR
         
         # Scale middle from (width-2)px to (target_width-2)px
         middle_width = target_width - 2
@@ -166,12 +217,12 @@ def regenerate_wide_gauge(variant_dir):
         
         return result
     
-    bg_wide = scale_horizontal_with_borders(bg, use_lanczos=True)
-    fill_wide = scale_horizontal_with_borders(fill, use_lanczos=True)
-    lines_wide = scale_horizontal_with_borders(lines, use_lanczos=False)
-    linesfill_wide = scale_horizontal_with_borders(linesfill, use_lanczos=False)
+    bg_wide = scale_horizontal_with_borders(bg, interp_method="BILINEAR")
+    fill_wide = scale_horizontal_with_borders(fill, interp_method="BILINEAR")
+    lines_wide = scale_horizontal_with_borders(lines, interp_method="NEAREST")
+    linesfill_wide = scale_horizontal_with_borders(linesfill, interp_method="NEAREST")
     
-    interp_note = "LANCZOS for Background/Fill smoothness, NEAREST for crisp Lines"
+    interp_note = "BILINEAR for Background/Fill, NEAREST for crisp Lines"
     print(f"  Scaled: 1px borders (NEAREST) + 118px middle ({interp_note})")
     
     # Create new 120x32 image
@@ -194,12 +245,52 @@ def regenerate_wide_gauge(variant_dir):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: regenerate_tall_gauge_proper.py <variant_dir> [variant_dir2 ...]")
-        print("Example: regenerate_tall_gauge_proper.py root Bars Basic Bubbles")
-        print("  'root' = thorne_drak/ directory")
-        print("  others = thorne_drak/Options/Gauges/<variant>/ directories")
-        sys.exit(1)
+    if len(sys.argv) < 2 or sys.argv[1] in ('--help', '-h', 'help'):
+        print("""
+Gauge Texture Regeneration Tool
+================================
+
+Regenerates tall (120×64) and wide (120×32) gauge textures from source files.
+
+USAGE:
+    python regen_gauges.py <variant> [variant2 ...]
+    python regen_gauges.py --help
+
+EXAMPLES:
+    # Single variant - copies to thorne_drak/ and deploys to thorne_dev/
+    python regen_gauges.py Thorne
+    
+    # Two variants
+    python regen_gauges.py Bars Basic
+    
+    # Multiple variants - only Thorne copied to thorne_drak/
+    python regen_gauges.py root Bars Basic Bubbles "Light Bubbles" Thorne
+    
+    # Show this help message
+    python regen_gauges.py --help
+    python regen_gauges.py -h
+
+VARIANTS:
+    Thorne              Primary development variant
+    Bars, Basic         Gauge style variants
+    Bubbles, Light Bubbles
+    root                Direct regeneration of thorne_drak/ directory
+
+FEATURES:
+    ✓ Regenerates both tall (120×64) and wide (120×32) gauges
+    ✓ Automatic TGA format fixing (PNG→TGA conversion)
+    ✓ Smart copyback (single→thorne_drak, multi→Thorne only)
+    ✓ Automatic deployment to thorne_dev/ for immediate testing
+    ✓ BILINEAR interpolation for fills, NEAREST for crisp lines
+
+WORKFLOW:
+    1. Edit source: thorne_drak/Options/Gauges/Thorne/gauge_pieces01.tga
+    2. Run: python regen_gauges.py Thorne
+    3. Test: /loadskin thorne_drak
+
+For detailed documentation, see: .bin/regen_gauges.md
+        """)
+        sys.exit(0 if len(sys.argv) > 1 else 1)
     
     variant_names = sys.argv[1:]
     base_path = Path(__file__).parent.parent / 'thorne_drak' / 'Options' / 'Gauges'
@@ -207,6 +298,8 @@ if __name__ == '__main__':
     
     tall_success = 0
     wide_success = 0
+    regenerated_variants = []  # Track which variants were successfully regenerated
+    
     for variant in variant_names:
         if variant.lower() == 'root':
             variant_path = root_path
@@ -216,6 +309,7 @@ if __name__ == '__main__':
         if variant_path.exists():
             if regenerate_tall_gauge(variant_path):
                 tall_success += 1
+                regenerated_variants.append((variant, variant_path))
             if regenerate_wide_gauge(variant_path):
                 wide_success += 1
         else:
@@ -223,3 +317,47 @@ if __name__ == '__main__':
     
     print(f"Regenerated {tall_success}/{len(variant_names)} tall variants")
     print(f"Regenerated {wide_success}/{len(variant_names)} wide variants")
+    
+    # Copy regenerated files back to thorne_drak root directory
+    # Logic: single variant → copy that one; multiple variants → copy only Thorne
+    variants_to_copy = []
+    
+    if len(regenerated_variants) == 1 and regenerated_variants[0][0].lower() != 'root':
+        # Single variant (not root) - copy it
+        variants_to_copy = regenerated_variants
+    elif len(regenerated_variants) > 1:
+        # Multiple variants - only copy Thorne if it was regenerated
+        variants_to_copy = [(name, path) for name, path in regenerated_variants if name.lower() == 'thorne']
+    
+    if variants_to_copy:
+        print(f"\nCopying regenerated files back to thorne_drak/...")
+        for variant_name, variant_path in variants_to_copy:
+            tall_src = variant_path / 'gauge_pieces01_tall.tga'
+            wide_src = variant_path / 'gauge_pieces01_wide.tga'
+            tall_dst = root_path / 'gauge_pieces01_tall.tga'
+            wide_dst = root_path / 'gauge_pieces01_wide.tga'
+            
+            if tall_src.exists():
+                shutil.copy2(tall_src, tall_dst)
+                print(f"  Copied {variant_name} tall gauge to thorne_drak/")
+            if wide_src.exists():
+                shutil.copy2(wide_src, wide_dst)
+                print(f"  Copied {variant_name} wide gauge to thorne_drak/")
+        
+        # Also copy to thorne_dev for immediate testing
+        thorne_dev_path = Path('C:\\TAKP\\uifiles\\thorne_dev')
+        if thorne_dev_path.exists():
+            print(f"\nDeploying to thorne_dev for testing...")
+            for variant_name, variant_path in variants_to_copy:
+                tall_src = root_path / 'gauge_pieces01_tall.tga'
+                wide_src = root_path / 'gauge_pieces01_wide.tga'
+                tall_dst = thorne_dev_path / 'gauge_pieces01_tall.tga'
+                wide_dst = thorne_dev_path / 'gauge_pieces01_wide.tga'
+                
+                if tall_src.exists():
+                    shutil.copy2(tall_src, tall_dst)
+                    print(f"  Deployed {variant_name} tall gauge to thorne_dev/")
+                if wide_src.exists():
+                    shutil.copy2(wide_src, wide_dst)
+                    print(f"  Deployed {variant_name} wide gauge to thorne_dev/")
+            print(f"\nReady to test in-game with: /loadskin thorne_drak")

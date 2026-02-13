@@ -528,6 +528,7 @@
       <Fill>A_GaugeFill</Fill>
     </GaugeDrawTemplate>
   </Gauge>
+
   <Gauge item="TW_TargetHP_Gauge">
     <ScreenID>TargetHP</ScreenID>
     <Font>4</Font>
@@ -539,14 +540,16 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>1</Y>
+      <Y>36</Y>
     </Location>
     <Size>
       <CX>250</CX>
-      <CY>60</CY>
+      <CY>16</CY>
     </Size>
-    <GaugeOffsetY>35</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
     <TextOffsetX>5</TextOffsetX>
+    <TextOffsetY>-2</TextOffsetY>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
@@ -567,7 +570,6 @@
       <Background>A_OvalTarBG</Background>
       <Fill>A_OvalTarFill</Fill>
     </GaugeDrawTemplate>
-    <TextOffsetY>33</TextOffsetY>
   </Gauge>
 
   <!-- Target Casting Background -->
@@ -576,11 +578,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>1</Y>
+      <Y>52</Y>
     </Location>
     <Size>
       <CX>250</CX>
-      <CY>12</CY>
+      <CY>16</CY>
     </Size>
     <Style_Transparent>false</Style_Transparent>
     <Animation>A_OvalTarBG</Animation>
@@ -592,11 +594,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>2</Y>
+      <Y>52</Y>
     </Location>
     <Size>
       <CX>240</CX>
-      <CY>10</CY>
+      <CY>16</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -617,14 +619,16 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>1</Y>
+      <Y>52</Y>
     </Location>
     <Size>
       <CX>250</CX>
-      <CY>60</CY>
+      <CY>16</CY>
     </Size>
-    <GaugeOffsetY>48</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
     <TextOffsetX>5</TextOffsetX>
+    <TextOffsetY>2</TextOffsetY>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
@@ -645,8 +649,8 @@
       <Background>A_OvalTarBG</Background>
       <Fill>A_OvalTarFill</Fill>
     </GaugeDrawTemplate>
-    <TextOffsetY>46</TextOffsetY>
   </Gauge>
+
   <Screen item="TargetWindow">
     <ScreenID />
     <RelativePosition>false</RelativePosition>
@@ -676,8 +680,8 @@
     <Pieces>TW_ManaTick_Gauge</Pieces>
     <Pieces>TW_TargetHP_Gauge</Pieces>
     <Pieces>TW_Casting_BG</Pieces>
-    <Pieces>TW_Casting_Spell_Name</Pieces>
     <Pieces>TW_Casting_Gauge</Pieces>
+    <Pieces>TW_Casting_Spell_Name</Pieces>
     <Pieces>TW_Mana_Values</Pieces>
     <Pieces>TW_TargetHP_Pct</Pieces>
     <Pieces>TW_TargetHP_PctSign</Pieces>

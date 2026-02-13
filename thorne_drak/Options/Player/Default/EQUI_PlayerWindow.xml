@@ -423,7 +423,7 @@
 		<EQType>21</EQType>
 		<Location>
 			<X>123</X>
-			<Y>63</Y>
+			<Y>60</Y>
 		</Location>
 		<Size>
 			<CX>25</CX>
@@ -445,7 +445,7 @@
 		<Font>2</Font>
 		<Location>
 			<X>148</X>
-			<Y>63</Y>
+			<Y>60</Y>
 		</Location>
 		<Size>
 			<CX>16</CX>

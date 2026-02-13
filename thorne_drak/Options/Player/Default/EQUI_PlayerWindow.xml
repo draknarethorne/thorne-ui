@@ -553,7 +553,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>164</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>30</CX>
@@ -574,7 +574,7 @@
 		<EQType>81</EQType>
 		<Location>
 			<X>194</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>21</CX>
@@ -596,7 +596,7 @@
 		<Font>2</Font>
 		<Location>
 			<X>215</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>16</CX>

@@ -389,6 +389,41 @@
     </GaugeDrawTemplate>
   </Gauge>
 
+  <!-- Attack Tick Gauge (combat timer - positioned under Pet HP) -->
+  <Gauge item="TW_AttackTick_Gauge">
+    <ScreenID>AttackTick_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>32</Y>
+    </Location>
+    <Size>
+      <CX>122</CX>
+      <CY>8</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetY>-50</TextOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>220</R>
+      <G>180</G>
+      <B>0</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>220</R>
+      <G>180</G>
+      <B>0</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>34</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLinesFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
   <!-- Mana Tick Gauge (standard size for compact Target Window) -->
   <Gauge item="TW_ManaTick_Gauge">
     <ScreenID>ManaTick_Gauge</ScreenID>
@@ -599,6 +634,7 @@
     <Style_Sizable>false</Style_Sizable>
     <Pieces>TW_PlayerHP_Gauge</Pieces>
     <Pieces>TW_PetHealth_Gauge</Pieces>
+    <Pieces>TW_AttackTick_Gauge</Pieces>
     <Pieces>TW_PlayerMana_Gauge</Pieces>
     <Pieces>TW_ManaTick_Gauge</Pieces>
     <Pieces>TW_TargetHP_Gauge</Pieces>

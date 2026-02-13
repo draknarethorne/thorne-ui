@@ -352,11 +352,16 @@ For detailed documentation, see: .bin/regen_gauges.md
     if variants_to_copy:
         print(f"\nCopying regenerated files back to thorne_drak/...")
         for variant_name, variant_path in variants_to_copy:
+            main_src = variant_path / 'gauge_pieces01.tga'
             tall_src = variant_path / 'gauge_pieces01_tall.tga'
             wide_src = variant_path / 'gauge_pieces01_wide.tga'
+            main_dst = root_path / 'gauge_pieces01.tga'
             tall_dst = root_path / 'gauge_pieces01_tall.tga'
             wide_dst = root_path / 'gauge_pieces01_wide.tga'
             
+            if main_src.exists():
+                shutil.copy2(main_src, main_dst)
+                print(f"  Copied {variant_name} main gauge to thorne_drak/")
             if tall_src.exists():
                 shutil.copy2(tall_src, tall_dst)
                 print(f"  Copied {variant_name} tall gauge to thorne_drak/")
@@ -369,11 +374,16 @@ For detailed documentation, see: .bin/regen_gauges.md
         if thorne_dev_path.exists():
             print(f"\nDeploying to thorne_dev for testing...")
             for variant_name, variant_path in variants_to_copy:
+                main_src = root_path / 'gauge_pieces01.tga'
                 tall_src = root_path / 'gauge_pieces01_tall.tga'
                 wide_src = root_path / 'gauge_pieces01_wide.tga'
+                main_dst = thorne_dev_path / 'gauge_pieces01.tga'
                 tall_dst = thorne_dev_path / 'gauge_pieces01_tall.tga'
                 wide_dst = thorne_dev_path / 'gauge_pieces01_wide.tga'
                 
+                if main_src.exists():
+                    shutil.copy2(main_src, main_dst)
+                    print(f"  Deployed {variant_name} main gauge to thorne_dev/")
                 if tall_src.exists():
                     shutil.copy2(tall_src, tall_dst)
                     print(f"  Deployed {variant_name} tall gauge to thorne_dev/")

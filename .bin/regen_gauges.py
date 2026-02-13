@@ -144,7 +144,7 @@ def regenerate_tall_gauge(variant_dir):
     # Save
     tall_new.save(tall_file)
     print(f"  Saved to {tall_file.name}")
-    print(f"  ✓ {variant_dir.name} tall gauge regenerated\n")
+    print(f"  [OK] {variant_dir.name} tall gauge regenerated")
     
     return True
 
@@ -239,7 +239,7 @@ def regenerate_wide_gauge(variant_dir):
     # Save
     wide_new.save(wide_file)
     print(f"  Saved to {wide_file.name}")
-    print(f"  ✓ {variant_dir.name} wide gauge regenerated\n")
+    print(f"  [OK] {variant_dir.name} wide gauge regenerated")
     
     return True
 
@@ -253,10 +253,14 @@ Gauge Texture Regeneration Tool
 Regenerates tall (120×64) and wide (120×32) gauge textures from source files.
 
 USAGE:
-    python regen_gauges.py <variant> [variant2 ...]
+    python regen_gauges.py --all                           # Auto-discover all variants
+    python regen_gauges.py <variant> [variant2 ...]       # Specific variants
     python regen_gauges.py --help
 
 EXAMPLES:
+    # Regenerate ALL variants (auto-discovered from Gauges/ directory)
+    python regen_gauges.py --all
+    
     # Single variant - copies to thorne_drak/ and deploys to thorne_dev/
     python regen_gauges.py Thorne
     
@@ -270,11 +274,15 @@ EXAMPLES:
     python regen_gauges.py --help
     python regen_gauges.py -h
 
-VARIANTS:
+OPTIONS:
+    --all               Auto-discover and regenerate all variants from Gauges/
+    <variant>           Specific variant name (e.g., Thorne, Bars, Basic)
+    root                Direct regeneration of thorne_drak/ directory
+
+AVAILABLE VARIANTS (auto-discovered):
     Thorne              Primary development variant
     Bars, Basic         Gauge style variants
     Bubbles, Light Bubbles
-    root                Direct regeneration of thorne_drak/ directory
 
 FEATURES:
     ✓ Regenerates both tall (120×64) and wide (120×32) gauges
@@ -285,16 +293,28 @@ FEATURES:
 
 WORKFLOW:
     1. Edit source: thorne_drak/Options/Gauges/Thorne/gauge_pieces01.tga
-    2. Run: python regen_gauges.py Thorne
+    2. Run: python regen_gauges.py --all  (or: python regen_gauges.py Thorne)
     3. Test: /loadskin thorne_drak
 
 For detailed documentation, see: .bin/regen_gauges.md
         """)
         sys.exit(0 if len(sys.argv) > 1 else 1)
     
-    variant_names = sys.argv[1:]
     base_path = Path(__file__).parent.parent / 'thorne_drak' / 'Options' / 'Gauges'
     root_path = Path(__file__).parent.parent / 'thorne_drak'
+    
+    # Determine which variants to process
+    if '--all' in sys.argv:
+        # Auto-discover all variants from Gauges directory
+        if base_path.exists():
+            variant_names = sorted([d.name for d in base_path.iterdir() if d.is_dir()])
+            print(f"Auto-discovered {len(variant_names)} variants: {', '.join(variant_names)}\n")
+        else:
+            print(f"ERROR: Gauges directory not found at {base_path}")
+            sys.exit(1)
+    else:
+        # Use explicitly specified variants
+        variant_names = sys.argv[1:]
     
     tall_success = 0
     wide_success = 0

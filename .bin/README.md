@@ -11,12 +11,13 @@ Central index of all build and utility scripts for Thorne UI development.
 - Regenerates tall (120×64) and wide (120×32) gauge textures
 - Automatic TGA format fixing (PNG→TGA conversion)
 - Smart deployment (copies to thorne_drak/ and thorne_dev/)
-- Single variant (copies to root) or multi-variant (Thorne to root)
+- Auto-discover mode (--all) or specific variants
 
 ```bash
-python .bin/regen_gauges.py Thorne        # Single variant deployment
-python .bin/regen_gauges.py root Bars Basic  # Regenerate multiple
-python .bin/regen_gauges.py --help        # Usage help
+python .bin/regen_gauges.py --all              # Auto-discover all variants
+python .bin/regen_gauges.py Thorne             # Single variant deployment
+python .bin/regen_gauges.py Bars Basic Thorne  # Multiple specific variants
+python .bin/regen_gauges.py --help             # Usage help
 ```
 
 📖 **For comprehensive usage guide, see [regen_gauges.md](regen_gauges.md)**
@@ -140,9 +141,10 @@ All scripts follow the pattern defined in [STANDARDS.md](STANDARDS.md):
 
 | Task | Command |
 |------|---------|
-| Regen + test gauges | `python .bin/regen_gauges.py Thorne` |
+| Regen all gauges (auto-discover) | `python .bin/regen_gauges.py --all` |
+| Regen single gauge + test | `python .bin/regen_gauges.py Thorne` |
 | Full sync to TAKP | `.\sync-thorne-ui.bat` |
 | Fix TGA files | `python .bin/fix_tga_files.py <dir>` |
-| Generate stat icons | See `generate_stat_icons.py --help` |
+| Generate stat icons | See `regen_stat_icons.py --help` |
 | Get help | `python .bin/<script>.py --help` |
 

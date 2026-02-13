@@ -18,6 +18,23 @@ Complete automation for regenerating, fixing, and deploying gauge textures.
 
 ## Quick Start
 
+### Auto-Discover All Variants
+
+```bash
+python .bin/regen_gauges.py --all
+```
+
+**What happens:**
+1. Scans `thorne_drak/Options/Gauges/` for all subdirectories
+2. Auto-discovers all variants (currently: Bars, Basic, Bubbles, Light Bubbles, Thorne)
+3. Regenerates each variant's tall and wide gauges
+4. Copies `Thorne` to `thorne_drak/` (default deployment variant)
+5. Deploys `Thorne` to `thorne_dev/` for testing
+
+**Best for:** Rapid iteration or updating all gauge styles at once
+
+**Future-proof:** When you add a new gauge variant directory, the script automatically picks it up - no code changes needed!
+
 ### Single Variant (Most Common)
 
 ```bash
@@ -70,7 +87,7 @@ python .bin/regen_gauges.py Thorne
 
 ```bash
 # 1. Edit source gauge in Options directory
-# 2. Run:
+# 2. Run regeneration:
 python .bin/regen_gauges.py Thorne
 
 # 3. Review changes in thorne_drak/
@@ -82,7 +99,24 @@ git commit -m "refactor(gauges): Updated Thorne gauge appearance"
 .\sync-thorne-ui.bat
 ```
 
-### Workflow 3: Batch Update Multiple Variants
+### Workflow 3: Bulk Update All Variants
+
+**Goal:** Regenerate all gauge variants at once (auto-discover)
+
+```bash
+# One command - auto-discovers all variants in Gauges/
+python .bin/regen_gauges.py --all
+
+# Only Thorne is copied to thorne_drak/ for deployment
+# Others remain in their Options subdirectories for reference
+```
+
+**Best for:** 
+- Systematic updates to all gauge styles
+- Testing visual consistency across variants
+- New variants are automatically included (future-proof)
+
+### Workflow 4: Manual Batch Update (Specific Variants)
 
 **Goal:** Regenerate all gauge variants, only deploy current work variant
 
@@ -98,21 +132,30 @@ python .bin/regen_gauges.py root Bars Basic Bubbles "Light Bubbles" Thorne
 
 ## Command-Line Options
 
+**Usage:**
 ```bash
-python .bin/regen_gauges.py <variant> [variant2 ...]
+python .bin/regen_gauges.py --all                           # Auto-discover all variants
+python .bin/regen_gauges.py <variant> [variant2 ...]       # Specific variants
+python .bin/regen_gauges.py --help                          # Show help
 ```
 
-**Arguments:**
-- `variant` - Variant name to regenerate (required, can specify multiple)
+**Arguments & Flags:**
+- `--all` - Auto-discover and regenerate all variants from Gauges/ directory
+  - No limits, instantly picks up new variants
+  - Useful for: Bulk updates, systematic testing
+  
+- `variant` - Variant name to regenerate (required if not using --all)
   - `Thorne` - Primary development variant
   - `Bars`, `Basic`, `Bubbles`, `Light Bubbles`, `root` - Other variants
   - Use space-separated list for multiple: `Bars Basic Thorne`
 
 **Examples:**
 ```bash
-python .bin/regen_gauges.py Thorne              # Single variant
-python .bin/regen_gauges.py Bars Basic          # Two variants
-python .bin/regen_gauges.py root Thorne         # Root + Thorne
+python .bin/regen_gauges.py --all                  # All variants (auto-discovered)
+python .bin/regen_gauges.py Thorne                 # Single variant
+python .bin/regen_gauges.py Bars Basic             # Two variants
+python .bin/regen_gauges.py root Thorne            # Root + Thorne
+python .bin/regen_gauges.py --help                 # Show help message
 ```
 
 ---

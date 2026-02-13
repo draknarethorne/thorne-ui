@@ -387,7 +387,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>65</Y>
+			<Y>64</Y>
 		</Location>
 		<Size>
 			<CX>120</CX>
@@ -471,7 +471,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>120</CX>

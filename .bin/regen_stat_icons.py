@@ -263,27 +263,77 @@ class StatIconGenerator:
 def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(
-        description="Generate stat icon files from any icon variant"
+        prog="regen_stat_icons.py",
+        description="""
+Generate Stat Icon Textures with Abbreviations
+
+Extracts stat icons from gemicon files and creates stat_icon_pieces texture files
+with abbreviation labels. Supports any icon variant (Classic, Duxa, Modern, etc.).
+
+FEATURES:
+  ✓ Flexible JSON config for icon coordinate mapping
+  ✓ Automatic icon extraction and resizing (22×22)
+  ✓ Master layout positioning in 256×256 output
+  ✓ Abbreviation label generation (no separate step)
+  ✓ Placeholder graphics for missing icons
+""",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+EXAMPLES:
+  
+  # Generate from Classic variant with default config
+  python regen_stat_icons.py \\
+    --source-dir thorne_drak/Options/Icons/Classic \\
+    --output thorne_drak/stat_icon_pieces01.tga
+  
+  # Custom output location with abbreviations
+  python regen_stat_icons.py \\
+    --source-dir thorne_drak/Options/Icons/Duxa \\
+    --output thorne_drak/stat_icon_pieces_duxa.tga \\
+    --add-abbreviations
+  
+  # Custom config file
+  python regen_stat_icons.py \\
+    --source-dir thorne_drak/Options/Icons/Classic \\
+    --config .development/custom-icons-config.json \\
+    --output thorne_drak/stat_icon_pieces01.tga
+
+CONFIGURATION:
+  The config JSON maps stat names to source coordinates:
+    {
+      "AC": {"source": "gemicons01.tga", "x": 0, "y": 0, "w": 24, "h": 24},
+      "ATK": {"source": "gemicons01.tga", "x": 24, "y": 0, "w": 24, "h": 24},
+      ...
+    }
+
+OUTPUT:
+  - Creates main texture file (e.g., stat_icon_pieces01.tga)
+  - Generates stats JSON file (e.g., stat_icon_pieces01-stats.json)
+  - Stats file tracks extraction metadata for troubleshooting
+"""
     )
     parser.add_argument(
         "--source-dir", "-s",
         required=True,
+        metavar="DIR",
         help="Source directory containing gemicon files (e.g., thorne_drak/Options/Icons/Classic)"
     )
     parser.add_argument(
         "--config", "-c",
         default=".development/stat-icons-config.json",
+        metavar="FILE",
         help="Config file with icon coordinate mappings (default: .development/stat-icons-config.json)"
     )
     parser.add_argument(
         "--output", "-o",
         required=True,
-        help="Output file path (e.g., thorne_drak/stat_icon_pieces01.tga)"
+        metavar="FILE",
+        help="Output file path for texture (e.g., thorne_drak/stat_icon_pieces01.tga)"
     )
     parser.add_argument(
         "--add-abbreviations", "-a",
         action="store_true",
-        help="Add abbreviation labels to icons"
+        help="Include abbreviation labels on icons (2-3 char labels)"
     )
     
     args = parser.parse_args()

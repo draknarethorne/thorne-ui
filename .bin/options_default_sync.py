@@ -324,17 +324,76 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 
 def main():
-    # Parse arguments
-    window_name = None
-    sync_all = "--all" in sys.argv
-    dry_run = "--dry-run" in sys.argv
-    verbose = "--verbose" in sys.argv
+    import argparse
     
-    # Find --window argument
-    if "--window" in sys.argv:
-        idx = sys.argv.index("--window")
-        if idx + 1 < len(sys.argv):
-            window_name = sys.argv[idx + 1]
+    parser = argparse.ArgumentParser(
+        prog="options_default_sync.py",
+        description="""
+Sync Window to Default - Backup working window files to Default/ directory
+
+Copies the main working file from thorne_drak/ to Options/[Window]/Default/ 
+and updates sync metadata with current timestamp and git commit information.
+
+FEATURES:
+  ✓ Single window or bulk sync of all 13 configured windows
+  ✓ Dry-run mode to preview changes before applying
+  ✓ Automatic parent README generation for navigation
+  ✓ Metadata tracking with git commit information
+  ✓ Duplicate detection (skips if already identical)
+
+CAUTION: This is a DESTRUCTIVE OPERATOR. Use --dry-run first to preview.
+""",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+EXAMPLES:
+
+  # Sync single window (with preview)
+  python .bin/options_default_sync.py --window Player --dry-run
+  python .bin/options_default_sync.py --window Player
+
+  # Sync all 13 windows with verbose output
+  python .bin/options_default_sync.py --all --verbose
+
+  # Preview what would be synced
+  python .bin/options_default_sync.py --all --dry-run
+
+AVAILABLE WINDOWS:
+  Actions, Animations, Group, Hotbutton, Inventory, Loot, Merchant,
+  Pet, Player, Selector, Skin, Spellbook, Target
+
+OUTPUT:
+  - Console: Sync report with counts and filenames
+  - .reports/sync_report.json: Detailed metadata and results
+  - <Window>/README.md: Auto-generated navigation file
+  - <Window>/.sync-status.json: Metadata with timestamp and git commit
+"""
+    )
+    
+    # Make window and all mutually exclusive
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        "--window", "-w",
+        metavar="NAME",
+        help="Sync specific window (e.g., Player, Target, Inventory)"
+    )
+    group.add_argument(
+        "--all", "-a",
+        action="store_true",
+        help="Sync all 13 configured windows"
+    )
+    
+    parser.add_argument(
+        "--dry-run", "-d",
+        action="store_true",
+        help="Preview changes without modifying files"
+    )
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Show detailed file operations and results"
+    )
+    
+    args = parser.parse_args()
     
     # Determine workspace root
     script_dir = Path(__file__).parent
@@ -346,22 +405,13 @@ def main():
         sys.exit(1)
     
     # Create syncer
-    syncer = WindowSyncer(workspace_root, dry_run=dry_run, verbose=verbose)
+    syncer = WindowSyncer(workspace_root, dry_run=args.dry_run, verbose=args.verbose)
     
     # Execute sync
-    if sync_all:
+    if args.all:
         syncer.sync_all()
-    elif window_name:
-        syncer.sync_window(window_name)
     else:
-        print("Usage:")
-        print("  python sync_window_to_default.py --window TARGET")
-        print("  python sync_window_to_default.py --all [--dry-run] [--verbose]")
-        print()
-        print("Available windows:")
-        for name in sorted(WINDOW_MAPPING.keys()):
-            print(f"  - {name}")
-        sys.exit(1)
+        syncer.sync_window(args.window)
     
     # Print report
     syncer.print_report()

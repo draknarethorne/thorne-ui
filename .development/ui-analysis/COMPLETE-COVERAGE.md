@@ -370,8 +370,8 @@ From detailed analysis:
 - `EQUI_SocialEditWnd.xml` - Social list editing interface
 
 **Texture Files (14 unique .tga files):**
-- `button_pieces01.tga`, `button_pieces01_light.tga` - Button texture variants
-- `gauge_pieces01.tga`, `gauge_pieces01_tall.tga`, `gauge_pieces02.tga`, `gauge_pieces03.tga`, `gauge_pieces04.tga`, `gauge_pieces05.tga` - Gauge variants (6 files)
+- `button_dark_pieces01.tga`, `button_light_pieces01.tga` - Button texture variants
+- `gauge_pieces01.tga`, `gauge_120t_pieces01.tga`, `gauge_pieces02.tga`, `gauge_pieces03.tga`, `gauge_pieces04.tga`, `gauge_pieces05.tga` - Gauge variants (6 files)
 - `ovalbar.tga` - Oval-shaped bar texture
 - `stat_icon_pieces01.tga` - Stat icon texture sheet (for v0.7.0+)
 
@@ -438,8 +438,8 @@ From detailed analysis:
 ### thorne_drak: 50 .tga files (14 unique to Thorne)
 
 **Unique texture features:**
-- **Button pieces**: button_pieces01.tga, button_pieces01_light.tga (2 button texture variants)
-- **Gauge pieces**: gauge_pieces01.tga, gauge_pieces01_tall.tga, gauge_pieces02.tga, gauge_pieces03.tga, gauge_pieces04.tga, gauge_pieces05.tga (6 gauge variants including tall version)
+- **Button pieces**: button_dark_pieces01.tga, button_light_pieces01.tga (2 button texture variants)
+- **Gauge pieces**: gauge_pieces01.tga, gauge_120t_pieces01.tga, gauge_pieces02.tga, gauge_pieces03.tga, gauge_pieces04.tga, gauge_pieces05.tga (6 gauge variants including tall version)
 - **Special UI elements**:
   - ovalbar.tga (oval-shaped bar texture)
   - stat_icon_pieces01.tga (stat icon texture sheet for v0.7.0+)

@@ -147,7 +147,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -250,7 +250,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -387,7 +387,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>63</Y>
+			<Y>64</Y>
 		</Location>
 		<Size>
 			<CX>120</CX>
@@ -411,8 +411,8 @@
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_Wide</Background>
+			<Fill>A_GaugeFill_Wide</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -471,11 +471,11 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -489,16 +489,16 @@
 			<B>0</B>
 		</FillTint>
 		<LinesFillTint>
-			<R>0</R>
-			<G>80</G>
-			<B>220</B>
+			<R>100</R>
+			<G>160</G>
+			<B>255</B>
 		</LinesFillTint>
 		<DrawLinesFill>true</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_Tall</Background>
 			<Fill>A_GaugeFill_Tall</Fill>
-			<Lines>A_GaugeLines_Tall_Dark</Lines>
-			<LinesFill>A_GaugeLines_Tall</LinesFill>
+			<Lines>A_GaugeLines_Tall</Lines>
+			<LinesFill>A_GaugeLinesFill_Tall</LinesFill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -509,7 +509,7 @@
 		<EQType>26</EQType>
 		<Location>
 			<X>123</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>25</CX>
@@ -531,7 +531,7 @@
 		<Font>2</Font>
 		<Location>
 			<X>148</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>16</CX>
@@ -553,7 +553,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>164</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>30</CX>
@@ -574,7 +574,7 @@
 		<EQType>81</EQType>
 		<Location>
 			<X>194</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>21</CX>
@@ -596,7 +596,7 @@
 		<Font>2</Font>
 		<Location>
 			<X>215</X>
-			<Y>77</Y>
+			<Y>76</Y>
 		</Location>
 		<Size>
 			<CX>16</CX>
@@ -625,7 +625,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetY>-250</TextOffsetY>
 		<GaugeOffsetY>0</GaugeOffsetY>
@@ -640,15 +640,15 @@
 		</FillTint>
 		<LinesFillTint>
 			<R>0</R>
-			<G>80</G>
+			<G>220</G>
 			<B>220</B>
 		</LinesFillTint>
 		<DrawLinesFill>true</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_Tall</Background>
 			<Fill>A_GaugeFill_Tall</Fill>
-			<Lines>A_GaugeLines_Tall_Dark</Lines>
-			<LinesFill>A_GaugeLines_Tall</LinesFill>
+			<Lines>A_GaugeLines_Tall</Lines>
+			<LinesFill>A_GaugeLinesFill_Tall</LinesFill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -779,7 +779,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>15</CY>
+			<CY>16</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
 		<TextOffsetY>0</TextOffsetY>

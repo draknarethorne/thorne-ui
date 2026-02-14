@@ -277,6 +277,75 @@ class DuplicateDetector:
 
 
 def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(
+        prog="options_duplicate_detector.py",
+        description="""
+Detect Duplicate UI Variant Files in Options/
+
+Scans Options/ directory structure to find identical or similar variant files
+within the same window. Uses similarity threshold for fuzzy matching.
+
+FEATURES:
+  ✓ Exact duplicate detection (100% match)
+  ✓ Fuzzy matching with configurable similarity threshold
+  ✓ Window-level analysis with variant grouping
+  ✓ Removal candidates report (safe to delete)
+  ✓ Detailed hash-based comparison
+""",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+EXAMPLES:
+
+  # Quick scan - find exact duplicates
+  python .bin/options_duplicate_detector.py
+
+  # Detailed output showing all similar variants
+  python .bin/options_duplicate_detector.py --detailed
+
+  # Show removal candidates with fuzzy matching (95% similarity)
+  python .bin/options_duplicate_detector.py --remove-candidates
+
+  # Custom similarity threshold (85% = more lenient matching)
+  python .bin/options_duplicate_detector.py --similarity 85 --detailed
+
+SIMILARITY THRESHOLD:
+  - 100 = Exact match only
+  - 95  = Allow small differences (default)
+  - 85  = Allow moderate differences
+  - 70  = Allow major differences (rarely useful)
+
+OUTPUT:
+  - Console: Duplicate report with statistics
+  - .reports/duplicate_detection_report.json: Full audit data
+"""
+    )
+    
+    parser.add_argument(
+        "--similarity", "-s",
+        type=int,
+        default=95,
+        metavar="PERCENT",
+        help="Similarity threshold (0-100, default: 95)"
+    )
+    parser.add_argument(
+        "--detailed", "-d",
+        action="store_true",
+        help="Show detailed variant information and hash comparisons"
+    )
+    parser.add_argument(
+        "--remove-candidates",
+        action="store_true",
+        help="Show variants safe to remove (duplicates)"
+    )
+    
+    args = parser.parse_args()
+    
+    # Validate similarity argument
+    if not 0 <= args.similarity <= 100:
+        parser.error("--similarity must be between 0 and 100")
+    
     # Determine Options path
     script_dir = Path(__file__).parent
     root_dir = script_dir.parent
@@ -286,25 +355,13 @@ def main():
         print(f"ERROR: Options directory not found at {options_dir}")
         sys.exit(1)
     
-    # Parse arguments
-    similarity = 95
-    if "--similarity" in sys.argv:
-        idx = sys.argv.index("--similarity")
-        try:
-            similarity = int(sys.argv[idx + 1])
-        except:
-            similarity = 95
-    
-    detailed = "--detailed" in sys.argv
-    show_removals = "--remove-candidates" in sys.argv
-    
     # Run detector
-    detector = DuplicateDetector(options_dir, similarity_threshold=similarity)
+    detector = DuplicateDetector(options_dir, similarity_threshold=args.similarity)
     print(f"Scanning {options_dir}...")
     detector.scan()
     
     # Print report
-    detector.print_report(detailed=detailed, show_removals=show_removals)
+    detector.print_report(detailed=args.detailed, show_removals=args.remove_candidates)
     
     # Save JSON report
     report_file = root_dir / ".reports" / "duplicate_detection_report.json"

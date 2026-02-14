@@ -244,6 +244,130 @@ def regenerate_wide_gauge(variant_dir):
     return True
 
 
+def regenerate_tall_wide_gauge(variant_dir):
+    """Regenerate tall_wide gauge by scaling vertically (tall: 16px) and horizontally to 250px."""
+    variant_dir = Path(variant_dir)
+    std_file = variant_dir / 'gauge_pieces01.tga'
+    tall_wide_file = variant_dir / 'gauge_pieces01_tall_wide.tga'
+    
+    if not std_file.exists():
+        print(f"ERROR: {std_file} not found")
+        return False
+    
+    # Fix source TGA file if it's actually PNG
+    fix_tga_file(std_file)
+    
+    print(f"Processing {variant_dir.name} (TALL_WIDE)...")
+    
+    # Load standard gauge
+    std = Image.open(std_file)
+    std_width = std.size[0]  # Usually 60
+    
+    # Extract individual sections (8px tall each)
+    bg = std.crop((0, 0, std_width, 8))
+    fill = std.crop((0, 8, std_width, 16))
+    lines = std.crop((0, 16, std_width, 24))
+    linesfill = std.crop((0, 24, std_width, 32))
+    
+    print(f"  Extracted sections from {std_width}x32 standard gauge")
+    
+    # Scale sections to 250x16 (preserving 1px borders on all sides)
+    def scale_tall_wide_with_borders(section, target_width=250, target_height=16, interp_method="BILINEAR"):
+        """Scale section to target dimensions preserving 1px borders on all sides.
+        
+        Vertical scaling: 8px → 16px (1px top + 14px middle + 1px bottom)
+        Horizontal scaling: std_width → 250px (1px left + 248px middle + 1px right)
+        
+        Args:
+            target_width: Target width (default 250)
+            target_height: Target height (default 16)
+            interp_method: Interpolation for fill ("BILINEAR", "LANCZOS", "NEAREST")
+        """
+        width, height = section.size
+        
+        # Extract top border, middle, and bottom border (vertical 1px strips)
+        top = section.crop((0, 0, width, 1))
+        middle = section.crop((0, 1, width, height-1))
+        bottom = section.crop((0, height-1, width, height))
+        
+        # Choose interpolation
+        if interp_method == "LANCZOS":
+            interp = Image.Resampling.LANCZOS
+        elif interp_method == "NEAREST":
+            interp = Image.Resampling.NEAREST
+        else:  # Default BILINEAR
+            interp = Image.Resampling.BILINEAR
+        
+        # Helper to scale a single row/section with horizontal borders preserved
+        def scale_row_with_h_borders(row_section, target_w=target_width):
+            """Scale a row horizontally preserving 1px left/right borders."""
+            sect_width, sect_height = row_section.size
+            
+            left_border = row_section.crop((0, 0, 1, sect_height))
+            middle_content = row_section.crop((1, 0, sect_width-1, sect_height))
+            right_border = row_section.crop((sect_width-1, 0, sect_width, sect_height))
+            
+            # Scale middle horizontally to (target_w - 2)
+            middle_scaled = middle_content.resize((target_w-2, sect_height), interp)
+            
+            # Keep borders crisp with NEAREST
+            left_scaled = left_border.resize((1, sect_height), Image.Resampling.NEAREST)
+            right_scaled = right_border.resize((1, sect_height), Image.Resampling.NEAREST)
+            
+            # Composite horizontally
+            result = Image.new('RGBA', (target_w, sect_height), (0, 0, 0, 0))
+            result.paste(left_scaled, (0, 0))
+            result.paste(middle_scaled, (1, 0))
+            result.paste(right_scaled, (target_w-1, 0))
+            return result
+        
+        # Scale top border (1px tall) horizontally only
+        top_scaled = scale_row_with_h_borders(top, target_width)
+        
+        # Scale middle section both vertically (6px→14px) and horizontally
+        # First scale horizontally to preserve left/right borders
+        middle_h_scaled = scale_row_with_h_borders(middle, target_width)
+        # Then scale vertically
+        middle_scaled = middle_h_scaled.resize((target_width, 14), interp)
+        
+        # Scale bottom border (1px tall) horizontally only
+        bottom_scaled = scale_row_with_h_borders(bottom, target_width)
+        
+        # Composite: top(1) + middle(14) + bottom(1) = 16px tall
+        result = Image.new('RGBA', (target_width, target_height), (0, 0, 0, 0))
+        result.paste(top_scaled, (0, 0))
+        result.paste(middle_scaled, (0, 1))
+        result.paste(bottom_scaled, (0, target_height-1))
+        
+        return result
+    
+    bg_tall_wide = scale_tall_wide_with_borders(bg, interp_method="BILINEAR")
+    fill_tall_wide = scale_tall_wide_with_borders(fill, interp_method="BILINEAR")
+    lines_tall_wide = scale_tall_wide_with_borders(lines, interp_method="NEAREST")
+    linesfill_tall_wide = scale_tall_wide_with_borders(linesfill, interp_method="NEAREST")
+    
+    interp_note = "BILINEAR for Background/Fill, NEAREST for crisp Lines"
+    print(f"  Scaled: 1px borders (NEAREST) + 248px middle to 250px width ({interp_note})")
+    
+    # Create new 250x64 image
+    tall_wide_new = Image.new('RGBA', (250, 64), (0, 0, 0, 0))
+    
+    # Paste sections at correct Y coordinates
+    tall_wide_new.paste(bg_tall_wide, (0, 0))          # Y=0-15
+    tall_wide_new.paste(fill_tall_wide, (0, 16))       # Y=16-31
+    tall_wide_new.paste(lines_tall_wide, (0, 32))      # Y=32-47
+    tall_wide_new.paste(linesfill_tall_wide, (0, 48))  # Y=48-63
+    
+    print("  Composited sections into 250x64 tall_wide gauge")
+    
+    # Save
+    tall_wide_new.save(tall_wide_file)
+    print(f"  Saved to {tall_wide_file.name}")
+    print(f"  [OK] {variant_dir.name} tall_wide gauge regenerated")
+    
+    return True
+
+
 if __name__ == '__main__':
     if len(sys.argv) < 2 or sys.argv[1] in ('--help', '-h', 'help'):
         print("""
@@ -318,6 +442,7 @@ For detailed documentation, see: .bin/regen_gauges.md
     
     tall_success = 0
     wide_success = 0
+    tall_wide_success = 0
     regenerated_variants = []  # Track which variants were successfully regenerated
     
     for variant in variant_names:
@@ -332,11 +457,14 @@ For detailed documentation, see: .bin/regen_gauges.md
                 regenerated_variants.append((variant, variant_path))
             if regenerate_wide_gauge(variant_path):
                 wide_success += 1
+            if regenerate_tall_wide_gauge(variant_path):
+                tall_wide_success += 1
         else:
             print(f"ERROR: {variant_path} not found\n")
     
     print(f"Regenerated {tall_success}/{len(variant_names)} tall variants")
     print(f"Regenerated {wide_success}/{len(variant_names)} wide variants")
+    print(f"Regenerated {tall_wide_success}/{len(variant_names)} tall_wide variants")
     
     # Copy regenerated files back to thorne_drak root directory
     # Logic: single variant → copy that one; multiple variants → copy only Thorne
@@ -355,9 +483,11 @@ For detailed documentation, see: .bin/regen_gauges.md
             main_src = variant_path / 'gauge_pieces01.tga'
             tall_src = variant_path / 'gauge_pieces01_tall.tga'
             wide_src = variant_path / 'gauge_pieces01_wide.tga'
+            tall_wide_src = variant_path / 'gauge_pieces01_tall_wide.tga'
             main_dst = root_path / 'gauge_pieces01.tga'
             tall_dst = root_path / 'gauge_pieces01_tall.tga'
             wide_dst = root_path / 'gauge_pieces01_wide.tga'
+            tall_wide_dst = root_path / 'gauge_pieces01_tall_wide.tga'
             
             if main_src.exists():
                 shutil.copy2(main_src, main_dst)
@@ -368,6 +498,9 @@ For detailed documentation, see: .bin/regen_gauges.md
             if wide_src.exists():
                 shutil.copy2(wide_src, wide_dst)
                 print(f"  Copied {variant_name} wide gauge to thorne_drak/")
+            if tall_wide_src.exists():
+                shutil.copy2(tall_wide_src, tall_wide_dst)
+                print(f"  Copied {variant_name} tall_wide gauge to thorne_drak/")
         
         # Also copy to thorne_dev for immediate testing
         thorne_dev_path = Path('C:\\TAKP\\uifiles\\thorne_dev')
@@ -377,9 +510,11 @@ For detailed documentation, see: .bin/regen_gauges.md
                 main_src = root_path / 'gauge_pieces01.tga'
                 tall_src = root_path / 'gauge_pieces01_tall.tga'
                 wide_src = root_path / 'gauge_pieces01_wide.tga'
+                tall_wide_src = root_path / 'gauge_pieces01_tall_wide.tga'
                 main_dst = thorne_dev_path / 'gauge_pieces01.tga'
                 tall_dst = thorne_dev_path / 'gauge_pieces01_tall.tga'
                 wide_dst = thorne_dev_path / 'gauge_pieces01_wide.tga'
+                tall_wide_dst = thorne_dev_path / 'gauge_pieces01_tall_wide.tga'
                 
                 if main_src.exists():
                     shutil.copy2(main_src, main_dst)
@@ -390,4 +525,7 @@ For detailed documentation, see: .bin/regen_gauges.md
                 if wide_src.exists():
                     shutil.copy2(wide_src, wide_dst)
                     print(f"  Deployed {variant_name} wide gauge to thorne_dev/")
+                if tall_wide_src.exists():
+                    shutil.copy2(tall_wide_src, tall_wide_dst)
+                    print(f"  Deployed {variant_name} tall_wide gauge to thorne_dev/")
             print(f"\nReady to test in-game with: /loadskin thorne_drak")

@@ -134,13 +134,13 @@
       <CY>32</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_pieces01_tall.tga">
+  <TextureInfo item="gauge_120t_pieces01.tga">
     <Size>
       <CX>120</CX>
       <CY>64</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_pieces01_wide.tga">
+  <TextureInfo item="gauge_120_pieces01.tga">
     <Size>
       <CX>120</CX>
       <CY>32</CY>
@@ -4893,7 +4893,7 @@
   <Ui2DAnimation item="A_GaugeBackground_Tall">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_tall.tga</Texture>
+      <Texture>gauge_120t_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -4912,7 +4912,7 @@
   <Ui2DAnimation item="A_GaugeFill_Tall">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_tall.tga</Texture>
+      <Texture>gauge_120t_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -4931,7 +4931,7 @@
   <Ui2DAnimation item="A_GaugeLines_Tall">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_tall.tga</Texture>
+      <Texture>gauge_120t_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>32</Y>
@@ -4950,7 +4950,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_Tall">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_tall.tga</Texture>
+      <Texture>gauge_120t_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>48</Y>
@@ -4970,7 +4970,7 @@
   <Ui2DAnimation item="A_GaugeBackground_Wide">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Texture>gauge_120_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -4989,7 +4989,7 @@
   <Ui2DAnimation item="A_GaugeFill_Wide">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Texture>gauge_120_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>8</Y>
@@ -5008,7 +5008,7 @@
   <Ui2DAnimation item="A_GaugeLines_Wide">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Texture>gauge_120_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5027,7 +5027,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_Wide">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01_wide.tga</Texture>
+      <Texture>gauge_120_pieces01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>24</Y>

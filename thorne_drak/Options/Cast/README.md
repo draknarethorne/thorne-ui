@@ -26,7 +26,7 @@ This directory contains variants for the Cast Spell Window (EQUI_CastSpellWnd.xm
 | **Window Width** | 160px | 140px |
 | **Spell Gem Size** | 150×24px (uniform) | Mixed 31×23px and 138×23px |
 | **Graphics Style** | Custom button textures | Standard spell gem sprites |
-| **Textures Used** | button_pieces01.tga, button_pieces01_light.tga | Standard A_SpellGemHolder/Background |
+| **Textures Used** | button_dark_pieces01.tga, button_light_pieces01.tga | Standard A_SpellGemHolder/Background |
 | **Visibility** | Enhanced (high contrast buttons) | Standard (traditional gem appearance) |
 | **Spell Name Display** | Better (wider layout, less truncation) | Standard (may truncate long names) |
 | **Use Case** | Preferred for wider spell window visibility | Traditional compact EverQuest appearance |

@@ -29,7 +29,7 @@ This directory contains gauge texture variants for HP, Mana, Stamina, Experience
 **Source**: Infiniti-Blue (modified)  
 **Files**:
 - `gauge_pieces01.tga` (103x32) - Standard 8px gauges
-- `gauge_pieces01_tall.tga` (120x64) - Tall 15px gauges
+- `gauge_120t_pieces01.tga` (120x64) - Tall 15px gauges
 
 **Features**:
 - Clean smooth fills with subtle gradients
@@ -163,7 +163,7 @@ All standard gauge textures use a stacked vertical layout with 8px slices:
 
 ---
 
-### Tall Gauge Layout (gauge_pieces01_tall.tga - 120x64)
+### Tall Gauge Layout (gauge_120t_pieces01.tga - 120x64)
 
 Only available in **Thorne/** variant. Provides taller gauges for primary resources:
 
@@ -222,7 +222,7 @@ To create your own gauge texture variant:
 
 1. **Create subdirectory**: `Options/Gauges/YourVariantName/`
 2. **Extract gauge textures** from source UI (see extraction guide below)
-3. **Save as** `gauge_pieces01.tga` (and optionally `gauge_pieces01_tall.tga`)
+3. **Save as** `gauge_pieces01.tga` (and optionally `gauge_120t_pieces01.tga`)
 4. **Test** by copying to main thorne_drak directory
 
 ### Gauge Extraction Guide

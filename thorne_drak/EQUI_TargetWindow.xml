@@ -694,6 +694,7 @@
     <Pieces>TW_AttackTick_Gauge</Pieces>
     <Pieces>TW_PlayerMana_Gauge</Pieces>
     <Pieces>TW_ManaTick_Gauge</Pieces>
+    <Pieces>TW_TargetHP_BG</Pieces>
     <Pieces>TW_TargetHP_Gauge</Pieces>
     <Pieces>TW_Casting_BG</Pieces>
     <Pieces>TW_Casting_Gauge</Pieces>

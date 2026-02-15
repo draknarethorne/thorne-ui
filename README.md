@@ -309,6 +309,19 @@ All v0.x.x releases are **alpha/beta** versions building toward a stable v1.0.0 
 ---
 
 ## 📅 Version History
+**v0.6.4** (February 15, 2026)
+- ✅ Gauge system overhaul
+  - Size-specific gauge textures and animations (tall/wide variants)
+  - Wide gauge support and line rendering improvements
+  - Consistent gauge colors and alignment across Player, Pet, Inventory, and Spellbook
+- ✅ Target window improvements
+  - Added attack tick gauge (combat timer test)
+  - Added casting spell name display with refined layout
+  - Improved target HP/casting section spacing and background alignment
+- ✅ Tooling updates
+  - Gauge regeneration and audit scripts
+  - Release/label utility scripts and documentation cleanup
+
 **v0.6.3** (February 9, 2026) _(pre-release)_
 - ✅ Cast spell window spell-name font adjusted to Font 1
 

@@ -162,8 +162,8 @@
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -265,8 +265,8 @@
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -369,7 +369,7 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>24</EQType>
 		<GaugeDrawTemplate>
-			<Fill>A_GaugeLinesFill_Tall</Fill>
+			<Fill>A_GaugeLinesFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -407,8 +407,8 @@
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Wide</Background>
-			<Fill>A_GaugeFill_Wide</Fill>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -491,10 +491,10 @@
 		</LinesFillTint>
 		<DrawLinesFill>true</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
-			<Lines>A_GaugeLines_Tall</Lines>
-			<LinesFill>A_GaugeLinesFill_Tall</LinesFill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
+			<Lines>A_GaugeLines_120t</Lines>
+			<LinesFill>A_GaugeLinesFill_120t</LinesFill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -641,10 +641,10 @@
 		</LinesFillTint>
 		<DrawLinesFill>true</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
-			<Lines>A_GaugeLines_Tall</Lines>
-			<LinesFill>A_GaugeLinesFill_Tall</LinesFill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
+			<Lines>A_GaugeLines_120t</Lines>
+			<LinesFill>A_GaugeLinesFill_120t</LinesFill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -801,8 +801,8 @@
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 

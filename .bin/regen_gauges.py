@@ -163,11 +163,62 @@ def regenerate_wide_gauge(variant_dir):
     # This is safe to call multiple times per variant since fix returns early if already valid
     fix_tga_file(std_file)
     
-    print(f"Processing {variant_dir.name} (WIDE)...")
+    return _generate_wide_variant_at_width(variant_dir, std_file, wide_file, 120)
+
+
+def _scale_horizontal_with_borders(section, target_width=120, interp_method="BILINEAR"):
+    """Horizontally scale section to target width preserving 1px left/right borders.
+    
+    Args:
+        interp_method: Interpolation for middle section.
+                      "BILINEAR" (default), "LANCZOS", or "NEAREST"
+    """
+    width, height = section.size
+    
+    # Extract borders and middle
+    left = section.crop((0, 0, 1, height))  # X=0: 1px border
+    middle = section.crop((1, 0, width-1, height))  # X=1 to width-2: middle content
+    right = section.crop((width-1, 0, width, height))  # X=width-1: 1px border
+    
+    # Choose interpolation method
+    if interp_method == "LANCZOS":
+        interp = Image.Resampling.LANCZOS
+    elif interp_method == "NEAREST":
+        interp = Image.Resampling.NEAREST
+    else:  # Default to BILINEAR
+        interp = Image.Resampling.BILINEAR
+    
+    # Scale middle from (width-2)px to (target_width-2)px
+    middle_width = target_width - 2
+    middle_scaled = middle.resize((middle_width, height), interp)
+    
+    # Scale borders to 1px width only (keep height) with NEAREST for crisp edges
+    left_scaled = left.resize((1, height), Image.Resampling.NEAREST)
+    right_scaled = right.resize((1, height), Image.Resampling.NEAREST)
+    
+    # Composite: left(1) + middle(target_width-2) + right(1) = target_width
+    result = Image.new('RGBA', (target_width, height), (0, 0, 0, 0))
+    result.paste(left_scaled, (0, 0))
+    result.paste(middle_scaled, (1, 0))
+    result.paste(right_scaled, (target_width-1, 0))
+    
+    return result
+
+
+def _generate_wide_variant_at_width(variant_dir, std_file, output_file, target_width):
+    """Generate wide gauge variant at specified width from standard gauge source.
+    
+    Args:
+        variant_dir: Variant directory path
+        std_file: Path to source standard gauge (103x32 or 100x32)
+        output_file: Path to output file
+        target_width: Target width in pixels
+    """
+    print(f"Processing {variant_dir.name} (WIDE @ {target_width}px)...")
     
     # Load standard gauge
     std = Image.open(std_file)
-    std_width = std.size[0]  # Usually 60
+    std_width = std.size[0]  # Usually 103 or 100
     
     # Extract individual sections (8px tall each)
     bg = std.crop((0, 0, std_width, 8))
@@ -177,56 +228,16 @@ def regenerate_wide_gauge(variant_dir):
     
     print(f"  Extracted sections from {std_width}x32 standard gauge")
     
-    # Scale sections horizontally preserving single-pixel left/right borders
-    # For each section: left border (1px) + middle (58px→118px) + right border (1px) = 120px
-    def scale_horizontal_with_borders(section, target_width=120, interp_method="BILINEAR"):
-        """Horizontally scale section to 120px preserving 1px left/right borders.
-        
-        Args:
-            interp_method: Interpolation for middle section.
-                          "BILINEAR" (default), "LANCZOS", or "NEAREST"
-        """
-        width, height = section.size
-        
-        # Extract borders and middle
-        left = section.crop((0, 0, 1, height))  # X=0: 1px border
-        middle = section.crop((1, 0, width-1, height))  # X=1 to width-2: middle content
-        right = section.crop((width-1, 0, width, height))  # X=width-1: 1px border
-        
-        # Choose interpolation method
-        if interp_method == "LANCZOS":
-            interp = Image.Resampling.LANCZOS
-        elif interp_method == "NEAREST":
-            interp = Image.Resampling.NEAREST
-        else:  # Default to BILINEAR
-            interp = Image.Resampling.BILINEAR
-        
-        # Scale middle from (width-2)px to (target_width-2)px
-        middle_width = target_width - 2
-        middle_scaled = middle.resize((middle_width, height), interp)
-        
-        # Scale borders to 1px width only (keep height) with NEAREST for crisp edges
-        left_scaled = left.resize((1, height), Image.Resampling.NEAREST)
-        right_scaled = right.resize((1, height), Image.Resampling.NEAREST)
-        
-        # Composite: left(1) + middle(118) + right(1) = 120px
-        result = Image.new('RGBA', (target_width, height), (0, 0, 0, 0))
-        result.paste(left_scaled, (0, 0))
-        result.paste(middle_scaled, (1, 0))
-        result.paste(right_scaled, (target_width-1, 0))
-        
-        return result
-    
-    bg_wide = scale_horizontal_with_borders(bg, interp_method="BILINEAR")
-    fill_wide = scale_horizontal_with_borders(fill, interp_method="BILINEAR")
-    lines_wide = scale_horizontal_with_borders(lines, interp_method="NEAREST")
-    linesfill_wide = scale_horizontal_with_borders(linesfill, interp_method="NEAREST")
+    bg_wide = _scale_horizontal_with_borders(bg, target_width, interp_method="BILINEAR")
+    fill_wide = _scale_horizontal_with_borders(fill, target_width, interp_method="BILINEAR")
+    lines_wide = _scale_horizontal_with_borders(lines, target_width, interp_method="NEAREST")
+    linesfill_wide = _scale_horizontal_with_borders(linesfill, target_width, interp_method="NEAREST")
     
     interp_note = "BILINEAR for Background/Fill, NEAREST for crisp Lines"
-    print(f"  Scaled: 1px borders (NEAREST) + 118px middle ({interp_note})")
+    print(f"  Scaled: 1px borders (NEAREST) + {target_width - 2}px middle ({interp_note})")
     
-    # Create new 120x32 image
-    wide_new = Image.new('RGBA', (120, 32), (0, 0, 0, 0))
+    # Create new image at target dimensions
+    wide_new = Image.new('RGBA', (target_width, 32), (0, 0, 0, 0))
     
     # Paste sections at correct Y coordinates
     wide_new.paste(bg_wide, (0, 0))          # Y=0-7
@@ -234,12 +245,12 @@ def regenerate_wide_gauge(variant_dir):
     wide_new.paste(lines_wide, (0, 16))      # Y=16-23
     wide_new.paste(linesfill_wide, (0, 24))  # Y=24-31
     
-    print("  Composited sections into 120x32 wide gauge")
+    print(f"  Composited sections into {target_width}x32 wide gauge")
     
     # Save
-    wide_new.save(wide_file)
-    print(f"  Saved to {wide_file.name}")
-    print(f"  [OK] {variant_dir.name} wide gauge regenerated")
+    wide_new.save(output_file)
+    print(f"  Saved to {output_file.name}")
+    print(f"  [OK] {variant_dir.name} wide @ {target_width}px gauge regenerated")
     
     return True
 
@@ -438,9 +449,21 @@ For detailed documentation, see: .bin/regen_gauges.md
                 regenerated_variants.append((variant, variant_path))
             if regenerate_wide_gauge(variant_path):
                 wide_success += 1
+                # Generate additional wide variants (150px)
+                std_file = variant_path / 'gauge_pieces01.tga'
+                wide_150_file = variant_path / 'gauge_150_pieces01.tga'
+                if std_file.exists():
+                    _generate_wide_variant_at_width(variant_path, std_file, wide_150_file, 150)
             # tall_wide must be generated AFTER tall (it uses tall as source)
             if regenerate_tall_wide_gauge(variant_path):
                 tall_wide_success += 1
+            # Generate additional tall variants from 120t source
+            tall_src = variant_path / 'gauge_120t_pieces01.tga'
+            if tall_src.exists():
+                extra_tall_widths = [150, 230, 250, 260]
+                for width in extra_tall_widths:
+                    extra_output = variant_path / f'gauge_{width}t_pieces01.tga'
+                    _generate_tall_variant_at_width(variant_path, tall_src, extra_output, width)
         else:
             print(f"ERROR: {variant_path} not found\n")
     
@@ -466,10 +489,20 @@ For detailed documentation, see: .bin/regen_gauges.md
             tall_src = variant_path / 'gauge_120t_pieces01.tga'
             wide_src = variant_path / 'gauge_120_pieces01.tga'
             tall_wide_src = variant_path / 'gauge_240t_pieces01.tga'
+            tall_150_src = variant_path / 'gauge_150t_pieces01.tga'
+            wide_150_src = variant_path / 'gauge_150_pieces01.tga'
+            tall_230_src = variant_path / 'gauge_230t_pieces01.tga'
+            tall_250_src = variant_path / 'gauge_250t_pieces01.tga'
+            tall_260_src = variant_path / 'gauge_260t_pieces01.tga'
             main_dst = root_path / 'gauge_pieces01.tga'
             tall_dst = root_path / 'gauge_120t_pieces01.tga'
             wide_dst = root_path / 'gauge_120_pieces01.tga'
             tall_wide_dst = root_path / 'gauge_240t_pieces01.tga'
+            tall_150_dst = root_path / 'gauge_150t_pieces01.tga'
+            wide_150_dst = root_path / 'gauge_150_pieces01.tga'
+            tall_230_dst = root_path / 'gauge_230t_pieces01.tga'
+            tall_250_dst = root_path / 'gauge_250t_pieces01.tga'
+            tall_260_dst = root_path / 'gauge_260t_pieces01.tga'
             
             if main_src.exists():
                 shutil.copy2(main_src, main_dst)
@@ -483,6 +516,21 @@ For detailed documentation, see: .bin/regen_gauges.md
             if tall_wide_src.exists():
                 shutil.copy2(tall_wide_src, tall_wide_dst)
                 print(f"  Copied {variant_name} tall_wide gauge to thorne_drak/")
+            if tall_150_src.exists():
+                shutil.copy2(tall_150_src, tall_150_dst)
+                print(f"  Copied {variant_name} tall 150 gauge to thorne_drak/")
+            if wide_150_src.exists():
+                shutil.copy2(wide_150_src, wide_150_dst)
+                print(f"  Copied {variant_name} wide 150 gauge to thorne_drak/")
+            if tall_230_src.exists():
+                shutil.copy2(tall_230_src, tall_230_dst)
+                print(f"  Copied {variant_name} tall 230 gauge to thorne_drak/")
+            if tall_250_src.exists():
+                shutil.copy2(tall_250_src, tall_250_dst)
+                print(f"  Copied {variant_name} tall 250 gauge to thorne_drak/")
+            if tall_260_src.exists():
+                shutil.copy2(tall_260_src, tall_260_dst)
+                print(f"  Copied {variant_name} tall 260 gauge to thorne_drak/")
         
         # Also copy to thorne_dev for immediate testing
         thorne_dev_path = Path('C:\\TAKP\\uifiles\\thorne_dev')
@@ -493,10 +541,20 @@ For detailed documentation, see: .bin/regen_gauges.md
                 tall_src = root_path / 'gauge_120t_pieces01.tga'
                 wide_src = root_path / 'gauge_120_pieces01.tga'
                 tall_wide_src = root_path / 'gauge_240t_pieces01.tga'
+                tall_150_src = root_path / 'gauge_150t_pieces01.tga'
+                wide_150_src = root_path / 'gauge_150_pieces01.tga'
+                tall_230_src = root_path / 'gauge_230t_pieces01.tga'
+                tall_250_src = root_path / 'gauge_250t_pieces01.tga'
+                tall_260_src = root_path / 'gauge_260t_pieces01.tga'
                 main_dst = thorne_dev_path / 'gauge_pieces01.tga'
                 tall_dst = thorne_dev_path / 'gauge_120t_pieces01.tga'
                 wide_dst = thorne_dev_path / 'gauge_120_pieces01.tga'
                 tall_wide_dst = thorne_dev_path / 'gauge_240t_pieces01.tga'
+                tall_150_dst = thorne_dev_path / 'gauge_150t_pieces01.tga'
+                wide_150_dst = thorne_dev_path / 'gauge_150_pieces01.tga'
+                tall_230_dst = thorne_dev_path / 'gauge_230t_pieces01.tga'
+                tall_250_dst = thorne_dev_path / 'gauge_250t_pieces01.tga'
+                tall_260_dst = thorne_dev_path / 'gauge_260t_pieces01.tga'
                 
                 if main_src.exists():
                     shutil.copy2(main_src, main_dst)
@@ -510,10 +568,25 @@ For detailed documentation, see: .bin/regen_gauges.md
                 if tall_wide_src.exists():
                     shutil.copy2(tall_wide_src, tall_wide_dst)
                     print(f"  Deployed {variant_name} tall_wide gauge to thorne_dev/")
+                if tall_150_src.exists():
+                    shutil.copy2(tall_150_src, tall_150_dst)
+                    print(f"  Deployed {variant_name} tall 150 gauge to thorne_dev/")
+                if wide_150_src.exists():
+                    shutil.copy2(wide_150_src, wide_150_dst)
+                    print(f"  Deployed {variant_name} wide 150 gauge to thorne_dev/")
+                if tall_230_src.exists():
+                    shutil.copy2(tall_230_src, tall_230_dst)
+                    print(f"  Deployed {variant_name} tall 230 gauge to thorne_dev/")
+                if tall_250_src.exists():
+                    shutil.copy2(tall_250_src, tall_250_dst)
+                    print(f"  Deployed {variant_name} tall 250 gauge to thorne_dev/")
+                if tall_260_src.exists():
+                    shutil.copy2(tall_260_src, tall_260_dst)
+                    print(f"  Deployed {variant_name} tall 260 gauge to thorne_dev/")
             
             # Generate test variants at multiple widths for comparison
             print(f"\nGenerating test variants at multiple widths...")
-            test_widths = [230, 240]
+            test_widths = [230, 240, 250, 260]
             tall_src = root_path / 'gauge_120t_pieces01.tga'
             for width in test_widths:
                 test_output = root_path / f'gauge_{width}t_pieces01.tga'
@@ -528,4 +601,4 @@ For detailed documentation, see: .bin/regen_gauges.md
                         print(f"    Deployed gauge_{width}t_pieces01.tga ({scale_factor:.2f}x scale) to thorne_dev")
             
             print(f"\nReady to test in-game with: /loadskin thorne_drak")
-            print(f"Test variants: gauge_230t_pieces01.tga, gauge_240t_pieces01.tga")
+            print(f"Test variants: gauge_230t_pieces01.tga, gauge_240t_pieces01.tga, gauge_250t_pieces01.tga, gauge_260t_pieces01.tga")

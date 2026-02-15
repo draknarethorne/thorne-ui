@@ -282,8 +282,8 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>16</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -318,8 +318,8 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>17</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
 			<Lines>A_GaugeLines</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>

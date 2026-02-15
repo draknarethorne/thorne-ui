@@ -353,7 +353,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <!-- Pet Health Gauge (standard 122x8 version for Target Window) -->
+  <!-- Pet Health Gauge (standard 103x8 version for Target Window) -->
   <Gauge item="TW_PetHealth_Gauge">
     <ScreenID>PetHealth_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -362,7 +362,7 @@
       <Y>24</Y>
     </Location>
     <Size>
-      <CX>250</CX>
+      <CX>103</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
@@ -468,7 +468,7 @@
       <Y>16</Y>
     </Location>
     <Size>
-      <CX>122</CX>
+      <CX>103</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
@@ -502,7 +502,7 @@
       <Y>16</Y>
     </Location>
     <Size>
-      <CX>122</CX>
+      <CX>103i</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>

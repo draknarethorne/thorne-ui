@@ -1,0 +1,34 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.6
+    hooks:
+      - id: ruff
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: scan-links
+        name: Scan Markdown links
+        entry: python .bin/scan_links.py --output .tmp/scan_links.json
+        language: system
+        files: \.(md)$
+        pass_filenames: false
+
+      - id: markdownlint
+        name: markdownlint-cli2
+        entry: markdownlint-cli2 --config .markdownlint.json
+        language: system
+        files: \.(md)$
+
+      - id: validate-xml
+        name: Validate XML well-formedness
+        entry: python .bin/validate_xml.py --report .tmp/xml_wellformed.json
+        language: system
+        files: \.(xml)$
+
+      - id: cspell
+        name: cspell
+        entry: cspell lint --config .cspell.json
+        language: system
+        files: \.(md|txt|xml|py)$
+        stages: [manual]

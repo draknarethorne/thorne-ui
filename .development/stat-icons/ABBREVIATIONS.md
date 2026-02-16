@@ -1,8 +1,9 @@
 # Stat Icon Abbreviations Reference
 
-**Document Version:** 1.0  
+**Status:** ✅ ACTIVE - Current standard for all stat icons  
+**Document Version:** 2.0  
 **Last Updated:** 2026-02-15  
-**Purpose:** Define standardized abbreviations for all stat icons used in Thorne UI
+**Purpose:** Define standardized abbreviations for all 18 stat icons in Thorne UI
 
 ---
 

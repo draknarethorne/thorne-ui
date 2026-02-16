@@ -1,165 +1,220 @@
-# Stat Icons System
+# Stat Icons System - Complete Reference
 
-**Status:** ⏳ In Progress (Needs icon coordinates)  
-**Version:** 1.0  
+**Status:** ✅ COMPLETE - All 18 icons configured and generated  
+**Version:** 2.0  
 **Last Updated:** 2026-02-15
 
 ---
 
 ## Overview
 
-Three swappable stat icon texture files with **identical coordinate layouts**. Users can switch between icon aesthetics without modifying XML files.
+**Stat icons system** provides 18 standardized icon textures for displaying player statistics (HP, Mana, Attributes, Resistances) in Thorne UI. The system features complete automation for generation, deployment, and testing.
 
-### Generated Files
+### System Status
 
-| File | Source | Icons | Status |
-|------|--------|-------|--------|
-| `stat_icon_pieces01.tga` | vert UI | 10 real + 8 placeholders | ✅ Generated |
-| `stat_icon_pieces02.tga` | vert-blue resists | 5 real + 13 placeholders | ✅ Generated |
-| `stat_icon_pieces03.tga` | default EQ resists | 5 real + 13 placeholders | ✅ Generated |
+✅ **Configuration:** Complete - all 18 icon coordinates mapped  
+✅ **Generation:** Complete - production-ready script and automation  
+✅ **Output:** Complete - 256×256 RGBA textures with all icons  
+✅ **Documentation:** Complete - usage guides and specifications  
+⏳ **Window Integration:** In Progress (v0.7.0 Inventory work)
 
-**Specifications:** 256×256 RGBA, 22×22px icons, identical coordinates across all files
+---
+
+## Quick Start
+
+### Generate All Stat Icons
+
+```bash
+# Auto-discover all icon variants and regenerate
+cd C:\Thorne-UI
+python .bin/regen_icons.py --all
+
+# Or regenerate single variant (most common)
+python .bin/regen_icons.py Thorne
+```
+
+### With Reference Labels (for editing)
+
+```bash
+python .bin/regen_icons.py Thorne --labels
+```
+
+**Result:** `staticons01.tga` generated in variant directory and deployed to `thorne_dev/` for immediate testing.
 
 ---
 
 ## Master Layout (256×256)
 
+All stat icons arranged in 3 columns × 6 rows with 22×22 pixel icons:
+
 ```
-Column 1 (X=10)     Column 2 (X=90)      Column 3 (X=170)
-Player Stats        Resistances          Attributes
-───────────────────────────────────────────────────────
-AC      (10,10)     Fire     (90,10)     STR     (170,10)
-ATK     (10,40)     Cold     (90,40)     INT     (170,40)
-HP      (10,70)     Magic    (90,70)     WIS     (170,70)
-MANA    (10,100)    Poison   (90,100)    AGI     (170,100)
-STA     (10,130)    Disease  (90,130)    DEX     (170,130)
-Weight  (10,160)    Reserve  (90,160)    CHA     (170,160)
-```
-
-**Spacing:** 22×22px icons, 30px row spacing, 80px column spacing
-
----
-
-## Usage in XML
-
-### Basic Animation
-
-```xml
-<Ui2DAnimation item="A_STRIcon">
-  <Texture>stat_icon_pieces01.tga</Texture>
-  <Location><X>170</X><Y>10</Y></Location>
-  <Size><CX>22</CX><CY>22</CY></Size>
-</Ui2DAnimation>
+Column 1 (X=10)     | Column 2 (X=90)      | Column 3 (X=170)
+Player Stats        | Resistances          | Attributes
+────────────────────┼──────────────────────┼────────────────
+AC      (10,10)     | Fire     (90,10)     | STR     (170,10)
+ATK     (10,40)     | Cold     (90,40)     | INT     (170,40)
+HP      (10,70)     | Magic    (90,70)     | WIS     (170,70)
+MANA    (10,100)    | Poison   (90,100)    | AGI     (170,100)
+STA     (10,130)    | Disease  (90,130)    | DEX     (170,130)
+Weight  (10,160)    | Reserve  (90,160)    | CHA     (170,160)
 ```
 
-### Swappable Files (Coordinates Unchanged)
+### Icon Specifications
 
-```xml
-<!-- Switch between files without coordinate changes -->
-<Texture>stat_icon_pieces01.tga</Texture>  <!-- vert comprehensive -->
-<Texture>stat_icon_pieces02.tga</Texture>  <!-- vert-blue resists -->
-<Texture>stat_icon_pieces03.tga</Texture>  <!-- default resists -->
+- **Texture Size:** 256×256 pixels (RGBA)
+- **Format:** TGA (Targa image)
+- **Icon Size:** 22×22 pixels
+- **Labels:** Abbreviated text overlaid on icons (AC, ATK, HP, MP, ST, WT, etc.)
+- **Grid Spacing:** 30px row height, 80px column width
+
+---
+
+## Files & Organization
+
+### Generation System
+
+```
+.bin/
+├── regen_icons.py              # Main generation script (549 lines)
+├── regen_icons.json            # Configuration (all 18 icons)
+├── regen_icons.md              # Comprehensive guide (490 lines)
+└── README.md                   # Script index
+
+.development/
+├── stat-icons-coordinates.json # Master layout reference (meta)
+└── stat-icons/
+    ├── README.md               # This file
+    ├── ABBREVIATIONS.md        # Icon shorthand reference
+    ├── REDESIGN-REVIEW.md      # Complete system analysis
+    └── archive/                # Historical docs
 ```
 
----
-
-## Icon Status
-
-### pieces01 (vert UI)
-✅ **Real Icons:** AC, ATK, STR, WIS, INT, Fire, Cold, Magic, Poison, Disease  
-○ **Placeholders:** HP, MANA, STA, Weight, Reserve, AGI, DEX, CHA
-
-### pieces02/03 (gemicons)
-✅ **Real Icons:** Fire, Cold, Magic, Poison, Disease  
-○ **Placeholders:** All Column 1 & 3 positions
-
----
-
-## Implementation Status
-
-### ✅ Complete
-- Master layout defined (18 positions)
-- Three swappable texture files generated
-- Validation and regeneration scripts
-
-### ⏳ Pending
-**Missing source coordinates in `stat-icons-config.json`:**
-- **Column 1:** AC, ATK, HP, MANA, STA, Weight
-- **Column 3:** AGI, DEX, CHA
-
-**To complete:**
-1. Locate icons in gemicon files (24×24px)
-2. Update `.development/stat-icons-config.json` with coordinates
-3. Regenerate: `python .bin/regen_stat_icons.py`
-4. Validate: `python .bin/validate_stat_icons.py`
-
----
-
-## Window Integration (Next Phase)
-
-**Primary Target:** Inventory Window
-- Format: `[Icon] Label Value` (e.g., `[STR] STR 150`)
-- Create Options variants (text-only, icon-only, icon+text)
-
-**Secondary Targets:** Player, Actions, Merchant Windows
-- Format: `[Icon] Value` (space-saving)
-
----
-
-## File Organization
+### Generated Stat Icons
 
 ```
 thorne_drak/
-  stat_icon_pieces01.tga          # Generated texture (vert)
-  stat_icon_pieces02.tga          # Generated texture (vert-blue)
-  stat_icon_pieces03.tga          # Generated texture (default)
-
-.development/
-  stat-icons-coordinates.json     # Master layout (18 positions)
-  stat-icons-config.json          # Source coordinates (NEEDS COMPLETION)
-
-.development/stat-icons/
-  README.md                       # This file
-  ABBREVIATIONS.md                # Abbreviation reference
-  archive/                        # Historical docs + analysis
-    README-OLD-VERBOSE.md
-    stat_icon_MASTER_LAYOUT.md
-    VISUAL_LAYOUT_GUIDE.md
-    ... (9 analysis documents)
-
-.bin/
-  regen_stat_icons.py             # Regenerate texture files
-  validate_stat_icons.py          # Validate coordinates
+├── staticons01.tga             # Generated texture (primary)
+└── Options/Icons/
+    ├── Thorne/
+    │   ├── gemicons01-03.tga   # Source icon files
+    │   ├── staticons01.tga     # Generated texture
+    │   └── staticons01-stats.json # Generation metadata
+    ├── Classic/
+    ├── Duxa/
+    ├── Infiniti/
+    ├── Steamworks/
+    └── WoW/
 ```
 
 ---
 
-## Tools
+## Configuration: regen_icons.json
 
-### Regenerate Textures
-```bash
-python .bin/regen_stat_icons.py
+All 18 icons fully configured with source coordinates in `.bin/regen_icons.json`:
+
+**Example entry:**
+```json
+{
+  "AC": {
+    "file": "gemicons01.tga",
+    "x": 192, "y": 216,
+    "w": 24, "h": 24,
+    "description": "Armor Class"
+  }
+}
 ```
 
-### Validate Coordinates
-```bash
-python .bin/validate_stat_icons.py
-```
+**Key Mappings:**
+- Player Stats (Column 1): AC, ATK, HP, MANA, STA, Weight
+- Resistances (Column 2): Fire, Cold, Magic, Poison, Disease, Reserve
+- Attributes (Column 3): STR, INT, WIS, AGI, DEX, CHA
 
-**Requirements:** `pillow>=12.1.1`
+All 18 icons have complete, verified coordinates. No placeholders.
 
 ---
 
-## Next Steps
+## Features
 
-1. **Find missing gemicon coordinates** (manual inspection or grid detection)
-2. **Update `stat-icons-config.json`** with extracted coordinates
-3. **Regenerate texture files** with complete icon set
-4. **Integrate into Inventory window** (primary v0.7.0 goal)
-5. **Create Options variants** (text-only, icon-only, icon+text)
+### ✅ Automated Generation
+- Reads config from `.bin/regen_icons.json`
+- Extracts icons from gemicon source files
+- Resizes 24×24 → 22×22 pixels (LANCZOS interpolation)
+- Places in master layout grid
+- Adds abbreviation labels automatically
+- Generates metadata JSON with audit trail
+
+### ✅ Multi-Variant Support
+- Auto-discovers all icon variants in `Options/Icons/`
+- Currently supported: Thorne, Classic, Duxa, Infiniti, Steamworks, WoW
+- Smart copy logic: Single variant → copies to `thorne_drak/`; Multiple → Thorne only
+
+### ✅ Smart Deployment
+- Automatic copying to `thorne_drak/staticons01.tga`
+- Direct deployment to `C:\TAKP\uifiles\thorne_dev/` for testing
+- In-game testing: `/loadskin thorne_drak`
+
+### ✅ Detailed Metadata
+Generates `staticons01-stats.json` with:
+- Source file and coordinates for each icon
+- Position in final texture
+- Type: "extracted" vs "placeholder"
+- Complete audit trail
+
+---
+
+## Command Reference
+
+### Regenerate All Variants
+```bash
+python .bin/regen_icons.py --all
+```
+
+### Regenerate Single Variant
+```bash
+python .bin/regen_icons.py Thorne
+python .bin/regen_icons.py Classic
+```
+
+### With Reference Labels
+```bash
+python .bin/regen_icons.py Thorne --labels
+```
+
+### Multiple Variants
+```bash
+python .bin/regen_icons.py Thorne Classic Duxa
+```
+
+See [.bin/regen_icons.md](../../.bin/regen_icons.md) for comprehensive usage guide.
+
+---
+
+## Documentation
+
+| Document | Purpose |
+|----------|---------|
+| **README.md** | This file - system overview and quick reference |
+| **ABBREVIATIONS.md** | Icon shorthand reference (AC, MP, ST, FR, etc.) |
+| **REDESIGN-REVIEW.md** | Complete technical analysis and design review |
+| **.bin/regen_icons.md** | Detailed usage guide (490 lines) with workflows |
+| **.bin/README.md** | Script index with quick reference |
+
+---
+
+## Next Phase: Window Integration (v0.7.0)
+
+**Goal:** Integrate stat icons into Inventory window with Options-driven display modes
+
+**Tasks:**
+1. Create Options/UI variants (text-only, icons-only, icons+text)
+2. Modify EQUI_Inventory.xml to support stat icon display
+3. Test with Player, Target, Merchant windows
+4. Release as v0.7.0
+
+See [REDESIGN-REVIEW.md](REDESIGN-REVIEW.md) for complete integration roadmap.
 
 ---
 
 **Maintainer:** Draknare Thorne  
 **Repository:** [draknarethorne/thorne-ui](https://github.com/draknarethorne/thorne-ui)  
-**Reference:** See [ABBREVIATIONS.md](ABBREVIATIONS.md) for icon shorthand
+**Related Issue:** [#8 - Stat Icons Integration](https://github.com/draknarethorne/thorne-ui/issues/8)

@@ -11,7 +11,7 @@ Features:
   - Extracts icons from gemicon files in source directory
   - Resizes to 22x22 pixels
   - Places in 256x256 template at master layout positions
-  - Adds abbreviation labels within icons (text overlay)
+  - Clean icons (no text overlay)
   - Optionally adds text labels next to icons (--labels flag)
   - Generates placeholder graphics for missing icons
   - Smart copyback (single variant → copy to thorne_drak/, multiple → Thorne only)
@@ -77,7 +77,7 @@ class StatIconGenerator:
         "STR": "STR", "INT": "INT", "WIS": "WIS", "AGI": "AGI", "DEX": "DEX", "CHA": "CHA",
     }
     
-    def __init__(self, source_dir, config_path, output_file, add_abbreviations=True, add_labels=False):
+    def __init__(self, source_dir, config_path, output_file, add_abbreviations=False, add_labels=False):
         """
         Initialize the generator.
         
@@ -85,7 +85,7 @@ class StatIconGenerator:
             source_dir: Directory containing gemicon files (e.g., thorne_drak/Options/Icons/Thorne)
             config_path: Path to JSON config file with icon coordinate mappings
             output_file: Output path for staticons texture file
-            add_abbreviations: Whether to add abbreviation labels within icons (default: True)
+            add_abbreviations: Whether to add abbreviation labels within icons (default: False - keep icons clean)
             add_labels: Whether to add text labels next to icons (default: False)
         """
         self.source_dir = Path(source_dir)
@@ -355,7 +355,7 @@ def regenerate_icons(variant_dir, config_path, root_path, add_labels=False):
             variant_dir,
             config_path,
             output_file,
-            add_abbreviations=True,
+            add_abbreviations=False,
             add_labels=add_labels
         )
         

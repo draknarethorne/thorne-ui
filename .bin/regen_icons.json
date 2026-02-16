@@ -1,0 +1,166 @@
+{
+  "description": "Icon coordinate mappings for stat icon generation",
+  "note": "Fill in coordinates for each icon variant. Icons are extracted as 24x24 and resized to 22x22.",
+  
+  "AC": {
+    "file": "gemicons01.tga",
+    "x": 192,
+    "y": 216,
+    "w": 24,
+    "h": 24,
+    "description": "Armor Class"
+  },
+  
+  "ATK": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 120,
+    "w": 24,
+    "h": 24,
+    "description": "Attack"
+  },
+  
+  "HP": {
+    "file": "gemicons01.tga",
+    "x": 216,
+    "y": 216,
+    "w": 24,
+    "h": 24,
+    "description": "Hit Points"
+  },
+  
+  "MANA": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 24,
+    "w": 24,
+    "h": 24,
+    "description": "Mana Points"
+  },
+  
+  "STA": {
+    "file": "gemicons01.tga",
+    "x": 0,
+    "y": 48,
+    "w": 24,
+    "h": 24,
+    "description": "Stamina"
+  },
+  
+  "Weight": {
+    "file": "gemicons02.tga",
+    "x": 144,
+    "y": 48,
+    "w": 24,
+    "h": 24,
+    "description": "Character Weight"
+  },
+  
+  "Fire": {
+    "file": "gemicons01.tga",
+    "x": 48,
+    "y": 120,
+    "w": 24,
+    "h": 24,
+    "description": "Fire Resistance"
+  },
+  
+  "Cold": {
+    "file": "gemicons01.tga",
+    "x": 168,
+    "y": 120,
+    "w": 24,
+    "h": 24,
+    "description": "Cold Resistance"
+  },
+  
+  "Magic": {
+    "file": "gemicons01.tga",
+    "x": 216,
+    "y": 144,
+    "w": 24,
+    "h": 24,
+    "description": "Magic Resistance"
+  },
+  
+  "Poison": {
+    "file": "gemicons01.tga",
+    "x": 24,
+    "y": 144,
+    "w": 24,
+    "h": 24,
+    "description": "Poison Resistance"
+  },
+  
+  "Disease": {
+    "file": "gemicons01.tga",
+    "x": 120,
+    "y": 144,
+    "w": 24,
+    "h": 24,
+    "description": "Disease Resistance"
+  },
+  
+  "Reserve": {
+    "file": "gemicons01.tga",
+    "x": 120,
+    "y": 48,
+    "w": 24,
+    "h": 24,
+    "description": "Dragon"
+  },
+  
+  "STR": {
+    "file": "gemicons01.tga",
+    "x": 144,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Strength"
+  },
+  
+  "INT": {
+    "file": "gemicons01.tga",
+    "x": 24,
+    "y": 24,
+    "w": 24,
+    "h": 24,
+    "description": "Intelligence"
+  },
+  
+  "WIS": {
+    "file": "gemicons01.tga",
+    "x": 216,
+    "y": 72,
+    "w": 24,
+    "h": 24,
+    "description": "Wisdom"
+  },
+  
+  "AGI": {
+    "file": "gemicons01.tga",
+    "x": 216,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Agility"
+  },
+  
+  "DEX": {
+    "file": "gemicons01.tga",
+    "x": 192,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "description": "Dexterity"
+  },
+  
+  "CHA": {
+    "file": "gemicons01.tga",
+    "x": 120,
+    "y": 24,
+    "w": 24,
+    "h": 24,
+    "description": "Charisma"
+  }
+}

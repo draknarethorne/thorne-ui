@@ -1,0 +1,168 @@
+{
+  "file": "C:\\thorne-ui\\thorne_drak\\Options\\Icons\\Duxa\\staticons01.tga",
+  "source_dir": "C:\\thorne-ui\\thorne_drak\\Options\\Icons\\Duxa",
+  "icons": {
+    "AC": {
+      "position": {
+        "x": 10,
+        "y": 10
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (192,216)"
+    },
+    "ATK": {
+      "position": {
+        "x": 10,
+        "y": 40
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (0,120)"
+    },
+    "HP": {
+      "position": {
+        "x": 10,
+        "y": 70
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (216,216)"
+    },
+    "MANA": {
+      "position": {
+        "x": 10,
+        "y": 100
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (0,24)"
+    },
+    "STA": {
+      "position": {
+        "x": 10,
+        "y": 130
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (0,48)"
+    },
+    "Weight": {
+      "position": {
+        "x": 10,
+        "y": 160
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons02.tga @ (144,48)"
+    },
+    "Fire": {
+      "position": {
+        "x": 90,
+        "y": 10
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (48,120)"
+    },
+    "Cold": {
+      "position": {
+        "x": 90,
+        "y": 40
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (168,120)"
+    },
+    "Magic": {
+      "position": {
+        "x": 90,
+        "y": 70
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (216,144)"
+    },
+    "Poison": {
+      "position": {
+        "x": 90,
+        "y": 100
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (24,144)"
+    },
+    "Disease": {
+      "position": {
+        "x": 90,
+        "y": 130
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (120,144)"
+    },
+    "Reserve": {
+      "position": {
+        "x": 90,
+        "y": 160
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (120,48)"
+    },
+    "STR": {
+      "position": {
+        "x": 170,
+        "y": 10
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (144,0)"
+    },
+    "INT": {
+      "position": {
+        "x": 170,
+        "y": 40
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (24,24)"
+    },
+    "WIS": {
+      "position": {
+        "x": 170,
+        "y": 70
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (216,72)"
+    },
+    "AGI": {
+      "position": {
+        "x": 170,
+        "y": 100
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (216,0)"
+    },
+    "DEX": {
+      "position": {
+        "x": 170,
+        "y": 130
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (192,0)"
+    },
+    "CHA": {
+      "position": {
+        "x": 170,
+        "y": 160
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "gemicons01.tga @ (120,24)"
+    }
+  }
+}

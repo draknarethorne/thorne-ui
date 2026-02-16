@@ -26,31 +26,25 @@ python .bin/regen_gauges.py --help             # Usage help
 
 ### Stat Icon Management
 
-**[regen_stat_icons.py](regen_stat_icons.md)** - Generate stat icon textures with abbreviations
+**[regen_icons.py](regen_icons.md)** - Generate stat icon textures with abbreviations and labels
 
+- Auto-discovers icon variants from Options/Icons/
 - Extracts icons from gemicon files
 - Flexible JSON configuration for icon coordinates
-- Generates abbreviation labels (optional)
-- Creates placeholder graphics for missing icons
+- Abbreviation labels within icons (in-game display)
+- Optional text labels next to icons (editing reference)
+- Integrated label rendering (no separate tool needed)
+- Smart deployment (copies to thorne_drak/ and thorne_dev/)
 
 ```bash
-# Basic: Extract icons and generate texture
-python .bin/regen_stat_icons.py \
-  --source-dir thorne_drak/Options/Icons/Classic \
-  --output thorne_drak/stat_icon_pieces01.tga
-
-# With abbreviations
-python .bin/regen_stat_icons.py \
-  --source-dir thorne_drak/Options/Icons/Classic \
-  --output thorne_drak/stat_icon_pieces01.tga \
-  --add-abbreviations
+python .bin/regen_icons.py --all                      # Auto-discover all variants
+python .bin/regen_icons.py Thorne                     # Single variant
+python .bin/regen_icons.py Thorne --labels            # With reference labels
+python .bin/regen_icons.py Thorne Classic Duxa        # Multiple variants
+python .bin/regen_icons.py --help                     # Usage help
 ```
 
-📖 **For comprehensive usage guide, see [regen_stat_icons.md](regen_stat_icons.md)**
-
-**Supporting tools:**
-- `add_abbreviations_to_textures.py` - Add abbreviations to existing textures
-- `validate_stat_icons.py` - Validate stat icon texture files
+📖 **For comprehensive usage guide, see [regen_icons.md](regen_icons.md)**
 
 ---
 
@@ -143,8 +137,9 @@ All scripts follow the pattern defined in [STANDARDS.md](STANDARDS.md):
 |------|---------|
 | Regen all gauges (auto-discover) | `python .bin/regen_gauges.py --all` |
 | Regen single gauge + test | `python .bin/regen_gauges.py Thorne` |
+| Regen all stat icons | `python .bin/regen_icons.py --all` |
+| Regen stat icons with labels | `python .bin/regen_icons.py --all --labels` |
 | Full sync to TAKP | `.\sync-thorne-ui.bat` |
 | Fix TGA files | `python .bin/fix_tga_files.py <dir>` |
-| Generate stat icons | See `regen_stat_icons.py --help` |
 | Get help | `python .bin/<script>.py --help` |
 

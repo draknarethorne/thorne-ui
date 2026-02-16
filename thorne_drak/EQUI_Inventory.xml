@@ -1233,7 +1233,7 @@
       <Y>70</Y>
     </Location>
     <Size>
-      <CX>70</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>STR</Text>
@@ -1246,6 +1246,19 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_STR_Icon">
+    <ScreenID>IW_STR_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>70</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_StatIcon_STR</Animation>
+  </StaticAnimation>
   <Label item="IW_STRNumber">
     <ScreenID>IW_STRNumber</ScreenID>
     <EQType>5</EQType>
@@ -1279,7 +1292,7 @@
       <Y>84</Y>
     </Location>
     <Size>
-      <CX>45</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>STA</Text>
@@ -1292,6 +1305,19 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_STA_Icon">
+    <ScreenID>IW_STA_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>84</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_StatIcon_STA</Animation>
+  </StaticAnimation>
   <Label item="IW_STANumber">
     <ScreenID>IW_STANumber</ScreenID>
     <EQType>6</EQType>
@@ -1325,7 +1351,7 @@
       <Y>112</Y>
     </Location>
     <Size>
-      <CX>45</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>DEX</Text>
@@ -1338,6 +1364,19 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_DEX_Icon">
+    <ScreenID>IW_DEX_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>112</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_StatIcon_DEX</Animation>
+  </StaticAnimation>
   <Label item="IW_DEXNumber">
     <ScreenID>IW_DEXNumber</ScreenID>
     <EQType>7</EQType>
@@ -1371,7 +1410,7 @@
       <Y>98</Y>
     </Location>
     <Size>
-      <CX>45</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>AGI</Text>
@@ -1384,6 +1423,19 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_AGI_Icon">
+    <ScreenID>IW_AGI_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>98</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_StatIcon_AGI</Animation>
+  </StaticAnimation>
   <Label item="IW_AGINumber">
     <ScreenID>IW_AGINumber</ScreenID>
     <EQType>8</EQType>
@@ -1417,7 +1469,7 @@
       <Y>126</Y>
     </Location>
     <Size>
-      <CX>45</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>WIS</Text>
@@ -1430,6 +1482,19 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_WIS_Icon">
+    <ScreenID>IW_WIS_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>126</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_StatIcon_WIS</Animation>
+  </StaticAnimation>
   <Label item="IW_WISNumber">
     <ScreenID>IW_WISNumber</ScreenID>
     <EQType>9</EQType>
@@ -1463,7 +1528,7 @@
       <Y>140</Y>
     </Location>
     <Size>
-      <CX>45</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>INT</Text>
@@ -1476,6 +1541,19 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_INT_Icon">
+    <ScreenID>IW_INT_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>140</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_StatIcon_INT</Animation>
+  </StaticAnimation>
   <Label item="IW_INTNumber">
     <ScreenID>IW_INTNumber</ScreenID>
     <EQType>10</EQType>
@@ -1509,7 +1587,7 @@
       <Y>154</Y>
     </Location>
     <Size>
-      <CX>45</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>CHA</Text>
@@ -1522,6 +1600,19 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_CHA_Icon">
+    <ScreenID>IW_CHA_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>154</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_StatIcon_CHA</Animation>
+  </StaticAnimation>
   <Label item="IW_CHANumber">
     <ScreenID>IW_CHANumber</ScreenID>
     <EQType>11</EQType>

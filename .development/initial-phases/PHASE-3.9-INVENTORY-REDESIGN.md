@@ -580,4 +580,4 @@ Players develop muscle memory for slot positions, reducing time spent searching 
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../technical/eqtypes.md)
+[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)

@@ -12,11 +12,21 @@
 			"**/*.backup_*": true,
 			"**/*.bak": true,
 			"**/*.old": true,
+			"**/.tmp": true,
+			"**/.reports": true,
+			"**/.archive": true,
+			"**/.venv": true,
+			"**/venv": true
 		},
 		"search.exclude": {
 			"**/*.backup_*": true,
 			"**/*.bak": true,
 			"**/*.old": true,
+			"**/.tmp": true,
+			"**/.reports": true,
+			"**/.archive": true,
+			"**/.venv": true,
+			"**/venv": true
 		},
 		"files.associations": {
 			"*.xml": "xml",
@@ -29,8 +39,15 @@
 		"editor.formatOnSave": false,
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2,
+		"editor.rulers": [
+			180
+		],
 		"files.trimTrailingWhitespace": false,
 		"files.insertFinalNewline": false,
+		"markdownlint.config": "${workspaceFolder}/.markdownlint.json",
+		"cSpell.configFile": "${workspaceFolder}/.cspell.json",
+		"ruff.enable": true,
+		"ruff.format.enable": true,
 		"workbench.colorCustomizations": {
 			"editorRuler.foreground": "#444444"
 		},
@@ -50,15 +67,17 @@
 	"extensions": {
 		"recommendations": [
 			"redhat.vscode-xml",
-			"donjayamanne.githistory",
 			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"charliermarsh.ruff",
+			"davidanson.vscode-markdownlint",
 			"ms-vscode.powershell",
-			"foxundermoon.shell-format",
-			"naumovs.color-picker",
+			"streetsidesoftware.code-spell-checker",
+			"redhat.vscode-yaml",
 			"yzhang.markdown-all-in-one",
 			"EditorConfig.EditorConfig",
-			"DotJoshJohnson.xml",
-			"GitHub.vscode-pull-request-github"
+			"GitHub.vscode-pull-request-github",
+			"donjayamanne.githistory"
 		]
 	}
 }

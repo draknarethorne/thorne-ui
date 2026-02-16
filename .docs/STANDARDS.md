@@ -2,7 +2,7 @@
 
 Complete guidelines for maintaining consistency across all Thorne UI variants and ongoing development.
 
-**Quick Links**: [Development Guide](../DEVELOPMENT.md) | [Phases](phases/) | [Technical References](technical/) | [Quick Hits](QUICK-HITS.md) | [Releases](releases/RELEASES.md)
+**Quick Links**: [Development Guide](../DEVELOPMENT.md) | [Phases](../.development/initial-phases/README.md) | [Technical References](technical/README.md) | [Releases](releases/RELEASES.md)
 
 ---
 
@@ -621,31 +621,29 @@ thorne_drak/
 
 Consider restructuring when documentation exceeds **2000 lines** or **8+ major phases**.
 
-**Proposed Structure**:
+**Current Structure (February 2026)**:
 ```
 .docs/
 ├── STANDARDS.md                 # This file
 ├── technical/
 │   ├── EQTYPES.md
 │   ├── ZEAL-FEATURES.md
-│   └── templates.md
+│   └── README.md
 
 .development/
-├── phases/
+├── initial-phases/
 │   ├── PHASE-3.9-INVENTORY-REDESIGN.md
-│   ├── PHASE-4-ACTIONS.md
+│   ├── PHASE-4-ACTIONS-SIMPLIFICATION.md
 │   └── PHASE-6-CONTAINERS.md
 └── architecture/
-  ├── decisions.md
-  ├── options-pattern.md
-  └── subwindow-pattern.md
+    └── README.md
 ```
 
 **Cross-Linking Pattern**:
 ```markdown
 <!-- Master index -->
-### [Phase 3.9](phases/PHASE-3.9-INVENTORY-REDESIGN.md)
-**Status**: PLANNED | [Full Documentation →](phases/PHASE-3.9-INVENTORY-REDESIGN.md)
+### [Phase 3.9](../.development/initial-phases/PHASE-3.9-INVENTORY-REDESIGN.md)
+**Status**: PLANNED | [Full Documentation →](../.development/initial-phases/PHASE-3.9-INVENTORY-REDESIGN.md)
 
 <!-- Phase file -->
 # Phase 3.9: Inventory Window Redesign

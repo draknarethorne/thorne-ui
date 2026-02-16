@@ -13,13 +13,13 @@ This directory contains:
 
 ## Directory Structure
 
-### `phases/`
+### `initial-phases/`
 Phase-by-phase development documentation:
 - `PHASE-*.md` - Individual phase documentation (completed and planned)
 - `PHASE-6-INVENTORY-WINDOWS/` - Detailed research and analysis for inventory redesign
 - `README.md` - Phase index and navigation
 
-### `readme/`
+### `readme-sync/`
 README improvement tracking and planning:
 - `OPTIONS_README_IMPROVEMENT_STATUS.md` - Current status of Options variant documentation
 - `CONTENT_EXPANSION_PLAN.md` - Plan for expanding variant docs
@@ -38,11 +38,20 @@ Standardization planning and roadmaps:
 Options variant synchronization documentation:
 - Delivery summaries and sync documentation
 
-### `analysis/`
-Analysis and research for specific problem areas:
-- `README_INCONSISTENCY_ANALYSIS.md` - Analysis of README formatting issues
-- `README_STANDARDS_ANALYSIS.md` - Analysis of README standards implementation
-- Other technical analysis documents
+### `ui-analysis/`
+Analysis and research for specific UI windows and features:
+- `README.md` - Index and navigation
+- Window-specific analyses (e.g., `PLAYERWINDOW-analysis.md`)
+- Cross-window coverage and priority indexes
+
+### `architecture/`
+Architecture decisions and infrastructure notes.
+
+### `stat-icons/`
+Stat icon redesign working notes and archives.
+
+### `technical/`
+Maintainer-only technical notes and limitations.
 
 ---
 

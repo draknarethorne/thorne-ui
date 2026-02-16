@@ -17,7 +17,7 @@ This project follows **Semantic Versioning (SemVer)** with a simplified approach
 MAJOR.MINOR.PATCH
 ```
 
-**Examples:** `0.5.0`, `1.0.0`, `1.2.3`
+**Examples:** `0.6.4`, `1.0.0`, `1.2.3`
 
 ### What Each Number Means
 
@@ -40,7 +40,7 @@ Located at repository root: `/VERSION`
 
 **Format:**
 ```
-0.5.0
+0.6.4
 ```
 
 **Rules:**
@@ -50,7 +50,7 @@ Located at repository root: `/VERSION`
 
 ### 2. Git Tags (Release Markers)
 
-**Format:** `vMAJOR.MINOR.PATCH` (e.g., `v0.5.0`)
+**Format:** `vMAJOR.MINOR.PATCH` (e.g., `v0.6.4`)
 
 **Purpose:**
 - Mark specific commits as releases
@@ -73,8 +73,8 @@ Located at repository root: `/VERSION`
 #### 1. **Update VERSION File**
 
 ```bash
-# Example: Updating to v0.6.0
-echo "0.6.0" > VERSION
+# Example: Updating to v0.6.4
+echo "0.6.4" > VERSION
 git add VERSION
 ```
 
@@ -85,12 +85,12 @@ Add new entry at the **top** of the Version History section:
 ```markdown
 ## 📋 Version History
 
-**v0.6.0** (YYYY-MM-DD)
+**v0.6.4** (YYYY-MM-DD)
 - ✅ Feature 1
 - ✅ Feature 2
 - ✅ Enhancement 3
 
-**v0.5.0** (February 3, 2026)
+**v0.6.3** (February 9, 2026)
 ...
 ```
 
@@ -98,20 +98,20 @@ Add new entry at the **top** of the Version History section:
 
 ```bash
 git add VERSION README.md
-git commit -m "chore(release): Prepare for release v0.6.0"
+git commit -m "chore(release): Prepare for release v0.6.4"
 ```
 
 #### 4. **Create Annotated Tag**
 
 ```bash
-git tag -a v0.6.0 -m "Release v0.6.0: Brief description"
+git tag -a v0.6.4 -m "Release v0.6.4: Brief description"
 ```
 
 #### 5. **Push Tag to Trigger Release**
 
 ```bash
 git push origin main
-git push origin v0.6.0
+git push origin v0.6.4
 ```
 
 **Result:** GitHub Actions workflow automatically:
@@ -133,10 +133,10 @@ Before tagging a release, verify:
 cat VERSION
 
 # 2. Verify it matches intended release
-# Should display: 0.6.0 (without 'v' prefix)
+# Should display: 0.6.4 (without 'v' prefix)
 
 # 3. Verify README.md has matching entry
-grep "v0.6.0" README.md
+grep "v0.6.4" README.md
 
 # 4. Ensure you're on correct branch
 git branch
@@ -183,7 +183,7 @@ Potential automation improvements:
 
 3. **Release Prep Script**
    ```bash
-   # .bin/prepare-release.sh v0.6.0
+   # .bin/prepare-release.sh v0.6.4
    # - Update VERSION
    # - Update README.md template
    # - Run validation
@@ -199,20 +199,20 @@ Potential automation improvements:
 **Context:** New window added (e.g., Group Window enhancements)
 
 ```bash
-# Current: v0.5.0 → Target: v0.6.0
+# Current: v0.6.3 → Target: v0.6.4
 
 # 1. Update VERSION
-echo "0.6.0" > VERSION
+echo "0.6.4" > VERSION
 
 # 2. Update README.md (add new section at top)
 # ... edit manually ...
 
 # 3. Commit and tag
 git add VERSION README.md
-git commit -m "chore(release): Prepare for release v0.6.0"
-git tag -a v0.6.0 -m "Release v0.6.0: Group Window enhancements"
+git commit -m "chore(release): Prepare for release v0.6.4"
+git tag -a v0.6.4 -m "Release v0.6.4: Gauge system overhaul"
 git push origin main
-git push origin v0.6.0
+git push origin v0.6.4
 ```
 
 ### Scenario 2: Bug Fix (Patch Version)
@@ -220,20 +220,20 @@ git push origin v0.6.0
 **Context:** Fixed gauge height issue in Loot Window
 
 ```bash
-# Current: v0.5.0 → Target: v0.5.1
+# Current: v0.6.4 → Target: v0.6.5
 
 # 1. Update VERSION
-echo "0.5.1" > VERSION
+echo "0.6.5" > VERSION
 
 # 2. Update README.md
-# Add v0.5.1 entry (brief, focused on fix)
+# Add v0.6.5 entry (brief, focused on fix)
 
 # 3. Commit and tag
 git add VERSION README.md
-git commit -m "chore(release): Prepare for release v0.5.1"
-git tag -a v0.5.1 -m "Release v0.5.1: Fix loot window gauge height"
+git commit -m "chore(release): Prepare for release v0.6.5"
+git tag -a v0.6.5 -m "Release v0.6.5: Fix loot window gauge height"
 git push origin main
-git push origin v0.5.1
+git push origin v0.6.5
 ```
 
 ### Scenario 3: Major Overhaul (Major Version)
@@ -263,6 +263,8 @@ git push origin v1.0.0
 
 Historic versions and their significance:
 
+- **v0.6.4** (February 15, 2026): Gauge system overhaul, target window improvements
+- **v0.6.3** (February 9, 2026): Cast spell window spell-name font adjustment
 - **v0.5.0** (February 3, 2026): Phase 5 Target Window, documentation reorganization
 - **v0.4.0** (February 2, 2026): Release infrastructure, automated workflows
 - **v0.3.0** (February 1, 2026): Documentation overhaul, merchant window redesign
@@ -297,14 +299,14 @@ Historic versions and their significance:
 
 ```bash
 # Delete local tag
-git tag -d v0.5.0
+git tag -d v0.6.4
 
 # Delete remote tag (use with caution!)
-git push origin :refs/tags/v0.5.0
+git push origin :refs/tags/v0.6.4
 
 # Recreate tag
-git tag -a v0.5.0 -m "Release v0.5.0: Description"
-git push origin v0.5.0
+git tag -a v0.6.4 -m "Release v0.6.4: Description"
+git push origin v0.6.4
 ```
 
 ### Issue: "VERSION file out of sync"
@@ -317,7 +319,7 @@ cat VERSION
 git describe --tags --abbrev=0
 
 # If mismatch, update VERSION to match latest release
-echo "0.5.0" > VERSION
+echo "0.6.4" > VERSION
 git add VERSION
 git commit -m "chore: Sync VERSION file with latest release"
 ```
@@ -335,7 +337,7 @@ git commit -m "chore: Sync VERSION file with latest release"
 git tag -l
 
 # Re-push tag
-git push origin v0.5.0
+git push origin v0.6.4
 
 # Check GitHub Actions logs for errors
 ```
@@ -352,6 +354,6 @@ git push origin v0.5.0
 
 ## Maintenance Notes
 
-**Last Updated:** February 3, 2026  
+**Last Updated:** February 16, 2026  
 **Maintained By:** Draknare Thorne  
 **Status:** Active process, subject to refinement

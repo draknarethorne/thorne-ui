@@ -321,7 +321,7 @@ To experiment: Change the `interp_method=` parameter and re-run the script.
 
 ## Related Documentation
 
-- [.bin/README.md](.bin/README.md) - Script index
+- [README.md](README.md) - Script index
 - [.bin/STANDARDS.md](STANDARDS.md) - Script documentation standards
 - [DEVELOPMENT.md](../DEVELOPMENT.md) - Phase 3.9 gauge redesign details
 - [.docs/STANDARDS.md](../.docs/STANDARDS.md) - UI design standards

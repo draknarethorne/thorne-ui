@@ -4755,7 +4755,7 @@
 		</Frames>
 	</Ui2DAnimation>
   <!-- Stat Icons (18 total: 6 columns x 3 rows) -->
-  <Ui2DAnimation item="A_StatIcon_AC">
+  <Ui2DAnimation item="A_Icon_ArmorClass">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4774,7 +4774,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_ATK">
+  <Ui2DAnimation item="A_Icon_Attack">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4793,7 +4793,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_HP">
+  <Ui2DAnimation item="A_Icon_Health">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4812,7 +4812,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_MP">
+  <Ui2DAnimation item="A_Icon_Mana">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4831,7 +4831,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_ST">
+  <Ui2DAnimation item="A_Icon_Stamina">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4850,7 +4850,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_WT">
+  <Ui2DAnimation item="A_Icon_Weight">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4869,7 +4869,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_FR">
+  <Ui2DAnimation item="A_Icon_FireResist">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4888,7 +4888,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_CR">
+  <Ui2DAnimation item="A_Icon_ColdResist">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4907,7 +4907,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_MR">
+  <Ui2DAnimation item="A_Icon_MagicResist">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4926,7 +4926,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_PR">
+  <Ui2DAnimation item="A_Icon_PoisonResist">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4945,7 +4945,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_DR">
+  <Ui2DAnimation item="A_Icon_DiseaseResist">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4964,7 +4964,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_RV">
+  <Ui2DAnimation item="A_Icon_Dragon">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -4983,7 +4983,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_STR">
+  <Ui2DAnimation item="A_Icon_Strength">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -5002,7 +5002,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_INT">
+  <Ui2DAnimation item="A_Icon_Intelligence">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -5021,7 +5021,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_WIS">
+  <Ui2DAnimation item="A_Icon_Wisdom">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -5040,7 +5040,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_AGI">
+  <Ui2DAnimation item="A_Icon_Agility">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -5059,7 +5059,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_DEX">
+  <Ui2DAnimation item="A_Icon_Dexterity">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>
@@ -5078,7 +5078,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_StatIcon_CHA">
+  <Ui2DAnimation item="A_Icon_Charisma">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>staticons01.tga</Texture>

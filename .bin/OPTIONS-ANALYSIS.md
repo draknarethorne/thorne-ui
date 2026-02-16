@@ -4,7 +4,7 @@
 
 ---
 
-## Current Options Scripts (5 total)
+## Current Options Scripts (6 total)
 
 ### Script Breakdown by Function
 

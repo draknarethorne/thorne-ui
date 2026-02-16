@@ -5,7 +5,7 @@
 **Target Release:** v0.6.0  
 **Branch:** feature/v0.6.0-inventory-and-windows
 
-**Quick Links:** [Development Guide](../../DEVELOPMENT.md) | [Standards](../STANDARDS.md) | [TODO](../../TODO.md)
+**Quick Links:** [Development Guide](../../DEVELOPMENT.md) | [Standards](../../.docs/STANDARDS.md) | [TODO](../../TODO.md)
 
 ---
 

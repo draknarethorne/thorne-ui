@@ -1,9 +1,9 @@
 # Thorne UI Release Documentation Index
 
-## 📌 CURRENT RELEASE: v0.6.2 ✅
+## 📌 CURRENT RELEASE: v0.6.4 ✅
 
-**Status:** Patch release (Inventory layout fixes + Loadskin width expansion)  
-**Release Date:** February 9, 2026  
+**Status:** Patch release (gauge system overhaul + target window improvements)  
+**Release Date:** February 15, 2026  
 **Ready for Production:** Yes!
 
 ### For Creating New Releases (v0.6.0+)
@@ -38,8 +38,8 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 
 ## 🧪 Current Pre-Release
 
-**v0.6.3 (pre-release)** — Cast spell window spell-name font adjusted to Font 1  
-**Tag format:** `v0_6_3`
+**v0.6.3 (archived)** — Cast spell window spell-name font adjusted to Font 1  
+**Tag format:** `v0.6.3`
 
 ---
 
@@ -49,12 +49,12 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 # 1. Update version in README.md (Version History section)
 # 2. Commit and push to main
 git add README.md
-git commit -m "chore: Update version history for v0.6.2"
+git commit -m "chore: Update version history for v0.6.4"
 git push origin main
 
 # 3. Create and push a version tag (triggers GitHub Actions)
-git tag -a v0.6.2 -m "Release v0.6.2: Description of changes"
-git push origin v0.6.2
+git tag -a v0.6.4 -m "Release v0.6.4: Description of changes"
+git push origin v0.6.4
 
 # ✨ GitHub Actions handles everything:
 # - Creates ZIP packages automatically
@@ -71,7 +71,7 @@ git push origin v0.6.2
 
 | Need | Read |
 |------|------|
-| **Prepare v0.6.0+** | [releases/RELEASE-TEMPLATE.md](releases/RELEASE-TEMPLATE.md) |
+| **Prepare v0.6.0+** | [RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md) |
 | **Just want to create a release** | [RELEASES-QUICKSTART.md](RELEASES-QUICKSTART.md) |
 | **What changed recently?** | [../README.md](../README.md) |
 | **Questions about the process** | [RELEASES-FAQ.md](RELEASES-FAQ.md) |
@@ -124,12 +124,12 @@ git push origin v0.6.2
 
 **Documentation:**
 - [Main README](../README.md) - Project overview
-- [Development Guide](../DEVELOPMENT.md) - Development roadmap
+- [Development Guide](../../DEVELOPMENT.md) - Development roadmap
 - [Standards](../STANDARDS.md) - Code standards
 - [Phases](../../.development/initial-phases/) - Development phases (maintainer-only)
 
 ---
 
-**Status:** v0.6.2 released ✅
+**Status:** v0.6.4 released ✅
 
-**Last Updated:** February 9, 2026
+**Last Updated:** February 15, 2026

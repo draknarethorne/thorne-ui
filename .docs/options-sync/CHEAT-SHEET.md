@@ -219,7 +219,7 @@ python .bin/options_readme_checker.py
 
 ### Monthly Detailed Audit (15 minutes)
 ```bash
-python .bin/options_readme_checker.py --verbose > /tmp/monthly_status.txt
+python .bin/options_readme_checker.py --verbose > .tmp/monthly_status.txt
 # Review detailed list, look for trends, pick files to expand
 ```
 
@@ -314,15 +314,15 @@ Windows in Sync: ___ / 13
 - Corrupted metadata can be regenerated
 
 ### README Link Format
-Incorrect:
+Incorrect (use inline code, not links):
 ```
-[EQUI_Target.xml](../../../EQUI_TargetWindow.xml)  ❌
-[EQUI_Target.xml](thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml)  ❌
+EQUI_TargetWindow.xml  ❌ (linked to ../../../EQUI_TargetWindow.xml)
+EQUI_TargetWindow.xml  ❌ (linked to thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml)
 ```
 
-Correct:
+Correct (variant README):
 ```
-[EQUI_TargetWindow.xml](./EQUI_TargetWindow.xml)  ✓
+./EQUI_TargetWindow.xml  ✓
 ```
 
 ---
@@ -335,5 +335,5 @@ Correct:
 
 ---
 
-*Last Updated: February 3, 2026*
+*Last Updated: February 16, 2026*
 *Maintained By: Draknare Thorne*

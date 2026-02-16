@@ -171,7 +171,7 @@ This project maintains comprehensive documentation organized by purpose:
 
 Releases are created automatically through GitHub Actions when you push a version tag:
 
-```bashcd 
+```bash
 # 1. Update version in README.md (Version History section)
 # 2. Commit and push all changes
 git add .
@@ -190,9 +190,9 @@ git push origin v0.5.0
 ```
 
 **📚 Detailed Instructions:**
-- **Quick Start:** [.docs/releases-quickstart.md](.docs/releases-quickstart.md) - Fast reference for creating releases
-- **Complete Guide:** [.docs/RELEASES.md](.docs/RELEASES.md) - Full documentation with troubleshooting
-- **FAQ:** [.docs/RELEASES-FAQ.md](.docs/RELEASES-FAQ.md) - Common questions answered
+- **Quick Start:** [.docs/releases/RELEASES-QUICKSTART.md](.docs/releases/RELEASES-QUICKSTART.md) - Fast reference for creating releases
+- **Complete Guide:** [.docs/releases/RELEASES.md](.docs/releases/RELEASES.md) - Full documentation with troubleshooting
+- **FAQ:** [.docs/releases/RELEASES-FAQ.md](.docs/releases/RELEASES-FAQ.md) - Common questions answered
 
 **🔗 View Releases:** https://github.com/draknarethorne/thorne-ui/releases
 

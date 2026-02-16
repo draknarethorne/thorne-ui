@@ -6,14 +6,14 @@
 
 **A: It happens automatically in GitHub Actions - you don't need to run anything locally!**
 
-When you push a version tag (e.g., `v0.4.0`), GitHub Actions automatically:
+When you push a version tag (e.g., `v0.6.4`), GitHub Actions automatically:
 1. Creates the ZIP packages for you
 2. Generates release notes
 3. Publishes the release
 4. Makes download links available
 
 **You only need to:**
-- Push a git tag: `git push origin v0.4.0`
+- Push a git tag: `git push origin v0.6.4`
 - Wait 2-3 minutes for the workflow to complete
 - That's it! The ZIPs are created automatically
 
@@ -94,7 +94,7 @@ Users don't need to navigate through the repository structure - they can go stra
 
 **Workflow:**
 1. Test locally first: `./.bin/test-release-workflow.sh`
-2. When ready, push tag: `git push origin v0.4.0`
+2. When ready, push tag: `git push origin v0.6.4`
 3. GitHub Actions runs automatically
 4. Release appears on Releases page
 
@@ -121,8 +121,8 @@ You never touch the ZIP files manually.
 1. Go to: https://github.com/draknarethorne/thorne-ui/releases
 2. Find the version they want (latest is at the top)
 3. Click on the ZIP file in the "Assets" section:
-   - `thorne_drak-v0.4.0.zip` - Just the UI
-   - `thorne-ui-v0.4.0.zip` - UI + documentation
+   - `thorne_drak-v0.6.4.zip` - Just the UI
+   - `thorne-ui-v0.6.4.zip` - UI + documentation
 4. Download starts automatically
 5. Extract and install
 
@@ -184,8 +184,8 @@ The ZIP files stay the same, but you can update:
 
 **Fix and retry:**
 1. Fix the issue
-2. Delete the tag: `git push origin :refs/tags/v0.4.0`
-3. Delete local tag: `git tag -d v0.4.0`
+2. Delete the tag: `git push origin :refs/tags/v0.6.4`
+3. Delete local tag: `git tag -d v0.6.4`
 4. Create and push tag again
 
 ---
@@ -249,4 +249,4 @@ After editing, test with `./.bin/test-release-workflow.sh` before creating a rea
 
 ---
 
-**Last Updated:** February 2, 2026
+**Last Updated:** February 16, 2026

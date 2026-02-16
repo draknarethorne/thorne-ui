@@ -233,7 +233,7 @@ copy .reports\sync_report.json .reports\sync_report_prerelease_v0.7.0.json
 
 ```bash
 # Full documentation check
-python .bin/options_readme_checker.py --verbose > .reports/documentation_audit_prerelease.txt
+python .bin/options_readme_checker.py --verbose > .tmp/documentation_audit_prerelease.txt
 
 # Review output:
 # - Any FORMAT/CONTENT ISSUES? Fix before release
@@ -262,7 +262,7 @@ python .bin/options_duplicate_detector.py --remove-candidates --verbose
 
 ```bash
 # Create release notes section
-cat > .docs/releases/v0.7.0_OPTIONS_STATUS.md << EOF
+cat > .tmp/v0.7.0_OPTIONS_STATUS.md << EOF
 # Options Sync Status - v0.7.0
 Generated: $(date)
 Sync Files: All 13 windows synchronized
@@ -272,8 +272,8 @@ Ready for Release: [X] YES
 EOF
 
 git add .reports/sync_report_prerelease_v0.7.0.json
-git add .reports/documentation_audit_prerelease.txt
-git add .docs/releases/v0.7.0_OPTIONS_STATUS.md
+git add .tmp/documentation_audit_prerelease.txt
+git add .tmp/v0.7.0_OPTIONS_STATUS.md
 git commit -m "chore(release): Pre-release options sync validation"
 ```
 
@@ -305,10 +305,10 @@ git commit -m "chore(release): Pre-release options sync validation"
 2. **Update Maintenance Logs**
    ```bash
    # Create monthly status report
-   python .bin/options_readme_checker.py --verbose > .reports/monthly_status_$(date +%Y%m).txt
+  python .bin/options_readme_checker.py --verbose > .tmp/monthly_status_$(date +%Y%m).txt
    
    # Commit to repository
-   git add .reports/monthly_status_*.txt
+  git add .tmp/monthly_status_*.txt
    git commit -m "docs(options): Monthly documentation status $(date +%Y-%m)"
    ```
 

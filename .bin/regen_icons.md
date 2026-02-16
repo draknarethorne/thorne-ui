@@ -449,7 +449,7 @@ If `icons_v2.tga` doesn't exist, generates placeholder instead of crashing.
 
 ## Related Documentation
 
-- [.bin/README.md](.bin/README.md) - Script index
+- [README.md](README.md) - Script index
 - [.bin/STANDARDS.md](STANDARDS.md) - Script documentation standards
 - [DEVELOPMENT.md](../DEVELOPMENT.md) - Phase 3.9 icon redesign details
 - [.docs/STANDARDS.md](../.docs/STANDARDS.md) - UI design standards

@@ -696,7 +696,7 @@
       <Y>0</Y>
     </Location>
     <Size>
-      <CX>64</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>HP</Text>
@@ -709,17 +709,30 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_HP_Icon">
+    <ScreenID>IW_HP_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>0</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_Icon_Health</Animation>
+  </StaticAnimation>
   <Label item="IW_CurrentHP">
     <ScreenID>IW_CurrentHP</ScreenID>
     <EQType>70</EQType>
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>37</X>
+      <X>46</X>
       <Y>0</Y>
     </Location>
     <Size>
-      <CX>60</CX>
+      <CX>51</CX>
       <CY>14</CY>
     </Size>
     <Text>0</Text>
@@ -742,7 +755,7 @@
       <Y>14</Y>
     </Location>
     <Size>
-      <CX>64</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>MANA</Text>
@@ -755,17 +768,30 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_Mana_Icon">
+    <ScreenID>IW_Mana_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>14</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_Icon_Mana</Animation>
+  </StaticAnimation>
   <Label item="IW_CurrentMana">
     <ScreenID>IW_CurrentMana</ScreenID>
     <EQType>80</EQType>
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>37</X>
+      <X>46</X>
       <Y>14</Y>
     </Location>
     <Size>
-      <CX>60</CX>
+      <CX>51</CX>
       <CY>14</CY>
     </Size>
     <Text>0</Text>
@@ -788,7 +814,7 @@
       <Y>32</Y>
     </Location>
     <Size>
-      <CX>64</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>AC</Text>
@@ -801,17 +827,30 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_AC_Icon">
+    <ScreenID>IW_AC_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>32</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_Icon_ArmorClass</Animation>
+  </StaticAnimation>
   <Label item="IW_ACNumber">
     <ScreenID>IW_ACNumber</ScreenID>
     <EQType>22</EQType>
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>37</X>
+      <X>46</X>
       <Y>32</Y>
     </Location>
     <Size>
-      <CX>60</CX>
+      <CX>51</CX>
       <CY>14</CY>
     </Size>
     <Text>0</Text>
@@ -834,7 +873,7 @@
       <Y>46</Y>
     </Location>
     <Size>
-      <CX>64</CX>
+      <CX>16</CX>
       <CY>14</CY>
     </Size>
     <Text>ATK</Text>
@@ -847,17 +886,30 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+  <StaticAnimation item="IW_ATK_Icon">
+    <ScreenID>IW_ATK_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>22</X>
+      <Y>46</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Animation>A_Icon_Attack</Animation>
+  </StaticAnimation>
   <Label item="IW_ATKNumber">
     <ScreenID>IW_ATKNumber</ScreenID>
     <EQType>23</EQType>
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>37</X>
+      <X>46</X>
       <Y>46</Y>
     </Location>
     <Size>
-      <CX>60</CX>
+      <CX>51</CX>
       <CY>14</CY>
     </Size>
     <Text>0</Text>
@@ -1224,234 +1276,6 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
-  <Label item="IW_AC">
-    <ScreenID>IW_AC</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>40</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>AC</Text>
-    <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>false</AlignRight>
-  </Label>
-  <StaticAnimation item="IW_AC_Icon">
-    <ScreenID>IW_AC_Icon</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>22</X>
-      <Y>40</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Animation>A_StatIcon_AC</Animation>
-  </StaticAnimation>
-  <Label item="IW_ACNumber">
-    <ScreenID>IW_ACNumber</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>68</X>
-      <Y>40</Y>
-    </Location>
-    <Size>
-      <CX>30</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>0</Text>
-    <TextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>true</AlignRight>
-  </Label>
-  <Label item="IW_ATK">
-    <ScreenID>IW_ATK</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>54</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>ATK</Text>
-    <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>false</AlignRight>
-  </Label>
-  <StaticAnimation item="IW_ATK_Icon">
-    <ScreenID>IW_ATK_Icon</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>22</X>
-      <Y>54</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Animation>A_StatIcon_ATK</Animation>
-  </StaticAnimation>
-  <Label item="IW_ATKNumber">
-    <ScreenID>IW_ATKNumber</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>68</X>
-      <Y>54</Y>
-    </Location>
-    <Size>
-      <CX>30</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>0</Text>
-    <TextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>true</AlignRight>
-  </Label>
-  <Label item="IW_HP">
-    <ScreenID>IW_HP</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>68</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>HP</Text>
-    <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>false</AlignRight>
-  </Label>
-  <StaticAnimation item="IW_HP_Icon">
-    <ScreenID>IW_HP_Icon</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>22</X>
-      <Y>68</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Animation>A_StatIcon_HP</Animation>
-  </StaticAnimation>
-  <Label item="IW_CurrentHP">
-    <ScreenID>IW_CurrentHP</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>68</X>
-      <Y>68</Y>
-    </Location>
-    <Size>
-      <CX>30</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>0</Text>
-    <TextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>true</AlignRight>
-  </Label>
-  <Label item="IW_Mana">
-    <ScreenID>IW_Mana</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>82</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>MP</Text>
-    <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>false</AlignRight>
-  </Label>
-  <StaticAnimation item="IW_Mana_Icon">
-    <ScreenID>IW_Mana_Icon</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>22</X>
-      <Y>82</Y>
-    </Location>
-    <Size>
-      <CX>16</CX>
-      <CY>14</CY>
-    </Size>
-    <Animation>A_StatIcon_MP</Animation>
-  </StaticAnimation>
-  <Label item="IW_CurrentMana">
-    <ScreenID>IW_CurrentMana</ScreenID>
-    <Font>3</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>68</X>
-      <Y>82</Y>
-    </Location>
-    <Size>
-      <CX>30</CX>
-      <CY>14</CY>
-    </Size>
-    <Text>0</Text>
-    <TextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>false</AlignCenter>
-    <AlignRight>true</AlignRight>
-  </Label>
   <Label item="IW_STR">
     <ScreenID>IW_STR</ScreenID>
     <Font>3</Font>
@@ -1485,7 +1309,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_STR</Animation>
+    <Animation>A_Icon_Strength</Animation>
   </StaticAnimation>
   <Label item="IW_STRNumber">
     <ScreenID>IW_STRNumber</ScreenID>
@@ -1544,7 +1368,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_STA</Animation>
+    <Animation>A_Icon_Stamina</Animation>
   </StaticAnimation>
   <Label item="IW_STANumber">
     <ScreenID>IW_STANumber</ScreenID>
@@ -1603,7 +1427,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_DEX</Animation>
+    <Animation>A_Icon_Dexterity</Animation>
   </StaticAnimation>
   <Label item="IW_DEXNumber">
     <ScreenID>IW_DEXNumber</ScreenID>
@@ -1662,7 +1486,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_AGI</Animation>
+    <Animation>A_Icon_Agility</Animation>
   </StaticAnimation>
   <Label item="IW_AGINumber">
     <ScreenID>IW_AGINumber</ScreenID>
@@ -1721,7 +1545,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_WIS</Animation>
+    <Animation>A_Icon_Wisdom</Animation>
   </StaticAnimation>
   <Label item="IW_WISNumber">
     <ScreenID>IW_WISNumber</ScreenID>
@@ -1780,7 +1604,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_INT</Animation>
+    <Animation>A_Icon_Intelligence</Animation>
   </StaticAnimation>
   <Label item="IW_INTNumber">
     <ScreenID>IW_INTNumber</ScreenID>
@@ -1839,7 +1663,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_CHA</Animation>
+    <Animation>A_Icon_Charisma</Animation>
   </StaticAnimation>
   <Label item="IW_CHANumber">
     <ScreenID>IW_CHANumber</ScreenID>
@@ -1898,7 +1722,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_PR</Animation>
+    <Animation>A_Icon_PoisonResist</Animation>
   </StaticAnimation>
   <Label item="IW_PoisonNumber">
     <ScreenID>IW_PoisonNumber</ScreenID>
@@ -1957,7 +1781,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_MR</Animation>
+    <Animation>A_Icon_MagicResist</Animation>
   </StaticAnimation>
   <Label item="IW_MagicNumber">
     <ScreenID>IW_MagicNumber</ScreenID>
@@ -2016,7 +1840,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_DR</Animation>
+    <Animation>A_Icon_DiseaseResist</Animation>
   </StaticAnimation>
   <Label item="IW_DiseaseNumber">
     <ScreenID>IW_DiseaseNumber</ScreenID>
@@ -2075,7 +1899,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_FR</Animation>
+    <Animation>A_Icon_FireResist</Animation>
   </StaticAnimation>
   <Label item="IW_FireNumber">
     <ScreenID>IW_FireNumber</ScreenID>
@@ -2134,7 +1958,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_CR</Animation>
+    <Animation>A_Icon_ColdResist</Animation>
   </StaticAnimation>
   <Label item="IW_ColdNumber">
     <ScreenID>IW_ColdNumber</ScreenID>
@@ -2193,7 +2017,7 @@
       <CX>16</CX>
       <CY>14</CY>
     </Size>
-    <Animation>A_StatIcon_WT</Animation>
+    <Animation>A_Icon_Weight</Animation>
   </StaticAnimation>
   <Label item="IW_CurrentWeight">
     <ScreenID>IW_CurrentWeight</ScreenID>

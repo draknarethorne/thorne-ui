@@ -10,7 +10,7 @@
 
 The Options Sync System infrastructure is **complete and production-ready** with:
 
-✅ **4 Python scripts** for automation and validation  
+✅ **6 Python scripts** for automation and validation  
 ✅ **4 comprehensive documentation guides** (1400+ lines)  
 ✅ **46 README files** properly structured and maintained  
 ✅ **13 window configurations** with backups and metadata  
@@ -30,9 +30,9 @@ The Options Sync System infrastructure is **complete and production-ready** with
 
 ### 1. Automation Infrastructure ✅
 
-**4 Python Scripts** (`.bin/` directory):
+**6 Python Scripts** (`.bin/` directory):
 
-1. **`sync_window_to_default.py`**
+1. **`options_default_sync.py`**
    - Backs up window files to `Options/[Window]/Default/`
    - Updates `.sync-status.json` metadata
    - Tracks git commit hashes and timestamps
@@ -44,20 +44,25 @@ The Options Sync System infrastructure is **complete and production-ready** with
    - Generates JSON reports
    - Commands: `--verbose`, `--window`
 
-3. **`fix_readme_headers.py`**
+3. **`options_fix_readme.py`**
    - Auto-fixes file references (formats to markdown links)
    - Standardizes metadata field ordering
    - Extracts window/variant names from paths
    - Fixes separator lines and date formats
    - Commands: `--dry-run`, `--verbose`, `--window`
 
-4. **`generate_skeletal_readme.py`**
+4. **`options_generate_readme.py`**
    - Creates boilerplate README files for new variants
    - Populates required metadata fields
    - Includes empty sections ready for expansion
    - Commands: `--window`, `--variant`, `--xml`, `--dry-run`
 
-5. **`duplicate_detector.py`** (bonus)
+5. **`options_duplicate_detector.py`**
+
+6. **`options_default_compare.py`**
+   - Compares variants against Default baseline
+   - Identifies redundant copies vs intentional variants
+   - Commands: `--window`, `--all`, `--verbose`
    - Finds near-duplicate XML files (>95% match)
    - Helps identify redundant variants
    - Commands: `--verbose`, `--remove-candidates`, `--dry-run`
@@ -73,7 +78,7 @@ The Options Sync System infrastructure is **complete and production-ready** with
 
 ### 2. Documentation Library 📚
 
-**4 Comprehensive Guides** (`.docs/options-sync/` directory):
+**4 Comprehensive Guides** (`../../.docs/options-sync/` directory):
 
 #### **OPERATIONS-GUIDE.md** (800 lines)
 Complete operational manual covering:
@@ -135,13 +140,14 @@ thorne_drak/Options/
 └── (46 total README files)
 
 .bin/
-├── sync_window_to_default.py
+├── options_default_compare.py
+├── options_default_sync.py
 ├── options_readme_checker.py
-├── fix_readme_headers.py
-├── generate_skeletal_readme.py
-└── duplicate_detector.py
+├── options_fix_readme.py
+├── options_generate_readme.py
+└── options_duplicate_detector.py
 
-.docs/options-sync/
+../../.docs/options-sync/
 ├── README.md                 (index)
 ├── OPERATIONS-GUIDE.md       (800 lines)
 ├── PHASE-3-ACTION-PLAN.md    (300 lines)
@@ -221,10 +227,10 @@ No Out-of-Sync Files:        Yes ✓
 
 ```bash
 # Read this first (2 min)
-cat .docs/options-sync/CHEAT-SHEET.md
+cat ../../.docs/options-sync/CHEAT-SHEET.md
 
 # Use for: "How do I commit my window changes?"
-python .bin/sync_window_to_default.py --window Target
+python .bin/options_default_sync.py --window Target
 git add thorne_drak/EQUI_TargetWindow.xml
 git add thorne_drak/Options/Target/Default/
 git commit -m "fix(target): Description"
@@ -234,10 +240,10 @@ git commit -m "fix(target): Description"
 
 ```bash
 # Week 1: Read overview (30 min)
-cat .docs/options-sync/README.md
+cat ../../.docs/options-sync/README.md
 
 # Week 2: Read Operations Guide (1 hour)
-cat .docs/options-sync/OPERATIONS-GUIDE.md
+cat ../../.docs/options-sync/OPERATIONS-GUIDE.md
 
 # Week 2: Perform first task with checklist
 # (follow a workflow from OPERATIONS-GUIDE.md)
@@ -255,7 +261,7 @@ cat .docs/options-sync/OPERATIONS-GUIDE.md
 
 ```bash
 # Read action plan (20 min)
-cat .docs/options-sync/PHASE-3-ACTION-PLAN.md
+cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 
 # Follow the execution order (4 days, 5 hours total)
 # Fixes specific issues with detailed steps
@@ -274,7 +280,7 @@ cat .docs/options-sync/PHASE-3-ACTION-PLAN.md
    
 4. Save monthly report:
    python .bin/options_readme_checker.py --verbose > \
-     .reports/monthly_status_$(date +%Y%m).txt
+   .tmp/monthly_status_$(date +%Y%m).txt
 ```
 
 ---
@@ -315,9 +321,9 @@ cat .docs/options-sync/PHASE-3-ACTION-PLAN.md
 
 | What | Where |
 |------|-------|
-| Daily commands | `.docs/options-sync/CHEAT-SHEET.md` |
-| Full operations | `.docs/options-sync/OPERATIONS-GUIDE.md` |
-| Phase 3 fixes | `.docs/options-sync/PHASE-3-ACTION-PLAN.md` |
+| Daily commands | `../../.docs/options-sync/CHEAT-SHEET.md` |
+| Full operations | `../../.docs/options-sync/OPERATIONS-GUIDE.md` |
+| Phase 3 fixes | `../../.docs/options-sync/PHASE-3-ACTION-PLAN.md` |
 | Scripts | `.bin/` (5 Python scripts) |
 | Window files | `thorne_drak/EQUI_*.xml` |
 | Variants | `thorne_drak/Options/[Window]/[Variant]/` |

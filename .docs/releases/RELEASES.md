@@ -11,7 +11,7 @@ This guide explains how to create and manage releases for the Thorne UI project 
 **A: https://github.com/draknarethorne/thorne-ui/releases** (or click "Releases" in the right sidebar)
 
 **Q: What do I need to do?**  
-**A: Just push a git tag:** `git push origin v0.4.0` **- everything else is automatic!**
+**A: Just push a git tag:** `git push origin v0.6.4` **- everything else is automatic!**
 
 See [RELEASES-FAQ.md](RELEASES-FAQ.md) for more common questions.
 
@@ -47,17 +47,17 @@ The automated workflow creates releases when you push a version tag:
 1. **Ensure all changes are committed and pushed to main:**
    ```bash
    git add .
-   git commit -m "Prepare for release v0.4.0"
+   git commit -m "Prepare for release v0.6.4"
    git push origin main
    ```
 
 2. **Create and push a version tag:**
    ```bash
    # Create an annotated tag with release notes
-   git tag -a v0.4.0 -m "Release v0.4.0: Brief description of major changes"
+   git tag -a v0.6.4 -m "Release v0.6.4: Brief description of major changes"
    
    # Push the tag to trigger the release workflow
-   git push origin v0.4.0
+   git push origin v0.6.4
    ```
 
 3. **GitHub Actions automatically:**
@@ -81,7 +81,7 @@ You can also create releases manually through the GitHub web interface:
 1. Go to your repository on GitHub
 2. Click "Releases" in the right sidebar
 3. Click "Draft a new release"
-4. Click "Choose a tag" and create a new tag (e.g., `v0.4.0`)
+4. Click "Choose a tag" and create a new tag (e.g., `v0.6.4`)
 5. Fill in the release title and description
 6. Manually upload ZIP files (if not using the workflow)
 7. Click "Publish release"
@@ -135,8 +135,8 @@ Follow semantic versioning: `vMAJOR.MINOR.PATCH`
 - **PATCH** (v0.3.1) - Bug fixes, small tweaks, documentation updates
 
 ### Examples:
-- `v0.3.0` - Current version with documentation reorganization
-- `v0.4.0` - Next minor version with new features
+- `v0.6.4` - Current patch release (gauge overhaul + target window updates)
+- `v0.7.0` - Next minor version with new features
 - `v1.0.0` - First major stable release
 - `v0.3.1` - Patch release fixing bugs in v0.3.0
 
@@ -184,14 +184,14 @@ If you need to delete and recreate a tag:
 
 ```bash
 # Delete local tag
-git tag -d v0.4.0
+git tag -d v0.6.4
 
 # Delete remote tag
-git push origin :refs/tags/v0.4.0
+git push origin :refs/tags/v0.6.4
 
 # Create new tag and push
-git tag -a v0.4.0 -m "Release v0.4.0"
-git push origin v0.4.0
+git tag -a v0.6.4 -m "Release v0.6.4"
+git push origin v0.6.4
 ```
 
 ## Troubleshooting
@@ -233,19 +233,19 @@ git push origin v0.4.0
 # 1. Update version in README.md
 vim README.md
 # Add entry to Version History:
-# **v0.4.0** (February 15, 2026)
+# **v0.6.4** (February 15, 2026)
 # - ✅ Group window with raid support
 # - ✅ Pet window enhancements
 # etc.
 
 # 2. Commit the version update
 git add README.md
-git commit -m "docs: Update version history for v0.4.0 release"
+git commit -m "docs: Update version history for v0.6.4 release"
 git push origin main
 
 # 3. Create and push the tag
-git tag -a v0.4.0 -m "Release v0.4.0: Group and Pet window improvements"
-git push origin v0.4.0
+git tag -a v0.6.4 -m "Release v0.6.4: Gauge overhaul and target window updates"
+git push origin v0.6.4
 
 # 4. Wait for workflow (check GitHub Actions tab)
 # 5. Review release on GitHub Releases page
@@ -256,7 +256,7 @@ git push origin v0.4.0
 
 ```bash
 # Create packages manually
-zip -r thorne_drak-v0.4.0.zip thorne_drak/ -x "*.git*" "*.md"
+zip -r thorne_drak-v0.6.4.zip thorne_drak/ -x "*.git*" "*.md"
 
 # Upload through GitHub web interface
 # Go to Releases > Draft a new release
@@ -308,5 +308,5 @@ For questions about releases or the release process:
 
 ---
 
-**Last Updated**: February 2, 2026  
+**Last Updated**: February 16, 2026  
 **Workflow Version**: 1.0

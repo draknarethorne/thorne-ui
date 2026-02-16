@@ -50,7 +50,7 @@ Format:
 
 **Examples:**
 - `regen_gauges.py` - Gauge texture generation + deployment
-- `generate_stat_icons.py` - Icon extraction + processing + abbreviations
+- `regen_icons.py` - Icon extraction + processing + abbreviations
 
 **Documentation:**
 ```
@@ -203,11 +203,11 @@ Group of simple scripts with brief descriptions in a table.
 | Script | Status | Type | Notes |
 |--------|--------|------|-------|
 | regen_gauges.py | ✅ **DONE** | Complex | Complete with .md file + --help |
-| regen_stat_icons.py | ⏳ TODO | Complex | Needs .md file + --help (renamed from generate_stat_icons.py) |
+| regen_icons.py | ✅ **DONE** | Complex | Complete with .md file + --help |
 | fix_tga_files.py | ⏳ TODO | Simple | Used by regen_gauges.py automatically |
 | add_abbreviations_to_textures.py | ⏳ TODO | Simple | Icon utility, consider group with stat icons |
 | validate_stat_icons.py | ⏳ TODO | Simple | Icon QA tool, consider group with stat icons |
-| **options_*.py (5 scripts)** | ⏳ TODO | Group | See OPTIONS-ANALYSIS.md - kept as separate tools for clarity + safety |
+| **options_*.py (6 scripts)** | ⏳ TODO | Group | See OPTIONS-ANALYSIS.md - kept as separate tools for clarity + safety |
 | scripts_readme.md | ✅ **KEEP** | Ref | Stat icons documentation (legacy, keep) |
 
 **Legend:**
@@ -218,11 +218,9 @@ Group of simple scripts with brief descriptions in a table.
 
 ### Next Steps
 
-1. **generate_stat_icons.py** (Complex)
-   - Create `.bin/generate_stat_icons.md`
-   - Extract help from `scripts_readme.md`
-   - Update script with proper --help
-   - Reference from `.bin/README.md`
+1. **regen_icons.py** (Complex)
+    - Keep `.bin/regen_icons.md` in sync with script behavior
+    - Ensure `--help` output matches documentation
 
 2. **Simple scripts** (fix_tga_files.py, etc.)
    - Add --help to each
@@ -260,12 +258,13 @@ Group of simple scripts with brief descriptions in a table.
 - Has --help in script
 - Referenced in `.bin/README.md` with link
 
-### ⏳ Partially Documented
+### ✅ Correctly Documented (Icons)
 
-**generate_stat_icons.py**
-- Documented in `scripts_readme.md`
-- Has command-line options
-- **Missing:** Individual .md file, proper --help, reference in main README.md
+**regen_icons.py**
+- Complex script
+- Has `.bin/regen_icons.md` with full documentation
+- Has --help in script
+- Referenced in `.bin/README.md` with link
 
 **fix_tga_files.py**
 - Exists and works

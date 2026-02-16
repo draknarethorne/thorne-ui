@@ -11,7 +11,7 @@
 ### Quick Reference
 
 ### Tool Reference
-- **[TOOLS.md](TOOLS.md)** Ì¥ß Complete guide to all 6 options tools with examples and use cases
+- **[TOOLS.md](TOOLS.md)** üìò Complete guide to all 6 options tools with examples and use cases
 
 - **[CHEAT-SHEET.md](CHEAT-SHEET.md)** ‚≠ê Command reference and common tasks (2 min bookmark this!)
 
@@ -689,7 +689,7 @@ Use exact name from the list (case-sensitive).
 ## Related Documentation
 
 - [VERSION-MANAGEMENT.md](../VERSION-MANAGEMENT.md) - Version control and release processes
-- [STANDARDIZATION-ROADMAP.md](../STANDARDIZATION-ROADMAP.md) - Field naming standards
+- [STANDARDIZATION-ROADMAP.md](../../.development/standards/STANDARDIZATION-ROADMAP.md) - Field naming standards
 - [technical/EQTYPES.md](../technical/EQTYPES.md) - EverQuest UI element types reference
 
 ---

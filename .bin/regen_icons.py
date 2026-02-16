@@ -524,7 +524,7 @@ For detailed documentation, see: .bin/regen_icons.md
     
     # Also copy to thorne_dev for immediate testing
     thorne_dev_path = Path('C:\\TAKP\\uifiles\\thorne_dev')
-    if thorne_dev_path.exists():
+    if thorne_dev_path.exists() and variants_to_copy:
         print(f"\n{'='*70}")
         print(f"Deploying to thorne_dev for testing...")
         print(f"{'='*70}")

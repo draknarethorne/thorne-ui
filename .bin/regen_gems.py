@@ -397,20 +397,27 @@ Examples:
         variants_to_copy = regenerated_variants
     elif len(regenerated_variants) > 1:
         # Multiple variants - only copy Thorne if it was regenerated
-        variants_to_copy = [(name, path) for name, path in regenerated_variants if name.lower() == 'thorne']
+        for name, path in regenerated_variants:
+            if name.lower() == 'thorne':
+                variants_to_copy = [(name, path)]
+                break  # Only select first match
     
     if variants_to_copy:
         print(f"\n{'='*70}")
         print("Copying regenerated files back to thorne_drak/...")
         print(f"{'='*70}")
         for variant_name, variant_path in variants_to_copy:
-            # Copy gemicons
+            # Copy gemicons and tinyicons only
             for i in range(1, 4):
                 src = variant_path / f"gemicons{i:02d}.tga"
                 dst = root_path / f"gemicons{i:02d}.tga"
                 if src.exists():
                     shutil.copy2(src, dst)
-            print(f"  Copied {variant_name} gemicons to thorne_drak/")
+                src = variant_path / f"tinyicons{i:02d}.tga"
+                dst = root_path / f"tinyicons{i:02d}.tga"
+                if src.exists():
+                    shutil.copy2(src, dst)
+            print(f"  Copied {variant_name} gemicons/tinyicons to thorne_drak/")
     
     # Also copy to thorne_dev for immediate testing
     thorne_dev_path = Path('C:\\TAKP\\uifiles\\thorne_dev')
@@ -419,13 +426,17 @@ Examples:
         print("Deploying to thorne_dev for testing...")
         print(f"{'='*70}")
         for variant_name, variant_path in variants_to_copy:
-            # Copy gemicons
+            # Copy gemicons and tinyicons only
             for i in range(1, 4):
                 src = variant_path / f"gemicons{i:02d}.tga"
                 dst = thorne_dev_path / f"gemicons{i:02d}.tga"
                 if src.exists():
                     shutil.copy2(src, dst)
-            print(f"  Deployed {variant_name} gemicons to thorne_dev/")
+                src = variant_path / f"tinyicons{i:02d}.tga"
+                dst = thorne_dev_path / f"tinyicons{i:02d}.tga"
+                if src.exists():
+                    shutil.copy2(src, dst)
+            print(f"  Deployed {variant_name} gemicons/tinyicons to thorne_dev/")
     
     # Summary
     print(f"\n{'='*70}")

@@ -40,8 +40,8 @@
   
   "STA": {
     "file": "gemicons01.tga",
-    "x": 0,
-    "y": 48,
+    "x": 96,
+    "y": 0,
     "w": 24,
     "h": 24,
     "description": "Stamina"
@@ -102,7 +102,7 @@
   },
   
   "Reserve": {
-    "file": "gemicons01.tga",
+    "file": "gemicons02.tga",
     "x": 120,
     "y": 48,
     "w": 24,

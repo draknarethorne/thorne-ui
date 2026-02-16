@@ -45,7 +45,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (0,48)"
+      "source": "gemicons01.tga @ (96,0)"
     },
     "Weight": {
       "position": {
@@ -108,7 +108,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (120,48)"
+      "source": "gemicons02.tga @ (120,48)"
     },
     "STR": {
       "position": {

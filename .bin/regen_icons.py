@@ -12,7 +12,7 @@ Features:
   - Resizes to 22x22 pixels
   - Places in 256x256 template at master layout positions
   - Clean icons (no text overlay)
-  - Optionally adds text labels next to icons (--labels flag)
+  - Adds text labels next to icons by default (use --no-labels to turn off)
   - Generates placeholder graphics for missing icons
   - Smart copyback (single variant → copy to thorne_drak/, multiple → Thorne only)
   - Automatic deployment to thorne_dev/ for testing
@@ -20,7 +20,8 @@ Features:
 USAGE:
     python regen_icons.py --all                   # Auto-discover all variants
     python regen_icons.py <variant> [variant2 ...]      # Specific variants
-    python regen_icons.py Thorne --labels         # With text labels
+    python regen_icons.py Thorne                  # With text labels (default)
+    python regen_icons.py Thorne --no-labels      # Without labels
     python regen_icons.py --help
 
 EXAMPLES:
@@ -77,7 +78,7 @@ class StatIconGenerator:
         "STR": "STR", "INT": "INT", "WIS": "WIS", "AGI": "AGI", "DEX": "DEX", "CHA": "CHA",
     }
     
-    def __init__(self, source_dir, config_path, output_file, add_abbreviations=False, add_labels=False):
+    def __init__(self, source_dir, config_path, output_file, add_abbreviations=False, add_labels=True):
         """
         Initialize the generator.
         
@@ -86,7 +87,7 @@ class StatIconGenerator:
             config_path: Path to JSON config file with icon coordinate mappings
             output_file: Output path for staticons texture file
             add_abbreviations: Whether to add abbreviation labels within icons (default: False - keep icons clean)
-            add_labels: Whether to add text labels next to icons (default: False)
+            add_labels: Whether to add text labels next to icons (default: True)
         """
         self.source_dir = Path(source_dir)
         self.output_file = Path(output_file)
@@ -333,7 +334,7 @@ class StatIconGenerator:
             print(f"WARNING: Failed to save stats: {e}")
 
 
-def regenerate_icons(variant_dir, config_path, root_path, add_labels=False):
+def regenerate_icons(variant_dir, config_path, root_path, add_labels=True):
     """Regenerate stat icons for a specific variant.
     
     Args:
@@ -395,8 +396,8 @@ EXAMPLES:
     # Multiple variants - only Thorne copied to thorne_drak/
     python regen_icons.py Thorne Classic Duxa
     
-    # With text labels next to icons (easier to identify during editing)
-    python regen_icons.py Thorne --labels
+    # Without text labels (clean icons only)
+    python regen_icons.py Thorne --no-labels
     
     # Show this help message
     python regen_icons.py --help
@@ -405,7 +406,7 @@ EXAMPLES:
 OPTIONS:
     --all               Auto-discover and regenerate all variants from Options/Icons/
     <variant>           Specific variant name (e.g., Thorne, Classic, Duxa)
-    --labels            Add text labels next to each icon (for reference/editing)
+    --no-labels         Disable text labels next to icons (labels on by default)
     root                Direct regeneration of thorne_drak/ directory
 
 AVAILABLE VARIANTS (auto-discovered):
@@ -418,7 +419,7 @@ FEATURES:
     ✓ Flexible JSON config for icon coordinate mapping
     ✓ Extracts and resizes icons (22×22)
     ✓ Abbreviation labels WITHIN icons (text overlay)
-    ✓ Text labels NEXT TO icons (with --labels option)
+    ✓ Text labels NEXT TO icons (default, use --no-labels to disable)
     ✓ Placeholder generation for missing icons
     ✓ Smart copyback (single→thorne_drak/, multi→Thorne only)
     ✓ Automatic deployment to thorne_dev/ for immediate testing
@@ -431,7 +432,7 @@ WORKFLOW:
 OPTIONS:
     --all               Auto-discover and regenerate all variants from Options/Icons/
     <variant>           Specific variant name (e.g., Thorne, Classic, Duxa)
-    --labels            Add text labels next to each icon (for reference/editing)
+    --no-labels         Disable text labels next to icons (labels on by default)
     root                Direct regeneration of thorne_drak/ directory
 
 For detailed documentation, see: .bin/regen_icons.md
@@ -439,9 +440,11 @@ For detailed documentation, see: .bin/regen_icons.md
         sys.exit(0 if len(sys.argv) > 1 else 1)
     
     # Extract options from argv
-    add_labels = '--labels' in sys.argv
-    if add_labels:
-        sys.argv.remove('--labels')
+    # Default: add_labels=True (labels next to icons)
+    # Use --no-labels to turn them off
+    add_labels = '--no-labels' not in sys.argv
+    if '--no-labels' in sys.argv:
+        sys.argv.remove('--no-labels')
     
     base_path = Path(__file__).parent.parent / 'thorne_drak' / 'Options' / 'Icons'
     root_path = Path(__file__).parent.parent / 'thorne_drak'

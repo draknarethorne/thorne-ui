@@ -22,6 +22,64 @@
     </Size>
     <Animation>A_CornerSquare</Animation>
   </StaticAnimation>
+  <!-- Divider animations for stat groups -->
+  <Ui2DAnimation item="IW_Divider1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>window_pieces01.tga</Texture>
+      <Location>
+        <X>50</X>
+        <Y>80</Y>
+      </Location>
+      <Size>
+        <CX>10</CX>
+        <CY>1</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="IW_Divider2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>window_pieces01.tga</Texture>
+      <Location>
+        <X>50</X>
+        <Y>80</Y>
+      </Location>
+      <Size>
+        <CX>10</CX>
+        <CY>1</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="IW_Divider3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>window_pieces01.tga</Texture>
+      <Location>
+        <X>50</X>
+        <Y>80</Y>
+      </Location>
+      <Size>
+        <CX>10</CX>
+        <CY>1</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
   <!-- IS_CHARM		0 -->
   <InvSlot item="InvSlot0">
     <ScreenID>InvSlot0</ScreenID>
@@ -1282,7 +1340,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>70</Y>
+      <Y>72</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1303,7 +1361,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>70</Y>
+      <Y>72</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1318,7 +1376,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>70</Y>
+      <Y>72</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1341,7 +1399,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>86</Y>
+      <Y>88</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1362,7 +1420,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>86</Y>
+      <Y>88</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1377,7 +1435,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>86</Y>
+      <Y>88</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1400,7 +1458,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>118</Y>
+      <Y>120</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1421,7 +1479,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>118</Y>
+      <Y>120</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1436,7 +1494,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>118</Y>
+      <Y>120</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1459,7 +1517,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>102</Y>
+      <Y>104</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1480,7 +1538,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>102</Y>
+      <Y>104</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1495,7 +1553,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>102</Y>
+      <Y>104</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1518,7 +1576,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>134</Y>
+      <Y>136</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1539,7 +1597,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>134</Y>
+      <Y>136</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1554,7 +1612,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>134</Y>
+      <Y>136</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1577,7 +1635,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>150</Y>
+      <Y>152</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1598,7 +1656,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>150</Y>
+      <Y>152</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1613,7 +1671,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>150</Y>
+      <Y>152</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1636,7 +1694,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>166</Y>
+      <Y>168</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1657,7 +1715,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>166</Y>
+      <Y>168</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1672,7 +1730,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>166</Y>
+      <Y>168</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1689,13 +1747,26 @@
     <AlignRight>true</AlignRight>
     <AlignLeft>false</AlignLeft>
   </Label>
+  <StaticAnimation item="IW_Divider1_Display">
+    <ScreenID>IW_Divider1_Display</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>0</X>
+      <Y>68</Y>
+    </Location>
+    <Size>
+      <CX>115</CX>
+      <CY>1</CY>
+    </Size>
+    <Animation>IW_Divider1</Animation>
+  </StaticAnimation>
   <Label item="IW_Magic">
     <ScreenID>IW_Magic</ScreenID>
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>182</Y>
+      <Y>192</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1716,7 +1787,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>182</Y>
+      <Y>192</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1731,7 +1802,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>182</Y>
+      <Y>192</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1754,7 +1825,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>198</Y>
+      <Y>208</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1775,7 +1846,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>198</Y>
+      <Y>208</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1790,7 +1861,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>198</Y>
+      <Y>208</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1813,7 +1884,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>214</Y>
+      <Y>224</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1834,7 +1905,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>214</Y>
+      <Y>224</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1849,7 +1920,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>214</Y>
+      <Y>224</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1872,7 +1943,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>230</Y>
+      <Y>240</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1893,7 +1964,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>230</Y>
+      <Y>240</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1908,7 +1979,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>230</Y>
+      <Y>240</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1931,7 +2002,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>0</X>
-      <Y>246</Y>
+      <Y>256</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -1952,7 +2023,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>246</Y>
+      <Y>256</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -1967,7 +2038,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>77</X>
-      <Y>246</Y>
+      <Y>256</Y>
     </Location>
     <Size>
       <CX>33</CX>
@@ -1984,6 +2055,32 @@
     <AlignRight>true</AlignRight>
     <AlignLeft>false</AlignLeft>
   </Label>
+  <StaticAnimation item="IW_Divider2_Display">
+    <ScreenID>IW_Divider2_Display</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>0</X>
+      <Y>188</Y>
+    </Location>
+    <Size>
+      <CX>115</CX>
+      <CY>1</CY>
+    </Size>
+    <Animation>IW_Divider2</Animation>
+  </StaticAnimation>
+  <StaticAnimation item="IW_Divider3_Display">
+    <ScreenID>IW_Divider3_Display</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>0</X>
+      <Y>276</Y>
+    </Location>
+    <Size>
+      <CX>115</CX>
+      <CY>1</CY>
+    </Size>
+    <Animation>IW_Divider3</Animation>
+  </StaticAnimation>
   <Label item="IW_Weight">
     <ScreenID>IW_Weight</ScreenID>
     <Font>3</Font>
@@ -2683,6 +2780,7 @@
     <Pieces>IW_CHA</Pieces>
     <Pieces>IW_CHA_Icon</Pieces>
     <Pieces>IW_CHANumber</Pieces>
+    <Pieces>IW_Divider1_Display</Pieces>
     <Pieces>IW_Poison</Pieces>
     <Pieces>IW_Poison_Icon</Pieces>
     <Pieces>IW_PoisonNumber</Pieces>
@@ -2698,6 +2796,8 @@
     <Pieces>IW_Cold</Pieces>
     <Pieces>IW_Cold_Icon</Pieces>
     <Pieces>IW_ColdNumber</Pieces>
+    <Pieces>IW_Divider2_Display</Pieces>
+    <Pieces>IW_Divider3_Display</Pieces>
   </Screen>
   <!-- ZONE 8: Bag Zone (410x45) - 8 bag slots horizontal -->
   <Screen item="IW_BagZone_Wnd">

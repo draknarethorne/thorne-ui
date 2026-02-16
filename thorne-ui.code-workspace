@@ -62,7 +62,9 @@
 		},
 		"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
 		"python.terminal.activateEnvironment": true,
-		"python.analysis.typeCheckingMode": "basic"
+		"python.analysis.typeCheckingMode": "basic",
+		"ruff.fixAll": true,
+		"ruff.lineLength": 180
 	},
 	"extensions": {
 		"recommendations": [

@@ -2108,11 +2108,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>57</X>
-      <Y>20</Y>
+      <Y>18</Y>
     </Location>
     <Size>
-      <CX>16</CX>
-      <CY>14</CY>
+      <CX>18</CX>
+      <CY>18</CY>
     </Size>
     <Animation>A_Icon_Weight</Animation>
   </StaticAnimation>

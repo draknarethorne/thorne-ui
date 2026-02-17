@@ -183,7 +183,16 @@ class StatIconGenerator:
         return img
     
     def _extract_icon(self, source_file, x, y, w, h, target_size=22):
-        """Extract icon from source file and resize."""
+        """Extract icon from source file and resize.
+        
+        Args:
+            source_file: Source icon file name
+            x: X coordinate (calculated from row/col if needed)
+            y: Y coordinate (calculated from row/col if needed)
+            w: Width of icon to extract
+            h: Height of icon to extract
+            target_size: Target size for resizing (default: 22)
+        """
         try:
             full_path = self.source_dir / source_file
             
@@ -245,10 +254,21 @@ class StatIconGenerator:
             if icon_name in self.config:
                 source_info = self.config[icon_name]
                 source_file = source_info.get("file")
-                src_x = source_info.get("x")
-                src_y = source_info.get("y")
-                src_w = source_info.get("w", 24)
-                src_h = source_info.get("h", 24)
+                
+                # Check for row/col first (easier to edit), fall back to x/y
+                if "row" in source_info and "col" in source_info:
+                    # Calculate x/y from row/col (22px per cell for 22×22 icons)
+                    src_x = source_info.get("col") * 22
+                    src_y = source_info.get("row") * 22
+                    coord_format = f"row {source_info.get('row')}, col {source_info.get('col')}"
+                else:
+                    # Use x/y directly
+                    src_x = source_info.get("x")
+                    src_y = source_info.get("y")
+                    coord_format = f"({src_x},{src_y})"
+                
+                src_w = source_info.get("w", 22)
+                src_h = source_info.get("h", 22)
                 
                 # Extract icon
                 icon = self._extract_icon(source_file, src_x, src_y, src_w, src_h)
@@ -259,7 +279,7 @@ class StatIconGenerator:
                     icon = self._add_abbreviation_label(icon, abbr, font_size=7)
                 
                 icon_type = "extracted"
-                source_info_display = f"{source_file} @ ({src_x},{src_y})"
+                source_info_display = f"{source_file} @ {coord_format}"
                 print(f"  OK {icon_name:8} at ({x:3},{y:3}) <- {source_info_display}")
             else:
                 # Create placeholder

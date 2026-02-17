@@ -1,166 +1,130 @@
 {
   "description": "Icon coordinate mappings for stat icon generation from spellicons",
-  "note": "Icons are extracted as 22x22 from spellicons files (no resize needed - already correct size for staticons).",
+  "note": "Use row/col coordinates (0-9 for 10x10 grid of 22x22 icons) OR x/y coordinates (pixel positions). Script uses row/col if provided, falls back to x/y. Automatically calculates x/y from row/col: x = col * 22, y = row * 22",
   
   "AC": {
     "file": "spellicons01.tga",
-    "x": 176,
-    "y": 198,
-    "w": 22,
-    "h": 22,
+    "row": 9,
+    "col": 8,
     "description": "Armor Class"
   },
   
   "ATK": {
     "file": "spellicons01.tga",
-    "x": 0,
-    "y": 110,
-    "w": 22,
-    "h": 22,
+    "row": 5,
+    "col": 0,
     "description": "Attack"
   },
   
   "HP": {
     "file": "spellicons01.tga",
-    "x": 198,
-    "y": 198,
-    "w": 22,
-    "h": 22,
+    "row": 9,
+    "col": 9,
     "description": "Hit Points"
   },
   
   "MANA": {
     "file": "spellicons01.tga",
-    "x": 0,
-    "y": 22,
-    "w": 22,
-    "h": 22,
+    "row": 1,
+    "col": 0,
     "description": "Mana Points"
   },
   
   "STA": {
     "file": "spellicons01.tga",
-    "x": 88,
-    "y": 0,
-    "w": 22,
-    "h": 22,
+    "row": 0,
+    "col": 4,
     "description": "Stamina"
   },
   
   "Weight": {
     "file": "spellicons02.tga",
-    "x": 132,
-    "y": 44,
-    "w": 22,
-    "h": 22,
+    "row": 2,
+    "col": 6,
     "description": "Character Weight"
   },
   
   "Fire": {
     "file": "spellicons01.tga",
-    "x": 44,
-    "y": 110,
-    "w": 22,
-    "h": 22,
+    "row": 5,
+    "col": 2,
     "description": "Fire Resistance"
   },
   
   "Cold": {
     "file": "spellicons01.tga",
-    "x": 154,
-    "y": 110,
-    "w": 22,
-    "h": 22,
+    "row": 5,
+    "col": 7,
     "description": "Cold Resistance"
   },
   
   "Magic": {
     "file": "spellicons01.tga",
-    "x": 198,
-    "y": 132,
-    "w": 22,
-    "h": 22,
+    "row": 6,
+    "col": 9,
     "description": "Magic Resistance"
   },
   
   "Poison": {
     "file": "spellicons01.tga",
-    "x": 22,
-    "y": 132,
-    "w": 22,
-    "h": 22,
+    "row": 6,
+    "col": 1,
     "description": "Poison Resistance"
   },
   
   "Disease": {
     "file": "spellicons01.tga",
-    "x": 110,
-    "y": 132,
-    "w": 22,
-    "h": 22,
+    "row": 6,
+    "col": 5,
     "description": "Disease Resistance"
   },
   
   "Reserve": {
     "file": "spellicons02.tga",
-    "x": 110,
-    "y": 44,
-    "w": 22,
-    "h": 22,
+    "row": 2,
+    "col": 5,
     "description": "Dragon"
   },
   
   "STR": {
     "file": "spellicons01.tga",
-    "x": 132,
-    "y": 0,
-    "w": 22,
-    "h": 22,
+    "row": 0,
+    "col": 6,
     "description": "Strength"
   },
   
   "INT": {
     "file": "spellicons01.tga",
-    "x": 22,
-    "y": 22,
-    "w": 22,
-    "h": 22,
+    "row": 1,
+    "col": 1,
     "description": "Intelligence"
   },
   
   "WIS": {
     "file": "spellicons01.tga",
-    "x": 198,
-    "y": 66,
-    "w": 22,
-    "h": 22,
+    "row": 3,
+    "col": 9,
     "description": "Wisdom"
   },
   
   "AGI": {
     "file": "spellicons01.tga",
-    "x": 198,
-    "y": 0,
-    "w": 22,
-    "h": 22,
+    "row": 0,
+    "col": 9,
     "description": "Agility"
   },
   
   "DEX": {
     "file": "spellicons01.tga",
-    "x": 176,
-    "y": 0,
-    "w": 22,
-    "h": 22,
+    "row": 0,
+    "col": 8,
     "description": "Dexterity"
   },
   
   "CHA": {
     "file": "spellicons01.tga",
-    "x": 110,
-    "y": 22,
-    "w": 22,
-    "h": 22,
+    "row": 1,
+    "col": 5,
     "description": "Charisma"
   }
 }

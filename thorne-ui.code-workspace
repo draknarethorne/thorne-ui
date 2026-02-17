@@ -54,15 +54,18 @@
 			"editorRuler.foreground": "#444444"
 		},
 		"terminal.integrated.env.windows": {
-			"PATH": "${workspaceFolder}\\.bin;${workspaceFolder};${env:PATH}"
+			"PATH": "${workspaceFolder}\\.bin;${workspaceFolder}\\.venv\\Scripts;${workspaceFolder};${env:PATH}",
+			"VIRTUAL_ENV": "${workspaceFolder}/.venv",
+			"BASH_ENV": "${workspaceFolder}/.bashrc"
 		},
 		"terminal.integrated.env.linux": {
-			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
+			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}/.venv/bin:${workspaceFolder}:${env:PATH}",
+			"VIRTUAL_ENV": "${workspaceFolder}/.venv"
 		},
 		"terminal.integrated.env.osx": {
-			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
+			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}/.venv/bin:${workspaceFolder}:${env:PATH}",
+			"VIRTUAL_ENV": "${workspaceFolder}/.venv"
 		},
-		"terminal.integrated.shellArgs.windows": ["-NoExit", "-Command", ". ${workspaceFolder}\\.venv\\Scripts\\Activate.ps1"],
 		"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
 		"python.terminal.activateEnvironment": true,
 		"python.analysis.typeCheckingMode": "basic",

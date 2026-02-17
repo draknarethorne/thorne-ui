@@ -40,6 +40,8 @@
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2,
 		"editor.rulers": [
+			80,
+			132,
 			180
 		],
 		"files.trimTrailingWhitespace": false,
@@ -60,6 +62,7 @@
 		"terminal.integrated.env.osx": {
 			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
 		},
+		"terminal.integrated.shellArgs.windows": ["-NoExit", "-Command", ". ${workspaceFolder}\\.venv\\Scripts\\Activate.ps1"],
 		"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
 		"python.terminal.activateEnvironment": true,
 		"python.analysis.typeCheckingMode": "basic",

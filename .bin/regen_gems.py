@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Generate Gemicons and Tinyicons from Spell Icon Sources + Auto-regenerate Staticons
+Generate Gemicons and Spellicons from Spell Icon Sources + Auto-regenerate Staticons
 
-Complete icon pipeline: spells (40×40) → gemicons (24×24) → staticons (22×22)
+Complete icon pipeline: spells (40×40) → gemicons (24×24) + spellicons (22×22) → staticons (22×22)
 
 Features:
   - Reads spellsXX.tga files (40×40 icons, 6 rows × 6 columns)
   - Scales to gemiconsXX.tga (24×24 icons, 10 rows × 10 columns)
-  - Scales to tinyiconsXX.tga (22×22 icons, 10 rows × 10 columns)
-  - Auto-regenerates staticons01.tga from new gemicons
-  - Optional --border flag: adds 1px blended borders to gemicons
+  - Scales to spelliconsXX.tga (22×22 icons, 10 rows × 10 columns) - clean, no borders
+  - Auto-regenerates staticons01.tga from new spellicons
+  - Optional --border flag: adds 1px blended borders to gemicons ONLY
   - High-quality LANCZOS resampling + SHARPEN filter
   - Supports all icon variants (Classic, Duxa, Infiniti, Steamworks, Thorne, WoW)
   - Smart copyback: single variant → copy to thorne_drak/, multiple → Thorne only
@@ -19,14 +19,14 @@ USAGE:
     python regen_gems.py --all                    # All variants
     python regen_gems.py Thorne                   # Single variant  
     python regen_gems.py Thorne Classic           # Multiple variants
-    python regen_gems.py --all --border           # All variants with blended borders
+    python regen_gems.py --all --border           # All variants with blended borders on gemicons
     python regen_gems.py --help
 
 EXAMPLES:
-    # Regenerate all variants with borders, auto-copy to thorne_drak and thorne_dev
+    # Regenerate all variants with borders on gemicons only, auto-copy to thorne_drak and thorne_dev
     python regen_gems.py --all --border
     
-    # Just Thorne variant with borders
+    # Just Thorne variant with borders on gemicons
     python regen_gems.py Thorne --border
 """
 
@@ -51,10 +51,10 @@ class GemIconGenerator:
     GEM_GRID_SIZE = 10  # 10×10 grid
     GEM_ICONS_PER_FILE = 100  # 10×10
     
-    # Tinyicon output: 22×22 icons, 10 rows × 10 columns in 256×256 image
-    TINY_ICON_SIZE = 22
-    TINY_GRID_SIZE = 10  # 10×10 grid
-    TINY_ICONS_PER_FILE = 100  # 10×10
+    # Spellicon output: 22×22 icons, 10 rows × 10 columns in 256×256 image
+    SMALL_ICON_SIZE = 22
+    SMALL_GRID_SIZE = 10  # 10×10 grid
+    SMALL_ICONS_PER_FILE = 100  # 10×10
     
     # Output image size
     OUTPUT_SIZE = 256
@@ -74,7 +74,7 @@ class GemIconGenerator:
             "variant": self.variant_name,
             "spell_files_processed": 0,
             "gemicon_files_created": 0,
-            "tinyicon_files_created": 0,
+            "spellicon_files_created": 0,
             "icons_scaled": 0,
             "border_applied": add_border
         }
@@ -244,16 +244,16 @@ class GemIconGenerator:
             print(f"    Created {output_file.name} ({len(icons)} icons)")
             self.stats["gemicon_files_created"] += 1
         
-        # Generate tinyicons (22×22)
-        print("\n  Scaling to tinyicons (22×22)...")
-        tiny_icons = self._scale_icons(all_icons, self.TINY_ICON_SIZE)
-        tiny_groups = self._group_icons_for_output(tiny_icons, self.TINY_ICONS_PER_FILE)
+        # Generate spellicons (22×22)
+        print("\n  Scaling to spellicons (22×22)...")
+        spell_icons = self._scale_icons(all_icons, self.SMALL_ICON_SIZE)
+        spell_groups = self._group_icons_for_output(spell_icons, self.SMALL_ICONS_PER_FILE)
         
-        for i, icons in enumerate(tiny_groups, start=1):
-            output_file = self.variant_dir / f"tinyicons{i:02d}.tga"
-            self._create_output_file(icons, output_file, self.TINY_ICON_SIZE, self.TINY_GRID_SIZE)
+        for i, icons in enumerate(spell_groups, start=1):
+            output_file = self.variant_dir / f"spellicons{i:02d}.tga"
+            self._create_output_file(icons, output_file, self.SMALL_ICON_SIZE, self.SMALL_GRID_SIZE)
             print(f"    Created {output_file.name} ({len(icons)} icons)")
-            self.stats["tinyicon_files_created"] += 1
+            self.stats["spellicon_files_created"] += 1
         
         self.stats["icons_scaled"] = total_icons
         
@@ -407,17 +407,17 @@ Examples:
         print("Copying regenerated files back to thorne_drak/...")
         print(f"{'='*70}")
         for variant_name, variant_path in variants_to_copy:
-            # Copy gemicons and tinyicons only
+            # Copy gemicons and spellicons only
             for i in range(1, 4):
                 src = variant_path / f"gemicons{i:02d}.tga"
                 dst = root_path / f"gemicons{i:02d}.tga"
                 if src.exists():
                     shutil.copy2(src, dst)
-                src = variant_path / f"tinyicons{i:02d}.tga"
-                dst = root_path / f"tinyicons{i:02d}.tga"
+                src = variant_path / f"spellicons{i:02d}.tga"
+                dst = root_path / f"spellicons{i:02d}.tga"
                 if src.exists():
                     shutil.copy2(src, dst)
-            print(f"  Copied {variant_name} gemicons/tinyicons to thorne_drak/")
+            print(f"  Copied {variant_name} gemicons/spellicons to thorne_drak/")
     
     # Also copy to thorne_dev for immediate testing
     thorne_dev_path = Path('C:\\TAKP\\uifiles\\thorne_dev')
@@ -426,17 +426,17 @@ Examples:
         print("Deploying to thorne_dev for testing...")
         print(f"{'='*70}")
         for variant_name, variant_path in variants_to_copy:
-            # Copy gemicons and tinyicons only
+            # Copy gemicons and spellicons only
             for i in range(1, 4):
                 src = variant_path / f"gemicons{i:02d}.tga"
                 dst = thorne_dev_path / f"gemicons{i:02d}.tga"
                 if src.exists():
                     shutil.copy2(src, dst)
-                src = variant_path / f"tinyicons{i:02d}.tga"
-                dst = thorne_dev_path / f"tinyicons{i:02d}.tga"
+                src = variant_path / f"spellicons{i:02d}.tga"
+                dst = thorne_dev_path / f"spellicons{i:02d}.tga"
                 if src.exists():
                     shutil.copy2(src, dst)
-            print(f"  Deployed {variant_name} gemicons/tinyicons to thorne_dev/")
+            print(f"  Deployed {variant_name} gemicons/spellicons to thorne_dev/")
     
     # Summary
     print(f"\n{'='*70}")

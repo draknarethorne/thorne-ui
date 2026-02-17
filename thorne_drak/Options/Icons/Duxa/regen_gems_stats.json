@@ -2,7 +2,7 @@
   "variant": "Duxa",
   "spell_files_processed": 7,
   "gemicon_files_created": 3,
-  "tinyicon_files_created": 3,
+  "spellicon_files_created": 3,
   "icons_scaled": 252,
-  "border_applied": true
+  "border_applied": false
 }

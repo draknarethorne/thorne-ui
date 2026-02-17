@@ -9,7 +9,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (192,216)"
+      "source": "spellicons01.tga @ (176,198)"
     },
     "ATK": {
       "position": {
@@ -18,7 +18,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (0,120)"
+      "source": "spellicons01.tga @ (0,110)"
     },
     "HP": {
       "position": {
@@ -27,7 +27,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (216,216)"
+      "source": "spellicons01.tga @ (198,198)"
     },
     "MANA": {
       "position": {
@@ -36,7 +36,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (0,24)"
+      "source": "spellicons01.tga @ (0,22)"
     },
     "STA": {
       "position": {
@@ -45,7 +45,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (96,0)"
+      "source": "spellicons01.tga @ (88,0)"
     },
     "Weight": {
       "position": {
@@ -54,7 +54,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons02.tga @ (144,48)"
+      "source": "spellicons02.tga @ (132,44)"
     },
     "Fire": {
       "position": {
@@ -63,7 +63,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (48,120)"
+      "source": "spellicons01.tga @ (44,110)"
     },
     "Cold": {
       "position": {
@@ -72,7 +72,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (168,120)"
+      "source": "spellicons01.tga @ (154,110)"
     },
     "Magic": {
       "position": {
@@ -81,7 +81,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (216,144)"
+      "source": "spellicons01.tga @ (198,132)"
     },
     "Poison": {
       "position": {
@@ -90,7 +90,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (24,144)"
+      "source": "spellicons01.tga @ (22,132)"
     },
     "Disease": {
       "position": {
@@ -99,7 +99,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (120,144)"
+      "source": "spellicons01.tga @ (110,132)"
     },
     "Reserve": {
       "position": {
@@ -108,7 +108,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons02.tga @ (120,48)"
+      "source": "spellicons02.tga @ (110,44)"
     },
     "STR": {
       "position": {
@@ -117,7 +117,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (144,0)"
+      "source": "spellicons01.tga @ (132,0)"
     },
     "INT": {
       "position": {
@@ -126,7 +126,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (24,24)"
+      "source": "spellicons01.tga @ (22,22)"
     },
     "WIS": {
       "position": {
@@ -135,7 +135,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (216,72)"
+      "source": "spellicons01.tga @ (198,66)"
     },
     "AGI": {
       "position": {
@@ -144,7 +144,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (216,0)"
+      "source": "spellicons01.tga @ (198,0)"
     },
     "DEX": {
       "position": {
@@ -153,7 +153,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (192,0)"
+      "source": "spellicons01.tga @ (176,0)"
     },
     "CHA": {
       "position": {
@@ -162,7 +162,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "gemicons01.tga @ (120,24)"
+      "source": "spellicons01.tga @ (110,22)"
     }
   }
 }

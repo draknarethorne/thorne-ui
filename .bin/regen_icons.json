@@ -1,166 +1,166 @@
 {
-  "description": "Icon coordinate mappings for stat icon generation",
-  "note": "Fill in coordinates for each icon variant. Icons are extracted as 24x24 and resized to 22x22.",
+  "description": "Icon coordinate mappings for stat icon generation from spellicons",
+  "note": "Icons are extracted as 22x22 from spellicons files (no resize needed - already correct size for staticons).",
   
   "AC": {
-    "file": "gemicons01.tga",
-    "x": 192,
-    "y": 216,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 176,
+    "y": 198,
+    "w": 22,
+    "h": 22,
     "description": "Armor Class"
   },
   
   "ATK": {
-    "file": "gemicons01.tga",
+    "file": "spellicons01.tga",
     "x": 0,
-    "y": 120,
-    "w": 24,
-    "h": 24,
+    "y": 110,
+    "w": 22,
+    "h": 22,
     "description": "Attack"
   },
   
   "HP": {
-    "file": "gemicons01.tga",
-    "x": 216,
-    "y": 216,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 198,
+    "y": 198,
+    "w": 22,
+    "h": 22,
     "description": "Hit Points"
   },
   
   "MANA": {
-    "file": "gemicons01.tga",
+    "file": "spellicons01.tga",
     "x": 0,
-    "y": 24,
-    "w": 24,
-    "h": 24,
+    "y": 22,
+    "w": 22,
+    "h": 22,
     "description": "Mana Points"
   },
   
   "STA": {
-    "file": "gemicons01.tga",
-    "x": 96,
+    "file": "spellicons01.tga",
+    "x": 88,
     "y": 0,
-    "w": 24,
-    "h": 24,
+    "w": 22,
+    "h": 22,
     "description": "Stamina"
   },
   
   "Weight": {
-    "file": "gemicons02.tga",
-    "x": 144,
-    "y": 48,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons02.tga",
+    "x": 132,
+    "y": 44,
+    "w": 22,
+    "h": 22,
     "description": "Character Weight"
   },
   
   "Fire": {
-    "file": "gemicons01.tga",
-    "x": 48,
-    "y": 120,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 44,
+    "y": 110,
+    "w": 22,
+    "h": 22,
     "description": "Fire Resistance"
   },
   
   "Cold": {
-    "file": "gemicons01.tga",
-    "x": 168,
-    "y": 120,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 154,
+    "y": 110,
+    "w": 22,
+    "h": 22,
     "description": "Cold Resistance"
   },
   
   "Magic": {
-    "file": "gemicons01.tga",
-    "x": 216,
-    "y": 144,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 198,
+    "y": 132,
+    "w": 22,
+    "h": 22,
     "description": "Magic Resistance"
   },
   
   "Poison": {
-    "file": "gemicons01.tga",
-    "x": 24,
-    "y": 144,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 22,
+    "y": 132,
+    "w": 22,
+    "h": 22,
     "description": "Poison Resistance"
   },
   
   "Disease": {
-    "file": "gemicons01.tga",
-    "x": 120,
-    "y": 144,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 110,
+    "y": 132,
+    "w": 22,
+    "h": 22,
     "description": "Disease Resistance"
   },
   
   "Reserve": {
-    "file": "gemicons02.tga",
-    "x": 120,
-    "y": 48,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons02.tga",
+    "x": 110,
+    "y": 44,
+    "w": 22,
+    "h": 22,
     "description": "Dragon"
   },
   
   "STR": {
-    "file": "gemicons01.tga",
-    "x": 144,
+    "file": "spellicons01.tga",
+    "x": 132,
     "y": 0,
-    "w": 24,
-    "h": 24,
+    "w": 22,
+    "h": 22,
     "description": "Strength"
   },
   
   "INT": {
-    "file": "gemicons01.tga",
-    "x": 24,
-    "y": 24,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 22,
+    "y": 22,
+    "w": 22,
+    "h": 22,
     "description": "Intelligence"
   },
   
   "WIS": {
-    "file": "gemicons01.tga",
-    "x": 216,
-    "y": 72,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 198,
+    "y": 66,
+    "w": 22,
+    "h": 22,
     "description": "Wisdom"
   },
   
   "AGI": {
-    "file": "gemicons01.tga",
-    "x": 216,
+    "file": "spellicons01.tga",
+    "x": 198,
     "y": 0,
-    "w": 24,
-    "h": 24,
+    "w": 22,
+    "h": 22,
     "description": "Agility"
   },
   
   "DEX": {
-    "file": "gemicons01.tga",
-    "x": 192,
+    "file": "spellicons01.tga",
+    "x": 176,
     "y": 0,
-    "w": 24,
-    "h": 24,
+    "w": 22,
+    "h": 22,
     "description": "Dexterity"
   },
   
   "CHA": {
-    "file": "gemicons01.tga",
-    "x": 120,
-    "y": 24,
-    "w": 24,
-    "h": 24,
+    "file": "spellicons01.tga",
+    "x": 110,
+    "y": 22,
+    "w": 22,
+    "h": 22,
     "description": "Charisma"
   }
 }

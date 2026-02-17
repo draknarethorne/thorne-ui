@@ -66,7 +66,7 @@
   </Button>
   <StaticText item="SBW_SpellName0">
     <ScreenID>SBW_SpellName0</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -74,7 +74,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -82,7 +82,7 @@
       <B>255</B>
     </TextColor>
     <Text>Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -118,7 +118,7 @@
   </Button>
   <StaticText item="SBW_SpellName1">
     <ScreenID>SBW_SpellName1</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -126,7 +126,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -134,7 +134,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Melodious Concord</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -170,7 +170,7 @@
   </Button>
   <StaticText item="SBW_SpellName2">
     <ScreenID>SBW_SpellName2</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -178,7 +178,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>32</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -186,7 +186,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -222,7 +222,7 @@
   </Button>
   <StaticText item="SBW_SpellName3">
     <ScreenID>SBW_SpellName3</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -230,7 +230,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -238,7 +238,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -274,7 +274,7 @@
   </Button>
   <StaticText item="SBW_SpellName4">
     <ScreenID>SBW_SpellName4</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -282,7 +282,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -290,7 +290,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -326,7 +326,7 @@
   </Button>
   <StaticText item="SBW_SpellName5">
     <ScreenID>SBW_SpellName5</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -334,7 +334,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -342,7 +342,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -378,7 +378,7 @@
   </Button>
   <StaticText item="SBW_SpellName6">
     <ScreenID>SBW_SpellName6</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -386,7 +386,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -394,7 +394,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -430,7 +430,7 @@
   </Button>
   <StaticText item="SBW_SpellName7">
     <ScreenID>SBW_SpellName7</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
@@ -438,7 +438,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -446,7 +446,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -482,7 +482,7 @@
   </Button>
   <StaticText item="SBW_SpellName8">
     <ScreenID>SBW_SpellName8</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -490,7 +490,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -498,7 +498,7 @@
       <B>255</B>
     </TextColor>
     <Text>Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -534,7 +534,7 @@
   </Button>
   <StaticText item="SBW_SpellName9">
     <ScreenID>SBW_SpellName9</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -542,7 +542,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -550,7 +550,7 @@
       <B>255</B>
     </TextColor>
     <Text>Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -586,7 +586,7 @@
   </Button>
   <StaticText item="SBW_SpellName10">
     <ScreenID>SBW_SpellName10</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -594,7 +594,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -602,7 +602,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -638,7 +638,7 @@
   </Button>
   <StaticText item="SBW_SpellName11">
     <ScreenID>SBW_SpellName11</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -646,7 +646,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -654,7 +654,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -690,7 +690,7 @@
   </Button>
   <StaticText item="SBW_SpellName12">
     <ScreenID>SBW_SpellName12</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -698,7 +698,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -706,7 +706,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -742,7 +742,7 @@
   </Button>
   <StaticText item="SBW_SpellName13">
     <ScreenID>SBW_SpellName13</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -750,7 +750,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -758,7 +758,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -794,7 +794,7 @@
   </Button>
   <StaticText item="SBW_SpellName14">
     <ScreenID>SBW_SpellName14</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -802,7 +802,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -810,7 +810,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
@@ -846,7 +846,7 @@
   </Button>
   <StaticText item="SBW_SpellName15">
     <ScreenID>SBW_SpellName15</ScreenID>
-    <Font>2</Font>
+    <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>214</X>
@@ -854,7 +854,7 @@
     </Location>
     <Size>
       <CX>148</CX>
-      <CY>16</CY>
+      <CY>40</CY>
     </Size>
     <TextColor>
       <R>255</R>
@@ -862,7 +862,7 @@
       <B>255</B>
     </TextColor>
     <Text>Blahblah's Complete Healing</Text>
-    <NoWrap>true</NoWrap>
+    <NoWrap>false</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>

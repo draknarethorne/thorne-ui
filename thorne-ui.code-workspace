@@ -14,7 +14,6 @@
 			"**/*.old": true,
 			"**/.tmp": true,
 			"**/.reports": true,
-			"**/.archive": true,
 			"**/.venv": true,
 			"**/venv": true
 		},
@@ -24,7 +23,6 @@
 			"**/*.old": true,
 			"**/.tmp": true,
 			"**/.reports": true,
-			"**/.archive": true,
 			"**/.venv": true,
 			"**/venv": true
 		},

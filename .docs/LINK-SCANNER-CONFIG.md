@@ -1,10 +1,10 @@
 # Link Scanner Configuration
 
-The link scanner (`.bin/scan_links.py`) uses `.linkscanconfig.json` for directory exclusion configuration.
+The link scanner (`.bin/scan_links.py`) uses `.scan_linksrc.json` for directory exclusion configuration.
 
 ## Configuration File
 
-**Location:** `.linkscanconfig.json` (repository root)
+**Location:** `.scan_linksrc.json` (repository root, follows standard config naming like `.eslintrc.json`)
 
 **Example:**
 ```json
@@ -60,10 +60,10 @@ The scanner generates `.tmp/scan_links.json` with:
 ## How Configuration Priority Works
 
 1. **Load defaults** — Always includes core exclusions
-2. **Load config file** — `.linkscanconfig.json` merged with defaults 
+2. **Load config file** — `.scan_linksrc.json` merged with defaults
 3. **Apply filtering** — Both sets of exclusions applied during scan
 
-If `.linkscanconfig.json` is missing, the scanner uses defaults only.
+If `.scan_linksrc.json` is missing, the scanner uses defaults only.
 
 ## Common Exclusions to Consider
 

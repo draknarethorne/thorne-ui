@@ -39,8 +39,8 @@ DEFAULT_EXCLUDED_DIRS = {
 
 
 def load_link_scan_config(root: Path) -> set[str]:
-    """Load exclusion configuration from .linkscanconfig.json"""
-    config_path = root / ".linkscanconfig.json"
+    """Load exclusion configuration from .scan_linksrc.json"""
+    config_path = root / ".scan_linksrc.json"
     
     if not config_path.exists():
         return DEFAULT_EXCLUDED_DIRS.copy()

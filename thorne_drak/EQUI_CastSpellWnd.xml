@@ -39,8 +39,8 @@
 		  - These custom textures and animations are specific to this window and not used
 		    in hotbars or other UI elements (those use standard spell gem graphics)
 		
-		TECHNICAL NOTES:
-		  - Window size: 160x238 pixels (widened from 140x237)
+    TECHNICAL NOTES:
+      - Window size: 160x242 pixels (widened from 140x237)
 		  - Spell button size: 150x24 pixels (standardized, previously varied)
 		  - Spell gem 8 remains hidden off-screen at Y=300 (9th spell slot)
 		  - Spellbook button: 144x20 pixels at bottom (Y=209)
@@ -652,8 +652,8 @@
 			<Y>300</Y>
 		</Location>
 		<Size>
-			<CX>150</CX>
-			<CY>24</CY>
+			<CX>0</CX>
+			<CY>0</CY>
 		</Size>
 		<SpellGemDrawTemplate>
 			<Holder>A_CastBtnNormal</Holder>
@@ -672,8 +672,8 @@
       <Y>300</Y>
     </Location>
     <Size>
-      <CX>92</CX>
-      <CY>24</CY>
+      <CX>0</CX>
+      <CY>0</CY>
     </Size>
     <EQType>133</EQType>
     <TextColor>
@@ -694,8 +694,8 @@
       <Y>303</Y>
     </Location>
     <Size>
-      <CX>20</CX>
-      <CY>40</CY>
+      <CX>0</CX>
+      <CY>0</CY>
     </Size>
     <Text>9</Text>
     <TextColor>
@@ -715,7 +715,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>4</X>
-			<Y>209</Y>
+      <Y>212</Y>
 		</Location>
 		<Size>
 			<CX>144</CX>
@@ -755,7 +755,7 @@
 		</Location>
 		<Size>
 			<CX>160</CX>
-			<CY>238</CY>
+      <CY>242</CY>
 		</Size>
 		<Text>Spells</Text>
 		<Style_Transparent>false</Style_Transparent>

@@ -11,23 +11,23 @@ This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml
 
 ## Available Variants
 
-- **[Default/](Default/)**    
-  `EQUI_HotbuttonWnd.xml`
+- **[Enhanced Four Rows/](Enhanced Four Rows/)**  📄
+  `EQUI_HotButtonWnd.xml`
 
-- **[Four Rows Inventory and Bags/](Four Rows Inventory and Bags/)**  📄
+- **[Enhanced Two Rows/](Enhanced Two Rows/)**  📄
   `EQUI_HotButtonWnd.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_HotButtonWnd.xml`
 
-- **[Two Rows Inventory and Bags/](Two Rows Inventory and Bags/)**  📄
-  `EQUI_HotButtonWnd.xml`
+- **[Thorne/](Thorne/)**    
+  `EQUI_HotbuttonWnd.xml`
 
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_HotbuttonWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_HotbuttonWnd.xml`.
 
 ## Metadata
 

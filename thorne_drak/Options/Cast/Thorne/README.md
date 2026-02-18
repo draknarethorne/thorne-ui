@@ -1,4 +1,4 @@
-# Window: Cast - Default Variant
+# Window: Cast - Thorne Variant
 
 **File**: [EQUI_CastSpellWnd.xml](./EQUI_CastSpellWnd.xml)  
 **Version**: 1.0.0  
@@ -10,7 +10,7 @@
 ---
 ## Purpose
 
-The Default Cast Spell Window variant features custom button-style spell gem graphics designed to enhance visibility and readability in the spell casting interface. This variant replaces traditional spell gem sprites with custom button textures that provide superior color contrast and a wider layout for better spell name display.
+The Thorne Cast Spell Window variant features custom button-style spell gem graphics designed to enhance visibility and readability in the spell casting interface. This variant replaces traditional spell gem sprites with custom button textures that provide superior color contrast and a wider layout for better spell name display.
 
 **Key Differentiators from Standard**:
 - Button-style spell gems instead of traditional gem sprites
@@ -41,7 +41,7 @@ The Default Cast Spell Window variant features custom button-style spell gem gra
 | Fadeable | No (`Style_Transparent=false`) |
 | Screen ID | CastSpellWnd |
 | DrawTemplate | WDT_RoundedNoTitle |
-| Default Position | X=1, Y=281 |
+| Thorne Position | X=1, Y=281 |
 | Titlebar | No (`Style_Titlebar=false`) |
 | Closebox | No (`Style_Closebox=false`) |
 | Minimizebox | No (`Style_Minimizebox=false`) |
@@ -177,7 +177,7 @@ Each spell gem (CSPW_Spell0 through CSPW_Spell7) follows this pattern:
 
 ## Differences from Standard Variant
 
-| Feature | Default (This Variant) | Standard Variant |
+| Feature | Thorne (This Variant) | Standard Variant |
 |---------|------------------------|------------------|
 | **Window Width** | 160px | 140px |
 | **Spell Gem Width** | 150px (uniform) | Mixed (31px, 127px, 138px) |
@@ -212,11 +212,11 @@ Each spell gem (CSPW_Spell0 through CSPW_Spell7) follows this pattern:
 
 **Automatic (via Options Selector)**:
 1. Use Thorne UI Options Selector if available
-2. Navigate to Cast Window → Default variant
+2. Navigate to Cast Window → Thorne variant
 3. Apply selection and reload UI
 
 **Manual Installation**:
-1. Copy `EQUI_CastSpellWnd.xml` from `Options/Cast/Default/` to `thorne_drak/` directory
+1. Copy `EQUI_CastSpellWnd.xml` from `Options/Cast/Thorne/` to `thorne_drak/` directory
 2. Ensure `button_dark_pieces01.tga` and `button_light_pieces01.tga` exist in `thorne_drak/`
 3. Reload UI with `/loadskin thorne_drak` or restart client
 4. Cast Spell Window will display with custom button-style spell gems

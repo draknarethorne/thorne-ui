@@ -574,7 +574,6 @@
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground</Background>
       <Fill>A_GaugeFill</Fill>
-      <Lines>A_GaugeLines</Lines>
     </GaugeDrawTemplate>
   </Gauge>
   <Gauge item="SBW_Scribe_Gauge">
@@ -591,7 +590,6 @@
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground</Background>
       <Fill>A_GaugeFill</Fill>
-      <Lines>A_GaugeLines</Lines>
     </GaugeDrawTemplate>
   </Gauge>
   <Button item="SBW_MemPage0_Button">

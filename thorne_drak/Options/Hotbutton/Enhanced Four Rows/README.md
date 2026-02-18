@@ -1,4 +1,4 @@
-# Hotbutton Window - Four Rows Inventory and Bags Variant
+# Hotbutton Window - Enhanced Four Rows Variant
 
 **File**: [EQUI_HotButtonWnd.xml](./EQUI_HotButtonWnd.xml)  
 **Version**: 1.0.0  

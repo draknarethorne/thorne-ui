@@ -4,24 +4,21 @@
 
 This directory contains variants for the Animations window (EQUI_Animations.xml).
 
-**Last Synced:** 2026-02-10  
-**Git Commit:** e85f3b5
+**Last Synced:** 2026-02-17  
+**Git Commit:** 36b97c1
 
 ---
 
 ## Available Variants
 
-- **[Default/](Default/)**    
-  `EQUI_Animations.xml`
-
-- **[Drak Theme Gauges/](Drak Theme Gauges/)**  📄
+- **[Thorne/](Thorne/)**    
   `EQUI_Animations.xml`
 
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_Animations.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_Animations.xml`.
 
 ## Metadata
 

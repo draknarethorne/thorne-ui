@@ -1,4 +1,4 @@
-# Window: Target - Default Variant
+# Window: Target - Thorne Variant
 
 **File**: [EQUI_TargetWindow.xml](./EQUI_TargetWindow.xml)  
 **Version**: 2.5.0  
@@ -35,7 +35,7 @@ The Target Window displays information about the currently selected combat targe
 | **Closebox** | Present |
 | **Minimizebox** | Present |
 | **Draw Template** | WDT_RoundedNoTitle |
-| **Default Position** | X=500, Y=100 |
+| **Thorne Position** | X=500, Y=100 |
 | **Background** | Dark with subtle gradient |
 | **Divider** | Center-aligned between player/target data |
 | **Font (Primary)** | Font 2-5 (size varies) |

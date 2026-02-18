@@ -24,12 +24,12 @@
     <Frames>
       <Texture>AttackIndicator.tga</Texture>
       <Location>
-        <X>0</X>
-        <Y>0</Y>
+        <X>6</X>
+        <Y>2</Y>
       </Location>
       <Size>
-        <CX>135</CX>
-        <CY>96</CY>
+        <CX>0</CX>
+        <CY>0</CY>
       </Size>
     </Frames>
   </Ui2DAnimation>
@@ -37,10 +37,6 @@
   <StaticAnimation item="A_AttackIndicatorAnim">
     <ScreenID>A_AttackIndicatorAnim</ScreenID>
     <Animation>A_AttackIndicator</Animation>
-    <Size>
-      <CX>0</CX>
-      <CY>0</CY>
-    </Size>
   </StaticAnimation>
 
 	<!-- ====================================================================== -->
@@ -353,7 +349,7 @@
 		</Location>
 		<Size>
 			<CX>120</CX>
-			<CY>8</CY>
+			<CY>9</CY>
 		</Size>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<TextOffsetX>-500</TextOffsetX>

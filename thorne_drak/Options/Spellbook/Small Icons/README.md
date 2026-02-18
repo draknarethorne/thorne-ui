@@ -1,4 +1,4 @@
-# Spellbook Window - Standard Variant
+# Spellbook Window - Small Icons Variant
 
 **File**: [EQUI_SpellBookWnd.xml](./EQUI_SpellBookWnd.xml)
 **Version**: 1.0.0  

@@ -1,4 +1,4 @@
-# Window: Group - Default Variant
+# Window: Group - Thorne Variant
 
 **File**: [EQUI_GroupWindow.xml](./EQUI_GroupWindow.xml)  
 **Version**: 1.0.0  
@@ -34,7 +34,7 @@ The Group Window displays status information for all active group members. Each 
 | **Closebox** | Yes |
 | **Minimizebox** | Yes |
 | **Draw Template** | WDT_RoundedNoTitle |
-| **Default Position** | X=970, Y=400 |
+| **Thorne Position** | X=970, Y=400 |
 | **Member Rows** | 6 (F2-F7 targeting) |
 | **Text Color** | RGB(240, 240, 240) - Off-white |
 | **Font** | Font 1-3 (size varies) |

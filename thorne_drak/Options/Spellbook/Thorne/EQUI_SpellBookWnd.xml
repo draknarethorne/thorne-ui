@@ -576,8 +576,8 @@
   <Gauge item="SBW_Memorize_Gauge">
     <ScreenID>SBW_Memorize_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>68</X><Y>377</Y></Location>
-    <Size><CX>102</CX><CY>4</CY></Size>
+    <Location><X>65</X><Y>379</Y></Location>
+    <Size><CX>102</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
     <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
@@ -587,14 +587,13 @@
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground</Background>
       <Fill>A_GaugeFill</Fill>
-      <Lines>A_GaugeLines</Lines>
     </GaugeDrawTemplate>
   </Gauge>
   <Gauge item="SBW_Scribe_Gauge">
     <ScreenID>SBW_Scribe_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>262</X><Y>377</Y></Location>
-    <Size><CX>102</CX><CY>4</CY></Size>
+    <Location><X>265</X><Y>379</Y></Location>
+    <Size><CX>102</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
     <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
@@ -604,7 +603,6 @@
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground</Background>
       <Fill>A_GaugeFill</Fill>
-      <Lines>A_GaugeLines</Lines>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -646,7 +644,7 @@
   <Button item="SBW_PageDown_Button">
     <ScreenID>SBW_PageDown_Button</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>32</X><Y>367</Y></Location>
+    <Location><X>8</X><Y>368</Y></Location>
     <Size><CX>30</CX><CY>25</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -663,7 +661,7 @@
   <Button item="SBW_PageUp_Button">
     <ScreenID>SBW_PageUp_Button</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>370</X><Y>367</Y></Location>
+    <Location><X>393</X><Y>368</Y></Location>
     <Size><CX>30</CX><CY>25</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -680,7 +678,7 @@
   <StaticText item="SBW_LeftPageNum">
     <ScreenID>SBW_LeftPageNum</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>6</X><Y>372</Y></Location>
+    <Location><X>41</X><Y>373</Y></Location>
     <Size><CX>20</CX><CY>15</CY></Size>
     <Text>98</Text>
     <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
@@ -692,7 +690,7 @@
   <StaticText item="SBW_RightPageNum">
     <ScreenID>SBW_RightPageNum</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>406</X><Y>372</Y></Location>
+    <Location><X>370</X><Y>373</Y></Location>
     <Size><CX>20</CX><CY>15</CY></Size>
     <Text>99</Text>
     <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
@@ -735,8 +733,8 @@
     <Font>3</Font>
     <ScreenID>DoneButton</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>174</X><Y>367</Y></Location>
-    <Size><CX>84</CX><CY>25</CY></Size>
+    <Location><X>174</X><Y>371</Y></Location>
+    <Size><CX>84</CX><CY>20</CY></Size>
     <Text>Done</Text>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>

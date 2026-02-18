@@ -230,7 +230,7 @@
 		<!--<RadioGroup/>-->
 		<Text>X</Text>
 		<TextColor>
-				<R>240</R>
+				<R>255</R>
 				<G>100</G>
 				<B>100</B>
 		</TextColor>

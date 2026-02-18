@@ -1,4 +1,4 @@
-# Window: Actions - Default Variant
+# Window: Actions - Thorne Variant
 
 **File**: [EQUI_ActionsWindow.xml](./EQUI_ActionsWindow.xml)  
 **Version**: 1.0.0  
@@ -35,7 +35,7 @@ The Actions Window provides a comprehensive tabbed interface for accessing playe
 | **Closebox** | Yes |
 | **Minimizebox** | Yes |
 | **Draw Template** | WDT_RoundedStandard |
-| **Default Position** | X=200, Y=300 |
+| **Thorne Position** | X=200, Y=300 |
 | **Tab Count** | 4 main tabs |
 | **Buttons per Tab** | 8-20 variable |
 | **Font** | Font 2-3 (size varies) |

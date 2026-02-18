@@ -1,4 +1,4 @@
-# Window: Player - Default Variant
+# Window: Player - Thorne Variant
 
 **File**: [EQUI_PlayerWindow.xml](./EQUI_PlayerWindow.xml)  
 **Version**: 1.0.0  
@@ -35,7 +35,7 @@ The Player Window displays comprehensive character information and vital statist
 | **Closebox** | Present |
 | **Minimizebox** | Present |
 | **Draw Template** | WDT_RoundedNoTitle |
-| **Default Position** | X=100, Y=100 |
+| **Thorne Position** | X=100, Y=100 |
 | **Text Color (Primary)** | RGB(255, 255, 255) - White |
 | **Font (Primary)** | Font 1-2 (variable sizing) |
 
@@ -156,7 +156,7 @@ All gauges utilize standardized draw templates:
 
 ## Variant Comparison - Player Window Variants
 
-| Feature | Default (This) | Standard | Pet Bottom | AA & XP Bottom |
+| Feature | Thorne (This) | Standard | Pet Bottom | AA & XP Bottom |
 |---------|----------------|----------|-----------|-----------------|
 | **Window Height** | 70px | 120px | 70px | 75px |
 | **Gauges Displayed** | HP, Mana, Stamina, XP, Pet, Mana Tick | HP, Mana, Stamina, XP, Mana Tick | HP, Mana, Stamina, Pet (focused) | HP, Mana, Stamina, AA, XP |
@@ -166,7 +166,7 @@ All gauges utilize standardized draw templates:
 
 ---
 
-## What Makes This "Default" Variant
+## What Makes This "Thorne" Variant
 
 This Player Window variant represents the optimal balance:
 - **Hybrid Layout**: Combines best of Standard (info density) and specialized variants (pet support, AA tracking)
@@ -192,7 +192,7 @@ This Player Window variant represents the optimal balance:
 
 ### Key Performance Metrics
 
-The Player/Default variant is optimized for:
+The Player/Thorne variant is optimized for:
 - **Combat Readiness**: HP gauge placement at eye-level for instant threat assessment
 - **Resource Management**: Mana and stamina always visible for ability usage decisions
 - **Pet Awareness**: Dedicated small gauge for summoned companion tracking without clutter

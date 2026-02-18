@@ -69,13 +69,7 @@ Release process utilities and documentation:
 ### `options-sync/` — **Variant Management**
 Delivery summaries, sync documentation, and variant deployment planning.
 
-### `archive/` — **Historical Work**
-Completed research, templates, and older release documentation:
-- **initial-phases/phase-6-inventory-research/** — Feb 4-16 community UI analysis (20 docs)
-  - Analysis of duxaUI, QQ, Infiniti-Blue, Zeal, Nemesis, QQQuarm variants
-  - Informed v0.6.0 inventory improvements
-- **releases/** — Old release workflows (RELEASES-QUICKSTART, RELEASES-FAQ, templates)
-- **archive/v0.6.2/, v0.6.3/** — Previous release documentation
+
 
 ### `readme-sync/` — **Documentation Planning**
 README improvement tracking and content expansion planning for Options variants.
@@ -109,8 +103,7 @@ Architecture decisions, system patterns, and infrastructure evolution record.
 **I want to see what phase we're on:**  
 → [initial-phases/README.md](initial-phases/README.md)
 
-**I want archived/historical info:**  
-→ [archive/](archive/)
+
 
 ---
 

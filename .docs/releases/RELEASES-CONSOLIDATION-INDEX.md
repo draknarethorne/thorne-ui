@@ -28,17 +28,10 @@ This index documents the consolidation of redundant release guides (6 documents 
 ├── RELEASES.md ........................ Primary source of truth
 ├── RELEASE-NOTES-TEMPLATE.md ......... Template for notes
 ├── INDEX.md .......................... Updated navigation
-├── v0.6.5/ ........................... Latest release reference
-└── RELEASES-CONSOLIDATION-INDEX.md ... This file
-
-.development/archive/releases/ (Historical Archives)
-├── RELEASES-QUICKSTART.md ............ Archived (v0.6.0-v0.6.5 reference)
-├── RELEASES-FAQ.md ................... Archived (Q&A reference)
-├── RELEASE-TEMPLATE.md ............... Archived (v0.6.0+ template)
-├── v0.6.2/ ........................... Release archive
-├── v0.6.3/ ........................... Release archive
-└── ARCHIVE-INDEX.md .................. This consolidation guide
+└── v0.6.5/ ........................... Latest release reference
 ```
+
+Older release guides and version archives are preserved in git history (reference via commit tags if needed).
 
 ## Why These Changes
 
@@ -57,25 +50,23 @@ This index documents the consolidation of redundant release guides (6 documents 
 - Solution: Keep RELEASES.md with comprehensive coverage
 - Status: Archived
 
-**RELEASE-TEMPLATE.md** 
+**RELEASE-TEMPLATE.md**
 - Template for creating release checklists/preparation docs for v0.6.0+
-- No longer needed as standard: releases now created via GitHub Actions purely
-- v0.6.5 is latest example; older version templates not needed
-- Solution: Archive as historical reference
-- Status: Archived
+- No longer needed as standard: releases now created via GitHub Actions
+- v0.6.5 is latest example; older templates preserved in git history
+- Status: In git history
 
 **v0.6.2 & v0.6.3 directories**
-- Old releases, v0.6.5 is current; no users still on v0.6.2/v0.6.3
-- Keep latest (v0.6.5) as reference; archive older versions
-- Solution: Move to `.development/archive/releases/`
-- Status: Archived
+- Old releases, v0.6.5 is current; no users on v0.6.2/v0.6.3
+- Keep latest (v0.6.5) as reference; older versions in git history
+- Status: In git history
 
 ### Improved clarity
 
 - **Single source of truth:** RELEASES.md
 - **Clearer information hierarchy:** Quick answers → Overview → Detailed process
 - **Easier navigation:** INDEX.md references consolidated structure
-- **Better archival:** Historical guides preserved in `.development/archive/releases/`
+- **Preserved history:** Old guides preserved in git history for legacy support
 
 ## Document Purpose Reference
 
@@ -88,17 +79,12 @@ This index documents the consolidation of redundant release guides (6 documents 
 
 ## Archive Contents
 
-Archived documentation in `.development/archive/releases/`:
+Older release guides (RELEASES-QUICKSTART.md, RELEASES-FAQ.md, RELEASE-TEMPLATE.md) and previous releases (v0.6.2, v0.6.3) are preserved in git history via commit tags if needed for legacy reference.
 
-- **RELEASES-QUICKSTART.md** - Quick reference for v0.6.0-v0.6.5 release process
--  **RELEASES-FAQ.md** - Common questions about releases (comprehensive Q&A)
-- **RELEASE-TEMPLATE.md** - Template for preparing v0.6.0+ releases
-- **v0.6.2/** & **v0.6.3/** - Previous release documentation
-
-**When to reference archives:**
-- Looking for historical release info
-- Understanding pre-v0.6.5 workflows
-- Finding templates used in past releases
+**When to reference git history:**
+- Looking for historical release workflow documentation
+- Understanding how releases were structured in past versions
+- Finding old release notes or checklists
 
 ## Navigation
 
@@ -125,8 +111,8 @@ Archived documentation in `.development/archive/releases/`:
 
 ## Backwards Compatibility
 
-- All URLs remain the same (documents in same locations)
-- Older git tags still point to historical files
+- All active URLs remain the same (documents in same locations)
+- Older releases can still be found via git history and GitHub Releases page
 - No broken links in existing documentation
 - Users won't notice the change
 

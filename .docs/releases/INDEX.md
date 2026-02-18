@@ -1,10 +1,12 @@
 # Thorne UI Release Documentation Index
 
-## 📌 CURRENT RELEASE: v0.6.4 ✅
+## 📌 CURRENT RELEASE: v0.6.5 ✅
 
-**Status:** Patch release (gauge system overhaul + target window improvements)  
-**Release Date:** February 15, 2026  
+**Status:** Patch release (Spellbook/cast polish + Thorne options sync migration)  
+**Release Date:** February 18, 2026  
 **Ready for Production:** Yes!
+
+**Release Notes Bundle:** [v0.6.5/](v0.6.5/)
 
 ### For Creating New Releases (v0.6.0+)
 
@@ -38,8 +40,8 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 
 ## 🧪 Current Pre-Release
 
-**v0.6.3 (archived)** — Cast spell window spell-name font adjusted to Font 1  
-**Tag format:** `v0.6.3`
+**v0.6.4 (archived)** — Gauge system overhaul + target window improvements  
+**Tag format:** `v0.6.4`
 
 ---
 
@@ -49,12 +51,12 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 # 1. Update version in README.md (Version History section)
 # 2. Commit and push to main
 git add README.md
-git commit -m "chore: Update version history for v0.6.4"
+git commit -m "chore: Update version history for v0.6.5"
 git push origin main
 
 # 3. Create and push a version tag (triggers GitHub Actions)
-git tag -a v0.6.4 -m "Release v0.6.4: Description of changes"
-git push origin v0.6.4
+git tag -a v0.6.5 -m "Release v0.6.5: Description of changes"
+git push origin v0.6.5
 
 # ✨ GitHub Actions handles everything:
 # - Creates ZIP packages automatically
@@ -130,6 +132,6 @@ git push origin v0.6.4
 
 ---
 
-**Status:** v0.6.4 released ✅
+**Status:** v0.6.5 released ✅
 
-**Last Updated:** February 15, 2026
+**Last Updated:** February 18, 2026

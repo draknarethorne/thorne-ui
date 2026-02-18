@@ -3,7 +3,7 @@
 **🎯 TL;DR: Push a tag, GitHub does the rest automatically!**
 
 ```bash
-git push origin v0.6.4
+git push origin v0.6.5
 # That's it! GitHub Actions creates ZIPs and publishes the release.
 ```
 
@@ -27,14 +27,14 @@ This is a quick reference for creating releases. For detailed information, see [
 ```bash
 # 1. Update version in README.md Version History
 vim README.md
-# Add: **v0.6.4** (February 15, 2026) with changes
+# Add: **v0.6.5** (February 18, 2026) with changes
 
 # 2. Test thorne_drak in-game
 /loadskin thorne_drak
 
 # 3. Commit all changes
 git add .
-git commit -m "docs: Update version history for v0.6.4 release"
+git commit -m "docs: Update version history for v0.6.5 release"
 git push origin main
 ```
 
@@ -42,10 +42,10 @@ git push origin main
 
 ```bash
 # 1. Create annotated tag
-git tag -a v0.6.4 -m "Release v0.6.4: Brief description of changes"
+git tag -a v0.6.5 -m "Release v0.6.5: Brief description of changes"
 
 # 2. Push tag to trigger workflow
-git push origin v0.6.4
+git push origin v0.6.5
 
 # 3. Monitor workflow
 # Go to: https://github.com/draknarethorne/thorne-ui/actions
@@ -58,10 +58,10 @@ git push origin v0.6.4
 
 **🤖 GitHub Actions runs on GitHub's servers (not your computer!):**
 
-1. ✅ Extract version from tag (e.g., `v0.6.4` → `0.6.4`)
+1. ✅ Extract version from tag (e.g., `v0.6.5` → `0.6.5`)
 2. ✅ Generate changelog from commits since last release
-3. ✅ **Package thorne_drak as ZIP:** `thorne_drak-v0.6.4.zip` (~2.4 MB)
-4. ✅ **Create complete package:** `thorne-ui-v0.6.4.zip` (thorne_drak + docs, ~2.8 MB)
+3. ✅ **Package thorne_drak as ZIP:** `thorne_drak-v0.6.5.zip` (~2.4 MB)
+4. ✅ **Create complete package:** `thorne-ui-v0.6.5.zip` (thorne_drak + docs, ~2.8 MB)
 5. ✅ Create release notes with installation instructions
 6. ✅ **Publish to Releases page:** https://github.com/draknarethorne/thorne-ui/releases
 7. ✅ **Attach ZIP files** - users can download immediately
@@ -90,19 +90,19 @@ git push origin v0.6.4
 git ls-remote --tags origin
 
 # Tag must start with 'v'
-git tag v0.6.4  # ✓ Correct
-git tag 0.6.4   # ✗ Won't trigger workflow
+git tag v0.6.5  # ✓ Correct
+git tag 0.6.5   # ✗ Won't trigger workflow
 ```
 
 ### Need to redo a tag
 ```bash
 # Delete local and remote tag
-git tag -d v0.6.4
-git push origin :refs/tags/v0.6.4
+git tag -d v0.6.5
+git push origin :refs/tags/v0.6.5
 
 # Create new tag
-git tag -a v0.6.4 -m "Release v0.6.4"
-git push origin v0.6.4
+git tag -a v0.6.5 -m "Release v0.6.5"
+git push origin v0.6.5
 ```
 
 ### Check workflow logs

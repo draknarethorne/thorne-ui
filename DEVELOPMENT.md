@@ -2,8 +2,8 @@
 
 Implementation details, architecture decisions, and development roadmap for the Thorne UI project.
 
-**Version**: 0.6.1  
-**Last Updated**: February 7, 2026  
+**Version**: 0.6.5  
+**Last Updated**: February 18, 2026  
 **Maintainer**: Draknare Thorne
 
 **Quick Links**: [Standards](.docs/STANDARDS.md) | [Phases](.development/initial-phases/) | [Technical References](.docs/technical/) | [TODO](TODO.md) | [Releases Guide](.docs/releases/RELEASES.md)
@@ -509,7 +509,7 @@ Thorne UI uses GitHub Releases to distribute packaged versions of thorne_drak. T
 
 ### Detailed Guide
 
-For complete instructions, troubleshooting, and best practices, see **[Releases Guide](.docs/RELEASES.md)**.
+For complete instructions, troubleshooting, and best practices, see **[Releases Guide](.docs/releases/RELEASES.md)**.
 
 Topics covered:
 - Version numbering (semantic versioning)
@@ -521,6 +521,18 @@ Topics covered:
 ---
 
 ## 📜 Version History
+
+**v0.6.5** (February 18, 2026)
+- ✅ Spellbook/cast window polish and alignment pass
+  - Spellbook Done button standardized to Inventory button height
+  - Cast Spellbook button normalized to standard 20px control height
+  - Cast window spacing/height adjusted for cleaner bottom control area
+- ✅ Options workflow migration to Thorne baselines
+  - Added and adopted `options_thorne_sync.py` and `sync-option-thorne.bat`
+  - Migrated active option baselines away from `Default/` naming toward `Thorne/`
+  - Updated option metadata/readmes and synchronization flows
+- ✅ Icon pipeline refresh
+  - Regenerated gem icon assets across root and Options icon variant packs
 
 **v0.6.0** (February 6, 2026)
 - ✅ **Phase 3.9 Completion**: Inventory window character sheet redesign (FINAL)

@@ -175,15 +175,15 @@ Releases are created automatically through GitHub Actions when you push a versio
 # 1. Update version in README.md (Version History section)
 # 2. Commit and push all changes
 git add .
-git commit -m "Prepare for release v0.5.0"
+git commit -m "Prepare for release v0.6.5"
 git push origin main
 
 # 3. Create and push a version tag (triggers automated workflow)
-git tag -a v0.5.0 -m "Release v0.5.0: Brief description of changes"
-git push origin v0.5.0
+git tag -a v0.6.5 -m "Release v0.6.5: Spellbook/cast polish and Thorne option sync improvements"
+git push origin v0.6.5
 
 # 4. GitHub Actions automatically:
-#    ✅ Creates ZIP packages (thorne_drak-v0.5.0.zip)
+#    ✅ Creates ZIP packages (thorne_drak-v0.6.5.zip)
 #    ✅ Generates changelog from commits
 #    ✅ Publishes to Releases page
 #    ✅ Makes downloads available
@@ -309,6 +309,20 @@ All v0.x.x releases are **alpha/beta** versions building toward a stable v1.0.0 
 ---
 
 ## 📅 Version History
+
+**v0.6.5** (February 18, 2026)
+- ✅ Spellbook and casting UI polish
+  - Spellbook promoted to readability-first Thorne baseline
+  - Restored standard 84x20 Done button sizing to match Inventory standards
+  - Cast window Spellbook button standardized to 20px height with adjusted window spacing
+- ✅ Options system migration to Thorne-first variants
+  - Window option baselines migrated from `Default/` to `Thorne/` where applicable
+  - Added dedicated Thorne sync tooling for window option backups and metadata updates
+  - Added `sync-option-thorne.bat` wrapper for maintainable Windows-native sync workflow
+- ✅ Icon and variant refresh
+  - Regenerated gem icon packs across option themes and root assets
+  - Updated option metadata/readmes to match current Thorne workflow
+
 **v0.6.4** (February 15, 2026)
 - ✅ Gauge system overhaul
   - Size-specific gauge textures and animations (tall/wide variants)

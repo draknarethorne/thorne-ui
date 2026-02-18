@@ -17,7 +17,7 @@ This project follows **Semantic Versioning (SemVer)** with a simplified approach
 MAJOR.MINOR.PATCH
 ```
 
-**Examples:** `0.6.4`, `1.0.0`, `1.2.3`
+**Examples:** `0.6.5`, `1.0.0`, `1.2.3`
 
 ### What Each Number Means
 
@@ -40,7 +40,7 @@ Located at repository root: `/VERSION`
 
 **Format:**
 ```
-0.6.4
+0.6.5
 ```
 
 **Rules:**
@@ -263,6 +263,7 @@ git push origin v1.0.0
 
 Historic versions and their significance:
 
+- **v0.6.5** (February 18, 2026): Spellbook/cast polish, Thorne options sync workflow, icon variant refresh
 - **v0.6.4** (February 15, 2026): Gauge system overhaul, target window improvements
 - **v0.6.3** (February 9, 2026): Cast spell window spell-name font adjustment
 - **v0.5.0** (February 3, 2026): Phase 5 Target Window, documentation reorganization
@@ -354,6 +355,6 @@ git push origin v0.6.4
 
 ## Maintenance Notes
 
-**Last Updated:** February 16, 2026  
+**Last Updated:** February 18, 2026  
 **Maintained By:** Draknare Thorne  
 **Status:** Active process, subject to refinement

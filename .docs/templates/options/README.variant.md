@@ -16,8 +16,8 @@ Use this as a reference when creating or updating variant README files.
 **Version**: X.Y.Z  
 **Last Updated**: YYYY-MM-DD  
 **Status**: ✅ [Status description]  
-**Author**: Draknare Thorne
-[OPTIONAL]: **Based On**: [Original authors/sources if derived]
+**Author**: Draknare Thorne  
+**Based On**: [Original authors/sources if derived] *(optional)*
 
 ---
 ```

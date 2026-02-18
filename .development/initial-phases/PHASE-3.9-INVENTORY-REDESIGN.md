@@ -2,9 +2,11 @@
 
 # Phase 3.9: Inventory Window Character Sheet Redesign
 
-**Status**: PLANNED  
-**Priority**: High (Core window transformation)  
-**Target Completion**: February 2026
+**Status**: ✅ COMPLETED & SHIPPED (v0.6.0, February 6, 2026)  
+**Priority**: ✅ Completed  
+**Completion Date**: February 6, 2026  
+
+> **Note**: This phase was successfully implemented and shipped in Thorne UI v0.6.0. This document is archived as a reference for understanding the design pattern and implementation. See [DEVELOPMENT.md](../../DEVELOPMENT.md#major-releases) for release notes.
 
 ## Vision
 

@@ -8,10 +8,17 @@ Detailed documentation for each development phase of the Thorne UI project.
 - [Phase 3: Merchant Window](PHASE-3-MERCHANT.md) - Merchant window enhancements ✅
 - [Phase 3.5: Player/Group Refinements](PHASE-3.5-PLAYER-GROUP-REFINEMENTS.md) - Window optimizations ✅
 - [Phase 3.7: Infrastructure](PHASE-3.7-INFRASTRUCTURE.md) - Template standardization ✅
+- [Phase 3.9: Inventory Redesign](PHASE-3.9-INVENTORY-REDESIGN.md) - Character sheet integration (v0.6.0) ✅
+
+## Research & Analysis (Archived)
+
+- [Phase 6: Inventory Windows Research](../archive/initial-phases/phase-6-inventory-research/) - Community UI analysis & design synthesis 📚
+  - 20 research documents analyzing duxaUI, QQ, Zeal, and community variants
+  - Informed v0.6.0 inventory improvements and v0.6.5 enhancements
+  - See [ARCHIVE-INDEX.md](../archive/initial-phases/phase-6-inventory-research/ARCHIVE-INDEX.md) for details
 
 ## Planned Phases
 
-- [Phase 3.9: Inventory Redesign](PHASE-3.9-INVENTORY-REDESIGN.md) - Character sheet integration 📋
 - [Phase 4: Actions Simplification](PHASE-4-ACTIONS-SIMPLIFICATION.md) - Hotbar refinements 📋
 - [Phase 5: Target Window Enhancements](PHASE-5-TARGET-WINDOW.md) - ToT display and target info 📋
 - [Phase 5.5: Loot Window Enhancements](PHASE-5.5-LOOT-ENHANCEMENTS.md) - Destroy button and weight display 📋
@@ -21,7 +28,8 @@ Detailed documentation for each development phase of the Thorne UI project.
 
 ## Legend
 
-- ✅ Complete
+- ✅ Complete & Shipped
+- 📚 Research & Analysis (Archived)
 - 📋 Planned
 - 🔬 Research
 - 🔮 Future

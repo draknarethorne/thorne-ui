@@ -43,8 +43,8 @@ Assist with development, customization, and modification of EverQuest UI files f
   - Phase breakdown, implementation patterns, lessons learned
   
 - **`.development/initial-phases/`** - Detailed phase documentation
-  - PHASE-3.9-INVENTORY-REDESIGN.md - Current inventory work
-  - PHASE-6-INVENTORY-WINDOWS/ - Inventory redesign research and analysis
+  - PHASE-3.9-INVENTORY-REDESIGN.md - Completed Phase 3.9 (v0.6.0 inventory redesign, see `.development/initial-phases/`)
+  - PHASE-6-INVENTORY-WINDOWS/ - Archived inventory research (Feb 4-16, 2026, analysis of community UI variants)
   - Analysis documents for community UI comparisons
 
 ### EverQuest UI File Structure
@@ -314,7 +314,7 @@ runSubagent({
 ### Community UI Variants in Repository
 
 **Thorne UI Variants** (Primary Development):
-- `thorne_drak/`: Main development variant (Phase 3.9 inventory redesign)
+- `thorne_drak/`: Main development variant (Inventory redesign shipped v0.6.0, current focus v0.7.0 stat icons)
 
 **Community Reference UIs** (Analysis & Inspiration):
 - `default/`: Baseline EverQuest UI files (reference implementation)

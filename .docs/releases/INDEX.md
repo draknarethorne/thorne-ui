@@ -6,29 +6,26 @@
 **Release Date:** February 18, 2026  
 **Ready for Production:** Yes!
 
-**Release Notes Bundle:** [v0.6.5/](v0.6.5/)
+**Release Documentation:** [v0.6.5/](v0.6.5/)
 
-### For Creating New Releases (v0.6.0+)
+## 📚 Documentation Structure (Updated Feb 18, 2026)
 
-**Quick Reference:**
-1. **[RELEASES-QUICKSTART.md](RELEASES-QUICKSTART.md)** - TL;DR (push tag, GitHub does the rest)
-2. **[RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md)** - Use as template for next release prep
-3. **[RELEASES.md](RELEASES.md)** - Complete reference guide
+**Core Release Documents:**
+- **[RELEASES.md](RELEASES.md)** - Complete guide to creating and managing releases
+- **[RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md)** - Template for GitHub release notes
+- [RELEASES-CONSOLIDATION-INDEX.md](RELEASES-CONSOLIDATION-INDEX.md) - Documentation consolidation summary
+
+**For Creating New Releases (v0.6.0+):**
+
+See [RELEASES.md](RELEASES.md) for:
+1. Quick Answers (TL;DR: push tag, GitHub does the rest)
+2. Overview of automated GitHub Actions workflow
+3. Step-by-step process for creating releases
+4. Release checklist
+5. Version numbering guidelines
+6. Where to find releases and share with users
 
 Estimated time: 15-20 minutes prep + 5 minutes release (fully automated on GitHub)
-
-### Detailed Guides
-
-- **[RELEASES.md](RELEASES.md)** - Comprehensive guide with architecture & workflow details
-- **[RELEASES-QUICKSTART.md](RELEASES-QUICKSTART.md)** - Quick reference (push tag → GitHub handles it)
-- **[RELEASES-FAQ.md](RELEASES-FAQ.md)** - Common questions and troubleshooting
-- **[RELEASES-IMPLEMENTATION.md](../../.development/releases/RELEASES-IMPLEMENTATION.md)** - Technical implementation details (maintainer-only)
-- **[TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md)** - Testing the release workflow locally (maintainer-only)
-
-### Templates
-
-- **[RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md)** - Template for preparing releases
-- **[RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md)** - Template for release notes
 
 ---
 

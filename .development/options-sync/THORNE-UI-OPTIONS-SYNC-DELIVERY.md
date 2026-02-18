@@ -14,8 +14,8 @@
 
 | Script | Size | Purpose | Status |
 |--------|------|---------|--------|
-| `options_default_compare.py` | — | Compare variants to Default baseline | ✅ Production |
-| `options_default_sync.py` | — | Backup window files & update metadata | ✅ Production |
+| `options_thorne_compare.py` | — | Compare variants to Thorne baseline | ✅ Production |
+| `options_thorne_sync.py` | — | Backup window files & update metadata | ✅ Production |
 | `options_readme_checker.py` | — | Validate all 46 README files | ✅ Production |
 | `options_fix_readme.py` | — | Auto-fix headers, refs, metadata | ✅ Production |
 | `options_generate_readme.py` | — | Create boilerplate READMEs | ✅ Production |
@@ -258,7 +258,7 @@ cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 - [ ] Read [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md)
 - [ ] Bookmark it for quick reference
 - [ ] Run checker once: `python .bin/options_readme_checker.py`
-- [ ] Try one sync command: `python .bin/options_default_sync.py --all --dry-run`
+- [ ] Try one sync command: `python .bin/options_thorne_sync.py --all --dry-run`
 
 ### Short Term (This Month)
 - [ ] (Option A) Execute Phase 3 fixes (follow [PHASE-3-ACTION-PLAN.md](../../.docs/options-sync/PHASE-3-ACTION-PLAN.md))
@@ -283,7 +283,7 @@ cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 
 ### Daily (automated, user-triggered)
 ```
-python .bin/options_default_sync.py --window [Name]
+python .bin/options_thorne_sync.py --window [Name]
 # (whenever you finish editing a window)
 ```
 
@@ -321,7 +321,7 @@ See [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre
 ### For Developers
 ✅ Sync changes automatically with one command  
 ✅ Know exactly what's backed up and current  
-✅ Never worry about losing work (Default/ backups)  
+✅ Never worry about losing work (Thorne/ backups)  
 ✅ Clear documentation showing what each variant does  
 
 ### For Documentation Specialists

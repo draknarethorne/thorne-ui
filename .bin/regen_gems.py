@@ -6,10 +6,11 @@ Complete icon pipeline: spells (40×40) → gemicons (24×24) + spellicons (22×
 
 Features:
   - Reads spellsXX.tga files (40×40 icons, 6 rows × 6 columns)
-  - Scales to gemiconsXX.tga (24×24 icons, 10 rows × 10 columns)
+    - Scales to gemiconsXX.tga (24×24 icons, 10 rows × 10 columns)
+        - Default: transparent 1px border (22×22 icon inset at 1,1)
   - Scales to spelliconsXX.tga (22×22 icons, 10 rows × 10 columns) - clean, no borders
   - Auto-regenerates staticons01.tga from new spellicons
-  - Optional --border flag: adds 1px blended borders to gemicons ONLY
+    - Optional --border mode for gemicons ONLY: transparent (default), black, blend
   - High-quality LANCZOS resampling + SHARPEN filter
   - Supports all icon variants (Classic, Duxa, Infiniti, Steamworks, Thorne, WoW)
   - Smart copyback: single variant → copy to thorne_drak/, multiple → Thorne only
@@ -19,15 +20,15 @@ USAGE:
     python regen_gems.py --all                    # All variants
     python regen_gems.py Thorne                   # Single variant  
     python regen_gems.py Thorne Classic           # Multiple variants
-    python regen_gems.py --all --border           # All variants with blended borders on gemicons
+    python regen_gems.py --all --border blend     # All variants with blended borders on gemicons
     python regen_gems.py --help
 
 EXAMPLES:
-    # Regenerate all variants with borders on gemicons only, auto-copy to thorne_drak and thorne_dev
-    python regen_gems.py --all --border
+    # Regenerate all variants with blended borders on gemicons only, auto-copy to thorne_drak and thorne_dev
+    python regen_gems.py --all --border blend
     
     # Just Thorne variant with borders on gemicons
-    python regen_gems.py Thorne --border
+    python regen_gems.py Thorne --border blend
 """
 
 import sys
@@ -59,24 +60,24 @@ class GemIconGenerator:
     # Output image size
     OUTPUT_SIZE = 256
     
-    def __init__(self, variant_dir, add_border=False):
+    def __init__(self, variant_dir, border_mode="transparent"):
         """
         Initialize the generator.
         
         Args:
             variant_dir: Path to icon variant directory (e.g., thorne_drak/Options/Icons/Thorne)
-            add_border: Add 1px black border around gemicons (default: False)
+            border_mode: transparent (default), black, or blend
         """
         self.variant_dir = Path(variant_dir)
         self.variant_name = self.variant_dir.name
-        self.add_border = add_border
+        self.border_mode = border_mode
         self.stats = {
             "variant": self.variant_name,
             "spell_files_processed": 0,
             "gemicon_files_created": 0,
             "spellicon_files_created": 0,
             "icons_scaled": 0,
-            "border_applied": add_border
+            "border_mode": border_mode
         }
     
     def _calculate_spell_positions(self):
@@ -130,7 +131,7 @@ class GemIconGenerator:
             print(f"  ERROR: Failed to extract icons from {spell_file.name}: {e}")
             return []
     
-    def _add_border_to_icon(self, icon):
+    def _add_blended_border_to_icon(self, icon):
         """Add 1px darkened border around an icon (blends with existing colors)."""
         width, height = icon.size
         pixels = icon.load()
@@ -161,6 +162,35 @@ class GemIconGenerator:
                                  int(b * darken_factor), a)
         
         return icon
+
+    def _add_black_border_to_icon(self, icon):
+        """Add 1px solid black border around an icon."""
+        width, height = icon.size
+        pixels = icon.load()
+        for x in range(width):
+            pixels[x, 0] = (0, 0, 0, 255)
+            pixels[x, height - 1] = (0, 0, 0, 255)
+        for y in range(height):
+            pixels[0, y] = (0, 0, 0, 255)
+            pixels[width - 1, y] = (0, 0, 0, 255)
+        return icon
+
+    def _create_gem_icon(self, icon):
+        """Create a 24×24 gem icon with a 1px transparent border (22×22 content)."""
+        # Scale to 22×22 (24 minus 2px for border)
+        scaled_icon = icon.resize((self.GEM_ICON_SIZE - 2, self.GEM_ICON_SIZE - 2), Image.Resampling.LANCZOS)
+        scaled_icon = scaled_icon.filter(ImageFilter.SHARPEN)
+
+        # Apply optional border to the icon content (not the transparent border)
+        if self.border_mode == "blend":
+            scaled_icon = self._add_blended_border_to_icon(scaled_icon)
+        elif self.border_mode == "black":
+            scaled_icon = self._add_black_border_to_icon(scaled_icon)
+
+        # Create 24×24 with transparent border, paste at (1,1)
+        output_icon = Image.new("RGBA", (self.GEM_ICON_SIZE, self.GEM_ICON_SIZE), (0, 0, 0, 0))
+        output_icon.paste(scaled_icon, (1, 1))
+        return output_icon
     
     def _scale_icons(self, icons, target_size, add_border=False):
         """Scale icons to target size using high-quality resampling with sharpening."""
@@ -172,7 +202,7 @@ class GemIconGenerator:
             scaled_icon = scaled_icon.filter(ImageFilter.SHARPEN)
             # Optionally add blended border
             if add_border:
-                scaled_icon = self._add_border_to_icon(scaled_icon)
+                scaled_icon = self._add_blended_border_to_icon(scaled_icon)
             scaled.append(scaled_icon)
         return scaled
     
@@ -233,9 +263,9 @@ class GemIconGenerator:
             return False
         
         # Generate gemicons (24×24)
-        border_msg = " with 1px border" if self.add_border else ""
+        border_msg = " with transparent border" if self.border_mode == "transparent" else f" with {self.border_mode} border"
         print(f"\n  Scaling to gemicons (24×24){border_msg}...")
-        gem_icons = self._scale_icons(all_icons, self.GEM_ICON_SIZE, add_border=self.add_border)
+        gem_icons = [self._create_gem_icon(icon) for icon in all_icons]
         gem_groups = self._group_icons_for_output(gem_icons, self.GEM_ICONS_PER_FILE)
         
         for i, icons in enumerate(gem_groups, start=1):
@@ -346,8 +376,11 @@ Examples:
     
     parser.add_argument(
         "--border",
-        action="store_true",
-        help="Add 1px black border around gemicons (not tinyicons)"
+        nargs="?",
+        const="blend",
+        default="transparent",
+        choices=["transparent", "black", "blend"],
+        help="Gemicon border mode: transparent (default), black, blend. Use --border for blend."
     )
     
     args = parser.parse_args()
@@ -381,7 +414,7 @@ Examples:
             print(f"\nERROR: Variant directory not found: {variant_dir}")
             continue
         
-        generator = GemIconGenerator(variant_dir, add_border=args.border)
+        generator = GemIconGenerator(variant_dir, border_mode=args.border)
         if generator.generate():
             # Also regenerate staticons from the new gemicons
             generator.regenerate_staticons(script_dir)

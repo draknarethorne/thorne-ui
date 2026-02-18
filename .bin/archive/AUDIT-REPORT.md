@@ -36,8 +36,8 @@ These scripts manage the Options/ directory structure, variants, and documentati
 
 | Script | Purpose | Type | Keep? |
 |--------|---------|------|-------|
-| `options_default_compare.py` | Audit which variants differ from Default | Auditor | **YES** |
-| `options_default_sync.py` | Backup working files to Default/ | Operator | **YES** |
+| `options_thorne_compare.py` | Audit which variants differ from Default | Auditor | **YES** |
+| `options_thorne_sync.py` | Backup working files to Thorne/ | Operator | **YES** |
 | `options_duplicate_detector.py` | Find identical/redundant variants | Auditor | **YES** |
 | `options_generate_readme.py` | Create skeletal README templates | Operator | **YES** |
 | `options_fix_readme.py` | Auto-fix README formatting | Operator | **YES** |
@@ -174,7 +174,7 @@ These are correctly archived ✅
 ## Questions for You
 
 1. **Do you use any of these `options_*.py` scripts?**
-   - `options_default_sync.py`
+   - `options_thorne_sync.py`
    - `options_generate_readme.py`
    - `options_duplicate_detector.py`
    - `options_fix_readme.py`

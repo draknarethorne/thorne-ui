@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Sync Window to Default - Backup current working window files to Default/ and update metadata.
+Sync Window to Thorne - Backup current working window files to Thorne/ and update metadata.
 
-Copies the main working file from thorne_drak/ to Options/[Window]/Default/ and updates
+Copies the main working file from thorne_drak/ to Options/[Window]/Thorne/ and updates
 the .sync-status.json metadata with current timestamp and git commit information.
 
 Usage:
-    python sync_window_to_default.py --window TARGET
-    python sync_window_to_default.py --window Player --verbose
-    python sync_window_to_default.py --all              # Sync all 13 windows
-    python sync_window_to_default.py --all --dry-run    # Preview changes
+    python options_thorne_sync.py --window TARGET
+    python options_thorne_sync.py --window Player --verbose
+    python options_thorne_sync.py --all              # Sync all 13 windows
+    python options_thorne_sync.py --all --dry-run    # Preview changes
     
 Options:
     --window NAME       Sync specific window (e.g., Target, Player, Group, Spellbook)
@@ -30,6 +30,7 @@ from datetime import datetime
 WINDOW_MAPPING = {
     "Actions": "EQUI_ActionsWindow.xml",
     "Animations": "EQUI_Animations.xml",
+    "Cast": "EQUI_CastSpellWnd.xml",
     "Group": "EQUI_GroupWindow.xml",
     "Hotbutton": "EQUI_HotbuttonWnd.xml",
     "Inventory": "EQUI_Inventory.xml",
@@ -39,7 +40,7 @@ WINDOW_MAPPING = {
     "Player": "EQUI_PlayerWindow.xml",
     "Selector": "EQUI_SelectorWnd.xml",
     "Skin": "EQUI_LoadskinWnd.xml",
-    "Spellbook": "EQUI_SpellbookWnd.xml",
+    "Spellbook": "EQUI_SpellBookWnd.xml",
     "Target": "EQUI_TargetWindow.xml",
 }
 
@@ -78,7 +79,7 @@ class WindowSyncer:
     def _sync_window(self, window_name, xml_file):
         """Sync a single window file."""
         source = self.thorne_drak / xml_file
-        dest_dir = self.options_root / window_name / "Default"
+        dest_dir = self.options_root / window_name / "Thorne"
         dest_file = dest_dir / xml_file
         sync_status_file = self.options_root / window_name / ".sync-status.json"
         
@@ -136,7 +137,7 @@ class WindowSyncer:
         metadata = {
             "window": window_name,
             "filename": xml_file,
-            "description": f"{window_name} window default configuration",
+            "description": f"{window_name} window Thorne configuration",
             "last_sync_date": datetime.now().isoformat(),
             "last_sync_commit": self.results["git_commit"],
             "in_sync": True
@@ -217,9 +218,9 @@ This directory contains variants for the {window_name} window ({xml_file}).
         
         content += f"""---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/{xml_file}`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/{xml_file}`.
 
 ## Metadata
 
@@ -327,15 +328,15 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(
-        prog="options_default_sync.py",
+        prog="options_thorne_sync.py",
         description="""
-Sync Window to Default - Backup working window files to Default/ directory
+    Sync Window to Thorne - Backup working window files to Thorne/ directory
 
-Copies the main working file from thorne_drak/ to Options/[Window]/Default/ 
+    Copies the main working file from thorne_drak/ to Options/[Window]/Thorne/ 
 and updates sync metadata with current timestamp and git commit information.
 
 FEATURES:
-  ✓ Single window or bulk sync of all 13 configured windows
+    ✓ Single window or bulk sync of all 14 configured windows
   ✓ Dry-run mode to preview changes before applying
   ✓ Automatic parent README generation for navigation
   ✓ Metadata tracking with git commit information
@@ -348,18 +349,18 @@ CAUTION: This is a DESTRUCTIVE OPERATOR. Use --dry-run first to preview.
 EXAMPLES:
 
   # Sync single window (with preview)
-  python .bin/options_default_sync.py --window Player --dry-run
-  python .bin/options_default_sync.py --window Player
+    python .bin/options_thorne_sync.py --window Player --dry-run
+    python .bin/options_thorne_sync.py --window Player
 
-  # Sync all 13 windows with verbose output
-  python .bin/options_default_sync.py --all --verbose
+    # Sync all 14 windows with verbose output
+    python .bin/options_thorne_sync.py --all --verbose
 
   # Preview what would be synced
-  python .bin/options_default_sync.py --all --dry-run
+    python .bin/options_thorne_sync.py --all --dry-run
 
 AVAILABLE WINDOWS:
-  Actions, Animations, Group, Hotbutton, Inventory, Loot, Merchant,
-  Pet, Player, Selector, Skin, Spellbook, Target
+    Actions, Animations, Cast, Group, Hotbutton, Inventory, Loot,
+    Merchant, Pet, Player, Selector, Skin, Spellbook, Target
 
 OUTPUT:
   - Console: Sync report with counts and filenames
@@ -379,7 +380,7 @@ OUTPUT:
     group.add_argument(
         "--all", "-a",
         action="store_true",
-        help="Sync all 13 configured windows"
+        help="Sync all 14 configured windows"
     )
     
     parser.add_argument(

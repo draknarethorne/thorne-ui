@@ -65,8 +65,8 @@ thorne_drak/
 ├── EQUI_SpellBookWnd.xml          ← Main development file
 └── Options/
     └── Spellbook/
-        ├── Default/
-        │   └── EQUI_SpellBookWnd.xml    ← Original EQ layout
+        ├── Thorne/
+        │   └── EQUI_SpellBookWnd.xml    ← Preferred baseline (Thorne)
         ├── Large Icons/
         │   └── EQUI_SpellBookWnd.xml    ← 4-column variant
         ├── Medium Icons/

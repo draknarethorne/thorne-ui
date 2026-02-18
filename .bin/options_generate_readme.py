@@ -136,11 +136,11 @@ EXAMPLES:
     --variant "Grid Layout 6x4"
 
 CREATED:\
-  <Window>/<Variant>/README.md with:
-    - Overview of variant purpose
-    - Key modifications from Default
-    - Customization instructions
-    - Usage recommendations
+    <Window>/<Variant>/README.md with:
+        - Overview of variant purpose
+        - Key modifications from Thorne
+        - Customization instructions
+        - Usage recommendations
 """
     )
     

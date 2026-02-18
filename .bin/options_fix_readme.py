@@ -138,7 +138,7 @@ class ReadmeHeaderFixer:
             
             # Construct proper title if we have window/variant names
             if window_name and variant_name:
-                if variant_name.lower() == 'default':
+                if variant_name.lower() in ('default', 'thorne'):
                     proper_title = f"# Window: {window_name} - {variant_name} Variant"
                 else:
                     # Standard, Custom, etc.
@@ -294,7 +294,7 @@ class ReadmeHeaderFixer:
         """Extract window name and variant name from file path.
         
         Expected paths:
-        - thorne_drak/Options/Actions/Default/README.md -> ('Actions', 'Default')
+        - thorne_drak/Options/Actions/Thorne/README.md -> ('Actions', 'Thorne')
         - thorne_drak/Options/Actions/Standard/README.md -> ('Actions', 'Standard')
         - thorne_drak/Options/Player/Pet Bottom/README.md -> ('Player', 'Pet Bottom')
         """

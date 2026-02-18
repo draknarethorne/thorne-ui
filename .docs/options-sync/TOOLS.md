@@ -10,8 +10,8 @@ All tools are located in `.bin/options_*.py`
 
 | Task | Tool | Command |
 |------|------|---------|
-| Check which variants are identical to Default | options_default_compare | `python .bin/options_default_compare.py` |
-| Sync Default variants from main files | options_default_sync | `python .bin/options_default_sync.py --all` |
+| Check which variants are identical to Default | options_default_compare | `python .bin/options_thorne_compare.py` |
+| Sync Thorne variants from main files | options_default_sync | `python .bin/options_thorne_sync.py --all` |
 | Find duplicate/similar files across ALL variants | options_duplicate_detector | `python .bin/options_duplicate_detector.py` |
 | Fix README formatting and metadata | options_fix_readme | `python .bin/options_fix_readme.py --dry-run` |
 | Create new variant README template | options_generate_readme | `python .bin/options_generate_readme.py --window Player` |
@@ -19,9 +19,9 @@ All tools are located in `.bin/options_*.py`
 
 ---
 
-## 1. options_default_compare.py
+## 1. options_thorne_compare.py
 
-**Purpose:** Audit which Options variants are identical to their Default variant.
+**Purpose:** Audit which Options variants are identical to their Thorne variant.
 
 **Use when:**
 - Checking if variants are duplicates of Default (redundant)
@@ -30,29 +30,29 @@ All tools are located in `.bin/options_*.py`
 
 **Usage:**
 ```bash
-python .bin/options_default_compare.py
-python .bin/options_default_compare.py --window "Inventory"
-python .bin/options_default_compare.py --verbose
+python .bin/options_thorne_compare.py
+python .bin/options_thorne_compare.py --window "Inventory"
+python .bin/options_thorne_compare.py --verbose
 ```
 
 ---
 
-## 2. options_default_sync.py
+## 2. options_thorne_sync.py
 
-**Purpose:** Synchronize Default variants with current main thorne_drak files.
+**Purpose:** Synchronize Thorne variants with current main thorne_drak files.
 
 **Use when:**
 - Main window files have been updated
-- Backing up current working versions to Options/*/Default/
+- Backing up current working versions to Options/*/Thorne/
 - Preparing for release
 
 **ALWAYS use --dry-run first!**
 
 **Usage:**
 ```bash
-python .bin/options_default_sync.py --all --dry-run --verbose
-python .bin/options_default_sync.py --window "Player"
-python .bin/options_default_sync.py --all --verbose
+python .bin/options_thorne_sync.py --all --dry-run --verbose
+python .bin/options_thorne_sync.py --window "Player"
+python .bin/options_thorne_sync.py --all --verbose
 ```
 
 ---
@@ -138,13 +138,13 @@ python .bin/options_readme_checker.py
 
 **Before Editing: Understand Relationships**
 ```bash
-python .bin/options_default_compare.py --window "Inventory"
+python .bin/options_thorne_compare.py --window "Inventory"
 ```
 
-**After Main File Changes: Backup to Default**
+**After Main File Changes: Backup to Thorne**
 ```bash
-python .bin/options_default_sync.py --all --dry-run
-python .bin/options_default_sync.py --all --verbose
+python .bin/options_thorne_sync.py --all --dry-run
+python .bin/options_thorne_sync.py --all --verbose
 ```
 
 **Cleanup: Find Duplicates**

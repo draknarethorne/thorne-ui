@@ -32,8 +32,8 @@ The Options Sync System infrastructure is **complete and production-ready** with
 
 **6 Python Scripts** (`.bin/` directory):
 
-1. **`options_default_sync.py`**
-   - Backs up window files to `Options/[Window]/Default/`
+1. **`options_thorne_sync.py`**
+   - Backs up window files to `Options/[Window]/Thorne/`
    - Updates `.sync-status.json` metadata
    - Tracks git commit hashes and timestamps
    - Commands: `--window`, `--all`, `--dry-run`, `--verbose`, `--force`
@@ -59,8 +59,8 @@ The Options Sync System infrastructure is **complete and production-ready** with
 
 5. **`options_duplicate_detector.py`**
 
-6. **`options_default_compare.py`**
-   - Compares variants against Default baseline
+6. **`options_thorne_compare.py`**
+   - Compares variants against Thorne baseline
    - Identifies redundant copies vs intentional variants
    - Commands: `--window`, `--all`, `--verbose`
    - Finds near-duplicate XML files (>95% match)
@@ -133,15 +133,15 @@ Quick commands and scenarios:
 thorne_drak/Options/
 ├── [13 Windows]
 │   ├── [Multiple Variants]  (32 total)
-│   ├── Default/              (backup)
+│   ├── Thorne/              (backup)
 │   ├── README.md             (navigation)
 │   └── .sync-status.json     (metadata)
 ├── README.md                 (index)
 └── (46 total README files)
 
 .bin/
-├── options_default_compare.py
-├── options_default_sync.py
+├── options_thorne_compare.py
+├── options_thorne_sync.py
 ├── options_readme_checker.py
 ├── options_fix_readme.py
 ├── options_generate_readme.py
@@ -230,9 +230,9 @@ No Out-of-Sync Files:        Yes ✓
 cat ../../.docs/options-sync/CHEAT-SHEET.md
 
 # Use for: "How do I commit my window changes?"
-python .bin/options_default_sync.py --window Target
+python .bin/options_thorne_sync.py --window Target
 git add thorne_drak/EQUI_TargetWindow.xml
-git add thorne_drak/Options/Target/Default/
+git add thorne_drak/Options/Target/Thorne/
 git commit -m "fix(target): Description"
 ```
 
@@ -327,7 +327,7 @@ cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 | Scripts | `.bin/` (5 Python scripts) |
 | Window files | `thorne_drak/EQUI_*.xml` |
 | Variants | `thorne_drak/Options/[Window]/[Variant]/` |
-| Backups | `thorne_drak/Options/[Window]/Default/` |
+| Backups | `thorne_drak/Options/[Window]/Thorne/` |
 | Reports | `.reports/` (JSON outputs) |
 | Index/Navigation | `thorne_drak/Options/README.md` + guides |
 

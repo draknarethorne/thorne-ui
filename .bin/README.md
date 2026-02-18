@@ -64,12 +64,12 @@ python .bin/fix_tga_files.py --help          # Show options
 Advanced utilities for managing UI variants in the `Options/` directory. These tools fall into two categories:
 
 **Auditors** (read-only, analyze current state):
-- `options_default_compare.py` - Show which variants differ from Default
+- `options_thorne_compare.py` - Show which variants differ from Default
 - `options_duplicate_detector.py` - Find identical/redundant variant files
 - `options_readme_checker.py` - Validate README documentation quality
 
 **Operators** (modify files, use with care):
-- `options_default_sync.py` - Backup working files to Default/ directory
+- `options_thorne_sync.py` - Backup working files to Thorne/ directory
 - `options_generate_readme.py` - Auto-generate README templates for variants
 - `options_fix_readme.py` - Auto-fix README formatting and structure
 
@@ -77,14 +77,14 @@ Advanced utilities for managing UI variants in the `Options/` directory. These t
 
 1. **Audit first** (read-only, safe):
    ```bash
-   python .bin/options_default_compare.py     # See which files differ
+   python .bin/options_thorne_compare.py     # See which files differ
    python .bin/options_duplicate_detector.py  # Find redundant variants
    python .bin/options_readme_checker.py      # Check documentation
    ```
 
 2. **Operate with caution** (modifying):
    ```bash
-   python .bin/options_default_sync.py        # Backup to Default/
+   python .bin/options_thorne_sync.py        # Backup to Thorne/
    python .bin/options_generate_readme.py     # Create README templates
    python .bin/options_fix_readme.py          # Fix existing READMEs
    ```
@@ -93,8 +93,8 @@ Advanced utilities for managing UI variants in the `Options/` directory. These t
 
 All tools support `--help`:
 ```bash
-python .bin/options_default_compare.py --help
-python .bin/options_default_sync.py --help
+python .bin/options_thorne_compare.py --help
+python .bin/options_thorne_sync.py --help
 python .bin/options_duplicate_detector.py --help
 python .bin/options_generate_readme.py --help
 python .bin/options_fix_readme.py --help

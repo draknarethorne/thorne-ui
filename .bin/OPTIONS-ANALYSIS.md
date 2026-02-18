@@ -8,7 +8,7 @@
 
 ### Script Breakdown by Function
 
-#### 1. **options_default_compare.py** - Auditor
+#### 1. **options_thorne_compare.py** - Auditor
 
 **Purpose:** Analyzes current state of Options directory
 
@@ -25,12 +25,12 @@
 
 ---
 
-#### 2. **options_default_sync.py** - Operator
+#### 2. **options_thorne_sync.py** - Operator
 
-**Purpose:** Backup/sync working files to Options/Default/ directory
+**Purpose:** Backup/sync working files to Options/Thorne/ directory
 
 **What it does:**
-- Copies main EQUI_*.xml files from `thorne_drak/` to `Options/[Window]/Default/`
+- Copies main EQUI_*.xml files from `thorne_drak/` to `Options/[Window]/Thorne/`
 - Updates `.sync-status.json` metadata (timestamp, git commit)
 - Tracks which windows have been synced and when
 
@@ -131,7 +131,7 @@
 
 ```
 AUDITORS (Read-only, generate reports):      OPERATORS (Modify files):
-├── options_default_compare.py               ├── options_default_sync.py
+├── options_thorne_compare.py               ├── options_thorne_sync.py
 ├── options_duplicate_detector.py            ├── options_generate_readme.py
 └── options_readme_checker.py                └── options_fix_readme.py
 ```
@@ -158,14 +158,14 @@ Proposed merged script: options_readme_manager.py
 
 ---
 
-#### **Group B: Default variant handling (compare, sync)**
+#### **Group B: Thorne variant handling (compare, sync)**
 
 Could these be one script with mode flag?
 
 ```
 Current:
-  options_default_compare.py   → Analyze current state
-  options_default_sync.py      → Backup to Default/
+  options_thorne_compare.py   → Analyze current state
+  options_thorne_sync.py      → Backup to Thorne/
 
 Proposed merged script: options_default_manager.py
   python options_default_manager.py --compare [--window X]
@@ -192,7 +192,7 @@ Proposed merged script: options_default_manager.py
 ## Recommendations
 
 ### **Keep As-Is** (Clearer workflow)
-1. **options_default_sync.py** - Dangerous to merge (destructive operation)
+1. **options_thorne_sync.py** - Dangerous to merge (destructive operation)
 2. **options_generate_readme.py** - Specific, single purpose
 3. **options_duplicate_detector.py** - Specialized analysis tool
 
@@ -238,8 +238,8 @@ Since these are specialized but useful, here's how to document them:
 
 | Script | Purpose | See: `--help` |
 |--------|---------|---------------|
-| options_default_compare.py | Audit variants vs Default | Analyze current state |
-| options_default_sync.py | Backup working files to Default/ | Sync with metadata tracking |
+| options_thorne_compare.py | Audit variants vs Default | Analyze current state |
+| options_thorne_sync.py | Backup working files to Thorne/ | Sync with metadata tracking |
 | options_duplicate_detector.py | Find identical/redundant variants | Identify candidates for removal |
 | options_generate_readme.py | Create skeletal README templates | Generate docs for new variants |
 | options_fix_readme.py | Auto-fix README formatting | Standardize all documentation |
@@ -254,8 +254,8 @@ Since these are specialized but useful, here's how to document them:
 
 2. **Backup current working files to Options/Default:**
    ```bash
-   python .bin/options_default_sync.py --all --dry-run
-   python .bin/options_default_sync.py --all
+   python .bin/options_thorne_sync.py --all --dry-run
+   python .bin/options_thorne_sync.py --all
    ```
 
 3. **Audit README quality:**

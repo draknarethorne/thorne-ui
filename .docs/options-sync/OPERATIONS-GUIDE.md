@@ -23,7 +23,7 @@
 
 The Options Sync System manages 13 core UI windows across the Thorne UI repository with:
 - **46 README files** (1 root index + 4 window navigation files + 41 variant documentations)
-- **3 backup systems** (Default/ directories with .sync-status.json metadata)
+- **3 backup systems** (Thorne/ directories with .sync-status.json metadata)
 - **4 Python scripts** for validation, synchronization, and error detection
 - **Automated reports** for tracking documentation quality and variant redundancy
 
@@ -34,7 +34,7 @@ This guide covers how to use, maintain, and scale the system for the next 6-8 mo
 ## Team Roles
 
 ### UI Developer
-**Primary Tools**: `options_default_sync.py`, `options_generate_readme.py`
+**Primary Tools**: `options_thorne_sync.py`, `options_generate_readme.py`
 
 **Responsibilities**:
 1. Modify window XML files in `thorne_drak/EQUI_*.xml`
@@ -48,11 +48,11 @@ This guide covers how to use, maintain, and scale the system for the next 6-8 mo
 nano thorne_drak/EQUI_TargetWindow.xml
 
 # Sync to backup when ready
-python .bin/options_default_sync.py --window Target
+python .bin/options_thorne_sync.py --window Target
 
 # Commit both main and backup
 git add thorne_drak/EQUI_TargetWindow.xml
-git add thorne_drak/Options/Target/Default/
+git add thorne_drak/Options/Target/Thorne/
 git commit -m "fix(target): Update target window layout"
 ```
 
@@ -99,8 +99,8 @@ cd /d C:\TAKP\uifiles
 # 1. Edit the window file
 # (make your changes in the XML)
 
-# 2. Sync to Default backup
-python .bin/options_default_sync.py --window Target --verbose
+# 2. Sync to Thorne backup
+python .bin/options_thorne_sync.py --window Target --verbose
 
 # 3. Expected output:
 # [SYNC] Target: Copying EQUI_TargetWindow.xml...
@@ -109,13 +109,13 @@ python .bin/options_default_sync.py --window Target --verbose
 
 # 4. Stage and commit
 git add thorne_drak/EQUI_TargetWindow.xml
-git add thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml
+git add thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml
 git add thorne_drak/Options/Target/.sync-status.json
 git commit -m "fix(target): Update gauge styling"
 ```
 
 **What Happens**:
-- `.bin/options_default_sync.py` copies modified file to `Options/Target/Default/`
+- `.bin/options_thorne_sync.py` copies modified file to `Options/Target/Thorne/`
 - Updates `.sync-status.json` with current date and git commit hash
 - Sets `in_sync: true` flag
 - Creates JSON report in `.reports/sync_report.json`
@@ -123,7 +123,7 @@ git commit -m "fix(target): Update gauge styling"
 **Verification**:
 ```bash
 # Check that files match (should show identical)
-git diff --stat thorne_drak/EQUI_TargetWindow.xml thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml
+git diff --stat thorne_drak/EQUI_TargetWindow.xml thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml
 # (no output = files identical ✓)
 ```
 
@@ -214,7 +214,7 @@ git commit -m "feat(player): Add Custom AA Layout variant"
 cd /d C:\TAKP\uifiles
 
 # Preview changes without modifying
-python .bin/options_default_sync.py --all --dry-run
+python .bin/options_thorne_sync.py --all --dry-run
 
 # Example output:
 # [DRY-RUN] Would sync: Target
@@ -223,7 +223,7 @@ python .bin/options_default_sync.py --all --dry-run
 # ...
 
 # If happy with preview, apply for real
-python .bin/options_default_sync.py --all --verbose
+python .bin/options_thorne_sync.py --all --verbose
 
 # Save report
 copy .reports\sync_report.json .reports\sync_report_prerelease_v0.7.0.json
@@ -291,7 +291,7 @@ git commit -m "chore(release): Pre-release options sync validation"
 2. **Sync Status Review**
    ```bash
    # Check if any windows are out of sync
-   python .bin/options_default_sync.py --all --dry-run
+   python .bin/options_thorne_sync.py --all --dry-run
    # Should show "Already synced" for all
    ```
 
@@ -329,15 +329,15 @@ git commit -m "chore(release): Pre-release options sync validation"
 
 ### Issue 1: File Not Syncing
 
-**Problem**: `options_default_sync.py` says "Already synced" but files are different
+**Problem**: `options_thorne_sync.py` says "Already synced" but files are different
 
 **Solution**:
 ```bash
 # 1. Verify the actual difference
-diff thorne_drak/EQUI_TargetWindow.xml thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml
+diff thorne_drak/EQUI_TargetWindow.xml thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml
 
 # 2. Force resync
-python .bin/options_default_sync.py --window Target --verbose --force
+python .bin/options_thorne_sync.py --window Target --verbose --force
 
 # 3. Check sync status metadata
 cat thorne_drak/Options/Target/.sync-status.json | grep in_sync
@@ -375,14 +375,14 @@ python .bin/options_fix_readme.py --window YourWindow
 python -m json.tool thorne_drak/Options/Target/.sync-status.json
 
 # If invalid, regenerate it
-python .bin/options_default_sync.py --window Target --force --verbose
+python .bin/options_thorne_sync.py --window Target --force --verbose
 
 # Or manually recreate with this template:
 cat > thorne_drak/Options/Target/.sync-status.json << EOF
 {
   "window": "Target",
   "filename": "EQUI_TargetWindow.xml",
-  "description": "Target window default configuration",
+  "description": "Target window Thorne configuration",
   "last_sync_date": "$(date -u +'%Y-%m-%dT%H:%M:%S.000000')",
   "last_sync_commit": "$(git rev-parse --short HEAD)",
   "in_sync": true
@@ -390,7 +390,7 @@ cat > thorne_drak/Options/Target/.sync-status.json << EOF
 EOF
 
 # Verify
-python .bin/options_default_sync.py --window Target --dry-run
+python .bin/options_thorne_sync.py --window Target --dry-run
 ```
 
 ### Issue 4: Too Many Format Issues to Fix Manually
@@ -413,28 +413,28 @@ python .bin/options_readme_checker.py
 
 ## Scripts Reference
 
-### `options_default_sync.py`
+### `options_thorne_sync.py`
 
-**Location**: `.bin/options_default_sync.py`
+**Location**: `.bin/options_thorne_sync.py`
 
 **Purpose**: Backup working window files and update metadata
 
 **Commands**:
 ```bash
 # Sync single window
-python .bin/options_default_sync.py --window Target
+python .bin/options_thorne_sync.py --window Target
 
 # Sync all 13 configured windows
-python .bin/options_default_sync.py --all
+python .bin/options_thorne_sync.py --all
 
 # Dry-run preview
-python .bin/options_default_sync.py --all --dry-run
+python .bin/options_thorne_sync.py --all --dry-run
 
 # Verbose output with file details
-python .bin/options_default_sync.py --all --verbose
+python .bin/options_thorne_sync.py --all --verbose
 
 # Force resync even if already matching
-python .bin/options_default_sync.py --window Target --force
+python .bin/options_thorne_sync.py --window Target --force
 ```
 
 **Output**: `.reports/sync_report.json` with:
@@ -552,11 +552,11 @@ nano thorne_drak/EQUI_TargetWindow.xml
 # (edit the bug fix)
 
 # 2. Sync backup
-python .bin/options_default_sync.py --window Target
+python .bin/options_thorne_sync.py --window Target
 
 # 3. Commit
 git add thorne_drak/EQUI_TargetWindow.xml
-git add thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml
+git add thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml
 git add thorne_drak/Options/Target/.sync-status.json
 git commit -m "hotfix(target): Fix gauge rendering issue"
 

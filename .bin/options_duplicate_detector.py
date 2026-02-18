@@ -3,7 +3,7 @@
 Duplicate Variant Detector - Identify redundant UI variants in Options directory.
 
 Scans all variants within each window directory to find:
-1. Functionally identical files (same content as Default or other variants)
+1. Functionally identical files (same content as Thorne or other variants)
 2. Near-identical files (very similar content, likely duplicates)
 3. Suggestions for consolidation
 4. Variants that could be removed/archived
@@ -249,11 +249,11 @@ class DuplicateDetector:
         for window_name, window_data in self.results['windows'].items():
             removal_list = []
             
-            # Exact duplicates: recommend removing non-Default variants
+            # Exact duplicates: recommend removing non-Thorne variants
             for dup in window_data['exact_duplicates']:
                 variants = dup['variants']
-                if 'Default' in variants and len(variants) > 1:
-                    removal_list.extend([v for v in variants if v != 'Default'])
+                if 'Thorne' in variants and len(variants) > 1:
+                    removal_list.extend([v for v in variants if v != 'Thorne'])
             
             if removal_list:
                 candidates[window_name] = removal_list

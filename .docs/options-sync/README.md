@@ -38,7 +38,7 @@ The Options Sync System is a comprehensive toolkit for managing UI window varian
 The Options Sync System solves several key challenges:
 
 1. **Version Tracking**: Know which Options variant represents the current working version
-2. **Backup Safety**: Maintain `Default/` copies of all finalized window configurations
+2. **Backup Safety**: Maintain `Thorne/` copies of all finalized window configurations
 3. **Documentation Quality**: Track which variants have proper documentation vs. skeletal placeholders
 4. **Duplicate Detection**: Identify redundant variants for consolidation
 5. **Metadata Management**: Keep sync status, dates, and git commits synchronized
@@ -50,7 +50,7 @@ thorne_drak/
   Options/
     [WindowName]/               # e.g., Target, Player, Group
       .sync-status.json         # Metadata tracking sync status
-      Default/                  # Backup of current working configuration
+      Thorne/                  # Backup of current working configuration
         EQUI_*.xml              # Window file
         README.md               # Documentation (when Default is a variant)
       [VariantName]/            # Custom variants (e.g., "Player Gauges and Weight")
@@ -63,27 +63,27 @@ thorne_drak/
 ### Key Components
 
 #### `.sync-status.json`
-Metadata file tracking the synchronization state between main working file and Default backup.
+Metadata file tracking the synchronization state between main working file and Thorne backup.
 
 **Structure:**
 ```json
 {
   "window": "Target",
   "filename": "EQUI_TargetWindow.xml",
-  "description": "Target window default configuration",
+  "description": "Target window Thorne configuration",
   "last_sync_date": "2026-02-03T22:00:00.000000",
   "last_sync_commit": "ac7a1c4",
   "in_sync": true
 }
 ```
 
-#### `Default/` Directory
+#### `Thorne/` Directory
 Stores the backup copy of the current working window file from `thorne_drak/`. This serves as:
 - A known-good backup
 - A reference version for comparison
 - A sync target for ongoing development
 
-**Important:** `Default/` may or may not contain a README.md depending on whether it's also a usable variant or just a backup copy.
+**Important:** `Thorne/` may or may not contain a README.md depending on whether it's also a usable variant or just a backup copy.
 
 #### Variant Directories
 Custom window variations stored in subdirectories with descriptive names. Each should contain:
@@ -96,27 +96,27 @@ All scripts are located in `.bin/` directory and save reports to `.reports/` dir
 
 ### 1. Sync Window to Default
 
-**Script:** `.bin/options_default_sync.py`
+**Script:** `.bin/options_thorne_sync.py`
 
-**Purpose:** Copy finalized working window files from `thorne_drak/` to their `Options/[Window]/Default/` backup and update metadata.
+**Purpose:** Copy finalized working window files from `thorne_drak/` to their `Options/[Window]/Thorne/` backup and update metadata.
 
 **Usage:**
 ```bash
 # Sync a specific window
-python .bin/options_default_sync.py --window Target
+python .bin/options_thorne_sync.py --window Target
 
 # Sync all 13 configured windows
-python .bin/options_default_sync.py --all
+python .bin/options_thorne_sync.py --all
 
 # Preview changes without modifying files
-python .bin/options_default_sync.py --all --dry-run
+python .bin/options_thorne_sync.py --all --dry-run
 
 # Show detailed file operations
-python .bin/options_default_sync.py --window Player --verbose
+python .bin/options_thorne_sync.py --window Player --verbose
 ```
 
 **What it does:**
-1. Compares `thorne_drak/EQUI_*.xml` with `Options/[Window]/Default/EQUI_*.xml`
+1. Compares `thorne_drak/EQUI_*.xml` with `Options/[Window]/Thorne/EQUI_*.xml`
 2. If files differ, copies the working file to Default
 3. Updates `.sync-status.json` with:
    - Current timestamp
@@ -324,15 +324,15 @@ python .bin/options_generate_readme.py --window Inventory --variant "Large Grid"
    - Verify gauge positions
    - Confirm functionality
 
-3. **Sync to Default backup**
+3. **Sync to Thorne backup**
    ```bash
-   python .bin/options_default_sync.py --window Target --verbose
+   python .bin/options_thorne_sync.py --window Target --verbose
    ```
    Output shows:
    ```
    [SYNCED] 1 window(s)
      Target
-       thorne_drak/EQUI_TargetWindow.xml -> Options/Target/Default/EQUI_TargetWindow.xml
+       thorne_drak/EQUI_TargetWindow.xml -> Options/Target/Thorne/EQUI_TargetWindow.xml
    ```
 
 4. **Update related variants (if needed)**
@@ -343,7 +343,7 @@ python .bin/options_generate_readme.py --window Inventory --variant "Large Grid"
    ```bash
    git add thorne_drak/EQUI_TargetWindow.xml
    git add thorne_drak/Options/Target/.sync-status.json
-   git add thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml
+   git add thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml
    git commit -m "fix(target): Adjust gauge positions for better alignment"
    ```
 
@@ -378,12 +378,12 @@ python .bin/options_generate_readme.py --window Inventory --variant "Large Grid"
 
 5. **Sync all windows to Default**
    ```bash
-   python .bin/options_default_sync.py --all --verbose
+   python .bin/options_thorne_sync.py --all --verbose
    ```
 
 6. **Verify all backups current:**
    ```bash
-   python .bin/options_default_sync.py --all --dry-run
+   python .bin/options_thorne_sync.py --all --dry-run
    ```
    Should show all windows skipped (already identical)
 
@@ -496,7 +496,7 @@ python .bin/options_generate_readme.py --window Inventory --variant "Large Grid"
 
 **Location:** `thorne_drak/Options/[WindowName]/.sync-status.json`
 
-**Purpose:** Track synchronization state between working file and Default backup
+**Purpose:** Track synchronization state between working file and Thorne backup
 
 **Schema:**
 ```json
@@ -515,7 +515,7 @@ python .bin/options_generate_readme.py --window Inventory --variant "Large Grid"
 {
   "window": "Target",
   "filename": "EQUI_TargetWindow.xml",
-  "description": "Target window default configuration",
+  "description": "Target window Thorne configuration",
   "last_sync_date": "2026-02-03T22:00:00.000000",
   "last_sync_commit": "ac7a1c4",
   "in_sync": true
@@ -538,7 +538,7 @@ All reports are saved to `.reports/` directory (gitignored).
 
 ### sync_report.json
 
-Generated by `options_default_sync.py`
+Generated by `options_thorne_sync.py`
 
 **Structure:**
 ```json
@@ -618,7 +618,7 @@ Generated by `options_duplicate_detector.py`
 
 **Solution:** Check available windows with:
 ```bash
-python .bin/options_default_sync.py
+python .bin/options_thorne_sync.py
 ```
 
 Use exact name from the list (case-sensitive).

@@ -2,7 +2,7 @@
 
 **File**: [EQUI_MerchantWnd.xml](./EQUI_MerchantWnd.xml)
 **Version**: 1.0.0  
-**Last Updated**: 2026-02-10
+**Last Updated**: 2026-02-17
 **Status**: ✅ Active variant  
 **Author**: Draknare Thorne
 

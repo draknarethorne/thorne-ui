@@ -576,8 +576,8 @@
   <Gauge item="SBW_Memorize_Gauge">
     <ScreenID>SBW_Memorize_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>68</X><Y>377</Y></Location>
-    <Size><CX>102</CX><CY>4</CY></Size>
+    <Location><X>68</X><Y>375</Y></Location>
+    <Size><CX>102</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
     <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
@@ -593,8 +593,8 @@
   <Gauge item="SBW_Scribe_Gauge">
     <ScreenID>SBW_Scribe_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>262</X><Y>377</Y></Location>
-    <Size><CX>102</CX><CY>4</CY></Size>
+    <Location><X>262</X><Y>375</Y></Location>
+    <Size><CX>102</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
     <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
@@ -735,8 +735,8 @@
     <Font>3</Font>
     <ScreenID>DoneButton</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>174</X><Y>367</Y></Location>
-    <Size><CX>84</CX><CY>25</CY></Size>
+    <Location><X>174</X><Y>369</Y></Location>
+    <Size><CX>84</CX><CY>20</CY></Size>
     <Text>Done</Text>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>

@@ -2,7 +2,7 @@
 
 **File**: [EQUI_SpellBookWnd.xml](./EQUI_SpellBookWnd.xml)
 **Version**: 1.0.0  
-**Last Updated**: 2026-02-03
+**Last Updated**: 2026-02-17
 **Status**: ✅ Active variant  
 **Author**: Draknare Thorne
 

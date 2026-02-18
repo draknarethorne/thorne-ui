@@ -919,11 +919,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>228</X>
-      <Y>197</Y>
+      <Y>198</Y>
     </Location>
     <Size>
       <CX>105</CX>
-      <CY>10</CY>
+      <CY>8</CY>
     </Size>
     <GaugeOffsetY>0</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -950,7 +950,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>35</X>
-      <Y>197</Y>
+      <Y>198</Y>
     </Location>
     <Size>
       <CX>105</CX>
@@ -1208,11 +1208,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>142</X>
-      <Y>189</Y>
+      <Y>190</Y>
     </Location>
     <Size>
       <CX>80</CX>
-      <CY>22</CY>
+      <CY>20</CY>
     </Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>

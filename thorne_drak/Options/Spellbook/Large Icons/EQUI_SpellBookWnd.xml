@@ -12,11 +12,11 @@
     - Spell names below each button (Font 2)
   -->
 
-  <!-- COLUMN 1 (X=6) -->
+  <!-- COLUMN 1 (X=13) -->
   <Button item="SBW_Spell0">
     <ScreenID>SBW_Spell0</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>6</X><Y>8</Y></Location>
+    <Location><X>13</X><Y>8</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -29,7 +29,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
+      <X>7</X>
       <Y>54</Y>
     </Location>
     <Size>
@@ -43,14 +43,14 @@
     </TextColor>
     <Text>Spell 1</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell1">
     <ScreenID>SBW_Spell1</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>6</X><Y>89</Y></Location>
+    <Location><X>13</X><Y>89</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -63,7 +63,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
+      <X>7</X>
       <Y>134</Y>
     </Location>
     <Size>
@@ -77,14 +77,14 @@
     </TextColor>
     <Text>Spell 2</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell2">
     <ScreenID>SBW_Spell2</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>6</X><Y>171</Y></Location>
+    <Location><X>13</X><Y>171</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -97,7 +97,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
+      <X>7</X>
       <Y>216</Y>
     </Location>
     <Size>
@@ -111,14 +111,14 @@
     </TextColor>
     <Text>Spell 3</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell3">
     <ScreenID>SBW_Spell3</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>6</X><Y>251</Y></Location>
+    <Location><X>13</X><Y>251</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -131,7 +131,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
+      <X>7</X>
       <Y>296</Y>
     </Location>
     <Size>
@@ -145,15 +145,15 @@
     </TextColor>
     <Text>Spell 4</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
-  <!-- COLUMN 2 (X=60) -->
+  <!-- COLUMN 2 (X=68) -->
   <Button item="SBW_Spell4">
     <ScreenID>SBW_Spell4</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>60</X><Y>8</Y></Location>
+    <Location><X>68</X><Y>8</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -166,7 +166,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>54</X>
+      <X>62</X>
       <Y>54</Y>
     </Location>
     <Size>
@@ -180,14 +180,14 @@
     </TextColor>
     <Text>Spell 5</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell5">
     <ScreenID>SBW_Spell5</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>60</X><Y>89</Y></Location>
+    <Location><X>68</X><Y>89</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -200,7 +200,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>54</X>
+      <X>62</X>
       <Y>134</Y>
     </Location>
     <Size>
@@ -214,14 +214,14 @@
     </TextColor>
     <Text>Spell 6</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell6">
     <ScreenID>SBW_Spell6</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>60</X><Y>171</Y></Location>
+    <Location><X>68</X><Y>171</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -234,7 +234,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>54</X>
+      <X>62</X>
       <Y>216</Y>
     </Location>
     <Size>
@@ -248,14 +248,14 @@
     </TextColor>
     <Text>Spell 7</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell7">
     <ScreenID>SBW_Spell7</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>60</X><Y>251</Y></Location>
+    <Location><X>68</X><Y>251</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -268,7 +268,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>54</X>
+      <X>62</X>
       <Y>296</Y>
     </Location>
     <Size>
@@ -282,15 +282,15 @@
     </TextColor>
     <Text>Spell 8</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
-  <!-- COLUMN 3 (X=114) -->
+  <!-- COLUMN 3 (X=123) -->
   <Button item="SBW_Spell8">
     <ScreenID>SBW_Spell8</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>114</X><Y>8</Y></Location>
+    <Location><X>123</X><Y>8</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -303,7 +303,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>108</X>
+      <X>117</X>
       <Y>54</Y>
     </Location>
     <Size>
@@ -317,14 +317,14 @@
     </TextColor>
     <Text>Spell 9</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell9">
     <ScreenID>SBW_Spell9</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>114</X><Y>89</Y></Location>
+    <Location><X>123</X><Y>89</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -337,7 +337,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>108</X>
+      <X>117</X>
       <Y>134</Y>
     </Location>
     <Size>
@@ -351,14 +351,14 @@
     </TextColor>
     <Text>Spell 10</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell10">
     <ScreenID>SBW_Spell10</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>114</X><Y>171</Y></Location>
+    <Location><X>123</X><Y>171</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -371,7 +371,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>108</X>
+      <X>117</X>
       <Y>216</Y>
     </Location>
     <Size>
@@ -385,14 +385,14 @@
     </TextColor>
     <Text>Spell 11</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell11">
     <ScreenID>SBW_Spell11</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>114</X><Y>251</Y></Location>
+    <Location><X>123</X><Y>251</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -405,7 +405,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>108</X>
+      <X>117</X>
       <Y>296</Y>
     </Location>
     <Size>
@@ -419,15 +419,15 @@
     </TextColor>
     <Text>Spell 12</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
-  <!-- COLUMN 4 (X=168) -->
+  <!-- COLUMN 4 (X=178) -->
   <Button item="SBW_Spell12">
     <ScreenID>SBW_Spell12</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>168</X><Y>8</Y></Location>
+    <Location><X>178</X><Y>8</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -440,7 +440,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>162</X>
+      <X>172</X>
       <Y>54</Y>
     </Location>
     <Size>
@@ -454,14 +454,14 @@
     </TextColor>
     <Text>Spell 13</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell13">
     <ScreenID>SBW_Spell13</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>168</X><Y>89</Y></Location>
+    <Location><X>178</X><Y>89</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -474,7 +474,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>162</X>
+      <X>172</X>
       <Y>134</Y>
     </Location>
     <Size>
@@ -488,14 +488,14 @@
     </TextColor>
     <Text>Spell 14</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell14">
     <ScreenID>SBW_Spell14</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>168</X><Y>171</Y></Location>
+    <Location><X>178</X><Y>171</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -508,7 +508,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>162</X>
+      <X>172</X>
       <Y>216</Y>
     </Location>
     <Size>
@@ -522,14 +522,14 @@
     </TextColor>
     <Text>Spell 15</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Button item="SBW_Spell15">
     <ScreenID>SBW_Spell15</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>168</X><Y>251</Y></Location>
+    <Location><X>178</X><Y>251</Y></Location>
     <Size><CX>44</CX><CY>44</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
@@ -542,7 +542,7 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>162</X>
+      <X>172</X>
       <Y>296</Y>
     </Location>
     <Size>
@@ -556,15 +556,15 @@
     </TextColor>
     <Text>Spell 16</Text>
     <NoWrap>false</NoWrap>
-    <AlignCenter>false</AlignCenter>
+    <AlignCenter>true</AlignCenter>
     <AlignRight>false</AlignRight>
   </StaticText>
 
   <Gauge item="SBW_Memorize_Gauge">
     <ScreenID>SBW_Memorize_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>61</X><Y>372</Y></Location>
-    <Size><CX>103</CX><CY>3</CY></Size>
+    <Location><X>127</X><Y>343</Y></Location>
+    <Size><CX>103</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
     <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
@@ -580,8 +580,8 @@
   <Gauge item="SBW_Scribe_Gauge">
     <ScreenID>SBW_Scribe_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>61</X><Y>378</Y></Location>
-    <Size><CX>103</CX><CY>3</CY></Size>
+    <Location><X>8</X><Y>343</Y></Location>
+    <Size><CX>103</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
     <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
@@ -631,8 +631,8 @@
   <Button item="SBW_PageDown_Button">
     <ScreenID>SBW_PageDown_Button</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>13</X><Y>340</Y></Location>
-    <Size><CX>30</CX><CY>25</CY></Size>
+    <Location><X>8</X><Y>360</Y></Location>
+    <Size><CX>30</CX><CY>20</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
     <Text />
@@ -648,8 +648,8 @@
   <Button item="SBW_PageUp_Button">
     <ScreenID>SBW_PageUp_Button</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>175</X><Y>340</Y></Location>
-    <Size><CX>30</CX><CY>25</CY></Size>
+    <Location><X>190</X><Y>360</Y></Location>
+    <Size><CX>30</CX><CY>20</CY></Size>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
     <Text />
@@ -665,7 +665,7 @@
   <StaticText item="SBW_LeftPageNum">
     <ScreenID>SBW_LeftPageNum</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>18</X><Y>369</Y></Location>
+    <Location><X>41</X><Y>363</Y></Location>
     <Size><CX>20</CX><CY>15</CY></Size>
     <Text>98</Text>
     <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
@@ -677,7 +677,7 @@
   <StaticText item="SBW_RightPageNum">
     <ScreenID>SBW_RightPageNum</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>180</X><Y>369</Y></Location>
+    <Location><X>167</X><Y>363</Y></Location>
     <Size><CX>20</CX><CY>15</CY></Size>
     <Text>99</Text>
     <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
@@ -718,8 +718,8 @@
     <Font>3</Font>
     <ScreenID>DoneButton</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>71</X><Y>340</Y></Location>
-    <Size><CX>84</CX><CY>25</CY></Size>
+    <Location><X>72</X><Y>360</Y></Location>
+    <Size><CX>84</CX><CY>20</CY></Size>
     <Text>Done</Text>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -750,7 +750,7 @@
   <Screen item="SpellBookWnd">
     <RelativePosition>false</RelativePosition>
     <Location><X>150</X><Y>0</Y></Location>
-    <Size><CX>228</CX><CY>395</CY></Size>
+    <Size><CX>242</CX><CY>395</CY></Size>
     <Text>Spell Book</Text>
     <Style_Transparent>false</Style_Transparent>
     <TooltipReference>Your Spell Book</TooltipReference>

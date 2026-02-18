@@ -161,22 +161,60 @@ Assist with development, customization, and modification of EverQuest UI files f
 
 ## Workflow
 
+### Development and Testing Structure
+
+**Directory Setup:**
+- **Development**: `C:\Thorne-UI\thorne_drak\` (version controlled, primary work location)
+- **Testing**: `C:\TAKP\uifiles\thorne_dev\` (deployed test location for in-game validation)
+- **Options**: `C:\Thorne-UI\thorne_drak\Options\<Category>\<Variant>\` (alternative window configurations)
+
+**Workflow Process:**
+
 When assisting with UI customizations:
 
 1. **Understand Context**: Identify which UI component needs modification
-2. **Locate Files**: Find relevant EQUI_*.xml files in the repository
+2. **Locate Files**: Find relevant EQUI_*.xml files in `C:\Thorne-UI\thorne_drak\`
 3. **Review Structure**: Examine existing XML structure and elements
 4. **Plan Changes**: Design modifications considering layout and functionality
-5. **Implement**: Make targeted XML modifications
-6. **Present Changes**: Show the user what modifications were made and ask for approval before committing
+5. **Implement**: Make targeted XML modifications in `C:\Thorne-UI\thorne_drak\`
+6. **Validate XML**: Run XML syntax validation if making significant changes
+7. **Sync for Testing** (when actively testing/refining):
+   - **Full sync**: `.\sync-thorne-ui.bat` - Copies entire thorne_drak to thorne_dev
+   - **Option sync**: `.\sync-option.bat <option_path>` - Copies specific Option variant to thorne_dev
+   - Examples:
+     - `.\sync-option.bat spellbook/large` - Test Large Icons spellbook variant
+     - `.\sync-option.bat inventory` - Shows all inventory options (numbered selection)
+8. **In-Game Testing**: User tests with `/loadskin thorne_dev` command in TAKP
+9. **Present Changes**: Show user modifications and ask for approval before committing
    - Summarize key changes made
-   - Allow user to review changes manually (in-game testing or code review)
-   - Wait for user to indicate "ready to commit" before performing git operations
-7. **Commit After Approval**: Only commit changes after receiving explicit approval from user
-8. **Test Recommendations**: Suggest in-game testing procedures
-9. **Document**: Explain changes and provide usage instructions
+   - Allow user to review changes manually
+   - Wait for user to indicate "ready to commit" before git operations
+10. **Commit After Approval**: Only commit changes after explicit approval from user
+11. **Document**: Explain changes and provide usage instructions
 
-**Important**: Do NOT automatically commit changes. Always present changes for user review first and wait for approval before committing.
+**Sync Script Usage:**
+
+```bash
+# Full development sync (all files from thorne_drak)
+.\sync-thorne-ui.bat
+
+# Test specific option variant (copies option XML to thorne_dev root)
+.\sync-option.bat spellbook/large     # Direct specific option
+.\sync-option.bat spellbook           # Show all spellbook options (numbered)
+.\sync-option.bat inventory/enhanced  # Specific inventory variant
+```
+
+**When to Sync:**
+- ✅ **During active testing/refinement** - Sync after each change to validate in-game
+- ✅ **When testing Options** - Use `sync-option.bat` to test alternative window variants
+- ❌ **During major development** - Wait until ready to begin testing phase
+- ❌ **Before committing** - Syncing is for testing only, not a commit prerequisite
+
+**Important Notes:**
+- Development work ALWAYS happens in `C:\Thorne-UI\` (version controlled)
+- `thorne_dev` is a test deployment target, NOT version controlled
+- Don't automatically commit - present changes for review and wait for approval
+- Sync scripts are convenience tools for rapid iteration during testing phases
 
 ## Quality Checks (When Applicable)
 

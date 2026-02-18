@@ -25,6 +25,17 @@ Specialized agent for complex implementation tasks that require:
 
 ## Core Responsibilities
 
+### Development and Testing Infrastructure
+
+**Directory Setup:**
+- **Development**: `C:\Thorne-UI\thorne_drak\` (version controlled - work here)
+- **Testing**: `C:\TAKP\uifiles\thorne_dev\` (deployed test location)
+- **Options**: `C:\Thorne-UI\thorne_drak\Options\<Category>\<Variant>\`
+
+**Sync for Testing** (use when actively testing/refining):
+- `.\sync-thorne-ui.bat` - Full sync of thorne_drak to thorne_dev
+- `.\sync-option.bat <option>` - Sync specific Option variant for testing
+
 ### 1. Window Restructuring
 - Create new subwindow `<Screen>` elements
 - Reorganize element hierarchy

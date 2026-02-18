@@ -11,9 +11,8 @@
 ## 📚 Documentation Structure (Updated Feb 18, 2026)
 
 **Core Release Documents:**
-- **[RELEASES.md](RELEASES.md)** - Complete guide to creating and managing releases
+- **[RELEASES.md](RELEASES.md)** - Complete guide to creating and managing releases (includes FAQ & quick answers)
 - **[RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md)** - Template for GitHub release notes
-- [RELEASES-CONSOLIDATION-INDEX.md](RELEASES-CONSOLIDATION-INDEX.md) - Documentation consolidation summary
 
 **For Creating New Releases (v0.6.0+):**
 
@@ -70,12 +69,10 @@ git push origin v0.6.5
 
 | Need | Read |
 |------|------|
-| **Prepare v0.6.0+** | [RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md) |
-| **Just want to create a release** | [RELEASES-QUICKSTART.md](RELEASES-QUICKSTART.md) |
+| **Creating releases (start here)** | [RELEASES.md](RELEASES.md) |
+| **GitHub release notes template** | [RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md) |
 | **What changed recently?** | [../README.md](../README.md) |
-| **Questions about the process** | [RELEASES-FAQ.md](RELEASES-FAQ.md) |
 | **How the workflow was built** | [../../.development/releases/RELEASES-IMPLEMENTATION.md](../../.development/releases/RELEASES-IMPLEMENTATION.md) |
-| **Complete reference guide** | [RELEASES.md](RELEASES.md) |
 | **Testing locally before release** | [../../.development/releases/TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md) |
 
 ---
@@ -84,7 +81,7 @@ git push origin v0.6.5
 
 **For any release, you need to:**
 
-- [ ] Review [RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md)
+- [ ] Review [RELEASES.md](RELEASES.md) (Complete process guide)
 - [ ] Update version in README.md (Version History section)
 - [ ] Commit version update
 - [ ] Create and push the release tag

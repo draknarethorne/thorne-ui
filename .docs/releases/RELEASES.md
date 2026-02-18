@@ -13,7 +13,7 @@ This guide explains how to create and manage releases for the Thorne UI project 
 **Q: What do I need to do?**  
 **A: Just push a git tag:** `git push origin v0.6.5` **- everything else is automatic!**
 
-See [RELEASES-FAQ.md](RELEASES-FAQ.md) for more common questions.
+See the **Common Questions** section below for more details.
 
 ---
 
@@ -286,15 +286,25 @@ For detailed testing instructions, see **[TESTING-RELEASES.md](../../.developmen
 
 ## Common Questions
 
-See **[RELEASES-FAQ.md](RELEASES-FAQ.md)** for answers to:
+**Q: Do I need to create ZIPs locally?**  
+**A:** No - the GitHub Actions workflow creates them automatically when you push a tag.
 
-- ❓ Do I need to create ZIPs locally? (No - automated!)
-- ❓ Where can I find releases on GitHub? (Releases page URL)
-- ❓ Can users find releases without navigating the repo? (Yes - direct link)
-- ❓ What's the difference between test script and workflow?
-- ❓ How do I know the workflow succeeded?
-- ❓ What if the workflow fails?
-- ❓ And more...
+**Q: Where can I find releases on GitHub?**  
+**A:** https://github.com/draknarethorne/thorne-ui/releases (or click "Releases" in the right sidebar)
+
+**Q: Can users find releases without navigating the repo?**  
+**A:** Yes - the Releases page is directly accessible and easy to share.
+
+**Q: How do I know the workflow succeeded?**  
+**A:** Check the Actions tab (https://github.com/draknarethorne/thorne-ui/actions) and look for your release tag. It should complete in 2-3 minutes with green checkmarks.
+
+**Q: What if the workflow fails?**  
+**A:** Check the workflow logs in the Actions tab for error details. Common issues: missing VERSION  
+file, syntax errors in YAML, or permission issues. See  
+[TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md) for debugging help.
+
+**Q: What's the difference between the test script and the workflow?**  
+**A:** The test script runs locally and validates your setup before pushing. The workflow runs on GitHub's servers when you push a tag. Both use the same release.yml file.
 
 ---
 

@@ -26,7 +26,8 @@ SKIP_SCHEMES = (
     "tel:",
 )
 
-EXCLUDED_DIRS = {
+# Default exclusions (used if config file not found)
+DEFAULT_EXCLUDED_DIRS = {
     ".git",
     ".tmp",
     ".archive",
@@ -35,6 +36,30 @@ EXCLUDED_DIRS = {
     "venv",
     "__pycache__",
 }
+
+
+def load_link_scan_config(root: Path) -> set[str]:
+    """Load exclusion configuration from .linkscanconfig.json"""
+    config_path = root / ".linkscanconfig.json"
+    
+    if not config_path.exists():
+        return DEFAULT_EXCLUDED_DIRS.copy()
+    
+    try:
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        excluded = DEFAULT_EXCLUDED_DIRS.copy()
+        
+        # Add configured exclusions
+        if "exclude_dirs" in config:
+            for item in config["exclude_dirs"]:
+                # Remove glob patterns and wildcards for simple dir matching
+                clean_item = item.replace("**", "").replace("/*", "").strip("/")
+                if clean_item:
+                    excluded.add(clean_item)
+        
+        return excluded
+    except (json.JSONDecodeError, IOError):
+        return DEFAULT_EXCLUDED_DIRS.copy()
 
 
 @dataclass
@@ -48,9 +73,9 @@ class LinkFinding:
     applied_fix: bool = False
 
 
-def iter_markdown_files(root: Path) -> Iterable[Path]:
+def iter_markdown_files(root: Path, excluded_dirs: set[str]) -> Iterable[Path]:
     for path in root.rglob("*.md"):
-        if any(part in EXCLUDED_DIRS for part in path.parts):
+        if any(part in excluded_dirs for part in path.parts):
             continue
         yield path
 
@@ -85,10 +110,10 @@ def resolve_target(md_file: Path, root: Path, link_path: str) -> Path:
     return (md_file.parent / link_path).resolve()
 
 
-def build_basename_index(root: Path) -> dict[str, List[Path]]:
+def build_basename_index(root: Path, excluded_dirs: set[str]) -> dict[str, List[Path]]:
     index: dict[str, List[Path]] = {}
     for path in root.rglob("*"):
-        if any(part in EXCLUDED_DIRS for part in path.parts):
+        if any(part in excluded_dirs for part in path.parts):
             continue
         if path.is_file():
             index.setdefault(path.name.lower(), []).append(path)
@@ -149,15 +174,15 @@ def should_skip(url: str) -> bool:
     return False
 
 
-def scan_links(root: Path, fix: bool) -> Tuple[List[LinkFinding], int, int, int]:
+def scan_links(root: Path, fix: bool, excluded_dirs: set[str]) -> Tuple[List[LinkFinding], int, int, int]:
     broken: List[LinkFinding] = []
     total_files = 0
     total_links = 0
     fixes_applied = 0
 
-    basename_index = build_basename_index(root)
+    basename_index = build_basename_index(root, excluded_dirs)
 
-    for md_file in iter_markdown_files(root):
+    for md_file in iter_markdown_files(root, excluded_dirs):
         total_files += 1
         try:
             lines = md_file.read_text(encoding="utf-8").splitlines()
@@ -257,8 +282,11 @@ def main() -> int:
     args = parser.parse_args()
     root = Path(args.root).resolve()
     output_path = Path(args.output)
+    
+    # Load exclusion configuration
+    excluded_dirs = load_link_scan_config(root)
 
-    findings, total_files, total_links, fixes_applied = scan_links(root, args.fix)
+    findings, total_files, total_links, fixes_applied = scan_links(root, args.fix, excluded_dirs)
 
     summary = {
         "root": str(root),

@@ -145,6 +145,21 @@ git branch
 git status
 ```
 
+### Minimal Release File Set (Recommended)
+
+To keep release commits focused and avoid noisy documentation churn:
+
+- **Always update:**
+  - `VERSION`
+  - `README.md` (Version History)
+
+- **Update only if content actually changed:**
+  - `DEVELOPMENT.md`
+  - `.docs/VERSION-MANAGEMENT.md`
+  - `.docs/releases/*` guides, templates, and index files
+
+This keeps each release commit small, reviewable, and accurate.
+
 ---
 
 ## Automation & Scripts

@@ -5,11 +5,14 @@
 This directory contains variants for the Cast window (EQUI_CastSpellWnd.xml).
 
 **Last Synced:** 2026-02-18  
-**Git Commit:** 36b97c1
+**Git Commit:** b7d851f
 
 ---
 
 ## Available Variants
+
+- **[Enhanced/](Enhanced/)**  📄
+  `EQUI_CastSpellWnd.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_CastSpellWnd.xml`

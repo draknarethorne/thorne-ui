@@ -56,8 +56,8 @@ Standardized window widths for consistent layout:
 | EQType | Purpose | Color (RGB) |
 |--------|---------|------------|
 | 1 | Player HP | 255, 0, 0 (Red) |
-| 2 | Player Mana | 100, 150, 255 (Bright Blue) |
-| 16 | Pet HP | 200, 0, 200 (Purple) |
+| 2 | Player Mana | 30, 30, 255 (Deep Blue fill) |
+| 16 | Pet HP | 200, 80, 200 (Purple) |
 | 17 | Pet Mana | 100, 150, 255 (Bright Blue) |
 | 11-21 | Group Member HP | Consistent across members |
 
@@ -266,14 +266,14 @@ Use for: HP, Mana, Stamina, XP, AA gauges requiring vertical stacking
 
 | Purpose | Fill RGB | LinesFill RGB | Notes |
 |---------|----------|---------------|-------|
-| Player HP | 255, 0, 0 | 180, 0, 0 | Red gauge |
-| Player Mana | 100, 150, 255 | 70, 105, 180 | Bright blue gauge |
-| Pet HP | 200, 0, 200 | 140, 0, 140 | Purple gauge (Phase 3.5) |
+| Player HP | 255, 0, 0 | 220, 220, 0 | Red fill, gold line tint |
+| Player Mana | 30, 30, 255 | 0, 220, 220 | Deep blue fill, cyan line tint |
+| Pet HP | 200, 80, 200 | 0, 0, 0 | Purple fill (PlayerWindow implementation) |
 | Pet Mana | 100, 150, 255 | 70, 105, 180 | Bright blue gauge |
-| Stamina/Breath | 205, 205, 0 | 144, 144, 0 | Yellow gauge |
-| XP Progress | 0, 205, 0 | 0, 144, 0 | Green gauge |
-| AA Progress | 205, 205, 0 | 144, 144, 0 | Yellow gauge |
-| Group Member HP | 255, 0, 0 | 180, 0, 0 | Red (consistent) |
+| Stamina/Breath | 240, 240, 0 | 0, 220, 0 | Yellow fill, green line tint |
+| XP Progress | 220, 150, 0 | 100, 160, 255 | Orange fill, blue line tint |
+| AA Progress | 220, 200, 0 | 0, 220, 220 | Yellow fill, cyan line tint |
+| Group Member HP | 255, 0, 0 | 180, 0, 0 | Red (legacy/group variants) |
 
 **Vertical Spacing**:
 - **14px gauges**: Use 17px vertical spacing (14px gauge + 3px gap)
@@ -421,9 +421,11 @@ thorne_drak/
 |------------|-----------|-----|-------|
 | **White** | 255, 255, 255 | #FFFFFF | Default text, player name, stat values |
 | **Blue (Attributes)** | 50, 160, 250 | #32A0FA | Attribute labels (STR, STA, AGI, DEX, WIS, INT, CHA) |
-| **Pink/Rose** | 200, 120, 145 | #C87891 | HP/Mana labels (alternate to white) |
-| **Orange** | 255, 165, 0 | #FFA500 | ATK label, FIRE resist |
-| **Cyan** | 0, 165, 255 | #00A5FF | COLD resist |
+| **HP Value Red** | 255, 100, 100 | #FF6464 | HP current/max text values |
+| **Mana Value Blue** | 100, 150, 255 | #6496FF | Mana current/max text values |
+| **Orange** | 255, 165, 0 | #FFA500 | AC label, ATK label |
+| **Fire Red** | 195, 20, 20 | #C31414 | FIRE resist |
+| **Cold Blue** | 0, 120, 255 | #0078FF | COLD resist |
 | **Purple** | 195, 0, 185 | #C300B9 | MAGIC resist |
 | **Yellow** | 205, 205, 0 | #CDCD00 | DISEASE resist |
 | **Teal** | 0, 130, 100 | #008264 | POISON resist |
@@ -435,13 +437,13 @@ thorne_drak/
 
 | Gauge Type | Fill RGB | LinesFill RGB | Hex (Fill) | EQType | Notes |
 |------------|----------|---------------|------------|--------|-------|
-| **Player HP** | 255, 0, 0 | 180, 70, 70 | #FF0000 | 1 | Bright red for health |
-| **Player Mana** | 100, 150, 255 | 70, 105, 180 | #6496FF | 2 | "Thorne blue" - signature color |
-| **Pet Health** | 200, 80, 200 | 150, 60, 150 | #C850C8 | 9 | Purple to differentiate from player |
+| **Player HP** | 255, 0, 0 | 220, 220, 0 | #FF0000 | 1 | Bright red fill (main Player/Target windows) |
+| **Player Mana** | 30, 30, 255 | 0, 220, 220 | #1E1EFF | 2 | Deep blue fill; text labels use RGB(100,150,255) |
+| **Pet Health** | 200, 80, 200 | 0, 0, 0 or 150, 60, 150 | #C850C8 | 16 | Purple (window-specific line tint) |
 | **Pet Mana** | 100, 150, 255 | 70, 105, 180 | #6496FF | 17 | Same blue as player mana |
-| **Stamina** | 205, 205, 0 | 144, 144, 0 | #CDCD00 | 4 | Yellow for stamina/endurance |
-| **Experience (XP)** | 0, 205, 0 | 0, 144, 0 | #00CD00 | 5 | Green for progression |
-| **AA Points** | 205, 205, 0 | 144, 144, 0 | #CDCD00 | 10 | Yellow (same as XP in some UIs) |
+| **Stamina** | 240, 240, 0 | 0, 220, 0 | #F0F000 | 3 | Yellow fill with green line tint |
+| **Experience (XP)** | 220, 150, 0 | 100, 160, 255 | #DC9600 | 4 | Orange fill with blue line tint |
+| **AA Points** | 220, 200, 0 | 0, 220, 220 | #DCC800 | 5 | Yellow fill with cyan line tint |
 | **Breath Meter** | 0, 240, 240 | 0, 0, 0 | #00F0F0 | 8 | Cyan for underwater breathing |
 | **Mana Tick (Standard)** | 0, 220, 220 | 0, 220, 220 | #00DCDC | 24 | LinesFill only, 103px wide (compact windows) |
 | **Mana Tick (Tall)** | 0, 220, 220 | 0, 220, 220 | #00DCDC | 24 | LinesFill only, 120px wide (Player/Pet windows) |
@@ -606,9 +608,9 @@ thorne_drak/
 7. Weight (Current/Max)
 
 **Color Consistency**:
-- Pet elements: Always purple (`200, 0, 200`)
+- Pet elements: Purple family (`200, 80, 200`)
 - Player HP: Always red (`255, 0, 0`)
-- Player Mana: Always bright blue (`100, 150, 255`)
+- Player Mana gauge fill: `30, 30, 255` (value text remains `100, 150, 255`)
 - No custom colors unless documented in this standard
 
 ---

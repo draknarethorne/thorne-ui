@@ -3,24 +3,24 @@
 	<Schema xmlns = "EverQuestData" xmlns:dt = "EverQuestDataTypes"/>
 	<!--
 		==============================================================================
-		EQUI_CastSpellWnd.xml - Cast Spell Window (Custom Button Variant)
+		EQUI_CastSpellWnd.xml - Cast Spell Window (Default with Recast Timers)
 		==============================================================================
 		
 		Original Authors:
 		  - Tabashir (Initial creation)
 		  - Brujoloco (QQQuarm compilation revision, Nov 15 2023)
 		
-		Thorne UI Modifications (Jan 2026) by Draknare Thorne:
+		Thorne UI Modifications (Feb 18, 2026) by Draknare Thorne:
 		
-		MAJOR CHANGES:
+		MAJOR CHANGES (Phase 1):
 		  - Custom Button-Based Spell Gems: Replaced standard spell gem graphics 
 		    with custom button textures for enhanced visibility and color contrast
 		  - Custom Texture Assets:
-		      * button_dark_pieces01.tga - Normal button state (darker background)
-		      * button_light_pieces01.tga - Ready/active button state (lighter background)
+		      * button-dark-opaque01.tga - Normal button state (darker background)
+		      * button_light-opaque01.tga - Ready/active button state (lighter background)
 		  - Custom Animations:
-		      * A_CastBtnNormal - Uses button_dark_pieces01.tga (120x24px region at 100,0)
-		      * A_CastBtnReady - Uses button_light_pieces01.tga (120x24px region at 100,24)
+		      * A_CastBtnNormal - Uses button-dark-opaque01.tga (120x24px region at 100,0)
+		      * A_CastBtnReady - Uses button_light-opaque01.tga (120x24px region at 100,24)
 		  - Standardized All Spell Gems: All 9 spell buttons now use identical sizing
 		    and draw templates (150x24 pixels, previously mixed 31x23 and 127x23)
 		  - Widened Window: Increased window width from 140px to 160px for better layout
@@ -31,26 +31,42 @@
 		  - Enhanced Text Display: Spell names positioned at X=47 with improved alignment
 		    for better readability on wider buttons
 		
+		MAJOR CHANGES (Phase 2 - Recast Timers):
+		  - Individual Spell Recast Timers: Added horizontal gauge bars below each spell
+		    showing per-spell cooldown/recast status (inspired by Zeal/Nillipuss)
+		  - Gauge Configuration:
+		      * Height: 3px thin bars for minimal visual intrusion
+		      * Width: 146px (matching button widths with margins)
+		      * Colors: Magenta bars with cyan outlines (Thorne gauge style)
+		      * EQTypes: 26-33 for gems 0-8 individual recasts
+          * Fill: A_CastRecastBarFill (custom cast-button animation using button_light-opaque01.tga)
+		  - Window Height Expansion: Increased from 242px to 273px to accommodate gauges
+		  - Spellbook Button Repositioning: Moved from Y=212 to Y=236
+		  - Updated Pieces List: Added all recast gauge elements to screen
+      - Animation Definition: A_CastRecastBarFill added to this file
+        (3px strip from button_light-opaque01.tga for consistent cast-window styling)
+		
 		DESIGN PHILOSOPHY:
 		  - Button-style spell gems provide superior visibility compared to standard gems
 		  - Custom textures enable precise color control for background and active states
 		  - Wider layout accommodates full spell names with less truncation
 		  - Consistent 150x24px sizing across all 9 spell buttons creates uniform appearance
-		  - These custom textures and animations are specific to this window and not used
-		    in hotbars or other UI elements (those use standard spell gem graphics)
+		  - Recast timer bars provide at-a-glance cooldown feedback without obscuring gems
+		  - Follows Zeal UI conventions for gauge styling and colors
+		  - These custom textures and animations are specific to this window
 		
     TECHNICAL NOTES:
-      - Window size: 160x242 pixels (widened from 140x237)
+      - Window size: 160x273 pixels (expanded from 242px to accommodate recast gauges)
 		  - Spell button size: 150x24 pixels (standardized, previously varied)
+		  - Recast gauge: 146x3 pixels, positioned Y+23 from spell button start
 		  - Spell gem 8 remains hidden off-screen at Y=300 (9th spell slot)
-		  - Spellbook button: 144x20 pixels at bottom (Y=209)
+		  - Spellbook button: 144x20 pixels at bottom (Y=236, updated from Y=212)
       - Font changes: Spell names use Font 1 (previously Font 2)
 		  - All spell gems use custom A_CastBtnNormal/A_CastBtnReady draw templates
-		
-		VARIANT AVAILABILITY:
-		  - This file represents the "Default" variant (custom button-based gems)
-		  - Standard variant available in Options/Cast/Standard/ (uses original 
-		    spell gem graphics with A_SpellGemHolder/A_SpellGemBackground)
+    - All recast gauges use A_CastRecastBarFill animation (cast-button strip)
+		  - This file represents the "Default" variant (custom buttons + recast timers)
+		  - Enhanced variant available in Options/Cast/Enhanced/ (custom buttons, no timers)
+		    Use if you prefer cleaner UI without individual cooldown indicators
 		
 		==============================================================================
 	-->
@@ -64,8 +80,8 @@
     enhanced visibility and color contrast compared to standard spell gem graphics.
     
     TEXTURE FILES:
-      - button_dark_pieces01.tga: Normal/inactive button state (darker background)
-      - button_light_pieces01.tga: Ready/active button state (lighter background)
+      - button-dark-opaque01.tga: Normal/inactive button state (darker background)
+      - button_light-opaque01.tga: Ready/active button state (lighter background)
     
     These textures are specific to the Cast Spell Window and are NOT used in:
       - Hotbutton windows (use standard spell gem sprites)
@@ -75,14 +91,14 @@
     maintaining traditional spell gem appearance in compact hotbar layouts.
     ================================================================================
   -->
-  <TextureInfo item="button_dark_pieces01.tga">
+  <TextureInfo item="button-dark-opaque01.tga">
     <Size>
       <CX>256</CX>
       <CY>256</CY>
     </Size>
   </TextureInfo>
 
-  <TextureInfo item="button_light_pieces01.tga">
+  <TextureInfo item="button_light-opaque01.tga">
     <Size>
       <CX>256</CX>
       <CY>256</CY>
@@ -92,7 +108,7 @@
   <Ui2DAnimation item="A_CastBtnNormal">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>button_dark_pieces01.tga</Texture>
+      <Texture>button-dark-opaque01.tga</Texture>
       <Location>
         <X>100</X>
         <Y>0</Y>
@@ -112,7 +128,7 @@
   <Ui2DAnimation item="A_CastBtnReady">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>button_light_pieces01.tga</Texture>
+      <Texture>button_light-opaque01.tga</Texture>
       <Location>
         <X>100</X>
         <Y>24</Y>
@@ -120,6 +136,26 @@
       <Size>
         <CX>120</CX>
         <CY>24</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="A_CastRecastBarFill">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>button_light-opaque01.tga</Texture>
+      <Location>
+        <X>100</X>
+        <Y>45</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>3</CY>
       </Size>
       <Hotspot>
         <X>0</X>
@@ -643,79 +679,293 @@
     <AlignRight>false</AlignRight>
   </Label>
 
-  <!-- A small message, cherish life for it is short! Love to you all from Brujoloco, a Venezuelan exile in Spain -->
-	<SpellGem item = "CSPW_Spell8">
-		<ScreenID>CSPW_Spell8</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>1</X>
-			<Y>300</Y>
-		</Location>
-		<Size>
-			<CX>0</CX>
-			<CY>0</CY>
-		</Size>
-		<SpellGemDrawTemplate>
-			<Holder>A_CastBtnNormal</Holder>
-			<Background>A_CastBtnReady</Background>
-			<Highlight>A_SpellGemHighlight</Highlight>
-		</SpellGemDrawTemplate>
-    <SpellIconOffsetX>2</SpellIconOffsetX>
-    <SpellIconOffsetY>0</SpellIconOffsetY>
-	</SpellGem>
-  <Label item="CSPW_Spell8_Name">
-    <ScreenID>CSPW_Spell8_Name</ScreenID>
-    <Font>1</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>47</X>
-      <Y>300</Y>
-    </Location>
-    <Size>
-      <CX>0</CX>
-      <CY>0</CY>
-    </Size>
-    <EQType>133</EQType>
-    <TextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TextColor>
-    <NoWrap>false</NoWrap>
-    <AlignCenter>true</AlignCenter>
-    <AlignRight>false</AlignRight>
-  </Label>
-  <Label item="CSPW_Spell8_No">
-    <ScreenID>CSPW_Spell8_No</ScreenID>
-    <Font>4</Font>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>29</X>
-      <Y>303</Y>
-    </Location>
-    <Size>
-      <CX>0</CX>
-      <CY>0</CY>
-    </Size>
-    <Text>9</Text>
-    <TextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TextColor>
-    <NoWrap>true</NoWrap>
-    <AlignCenter>true</AlignCenter>
-    <AlignRight>false</AlignRight>
-  </Label>
+  <!-- ==================================================================================
+       RECAST TIMER GAUGES - Individual spell cooldown indicators (Zeal-style)
+       ==================================================================================
+       These thin horizontal gauge bars display below each spell button, showing the
+       per-spell recast/cooldown status. Design inspired by Zeal/Nillipuss.
+       ================================================================================== -->
 
-    <!-- The spellbook button (widened and lengthened, text added) -->
+  <!-- Spell 0 Recast Timer -->
+  <Gauge item="CSPW_Spell0_Recast">
+    <ScreenID>CSPW_Spell0_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>23</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>26</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 1 Recast Timer -->
+  <Gauge item="CSPW_Spell1_Recast">
+    <ScreenID>CSPW_Spell1_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>49</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>27</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 2 Recast Timer -->
+  <Gauge item="CSPW_Spell2_Recast">
+    <ScreenID>CSPW_Spell2_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>75</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>28</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 3 Recast Timer -->
+  <Gauge item="CSPW_Spell3_Recast">
+    <ScreenID>CSPW_Spell3_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>101</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>29</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 4 Recast Timer -->
+  <Gauge item="CSPW_Spell4_Recast">
+    <ScreenID>CSPW_Spell4_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>127</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>30</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 5 Recast Timer -->
+  <Gauge item="CSPW_Spell5_Recast">
+    <ScreenID>CSPW_Spell5_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>153</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>31</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 6 Recast Timer -->
+  <Gauge item="CSPW_Spell6_Recast">
+    <ScreenID>CSPW_Spell6_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>179</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>32</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 7 Recast Timer -->
+  <Gauge item="CSPW_Spell7_Recast">
+    <ScreenID>CSPW_Spell7_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>205</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>200</R>
+      <G>0</G>
+      <B>200</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>220</G>
+      <B>220</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>33</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- End Recast Gauges -->
 	<Button item = "CSPW_SpellBook">
 		<ScreenID>CSPW_SpellBook</ScreenID>
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>4</X>
-      <Y>212</Y>
+      <Y>236</Y>
 		</Location>
 		<Size>
 			<CX>144</CX>
@@ -755,7 +1005,7 @@
 		</Location>
 		<Size>
 			<CX>160</CX>
-      <CY>242</CY>
+      <CY>273</CY>
 		</Size>
 		<Text>Spells</Text>
 		<Style_Transparent>false</Style_Transparent>
@@ -774,7 +1024,6 @@
 		<Pieces>CSPW_Spell5</Pieces>
 		<Pieces>CSPW_Spell6</Pieces>
 		<Pieces>CSPW_Spell7</Pieces>
-		<Pieces>CSPW_Spell8</Pieces>
 		<Pieces>CSPW_SpellBook</Pieces>
 		<Pieces>CSPW_Spell0_Name</Pieces>
 		<Pieces>CSPW_Spell1_Name</Pieces>
@@ -784,7 +1033,6 @@
 		<Pieces>CSPW_Spell5_Name</Pieces>
 		<Pieces>CSPW_Spell6_Name</Pieces>
 		<Pieces>CSPW_Spell7_Name</Pieces>
-		<Pieces>CSPW_Spell8_Name</Pieces>
 		<Pieces>CSPW_Spell0_No</Pieces>
 		<Pieces>CSPW_Spell1_No</Pieces>
 		<Pieces>CSPW_Spell2_No</Pieces>
@@ -793,7 +1041,14 @@
 		<Pieces>CSPW_Spell5_No</Pieces>
 		<Pieces>CSPW_Spell6_No</Pieces>
 		<Pieces>CSPW_Spell7_No</Pieces>
-		<Pieces>CSPW_Spell8_No</Pieces>
+		<Pieces>CSPW_Spell0_Recast</Pieces>
+		<Pieces>CSPW_Spell1_Recast</Pieces>
+		<Pieces>CSPW_Spell2_Recast</Pieces>
+		<Pieces>CSPW_Spell3_Recast</Pieces>
+		<Pieces>CSPW_Spell4_Recast</Pieces>
+		<Pieces>CSPW_Spell5_Recast</Pieces>
+		<Pieces>CSPW_Spell6_Recast</Pieces>
+		<Pieces>CSPW_Spell7_Recast</Pieces>
 	</Screen>
 
 </XML>

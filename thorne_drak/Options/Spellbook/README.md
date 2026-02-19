@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains variants for the Spellbook window (EQUI_SpellbookWnd.xml).
+This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml).
 
 **Last Synced:** 2026-02-17  
 **Git Commit:** 36b97c1
@@ -24,7 +24,7 @@ This directory contains variants for the Spellbook window (EQUI_SpellbookWnd.xml
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_SpellbookWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_SpellBookWnd.xml`.
 
 ## Metadata
 

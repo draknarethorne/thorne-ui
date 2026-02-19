@@ -4,8 +4,8 @@
 
 This directory contains variants for the Animations window (EQUI_Animations.xml).
 
-**Last Synced:** 2026-02-17  
-**Git Commit:** 36b97c1
+**Last Synced:** 2026-02-18  
+**Git Commit:** b7d851f
 
 ---
 

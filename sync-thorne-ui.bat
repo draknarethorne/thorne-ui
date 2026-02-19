@@ -2,7 +2,7 @@
 REM ============================================================================
 REM Thorne UI Sync Script
 REM ============================================================================
-REM Purpose: Sync thorne_drak UI files from development to TAKP game directory
+REM Purpose: Sync thorne_drak to thorne_dev directory in TAKP game directory
 REM Author: Draknare Thorne
 REM ============================================================================
 
@@ -91,6 +91,6 @@ echo ========================================
 echo   Sync Complete!
 echo ========================================
 echo.
-echo thorne_drak UI is ready to test in TAKP
-echo In-game command: /loadskin thorne_drak
+echo thorne_dev UI is ready to test in TAKP
+echo In-game command: /loadskin thorne_dev
 echo.

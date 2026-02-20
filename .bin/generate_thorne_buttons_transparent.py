@@ -1,9 +1,12 @@
 """Generate transparency variants of button source atlas with proper border preservation.
 
-This script creates multiple opacity levels (75%, 50%, 25%) from the solid button
-source, preserving:
+This script dynamically detects all buttons in the top row and generates multiple
+opacity levels for each, preserving:
 - 3px opaque borders (original alpha unmodified)
 - Inner pixel colors (original RGB preserved, only alpha reduced)
+
+Top row can contain multiple source buttons at any 40px-aligned position.
+Script will generate transparency variants for all detected buttons.
 """
 
 from pathlib import Path
@@ -14,13 +17,18 @@ ROOT = Path("C:/Thorne-UI")
 BUTTON_SOURCE = ROOT / "thorne_drak" / "thorne_buttons01.tga"
 
 # Transparency levels: (description, alpha_value)
+# Ordered from highest opacity to lowest
 TRANSPARENCY_LEVELS = [
+    ("95", 242),   # 95% of 255
     ("90", 230),   # 90% of 255
-    ("80", 204),   # 80% of 255
+    ("85", 217),   # 85% of 255
     ("75", 191),   # 75% of 255
+    ("50", 128),   # 50% of 255
 ]
 
 BORDER_WIDTH = 3
+BUTTON_SIZE = 40
+BUTTON_SCAN_WIDTH = 255  # Total width to scan for buttons
 
 
 def load_tga(filepath: Path) -> Image.Image:
@@ -93,51 +101,72 @@ def main() -> None:
     if not BUTTON_SOURCE.exists():
         raise FileNotFoundError(f"Missing button source: {BUTTON_SOURCE}")
     
-    # Load the 255x255 button atlas
+    # Load the button atlas
     atlas = load_tga(BUTTON_SOURCE)
     
     print(f"Source atlas: {atlas.size} {atlas.mode}")
     
-    # Extract solid buttons (row 1 @ y=0)
-    button1_solid = atlas.crop((0, 0, 40, 40))
-    button2_solid = atlas.crop((40, 0, 80, 40))
+    # Detect all buttons in top row (y=0) by scanning at 40px intervals
+    source_buttons = []  # List of (x_position, button_image)
     
-    print(f"Extracted: button1_solid {button1_solid.size}, button2_solid {button2_solid.size}")
-    
-    # Create variants for each transparency level
-    for trans_label, trans_alpha in TRANSPARENCY_LEVELS:
-        button1_trans = make_transparent_variant(button1_solid, trans_alpha, BORDER_WIDTH)
-        button2_trans = make_transparent_variant(button2_solid, trans_alpha, BORDER_WIDTH)
+    for x in range(0, BUTTON_SCAN_WIDTH, BUTTON_SIZE):
+        # Extract potential button region
+        if x + BUTTON_SIZE > atlas.width:
+            break
         
-        print(f"  Generated {trans_label}% opacity variants (A={trans_alpha})")
+        button_img = atlas.crop((x, 0, x + BUTTON_SIZE, BUTTON_SIZE))
+        
+        # Check if button has any visible pixels (not fully transparent)
+        pixels = button_img.load()
+        has_content = False
+        for y in range(BUTTON_SIZE):
+            for px in range(BUTTON_SIZE):
+                r, g, b, a = button_img.getpixel((px, y))
+                if a > 0:
+                    has_content = True
+                    break
+            if has_content:
+                break
+        
+        if has_content:
+            source_buttons.append((x, button_img))
+            print(f"  Found button at x={x}")
     
-    # Create new expanded atlas with all variants stacked
-    new_atlas = Image.new('RGBA', (255, 255), (0, 0, 0, 0))
+    if not source_buttons:
+        raise ValueError("No buttons found in top row (y=0)")
     
-    # Row 1 @ y=0: Solid (already in source)
-    new_atlas.paste(button1_solid, (0, 0), button1_solid)
-    new_atlas.paste(button2_solid, (40, 0), button2_solid)
+    print(f"Detected {len(source_buttons)} source button(s) in top row\n")
     
-    # Rows 2-4: Transparency variants
-    y_positions = [44, 88, 132]
+    # Create new expanded atlas with all variants
+    # Need: 1 solid row + 5 transparency rows = 6 rows total
+    # 6 × 40px = 240px (leaves 15px padding)
+    new_atlas = Image.new('RGBA', (BUTTON_SCAN_WIDTH, 255), (0, 0, 0, 0))
+    
+    # Row 1 @ y=0: Solid (copy from source)
+    for btn_x, btn_img in source_buttons:
+        new_atlas.paste(btn_img, (btn_x, 0), btn_img)
+    
+    # Rows 2-6: Transparency variants
+    y_positions = [44, 88, 132, 176, 220]  # 4px gap between rows
+    
     for (trans_label, trans_alpha), y_pos in zip(TRANSPARENCY_LEVELS, y_positions):
-        button1_trans = make_transparent_variant(button1_solid, trans_alpha, BORDER_WIDTH)
-        button2_trans = make_transparent_variant(button2_solid, trans_alpha, BORDER_WIDTH)
+        for btn_x, btn_solid in source_buttons:
+            variant = make_transparent_variant(btn_solid, trans_alpha, BORDER_WIDTH)
+            new_atlas.paste(variant, (btn_x, y_pos), variant)
         
-        new_atlas.paste(button1_trans, (0, y_pos), button1_trans)
-        new_atlas.paste(button2_trans, (40, y_pos), button2_trans)
-        
-        print(f"✓ Placed {trans_label}% opacity @ y={y_pos}")
+        print(f"✓ Generated {trans_label}% opacity variants @ y={y_pos}")
     
     # Save updated atlas
     save_tga(new_atlas, BUTTON_SOURCE)
     
     print(f"\nUpdated: {BUTTON_SOURCE}")
-    print("Button atlas layout (255x255):")
-    print("  Row 1 @ y=0:   Solid (100% opacity, A=255)")
-    print("  Row 2 @ y=44:  90% opacity (A=230) - both buttons, colors preserved, border opaque")
-    print("  Row 3 @ y=88:  80% opacity (A=204) - both buttons, colors preserved, border opaque")
-    print("  Row 4 @ y=132: 75% opacity (A=191) - both buttons, colors preserved, border opaque")
+    print(f"Button atlas layout ({BUTTON_SCAN_WIDTH}×{new_atlas.height}):")
+    print(f"  Row 1 @ y=0:   Solid (100% opacity, A=255)")
+    print(f"  Row 2 @ y=44:  95% opacity (A=242)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 3 @ y=88:  90% opacity (A=230)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 4 @ y=132: 85% opacity (A=217)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 5 @ y=176: 75% opacity (A=191)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 6 @ y=220: 50% opacity (A=128)  - {len(source_buttons)} button(s), colors preserved")
 
 
 if __name__ == "__main__":

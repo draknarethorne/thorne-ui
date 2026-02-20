@@ -28,6 +28,12 @@ X20_START = 168
 X20_COUNT = 4
 Y20 = 0
 
+# Small-icon sharpening tuning (20x20 only)
+SMALL_UNSHARP_RADIUS = 0.9
+SMALL_UNSHARP_PERCENT = 260
+SMALL_UNSHARP_THRESHOLD = 1
+SMALL_ALPHA_CONTRAST = 1.12
+
 
 def load_icon_40(icon_source: Image.Image, x: int, y: int) -> Image.Image:
     """Extract and prepare 40x40 icon from source file."""
@@ -42,8 +48,18 @@ def load_icon_40(icon_source: Image.Image, x: int, y: int) -> Image.Image:
 def make_20_from_40(img40: Image.Image) -> Image.Image:
     """Create 20x20 icon using current slot-variant scaling logic."""
     img20 = img40.resize((ICON20_SIZE, ICON20_SIZE), Image.LANCZOS)
-    img20 = img20.filter(ImageFilter.UnsharpMask(radius=0.8, percent=200, threshold=2))
-    return img20
+    img20 = img20.filter(
+        ImageFilter.UnsharpMask(
+            radius=SMALL_UNSHARP_RADIUS,
+            percent=SMALL_UNSHARP_PERCENT,
+            threshold=SMALL_UNSHARP_THRESHOLD,
+        )
+    )
+
+    # Tighten alpha edges slightly so mini-icons read cleaner at 20x20
+    r, g, b, a = img20.split()
+    a = ImageEnhance.Contrast(a).enhance(SMALL_ALPHA_CONTRAST)
+    return Image.merge("RGBA", (r, g, b, a))
 
 
 def main() -> None:

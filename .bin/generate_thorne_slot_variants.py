@@ -20,14 +20,21 @@ SOURCE_BUTTONS_FILE = ROOT / "thorne_drak" / "thorne_buttons01.tga"
 
 # Source file crop positions (where icon and button are located in source files)
 ICON_X, ICON_Y = 2, 2
-# Solid button positions (row 1)
-BUTTON1_X_SOLID, BUTTON1_Y_SOLID = 0, 0      # Smooth gradient button
-BUTTON2_X_SOLID, BUTTON2_Y_SOLID = 40, 0     # Dramatic gradient button
-# Transparent button positions (row 2) - A=130 inner, opaque border
-BUTTON1_X_TRANS, BUTTON1_Y_TRANS = 0, 44     # Smooth gradient button (transparent)
-BUTTON2_X_TRANS, BUTTON2_Y_TRANS = 40, 44    # Dramatic gradient button (transparent)
+# Button positions in thorne_buttons01.tga (255x255 atlas with 4 rows)
+# Row 1: Solid (100% opacity, A=255)
+BUTTON1_X_SOLID, BUTTON1_Y_SOLID = 0, 0
+BUTTON2_X_SOLID, BUTTON2_Y_SOLID = 40, 0
+# Row 2: 75% opacity (A=191)
+BUTTON1_X_75, BUTTON1_Y_75 = 0, 44
+BUTTON2_X_75, BUTTON2_Y_75 = 40, 44
+# Row 3: 50% opacity (A=128)
+BUTTON1_X_50, BUTTON1_Y_50 = 0, 88
+BUTTON2_X_50, BUTTON2_Y_50 = 40, 88
+# Row 4: 25% opacity (A=64)
+BUTTON1_X_25, BUTTON1_Y_25 = 0, 132
+BUTTON2_X_25, BUTTON2_Y_25 = 40, 132
 
-# Button type selector: "solid" or "transparent"
+# Button type selector: "solid", "75", "50", or "25"
 BUTTON_TYPE = "solid"
 
 ATLAS_SIZE = 255
@@ -489,14 +496,22 @@ def main() -> None:
     icon_source = Image.open(SOURCE_ICON_FILE).convert("RGBA")
     button_source = Image.open(SOURCE_BUTTONS_FILE).convert("RGBA")
     
-    # Extract icon and both buttons (select solid or transparent based on BUTTON_TYPE)
+    # Extract icon and both buttons based on BUTTON_TYPE
     icon40 = load_icon_40(icon_source, ICON_X, ICON_Y)
     
-    if BUTTON_TYPE == "transparent":
-        button1_40 = button_source.crop((BUTTON1_X_TRANS, BUTTON1_Y_TRANS, BUTTON1_X_TRANS + 40, BUTTON1_Y_TRANS + 40)).convert("RGBA")
-        button2_40 = button_source.crop((BUTTON2_X_TRANS, BUTTON2_Y_TRANS, BUTTON2_X_TRANS + 40, BUTTON2_Y_TRANS + 40)).convert("RGBA")
-        button_label = "transparent"
-    else:
+    if BUTTON_TYPE == "75":
+        button1_40 = button_source.crop((BUTTON1_X_75, BUTTON1_Y_75, BUTTON1_X_75 + 40, BUTTON1_Y_75 + 40)).convert("RGBA")
+        button2_40 = button_source.crop((BUTTON2_X_75, BUTTON2_Y_75, BUTTON2_X_75 + 40, BUTTON2_Y_75 + 40)).convert("RGBA")
+        button_label = "75% opacity"
+    elif BUTTON_TYPE == "50":
+        button1_40 = button_source.crop((BUTTON1_X_50, BUTTON1_Y_50, BUTTON1_X_50 + 40, BUTTON1_Y_50 + 40)).convert("RGBA")
+        button2_40 = button_source.crop((BUTTON2_X_50, BUTTON2_Y_50, BUTTON2_X_50 + 40, BUTTON2_Y_50 + 40)).convert("RGBA")
+        button_label = "50% opacity"
+    elif BUTTON_TYPE == "25":
+        button1_40 = button_source.crop((BUTTON1_X_25, BUTTON1_Y_25, BUTTON1_X_25 + 40, BUTTON1_Y_25 + 40)).convert("RGBA")
+        button2_40 = button_source.crop((BUTTON2_X_25, BUTTON2_Y_25, BUTTON2_X_25 + 40, BUTTON2_Y_25 + 40)).convert("RGBA")
+        button_label = "25% opacity"
+    else:  # solid
         button1_40 = button_source.crop((BUTTON1_X_SOLID, BUTTON1_Y_SOLID, BUTTON1_X_SOLID + 40, BUTTON1_Y_SOLID + 40)).convert("RGBA")
         button2_40 = button_source.crop((BUTTON2_X_SOLID, BUTTON2_Y_SOLID, BUTTON2_X_SOLID + 40, BUTTON2_Y_SOLID + 40)).convert("RGBA")
         button_label = "solid"
@@ -516,7 +531,9 @@ def main() -> None:
     print(f"Created: {OUT_ATLAS}")
     print(f"Created: {OUT_ATLAS_GOLD}")
     print(f"Created: {OUT_ATLAS_HYBRID}")
-    print(f"Button type: {button_label} (from thorne_buttons01.tga row {1 if button_label == 'solid' else 2})")
+    row_map = {"solid": 1, "75": 2, "50": 3, "25": 4}
+    button_row = row_map.get(BUTTON_TYPE, 1)
+    print(f"Button type: {button_label} (from thorne_buttons01.tga row {button_row})")
     print("Placements (Inverted Impression Progression):")
     print("  Columns: gray_40, gray_20 | btn1_40, btn1_20 | btn2_40, btn2_20")
     print("  Rows: original -> darkest -> darker -> medium -> lighter -> lightest")

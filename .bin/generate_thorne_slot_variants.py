@@ -11,6 +11,8 @@ SOURCE_ICON = ROOT / "thorne_drak" / "thorne_drak01.tga"
 SOURCE_JPG = ROOT / "thorne_drak" / "thorne_drak01.jpg"
 BUTTON_SOURCE = ROOT / "thorne_drak" / "button_clean_from_bow.tga"  # Clean button from window_pieces02
 OUT_ATLAS = ROOT / "thorne_drak" / "thorne_icons_slots01.tga"
+OUT_ATLAS_GOLD = ROOT / "thorne_drak" / "thorne_icons_slots02.tga"
+OUT_ATLAS_HYBRID = ROOT / "thorne_drak" / "thorne_icons_slots03.tga"
 
 # Hand-editable source files for workflow
 SOURCE_ICON_FILE = ROOT / "thorne_drak" / "thorne_icon.tga"
@@ -18,8 +20,8 @@ SOURCE_BUTTONS_FILE = ROOT / "thorne_drak" / "thorne_buttons01.tga"
 
 # Source file crop positions (where icon and button are located in source files)
 ICON_X, ICON_Y = 2, 2
-BUTTON1_X, BUTTON1_Y = 2, 2      # Smooth gradient button
-BUTTON2_X, BUTTON2_Y = 48, 2    # Dramatic gradient button
+BUTTON1_X, BUTTON1_Y = 0, 0      # Smooth gradient button (compact atlas)
+BUTTON2_X, BUTTON2_Y = 40, 0     # Dramatic gradient button (compact atlas)
 
 ATLAS_SIZE = 255
 
@@ -35,6 +37,12 @@ X_BTN2_20 = 172
 Y_START = 2
 GAP = 2
 
+# Icon fit inside button canvases (top-anchored to keep placement "up")
+FIT_40 = 39
+FIT_20 = 18
+FIT_40_Y_OFFSET = -1
+FIT_20_Y_OFFSET = 0
+
 # Background extraction thresholds for producing a truly clear icon from JPG
 L_LOW, L_HIGH = 165.0, 245.0
 S_MAX = 55.0
@@ -45,6 +53,103 @@ class Variant:
     name: str
     img40: Image.Image
     img20: Image.Image
+
+
+def tint_grayscale(icon: Image.Image, dark_rgb: tuple[int, int, int], light_rgb: tuple[int, int, int]) -> Image.Image:
+    """Tint a grayscale RGBA icon from dark_rgb -> light_rgb while preserving alpha."""
+    rgba = icon.convert("RGBA")
+    r, g, b, a = rgba.split()
+    # Use red channel as luminance reference (R=G=B for grayscale icons)
+    lum = r.load()
+    ap = a.load()
+    w, h = rgba.size
+
+    out = Image.new("RGBA", (w, h))
+    op = out.load()
+    dr, dg, db = dark_rgb
+    lr, lg, lb = light_rgb
+
+    for y in range(h):
+        for x in range(w):
+            alpha = ap[x, y]
+            if alpha == 0:
+                op[x, y] = (0, 0, 0, 0)
+                continue
+            t = lum[x, y] / 255.0
+            rr = int(dr + (lr - dr) * t)
+            gg = int(dg + (lg - dg) * t)
+            bb = int(db + (lb - db) * t)
+            op[x, y] = (rr, gg, bb, alpha)
+
+    return out
+
+
+def tint_vertical_hybrid(
+    icon: Image.Image,
+    gold_dark: tuple[int, int, int],
+    gold_light: tuple[int, int, int],
+    silver_dark: tuple[int, int, int],
+    silver_light: tuple[int, int, int],
+) -> Image.Image:
+    """Tint grayscale icon with vertical metal gradient: bright gold top -> silver bottom.
+
+    Keeps luminance detail while shifting hue by Y position.
+    """
+    rgba = icon.convert("RGBA")
+    r, g, b, a = rgba.split()
+    lum = r.load()  # grayscale source so R=G=B
+    ap = a.load()
+    w, h = rgba.size
+
+    out = Image.new("RGBA", (w, h))
+    op = out.load()
+
+    gd_r, gd_g, gd_b = gold_dark
+    gl_r, gl_g, gl_b = gold_light
+    sd_r, sd_g, sd_b = silver_dark
+    sl_r, sl_g, sl_b = silver_light
+
+    for y in range(h):
+        y_norm = y / max(1, h - 1)
+        # Keep gold dominant longer, then transition toward silver near lower half.
+        silver_mix = y_norm ** 1.25
+        top_gold_boost = 1.10 - 0.10 * y_norm  # brightest at top
+
+        for x in range(w):
+            alpha = ap[x, y]
+            if alpha == 0:
+                op[x, y] = (0, 0, 0, 0)
+                continue
+
+            t = lum[x, y] / 255.0
+
+            # Per-row gold and silver colors from luminance
+            g_r = gd_r + (gl_r - gd_r) * t
+            g_g = gd_g + (gl_g - gd_g) * t
+            g_b = gd_b + (gl_b - gd_b) * t
+
+            s_r = sd_r + (sl_r - sd_r) * t
+            s_g = sd_g + (sl_g - sd_g) * t
+            s_b = sd_b + (sl_b - sd_b) * t
+
+            # Vertical blend: top gold -> bottom silver
+            rr = g_r * (1.0 - silver_mix) + s_r * silver_mix
+            gg = g_g * (1.0 - silver_mix) + s_g * silver_mix
+            bb = g_b * (1.0 - silver_mix) + s_b * silver_mix
+
+            # Top highlight emphasis for "brighter gold at top"
+            rr *= top_gold_boost
+            gg *= top_gold_boost
+            bb *= top_gold_boost
+
+            op[x, y] = (
+                int(max(0, min(255, rr))),
+                int(max(0, min(255, gg))),
+                int(max(0, min(255, bb))),
+                alpha,
+            )
+
+    return out
 
 
 def make_40_from_source(src: Image.Image) -> Image.Image:
@@ -93,6 +198,22 @@ def make_20_from_40(img40: Image.Image) -> Image.Image:
     img20 = img40.resize((20, 20), Image.LANCZOS)
     img20 = img20.filter(ImageFilter.UnsharpMask(radius=0.8, percent=200, threshold=2))
     return img20
+
+
+def fit_icon_to_button_canvas(icon: Image.Image, canvas_size: int, fit_size: int, y_offset: int = 0) -> Image.Image:
+    """Resize icon to fit_size x fit_size and place in canvas_size square, top-anchored.
+
+    This preserves a bottom buffer so icon doesn't bleed into lower button border.
+    """
+    src = icon.convert("RGBA")
+    fit_size = max(1, min(canvas_size, fit_size))
+    resized = src.resize((fit_size, fit_size), Image.LANCZOS)
+
+    canvas = Image.new("RGBA", (canvas_size, canvas_size), (0, 0, 0, 0))
+    x = (canvas_size - fit_size) // 2
+    y = y_offset  # allows per-size vertical nudges
+    canvas.alpha_composite(resized, (x, y))
+    return canvas
 
 
 def make_gray_lit(icon40: Image.Image, brightness_bias: float = 1.0, enhance_center: bool = False) -> Image.Image:
@@ -157,6 +278,60 @@ def make_gray_lit(icon40: Image.Image, brightness_bias: float = 1.0, enhance_cen
     return out
 
 
+def make_inverted_impression(icon40: Image.Image, mid_tone: int = 128, contrast: float = 0.6, depth_gradient: bool = True) -> Image.Image:
+    """Create inverted grayscale impression effect - like icon is pressed into button.
+    
+    Args:
+        icon40: Source icon
+        mid_tone: Center gray value (lower = darker impression)
+        contrast: Contrast multiplier (0.6 = subtle, 1.0 = full range)
+        depth_gradient: Apply vertical gradient (darker top/bottom, brighter middle)
+    """
+    rgba = icon40.convert("RGBA")
+    rgb = rgba.convert("RGB")
+    alpha = rgba.split()[3]
+
+    # Convert to grayscale
+    gray = ImageOps.grayscale(rgb)
+    
+    # Invert: 255 - value (light becomes dark, dark becomes light)
+    inverted = ImageOps.invert(gray)
+    
+    # Normalize to mid-tone range for subtle impression
+    inv_array = inverted.load()
+    w, h = inverted.size
+    
+    out = Image.new("RGBA", (w, h))
+    op = out.load()
+    ap = alpha.load()
+    
+    for y in range(h):
+        for x in range(w):
+            a = ap[x, y]
+            if a > 0:
+                # Normalize inverted value to 0-1 range
+                norm = inv_array[x, y] / 255.0
+                # Map to mid-tone ± contrast range
+                val = mid_tone + (norm - 0.5) * contrast * 255
+                
+                # Apply vertical depth gradient if enabled
+                if depth_gradient:
+                    # Darker at top (y=0) and bottom (y=h-1), brighter in middle
+                    y_norm = y / (h - 1) if h > 1 else 0.5
+                    # Parabolic gradient: 0 at edges, 1.0 at center (y=0.5)
+                    gradient = 1.0 - 4 * (y_norm - 0.5) ** 2  # Peak at middle
+                    # Apply gradient: multiply by 0.85-1.0 range (15% darkening at edges)
+                    gradient_mult = 0.85 + gradient * 0.15
+                    val *= gradient_mult
+                
+                val = int(max(0, min(255, val)))
+                op[x, y] = (val, val, val, a)
+            else:
+                op[x, y] = (0, 0, 0, 0)
+    
+    return out
+
+
 def blend_on_button(icon: Image.Image, button40: Image.Image, icon_opacity: float, darken_bg: float = 1.0) -> Image.Image:
     base = button40.convert("RGBA")
 
@@ -176,31 +351,65 @@ def blend_on_button(icon: Image.Image, button40: Image.Image, icon_opacity: floa
     return out
 
 
-def build_variants(icon40: Image.Image) -> list[Variant]:
-    # Pipeline: source icon -> grayscale light variants (dim, mid, bright)
+def build_variants(icon40: Image.Image, mode: str = "silver") -> list[Variant]:
+    # Pipeline: source icon -> 5 inverted impression variants (darkest to lightest)
     clear40 = icon40
 
-    # Full variant set: original + light to dark progression
-    gray_dim = make_gray_lit(clear40, brightness_bias=1.12, enhance_center=False)
-    gray_mid = make_gray_lit(clear40, brightness_bias=1.22, enhance_center=True)
-    gray_bright = make_gray_lit(clear40, brightness_bias=1.40, enhance_center=True)
+    # 5 inverted impression variants with depth gradient
+    # Darkest (top) to lightest (bottom)
+    # Row 2 intentionally darker than prior run.
+    inv_darkest = make_inverted_impression(clear40, mid_tone=46, contrast=0.6, depth_gradient=True)
+    inv_darker = make_inverted_impression(clear40, mid_tone=78, contrast=0.6, depth_gradient=True)
+    inv_medium = make_inverted_impression(clear40, mid_tone=96, contrast=0.6, depth_gradient=True)
+    inv_lighter = make_inverted_impression(clear40, mid_tone=112, contrast=0.6, depth_gradient=True)
+    inv_lightest = make_inverted_impression(clear40, mid_tone=128, contrast=0.6, depth_gradient=True)
+
+    if mode == "gold":
+        # Gold ramp (dark antique gold -> bright warm gold)
+        dark_gold = (72, 55, 18)
+        light_gold = (222, 190, 92)
+        inv_darkest = tint_grayscale(inv_darkest, dark_gold, light_gold)
+        inv_darker = tint_grayscale(inv_darker, dark_gold, light_gold)
+        inv_medium = tint_grayscale(inv_medium, dark_gold, light_gold)
+        inv_lighter = tint_grayscale(inv_lighter, dark_gold, light_gold)
+        inv_lightest = tint_grayscale(inv_lightest, dark_gold, light_gold)
+    elif mode == "hybrid":
+        # Vertical hybrid: brighter gold at top, transitioning toward silver at bottom.
+        gold_dark = (72, 55, 18)
+        gold_light = (222, 190, 92)
+        silver_dark = (78, 82, 92)
+        silver_light = (208, 214, 224)
+        inv_darkest = tint_vertical_hybrid(inv_darkest, gold_dark, gold_light, silver_dark, silver_light)
+        inv_darker = tint_vertical_hybrid(inv_darker, gold_dark, gold_light, silver_dark, silver_light)
+        inv_medium = tint_vertical_hybrid(inv_medium, gold_dark, gold_light, silver_dark, silver_light)
+        inv_lighter = tint_vertical_hybrid(inv_lighter, gold_dark, gold_light, silver_dark, silver_light)
+        inv_lightest = tint_vertical_hybrid(inv_lightest, gold_dark, gold_light, silver_dark, silver_light)
 
     # Build 20px versions
     clear20 = make_20_from_40(clear40)
-    gray_dim_20 = make_20_from_40(gray_dim)
-    gray_mid_20 = make_20_from_40(gray_mid)
-    gray_bright_20 = make_20_from_40(gray_bright)
+    inv_darkest_20 = make_20_from_40(inv_darkest)
+    inv_darker_20 = make_20_from_40(inv_darker)
+    inv_medium_20 = make_20_from_40(inv_medium)
+    inv_lighter_20 = make_20_from_40(inv_lighter)
+    inv_lightest_20 = make_20_from_40(inv_lightest)
 
     v = [
         Variant("sharp_clear", clear40, clear20),
-        Variant("gray_dim", gray_dim, gray_dim_20),
-        Variant("gray_mid", gray_mid, gray_mid_20),
-        Variant("gray_bright", gray_bright, gray_bright_20),
+        Variant("inv_darkest", inv_darkest, inv_darkest_20),
+        Variant("inv_darker", inv_darker, inv_darker_20),
+        Variant("inv_medium", inv_medium, inv_medium_20),
+        Variant("inv_lighter", inv_lighter, inv_lighter_20),
+        Variant("inv_lightest", inv_lightest, inv_lightest_20),
     ]
     return v
 
 
-def render_atlas(variants: list[Variant], button1_40: Image.Image, button2_40: Image.Image) -> list[tuple[str, int, int, int, int]]:
+def render_atlas(
+    variants: list[Variant],
+    button1_40: Image.Image,
+    button2_40: Image.Image,
+    out_atlas: Path,
+) -> list[tuple[str, int, int, int, int]]:
     # Comprehensive layout: Each row shows full variant progression
     # 6 columns per row: gray_40, gray_20, btn1_40, btn1_20, btn2_40, btn2_20
     atlas = Image.new("RGBA", (ATLAS_SIZE, ATLAS_SIZE), (71, 71, 71, 0))
@@ -234,28 +443,32 @@ def render_atlas(variants: list[Variant], button1_40: Image.Image, button2_40: I
             placements.append((f"button2_ref_20", X_BTN2_20, y, 20, 20))
         else:
             # Subsequent rows: Blend icons with buttons
-            # Progressive opacity: dim=0.45, mid=0.52, bright=0.59
-            opacity = 0.45 + (i-1) * 0.07
+            # Progressive opacity: darkest=0.45, darker=0.50, medium=0.55, lighter=0.60, lightest=0.65
+            opacity = 0.45 + (i-1) * 0.05
+
+            # Fit icons per size to preserve button border clearance
+            icon40_fit = fit_icon_to_button_canvas(v.img40, 40, FIT_40, FIT_40_Y_OFFSET)
+            icon20_fit = fit_icon_to_button_canvas(v.img20, 20, FIT_20, FIT_20_Y_OFFSET)
             
-            blended_btn1_40 = blend_on_button(v.img40, button1_40, icon_opacity=opacity, darken_bg=1.00)
+            blended_btn1_40 = blend_on_button(icon40_fit, button1_40, icon_opacity=opacity, darken_bg=1.00)
             atlas.alpha_composite(blended_btn1_40, (X_BTN1_40, y))
             placements.append((f"{v.name}_btn1_40", X_BTN1_40, y, 40, 40))
             
-            blended_btn1_20 = blend_on_button(v.img20, button1_20, icon_opacity=opacity, darken_bg=1.00)
+            blended_btn1_20 = blend_on_button(icon20_fit, button1_20, icon_opacity=opacity, darken_bg=1.00)
             atlas.alpha_composite(blended_btn1_20, (X_BTN1_20, y))
             placements.append((f"{v.name}_btn1_20", X_BTN1_20, y, 20, 20))
             
-            blended_btn2_40 = blend_on_button(v.img40, button2_40, icon_opacity=opacity, darken_bg=1.00)
+            blended_btn2_40 = blend_on_button(icon40_fit, button2_40, icon_opacity=opacity, darken_bg=1.00)
             atlas.alpha_composite(blended_btn2_40, (X_BTN2_40, y))
             placements.append((f"{v.name}_btn2_40", X_BTN2_40, y, 40, 40))
             
-            blended_btn2_20 = blend_on_button(v.img20, button2_20, icon_opacity=opacity, darken_bg=1.00)
+            blended_btn2_20 = blend_on_button(icon20_fit, button2_20, icon_opacity=opacity, darken_bg=1.00)
             atlas.alpha_composite(blended_btn2_20, (X_BTN2_20, y))
             placements.append((f"{v.name}_btn2_20", X_BTN2_20, y, 20, 20))
         
         y += 40 + GAP
 
-    atlas.save(OUT_ATLAS, format="TGA")
+    atlas.save(out_atlas, format="TGA")
     return placements
 
 
@@ -274,13 +487,25 @@ def main() -> None:
     button1_40 = button_source.crop((BUTTON1_X, BUTTON1_Y, BUTTON1_X + 40, BUTTON1_Y + 40)).convert("RGBA")
     button2_40 = button_source.crop((BUTTON2_X, BUTTON2_Y, BUTTON2_X + 40, BUTTON2_Y + 40)).convert("RGBA")
 
-    variants = build_variants(icon40)
-    placements = render_atlas(variants, button1_40, button2_40)
+    # slots01: Silver/gray atlas
+    variants_silver = build_variants(icon40, mode="silver")
+    placements = render_atlas(variants_silver, button1_40, button2_40, OUT_ATLAS)
+
+    # slots02: Gold atlas (same layout)
+    variants_gold = build_variants(icon40, mode="gold")
+    _ = render_atlas(variants_gold, button1_40, button2_40, OUT_ATLAS_GOLD)
+
+    # slots03: Gold/Silver hybrid atlas (same layout)
+    variants_hybrid = build_variants(icon40, mode="hybrid")
+    _ = render_atlas(variants_hybrid, button1_40, button2_40, OUT_ATLAS_HYBRID)
 
     print(f"Created: {OUT_ATLAS}")
-    print("Placements (Comprehensive Comparison):")
+    print(f"Created: {OUT_ATLAS_GOLD}")
+    print(f"Created: {OUT_ATLAS_HYBRID}")
+    print("Placements (Inverted Impression Progression):")
     print("  Columns: gray_40, gray_20 | btn1_40, btn1_20 | btn2_40, btn2_20")
-    print("  Rows: original → dim → mid → bright (full progression)")
+    print("  Rows: original → darkest → darker → medium → lighter → lightest")
+    print("  Each variant: darker top/bottom, brighter middle (depth gradient)")
     print()
     for name, x, y, w, h in placements:
         if x == X_GRAY_40:

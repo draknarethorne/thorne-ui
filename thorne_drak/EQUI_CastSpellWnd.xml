@@ -16,10 +16,10 @@
 		  - Custom Button-Based Spell Gems: Replaced standard spell gem graphics 
 		    with custom button textures for enhanced visibility and color contrast
 		  - Custom Texture Assets:
-		      * button-dark-opaque01.tga - Normal button state (darker background)
+		      * button_dark-opaque01.tga - Normal button state (darker background)
 		      * button_light-opaque01.tga - Ready/active button state (lighter background)
 		  - Custom Animations:
-		      * A_CastBtnNormal - Uses button-dark-opaque01.tga (120x24px region at 100,0)
+		      * A_CastBtnNormal - Uses button_dark-opaque01.tga (120x24px region at 100,0)
 		      * A_CastBtnReady - Uses button_light-opaque01.tga (120x24px region at 100,24)
 		  - Standardized All Spell Gems: All 9 spell buttons now use identical sizing
 		    and draw templates (150x24 pixels, previously mixed 31x23 and 127x23)
@@ -80,7 +80,7 @@
     enhanced visibility and color contrast compared to standard spell gem graphics.
     
     TEXTURE FILES:
-      - button-dark-opaque01.tga: Normal/inactive button state (darker background)
+      - button_dark-opaque01.tga: Normal/inactive button state (darker background)
       - button_light-opaque01.tga: Ready/active button state (lighter background)
     
     These textures are specific to the Cast Spell Window and are NOT used in:
@@ -91,7 +91,7 @@
     maintaining traditional spell gem appearance in compact hotbar layouts.
     ================================================================================
   -->
-  <TextureInfo item="button-dark-opaque01.tga">
+  <TextureInfo item="button_dark-opaque01.tga">
     <Size>
       <CX>256</CX>
       <CY>256</CY>
@@ -115,7 +115,7 @@
   <Ui2DAnimation item="A_CastBtnNormal">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>button-dark-opaque01.tga</Texture>
+      <Texture>button_dark-opaque01.tga</Texture>
       <Location>
         <X>100</X>
         <Y>0</Y>

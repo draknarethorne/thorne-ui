@@ -24,17 +24,17 @@ ICON_X, ICON_Y = 2, 2
 # Row 1: Solid (100% opacity, A=255)
 BUTTON1_X_SOLID, BUTTON1_Y_SOLID = 0, 0
 BUTTON2_X_SOLID, BUTTON2_Y_SOLID = 40, 0
-# Row 2: 75% opacity (A=191)
-BUTTON1_X_75, BUTTON1_Y_75 = 0, 44
-BUTTON2_X_75, BUTTON2_Y_75 = 40, 44
-# Row 3: 50% opacity (A=128)
-BUTTON1_X_50, BUTTON1_Y_50 = 0, 88
-BUTTON2_X_50, BUTTON2_Y_50 = 40, 88
-# Row 4: 25% opacity (A=64)
-BUTTON1_X_25, BUTTON1_Y_25 = 0, 132
-BUTTON2_X_25, BUTTON2_Y_25 = 40, 132
+# Row 2: 90% opacity (A=230)
+BUTTON1_X_90, BUTTON1_Y_90 = 0, 44
+BUTTON2_X_90, BUTTON2_Y_90 = 40, 44
+# Row 3: 80% opacity (A=204)
+BUTTON1_X_80, BUTTON1_Y_80 = 0, 88
+BUTTON2_X_80, BUTTON2_Y_80 = 40, 88
+# Row 4: 75% opacity (A=191)
+BUTTON1_X_75, BUTTON1_Y_75 = 0, 132
+BUTTON2_X_75, BUTTON2_Y_75 = 40, 132
 
-# Button type selector: "solid", "75", "50", or "25"
+# Button type selector: "solid", "90", "80", or "75"
 BUTTON_TYPE = "solid"
 
 ATLAS_SIZE = 255
@@ -499,18 +499,18 @@ def main() -> None:
     # Extract icon and both buttons based on BUTTON_TYPE
     icon40 = load_icon_40(icon_source, ICON_X, ICON_Y)
     
-    if BUTTON_TYPE == "75":
+    if BUTTON_TYPE == "90":
+        button1_40 = button_source.crop((BUTTON1_X_90, BUTTON1_Y_90, BUTTON1_X_90 + 40, BUTTON1_Y_90 + 40)).convert("RGBA")
+        button2_40 = button_source.crop((BUTTON2_X_90, BUTTON2_Y_90, BUTTON2_X_90 + 40, BUTTON2_Y_90 + 40)).convert("RGBA")
+        button_label = "90% opacity"
+    elif BUTTON_TYPE == "80":
+        button1_40 = button_source.crop((BUTTON1_X_80, BUTTON1_Y_80, BUTTON1_X_80 + 40, BUTTON1_Y_80 + 40)).convert("RGBA")
+        button2_40 = button_source.crop((BUTTON2_X_80, BUTTON2_Y_80, BUTTON2_X_80 + 40, BUTTON2_Y_80 + 40)).convert("RGBA")
+        button_label = "80% opacity"
+    elif BUTTON_TYPE == "75":
         button1_40 = button_source.crop((BUTTON1_X_75, BUTTON1_Y_75, BUTTON1_X_75 + 40, BUTTON1_Y_75 + 40)).convert("RGBA")
         button2_40 = button_source.crop((BUTTON2_X_75, BUTTON2_Y_75, BUTTON2_X_75 + 40, BUTTON2_Y_75 + 40)).convert("RGBA")
         button_label = "75% opacity"
-    elif BUTTON_TYPE == "50":
-        button1_40 = button_source.crop((BUTTON1_X_50, BUTTON1_Y_50, BUTTON1_X_50 + 40, BUTTON1_Y_50 + 40)).convert("RGBA")
-        button2_40 = button_source.crop((BUTTON2_X_50, BUTTON2_Y_50, BUTTON2_X_50 + 40, BUTTON2_Y_50 + 40)).convert("RGBA")
-        button_label = "50% opacity"
-    elif BUTTON_TYPE == "25":
-        button1_40 = button_source.crop((BUTTON1_X_25, BUTTON1_Y_25, BUTTON1_X_25 + 40, BUTTON1_Y_25 + 40)).convert("RGBA")
-        button2_40 = button_source.crop((BUTTON2_X_25, BUTTON2_Y_25, BUTTON2_X_25 + 40, BUTTON2_Y_25 + 40)).convert("RGBA")
-        button_label = "25% opacity"
     else:  # solid
         button1_40 = button_source.crop((BUTTON1_X_SOLID, BUTTON1_Y_SOLID, BUTTON1_X_SOLID + 40, BUTTON1_Y_SOLID + 40)).convert("RGBA")
         button2_40 = button_source.crop((BUTTON2_X_SOLID, BUTTON2_Y_SOLID, BUTTON2_X_SOLID + 40, BUTTON2_Y_SOLID + 40)).convert("RGBA")
@@ -531,7 +531,7 @@ def main() -> None:
     print(f"Created: {OUT_ATLAS}")
     print(f"Created: {OUT_ATLAS_GOLD}")
     print(f"Created: {OUT_ATLAS_HYBRID}")
-    row_map = {"solid": 1, "75": 2, "50": 3, "25": 4}
+    row_map = {"solid": 1, "90": 2, "80": 3, "75": 4}
     button_row = row_map.get(BUTTON_TYPE, 1)
     print(f"Button type: {button_label} (from thorne_buttons01.tga row {button_row})")
     print("Placements (Inverted Impression Progression):")

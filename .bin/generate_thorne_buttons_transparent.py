@@ -15,9 +15,9 @@ BUTTON_SOURCE = ROOT / "thorne_drak" / "thorne_buttons01.tga"
 
 # Transparency levels: (description, alpha_value)
 TRANSPARENCY_LEVELS = [
+    ("90", 230),   # 90% of 255
+    ("80", 204),   # 80% of 255
     ("75", 191),   # 75% of 255
-    ("50", 128),   # 50% of 255
-    ("25", 64),    # 25% of 255
 ]
 
 BORDER_WIDTH = 3
@@ -135,9 +135,9 @@ def main() -> None:
     print(f"\nUpdated: {BUTTON_SOURCE}")
     print("Button atlas layout (255x255):")
     print("  Row 1 @ y=0:   Solid (100% opacity, A=255)")
-    print("  Row 2 @ y=44:  75% opacity (A=191) - colors preserved, border opaque")
-    print("  Row 3 @ y=88:  50% opacity (A=128) - colors preserved, border opaque")
-    print("  Row 4 @ y=132: 25% opacity (A=64)  - colors preserved, border opaque")
+    print("  Row 2 @ y=44:  90% opacity (A=230) - both buttons, colors preserved, border opaque")
+    print("  Row 3 @ y=88:  80% opacity (A=204) - both buttons, colors preserved, border opaque")
+    print("  Row 4 @ y=132: 75% opacity (A=191) - both buttons, colors preserved, border opaque")
 
 
 if __name__ == "__main__":

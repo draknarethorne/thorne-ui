@@ -68,7 +68,8 @@
 		"python.terminal.activateEnvironment": true,
 		"python.analysis.typeCheckingMode": "basic",
 		"ruff.fixAll": true,
-		"ruff.lineLength": 180
+		"ruff.lineLength": 180,
+		"powershell.cwd": "Thorne-UI"
 	},
 	"extensions": {
 		"recommendations": [

@@ -146,8 +146,8 @@ def main() -> None:
     for btn_x, btn_img in source_buttons:
         new_atlas.paste(btn_img, (btn_x, 0), btn_img)
     
-    # Rows 2-6: Transparency variants
-    y_positions = [44, 88, 132, 176, 220]  # 4px gap between rows
+    # Rows 2-6: Transparency variants (3px gaps to fit 6×40px in 255px height)
+    y_positions = [43, 86, 129, 172, 215]  # Calculated: (255-240)/5 = 3px gaps
     
     for (trans_label, trans_alpha), y_pos in zip(TRANSPARENCY_LEVELS, y_positions):
         for btn_x, btn_solid in source_buttons:
@@ -162,11 +162,11 @@ def main() -> None:
     print(f"\nUpdated: {BUTTON_SOURCE}")
     print(f"Button atlas layout ({BUTTON_SCAN_WIDTH}×{new_atlas.height}):")
     print(f"  Row 1 @ y=0:   Solid (100% opacity, A=255)")
-    print(f"  Row 2 @ y=44:  95% opacity (A=242)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 3 @ y=88:  90% opacity (A=230)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 4 @ y=132: 85% opacity (A=217)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 5 @ y=176: 75% opacity (A=191)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 6 @ y=220: 50% opacity (A=128)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 2 @ y=43:  95% opacity (A=242)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 3 @ y=86:  90% opacity (A=230)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 4 @ y=129: 85% opacity (A=217)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 5 @ y=172: 75% opacity (A=191)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 6 @ y=215: 50% opacity (A=128)  - {len(source_buttons)} button(s), colors preserved")
 
 
 if __name__ == "__main__":

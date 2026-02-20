@@ -23,13 +23,15 @@ BUTTON2_X, BUTTON2_Y = 48, 2    # Dramatic gradient button
 
 ATLAS_SIZE = 255
 
-# Layout: 3 columns (grayscale | button1_blend | button2_blend), test rows
-# Column 1: X=2 (grayscale icon)
-# Column 2: X=46 (blended with button1 smooth)
-# Column 3: X=90 (blended with button2 dramatic)
-X_COL1_GRAY = 2
-X_COL2_BTN1 = 46
-X_COL3_BTN2 = 90
+# Layout: 6-column comprehensive comparison per row
+# Each variant row shows: gray_40, gray_20, btn1_40, btn1_20, btn2_40, btn2_20
+# Columns: grayscale (40+20) | button1_blend (40+20) | button2_blend (40+20)
+X_GRAY_40 = 2
+X_GRAY_20 = 44
+X_BTN1_40 = 66
+X_BTN1_20 = 108
+X_BTN2_40 = 130
+X_BTN2_20 = 172
 Y_START = 2
 GAP = 2
 
@@ -175,41 +177,81 @@ def blend_on_button(icon: Image.Image, button40: Image.Image, icon_opacity: floa
 
 
 def build_variants(icon40: Image.Image) -> list[Variant]:
-    # Pipeline: source icon -> grayscale light variants
+    # Pipeline: source icon -> grayscale light variants (dim, mid, bright)
     clear40 = icon40
 
-    # Start with just one variant for testing
+    # Full variant set: original + light to dark progression
     gray_dim = make_gray_lit(clear40, brightness_bias=1.12, enhance_center=False)
+    gray_mid = make_gray_lit(clear40, brightness_bias=1.22, enhance_center=True)
+    gray_bright = make_gray_lit(clear40, brightness_bias=1.40, enhance_center=True)
 
     # Build 20px versions
+    clear20 = make_20_from_40(clear40)
     gray_dim_20 = make_20_from_40(gray_dim)
+    gray_mid_20 = make_20_from_40(gray_mid)
+    gray_bright_20 = make_20_from_40(gray_bright)
 
     v = [
+        Variant("sharp_clear", clear40, clear20),
         Variant("gray_dim", gray_dim, gray_dim_20),
+        Variant("gray_mid", gray_mid, gray_mid_20),
+        Variant("gray_bright", gray_bright, gray_bright_20),
     ]
     return v
 
 
 def render_atlas(variants: list[Variant], button1_40: Image.Image, button2_40: Image.Image) -> list[tuple[str, int, int, int, int]]:
-    # Layout: grayscale | button1_blend | button2_blend (side-by-side comparison)
+    # Comprehensive layout: Each row shows full variant progression
+    # 6 columns per row: gray_40, gray_20, btn1_40, btn1_20, btn2_40, btn2_20
     atlas = Image.new("RGBA", (ATLAS_SIZE, ATLAS_SIZE), (71, 71, 71, 0))
     placements: list[tuple[str, int, int, int, int]] = []
 
+    # Create 20px button versions
+    button1_20 = button1_40.resize((20, 20), Image.LANCZOS)
+    button2_20 = button2_40.resize((20, 20), Image.LANCZOS)
+
     y = Y_START
-    for v in variants:
-        # Col 1: raw grayscale icon
-        atlas.alpha_composite(v.img40, (X_COL1_GRAY, y))
-        placements.append((f"{v.name}_gray", X_COL1_GRAY, y, 40, 40))
+    for i, v in enumerate(variants):
+        # Grayscale icons (40px and 20px)
+        atlas.alpha_composite(v.img40, (X_GRAY_40, y))
+        placements.append((f"{v.name}_gray_40", X_GRAY_40, y, 40, 40))
         
-        # Col 2: blended with button1 (smooth gradient)
-        blended_btn1 = blend_on_button(v.img40, button1_40, icon_opacity=0.50, darken_bg=1.00)
-        atlas.alpha_composite(blended_btn1, (X_COL2_BTN1, y))
-        placements.append((f"{v.name}_btn1", X_COL2_BTN1, y, 40, 40))
+        atlas.alpha_composite(v.img20, (X_GRAY_20, y))
+        placements.append((f"{v.name}_gray_20", X_GRAY_20, y, 20, 20))
         
-        # Col 3: blended with button2 (dramatic gradient)
-        blended_btn2 = blend_on_button(v.img40, button2_40, icon_opacity=0.50, darken_bg=1.00)
-        atlas.alpha_composite(blended_btn2, (X_COL3_BTN2, y))
-        placements.append((f"{v.name}_btn2", X_COL3_BTN2, y, 40, 40))
+        if i == 0:
+            # First row: Show button references only (no icon blending)
+            atlas.alpha_composite(button1_40, (X_BTN1_40, y))
+            placements.append((f"button1_ref_40", X_BTN1_40, y, 40, 40))
+            
+            atlas.alpha_composite(button1_20, (X_BTN1_20, y))
+            placements.append((f"button1_ref_20", X_BTN1_20, y, 20, 20))
+            
+            atlas.alpha_composite(button2_40, (X_BTN2_40, y))
+            placements.append((f"button2_ref_40", X_BTN2_40, y, 40, 40))
+            
+            atlas.alpha_composite(button2_20, (X_BTN2_20, y))
+            placements.append((f"button2_ref_20", X_BTN2_20, y, 20, 20))
+        else:
+            # Subsequent rows: Blend icons with buttons
+            # Progressive opacity: dim=0.45, mid=0.52, bright=0.59
+            opacity = 0.45 + (i-1) * 0.07
+            
+            blended_btn1_40 = blend_on_button(v.img40, button1_40, icon_opacity=opacity, darken_bg=1.00)
+            atlas.alpha_composite(blended_btn1_40, (X_BTN1_40, y))
+            placements.append((f"{v.name}_btn1_40", X_BTN1_40, y, 40, 40))
+            
+            blended_btn1_20 = blend_on_button(v.img20, button1_20, icon_opacity=opacity, darken_bg=1.00)
+            atlas.alpha_composite(blended_btn1_20, (X_BTN1_20, y))
+            placements.append((f"{v.name}_btn1_20", X_BTN1_20, y, 20, 20))
+            
+            blended_btn2_40 = blend_on_button(v.img40, button2_40, icon_opacity=opacity, darken_bg=1.00)
+            atlas.alpha_composite(blended_btn2_40, (X_BTN2_40, y))
+            placements.append((f"{v.name}_btn2_40", X_BTN2_40, y, 40, 40))
+            
+            blended_btn2_20 = blend_on_button(v.img20, button2_20, icon_opacity=opacity, darken_bg=1.00)
+            atlas.alpha_composite(blended_btn2_20, (X_BTN2_20, y))
+            placements.append((f"{v.name}_btn2_20", X_BTN2_20, y, 20, 20))
         
         y += 40 + GAP
 
@@ -236,17 +278,24 @@ def main() -> None:
     placements = render_atlas(variants, button1_40, button2_40)
 
     print(f"Created: {OUT_ATLAS}")
-    print("Placements (Side-by-Side Comparison):")
-    print("  Columns: grayscale | button1_smooth | button2_dramatic")
+    print("Placements (Comprehensive Comparison):")
+    print("  Columns: gray_40, gray_20 | btn1_40, btn1_20 | btn2_40, btn2_20")
+    print("  Rows: original → dim → mid → bright (full progression)")
     print()
     for name, x, y, w, h in placements:
-        if x == X_COL1_GRAY:
-            pos = "grayscale"
-        elif x == X_COL2_BTN1:
-            pos = "button1_smooth"
+        if x == X_GRAY_40:
+            pos = "gray_40"
+        elif x == X_GRAY_20:
+            pos = "gray_20"
+        elif x == X_BTN1_40:
+            pos = "btn1_smooth_40"
+        elif x == X_BTN1_20:
+            pos = "btn1_smooth_20"
+        elif x == X_BTN2_40:
+            pos = "btn2_dramatic_40"
         else:
-            pos = "button2_dramatic"
-        print(f"  {name:20s} @ ({x:3d},{y:3d}) {pos:16s} size {w}x{h}")
+            pos = "btn2_dramatic_20"
+        print(f"  {name:22s} @ ({x:3d},{y:3d}) {pos:16s} size {w}x{h}")
 
 
 if __name__ == "__main__":

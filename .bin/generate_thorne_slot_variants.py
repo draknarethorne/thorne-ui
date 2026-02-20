@@ -20,8 +20,15 @@ SOURCE_BUTTONS_FILE = ROOT / "thorne_drak" / "thorne_buttons01.tga"
 
 # Source file crop positions (where icon and button are located in source files)
 ICON_X, ICON_Y = 2, 2
-BUTTON1_X, BUTTON1_Y = 0, 0      # Smooth gradient button (compact atlas)
-BUTTON2_X, BUTTON2_Y = 40, 0     # Dramatic gradient button (compact atlas)
+# Solid button positions (row 1)
+BUTTON1_X_SOLID, BUTTON1_Y_SOLID = 0, 0      # Smooth gradient button
+BUTTON2_X_SOLID, BUTTON2_Y_SOLID = 40, 0     # Dramatic gradient button
+# Transparent button positions (row 2) - A=130 inner, opaque border
+BUTTON1_X_TRANS, BUTTON1_Y_TRANS = 0, 44     # Smooth gradient button (transparent)
+BUTTON2_X_TRANS, BUTTON2_Y_TRANS = 40, 44    # Dramatic gradient button (transparent)
+
+# Button type selector: "solid" or "transparent"
+BUTTON_TYPE = "solid"
 
 ATLAS_SIZE = 255
 
@@ -482,10 +489,17 @@ def main() -> None:
     icon_source = Image.open(SOURCE_ICON_FILE).convert("RGBA")
     button_source = Image.open(SOURCE_BUTTONS_FILE).convert("RGBA")
     
-    # Extract icon and both buttons
+    # Extract icon and both buttons (select solid or transparent based on BUTTON_TYPE)
     icon40 = load_icon_40(icon_source, ICON_X, ICON_Y)
-    button1_40 = button_source.crop((BUTTON1_X, BUTTON1_Y, BUTTON1_X + 40, BUTTON1_Y + 40)).convert("RGBA")
-    button2_40 = button_source.crop((BUTTON2_X, BUTTON2_Y, BUTTON2_X + 40, BUTTON2_Y + 40)).convert("RGBA")
+    
+    if BUTTON_TYPE == "transparent":
+        button1_40 = button_source.crop((BUTTON1_X_TRANS, BUTTON1_Y_TRANS, BUTTON1_X_TRANS + 40, BUTTON1_Y_TRANS + 40)).convert("RGBA")
+        button2_40 = button_source.crop((BUTTON2_X_TRANS, BUTTON2_Y_TRANS, BUTTON2_X_TRANS + 40, BUTTON2_Y_TRANS + 40)).convert("RGBA")
+        button_label = "transparent"
+    else:
+        button1_40 = button_source.crop((BUTTON1_X_SOLID, BUTTON1_Y_SOLID, BUTTON1_X_SOLID + 40, BUTTON1_Y_SOLID + 40)).convert("RGBA")
+        button2_40 = button_source.crop((BUTTON2_X_SOLID, BUTTON2_Y_SOLID, BUTTON2_X_SOLID + 40, BUTTON2_Y_SOLID + 40)).convert("RGBA")
+        button_label = "solid"
 
     # slots01: Silver/gray atlas
     variants_silver = build_variants(icon40, mode="silver")
@@ -502,9 +516,10 @@ def main() -> None:
     print(f"Created: {OUT_ATLAS}")
     print(f"Created: {OUT_ATLAS_GOLD}")
     print(f"Created: {OUT_ATLAS_HYBRID}")
+    print(f"Button type: {button_label} (from thorne_buttons01.tga row {1 if button_label == 'solid' else 2})")
     print("Placements (Inverted Impression Progression):")
     print("  Columns: gray_40, gray_20 | btn1_40, btn1_20 | btn2_40, btn2_20")
-    print("  Rows: original → darkest → darker → medium → lighter → lightest")
+    print("  Rows: original -> darkest -> darker -> medium -> lighter -> lightest")
     print("  Each variant: darker top/bottom, brighter middle (depth gradient)")
     print()
     for name, x, y, w, h in placements:

@@ -20,25 +20,25 @@ SOURCE_BUTTONS_FILE = ROOT / "thorne_drak" / "thorne_buttons01.tga"
 
 # Source file crop positions (where icon and button are located in source files)
 ICON_X, ICON_Y = 2, 2
-# Button positions in thorne_buttons01.tga (255x255 atlas with 6 rows)
+# Button positions in thorne_buttons01.tga (255x255 atlas with 6 rows, 2px button gap, 2px row gap)
 # Row 1: Solid (100% opacity, A=255) @ y=0
 BUTTON1_X_SOLID, BUTTON1_Y_SOLID = 0, 0
-BUTTON2_X_SOLID, BUTTON2_Y_SOLID = 40, 0
-# Row 2: 95% opacity (A=242) @ y=43
-BUTTON1_X_95, BUTTON1_Y_95 = 0, 43
-BUTTON2_X_95, BUTTON2_Y_95 = 40, 43
-# Row 3: 90% opacity (A=230) @ y=86
-BUTTON1_X_90, BUTTON1_Y_90 = 0, 86
-BUTTON2_X_90, BUTTON2_Y_90 = 40, 86
-# Row 4: 85% opacity (A=217) @ y=129
-BUTTON1_X_85, BUTTON1_Y_85 = 0, 129
-BUTTON2_X_85, BUTTON2_Y_85 = 40, 129
-# Row 5: 75% opacity (A=191) @ y=172
-BUTTON1_X_75, BUTTON1_Y_75 = 0, 172
-BUTTON2_X_75, BUTTON2_Y_75 = 40, 172
-# Row 6: 50% opacity (A=128) @ y=215
-BUTTON1_X_50, BUTTON1_Y_50 = 0, 215
-BUTTON2_X_50, BUTTON2_Y_50 = 40, 215
+BUTTON2_X_SOLID, BUTTON2_Y_SOLID = 42, 0
+# Row 2: 95% opacity (A=242) @ y=42
+BUTTON1_X_95, BUTTON1_Y_95 = 0, 42
+BUTTON2_X_95, BUTTON2_Y_95 = 42, 42
+# Row 3: 90% opacity (A=230) @ y=84
+BUTTON1_X_90, BUTTON1_Y_90 = 0, 84
+BUTTON2_X_90, BUTTON2_Y_90 = 42, 84
+# Row 4: 85% opacity (A=217) @ y=126
+BUTTON1_X_85, BUTTON1_Y_85 = 0, 126
+BUTTON2_X_85, BUTTON2_Y_85 = 42, 126
+# Row 5: 75% opacity (A=191) @ y=168
+BUTTON1_X_75, BUTTON1_Y_75 = 0, 168
+BUTTON2_X_75, BUTTON2_Y_75 = 42, 168
+# Row 6: 50% opacity (A=128) @ y=210
+BUTTON1_X_50, BUTTON1_Y_50 = 0, 210
+BUTTON2_X_50, BUTTON2_Y_50 = 42, 210
 
 # Button type selector: "solid", "95", "90", "85", "75", or "50"
 BUTTON_TYPE = "solid"

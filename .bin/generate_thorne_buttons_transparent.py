@@ -29,6 +29,7 @@ TRANSPARENCY_LEVELS = [
 BORDER_WIDTH = 3
 BUTTON_SIZE = 40
 BUTTON_SCAN_WIDTH = 255  # Total width to scan for buttons
+BUTTON_SPACING = 2  # Match slot generator spacing
 
 
 def load_tga(filepath: Path) -> Image.Image:
@@ -106,22 +107,19 @@ def main() -> None:
     
     print(f"Source atlas: {atlas.size} {atlas.mode}")
     
-    # Detect all buttons in top row (y=0) by scanning at 40px intervals
+    # Detect all buttons in top row (y=0) by scanning for content regions
     source_buttons = []  # List of (x_position, button_image)
     
-    for x in range(0, BUTTON_SCAN_WIDTH, BUTTON_SIZE):
-        # Extract potential button region
-        if x + BUTTON_SIZE > atlas.width:
-            break
+    # Scan the full width, looking for 40px-wide opaque regions
+    x = 0
+    while x < BUTTON_SCAN_WIDTH - BUTTON_SIZE:
+        # Check if this potential button position has any opaque pixels
+        button_test = atlas.crop((x, 0, x + BUTTON_SIZE, BUTTON_SIZE))
         
-        button_img = atlas.crop((x, 0, x + BUTTON_SIZE, BUTTON_SIZE))
-        
-        # Check if button has any visible pixels (not fully transparent)
-        pixels = button_img.load()
         has_content = False
         for y in range(BUTTON_SIZE):
             for px in range(BUTTON_SIZE):
-                r, g, b, a = button_img.getpixel((px, y))
+                r, g, b, a = button_test.getpixel((px, y))
                 if a > 0:
                     has_content = True
                     break
@@ -129,8 +127,12 @@ def main() -> None:
                 break
         
         if has_content:
-            source_buttons.append((x, button_img))
+            # Found button - add it and skip to end of this button
+            source_buttons.append((x, button_test))
             print(f"  Found button at x={x}")
+            x += BUTTON_SIZE + 2  # Skip button size + 2px gap
+        else:
+            x += 1
     
     if not source_buttons:
         raise ValueError("No buttons found in top row (y=0)")
@@ -146,8 +148,8 @@ def main() -> None:
     for btn_x, btn_img in source_buttons:
         new_atlas.paste(btn_img, (btn_x, 0), btn_img)
     
-    # Rows 2-6: Transparency variants (3px gaps to fit 6×40px in 255px height)
-    y_positions = [43, 86, 129, 172, 215]  # Calculated: (255-240)/5 = 3px gaps
+    # Rows 2-6: Transparency variants (2px gaps for consistency with slot generator)
+    y_positions = [42, 84, 126, 168, 210]  # Calculated: 40px + 2px gap between rows
     
     for (trans_label, trans_alpha), y_pos in zip(TRANSPARENCY_LEVELS, y_positions):
         for btn_x, btn_solid in source_buttons:
@@ -162,11 +164,11 @@ def main() -> None:
     print(f"\nUpdated: {BUTTON_SOURCE}")
     print(f"Button atlas layout ({BUTTON_SCAN_WIDTH}×{new_atlas.height}):")
     print(f"  Row 1 @ y=0:   Solid (100% opacity, A=255)")
-    print(f"  Row 2 @ y=43:  95% opacity (A=242)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 3 @ y=86:  90% opacity (A=230)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 4 @ y=129: 85% opacity (A=217)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 5 @ y=172: 75% opacity (A=191)  - {len(source_buttons)} button(s), colors preserved")
-    print(f"  Row 6 @ y=215: 50% opacity (A=128)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 2 @ y=42:  95% opacity (A=242)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 3 @ y=84:  90% opacity (A=230)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 4 @ y=126: 85% opacity (A=217)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 5 @ y=168: 75% opacity (A=191)  - {len(source_buttons)} button(s), colors preserved")
+    print(f"  Row 6 @ y=210: 50% opacity (A=128)  - {len(source_buttons)} button(s), colors preserved")
 
 
 if __name__ == "__main__":

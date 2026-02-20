@@ -16,10 +16,10 @@
 		  - Custom Button-Based Spell Gems: Replaced standard spell gem graphics 
 		    with custom button textures for enhanced visibility and color contrast
 		  - Custom Texture Assets:
-		      * button-dark-opaque01.tga - Normal button state (darker background)
+		      * button_dark-opaque01.tga - Normal button state (darker background)
 		      * button_light-opaque01.tga - Ready/active button state (lighter background)
 		  - Custom Animations:
-		      * A_CastBtnNormal - Uses button-dark-opaque01.tga (120x24px region at 100,0)
+		      * A_CastBtnNormal - Uses button_dark-opaque01.tga (120x24px region at 100,0)
 		      * A_CastBtnReady - Uses button_light-opaque01.tga (120x24px region at 100,24)
 		  - Standardized All Spell Gems: All 9 spell buttons now use identical sizing
 		    and draw templates (150x24 pixels, previously mixed 31x23 and 127x23)
@@ -80,7 +80,7 @@
     enhanced visibility and color contrast compared to standard spell gem graphics.
     
     TEXTURE FILES:
-      - button-dark-opaque01.tga: Normal/inactive button state (darker background)
+      - button_dark-opaque01.tga: Normal/inactive button state (darker background)
       - button_light-opaque01.tga: Ready/active button state (lighter background)
     
     These textures are specific to the Cast Spell Window and are NOT used in:
@@ -91,7 +91,14 @@
     maintaining traditional spell gem appearance in compact hotbar layouts.
     ================================================================================
   -->
-  <TextureInfo item="button-dark-opaque01.tga">
+  <TextureInfo item="button_dark-opaque01.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+
+  <TextureInfo item="button_neutral-opaque01.tga">
     <Size>
       <CX>256</CX>
       <CY>256</CY>
@@ -108,7 +115,7 @@
   <Ui2DAnimation item="A_CastBtnNormal">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>button-dark-opaque01.tga</Texture>
+      <Texture>button_dark-opaque01.tga</Texture>
       <Location>
         <X>100</X>
         <Y>0</Y>
@@ -128,7 +135,7 @@
   <Ui2DAnimation item="A_CastBtnReady">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>button_light-opaque01.tga</Texture>
+      <Texture>button_neutral-opaque01.tga</Texture>
       <Location>
         <X>100</X>
         <Y>24</Y>
@@ -171,7 +178,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>1</Y>
+      <Y>3</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -191,7 +198,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>0</Y>
+      <Y>2</Y>
     </Location>
     <Size>
       <CX>92</CX>
@@ -214,7 +221,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>27</X>
-      <Y>4</Y>
+      <Y>6</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -236,7 +243,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>27</Y>
+      <Y>29</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -256,7 +263,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>27</Y>
+      <Y>29</Y>
     </Location>
     <Size>
       <CX>87</CX>
@@ -278,7 +285,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>29</X>
-      <Y>30</Y>
+      <Y>32</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -300,7 +307,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>53</Y>
+      <Y>55</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -320,7 +327,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>53</Y>
+      <Y>55</Y>
     </Location>
     <Size>
       <CX>92</CX>
@@ -342,7 +349,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>29</X>
-      <Y>56</Y>
+      <Y>58</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -364,7 +371,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>79</Y>
+      <Y>81</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -384,7 +391,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>79</Y>
+      <Y>81</Y>
     </Location>
     <Size>
       <CX>92</CX>
@@ -406,7 +413,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>29</X>
-      <Y>82</Y>
+      <Y>84</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -428,7 +435,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>105</Y>
+      <Y>107</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -448,7 +455,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>105</Y>
+      <Y>107</Y>
     </Location>
     <Size>
       <CX>92</CX>
@@ -470,7 +477,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>29</X>
-      <Y>108</Y>
+      <Y>110</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -492,7 +499,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>131</Y>
+      <Y>133</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -512,7 +519,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>131</Y>
+      <Y>133</Y>
     </Location>
     <Size>
       <CX>92</CX>
@@ -534,7 +541,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>29</X>
-      <Y>134</Y>
+      <Y>136</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -556,7 +563,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>157</Y>
+      <Y>159</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -576,7 +583,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>157</Y>
+      <Y>159</Y>
     </Location>
     <Size>
       <CX>92</CX>
@@ -598,7 +605,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>29</X>
-      <Y>160</Y>
+      <Y>162</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -620,7 +627,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>1</X>
-			<Y>183</Y>
+      <Y>185</Y>
 		</Location>
 		<Size>
 			<CX>150</CX>
@@ -640,7 +647,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>47</X>
-      <Y>183</Y>
+      <Y>185</Y>
     </Location>
     <Size>
       <CX>92</CX>
@@ -662,7 +669,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>29</X>
-      <Y>186</Y>
+      <Y>188</Y>
     </Location>
     <Size>
       <CX>20</CX>
@@ -687,12 +694,46 @@
        ================================================================================== -->
 
   <!-- Spell 0 Recast Timer -->
+  <Gauge item="CSPW_Global_Recast">
+    <ScreenID>CSPW_Global_Recast</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>-1</Y>
+    </Location>
+    <Size>
+      <CX>146</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>255</R>
+      <G>210</G>
+      <B>250</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>255</R>
+      <G>235</G>
+      <B>255</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>25</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_CastRecastBarFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Spell 0 Recast Timer -->
   <Gauge item="CSPW_Spell0_Recast">
     <ScreenID>CSPW_Spell0_Recast</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>23</Y>
+      <Y>25</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -726,7 +767,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>49</Y>
+      <Y>51</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -760,7 +801,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>75</Y>
+      <Y>77</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -794,7 +835,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>101</Y>
+      <Y>103</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -828,7 +869,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>127</Y>
+      <Y>129</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -862,7 +903,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>153</Y>
+      <Y>155</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -896,7 +937,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>179</Y>
+      <Y>181</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -930,7 +971,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>2</X>
-      <Y>205</Y>
+      <Y>207</Y>
     </Location>
     <Size>
       <CX>146</CX>
@@ -965,7 +1006,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>4</X>
-      <Y>236</Y>
+      <Y>214</Y>
 		</Location>
 		<Size>
 			<CX>144</CX>
@@ -982,9 +1023,8 @@
     <AlignRight>false</AlignRight>
     <Style_Transparent>false</Style_Transparent>
 		<TooltipReference>Opens and closes Your Spellbook</TooltipReference>
-		<Style_Checkbox>true</Style_Checkbox>
-
-		<!--<RadioGroup/>-->
+		<Style_Checkbox>false</Style_Checkbox>
+    <AutoStretch>False</AutoStretch>
 		<ButtonDrawTemplate>
 			<Normal>A_BtnNormal</Normal>
 			<Pressed>A_BtnPressed</Pressed>
@@ -996,8 +1036,6 @@
 
   <!-- The spell window itself (widened and lengthened) -->
 	<Screen item = "CastSpellWnd">
-		<!--<ScreenID/>-->
-		<!--<Font/>-->
 		<RelativePosition>false</RelativePosition>
 		<Location>
 			<X>1</X>
@@ -1005,7 +1043,7 @@
 		</Location>
 		<Size>
 			<CX>160</CX>
-      <CY>273</CY>
+      <CY>244</CY>
 		</Size>
 		<Text>Spells</Text>
 		<Style_Transparent>false</Style_Transparent>
@@ -1041,6 +1079,7 @@
 		<Pieces>CSPW_Spell5_No</Pieces>
 		<Pieces>CSPW_Spell6_No</Pieces>
 		<Pieces>CSPW_Spell7_No</Pieces>
+    <Pieces>CSPW_Global_Recast</Pieces>
 		<Pieces>CSPW_Spell0_Recast</Pieces>
 		<Pieces>CSPW_Spell1_Recast</Pieces>
 		<Pieces>CSPW_Spell2_Recast</Pieces>

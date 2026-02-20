@@ -57,7 +57,7 @@ A vertical list of custom-designed buttons that act as spell gems.
 | **Spell Gem Style** | Standard `SpellGem` with custom holder | Custom `Button` with `Ui2DAnimation` | Major visual difference. Thorne's looks like a list of buttons. |
 | **Recast Timers** | **Yes** (per-spell and global) | **No** | Major functional difference. Nillipuss provides more casting information. |
 | **Spell Numbers** | On the right side | On the left, next to the icon | Different placement to suit the layout. |
-| **Custom Textures** | Uses `A_dzSpellBG` | Uses `button-dark-opaque01.tga` and `button_light-opaque01.tga` | Thorne has a completely unique asset for its spell bar. |
+| **Custom Textures** | Uses `A_dzSpellBG` | Uses `button_dark-opaque01.tga` and `button_light-opaque01.tga` | Thorne has a completely unique asset for its spell bar. |
 | **Spellbook Button**| `120x14` | `144x20` | Thorne's is larger and more prominent. |
 
 ---

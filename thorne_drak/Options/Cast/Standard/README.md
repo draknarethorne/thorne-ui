@@ -153,7 +153,7 @@ SpellGemDrawTemplate:
 | **Spell Gem Width** | 138px (uniform) | 150px (uniform) |
 | **Spell Gem Height** | 23px | 24px |
 | **Draw Templates** | A_SpellGemHolder (all gems) | A_CastBtnNormal, A_CastBtnReady (custom) |
-| **Custom Textures** | ❌ No (uses standard animations) | ✅ Yes (button-dark-opaque01.tga × 2) |
+| **Custom Textures** | ❌ No (uses standard animations) | ✅ Yes (button_dark-opaque01.tga × 2) |
 | **Spell Icon Offset** | ❌ No | ✅ Yes (SpellIconOffsetX=2) |
 | **Spell Name Font** | Font 1 | Font 2 |
 | **Spell Name Position** | X=40 | X=47 |

@@ -20,7 +20,7 @@ The Thorne Cast Spell Window variant features custom button-style spell gem grap
 
 **Key Features**:
 
-- **Custom Button Graphics**: Uses `button-dark-opaque01.tga` and `button_light-opaque01.tga` for normal and active button states, providing enhanced visual contrast
+- **Custom Button Graphics**: Uses `button_dark-opaque01.tga` and `button_light-opaque01.tga` for normal and active button states, providing enhanced visual contrast
 - **Standardized Spell Gem Sizing**: All 9 spell gems use identical 150×24 pixel dimensions (previously mixed sizes)
 - **Widened Window Layout**: 160px width (vs 140px Standard) accommodates full spell names with reduced truncation
 - **Custom Animations**: `A_CastBtnNormal` and `A_CastBtnReady` provide distinct visual states for spell readiness
@@ -59,10 +59,10 @@ The Thorne Cast Spell Window variant features custom button-style spell gem grap
 ```
 CastSpellWnd (160×238px)
 ├── Custom Texture Definitions
-│   ├── button-dark-opaque01.tga (256×256px)
+│   ├── button_dark-opaque01.tga (256×256px)
 │   └── button_light-opaque01.tga (256×256px)
 ├── Custom Animations
-│   ├── A_CastBtnNormal (uses button-dark-opaque01.tga at 100,0, 120×24px)
+│   ├── A_CastBtnNormal (uses button_dark-opaque01.tga at 100,0, 120×24px)
 │   └── A_CastBtnReady (uses button_light-opaque01.tga at 100,24, 120×24px)
 ├── Spell Gems (CSPW_Spell0 through CSPW_Spell8)
 │   ├── SpellGem elements (150×24px, custom draw templates)
@@ -104,14 +104,14 @@ CastSpellWnd (160×238px)
 
 | Texture File | Purpose | Size | Region Used |
 |--------------|---------|------|-------------|
-| `button-dark-opaque01.tga` | Normal button state (darker) | 256×256px | 100,0 → 120×24px |
+| `button_dark-opaque01.tga` | Normal button state (darker) | 256×256px | 100,0 → 120×24px |
 | `button_light-opaque01.tga` | Ready button state (lighter) | 256×256px | 100,24 → 120×24px |
 
 ### Animation Definitions
 
 | Animation | Texture Source | Usage | Visual State |
 |-----------|----------------|-------|--------------|
-| **A_CastBtnNormal** | button-dark-opaque01.tga | SpellGemDrawTemplate Holder | Normal/inactive spell |
+| **A_CastBtnNormal** | button_dark-opaque01.tga | SpellGemDrawTemplate Holder | Normal/inactive spell |
 | **A_CastBtnReady** | button_light-opaque01.tga | SpellGemDrawTemplate Background | Ready/memorized spell |
 | **A_SpellGemHighlight** | (Standard) | SpellGemDrawTemplate Highlight | Mouse hover state |
 
@@ -183,7 +183,7 @@ Each spell gem (CSPW_Spell0 through CSPW_Spell7) follows this pattern:
 | **Spell Gem Width** | 150px (uniform) | Mixed (31px, 127px, 138px) |
 | **Spell Gem Height** | 24px (uniform) | 23px (uniform) |
 | **Draw Templates** | A_CastBtnNormal (Holder), A_CastBtnReady (Background) | A_SpellGemHolder, A_SpellGemBackground (varies by gem) |
-| **Custom Textures** | ✅ Yes (button-dark-opaque01.tga × 2) | ❌ No (uses standard animations) |
+| **Custom Textures** | ✅ Yes (button_dark-opaque01.tga × 2) | ❌ No (uses standard animations) |
 | **Spell Icon Offset** | ✅ Yes (SpellIconOffsetX=2) | ❌ No |
 | **Spell Name Font** | Font 2 (all gems) | Font 1 (most gems) |
 | **Spell Name Position** | X=47 | X=40 |
@@ -217,7 +217,7 @@ Each spell gem (CSPW_Spell0 through CSPW_Spell7) follows this pattern:
 
 **Manual Installation**:
 1. Copy `EQUI_CastSpellWnd.xml` from `Options/Cast/Thorne/` to `thorne_drak/` directory
-2. Ensure `button-dark-opaque01.tga` and `button_light-opaque01.tga` exist in `thorne_drak/`
+2. Ensure `button_dark-opaque01.tga` and `button_light-opaque01.tga` exist in `thorne_drak/`
 3. Reload UI with `/loadskin thorne_drak` or restart client
 4. Cast Spell Window will display with custom button-style spell gems
 

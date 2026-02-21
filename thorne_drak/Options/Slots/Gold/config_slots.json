@@ -1,0 +1,255 @@
+{
+  "source_items": "thorne_item01.tga",
+  "source_buttons": "thorne_buttons01.tga",
+  "cell_size": 40,
+  "output_size": 256,
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "gradient_presets": {
+    "gold": {
+      "type": "vertical",
+      "top_color": [232, 209, 118],
+      "bottom_color": [173, 140, 62]
+    },
+    "silver": {
+      "type": "vertical",
+      "top_color": [214, 220, 228],
+      "bottom_color": [132, 142, 156]
+    },
+    "logo": {
+      "type": "vertical",
+      "top_color": [246, 228, 151],
+      "bottom_color": [176, 141, 63]
+    },
+    "none": {
+      "type": "none"
+    }
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "gold",
+    "top_color": [220, 200, 100],
+    "bottom_color": [180, 160, 80]
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 28,
+    "offset_x": 1,
+    "offset_y": 1,
+    "item_opacity": 0.92
+  },
+  "items": [
+    {
+      "name": "ear",
+      "item_row": 1,
+      "item_col": 1,
+      "out_row": 1,
+      "out_col": 1,
+      "button_row": 1,
+      "button_col": 1,
+      "gradient": "gold"
+    },
+    {
+      "name": "neck",
+      "item_row": 1,
+      "item_col": 2,
+      "out_row": 1,
+      "out_col": 2
+    },
+    {
+      "name": "head",
+      "item_row": 1,
+      "item_col": 3,
+      "out_row": 1,
+      "out_col": 3,
+      "button_row": 1,
+      "button_col": 2
+    },
+    {
+      "name": "face",
+      "item_row": 1,
+      "item_col": 4,
+      "out_row": 1,
+      "out_col": 4
+    },
+    {
+      "name": "chest",
+      "item_row": 1,
+      "item_col": 5,
+      "out_row": 1,
+      "out_col": 5
+    },
+    {
+      "name": "secondary",
+      "item_row": 1,
+      "item_col": 6,
+      "out_row": 1,
+      "out_col": 6,
+      "button_col": 2
+    },
+    {
+      "name": "back",
+      "item_row": 2,
+      "item_col": 1,
+      "out_row": 2,
+      "out_col": 1,
+      "fit_size": 35
+    },
+    {
+      "name": "arms",
+      "item_row": 2,
+      "item_col": 2,
+      "out_row": 2,
+      "out_col": 2
+    },
+    {
+      "name": "shoulders",
+      "item_row": 2,
+      "item_col": 3,
+      "out_row": 2,
+      "out_col": 3
+    },
+    {
+      "name": "wrist",
+      "item_row": 2,
+      "item_col": 4,
+      "out_row": 2,
+      "out_col": 4
+    },
+    {
+      "name": "belt",
+      "item_row": 2,
+      "item_col": 5,
+      "out_row": 2,
+      "out_col": 5
+    },
+    {
+      "name": "range",
+      "item_row": 2,
+      "item_col": 6,
+      "out_row": 2,
+      "out_col": 6
+    },
+    {
+      "name": "hands",
+      "item_row": 3,
+      "item_col": 1,
+      "out_row": 3,
+      "out_col": 1
+    },
+    {
+      "name": "fingers",
+      "item_row": 3,
+      "item_col": 2,
+      "out_row": 3,
+      "out_col": 2,
+      "fit_size": 34
+    },
+    {
+      "name": "legs",
+      "item_row": 3,
+      "item_col": 3,
+      "out_row": 3,
+      "out_col": 3
+    },
+    {
+      "name": "feet",
+      "item_row": 3,
+      "item_col": 4,
+      "out_row": 3,
+      "out_col": 4
+    },
+    {
+      "name": "primary",
+      "item_row": 3,
+      "item_col": 5,
+      "out_row": 3,
+      "out_col": 5,
+      "button_col": 2
+    },
+    {
+      "name": "ammo",
+      "item_row": 3,
+      "item_col": 6,
+      "out_row": 3,
+      "out_col": 6,
+      "fit_size": 34
+    },
+    {
+      "name": "bag",
+      "item_row": 4,
+      "item_col": 1,
+      "out_row": 4,
+      "out_col": 1,
+      "fit_size": 35
+    },
+    {
+      "name": "logo_1",
+      "item_row": 4,
+      "item_col": 2,
+      "out_row": 4,
+      "out_col": 2,
+      "gradient": "none",
+      "offset_y": -2
+    },
+    {
+      "name": "logo_2",
+      "item_row": 4,
+      "item_col": 3,
+      "out_row": 4,
+      "out_col": 3,
+      "gradient": "logo",
+      "fit_size": 34,
+      "offset_y": -2
+    },
+    {
+      "name": "logo_3",
+      "item_row": 4,
+      "item_col": 4,
+      "out_row": 4,
+      "out_col": 4,
+      "gradient": "logo",
+      "fit_size": 34,
+      "offset_y": -2
+    },
+    {
+      "name": "logo_4",
+      "item_row": 4,
+      "item_col": 5,
+      "out_row": 4,
+      "out_col": 5,
+      "gradient": "logo",
+      "fit_size": 34,
+      "offset_y": -2
+    },
+    {
+      "name": "logo_5",
+      "item_row": 4,
+      "item_col": 6,
+      "out_row": 4,
+      "out_col": 6,
+      "gradient": "logo",
+      "fit_size": 34,
+      "offset_y": -2
+    },
+    {
+      "name": "empty_row5_col1",
+      "item_row": 5,
+      "item_col": 1,
+      "out_row": 5,
+      "out_col": 1
+    },
+    {
+      "name": "empty_row6_col1",
+      "item_row": 6,
+      "item_col": 1,
+      "out_row": 6,
+      "out_col": 1
+    }
+  ]
+}

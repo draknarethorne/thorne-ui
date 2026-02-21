@@ -20,7 +20,7 @@ The **Enhanced** variant of the cast spell window features custom button-style s
 ### Design Characteristics
 - Window size: **160px × 242px** (slightly wider than standard)
 - Spell gem styling: Custom `A_CastBtnNormal` / `A_CastBtnReady` animations
-- Texture assets: `button_dark-opaque01.tga` and `button_light-opaque01.tga`
+- Texture assets: `buttons_dark_thorne01.tga` and `buttons_light_thorne01.tga`
 - Visual feedback: Button state changes indicate when spells are ready to cast
 - No individual spell cooldown indicators (see Default variant for recast timers)
 
@@ -75,11 +75,11 @@ Choose **Enhanced** if you:
 - **Position**: Top-left of button
 
 ### Custom Textures
-- **button_dark-opaque01.tga** (256×256)
+- **buttons_dark_thorne01.tga** (256×256)
   - Contains normal button state (120×24px at coordinates 100,0)
   - Used for inactive/normal spell gems
   
-- **button_light-opaque01.tga** (256×256)
+- **buttons_light_thorne01.tga** (256×256)
   - Contains active/ready button state (120×24px at coordinates 100,24)
   - Used when spell is ready to cast
 

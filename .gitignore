@@ -31,15 +31,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
-
-# Snapshots of thorne_drak to exclude from repo (keep only for gaming with of older versions)
-thorne_drak_v*/
-
-# UI Variants to exclude from repo (keep only default as reference)
-duxaUI*/
-Infiniti-*/
-Luna*/
-Nemesis/
-Nilli*/
-QQ*/
-vert*/

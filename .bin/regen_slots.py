@@ -4,7 +4,11 @@ import json
 import sys
 from pathlib import Path
 
-from PIL import Image
+try:
+    from PIL import Image  # type: ignore
+except ImportError:
+    print("Error: Pillow is not installed. Install it with: pip install Pillow")
+    sys.exit(1)
 
 
 def load_sources(directory: Path, source_files: list[str]) -> dict[str, Image.Image]:

@@ -10,7 +10,7 @@
   ],
   "default_tone": {
     "contrast": 1.10,
-    "brightness": 0.95
+    "brightness": 0.90
   },
   "items": [
     {"name": "ear", "out_row": 1, "out_col": 1, "source_file": "dragitem2.tga", "src_row": 3, "src_col": 2, "tone": {"contrast": 1.15, "brightness": 0.92}},

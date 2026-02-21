@@ -548,7 +548,7 @@
       <CY>128</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="staticons01.tga">
+  <TextureInfo item="stat_icons_thorne01.tga">
     <Size>
       <CX>256</CX>
       <CY>256</CY>
@@ -4770,7 +4770,7 @@
   <Ui2DAnimation item="A_Icon_ArmorClass">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>10</X>
         <Y>10</Y>
@@ -4789,7 +4789,7 @@
   <Ui2DAnimation item="A_Icon_Attack">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>10</X>
         <Y>40</Y>
@@ -4808,7 +4808,7 @@
   <Ui2DAnimation item="A_Icon_Health">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>10</X>
         <Y>70</Y>
@@ -4827,7 +4827,7 @@
   <Ui2DAnimation item="A_Icon_Mana">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>10</X>
         <Y>100</Y>
@@ -4846,7 +4846,7 @@
   <Ui2DAnimation item="A_Icon_Stamina">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>10</X>
         <Y>130</Y>
@@ -4865,7 +4865,7 @@
   <Ui2DAnimation item="A_Icon_Weight">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>10</X>
         <Y>160</Y>
@@ -4884,7 +4884,7 @@
   <Ui2DAnimation item="A_Icon_FireResist">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>90</X>
         <Y>10</Y>
@@ -4903,7 +4903,7 @@
   <Ui2DAnimation item="A_Icon_ColdResist">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>90</X>
         <Y>40</Y>
@@ -4922,7 +4922,7 @@
   <Ui2DAnimation item="A_Icon_MagicResist">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>90</X>
         <Y>70</Y>
@@ -4941,7 +4941,7 @@
   <Ui2DAnimation item="A_Icon_PoisonResist">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>90</X>
         <Y>100</Y>
@@ -4960,7 +4960,7 @@
   <Ui2DAnimation item="A_Icon_DiseaseResist">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>90</X>
         <Y>130</Y>
@@ -4979,7 +4979,7 @@
   <Ui2DAnimation item="A_Icon_Dragon">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>90</X>
         <Y>160</Y>
@@ -4998,7 +4998,7 @@
   <Ui2DAnimation item="A_Icon_Strength">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>170</X>
         <Y>10</Y>
@@ -5017,7 +5017,7 @@
   <Ui2DAnimation item="A_Icon_Intelligence">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>170</X>
         <Y>40</Y>
@@ -5036,7 +5036,7 @@
   <Ui2DAnimation item="A_Icon_Wisdom">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>170</X>
         <Y>70</Y>
@@ -5055,7 +5055,7 @@
   <Ui2DAnimation item="A_Icon_Agility">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>170</X>
         <Y>100</Y>
@@ -5074,7 +5074,7 @@
   <Ui2DAnimation item="A_Icon_Dexterity">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>170</X>
         <Y>130</Y>
@@ -5093,7 +5093,7 @@
   <Ui2DAnimation item="A_Icon_Charisma">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>170</X>
         <Y>160</Y>
@@ -5117,7 +5117,7 @@
     <CellHeight>22</CellHeight>
     <CellWidth>22</CellWidth>
     <Frames>
-      <Texture>staticons01.tga</Texture>
+      <Texture>stat_icons_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>

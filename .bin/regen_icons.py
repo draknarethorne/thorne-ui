@@ -367,7 +367,7 @@ def regenerate_icons(variant_dir, config_path, root_path, add_labels=True):
         (success, variant_name, variant_dir) tuple
     """
     variant_name = variant_dir.name
-    output_file = variant_dir / 'staticons01.tga'
+    output_file = variant_dir / 'stat_icons_thorne01.tga'
     
     print(f"\nProcessing {variant_name}...")
     
@@ -495,7 +495,7 @@ For detailed documentation, see: .bin/regen_icons.md
         if variant.lower() == 'root':
             # Direct regeneration of thorne_drak/ directory
             print(f"\nProcessing root (thorne_drak/)...")
-            output_file = root_path / 'staticons01.tga'
+            output_file = root_path / 'stat_icons_thorne01.tga'
             try:
                 generator = StatIconGenerator(
                     root_path,
@@ -535,8 +535,8 @@ For detailed documentation, see: .bin/regen_icons.md
         print(f"Copying regenerated files back to thorne_drak/...")
         print(f"{'='*70}")
         for variant_name, variant_path in variants_to_copy:
-            src = variant_path / 'staticons01.tga'
-            dst = root_path / 'staticons01.tga'
+            src = variant_path / 'stat_icons_thorne01.tga'
+            dst = root_path / 'stat_icons_thorne01.tga'
             
             if src.exists():
                 shutil.copy2(src, dst)
@@ -549,8 +549,8 @@ For detailed documentation, see: .bin/regen_icons.md
         print(f"Deploying to thorne_dev for testing...")
         print(f"{'='*70}")
         for variant_name, variant_path in variants_to_copy:
-            src = variant_path / 'staticons01.tga'
-            dst = thorne_dev_path / 'staticons01.tga'
+            src = variant_path / 'stat_icons_thorne01.tga'
+            dst = thorne_dev_path / 'stat_icons_thorne01.tga'
             
             if src.exists():
                 shutil.copy2(src, dst)

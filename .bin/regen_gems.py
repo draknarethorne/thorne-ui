@@ -9,7 +9,7 @@ Features:
     - Scales to gemiconsXX.tga (24×24 icons, 10 rows × 10 columns)
         - Default: transparent 1px border (22×22 icon inset at 1,1)
   - Scales to spelliconsXX.tga (22×22 icons, 10 rows × 10 columns) - clean, no borders
-  - Auto-regenerates staticons01.tga from new spellicons
+  - Auto-regenerates stat_icons_thorne01.tga from new spellicons
     - Optional --border mode for gemicons ONLY: transparent (default), black, blend
   - High-quality LANCZOS resampling + SHARPEN filter
   - Supports all icon variants (Classic, Duxa, Infiniti, Steamworks, Thorne, WoW)

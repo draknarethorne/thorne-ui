@@ -29,7 +29,7 @@ python .bin/regen_icons.py --all
 **What happens:**
 1. Scans `thorne_drak/Options/Icons/` for all subdirectories
 2. Auto-discovers all variants (e.g., Thorne, Classic, Duxa, WoW)
-3. Regenerates each variant's staticons01.tga texture
+3. Regenerates each variant's stat_icons_thorne01.tga texture
 4. Copies `Thorne` to `thorne_drak/` (default deployment variant)
 5. Deploys `Thorne` to `thorne_dev/` for testing
 
@@ -45,7 +45,7 @@ python .bin/regen_icons.py Thorne
 1. Reads source from `thorne_drak/Options/Icons/Thorne/gemicons*.tga`
 2. Uses config from `.bin/regen_icons.json` for icon coordinates
 3. Extracts icons, resizes to 22×22, adds abbreviation labels
-4. Generates `staticons01.tga` in variant directory
+4. Generates `stat_icons_thorne01.tga` in variant directory
 5. Copies to `thorne_drak/` (for git commits)
 6. Deploys to `thorne_dev/` (ready to test in-game)
 7. Prints: `Ready to test in-game with: /loadskin thorne_drak`
@@ -106,7 +106,7 @@ python .bin/regen_icons.py Thorne
 python .bin/regen_icons.py Thorne --labels
 
 # 2. Reference the labeled version while editing gemicon files
-#    File: thorne_drak/Options/Icons/Thorne/staticons01.tga
+#    File: thorne_drak/Options/Icons/Thorne/stat_icons_thorne01.tga
 
 # 3. After editing, regenerate without labels for final version
 python .bin/regen_icons.py Thorne
@@ -260,18 +260,18 @@ Each icon:
 ### 5. Smart Copyback
 
 **Single variant (e.g., `Thorne`):**
-- Copies generated texture to `thorne_drak/staticons01.tga`
+- Copies generated texture to `thorne_drak/stat_icons_thorne01.tga`
 - Ready for git commit and immediate testing
 
 **Multiple variants (e.g., `Thorne Classic Duxa`):**
-- Only copies `Thorne` to `thorne_drak/staticons01.tga`
+- Only copies `Thorne` to `thorne_drak/stat_icons_thorne01.tga`
 - Others remain in their Options subdirectories
 - Prevents accidentally overwriting main variant
 
 ### 6. Automatic Deployment
 
 After copyback, automatically copies to:
-- `C:\TAKP\uifiles\thorne_dev\staticons01.tga` (testing directory)
+- `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (testing directory)
 
 **Benefits:**
 - No need to run separate sync script
@@ -466,11 +466,11 @@ python .bin/regen_icons.py Classic Duxa Thorne --labels
 ```
 
 Results in:
-- `thorne_drak/Options/Icons/Classic/staticons01.tga` (with labels)
-- `thorne_drak/Options/Icons/Duxa/staticons01.tga` (with labels)  
-- `thorne_drak/Options/Icons/Thorne/staticons01.tga` (with labels)
-- `thorne_drak/staticons01.tga` (with labels - Thorne copy)
-- `C:\TAKP\uifiles\thorne_dev\staticons01.tga` (with labels - deployment)
+- `thorne_drak/Options/Icons/Classic/stat_icons_thorne01.tga` (with labels)
+- `thorne_drak/Options/Icons/Duxa/stat_icons_thorne01.tga` (with labels)  
+- `thorne_drak/Options/Icons/Thorne/stat_icons_thorne01.tga` (with labels)
+- `thorne_drak/stat_icons_thorne01.tga` (with labels - Thorne copy)
+- `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (with labels - deployment)
 
 ### Generate all variants, then specific variant without labels
 

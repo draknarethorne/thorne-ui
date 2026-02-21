@@ -110,7 +110,7 @@ and generate option-ready outputs from master files.
 ### 5) `.bin/regen_icons.py`
 
 **Purpose**
-- Rebuilds `staticons01.tga` from `Options/Icons/<Variant>/` sources using JSON mapping.
+- Rebuilds `stat_icons_thorne01.tga` from `Options/Icons/<Variant>/` sources using JSON mapping.
 
 **Why relevant**
 - Already demonstrates option-oriented generation and smart copy/deploy behavior.

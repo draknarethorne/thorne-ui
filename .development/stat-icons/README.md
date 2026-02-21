@@ -39,7 +39,7 @@ python .bin/regen_icons.py Thorne
 python .bin/regen_icons.py Thorne --labels
 ```
 
-**Result:** `staticons01.tga` generated in variant directory and deployed to `thorne_dev/` for immediate testing.
+**Result:** `stat_icons_thorne01.tga` generated in variant directory and deployed to `thorne_dev/` for immediate testing.
 
 ---
 
@@ -93,12 +93,12 @@ Weight  (10,160)    | Reserve  (90,160)    | CHA     (170,160)
 
 ```
 thorne_drak/
-├── staticons01.tga             # Generated texture (primary)
+├── stat_icons_thorne01.tga             # Generated texture (primary)
 └── Options/Icons/
     ├── Thorne/
     │   ├── gemicons01-03.tga   # Source icon files
-    │   ├── staticons01.tga     # Generated texture
-    │   └── staticons01-stats.json # Generation metadata
+    │   ├── stat_icons_thorne01.tga     # Generated texture
+    │   └── stat_icons_thorne01-stats.json # Generation metadata
     ├── Classic/
     ├── Duxa/
     ├── Infiniti/
@@ -149,12 +149,12 @@ All 18 icons have complete, verified coordinates. No placeholders.
 - Smart copy logic: Single variant → copies to `thorne_drak/`; Multiple → Thorne only
 
 ### ✅ Smart Deployment
-- Automatic copying to `thorne_drak/staticons01.tga`
+- Automatic copying to `thorne_drak/stat_icons_thorne01.tga`
 - Direct deployment to `C:\TAKP\uifiles\thorne_dev/` for testing
 - In-game testing: `/loadskin thorne_drak`
 
 ### ✅ Detailed Metadata
-Generates `staticons01-stats.json` with:
+Generates `stat_icons_thorne01-stats.json` with:
 - Source file and coordinates for each icon
 - Position in final texture
 - Type: "extracted" vs "placeholder"

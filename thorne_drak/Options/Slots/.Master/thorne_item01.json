@@ -1,0 +1,48 @@
+{
+  "cell_size": 40,
+  "output_size": 256,
+  "variants": [
+    {
+      "name": "icons",
+      "cell_size": 20,
+      "output_size": 256
+    }
+  ],
+  "default_tone": {
+    "contrast": 1.10,
+    "brightness": 0.95
+  },
+  "items": [
+    {"name": "ear", "out_row": 1, "out_col": 1, "source_file": "dragitem2.tga", "src_row": 3, "src_col": 2, "tone": {"contrast": 1.15, "brightness": 0.92}},
+    {"name": "neck", "out_row": 1, "out_col": 2, "source_file": "dragitem1.tga", "src_row": 1, "src_col": 2},
+    {"name": "head", "out_row": 1, "out_col": 3, "source_file": "dragitem1.tga", "src_row": 1, "src_col": 3, "tone": {"contrast": 1.10, "brightness": 0.95}},
+    {"name": "face", "out_row": 1, "out_col": 4, "source_file": "dragitem1.tga", "src_row": 1, "src_col": 4},
+    {"name": "chest", "out_row": 1, "out_col": 5, "source_file": "dragitem1.tga", "src_row": 1, "src_col": 5, "tone": {"contrast": 1.05, "brightness": 1.02}},
+    {"name": "secondary", "out_row": 1, "out_col": 6, "source_file": "dragitem1.tga", "src_row": 1, "src_col": 6, "tone": {"contrast": 1.10, "brightness": 0.95}},
+
+    {"name": "back", "out_row": 2, "out_col": 1, "source_file": "dragitem1.tga", "src_row": 2, "src_col": 1, "tone": {"contrast": 1.20, "brightness": 0.90}},
+    {"name": "arms", "out_row": 2, "out_col": 2, "source_file": "dragitem1.tga", "src_row": 2, "src_col": 2},
+    {"name": "shoulders", "out_row": 2, "out_col": 3, "source_file": "dragitem1.tga", "src_row": 2, "src_col": 3, "tone": {"contrast": 1.10, "brightness": 0.95}},
+    {"name": "wrist", "out_row": 2, "out_col": 4, "source_file": "dragitem1.tga", "src_row": 2, "src_col": 4},
+    {"name": "belt", "out_row": 2, "out_col": 5, "source_file": "dragitem1.tga", "src_row": 2, "src_col": 5, "tone": {"contrast": 1.08, "brightness": 0.98}},
+    {"name": "range", "out_row": 2, "out_col": 6, "source_file": "dragitem1.tga", "src_row": 2, "src_col": 6, "tone": {"contrast": 1.10, "brightness": 0.95}},
+
+    {"name": "hands", "out_row": 3, "out_col": 1, "source_file": "dragitem1.tga", "src_row": 3, "src_col": 1},
+    {"name": "fingers", "out_row": 3, "out_col": 2, "source_file": "dragitem1.tga", "src_row": 3, "src_col": 2, "tone": {"contrast": 1.18, "brightness": 0.93}},
+    {"name": "legs", "out_row": 3, "out_col": 3, "source_file": "dragitem1.tga", "src_row": 3, "src_col": 3, "tone": {"contrast": 1.10, "brightness": 0.95}},
+    {"name": "feet", "out_row": 3, "out_col": 4, "source_file": "dragitem1.tga", "src_row": 3, "src_col": 4, "tone": {"contrast": 1.10, "brightness": 0.95}},
+    {"name": "primary", "out_row": 3, "out_col": 5, "source_file": "dragitem1.tga", "src_row": 3, "src_col": 5},
+    {"name": "ammo", "out_row": 3, "out_col": 6, "source_file": "dragitem1.tga", "src_row": 3, "src_col": 6, "tone": {"contrast": 1.12, "brightness": 0.90}},
+
+    {"name": "bag", "out_row": 4, "out_col": 1, "source_file": "dragitem1.tga", "src_row": 4, "src_col": 1},
+    {"name": "logo_1", "out_row": 4, "out_col": 2, "source_file": "thorne_logos01.tga", "src_row": 1, "src_col": 1, "mode": "direct"},
+    {"name": "logo_2", "out_row": 4, "out_col": 3, "source_file": "thorne_logos01.tga", "src_row": 1, "src_col": 2, "mode": "invert_impression", "mid_tone": 32, "imp_contrast": 0.6, "depth_gradient": true},
+    {"name": "logo_3", "out_row": 4, "out_col": 4, "source_file": "thorne_logos01.tga", "src_row": 1, "src_col": 3, "mode": "invert_impression", "mid_tone": 52, "imp_contrast": 0.6, "depth_gradient": true},
+    {"name": "logo_4", "out_row": 4, "out_col": 5, "source_file": "thorne_logos01.tga", "src_row": 1, "src_col": 4, "mode": "invert_impression", "mid_tone": 72, "imp_contrast": 0.6, "depth_gradient": true},
+    {"name": "logo_5", "out_row": 4, "out_col": 6, "source_file": "thorne_logos01.tga", "src_row": 1, "src_col": 5, "mode": "invert_impression", "mid_tone": 88, "imp_contrast": 0.6, "depth_gradient": true},
+
+    {"name": "empty_row4", "out_row": 5, "out_col": 1, "source_file": "placeholder.tga", "src_row": 1, "src_col": 1, "mode": "empty"},
+
+    {"name": "empty_row5", "out_row": 6, "out_col": 1, "source_file": "placeholder.tga", "src_row": 1, "src_col": 1, "mode": "empty"}
+  ]
+}

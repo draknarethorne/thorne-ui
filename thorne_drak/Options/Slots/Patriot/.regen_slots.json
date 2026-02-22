@@ -7,11 +7,13 @@
     "sep_y": 2
   },
   "default_button": {
+    "_comment": "See .bin/DEFAULTS.md: Slots Configuration > default_button. Uses button atlas row 1, col 1 with patriot gradient.",
     "button_row": 1,
     "button_col": 1,
     "gradient": "patriot"
   },
   "default_item": {
+    "_comment": "See .bin/DEFAULTS.md: Slots Configuration > default_item. Items tiled at 28px with slight transparency.",
     "fit_mode": "tile",
     "fit_size": 28,
     "offset_x": 1,

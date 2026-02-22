@@ -1,0 +1,367 @@
+"""regen_thorne.py -- Generate item icon atlases from source dragitem files.
+
+Reads .regen_thorne.json config and dragitem source TGA files, composites them into
+grayscale item icon atlases. Output (thorne_item01.tga + variants) is consumed by
+regen_slots.py to generate finished slot textures.
+
+Usage:
+  python regen_thorne.py                       # Default: .Master directory
+  python regen_thorne.py .Master               # Explicit directory
+  python regen_thorne.py --help                # Show help
+
+Inputs (per directory):
+  .regen_thorne.json       -- Item grid layout config
+  dragitem*.tga            -- Individual item source icons
+  logo_atlas_thorne01.tga       -- Logo source tiles
+
+Output (per directory):
+  thorne_item01.tga        -- Base composited item atlas (40px cells, 256x256)
+  thorne_icons01.tga       -- Icon variant (20px cells, 256x256, if configured)
+  .regen_thorne-stats.json -- Processing statistics
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from datetime import datetime
+from pathlib import Path
+
+from PIL import Image, ImageEnhance, ImageOps
+
+CONFIG_FILENAME = ".regen_thorne.json"
+STATS_FILENAME = ".regen_thorne-stats.json"
+
+
+# ---------------------------------------------------------------------------
+# Image processing functions
+# ---------------------------------------------------------------------------
+
+def to_grayscale_rgba(img: Image.Image, contrast: float, brightness: float) -> Image.Image:
+    """Convert image to grayscale while preserving alpha, with tone controls."""
+    rgba = img.convert("RGBA")
+    r, g, b, a = rgba.split()
+    gray = ImageOps.grayscale(Image.merge("RGB", (r, g, b)))
+
+    gray_enhanced = ImageEnhance.Contrast(gray).enhance(contrast)
+    gray_enhanced = ImageEnhance.Brightness(gray_enhanced).enhance(brightness)
+
+    return Image.merge("RGBA", (gray_enhanced, gray_enhanced, gray_enhanced, a))
+
+
+def to_inverted_grayscale_rgba(img: Image.Image, contrast: float, brightness: float) -> Image.Image:
+    """Invert source, then grayscale and apply tone controls (keeps alpha)."""
+    rgba = img.convert("RGBA")
+    r, g, b, a = rgba.split()
+    rgb = Image.merge("RGB", (r, g, b))
+    inverted = ImageOps.invert(rgb)
+    gray = ImageOps.grayscale(inverted)
+
+    gray_enhanced = ImageEnhance.Contrast(gray).enhance(contrast)
+    gray_enhanced = ImageEnhance.Brightness(gray_enhanced).enhance(brightness)
+
+    return Image.merge("RGBA", (gray_enhanced, gray_enhanced, gray_enhanced, a))
+
+
+def to_inverted_impression_rgba(
+    img: Image.Image,
+    mid_tone: int = 128,
+    contrast: float = 0.6,
+    depth_gradient: bool = True,
+) -> Image.Image:
+    """Match slots_variants inverted-impression logic for darker emboss base."""
+    rgba = img.convert("RGBA")
+    rgb = rgba.convert("RGB")
+    alpha = rgba.split()[3]
+
+    gray = ImageOps.grayscale(rgb)
+    inverted = ImageOps.invert(gray)
+
+    inv_array = inverted.load()
+    w, h = inverted.size
+
+    out = Image.new("RGBA", (w, h))
+    op = out.load()
+    ap = alpha.load()
+
+    for y in range(h):
+        for x in range(w):
+            a = ap[x, y]
+            if a > 0:
+                norm = inv_array[x, y] / 255.0
+                val = mid_tone + (norm - 0.5) * contrast * 255
+
+                if depth_gradient:
+                    y_norm = y / (h - 1) if h > 1 else 0.5
+                    gradient = 1.0 - 4 * (y_norm - 0.5) ** 2
+                    gradient_mult = 0.85 + gradient * 0.15
+                    val *= gradient_mult
+
+                val = int(max(0, min(255, val)))
+                op[x, y] = (val, val, val, a)
+            else:
+                op[x, y] = (0, 0, 0, 0)
+
+    return out
+
+
+def load_sources(directory: Path) -> dict[str, Image.Image]:
+    """Load all TGA source files from a directory."""
+    sources: dict[str, Image.Image] = {}
+    for path in directory.glob("*.tga"):
+        try:
+            sources[path.name] = Image.open(path).convert("RGBA")
+        except Exception:
+            continue
+    return sources
+
+
+def extract_cell(img: Image.Image, row: int, col: int, cell_size: int) -> Image.Image:
+    """Extract a cell from a grid image. Indices are 0-based."""
+    x = col * cell_size
+    y = row * cell_size
+    return img.crop((x, y, x + cell_size, y + cell_size))
+
+
+# ---------------------------------------------------------------------------
+# ThorneGenerator class
+# ---------------------------------------------------------------------------
+
+class ThorneGenerator:
+    """Generates item icon atlases from source dragitem files."""
+
+    def __init__(self, directory: Path) -> None:
+        self.directory = directory
+        self.config_file = directory / CONFIG_FILENAME
+        self.stats: dict = {
+            "directory": str(directory.name),
+            "timestamp": datetime.now().isoformat(),
+            "summary": {
+                "items_total": 0,
+                "atlases_generated": 0,
+            },
+            "items": [],
+            "output_files": [],
+            "errors": [],
+        }
+
+    def render_item(
+        self,
+        entry: dict,
+        sources: dict[str, Image.Image],
+        source_cell_size: int,
+        output_cell_size: int,
+        default_tone: dict,
+    ) -> Image.Image:
+        """Render a single item tile from config entry."""
+        mode = entry.get("mode", "grayscale")
+        if mode == "empty":
+            return Image.new("RGBA", (output_cell_size, output_cell_size), (0, 0, 0, 0))
+
+        source_file = entry.get("source_file")
+        source_mode = entry.get("source_mode", "grid")
+        src_row = int(entry.get("src_row", 1)) - 1  # Convert 1-based to 0-based
+        src_col = int(entry.get("src_col", 1)) - 1  # Convert 1-based to 0-based
+
+        if not source_file or source_file not in sources:
+            raise FileNotFoundError(f"Missing source file: {source_file}")
+
+        src_img = sources[source_file]
+
+        if source_mode == "full":
+            tile = src_img.resize((source_cell_size, source_cell_size), Image.Resampling.LANCZOS)
+        else:
+            tile = extract_cell(src_img, src_row, src_col, source_cell_size)
+
+        tone = entry.get("tone", {})
+        contrast = float(tone.get("contrast", default_tone.get("contrast", 1.10)))
+        brightness = float(tone.get("brightness", default_tone.get("brightness", 0.95)))
+
+        if mode == "direct":
+            result = tile.convert("RGBA")
+        elif mode == "invert_grayscale":
+            result = to_inverted_grayscale_rgba(tile, contrast=contrast, brightness=brightness)
+        elif mode == "invert_impression":
+            mid_tone = int(entry.get("mid_tone", 128))
+            imp_contrast = float(entry.get("imp_contrast", 0.6))
+            depth_gradient = bool(entry.get("depth_gradient", True))
+            result = to_inverted_impression_rgba(
+                tile,
+                mid_tone=mid_tone,
+                contrast=imp_contrast,
+                depth_gradient=depth_gradient,
+            )
+        else:
+            result = to_grayscale_rgba(tile, contrast=contrast, brightness=brightness)
+
+        # Scale to output cell size if different from source
+        if output_cell_size != source_cell_size:
+            result = result.resize((output_cell_size, output_cell_size), Image.Resampling.LANCZOS)
+
+        return result
+
+    def generate_atlas(
+        self,
+        items: list,
+        sources: dict,
+        source_cell_size: int,
+        output_cell_size: int,
+        output_size: int,
+        default_tone: dict,
+        atlas_name: str = "base",
+    ) -> Image.Image:
+        """Generate a single atlas with the given cell and output sizes."""
+        atlas = Image.new("RGBA", (output_size, output_size), (0, 0, 0, 0))
+
+        for entry in items:
+            out_row = int(entry.get("out_row", 1)) - 1  # Convert 1-based to 0-based
+            out_col = int(entry.get("out_col", 1)) - 1  # Convert 1-based to 0-based
+            name = entry.get("name", "(unnamed)")
+
+            try:
+                tile = self.render_item(entry, sources, source_cell_size, output_cell_size, default_tone)
+                x = out_col * output_cell_size
+                y = out_row * output_cell_size
+                atlas.alpha_composite(tile, (x, y))
+
+                print(f"  [{atlas_name:6s}] {name:12s} @ ({x:3d},{y:3d})")
+
+                # Per-item stats
+                item_stat = {
+                    "name": name,
+                    "out_row": out_row + 1,
+                    "out_col": out_col + 1,
+                    "source_file": entry.get("source_file", ""),
+                    "src_row": entry.get("src_row", 1),
+                    "src_col": entry.get("src_col", 1),
+                    "mode": entry.get("mode", "grayscale"),
+                    "has_tone_override": "tone" in entry,
+                }
+                self.stats["items"].append(item_stat)
+                self.stats["summary"]["items_total"] += 1
+
+            except Exception as e:
+                err_msg = f"Failed to render {name}: {e}"
+                print(f"  ERROR: {err_msg}")
+                self.stats["errors"].append(err_msg)
+
+        return atlas
+
+    def generate(self) -> bool:
+        """Run the full atlas generation pipeline. Returns True on success."""
+        print(f"\n{'='*70}")
+        print(f"GENERATING ITEM ATLASES: {self.directory.name}")
+        print(f"{'='*70}")
+
+        if not self.config_file.exists():
+            print(f"  ERROR: Config not found: {self.config_file}")
+            return False
+
+        with open(self.config_file, "r", encoding="utf-8") as f:
+            config = json.load(f)
+
+        # Base configuration
+        base_cell_size = int(config.get("cell_size", 40))
+        base_output_size = int(config.get("output_size", 256))
+        base_output_filename = config.get("output_file", "item_atlas_thorne01.tga")
+        default_tone = config.get("default_tone", {"contrast": 1.10, "brightness": 0.95})
+        items = config.get("items", [])
+        variants = config.get("variants", [])
+
+        sources = load_sources(self.directory)
+
+        if not items:
+            print("  ERROR: Config has no items to render.")
+            return False
+
+        # Generate base atlas
+        print(f"\n  Generating base atlas ({base_output_filename})...")
+        atlas = self.generate_atlas(
+            items, sources, base_cell_size, base_cell_size, base_output_size, default_tone, atlas_name="base"
+        )
+        out_base = self.directory / base_output_filename
+        atlas.save(out_base, format="TGA")
+        self.stats["output_files"].append(str(out_base.name))
+        self.stats["summary"]["atlases_generated"] += 1
+        print(f"\n  Created: {out_base.name}  ({atlas.size[0]}×{atlas.size[1]})")
+
+        # Generate variant atlases
+        for variant in variants:
+            variant_name = variant.get("name", "variant")
+            variant_cell_size = int(variant.get("cell_size", base_cell_size))
+            variant_output_size = int(variant.get("output_size", base_output_size))
+            variant_output_filename = variant.get("output_file", f"item_{variant_name}01.tga")
+
+            print(f"\n  Generating variant '{variant_name}' ({variant_output_filename})...")
+            variant_atlas = self.generate_atlas(
+                items, sources, base_cell_size, variant_cell_size, variant_output_size, default_tone, atlas_name=variant_name
+            )
+            out_variant = self.directory / variant_output_filename
+            variant_atlas.save(out_variant, format="TGA")
+            self.stats["output_files"].append(str(out_variant.name))
+            self.stats["summary"]["atlases_generated"] += 1
+            print(f"\n  Created: {out_variant.name}  ({variant_atlas.size[0]}×{variant_atlas.size[1]})")
+
+        print(f"\n  [OK] Thorne atlas generation complete: {self.directory.name}")
+        print(f"  Items rendered: {self.stats['summary']['items_total']}")
+        print(f"  Atlases created: {self.stats['summary']['atlases_generated']}")
+        return True
+
+    def save_stats(self) -> None:
+        """Write processing statistics to .regen_thorne-stats.json."""
+        stats_file = self.directory / STATS_FILENAME
+        with open(stats_file, "w", encoding="utf-8") as f:
+            json.dump(self.stats, f, indent=2)
+
+
+# ---------------------------------------------------------------------------
+# Entry point
+# ---------------------------------------------------------------------------
+
+def main() -> int:
+    """Main entry point."""
+    parser = argparse.ArgumentParser(
+        description="Generate item icon atlases from source dragitem files",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python regen_thorne.py                    # Default: .Master directory
+  python regen_thorne.py .Master            # Explicit directory
+  python regen_thorne.py CustomVariant      # Custom variant directory
+
+Directory must contain .regen_thorne.json config file and source dragitem TGA files.
+        """,
+    )
+
+    parser.add_argument(
+        "directory",
+        nargs="?",
+        default=".Master",
+        help="Target directory name within Options/Slots/ (default: .Master)",
+    )
+
+    args = parser.parse_args()
+
+    script_dir = Path(__file__).parent
+    base_dir = script_dir.parent
+    slots_dir = base_dir / "thorne_drak" / "Options" / "Slots"
+    target_dir = slots_dir / args.directory
+
+    if not target_dir.exists():
+        print(f"ERROR: Directory not found: {target_dir}")
+        return 1
+
+    generator = ThorneGenerator(target_dir)
+    if generator.generate():
+        generator.save_stats()
+        print(f"\n{'='*70}")
+        print(f"SUMMARY: Generated {generator.stats['summary']['atlases_generated']} atlas(es)")
+        print(f"{'='*70}\n")
+        return 0
+    else:
+        print("\n[FAILED] Generation did not complete successfully.\n")
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

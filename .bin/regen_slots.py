@@ -4,10 +4,10 @@ Composites item icons onto button backgrounds to produce themed inventory and eq
 slot textures for each variant in Options/Slots/.
 
 Config is split across two files:
-  .bin/regen_slots.json              -- Master layout: which dragitem maps to which output slot.
-                                        Shared across ALL variants. Do not add colors here.
-  <variant>/.regen_slots.json        -- Variant styling: gradient_presets, default_button,
-                                        default_item, button_grid, item_overrides.
+    Options/Slots/.Master/.regen_slots.json  -- Master layout: which dragitem maps to which output slot.
+                                                                                         Shared across ALL variants. Do not add colors here.
+    <variant>/.regen_slots.json              -- Variant styling: gradient_presets, default_button,
+                                                                                         default_item, button_grid, item_overrides.
 
 Each variant directory must also contain:
   <source_items>      -- Item icon atlas (default: item_atlas_thorne01.tga, copied from .Master/)
@@ -17,6 +17,8 @@ Usage:
   python regen_slots.py --all                  # Auto-discover all configured variants
   python regen_slots.py Gold                   # Single variant
   python regen_slots.py Gold Silver Metal      # Multiple variants
+    python regen_slots.py --all-combos           # All class/theme combos (.Master/.Themes)
+    python regen_slots.py --class Caster --theme Gold
   python regen_slots.py --help                 # Show help
 
 Output (per variant):
@@ -35,7 +37,14 @@ from pathlib import Path
 from PIL import Image
 
 CONFIG_FILENAME = ".regen_slots.json"
-MASTER_CONFIG_PATH = Path(__file__).resolve().parent / "regen_slots.json"
+MASTER_CONFIG_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "thorne_drak"
+    / "Options"
+    / "Slots"
+    / ".Master"
+    / CONFIG_FILENAME
+)
 OUTPUT_FILENAME = "item_slots_thorne01.tga"
 STATS_FILENAME = ".regen_slots-stats.json"
 
@@ -269,10 +278,23 @@ def composite_item_on_button(
 class SlotGenerator:
     """Composites item icons onto button backgrounds for one slot variant."""
 
-    def __init__(self, variant_dir: Path) -> None:
+    def __init__(
+        self,
+        variant_dir: Path,
+        config_file: Path | None = None,
+        output_dir: Path | None = None,
+        master_dir: Path | None = None,
+        items_dir: Path | None = None,
+        buttons_dir: Path | None = None,
+        variant_name: str | None = None,
+    ) -> None:
         self.variant_dir = variant_dir
-        self.variant_name = variant_dir.name
-        self.config_file = variant_dir / CONFIG_FILENAME
+        self.variant_name = variant_name or variant_dir.name
+        self.config_file = config_file or (variant_dir / CONFIG_FILENAME)
+        self.output_dir = output_dir or variant_dir
+        self.master_dir = master_dir or (variant_dir.parent / ".Master")
+        self.items_dir = items_dir
+        self.buttons_dir = buttons_dir
         self.stats: dict = {
             "variant": self.variant_name,
             "timestamp": datetime.now().isoformat(),
@@ -311,17 +333,17 @@ class SlotGenerator:
         source_buttons = variant_config.get("source_buttons", master_config.get("source_buttons", "button_atlas_thorne01.tga"))
 
         # Fallback: if source file not in variant dir, look in .Master/
-        master_dir = self.variant_dir.parent / ".Master"
+        master_dir = self.master_dir
 
         def _resolve_source(filename: str) -> tuple[Image.Image | None, str]:
             """Load a source TGA, falling back to .Master/ if not in variant dir."""
-            p = self.variant_dir / filename
+            p = (self.items_dir or self.variant_dir) / filename
             if p.exists():
                 try:
                     return Image.open(p).convert("RGBA"), "variant"
                 except Exception as e:
                     print(f"  Warning: Could not load {p}: {e}")
-            p2 = master_dir / filename
+            p2 = (self.buttons_dir or master_dir) / filename
             if p2.exists():
                 try:
                     img = Image.open(p2).convert("RGBA")
@@ -504,20 +526,20 @@ class SlotGenerator:
             if overridden_fields:
                 self.stats["summary"]["items_with_overrides"] += 1
 
-        output_file = self.variant_dir / OUTPUT_FILENAME
-        output_atlas.save(output_file, format="TGA")
-        self.stats["output_file"] = str(output_file)
+        out_path = self.output_dir / OUTPUT_FILENAME
+        output_atlas.save(out_path, format="TGA")
+        self.stats["output_file"] = str(out_path.name)
 
         total = self.stats["summary"]["items_total"]
         overridden = self.stats["summary"]["items_with_overrides"]
-        print(f"\n  Created: {output_file.name}  ({output_atlas.size[0]}×{output_atlas.size[1]})")
+        print(f"\n  Created: {out_path.name}  ({output_atlas.size[0]}×{output_atlas.size[1]})")
         print(f"  Items: {total} total, {overridden} with variant overrides (* in list above)")
         print(f"  [OK] Slots complete: {self.variant_name}")
         return True
 
     def save_stats(self) -> None:
         """Write processing statistics to .regen_slots-stats.json."""
-        stats_file = self.variant_dir / STATS_FILENAME
+        stats_file = self.output_dir / STATS_FILENAME
         with open(stats_file, "w", encoding="utf-8") as f:
             json.dump(self.stats, f, indent=2)
 
@@ -542,6 +564,42 @@ def discover_variants(base_dir: Path) -> list[str]:
     return variants
 
 
+def discover_classes(master_dir: Path) -> list[str]:
+    classes: list[str] = []
+    classes_dir = master_dir / ".Classes"
+    if not classes_dir.exists():
+        return classes
+    for item in sorted(classes_dir.iterdir()):
+        if not item.is_dir():
+            continue
+        if item.name.startswith("."):
+            continue
+        if (item / ".regen_thorne.json").exists():
+            classes.append(item.name)
+    return classes
+
+
+def discover_themes(master_dir: Path) -> list[str]:
+    themes: list[str] = []
+    themes_dir = master_dir / ".Themes"
+    if not themes_dir.exists():
+        return themes
+    for item in sorted(themes_dir.iterdir()):
+        if item.is_dir() and (item / CONFIG_FILENAME).exists():
+            themes.append(item.name)
+    return themes
+
+
+def resolve_class_dir(master_dir: Path, class_name: str | None) -> tuple[str, Path]:
+    if not class_name or class_name.strip().lower() in {"base", "master", ".master", "default"}:
+        return "Base", master_dir
+    return class_name, master_dir / ".Classes" / class_name
+
+
+def resolve_theme_dir(master_dir: Path, theme_name: str) -> Path:
+    return master_dir / ".Themes" / theme_name
+
+
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
@@ -556,10 +614,17 @@ Examples:
   python regen_slots.py --all              # All configured variants
   python regen_slots.py Gold               # Single variant
   python regen_slots.py Gold Silver Metal  # Multiple variants
+    python regen_slots.py --all-combos        # All class/theme combos
+    python regen_slots.py --class Caster --theme Gold
 
 Note: Each variant directory must contain a .regen_slots.json config file.
 Source files (item/button atlases) should be copied from Options/Slots/.Master/
 before running this script.
+
+    Combo mode notes:
+    - Themes live in Options/Slots/.Master/.Themes/<Theme>/.regen_slots.json
+    - Classes live in Options/Slots/.Master/.Classes/<Class>/ with item_atlas_thorne01.tga
+    - Output is written to Options/Slots/<Class>/<Theme>/
         """,
     )
 
@@ -573,11 +638,28 @@ before running this script.
         action="store_true",
         help="Process all auto-discovered variants (requires .regen_slots.json in each)",
     )
+    parser.add_argument(
+        "--class",
+        dest="class_name",
+        help="Class name under .Master/ (for class/theme combos). Use 'Base' for .Master.",
+    )
+    parser.add_argument(
+        "--theme",
+        dest="theme_name",
+        help="Theme name under .Master/.Themes (for class/theme combos)",
+    )
+    parser.add_argument(
+        "--all-combos",
+        action="store_true",
+        help="Generate all class/theme combos from .Master and .Master/.Themes",
+    )
 
     args = parser.parse_args()
 
     script_dir = Path(__file__).parent
     base_dir = script_dir.parent
+
+    combo_mode = bool(args.all_combos or args.class_name or args.theme_name)
 
     if args.all:
         variants = discover_variants(base_dir)
@@ -586,28 +668,81 @@ before running this script.
             print(f"  Each variant directory needs a {CONFIG_FILENAME} config file.")
             return 1
         print(f"Auto-discovered {len(variants)} variant(s): {', '.join(variants)}")
-    elif args.variants:
+    elif args.variants and not combo_mode:
         variants = args.variants
-    else:
+    elif not combo_mode:
         parser.print_help()
         return 1
+    else:
+        variants = []
 
     success_count = 0
     total_count = len(variants)
     regenerated_variants: list[tuple[str, Path]] = []
 
-    for variant in variants:
-        variant_dir = base_dir / "thorne_drak" / "Options" / "Slots" / variant
+    if combo_mode:
+        master_dir = base_dir / "thorne_drak" / "Options" / "Slots" / ".Master"
+        if not master_dir.exists():
+            print(f"ERROR: Master directory not found: {master_dir}")
+            return 1
 
-        if not variant_dir.exists():
-            print(f"\nERROR: Variant directory not found: {variant_dir}")
-            continue
+        classes = discover_classes(master_dir) if args.all_combos or not args.class_name else [args.class_name]
+        themes = discover_themes(master_dir) if args.all_combos or not args.theme_name else [args.theme_name]
 
-        generator = SlotGenerator(variant_dir)
-        if generator.generate():
-            generator.save_stats()
-            success_count += 1
-            regenerated_variants.append((variant, variant_dir))
+        if not themes:
+            print(f"ERROR: No themes found under {master_dir / '.Themes'}")
+            return 1
+
+        if not classes:
+            classes = ["Base"]
+
+        total_count = len(classes) * len(themes)
+        for class_name in classes:
+            resolved_class_name, class_dir = resolve_class_dir(master_dir, class_name)
+            if not class_dir.exists():
+                print(f"\nERROR: Class directory not found: {class_dir}")
+                continue
+            for theme_name in themes:
+                theme_dir = resolve_theme_dir(master_dir, theme_name)
+                if not theme_dir.exists():
+                    print(f"\nERROR: Theme directory not found: {theme_dir}")
+                    continue
+
+                output_dir = base_dir / "thorne_drak" / "Options" / "Slots" / resolved_class_name / theme_name
+                output_dir.mkdir(parents=True, exist_ok=True)
+
+                generator = SlotGenerator(
+                    variant_dir=theme_dir,
+                    config_file=theme_dir / CONFIG_FILENAME,
+                    output_dir=output_dir,
+                    master_dir=master_dir,
+                    items_dir=class_dir,
+                    buttons_dir=master_dir,
+                    variant_name=f"{resolved_class_name}/{theme_name}",
+                )
+                if generator.generate():
+                    generator.save_stats()
+                    success_count += 1
+        regenerated_variants = []
+    else:
+        for variant in variants:
+            variant_dir = base_dir / "thorne_drak" / "Options" / "Slots" / variant
+
+            if not variant_dir.exists():
+                print(f"\nERROR: Variant directory not found: {variant_dir}")
+                continue
+
+            generator = SlotGenerator(variant_dir)
+            if generator.generate():
+                generator.save_stats()
+                success_count += 1
+                regenerated_variants.append((variant, variant_dir))
+
+    if combo_mode:
+        print(f"\n{'='*70}")
+        print(f"SUMMARY: {success_count}/{total_count} combo(s) processed successfully")
+        print(f"{'='*70}\n")
+        return 0 if success_count == total_count else 1
 
     # Smart copyback: single variant → copy it; multiple → copy Gold (primary)
     variants_to_copy: list[tuple[str, Path]] = []

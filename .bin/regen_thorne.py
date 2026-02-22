@@ -5,10 +5,11 @@ grayscale item icon atlases. Output (thorne_item01.tga + variants) is consumed b
 regen_slots.py to generate finished slot textures.
 
 Usage:
-  python regen_thorne.py                       # Default: .Master directory
-  python regen_thorne.py .Master               # Explicit directory
-    python regen_thorne.py --all-classes         # .Master + class overrides under .Master/
-  python regen_thorne.py --help                # Show help
+    python regen_thorne.py                       # Default: .Master directory
+    python regen_thorne.py .Master               # Explicit directory
+    python regen_thorne.py --class Thorne        # Generate a single class override
+    python regen_thorne.py --all-classes         # .Master + class overrides under .Master/.Classes/
+    python regen_thorne.py --help                # Show help
 
 Inputs (per directory):
   .regen_thorne.json       -- Item grid layout config
@@ -106,14 +107,22 @@ def to_inverted_impression_rgba(
     return out
 
 
-def load_sources(directory: Path) -> dict[str, Image.Image]:
-    """Load all TGA source files from a directory."""
+def load_sources(directory: Path, fallback_dir: Path | None = None) -> dict[str, Image.Image]:
+    """Load all TGA source files from a directory, with optional fallback."""
     sources: dict[str, Image.Image] = {}
     for path in directory.glob("*.tga"):
         try:
             sources[path.name] = Image.open(path).convert("RGBA")
         except Exception:
             continue
+    if fallback_dir and fallback_dir.exists() and fallback_dir != directory:
+        for path in fallback_dir.glob("*.tga"):
+            if path.name in sources:
+                continue
+            try:
+                sources[path.name] = Image.open(path).convert("RGBA")
+            except Exception:
+                continue
     return sources
 
 
@@ -136,11 +145,13 @@ class ThorneGenerator:
         directory: Path,
         config_override: dict | None = None,
         source_dir: Path | None = None,
+        fallback_dir: Path | None = None,
     ) -> None:
         self.directory = directory
         self.config_file = directory / CONFIG_FILENAME
         self.config_override = config_override
         self.source_dir = source_dir or directory
+        self.fallback_dir = fallback_dir
         self.stats: dict = {
             "directory": str(directory.name),
             "timestamp": datetime.now().isoformat(),
@@ -279,7 +290,7 @@ class ThorneGenerator:
         items = config.get("items", [])
         variants = config.get("variants", [])
 
-        sources = load_sources(self.source_dir)
+        sources = load_sources(self.source_dir, fallback_dir=self.fallback_dir)
 
         if not items:
             print("  ERROR: Config has no items to render.")
@@ -376,12 +387,13 @@ def _merge_config(base: dict, override: dict) -> dict:
 
 def _discover_class_overrides(master_dir: Path) -> list[Path]:
     class_dirs: list[Path] = []
-    for item in sorted(master_dir.iterdir()):
+    classes_dir = master_dir / ".Classes"
+    if not classes_dir.exists():
+        return class_dirs
+    for item in sorted(classes_dir.iterdir()):
         if not item.is_dir():
             continue
         if item.name.startswith("."):
-            continue
-        if item.name.lower() == ".themes":
             continue
         if (item / CONFIG_FILENAME).exists():
             class_dirs.append(item)
@@ -398,7 +410,8 @@ Examples:
   python regen_thorne.py                    # Default: .Master directory
   python regen_thorne.py .Master            # Explicit directory
   python regen_thorne.py CustomVariant      # Custom variant directory
-    python regen_thorne.py --all-classes       # .Master + class overrides under .Master/
+    python regen_thorne.py --class Thorne      # Generate a single class override
+        python regen_thorne.py --all-classes       # .Master + class overrides under .Master/.Classes/
 
 Directory must contain .regen_thorne.json config file and source dragitem TGA files.
         """,
@@ -411,9 +424,14 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         help="Target directory name within Options/Slots/ (default: .Master)",
     )
     parser.add_argument(
+        "--class",
+        dest="class_name",
+        help="Class name under .Master/.Classes to generate (uses base + class overrides).",
+    )
+    parser.add_argument(
         "--all-classes",
         action="store_true",
-        help="Generate atlases for .Master and all class overrides under .Master/",
+        help="Generate atlases for .Master and all class overrides under .Master/.Classes/",
     )
 
     args = parser.parse_args()
@@ -423,12 +441,56 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
     slots_dir = base_dir / "thorne_drak" / "Options" / "Slots"
     target_dir = slots_dir / args.directory
 
+    if args.all_classes and args.class_name:
+        print("ERROR: Use --class or --all-classes, not both.")
+        return 1
+
+    if args.class_name:
+        master_dir = slots_dir / ".Master"
+        class_dir = master_dir / ".Classes" / args.class_name
+        if not master_dir.exists():
+            print(f"ERROR: Master directory not found: {master_dir}")
+            return 1
+        if not class_dir.exists():
+            print(f"ERROR: Class directory not found: {class_dir}")
+            return 1
+
+        base_config_path = master_dir / CONFIG_FILENAME
+        class_config_path = class_dir / CONFIG_FILENAME
+        if not base_config_path.exists():
+            print(f"ERROR: Config not found: {base_config_path}")
+            return 1
+        if not class_config_path.exists():
+            print(f"ERROR: Config not found: {class_config_path}")
+            return 1
+
+        with open(base_config_path, "r", encoding="utf-8") as f:
+            base_config = json.load(f)
+        with open(class_config_path, "r", encoding="utf-8") as f:
+            class_config = json.load(f)
+
+        merged_config = _merge_config(base_config, class_config)
+        generator = ThorneGenerator(
+            class_dir,
+            config_override=merged_config,
+            source_dir=master_dir / ".Items",
+            fallback_dir=master_dir,
+        )
+        if generator.generate():
+            generator.save_stats()
+            print(f"\n{'='*70}")
+            print(f"SUMMARY: Generated {generator.stats['summary']['atlases_generated']} atlas(es)")
+            print(f"{'='*70}\n")
+            return 0
+        print("\n[FAILED] Generation did not complete successfully.\n")
+        return 1
+
     if not target_dir.exists():
         print(f"ERROR: Directory not found: {target_dir}")
         return 1
 
     if args.all_classes:
-        master_dir = target_dir
+        master_dir = slots_dir / ".Master"
         base_config_path = master_dir / CONFIG_FILENAME
         if not base_config_path.exists():
             print(f"ERROR: Config not found: {base_config_path}")
@@ -463,7 +525,7 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         print(f"{'='*70}\n")
         return 0 if success == total else 1
 
-    generator = ThorneGenerator(target_dir, source_dir=target_dir / ".Items")
+    generator = ThorneGenerator(target_dir, source_dir=target_dir / ".Items", fallback_dir=target_dir)
     if generator.generate():
         generator.save_stats()
         print(f"\n{'='*70}")

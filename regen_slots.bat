@@ -3,6 +3,7 @@ REM regen_slots.bat - Wrapper to run .bin\regen_slots.py from PowerShell/CMD
 REM Usage:
 REM   regen_slots.bat                                      (Regenerate all slot variants)
 REM   regen_slots.bat --all
+REM   regen_slots.bat --all-combos                         (All class/theme combos)
 REM   regen_slots.bat Gold
 REM   regen_slots.bat Metal Patriot
 

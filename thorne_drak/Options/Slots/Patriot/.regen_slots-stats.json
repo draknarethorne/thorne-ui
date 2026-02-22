@@ -1,6 +1,6 @@
 {
   "variant": "Patriot",
-  "timestamp": "2026-02-22T12:57:19.620738",
+  "timestamp": "2026-02-22T13:01:45.028035",
   "summary": {
     "items_total": 36,
     "items_with_overrides": 16,
@@ -14,18 +14,18 @@
       "name": "ear",
       "out_row": 1,
       "out_col": 1,
-      "gradient": "gold",
+      "gradient": "silver",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        214,
+        220,
+        228
       ],
       "bottom_color": [
-        173,
-        140,
-        62
+        132,
+        142,
+        156
       ],
       "middle_color": null,
       "fit_size": 28,
@@ -49,18 +49,18 @@
       "name": "neck",
       "out_row": 1,
       "out_col": 2,
-      "gradient": "gold",
+      "gradient": "silver",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        214,
+        220,
+        228
       ],
       "bottom_color": [
-        173,
-        140,
-        62
+        132,
+        142,
+        156
       ],
       "middle_color": null,
       "fit_size": 28,
@@ -495,18 +495,18 @@
       "name": "fingers",
       "out_row": 3,
       "out_col": 2,
-      "gradient": "gold",
+      "gradient": "silver",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        214,
+        220,
+        228
       ],
       "bottom_color": [
-        173,
-        140,
-        62
+        132,
+        142,
+        156
       ],
       "middle_color": null,
       "fit_size": 34,
@@ -682,18 +682,18 @@
       "name": "bag",
       "out_row": 4,
       "out_col": 1,
-      "gradient": "gold",
+      "gradient": "bronze",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        210,
+        150,
+        80
       ],
       "bottom_color": [
-        173,
         140,
-        62
+        90,
+        40
       ],
       "middle_color": null,
       "fit_size": 34,
@@ -717,18 +717,18 @@
       "name": "pack",
       "out_row": 4,
       "out_col": 2,
-      "gradient": "gold",
+      "gradient": "bronze",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        210,
+        150,
+        80
       ],
       "bottom_color": [
-        173,
         140,
-        62
+        90,
+        40
       ],
       "middle_color": null,
       "fit_size": 36,
@@ -752,18 +752,18 @@
       "name": "satchel",
       "out_row": 4,
       "out_col": 3,
-      "gradient": "gold",
+      "gradient": "bronze",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        210,
+        150,
+        80
       ],
       "bottom_color": [
-        173,
         140,
-        62
+        90,
+        40
       ],
       "middle_color": null,
       "fit_size": 34,
@@ -1157,18 +1157,22 @@
       "out_col": 2,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",

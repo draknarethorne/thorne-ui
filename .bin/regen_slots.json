@@ -86,18 +86,11 @@
       ]
     },
     "shadow": {
-      "_comment": "Dark desaturated fade, subtle on dark buttons",
-      "type": "vertical",
-      "top_color": [
-        160,
-        155,
-        145
-      ],
-      "bottom_color": [
-        80,
-        75,
-        70
-      ]
+      "_comment": "Dark to light gray middle to dark diagonal blend. Shows nice tonal transition.",
+      "type": "diagonal_tl",
+      "top_color": [80, 75, 70],
+      "middle_color": [180, 180, 180],
+      "bottom_color": [80, 75, 70]
     },
     "gold_h": {
       "_comment": "Gold gradient left to right (horizontal). Good for wide accent slots.",

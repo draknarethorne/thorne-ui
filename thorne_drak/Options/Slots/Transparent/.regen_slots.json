@@ -20,5 +20,12 @@
     "offset_y": 1,
     "item_opacity": 0.35
   },
-  "item_overrides": {}
+  "item_overrides": {
+    "logo_1": { "gradient": "none" },
+    "logo_2": { "gradient": "logo" },
+    "logo_3": { "gradient": "logo" },
+    "logo_4": { "gradient": "logo" },
+    "logo_5": { "gradient": "logo" },
+    "logo_6": { "gradient": "logo" }
+  }
 }

@@ -4,10 +4,10 @@ REM Converts mislabeled PNG files (with .tga extension) to proper TGA format
 REM
 REM Usage:
 REM   fix_tga_files.bat                                        (Default: --scan . recursively from current dir)
-REM   fix_tga_files.bat gauge_pieces01.tga                    (Fix single file)
+REM   fix_tga_files.bat gauge_inlay_thorne01.tga                    (Fix single file)
 REM   fix_tga_files.bat thorne_drak\Options\Gauges            (Fix directory, non-recursive)
 REM   fix_tga_files.bat --scan thorne_drak                    (Recursively scan and fix from thorne_drak)
-REM   fix_tga_files.bat --check gauge_pieces01.tga            (Check single file without converting)
+REM   fix_tga_files.bat --check gauge_inlay_thorne01.tga            (Check single file without converting)
 REM   fix_tga_files.bat --check --scan .                      (Check all files recursively)
 
 setlocal

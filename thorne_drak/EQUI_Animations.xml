@@ -98,55 +98,55 @@
       <CY>256</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_pieces01.tga">
+  <TextureInfo item="gauge_inlay_thorne01.tga">
     <Size>
       <CX>103</CX>
       <CY>32</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_120t_pieces01.tga">
+  <TextureInfo item="gauge_inlay120t_thorne01.tga">
     <Size>
       <CX>120</CX>
       <CY>64</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_120_pieces01.tga">
+  <TextureInfo item="gauge_inlay120_thorne01.tga">
     <Size>
       <CX>120</CX>
       <CY>32</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_150t_pieces01.tga">
+  <TextureInfo item="gauge_inlay150t_thorne01.tga">
     <Size>
       <CX>150</CX>
       <CY>64</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_150_pieces01.tga">
+  <TextureInfo item="gauge_inlay150_thorne01.tga">
     <Size>
       <CX>150</CX>
       <CY>32</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_230t_pieces01.tga">
+  <TextureInfo item="gauge_inlay230t_thorne01.tga">
     <Size>
       <CX>230</CX>
       <CY>64</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_240t_pieces01.tga">
+  <TextureInfo item="gauge_inlay240t_thorne01.tga">
     <Size>
       <CX>240</CX>
       <CY>64</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_250t_pieces01.tga">
+  <TextureInfo item="gauge_inlay250t_thorne01.tga">
     <Size>
       <CX>250</CX>
       <CY>64</CY>
     </Size>
   </TextureInfo>
-  <TextureInfo item="gauge_260t_pieces01.tga">
+  <TextureInfo item="gauge_inlay260t_thorne01.tga">
     <Size>
       <CX>260</CX>
       <CY>64</CY>
@@ -5137,7 +5137,7 @@
   <Ui2DAnimation item="A_GaugeBackground">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01.tga</Texture>
+      <Texture>gauge_inlay_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5156,7 +5156,7 @@
   <Ui2DAnimation item="A_GaugeFill">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01.tga</Texture>
+      <Texture>gauge_inlay_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>8</Y>
@@ -5175,7 +5175,7 @@
   <Ui2DAnimation item="A_GaugeLines">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01.tga</Texture>
+      <Texture>gauge_inlay_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5194,7 +5194,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01.tga</Texture>
+      <Texture>gauge_inlay_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>24</Y>
@@ -5215,7 +5215,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_120t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120t_pieces01.tga</Texture>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>48</Y>
@@ -5234,7 +5234,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_150t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150t_pieces01.tga</Texture>
+      <Texture>gauge_inlay150t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>48</Y>
@@ -5253,7 +5253,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_230t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_230t_pieces01.tga</Texture>
+      <Texture>gauge_inlay230t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>48</Y>
@@ -5272,7 +5272,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_240t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_240t_pieces01.tga</Texture>
+      <Texture>gauge_inlay240t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>48</Y>
@@ -5291,7 +5291,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_250t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_250t_pieces01.tga</Texture>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>48</Y>
@@ -5310,7 +5310,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_260t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_260t_pieces01.tga</Texture>
+      <Texture>gauge_inlay260t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>48</Y>
@@ -5331,7 +5331,7 @@
   <Ui2DAnimation item="A_GaugeTick">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_pieces01.tga</Texture>
+      <Texture>gauge_inlay_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>29</Y>
@@ -5350,7 +5350,7 @@
   <Ui2DAnimation item="A_GaugeTick_120">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120_pieces01.tga</Texture>
+      <Texture>gauge_inlay120_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>29</Y>
@@ -5369,7 +5369,7 @@
   <Ui2DAnimation item="A_GaugeTick_150">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150_pieces01.tga</Texture>
+      <Texture>gauge_inlay150_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>29</Y>
@@ -5388,7 +5388,7 @@
   <Ui2DAnimation item="A_GaugeTick_120t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120t_pieces01.tga</Texture>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>61</Y>
@@ -5407,7 +5407,7 @@
   <Ui2DAnimation item="A_GaugeTick_150t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150t_pieces01.tga</Texture>
+      <Texture>gauge_inlay150t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>61</Y>
@@ -5426,7 +5426,7 @@
   <Ui2DAnimation item="A_GaugeTick_230t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_230t_pieces01.tga</Texture>
+      <Texture>gauge_inlay230t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>61</Y>
@@ -5445,7 +5445,7 @@
   <Ui2DAnimation item="A_GaugeTick_240t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_240t_pieces01.tga</Texture>
+      <Texture>gauge_inlay240t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>61</Y>
@@ -5464,7 +5464,7 @@
   <Ui2DAnimation item="A_GaugeTick_250t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_250t_pieces01.tga</Texture>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>61</Y>
@@ -5483,7 +5483,7 @@
   <Ui2DAnimation item="A_GaugeTick_260t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_260t_pieces01.tga</Texture>
+      <Texture>gauge_inlay260t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>61</Y>
@@ -5543,7 +5543,7 @@
   <Ui2DAnimation item="A_GaugeBackground_120t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120t_pieces01.tga</Texture>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5562,7 +5562,7 @@
   <Ui2DAnimation item="A_GaugeFill_120t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120t_pieces01.tga</Texture>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5581,7 +5581,7 @@
   <Ui2DAnimation item="A_GaugeLines_120t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120t_pieces01.tga</Texture>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>32</Y>
@@ -5600,7 +5600,7 @@
   <Ui2DAnimation item="A_GaugeBackground_150t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150t_pieces01.tga</Texture>
+      <Texture>gauge_inlay150t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5619,7 +5619,7 @@
   <Ui2DAnimation item="A_GaugeFill_150t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150t_pieces01.tga</Texture>
+      <Texture>gauge_inlay150t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5638,7 +5638,7 @@
   <Ui2DAnimation item="A_GaugeLines_150t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150t_pieces01.tga</Texture>
+      <Texture>gauge_inlay150t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>32</Y>
@@ -5657,7 +5657,7 @@
   <Ui2DAnimation item="A_GaugeBackground_230t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_230t_pieces01.tga</Texture>
+      <Texture>gauge_inlay230t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5676,7 +5676,7 @@
   <Ui2DAnimation item="A_GaugeFill_230t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_230t_pieces01.tga</Texture>
+      <Texture>gauge_inlay230t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5695,7 +5695,7 @@
   <Ui2DAnimation item="A_GaugeLines_230t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_230t_pieces01.tga</Texture>
+      <Texture>gauge_inlay230t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>32</Y>
@@ -5714,7 +5714,7 @@
   <Ui2DAnimation item="A_GaugeBackground_240t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_240t_pieces01.tga</Texture>
+      <Texture>gauge_inlay240t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5733,7 +5733,7 @@
   <Ui2DAnimation item="A_GaugeFill_240t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_240t_pieces01.tga</Texture>
+      <Texture>gauge_inlay240t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5752,7 +5752,7 @@
   <Ui2DAnimation item="A_GaugeLines_240t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_240t_pieces01.tga</Texture>
+      <Texture>gauge_inlay240t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>32</Y>
@@ -5771,7 +5771,7 @@
   <Ui2DAnimation item="A_GaugeBackground_250t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_250t_pieces01.tga</Texture>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5790,7 +5790,7 @@
   <Ui2DAnimation item="A_GaugeFill_250t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_250t_pieces01.tga</Texture>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5809,7 +5809,7 @@
   <Ui2DAnimation item="A_GaugeLines_250t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_250t_pieces01.tga</Texture>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>32</Y>
@@ -5828,7 +5828,7 @@
   <Ui2DAnimation item="A_GaugeBackground_260t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_260t_pieces01.tga</Texture>
+      <Texture>gauge_inlay260t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5847,7 +5847,7 @@
   <Ui2DAnimation item="A_GaugeFill_260t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_260t_pieces01.tga</Texture>
+      <Texture>gauge_inlay260t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5866,7 +5866,7 @@
   <Ui2DAnimation item="A_GaugeLines_260t">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_260t_pieces01.tga</Texture>
+      <Texture>gauge_inlay260t_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>32</Y>
@@ -5886,7 +5886,7 @@
   <Ui2DAnimation item="A_GaugeBackground_120">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120_pieces01.tga</Texture>
+      <Texture>gauge_inlay120_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5905,7 +5905,7 @@
   <Ui2DAnimation item="A_GaugeFill_120">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120_pieces01.tga</Texture>
+      <Texture>gauge_inlay120_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>8</Y>
@@ -5924,7 +5924,7 @@
   <Ui2DAnimation item="A_GaugeLines_120">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120_pieces01.tga</Texture>
+      <Texture>gauge_inlay120_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -5943,7 +5943,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_120">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_120_pieces01.tga</Texture>
+      <Texture>gauge_inlay120_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>24</Y>
@@ -5963,7 +5963,7 @@
   <Ui2DAnimation item="A_GaugeBackground_150">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150_pieces01.tga</Texture>
+      <Texture>gauge_inlay150_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -5982,7 +5982,7 @@
   <Ui2DAnimation item="A_GaugeFill_150">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150_pieces01.tga</Texture>
+      <Texture>gauge_inlay150_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>8</Y>
@@ -6001,7 +6001,7 @@
   <Ui2DAnimation item="A_GaugeLines_150">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150_pieces01.tga</Texture>
+      <Texture>gauge_inlay150_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>16</Y>
@@ -6020,7 +6020,7 @@
   <Ui2DAnimation item="A_GaugeLinesFill_150">
     <Cycle>true</Cycle>
     <Frames>
-      <Texture>gauge_150_pieces01.tga</Texture>
+      <Texture>gauge_inlay150_thorne01.tga</Texture>
       <Location>
         <X>0</X>
         <Y>24</Y>

@@ -287,6 +287,7 @@ class SlotGenerator:
         items_dir: Path | None = None,
         buttons_dir: Path | None = None,
         variant_name: str | None = None,
+        verbose: bool = False,
     ) -> None:
         self.variant_dir = variant_dir
         self.variant_name = variant_name or variant_dir.name
@@ -307,6 +308,22 @@ class SlotGenerator:
             "output_file": None,
             "errors": [],
         }
+        self.verbose = verbose
+        self._dot_count = 0
+        self._dot_line_open = False
+
+    def _progress_dot(self) -> None:
+        print(".", end="", flush=True)
+        self._dot_count += 1
+        self._dot_line_open = True
+        if self._dot_count % 80 == 0:
+            print()
+            self._dot_line_open = False
+
+    def _ensure_newline(self) -> None:
+        if self._dot_line_open:
+            print()
+            self._dot_line_open = False
 
     def generate(self) -> bool:
         """Run the full compositing pipeline. Returns True on success."""
@@ -486,14 +503,17 @@ class SlotGenerator:
 
             # Console output — flag overrides with a marker
             override_marker = " *" if overridden_fields else ""
-            print(
-                f"  {item_name:12s} @ ({out_x:3d},{out_y:3d})  "
-                f"gradient={gradient_name:<8s}[{gradient_name_src[0]}]  "
-                f"fit={fit_size:2d}[{fit_size_src[0]}]  "
-                f"mode={fit_mode}[{fit_mode_src[0]}]  "
-                f"btn_col={button_col+1}[{button_col_src[0]}]"
-                f"{override_marker}"
-            )
+            if self.verbose:
+                print(
+                    f"  {item_name:12s} @ ({out_x:3d},{out_y:3d})  "
+                    f"gradient={gradient_name:<8s}[{gradient_name_src[0]}]  "
+                    f"fit={fit_size:2d}[{fit_size_src[0]}]  "
+                    f"mode={fit_mode}[{fit_mode_src[0]}]  "
+                    f"btn_col={button_col+1}[{button_col_src[0]}]"
+                    f"{override_marker}"
+                )
+            else:
+                self._progress_dot()
 
             # Per-item stats record
             item_stat: dict = {
@@ -532,6 +552,7 @@ class SlotGenerator:
 
         total = self.stats["summary"]["items_total"]
         overridden = self.stats["summary"]["items_with_overrides"]
+        self._ensure_newline()
         print(f"\n  Created: {out_path.name}  ({output_atlas.size[0]}×{output_atlas.size[1]})")
         print(f"  Items: {total} total, {overridden} with variant overrides (* in list above)")
         print(f"  [OK] Slots complete: {self.variant_name}")
@@ -653,6 +674,11 @@ before running this script.
         action="store_true",
         help="Generate all class/theme combos from .Master and .Master/.Themes",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show detailed per-item output (default is compact progress dots).",
+    )
 
     args = parser.parse_args()
 
@@ -719,6 +745,7 @@ before running this script.
                     items_dir=class_dir,
                     buttons_dir=master_dir,
                     variant_name=f"{resolved_class_name}/{theme_name}",
+                    verbose=args.verbose,
                 )
                 if generator.generate():
                     generator.save_stats()
@@ -732,7 +759,7 @@ before running this script.
                 print(f"\nERROR: Variant directory not found: {variant_dir}")
                 continue
 
-            generator = SlotGenerator(variant_dir)
+            generator = SlotGenerator(variant_dir, verbose=args.verbose)
             if generator.generate():
                 generator.save_stats()
                 success_count += 1

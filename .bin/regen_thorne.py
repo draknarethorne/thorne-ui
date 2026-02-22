@@ -146,6 +146,7 @@ class ThorneGenerator:
         config_override: dict | None = None,
         source_dir: Path | None = None,
         fallback_dir: Path | None = None,
+        verbose: bool = False,
     ) -> None:
         self.directory = directory
         self.config_file = directory / CONFIG_FILENAME
@@ -163,6 +164,22 @@ class ThorneGenerator:
             "output_files": [],
             "errors": [],
         }
+        self.verbose = verbose
+        self._dot_count = 0
+        self._dot_line_open = False
+
+    def _progress_dot(self) -> None:
+        print(".", end="", flush=True)
+        self._dot_count += 1
+        self._dot_line_open = True
+        if self._dot_count % 80 == 0:
+            print()
+            self._dot_line_open = False
+
+    def _ensure_newline(self) -> None:
+        if self._dot_line_open:
+            print()
+            self._dot_line_open = False
 
     def render_item(
         self,
@@ -243,7 +260,10 @@ class ThorneGenerator:
                 y = out_row * output_cell_size
                 atlas.alpha_composite(tile, (x, y))
 
-                print(f"  [{atlas_name:6s}] {name:12s} @ ({x:3d},{y:3d})")
+                if self.verbose:
+                    print(f"  [{atlas_name:6s}] {name:12s} @ ({x:3d},{y:3d})")
+                else:
+                    self._progress_dot()
 
                 # Per-item stats
                 item_stat = {
@@ -303,6 +323,7 @@ class ThorneGenerator:
         )
         out_base = self.directory / base_output_filename
         atlas.save(out_base, format="TGA")
+        self._ensure_newline()
         self.stats["output_files"].append(str(out_base.name))
         self.stats["summary"]["atlases_generated"] += 1
         print(f"\n  Created: {out_base.name}  ({atlas.size[0]}×{atlas.size[1]})")
@@ -320,6 +341,7 @@ class ThorneGenerator:
             )
             out_variant = self.directory / variant_output_filename
             variant_atlas.save(out_variant, format="TGA")
+            self._ensure_newline()
             self.stats["output_files"].append(str(out_variant.name))
             self.stats["summary"]["atlases_generated"] += 1
             print(f"\n  Created: {out_variant.name}  ({variant_atlas.size[0]}×{variant_atlas.size[1]})")
@@ -433,6 +455,11 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         action="store_true",
         help="Generate atlases for .Master and all class overrides under .Master/.Classes/",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show detailed per-item output (default is compact progress dots).",
+    )
 
     args = parser.parse_args()
 
@@ -475,6 +502,7 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
             config_override=merged_config,
             source_dir=master_dir / ".Items",
             fallback_dir=master_dir,
+            verbose=args.verbose,
         )
         if generator.generate():
             generator.save_stats()
@@ -504,7 +532,7 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
 
         # Generate base .Master
         items_dir = master_dir / ".Items"
-        generator = ThorneGenerator(master_dir, source_dir=items_dir)
+        generator = ThorneGenerator(master_dir, source_dir=items_dir, verbose=args.verbose)
         if generator.generate():
             generator.save_stats()
             success += 1
@@ -515,7 +543,12 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
             with open(class_config_path, "r", encoding="utf-8") as f:
                 class_config = json.load(f)
             merged_config = _merge_config(base_config, class_config)
-            generator = ThorneGenerator(class_dir, config_override=merged_config, source_dir=items_dir)
+            generator = ThorneGenerator(
+                class_dir,
+                config_override=merged_config,
+                source_dir=items_dir,
+                verbose=args.verbose,
+            )
             if generator.generate():
                 generator.save_stats()
                 success += 1
@@ -525,7 +558,12 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         print(f"{'='*70}\n")
         return 0 if success == total else 1
 
-    generator = ThorneGenerator(target_dir, source_dir=target_dir / ".Items", fallback_dir=target_dir)
+    generator = ThorneGenerator(
+        target_dir,
+        source_dir=target_dir / ".Items",
+        fallback_dir=target_dir,
+        verbose=args.verbose,
+    )
     if generator.generate():
         generator.save_stats()
         print(f"\n{'='*70}")

@@ -9,7 +9,7 @@ Features:
   - Auto-discovers icon variants from thorne_drak/Options/Icons/
   - Reads icon coordinates from JSON config
   - Extracts icons from spellicon files in source directory (22×22, already correct size)
-  - No resizing needed - spellicons are exactly 22×22
+  - No resizing needed - spell_icons_thorne are exactly 22×22
   - Places in 256x256 template at master layout positions
   - Clean icons (no text overlay)
   - Adds text labels next to icons by default (use --no-labels to turn off)
@@ -84,7 +84,7 @@ class StatIconGenerator:
         
         Args:
             source_dir: Directory containing spellicon files (e.g., thorne_drak/Options/Icons/Thorne)
-            config_path: Path to JSON config file with icon coordinate mappings (source from spellicons)
+            config_path: Path to JSON config file with icon coordinate mappings (source from spell_icons_thorne)
             output_file: Output path for staticons texture file
             add_abbreviations: Whether to add abbreviation labels within icons (default: False - keep icons clean)
             add_labels: Whether to add text labels next to icons (default: True)

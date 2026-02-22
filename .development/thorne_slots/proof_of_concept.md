@@ -123,7 +123,7 @@ and generate option-ready outputs from master files.
 ### 6) `.bin/regen_gems.py`
 
 **Purpose**
-- Generates `gemiconsXX.tga` + `spelliconsXX.tga` from `spellsXX.tga`, then triggers staticon regeneration.
+- Generates `gemiconsXX.tga` + `spell_icons_thorneXX.tga` from `spellsXX.tga`, then triggers staticon regeneration.
 
 **Why relevant**
 - Demonstrates staged pipeline and multi-output generation from one source family.

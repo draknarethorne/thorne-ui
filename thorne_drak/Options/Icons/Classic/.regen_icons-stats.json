@@ -9,7 +9,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 9, col 8"
+      "source": "spell_icons_thorne01.tga @ row 9, col 8"
     },
     "ATK": {
       "position": {
@@ -18,7 +18,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 5, col 0"
+      "source": "spell_icons_thorne01.tga @ row 5, col 0"
     },
     "HP": {
       "position": {
@@ -27,7 +27,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 9, col 9"
+      "source": "spell_icons_thorne01.tga @ row 9, col 9"
     },
     "MANA": {
       "position": {
@@ -36,7 +36,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 1, col 0"
+      "source": "spell_icons_thorne01.tga @ row 1, col 0"
     },
     "STA": {
       "position": {
@@ -45,7 +45,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 0, col 4"
+      "source": "spell_icons_thorne01.tga @ row 0, col 4"
     },
     "Weight": {
       "position": {
@@ -54,7 +54,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons02.tga @ row 2, col 6"
+      "source": "spell_icons_thorne02.tga @ row 2, col 6"
     },
     "Fire": {
       "position": {
@@ -63,7 +63,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 5, col 2"
+      "source": "spell_icons_thorne01.tga @ row 5, col 2"
     },
     "Cold": {
       "position": {
@@ -72,7 +72,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 5, col 7"
+      "source": "spell_icons_thorne01.tga @ row 5, col 7"
     },
     "Magic": {
       "position": {
@@ -81,7 +81,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 6, col 9"
+      "source": "spell_icons_thorne01.tga @ row 6, col 9"
     },
     "Poison": {
       "position": {
@@ -90,7 +90,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 6, col 1"
+      "source": "spell_icons_thorne01.tga @ row 6, col 1"
     },
     "Disease": {
       "position": {
@@ -99,7 +99,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 6, col 5"
+      "source": "spell_icons_thorne01.tga @ row 6, col 5"
     },
     "Reserve": {
       "position": {
@@ -108,7 +108,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons02.tga @ row 2, col 5"
+      "source": "spell_icons_thorne02.tga @ row 2, col 5"
     },
     "STR": {
       "position": {
@@ -117,7 +117,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 0, col 6"
+      "source": "spell_icons_thorne01.tga @ row 0, col 6"
     },
     "INT": {
       "position": {
@@ -126,7 +126,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 1, col 1"
+      "source": "spell_icons_thorne01.tga @ row 1, col 1"
     },
     "WIS": {
       "position": {
@@ -135,7 +135,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 3, col 9"
+      "source": "spell_icons_thorne01.tga @ row 3, col 9"
     },
     "AGI": {
       "position": {
@@ -144,7 +144,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 0, col 9"
+      "source": "spell_icons_thorne01.tga @ row 0, col 9"
     },
     "DEX": {
       "position": {
@@ -153,7 +153,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 0, col 8"
+      "source": "spell_icons_thorne01.tga @ row 0, col 8"
     },
     "CHA": {
       "position": {
@@ -162,7 +162,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spellicons01.tga @ row 1, col 5"
+      "source": "spell_icons_thorne01.tga @ row 1, col 5"
     }
   }
 }

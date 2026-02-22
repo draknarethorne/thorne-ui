@@ -1,6 +1,6 @@
 {
   "variant": "Silver",
-  "timestamp": "2026-02-22T10:17:54.783719",
+  "timestamp": "2026-02-22T11:50:03.568079",
   "summary": {
     "items_total": 36,
     "items_with_overrides": 6,
@@ -1018,8 +1018,8 @@
         80
       ],
       "middle_color": null,
-      "fit_size": 28,
-      "fit_size_source": "default_item",
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
       "button_col": 1,

@@ -228,7 +228,7 @@
       "name": "logo_1",
       "item_row": 6, "item_col": 1,
       "out_row": 6, "out_col": 1,
-      "offset_y": -2
+      "fit_size": 34, "offset_y": -2
     },
     {
       "name": "logo_2",

@@ -1,9 +1,9 @@
 {
   "variant": "Patriot",
-  "timestamp": "2026-02-22T10:17:54.693858",
+  "timestamp": "2026-02-22T11:50:02.874612",
   "summary": {
     "items_total": 36,
-    "items_with_overrides": 16,
+    "items_with_overrides": 14,
     "source_files": {
       "item_atlas_thorne01.tga": "master",
       "button_atlas_thorne01.tga": "master"
@@ -341,20 +341,24 @@
       "name": "wrist",
       "out_row": 2,
       "out_col": 4,
-      "gradient": "gold",
-      "gradient_source": "variant_override",
+      "gradient": "patriot",
+      "gradient_source": "default_button",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        200,
+        50,
+        50
       ],
       "bottom_color": [
-        173,
-        140,
-        62
+        50,
+        90,
+        180
       ],
-      "middle_color": null,
+      "middle_color": [
+        220,
+        220,
+        220
+      ],
       "fit_size": 28,
       "fit_size_source": "default_item",
       "fit_mode": "tile",
@@ -367,29 +371,31 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.92,
       "item_opacity_source": "default_item",
-      "overrides_applied": [
-        "gradient"
-      ],
-      "has_override": true
+      "overrides_applied": [],
+      "has_override": false
     },
     {
       "name": "belt",
       "out_row": 2,
       "out_col": 5,
-      "gradient": "gold",
-      "gradient_source": "variant_override",
+      "gradient": "patriot",
+      "gradient_source": "default_button",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        200,
+        50,
+        50
       ],
       "bottom_color": [
-        173,
-        140,
-        62
+        50,
+        90,
+        180
       ],
-      "middle_color": null,
+      "middle_color": [
+        220,
+        220,
+        220
+      ],
       "fit_size": 28,
       "fit_size_source": "default_item",
       "fit_mode": "tile",
@@ -402,10 +408,8 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.92,
       "item_opacity_source": "default_item",
-      "overrides_applied": [
-        "gradient"
-      ],
-      "has_override": true
+      "overrides_applied": [],
+      "has_override": false
     },
     {
       "name": "range",
@@ -627,18 +631,18 @@
       "name": "ammo",
       "out_row": 3,
       "out_col": 6,
-      "gradient": "shadow",
+      "gradient": "patriot_weapon",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        160,
-        155,
-        145
+        200,
+        50,
+        50
       ],
       "bottom_color": [
-        80,
-        75,
-        70
+        40,
+        60,
+        140
       ],
       "middle_color": null,
       "fit_size": 34,
@@ -662,18 +666,18 @@
       "name": "bag",
       "out_row": 4,
       "out_col": 1,
-      "gradient": "bronze",
+      "gradient": "gold",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        210,
-        150,
-        80
+        232,
+        209,
+        118
       ],
       "bottom_color": [
+        173,
         140,
-        90,
-        40
+        62
       ],
       "middle_color": null,
       "fit_size": 35,
@@ -1118,8 +1122,8 @@
         80
       ],
       "middle_color": null,
-      "fit_size": 28,
-      "fit_size_source": "default_item",
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
       "button_col": 1,
@@ -1139,7 +1143,7 @@
       "name": "logo_2",
       "out_row": 6,
       "out_col": 2,
-      "gradient": "patriot",
+      "gradient": "patriot_weapon",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
@@ -1148,15 +1152,11 @@
         50
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        40,
+        60,
+        140
       ],
-      "middle_color": [
-        220,
-        220,
-        220
-      ],
+      "middle_color": null,
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1217,24 +1217,20 @@
       "name": "logo_4",
       "out_row": 6,
       "out_col": 4,
-      "gradient": "patriot",
+      "gradient": "gold",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        173,
+        140,
+        62
       ],
-      "middle_color": [
-        220,
-        220,
-        220
-      ],
+      "middle_color": null,
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1256,24 +1252,20 @@
       "name": "logo_5",
       "out_row": 6,
       "out_col": 5,
-      "gradient": "patriot",
+      "gradient": "shadow",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        160,
+        155,
+        145
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        80,
+        75,
+        70
       ],
-      "middle_color": [
-        220,
-        220,
-        220
-      ],
+      "middle_color": null,
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1295,24 +1287,20 @@
       "name": "logo_6",
       "out_row": 6,
       "out_col": 6,
-      "gradient": "patriot",
+      "gradient": "bronze",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        210,
+        150,
+        80
       ],
       "bottom_color": [
-        50,
+        140,
         90,
-        180
+        40
       ],
-      "middle_color": [
-        220,
-        220,
-        220
-      ],
+      "middle_color": null,
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",

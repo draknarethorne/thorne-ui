@@ -1,6 +1,6 @@
 {
   "directory": ".Master",
-  "timestamp": "2026-02-22T10:12:54.003247",
+  "timestamp": "2026-02-22T11:46:13.187915",
   "summary": {
     "items_total": 72,
     "atlases_generated": 2
@@ -24,7 +24,7 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "head",
@@ -44,7 +44,7 @@
       "src_row": 3,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "chest",
@@ -84,7 +84,7 @@
       "src_row": 3,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "shoulders",
@@ -104,7 +104,7 @@
       "src_row": 6,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "belt",
@@ -134,7 +134,7 @@
       "src_row": 5,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "fingers",
@@ -172,9 +172,9 @@
       "out_col": 5,
       "source_file": "dragitem3.tga",
       "src_row": 4,
-      "src_col": 6,
+      "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "ammo",
@@ -313,7 +313,7 @@
       "source_file": "logo_atlas_thorne01.tga",
       "src_row": 1,
       "src_col": 1,
-      "mode": "direct",
+      "mode": "invert_impression",
       "has_tone_override": false
     },
     {
@@ -384,7 +384,7 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "head",
@@ -404,7 +404,7 @@
       "src_row": 3,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "chest",
@@ -444,7 +444,7 @@
       "src_row": 3,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "shoulders",
@@ -464,7 +464,7 @@
       "src_row": 6,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "belt",
@@ -494,7 +494,7 @@
       "src_row": 5,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "fingers",
@@ -532,9 +532,9 @@
       "out_col": 5,
       "source_file": "dragitem3.tga",
       "src_row": 4,
-      "src_col": 6,
+      "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": false
+      "has_tone_override": true
     },
     {
       "name": "ammo",
@@ -673,7 +673,7 @@
       "source_file": "logo_atlas_thorne01.tga",
       "src_row": 1,
       "src_col": 1,
-      "mode": "direct",
+      "mode": "invert_impression",
       "has_tone_override": false
     },
     {

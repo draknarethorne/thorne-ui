@@ -32,18 +32,16 @@
     "ear":       { "gradient": "gold" },
     "neck":      { "gradient": "gold" },
     "fingers":   { "gradient": "gold" },
-    "belt":      { "gradient": "gold" },
-    "wrist":     { "gradient": "gold" },
     "primary":   { "gradient": "patriot_weapon" },
     "secondary": { "gradient": "patriot_weapon" },
     "range":     { "gradient": "patriot_weapon" },
-    "ammo":      { "gradient": "shadow" },
-    "bag":       { "gradient": "bronze" },
+    "ammo":      { "gradient": "patriot_weapon" },
+    "bag":       { "gradient": "gold" },
     "logo_1":    { "gradient": "none" },
-    "logo_2":    { "gradient": "patriot" },
+    "logo_2":    { "gradient": "patriot_weapon" },
     "logo_3":    { "gradient": "patriot" },
-    "logo_4":    { "gradient": "patriot" },
-    "logo_5":    { "gradient": "patriot" },
-    "logo_6":    { "gradient": "patriot" }
+    "logo_4":    { "gradient": "gold" },
+    "logo_5":    { "gradient": "shadow" },
+    "logo_6":    { "gradient": "bronze" }
   }
 }

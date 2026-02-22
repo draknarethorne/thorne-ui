@@ -9,8 +9,8 @@
   "default_button": {
     "_comment": "See .bin/DEFAULTS.md: Slots Configuration > default_button. Uses button atlas row 1, col 1 with texture gradient.",
     "button_row": 1,
-    "button_col": 1,
-    "gradient": "gold"
+    "button_col": 2,
+    "gradient": "silver"
   },
   "default_item": {
     "_comment": "See .bin/DEFAULTS.md: Slots Configuration > default_item. Items tiled at 28px with slight transparency.",
@@ -22,10 +22,10 @@
   },
   "item_overrides": {
     "logo_1": { "gradient": "none" },
-    "logo_2": { "gradient": "logo" },
-    "logo_3": { "gradient": "logo" },
-    "logo_4": { "gradient": "logo" },
-    "logo_5": { "gradient": "logo" },
-    "logo_6": { "gradient": "logo" }
+    "logo_2": { "gradient": "none" },
+    "logo_3": { "gradient": "none" },
+    "logo_4": { "gradient": "none" },
+    "logo_5": { "gradient": "none" },
+    "logo_6": { "gradient": "none" }
   }
 }

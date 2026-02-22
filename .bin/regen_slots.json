@@ -8,61 +8,61 @@
   "gradient_presets": {
     "_comment_metals": "Base metal placeholders — darker edges, brighter middle for light hit.",
     "gold": {
-      "_comment": "Gold (vertical) — dark → bright → dark",
+      "_comment": "Gold (vertical) — dark → light → med-dark",
       "type": "vertical",
-      "top_color": [160, 130, 60],
+      "top_color": [140, 110, 50],
       "middle_color": [220, 200, 120],
-      "bottom_color": [140, 110, 50]
+      "bottom_color": [170, 140, 70]
     },
     "silver": {
-      "_comment": "Silver (vertical) — dark → bright → dark",
+      "_comment": "Silver (vertical) — dark → light → med-dark",
       "type": "vertical",
-      "top_color": [140, 150, 165],
+      "top_color": [120, 130, 145],
       "middle_color": [210, 220, 235],
-      "bottom_color": [120, 130, 145]
+      "bottom_color": [150, 160, 175]
     },
     "bronze": {
-      "_comment": "Bronze (vertical) — dark → bright → dark",
+      "_comment": "Bronze (vertical) — dark → light → med-dark",
       "type": "vertical",
-      "top_color": [140, 90, 50],
+      "top_color": [120, 75, 40],
       "middle_color": [200, 150, 95],
-      "bottom_color": [120, 75, 40]
+      "bottom_color": [150, 100, 60]
     },
     "platinum": {
-      "_comment": "Platinum (vertical) — dark → bright → dark",
+      "_comment": "Platinum (vertical) — dark → light → med-dark",
       "type": "vertical",
-      "top_color": [150, 160, 170],
+      "top_color": [130, 140, 150],
       "middle_color": [220, 235, 245],
-      "bottom_color": [130, 140, 150]
+      "bottom_color": [160, 170, 185]
     },
     "_comment_metal_gleam": "Diagonal metal variants for testing — same colors, diagonal light sweep.",
     "gold_gleam": {
       "_comment": "Gold gleam (diagonal)",
       "type": "diagonal_tl",
-      "top_color": [160, 130, 60],
+      "top_color": [140, 110, 50],
       "middle_color": [220, 200, 120],
-      "bottom_color": [140, 110, 50]
+      "bottom_color": [170, 140, 70]
     },
     "silver_gleam": {
       "_comment": "Silver gleam (diagonal)",
       "type": "diagonal_tl",
-      "top_color": [140, 150, 165],
+      "top_color": [120, 130, 145],
       "middle_color": [210, 220, 235],
-      "bottom_color": [120, 130, 145]
+      "bottom_color": [150, 160, 175]
     },
     "bronze_gleam": {
       "_comment": "Bronze gleam (diagonal)",
       "type": "diagonal_tl",
-      "top_color": [140, 90, 50],
+      "top_color": [120, 75, 40],
       "middle_color": [200, 150, 95],
-      "bottom_color": [120, 75, 40]
+      "bottom_color": [150, 100, 60]
     },
     "platinum_gleam": {
       "_comment": "Platinum gleam (diagonal)",
       "type": "diagonal_tl",
-      "top_color": [150, 160, 170],
+      "top_color": [130, 140, 150],
       "middle_color": [220, 235, 245],
-      "bottom_color": [130, 140, 150]
+      "bottom_color": [160, 170, 185]
     },
     "_comment_misc": "Non-metal, logo, and special-purpose gradients.",
     "logo": {

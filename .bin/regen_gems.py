@@ -288,7 +288,7 @@ class GemIconGenerator:
         self.stats["icons_scaled"] = total_icons
         
         # Save stats
-        stats_file = self.variant_dir / "regen_gems_stats.json"
+        stats_file = self.variant_dir / ".regen_gems-stats.json"
         with open(stats_file, 'w') as f:
             json.dump(self.stats, f, indent=2)
         

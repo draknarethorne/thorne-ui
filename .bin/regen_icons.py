@@ -342,7 +342,7 @@ class StatIconGenerator:
     def save_stats(self, stats_file=None):
         """Save generation statistics to JSON."""
         if not stats_file:
-            stats_file = self.output_file.stem + "-stats.json"
+            stats_file = ".regen_icons-stats.json"
         
         stats_path = self.output_file.parent / stats_file
         

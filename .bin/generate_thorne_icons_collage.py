@@ -1,3 +1,15 @@
+"""generate_thorne_icons_collage.py -- EXPERIMENTAL / LEGACY
+
+Early exploration script for sampling icon visual treatments (dark-transparent vs
+clear-transparent) across multiple sizes. References source files that no longer
+exist (thorne_drak01.jpg, thorne_drak01.tga in thorne_drak root).
+
+Do NOT run this script. It is retained as a reference for the background-removal
+and sizing logic explored during early icon pipeline development.
+
+The active pipeline for icon atlases is:
+  - generate_thorne_icons_master.py  -- Produces .Master/thorne_icons01.tga
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass

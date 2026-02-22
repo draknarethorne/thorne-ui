@@ -1,20 +1,24 @@
-"""Generate transparency variants of button source atlas with proper border preservation.
+"""generate_thorne_buttons_transparent.py -- Generate transparency variants of the button source atlas.
 
-This script dynamically detects all buttons in the top row and generates multiple
-opacity levels for each, preserving:
-- 3px opaque borders (original alpha unmodified)
-- Inner pixel colors (original RGB preserved, only alpha reduced)
+Reads the solid-row button atlas from Options/Slots/.Master/thorne_buttons01.tga, detects all buttons
+in the top row, and generates 5 additional opacity levels (95%, 90%, 85%, 75%, 50%) below them while
+preserving 3px opaque borders and all original pixel colors.
 
-Top row can contain multiple source buttons at any 40px-aligned position.
-Script will generate transparency variants for all detected buttons.
+Run this after editing the solid button row in .Master/thorne_buttons01.tga.
+
+Usage:
+  python .bin/generate_thorne_buttons_transparent.py
+
+Output:
+  Options/Slots/.Master/thorne_buttons01.tga  (updated in-place with 6 rows: solid + 5 opacity levels)
 """
 
 from pathlib import Path
 from PIL import Image
 
 
-ROOT = Path("C:/Thorne-UI")
-BUTTON_SOURCE = ROOT / "thorne_drak" / "thorne_buttons01.tga"
+MASTER_DIR = Path(__file__).resolve().parent.parent / "thorne_drak" / "Options" / "Slots" / ".Master"
+BUTTON_SOURCE = MASTER_DIR / "thorne_buttons01.tga"
 
 # Transparency levels: (description, alpha_value)
 # Ordered from highest opacity to lowest

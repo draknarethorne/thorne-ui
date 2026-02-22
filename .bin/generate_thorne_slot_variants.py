@@ -1,3 +1,17 @@
+"""generate_thorne_slot_variants.py -- EXPERIMENTAL / LEGACY
+
+This was an early exploration script for testing different button + icon compositing
+approaches and visual variant layouts. It references source files that no longer exist
+in the current project structure (thorne_drak01.tga, button_clean_from_bow.tga).
+
+Do NOT run this script. It is retained as a reference for the compositing logic that
+evolved into regen_slots.py + generate_thorne_item_master.py.
+
+ACTIVE REPLACEMENTS:
+  - regen_slots.py                    -- Final variant compositing pipeline
+  - generate_thorne_item_master.py    -- Item atlas generation from .Master sources
+  - generate_thorne_buttons_transparent.py -- Button opacity level generation
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass

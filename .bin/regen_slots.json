@@ -1,0 +1,213 @@
+{
+  "_comment": "Master item layout config for regen_slots.py. Defines which dragitem source tiles map to which output positions. Shared across ALL slot variants — do not add colors, gradients, or button styling here. Per-variant styling lives in Options/Slots/<Variant>/.regen_slots.json.",
+  "source_items": "thorne_item01.tga",
+  "source_buttons": "thorne_buttons01.tga",
+  "cell_size": 40,
+  "output_size": 256,
+  "_comment_presets": "Base gradient palette shared across all variants. Variants can add new presets or override these by name in their own gradient_presets block.",
+  "gradient_presets": {
+    "gold": {
+      "_comment": "Classic warm gold, top to bottom",
+      "type": "vertical",
+      "top_color": [232, 209, 118],
+      "bottom_color": [173, 140, 62]
+    },
+    "silver": {
+      "_comment": "Cool silver, top to bottom",
+      "type": "vertical",
+      "top_color": [214, 220, 228],
+      "bottom_color": [132, 142, 156]
+    },
+    "bronze": {
+      "_comment": "Warm bronze/copper, top to bottom",
+      "type": "vertical",
+      "top_color": [210, 150, 80],
+      "bottom_color": [140, 90, 40]
+    },
+    "logo": {
+      "_comment": "Subtle gold for logo slots",
+      "type": "vertical",
+      "top_color": [246, 228, 151],
+      "bottom_color": [176, 141, 63]
+    },
+    "none": {
+      "_comment": "No tint -- item rendered as-is",
+      "type": "none"
+    },
+    "patriot": {
+      "_comment": "3-stop red-white-blue, vertical. middle_color triggers the midpoint stop.",
+      "type": "vertical",
+      "top_color": [200, 50, 50],
+      "middle_color": [220, 220, 220],
+      "bottom_color": [50, 90, 180]
+    },
+    "shadow": {
+      "_comment": "Dark desaturated fade, subtle on dark buttons",
+      "type": "vertical",
+      "top_color": [160, 155, 145],
+      "bottom_color": [80, 75, 70]
+    },
+    "gold_h": {
+      "_comment": "Gold gradient left to right (horizontal). Good for wide accent slots.",
+      "type": "horizontal",
+      "top_color": [232, 209, 118],
+      "bottom_color": [173, 140, 62]
+    },
+    "dawn": {
+      "_comment": "Warm sunrise diagonal, top-left to bottom-right",
+      "type": "diagonal_tl",
+      "top_color": [240, 200, 80],
+      "bottom_color": [180, 100, 60]
+    },
+    "dusk": {
+      "_comment": "Cool dusk diagonal, top-right to bottom-left",
+      "type": "diagonal_tr",
+      "top_color": [160, 120, 200],
+      "bottom_color": [80, 60, 120]
+    }
+  },
+  "items": [
+    {
+      "name": "ear",
+      "item_row": 1, "item_col": 1,
+      "out_row": 1, "out_col": 1
+    },
+    {
+      "name": "neck",
+      "item_row": 1, "item_col": 2,
+      "out_row": 1, "out_col": 2
+    },
+    {
+      "name": "head",
+      "item_row": 1, "item_col": 3,
+      "out_row": 1, "out_col": 3,
+      "button_col": 2
+    },
+    {
+      "name": "face",
+      "item_row": 1, "item_col": 4,
+      "out_row": 1, "out_col": 4
+    },
+    {
+      "name": "chest",
+      "item_row": 1, "item_col": 5,
+      "out_row": 1, "out_col": 5
+    },
+    {
+      "name": "secondary",
+      "item_row": 1, "item_col": 6,
+      "out_row": 1, "out_col": 6,
+      "button_col": 2
+    },
+    {
+      "name": "back",
+      "item_row": 2, "item_col": 1,
+      "out_row": 2, "out_col": 1,
+      "fit_size": 35
+    },
+    {
+      "name": "arms",
+      "item_row": 2, "item_col": 2,
+      "out_row": 2, "out_col": 2
+    },
+    {
+      "name": "shoulders",
+      "item_row": 2, "item_col": 3,
+      "out_row": 2, "out_col": 3
+    },
+    {
+      "name": "wrist",
+      "item_row": 2, "item_col": 4,
+      "out_row": 2, "out_col": 4
+    },
+    {
+      "name": "belt",
+      "item_row": 2, "item_col": 5,
+      "out_row": 2, "out_col": 5
+    },
+    {
+      "name": "range",
+      "item_row": 2, "item_col": 6,
+      "out_row": 2, "out_col": 6
+    },
+    {
+      "name": "hands",
+      "item_row": 3, "item_col": 1,
+      "out_row": 3, "out_col": 1
+    },
+    {
+      "name": "fingers",
+      "item_row": 3, "item_col": 2,
+      "out_row": 3, "out_col": 2,
+      "fit_size": 34
+    },
+    {
+      "name": "legs",
+      "item_row": 3, "item_col": 3,
+      "out_row": 3, "out_col": 3
+    },
+    {
+      "name": "feet",
+      "item_row": 3, "item_col": 4,
+      "out_row": 3, "out_col": 4
+    },
+    {
+      "name": "primary",
+      "item_row": 3, "item_col": 5,
+      "out_row": 3, "out_col": 5,
+      "button_col": 2
+    },
+    {
+      "name": "ammo",
+      "item_row": 3, "item_col": 6,
+      "out_row": 3, "out_col": 6,
+      "fit_size": 34
+    },
+    {
+      "name": "bag",
+      "item_row": 4, "item_col": 1,
+      "out_row": 4, "out_col": 1,
+      "fit_size": 35
+    },
+    {
+      "name": "logo_1",
+      "item_row": 4, "item_col": 2,
+      "out_row": 4, "out_col": 2,
+      "offset_y": -2
+    },
+    {
+      "name": "logo_2",
+      "item_row": 4, "item_col": 3,
+      "out_row": 4, "out_col": 3,
+      "fit_size": 34, "offset_y": -2
+    },
+    {
+      "name": "logo_3",
+      "item_row": 4, "item_col": 4,
+      "out_row": 4, "out_col": 4,
+      "fit_size": 34, "offset_y": -2
+    },
+    {
+      "name": "logo_4",
+      "item_row": 4, "item_col": 5,
+      "out_row": 4, "out_col": 5,
+      "fit_size": 34, "offset_y": -2
+    },
+    {
+      "name": "logo_5",
+      "item_row": 4, "item_col": 6,
+      "out_row": 4, "out_col": 6,
+      "fit_size": 34, "offset_y": -2
+    },
+    {
+      "name": "empty_row5_col1",
+      "item_row": 5, "item_col": 1,
+      "out_row": 5, "out_col": 1
+    },
+    {
+      "name": "empty_row6_col1",
+      "item_row": 6, "item_col": 1,
+      "out_row": 6, "out_col": 1
+    }
+  ]
+}

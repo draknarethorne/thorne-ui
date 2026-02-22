@@ -1,3 +1,22 @@
+"""generate_thorne_item_master.py -- Generate item icon atlas for Options/Slots/.Master.
+
+Reads dragitem source TGA files and thorne_item01.json config from .Master/, then composites
+them into a grayscale item icon atlas. The output (thorne_item01.tga) is the source file
+consumed by regen_slots.py to generate the finished slot textures for each variant.
+
+Run this after editing source dragitem*.tga files or updating thorne_item01.json.
+
+Usage:
+  python .bin/generate_thorne_item_master.py
+
+Inputs:
+  Options/Slots/.Master/thorne_item01.json   -- Item grid layout config
+  Options/Slots/.Master/dragitem*.tga         -- Individual item source icons
+
+Output:
+  Options/Slots/.Master/thorne_item01.tga    -- Composited item atlas (source for regen_slots.py)
+"""
+
 from __future__ import annotations
 
 import json
@@ -6,8 +25,7 @@ from pathlib import Path
 from PIL import Image, ImageEnhance, ImageOps
 
 
-ROOT = Path("C:/Thorne-UI")
-MASTER_DIR = ROOT / "thorne_drak" / "Options" / "Slots" / ".Master"
+MASTER_DIR = Path(__file__).resolve().parent.parent / "thorne_drak" / "Options" / "Slots" / ".Master"
 CONFIG_PATH = MASTER_DIR / "thorne_item01.json"
 
 

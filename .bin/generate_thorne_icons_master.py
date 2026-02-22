@@ -1,3 +1,19 @@
+"""generate_thorne_icons_master.py -- Generate master icon atlas for Options/Slots/.Master.
+
+Reads a single source icon (thorne_icon.tga) from .Master/ and produces a reference atlas
+(thorne_icons01.tga) containing 4 copies at 40px and 4 copies at 20px across one row.
+This atlas is used as a reference/source for the .Master slot generation pipeline.
+
+Usage:
+  python .bin/generate_thorne_icons_master.py
+
+Inputs:
+  Options/Slots/.Master/thorne_icon.tga   -- Single 40x40 source icon
+
+Output:
+  Options/Slots/.Master/thorne_icons01.tga -- Icon reference atlas (255x255)
+"""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -5,9 +21,9 @@ from pathlib import Path
 from PIL import Image, ImageEnhance, ImageFilter
 
 
-ROOT = Path("C:/Thorne-UI")
-SOURCE_ICON_FILE = ROOT / "thorne_drak" / "thorne_icon.tga"
-OUT_MASTER = ROOT / "thorne_drak" / "thorne_icons01.tga"
+MASTER_DIR = Path(__file__).resolve().parent.parent / "thorne_drak" / "Options" / "Slots" / ".Master"
+SOURCE_ICON_FILE = MASTER_DIR / "thorne_icon.tga"
+OUT_MASTER = MASTER_DIR / "thorne_icons01.tga"
 
 ATLAS_SIZE = 255
 ICON_X, ICON_Y = 2, 2

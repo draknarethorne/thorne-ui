@@ -1,0 +1,28 @@
+{
+  "_comment": "Gold variant styling config. Item layout lives in .bin/regen_slots.json. Gradient presets are defined in .bin/regen_slots.json and auto-merged — add a 'gradient_presets' block here only to introduce new presets or override base ones for this variant specifically.",
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "gold"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 28,
+    "offset_x": 1,
+    "offset_y": 1,
+    "item_opacity": 0.92
+  },
+  "item_overrides": {
+    "logo_1": { "gradient": "none" },
+    "logo_2": { "gradient": "logo" },
+    "logo_3": { "gradient": "logo" },
+    "logo_4": { "gradient": "logo" },
+    "logo_5": { "gradient": "logo" }
+  }
+}

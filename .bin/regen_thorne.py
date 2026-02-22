@@ -7,6 +7,7 @@ regen_slots.py to generate finished slot textures.
 Usage:
   python regen_thorne.py                       # Default: .Master directory
   python regen_thorne.py .Master               # Explicit directory
+    python regen_thorne.py --all-classes         # .Master + class overrides under .Master/
   python regen_thorne.py --help                # Show help
 
 Inputs (per directory):
@@ -130,9 +131,16 @@ def extract_cell(img: Image.Image, row: int, col: int, cell_size: int) -> Image.
 class ThorneGenerator:
     """Generates item icon atlases from source dragitem files."""
 
-    def __init__(self, directory: Path) -> None:
+    def __init__(
+        self,
+        directory: Path,
+        config_override: dict | None = None,
+        source_dir: Path | None = None,
+    ) -> None:
         self.directory = directory
         self.config_file = directory / CONFIG_FILENAME
+        self.config_override = config_override
+        self.source_dir = source_dir or directory
         self.stats: dict = {
             "directory": str(directory.name),
             "timestamp": datetime.now().isoformat(),
@@ -253,12 +261,15 @@ class ThorneGenerator:
         print(f"GENERATING ITEM ATLASES: {self.directory.name}")
         print(f"{'='*70}")
 
-        if not self.config_file.exists():
-            print(f"  ERROR: Config not found: {self.config_file}")
-            return False
+        if self.config_override is None:
+            if not self.config_file.exists():
+                print(f"  ERROR: Config not found: {self.config_file}")
+                return False
 
-        with open(self.config_file, "r", encoding="utf-8") as f:
-            config = json.load(f)
+            with open(self.config_file, "r", encoding="utf-8") as f:
+                config = json.load(f)
+        else:
+            config = self.config_override
 
         # Base configuration
         base_cell_size = int(config.get("cell_size", 40))
@@ -268,7 +279,7 @@ class ThorneGenerator:
         items = config.get("items", [])
         variants = config.get("variants", [])
 
-        sources = load_sources(self.directory)
+        sources = load_sources(self.source_dir)
 
         if not items:
             print("  ERROR: Config has no items to render.")
@@ -318,6 +329,65 @@ class ThorneGenerator:
 # Entry point
 # ---------------------------------------------------------------------------
 
+def _merge_items(base_items: list[dict], override_items: list[dict]) -> list[dict]:
+    base_by_name = {item.get("name"): item for item in base_items}
+    merged = list(base_items)
+    for override in override_items:
+        name = override.get("name")
+        if not name:
+            merged.append(override)
+            continue
+        if name in base_by_name:
+            for idx, item in enumerate(merged):
+                if item.get("name") == name:
+                    merged[idx] = {**item, **override}
+                    break
+        else:
+            merged.append(override)
+    return merged
+
+
+def _merge_variants(base_variants: list[dict], override_variants: list[dict]) -> list[dict]:
+    base_by_name = {variant.get("name"): variant for variant in base_variants}
+    merged = list(base_variants)
+    for override in override_variants:
+        name = override.get("name")
+        if not name:
+            merged.append(override)
+            continue
+        if name in base_by_name:
+            for idx, variant in enumerate(merged):
+                if variant.get("name") == name:
+                    merged[idx] = {**variant, **override}
+                    break
+        else:
+            merged.append(override)
+    return merged
+
+
+def _merge_config(base: dict, override: dict) -> dict:
+    merged = {**base, **override}
+    if "items" in base or "items" in override:
+        merged["items"] = _merge_items(base.get("items", []), override.get("items", []))
+    if "variants" in base or "variants" in override:
+        merged["variants"] = _merge_variants(base.get("variants", []), override.get("variants", []))
+    return merged
+
+
+def _discover_class_overrides(master_dir: Path) -> list[Path]:
+    class_dirs: list[Path] = []
+    for item in sorted(master_dir.iterdir()):
+        if not item.is_dir():
+            continue
+        if item.name.startswith("."):
+            continue
+        if item.name.lower() == ".themes":
+            continue
+        if (item / CONFIG_FILENAME).exists():
+            class_dirs.append(item)
+    return class_dirs
+
+
 def main() -> int:
     """Main entry point."""
     parser = argparse.ArgumentParser(
@@ -328,6 +398,7 @@ Examples:
   python regen_thorne.py                    # Default: .Master directory
   python regen_thorne.py .Master            # Explicit directory
   python regen_thorne.py CustomVariant      # Custom variant directory
+    python regen_thorne.py --all-classes       # .Master + class overrides under .Master/
 
 Directory must contain .regen_thorne.json config file and source dragitem TGA files.
         """,
@@ -338,6 +409,11 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         nargs="?",
         default=".Master",
         help="Target directory name within Options/Slots/ (default: .Master)",
+    )
+    parser.add_argument(
+        "--all-classes",
+        action="store_true",
+        help="Generate atlases for .Master and all class overrides under .Master/",
     )
 
     args = parser.parse_args()
@@ -351,7 +427,43 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         print(f"ERROR: Directory not found: {target_dir}")
         return 1
 
-    generator = ThorneGenerator(target_dir)
+    if args.all_classes:
+        master_dir = target_dir
+        base_config_path = master_dir / CONFIG_FILENAME
+        if not base_config_path.exists():
+            print(f"ERROR: Config not found: {base_config_path}")
+            return 1
+        with open(base_config_path, "r", encoding="utf-8") as f:
+            base_config = json.load(f)
+
+        class_dirs = _discover_class_overrides(master_dir)
+        total = 1 + len(class_dirs)
+        success = 0
+
+        # Generate base .Master
+        items_dir = master_dir / ".Items"
+        generator = ThorneGenerator(master_dir, source_dir=items_dir)
+        if generator.generate():
+            generator.save_stats()
+            success += 1
+
+        # Generate each class override, using .Master sources and merged config
+        for class_dir in class_dirs:
+            class_config_path = class_dir / CONFIG_FILENAME
+            with open(class_config_path, "r", encoding="utf-8") as f:
+                class_config = json.load(f)
+            merged_config = _merge_config(base_config, class_config)
+            generator = ThorneGenerator(class_dir, config_override=merged_config, source_dir=items_dir)
+            if generator.generate():
+                generator.save_stats()
+                success += 1
+
+        print(f"\n{'='*70}")
+        print(f"SUMMARY: Generated {success}/{total} atlas(es)")
+        print(f"{'='*70}\n")
+        return 0 if success == total else 1
+
+    generator = ThorneGenerator(target_dir, source_dir=target_dir / ".Items")
     if generator.generate():
         generator.save_stats()
         print(f"\n{'='*70}")

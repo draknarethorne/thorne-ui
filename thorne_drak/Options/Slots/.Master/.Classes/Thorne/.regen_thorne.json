@@ -1,0 +1,7 @@
+{
+  "_comment": "Thorne class item overrides. Inherits from .Master/.regen_thorne.json",
+  "_note": "Thorne is the personal class variant. Add item_overrides here for class-specific armor/weapons. Currently inherits all items from master.",
+  "class_name": "Thorne",
+  "item_overrides": [
+  ]
+}

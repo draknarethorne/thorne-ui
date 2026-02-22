@@ -1,0 +1,5 @@
+{
+  "_comment": "Silver theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
+  "_note": "Add silver-specific gradient overrides here when ready. Currently mirrors master config.",
+  "gradient_presets": {}
+}

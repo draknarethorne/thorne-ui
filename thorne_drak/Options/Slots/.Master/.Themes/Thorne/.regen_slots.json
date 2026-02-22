@@ -1,0 +1,5 @@
+{
+  "_comment": "Thorne theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
+  "_note": "Thorne is the default personal theme. Add gradient overrides here if needed. Currently mirrors master config.",
+  "gradient_presets": {}
+}

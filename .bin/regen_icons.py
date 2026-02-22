@@ -258,8 +258,9 @@ class StatIconGenerator:
                 # Check for row/col first (easier to edit), fall back to x/y
                 if "row" in source_info and "col" in source_info:
                     # Calculate x/y from row/col (22px per cell for 22×22 icons)
-                    src_x = source_info.get("col") * 22
-                    src_y = source_info.get("row") * 22
+                    # Note: row/col values in config are 1-based, convert to 0-based for pixel calculation
+                    src_x = (source_info.get("col") - 1) * 22
+                    src_y = (source_info.get("row") - 1) * 22
                     coord_format = f"row {source_info.get('row')}, col {source_info.get('col')}"
                 else:
                     # Use x/y directly

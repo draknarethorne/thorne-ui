@@ -1,5 +1,29 @@
 {
   "_comment": "Texture theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
-  "_note": "Add texture-specific gradient overrides here when ready. Currently mirrors master config.",
-  "gradient_presets": {}
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 2,
+    "gradient": "silver"
+  },
+  "default_item": {
+    "fit_mode": "visible",
+    "fit_size": 30,
+    "offset_x": 0,
+    "offset_y": 0,
+    "item_opacity": 0.95
+  },
+  "item_overrides": {
+    "logo_1": { "gradient": "phantom" },
+    "logo_2": { "gradient": "ghost" },
+    "logo_3": { "gradient": "shadow" },
+    "logo_4": { "gradient": "dawn" },
+    "logo_5": { "gradient": "dusk" },
+    "logo_6": { "gradient": "platinum_gleam" }
+  }
 }

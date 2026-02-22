@@ -6,40 +6,76 @@
   "output_size": 256,
   "_comment_presets": "Base gradient palette shared across all variants. See .bin/DEFAULTS.md for full gradient reference. Variants can add new presets or override these by name in their own gradient_presets block.",
   "gradient_presets": {
+    "_comment_metals": "Base metal placeholders — darker edges, brighter middle for light hit.",
     "gold": {
-      "_comment": "Classic warm gold, top to bottom",
+      "_comment": "Gold (vertical) — dark → bright → dark",
       "type": "vertical",
-      "top_color": [232, 209, 118],
-      "bottom_color": [173, 140, 62]
+      "top_color": [160, 130, 60],
+      "middle_color": [220, 200, 120],
+      "bottom_color": [140, 110, 50]
     },
     "silver": {
-      "_comment": "Cool silver, top to bottom",
+      "_comment": "Silver (vertical) — dark → bright → dark",
       "type": "vertical",
-      "top_color": [214, 220, 228],
-      "bottom_color": [132, 142, 156]
+      "top_color": [140, 150, 165],
+      "middle_color": [210, 220, 235],
+      "bottom_color": [120, 130, 145]
     },
     "bronze": {
-      "_comment": "Warm bronze/copper, top to bottom",
+      "_comment": "Bronze (vertical) — dark → bright → dark",
       "type": "vertical",
-      "top_color": [210, 150, 80],
-      "bottom_color": [140, 90, 40]
+      "top_color": [140, 90, 50],
+      "middle_color": [200, 150, 95],
+      "bottom_color": [120, 75, 40]
     },
+    "platinum": {
+      "_comment": "Platinum (vertical) — dark → bright → dark",
+      "type": "vertical",
+      "top_color": [150, 160, 170],
+      "middle_color": [220, 235, 245],
+      "bottom_color": [130, 140, 150]
+    },
+    "_comment_metal_gleam": "Diagonal metal variants for testing — same colors, diagonal light sweep.",
+    "gold_gleam": {
+      "_comment": "Gold gleam (diagonal)",
+      "type": "diagonal_tl",
+      "top_color": [160, 130, 60],
+      "middle_color": [220, 200, 120],
+      "bottom_color": [140, 110, 50]
+    },
+    "silver_gleam": {
+      "_comment": "Silver gleam (diagonal)",
+      "type": "diagonal_tl",
+      "top_color": [140, 150, 165],
+      "middle_color": [210, 220, 235],
+      "bottom_color": [120, 130, 145]
+    },
+    "bronze_gleam": {
+      "_comment": "Bronze gleam (diagonal)",
+      "type": "diagonal_tl",
+      "top_color": [140, 90, 50],
+      "middle_color": [200, 150, 95],
+      "bottom_color": [120, 75, 40]
+    },
+    "platinum_gleam": {
+      "_comment": "Platinum gleam (diagonal)",
+      "type": "diagonal_tl",
+      "top_color": [150, 160, 170],
+      "middle_color": [220, 235, 245],
+      "bottom_color": [130, 140, 150]
+    },
+    "_comment_misc": "Non-metal, logo, and special-purpose gradients.",
     "logo": {
       "_comment": "Subtle gold for logo slots",
       "type": "vertical",
       "top_color": [246, 228, 151],
       "bottom_color": [176, 141, 63]
     },
-    "none": {
-      "_comment": "No tint -- item rendered as-is",
-      "type": "none"
-    },
-    "patriot": {
-      "_comment": "3-stop red-white-blue, vertical. middle_color triggers the midpoint stop.",
-      "type": "vertical",
-      "top_color": [200, 50, 50],
-      "middle_color": [220, 220, 220],
-      "bottom_color": [50, 90, 180]
+    "gold_h": {
+      "_comment": "Gold gradient left to right (horizontal). Good for wide accent slots.",
+      "type": "horizontal",
+      "top_color": [232, 209, 118],
+      "bottom_color": [173, 140, 62]
     },
     "shadow": {
       "_comment": "Dark to light gray middle to dark diagonal blend. Shows nice tonal transition.",
@@ -48,11 +84,26 @@
       "middle_color": [180, 180, 180],
       "bottom_color": [80, 75, 70]
     },
-    "gold_h": {
-      "_comment": "Gold gradient left to right (horizontal). Good for wide accent slots.",
-      "type": "horizontal",
-      "top_color": [232, 209, 118],
-      "bottom_color": [173, 140, 62]
+    "phantom": {
+      "_comment": "Muted blue-gray metal haze",
+      "type": "vertical",
+      "top_color": [90, 95, 110],
+      "middle_color": [150, 160, 180],
+      "bottom_color": [80, 85, 100]
+    },
+    "ghost": {
+      "_comment": "Soft pale gray metal sheen",
+      "type": "vertical",
+      "top_color": [120, 125, 135],
+      "middle_color": [190, 195, 205],
+      "bottom_color": [110, 115, 125]
+    },
+    "patriot": {
+      "_comment": "3-stop red-white-blue, vertical. middle_color triggers the midpoint stop.",
+      "type": "vertical",
+      "top_color": [200, 50, 50],
+      "middle_color": [220, 220, 220],
+      "bottom_color": [50, 90, 180]
     },
     "dawn": {
       "_comment": "Warm sunrise diagonal, top-left to bottom-right",
@@ -65,6 +116,10 @@
       "type": "diagonal_tr",
       "top_color": [160, 120, 200],
       "bottom_color": [80, 60, 120]
+    },
+    "none": {
+      "_comment": "No tint -- item rendered as-is",
+      "type": "none"
     }
   },
   "items": [

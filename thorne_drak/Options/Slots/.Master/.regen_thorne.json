@@ -27,106 +27,107 @@
     {
       "name": "neck",
       "out_row": 1, "out_col": 2,
-      "src_row": 1, "src_col": 2, "source_file": "dragitem1.tga"
+      "src_row": 1, "src_col": 1, "source_file": "dragitem1.tga"
     },
     {
       "name": "head",
       "out_row": 1, "out_col": 3,
-      "src_row": 3, "src_col": 4, "source_file": "dragitem4.tga",
+      "src_row": 2, "src_col": 6, "source_file": "dragitem4.tga",
       "tone": {"contrast": 1.10, "brightness": 0.95}
     },
     {
       "name": "face",
       "out_row": 1, "out_col": 4,
-      "src_row": 1, "src_col": 4, "source_file": "dragitem1.tga"
+      "src_row": 3, "src_col": 4, "source_file": "dragitem8.tga"
     },
     {
       "name": "chest",
       "out_row": 1, "out_col": 5,
-      "src_row": 1, "src_col": 5, "source_file": "dragitem1.tga",
+      "src_row": 1, "src_col": 5, "source_file": "dragitem4.tga",
       "tone": {"contrast": 1.05, "brightness": 1.02}
     },
     {
       "name": "secondary",
       "out_row": 1, "out_col": 6,
-      "src_row": 1, "src_col": 6, "source_file": "dragitem1.tga",
+      "src_row": 1, "src_col": 2, "source_file": "dragitem2.tga",
       "tone": {"contrast": 1.10, "brightness": 0.95}
     },
 
     {
       "name": "back",
       "out_row": 2, "out_col": 1,
-      "src_row": 2, "src_col": 1, "source_file": "dragitem1.tga",
-      "tone": {"contrast": 1.20, "brightness": 0.90}
+      "src_row": 2, "src_col": 4, "source_file": "dragitem5.tga",
+      "tone": {"contrast": 1.20, "brightness": 1.20}
     },
     {
       "name": "arms",
       "out_row": 2, "out_col": 2,
-      "src_row": 2, "src_col": 2, "source_file": "dragitem1.tga"
+      "src_row": 3, "src_col": 5, "source_file": "dragitem4.tga"
     },
     {
       "name": "shoulders",
       "out_row": 2, "out_col": 3,
-      "src_row": 2, "src_col": 3, "source_file": "dragitem1.tga",
+      "src_row": 4, "src_col": 3, "source_file": "dragitem5.tga",
       "tone": {"contrast": 1.10, "brightness": 0.95}
     },
     {
       "name": "wrist",
       "out_row": 2, "out_col": 4,
-      "src_row": 2, "src_col": 4, "source_file": "dragitem1.tga"
+      "src_row": 6, "src_col": 5, "source_file": "dragitem4.tga"
     },
     {
       "name": "belt",
       "out_row": 2, "out_col": 5,
-      "src_row": 2, "src_col": 5, "source_file": "dragitem1.tga",
+      "src_row": 5, "src_col": 5, "source_file": "dragitem2.tga",
       "tone": {"contrast": 1.08, "brightness": 0.98}
     },
     {
       "name": "range",
       "out_row": 2, "out_col": 6,
-      "src_row": 2, "src_col": 6, "source_file": "dragitem1.tga",
+      "src_row": 2, "src_col": 5, "source_file": "dragitem3.tga",
       "tone": {"contrast": 1.10, "brightness": 0.95}
     },
 
     {
       "name": "hands",
       "out_row": 3, "out_col": 1,
-      "src_row": 3, "src_col": 1, "source_file": "dragitem1.tga"
+      "src_row": 5, "src_col": 5, "source_file": "dragitem4.tga"
     },
     {
       "name": "fingers",
       "out_row": 3, "out_col": 2,
-      "src_row": 3, "src_col": 2, "source_file": "dragitem1.tga",
+      "src_row": 5, "src_col": 1, "source_file": "dragitem4.tga",
       "tone": {"contrast": 1.18, "brightness": 0.93}
     },
     {
       "name": "legs",
       "out_row": 3, "out_col": 3,
-      "src_row": 3, "src_col": 3, "source_file": "dragitem1.tga",
+      "src_row": 4, "src_col": 5, "source_file": "dragitem4.tga",
       "tone": {"contrast": 1.10, "brightness": 0.95}
     },
     {
       "name": "feet",
       "out_row": 3, "out_col": 4,
-      "src_row": 3, "src_col": 4, "source_file": "dragitem1.tga",
+      "src_row": 2, "src_col": 5, "source_file": "dragitem4.tga",
       "tone": {"contrast": 1.10, "brightness": 0.95}
     },
     {
       "name": "primary",
       "out_row": 3, "out_col": 5,
-      "src_row": 3, "src_col": 5, "source_file": "dragitem1.tga"
+      "src_row": 4, "src_col": 6, "source_file": "dragitem3.tga"
     },
     {
       "name": "ammo",
       "out_row": 3, "out_col": 6,
-      "src_row": 3, "src_col": 6, "source_file": "dragitem1.tga",
+      "src_row": 4, "src_col": 2, "source_file": "dragitem7.tga",
       "tone": {"contrast": 1.12, "brightness": 0.90}
     },
 
     {
       "name": "bag",
       "out_row": 4, "out_col": 1,
-      "src_row": 4, "src_col": 1, "source_file": "dragitem1.tga"
+      "src_row": 6, "src_col": 5, "source_file": "dragitem2.tga",
+      "tone": {"contrast": 1.12, "brightness": 1.90}
     },
     {
       "name": "empty_row4_col2",

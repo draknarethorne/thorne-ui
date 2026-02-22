@@ -1,9 +1,9 @@
 {
   "variant": "Texture",
-  "timestamp": "2026-02-22T08:49:36.408042",
+  "timestamp": "2026-02-22T10:17:54.886838",
   "summary": {
-    "items_total": 26,
-    "items_with_overrides": 5,
+    "items_total": 36,
+    "items_with_overrides": 6,
     "source_files": {
       "item_atlas_thorne01.tga": "master",
       "button_atlas_thorne01.tga": "master"
@@ -638,21 +638,21 @@
       "has_override": false
     },
     {
-      "name": "logo_1",
+      "name": "empty_row4_col2",
       "out_row": 4,
       "out_col": 2,
-      "gradient": "none",
-      "gradient_source": "variant_override",
-      "gradient_type": "none",
+      "gradient": "gold",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
       "top_color": [
-        220,
-        200,
-        100
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        180,
-        160,
-        80
+        173,
+        140,
+        62
       ],
       "middle_color": null,
       "fit_size": 30,
@@ -663,154 +663,144 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": -2,
-      "offset_y_source": "master_shape",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
       "item_opacity": 0.95,
       "item_opacity_source": "default_item",
-      "overrides_applied": [
-        "gradient"
-      ],
-      "has_override": true
+      "overrides_applied": [],
+      "has_override": false
     },
     {
-      "name": "logo_2",
+      "name": "empty_row4_col3",
       "out_row": 4,
       "out_col": 3,
-      "gradient": "logo",
-      "gradient_source": "variant_override",
+      "gradient": "gold",
+      "gradient_source": "default_button",
       "gradient_type": "vertical",
       "top_color": [
-        246,
-        228,
-        151
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        176,
-        141,
-        63
+        173,
+        140,
+        62
       ],
       "middle_color": null,
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
+      "fit_size": 30,
+      "fit_size_source": "default_item",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 1,
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": -2,
-      "offset_y_source": "master_shape",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
       "item_opacity": 0.95,
       "item_opacity_source": "default_item",
-      "overrides_applied": [
-        "gradient"
-      ],
-      "has_override": true
+      "overrides_applied": [],
+      "has_override": false
     },
     {
-      "name": "logo_3",
+      "name": "empty_row4_col4",
       "out_row": 4,
       "out_col": 4,
-      "gradient": "logo",
-      "gradient_source": "variant_override",
+      "gradient": "gold",
+      "gradient_source": "default_button",
       "gradient_type": "vertical",
       "top_color": [
-        246,
-        228,
-        151
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        176,
-        141,
-        63
+        173,
+        140,
+        62
       ],
       "middle_color": null,
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
+      "fit_size": 30,
+      "fit_size_source": "default_item",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 1,
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": -2,
-      "offset_y_source": "master_shape",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
       "item_opacity": 0.95,
       "item_opacity_source": "default_item",
-      "overrides_applied": [
-        "gradient"
-      ],
-      "has_override": true
+      "overrides_applied": [],
+      "has_override": false
     },
     {
-      "name": "logo_4",
+      "name": "empty_row4_col5",
       "out_row": 4,
       "out_col": 5,
-      "gradient": "logo",
-      "gradient_source": "variant_override",
+      "gradient": "gold",
+      "gradient_source": "default_button",
       "gradient_type": "vertical",
       "top_color": [
-        246,
-        228,
-        151
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        176,
-        141,
-        63
+        173,
+        140,
+        62
       ],
       "middle_color": null,
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
+      "fit_size": 30,
+      "fit_size_source": "default_item",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 1,
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": -2,
-      "offset_y_source": "master_shape",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
       "item_opacity": 0.95,
       "item_opacity_source": "default_item",
-      "overrides_applied": [
-        "gradient"
-      ],
-      "has_override": true
+      "overrides_applied": [],
+      "has_override": false
     },
     {
-      "name": "logo_5",
+      "name": "empty_row4_col6",
       "out_row": 4,
       "out_col": 6,
-      "gradient": "logo",
-      "gradient_source": "variant_override",
+      "gradient": "gold",
+      "gradient_source": "default_button",
       "gradient_type": "vertical",
       "top_color": [
-        246,
-        228,
-        151
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        176,
-        141,
-        63
+        173,
+        140,
+        62
       ],
       "middle_color": null,
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
+      "fit_size": 30,
+      "fit_size_source": "default_item",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 1,
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": -2,
-      "offset_y_source": "master_shape",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
       "item_opacity": 0.95,
       "item_opacity_source": "default_item",
-      "overrides_applied": [
-        "gradient"
-      ],
-      "has_override": true
+      "overrides_applied": [],
+      "has_override": false
     },
     {
       "name": "empty_row5_col1",
@@ -846,9 +836,9 @@
       "has_override": false
     },
     {
-      "name": "empty_row6_col1",
-      "out_row": 6,
-      "out_col": 1,
+      "name": "empty_row5_col2",
+      "out_row": 5,
+      "out_col": 2,
       "gradient": "gold",
       "gradient_source": "default_button",
       "gradient_type": "vertical",
@@ -877,6 +867,348 @@
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
+    },
+    {
+      "name": "empty_row5_col3",
+      "out_row": 5,
+      "out_col": 3,
+      "gradient": "gold",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        232,
+        209,
+        118
+      ],
+      "bottom_color": [
+        173,
+        140,
+        62
+      ],
+      "middle_color": null,
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "empty_row5_col4",
+      "out_row": 5,
+      "out_col": 4,
+      "gradient": "gold",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        232,
+        209,
+        118
+      ],
+      "bottom_color": [
+        173,
+        140,
+        62
+      ],
+      "middle_color": null,
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "empty_row5_col5",
+      "out_row": 5,
+      "out_col": 5,
+      "gradient": "gold",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        232,
+        209,
+        118
+      ],
+      "bottom_color": [
+        173,
+        140,
+        62
+      ],
+      "middle_color": null,
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "empty_row5_col6",
+      "out_row": 5,
+      "out_col": 6,
+      "gradient": "gold",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        232,
+        209,
+        118
+      ],
+      "bottom_color": [
+        173,
+        140,
+        62
+      ],
+      "middle_color": null,
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 0,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "logo_1",
+      "out_row": 6,
+      "out_col": 1,
+      "gradient": "none",
+      "gradient_source": "variant_override",
+      "gradient_type": "none",
+      "top_color": [
+        220,
+        200,
+        100
+      ],
+      "bottom_color": [
+        180,
+        160,
+        80
+      ],
+      "middle_color": null,
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_2",
+      "out_row": 6,
+      "out_col": 2,
+      "gradient": "logo",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        246,
+        228,
+        151
+      ],
+      "bottom_color": [
+        176,
+        141,
+        63
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_3",
+      "out_row": 6,
+      "out_col": 3,
+      "gradient": "logo",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        246,
+        228,
+        151
+      ],
+      "bottom_color": [
+        176,
+        141,
+        63
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_4",
+      "out_row": 6,
+      "out_col": 4,
+      "gradient": "logo",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        246,
+        228,
+        151
+      ],
+      "bottom_color": [
+        176,
+        141,
+        63
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_5",
+      "out_row": 6,
+      "out_col": 5,
+      "gradient": "logo",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        246,
+        228,
+        151
+      ],
+      "bottom_color": [
+        176,
+        141,
+        63
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_6",
+      "out_row": 6,
+      "out_col": 6,
+      "gradient": "logo",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        246,
+        228,
+        151
+      ],
+      "bottom_color": [
+        176,
+        141,
+        63
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.95,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     }
   ],
   "output_file": "C:\\thorne-ui\\thorne_drak\\Options\\Slots\\Texture\\item_slots_thorne01.tga",

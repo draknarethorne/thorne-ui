@@ -1,6 +1,6 @@
 {
   "directory": ".Master",
-  "timestamp": "2026-02-22T11:46:13.187915",
+  "timestamp": "2026-02-22T12:30:40.812673",
   "summary": {
     "items_total": 72,
     "atlases_generated": 2
@@ -180,9 +180,9 @@
       "name": "ammo",
       "out_row": 3,
       "out_col": 6,
-      "source_file": "dragitem7.tga",
-      "src_row": 4,
-      "src_col": 2,
+      "source_file": "dragitem15.tga",
+      "src_row": 6,
+      "src_col": 6,
       "mode": "grayscale",
       "has_tone_override": true
     },
@@ -197,24 +197,24 @@
       "has_tone_override": true
     },
     {
-      "name": "empty_row4_col2",
+      "name": "pack",
       "out_row": 4,
       "out_col": 2,
-      "source_file": "placeholder.tga",
+      "source_file": "dragitem11.tga",
       "src_row": 1,
-      "src_col": 1,
-      "mode": "empty",
-      "has_tone_override": false
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true
     },
     {
-      "name": "empty_row4_col3",
+      "name": "satchel",
       "out_row": 4,
       "out_col": 3,
-      "source_file": "placeholder.tga",
-      "src_row": 1,
-      "src_col": 1,
-      "mode": "empty",
-      "has_tone_override": false
+      "source_file": "dragitem6.tga",
+      "src_row": 4,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": true
     },
     {
       "name": "empty_row4_col4",
@@ -540,9 +540,9 @@
       "name": "ammo",
       "out_row": 3,
       "out_col": 6,
-      "source_file": "dragitem7.tga",
-      "src_row": 4,
-      "src_col": 2,
+      "source_file": "dragitem15.tga",
+      "src_row": 6,
+      "src_col": 6,
       "mode": "grayscale",
       "has_tone_override": true
     },
@@ -557,24 +557,24 @@
       "has_tone_override": true
     },
     {
-      "name": "empty_row4_col2",
+      "name": "pack",
       "out_row": 4,
       "out_col": 2,
-      "source_file": "placeholder.tga",
+      "source_file": "dragitem11.tga",
       "src_row": 1,
-      "src_col": 1,
-      "mode": "empty",
-      "has_tone_override": false
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true
     },
     {
-      "name": "empty_row4_col3",
+      "name": "satchel",
       "out_row": 4,
       "out_col": 3,
-      "source_file": "placeholder.tga",
-      "src_row": 1,
-      "src_col": 1,
-      "mode": "empty",
-      "has_tone_override": false
+      "source_file": "dragitem6.tga",
+      "src_row": 4,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": true
     },
     {
       "name": "empty_row4_col4",

@@ -37,6 +37,8 @@
     "range":     { "gradient": "patriot_weapon" },
     "ammo":      { "gradient": "patriot_weapon" },
     "bag":       { "gradient": "gold" },
+    "pack":      { "gradient": "gold" },
+    "satchel":   { "gradient": "gold" },
     "logo_1":    { "gradient": "none" },
     "logo_2":    { "gradient": "patriot_weapon" },
     "logo_3":    { "gradient": "patriot" },

@@ -1,9 +1,9 @@
 {
   "variant": "Patriot",
-  "timestamp": "2026-02-22T11:50:02.874612",
+  "timestamp": "2026-02-22T12:36:29.943632",
   "summary": {
     "items_total": 36,
-    "items_with_overrides": 14,
+    "items_with_overrides": 16,
     "source_files": {
       "item_atlas_thorne01.tga": "master",
       "button_atlas_thorne01.tga": "master"
@@ -680,7 +680,7 @@
         62
       ],
       "middle_color": null,
-      "fit_size": 35,
+      "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
@@ -688,8 +688,8 @@
       "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
-      "offset_y": 1,
-      "offset_y_source": "default_item",
+      "offset_y": -1,
+      "offset_y_source": "master_shape",
       "item_opacity": 0.92,
       "item_opacity_source": "default_item",
       "overrides_applied": [
@@ -698,78 +698,74 @@
       "has_override": true
     },
     {
-      "name": "empty_row4_col2",
+      "name": "pack",
       "out_row": 4,
       "out_col": 2,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "gold",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        173,
+        140,
+        62
       ],
-      "middle_color": [
-        220,
-        220,
-        220
-      ],
-      "fit_size": 28,
-      "fit_size_source": "default_item",
+      "middle_color": null,
+      "fit_size": 36,
+      "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
       "button_col": 1,
       "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
-      "offset_y": 1,
-      "offset_y_source": "default_item",
+      "offset_y": -1,
+      "offset_y_source": "master_shape",
       "item_opacity": 0.92,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
-      "name": "empty_row4_col3",
+      "name": "satchel",
       "out_row": 4,
       "out_col": 3,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "gold",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        173,
+        140,
+        62
       ],
-      "middle_color": [
-        220,
-        220,
-        220
-      ],
-      "fit_size": 28,
-      "fit_size_source": "default_item",
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
       "button_col": 1,
       "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
-      "offset_y": 1,
-      "offset_y_source": "default_item",
+      "offset_y": -1,
+      "offset_y_source": "master_shape",
       "item_opacity": 0.92,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
       "name": "empty_row4_col4",

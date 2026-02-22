@@ -125,7 +125,7 @@
     {
       "name": "ammo",
       "out_row": 3, "out_col": 6,
-      "src_row": 4, "src_col": 2, "source_file": "dragitem7.tga",
+      "src_row": 6, "src_col": 6, "source_file": "dragitem15.tga",
       "tone": {"contrast": 0.75, "brightness": 1.10}
     },
 
@@ -136,16 +136,16 @@
       "tone": {"contrast": 0.75, "brightness": 2.0}
     },
     {
-      "name": "empty_row4_col2",
+      "name": "pack",
       "out_row": 4, "out_col": 2,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
+      "src_row": 1, "src_col": 5, "source_file": "dragitem11.tga",
+      "tone": {"contrast": 0.75, "brightness": 2.0}
     },
     {
-      "name": "empty_row4_col3",
+      "name": "satchel",
       "out_row": 4, "out_col": 3,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
+      "src_row": 4, "src_col": 2, "source_file": "dragitem6.tga",
+      "tone": {"contrast": 0.75, "brightness": 2.0}
     },
     {
       "name": "empty_row4_col4",

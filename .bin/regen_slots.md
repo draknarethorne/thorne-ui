@@ -34,7 +34,7 @@ python .bin/regen_slots.py --all
 
 **What happens:**
 1. Scans `thorne_drak/Options/Slots/` for all subdirectories with a `.regen_slots.json` config
-2. Auto-discovers all configured variants (e.g., Gold, Silver, Metal)
+2. Auto-discovers all configured variants (e.g., Gold, Silver, Bronze)
 3. Composites item icons onto button backgrounds for each variant
 4. Copies the primary variant (`Gold`) to `thorne_drak/` as `item_slots_thorne01.tga`
 5. Deploys to `thorne_dev/` for immediate testing
@@ -61,7 +61,7 @@ python .bin/regen_slots.py Gold
 ### Multiple Variants
 
 ```bash
-python .bin/regen_slots.py Gold Silver Metal
+python .bin/regen_slots.py Gold Silver Bronze
 ```
 
 **What happens:**
@@ -89,7 +89,7 @@ python .bin/regen_slots.py --help                            # Show help
 
 - `variant` — Variant name(s) to regenerate (positional, space-separated)
   - `Gold` — Primary development variant
-  - `Silver`, `Metal` — Other variants (when configured)
+  - `Silver`, `Bronze` — Other variants (when configured)
 
 **Examples:**
 ```bash
@@ -267,7 +267,7 @@ Saves `item_slots_thorne01.tga` (RGBA, `output_size × output_size`) to the vari
 **Single variant (e.g., `Gold`):**
 - Copies `item_slots_thorne01.tga` to `thorne_drak/`
 
-**Multiple variants (e.g., `Gold Silver Metal`):**
+**Multiple variants (e.g., `Gold Silver Bronze`):**
 - Only copies `Gold` to `thorne_drak/`
 - Others stay in their Options subdirectories
 
@@ -303,7 +303,7 @@ multi-stop requires revised gradient rendering in `SlotGenerator`.
 
 ### New Variant Configs
 
-`Silver`, `Metal`, `Texture`, `Transparent` — copy source `.tga` files from `.Master/` into a new variant
+`Silver`, `Bronze`, `Texture`, `Transparent` — copy source `.tga` files from `.Master/` into a new variant
 dir, write a `.regen_slots.json` with the desired `gradient_presets` + `item_overrides`. No code changes
 needed.
 

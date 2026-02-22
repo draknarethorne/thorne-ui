@@ -13,7 +13,7 @@ This directory contains the authoritative source of truth for the Thorne UI slot
 │   ├── Gold/                 Gold variant
 │   ├── Silver/               Silver variant
 │   ├── Patriot/              Red/white/blue variant
-│   ├── Metal/                Multi-metal variant
+│   ├── Bronze/               Bronze variant
 │   ├── Transparent/          Transparent background variant
 │   └── Texture/              Textured background variant
 └── .Classes/                  Class-specific item overrides
@@ -23,17 +23,17 @@ This directory contains the authoritative source of truth for the Thorne UI slot
     └── Hybrid/               Hybrid armor/weapon selections
 ```
 
-## How It Works
+## Workflow at a Glance
 
 ### Two-Step Generation
 
 **STEP 1 - `regen_thorne.py`**: Generates class-specific item atlases
 - Input: `.Items/dragitem*.tga` (source items)
 - Process: Apply class-specific item selections from `.Classes/<Class>/.regen_thorne.json`
-- Output: `.Classes/<Class>/item_atlas.tga` (class-specific atlas)
+- Output: `.Classes/<Class>/item_atlas_thorne01.tga` (+ icon variant)
 
 **STEP 2 - `regen_slots.py`**: Composites atlases with buttons and theme gradients
-- Input: `.Classes/<Class>/item_atlas.tga` + `.Themes/<Theme>/.regen_slots.json`
+- Input: `.Classes/<Class>/item_atlas_thorne01.tga` + `.Themes/<Theme>/.regen_slots.json`
 - Process: Apply theme gradients, composite with buttons from master config
 - Output: `Options/Slots/<Class>/<Theme>/item_slots_thorne01.tga`
 
@@ -95,6 +95,39 @@ Example structure:
 **Only override gradients that should differ from master.**
 - Empty file: Theme uses all master gradients as-is
 
+## Running the Scripts
+
+### Recommended (Batch Wrappers)
+
+```bash
+regen_thorne.bat --all-classes
+```
+
+- Generates **all class atlases**
+- Regenerates **all class/theme slot outputs**
+
+```bash
+regen_thorne.bat --class Caster
+```
+
+- Generates **Caster** atlas
+- Regenerates **Caster + all themes**
+
+```bash
+regen_slots.bat --theme Gold
+```
+
+- Regenerates **all classes** with the **Gold** theme only
+
+### Direct Python (Manual Two-Step)
+
+```bash
+python .bin/regen_thorne.py --class Caster
+python .bin/regen_slots.py --class Caster
+```
+
+> Direct `.py` usage does **not** auto-run Step 2. Use the batch scripts if you want the convenience step.
+
 ## Workflow Examples
 
 ### Generate All Classes + All Themes
@@ -102,7 +135,6 @@ Example structure:
 ```bash
 regen_thorne.bat --all-classes
 # Generates all class/theme combos
-# Copies Thorne/Thorne to thorne_drak/item_slots_thorne01.tga (your personal preference)
 ```
 
 ### Generate Specific Class
@@ -110,7 +142,6 @@ regen_thorne.bat --all-classes
 ```bash
 regen_thorne.bat --class Caster
 # Generates Caster atlas + all Caster/theme combos
-# Copies Caster/Thorne to thorne_drak/ (Caster with default theme active)
 ```
 
 ### Generate Specific Theme
@@ -118,28 +149,29 @@ regen_thorne.bat --class Caster
 ```bash
 regen_slots.bat --theme Gold
 # Generates all class/Gold combos
-# Does NOT copy-back (exploring variants)
 ```
 
 ### Test Specific Class + Theme
 
 ```bash
-regen_slots.py --class Caster --theme Gold --verbose
+regen_slots.py --class Caster --theme Gold
 # Generates Caster/Gold only
-# Does NOT copy-back (testing mode)
 ```
 
-## Next Steps: Adding Class-Specific Items
+## Adding Classes & Themes (Detailed Guides)
 
-When ready to customize per-class armor/weapons:
+- **Classes** → `README-CLASSES.md`
+  - How to pick dragitems
+  - How to set `src_row`, `src_col`, `source_file`
+  - How to tune contrast/brightness per slot
 
-1. Identify which dragitem files contain the items you want for each class
-2. In `.Classes/<Class>/.regen_thorne.json`, add `item_overrides` entries
-3. Specify dragitem index, and optionally apply brightness/contrast
-4. Run `regen_thorne.bat --class <Class>` to generate and test
-5. Use `--verbose` flag to see which items are being selected
+- **Themes** → `README-THEMES.md`
+  - How to define gradients
+  - Which gradient types are supported
+  - How to override logos and weapons
 
-**Future Themes (Experimental)**
+## Future Themes (Experimental)
+
 - Fire: Warm orange/red color palette
 - Blood: Deep red/crimson variants
 - Nature: Green/earth tones

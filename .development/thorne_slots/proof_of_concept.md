@@ -177,7 +177,7 @@ Proposed files:
 Proposed examples:
 - `thorne_drak/Options/Slots/Gold/`
 - `thorne_drak/Options/Slots/Silver/`
-- `thorne_drak/Options/Slots/Metal/`
+- `thorne_drak/Options/Slots/Bronze/`
 - future: texture/transparent/opaque families
 
 Each option directory eventually receives generated production textures (for inventory/look/containers/hotbuttons as applicable).
@@ -198,7 +198,7 @@ Each option directory eventually receives generated production textures (for inv
 
 3. **Master Icon Colorizer** *(new)*
    - Input: `.Master/thorne_icons01.tga` base rows
-   - Output: `.Master/thorne_icons01.tga` color rows (silver/gold/metal/etc)
+   - Output: `.Master/thorne_icons01.tga` color rows (silver/gold/bronze/etc)
    - Status: extract logic from `generate_thorne_slot_variants.py`
 
 4. **Slots Compositor** *(refactor)*

@@ -81,8 +81,7 @@
     {
       "name": "head",
       "item_row": 1, "item_col": 3,
-      "out_row": 1, "out_col": 3,
-      "button_col": 2
+      "out_row": 1, "out_col": 3
     },
     {
       "name": "face",
@@ -97,8 +96,7 @@
     {
       "name": "secondary",
       "item_row": 1, "item_col": 6,
-      "out_row": 1, "out_col": 6,
-      "button_col": 2
+      "out_row": 1, "out_col": 6
     },
     {
       "name": "back",
@@ -156,7 +154,7 @@
       "name": "primary",
       "item_row": 3, "item_col": 5,
       "out_row": 3, "out_col": 5,
-      "button_col": 2
+      "fit_size": 34
     },
     {
       "name": "ammo",
@@ -234,6 +232,7 @@
       "name": "logo_1",
       "item_row": 6, "item_col": 1,
       "out_row": 6, "out_col": 1,
+      "button_col": 1,
       "fit_size": 34,
       "offset_y": -2
     },

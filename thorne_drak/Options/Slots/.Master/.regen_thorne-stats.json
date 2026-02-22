@@ -1,6 +1,6 @@
 {
   "directory": ".Master",
-  "timestamp": "2026-02-22T12:51:35.106598",
+  "timestamp": "2026-02-22T13:27:09.813279",
   "summary": {
     "items_total": 72,
     "atlases_generated": 2
@@ -92,7 +92,7 @@
       "out_col": 3,
       "source_file": "dragitem5.tga",
       "src_row": 4,
-      "src_col": 3,
+      "src_col": 4,
       "mode": "grayscale",
       "has_tone_override": true
     },
@@ -171,8 +171,8 @@
       "out_row": 3,
       "out_col": 5,
       "source_file": "dragitem3.tga",
-      "src_row": 4,
-      "src_col": 1,
+      "src_row": 6,
+      "src_col": 3,
       "mode": "grayscale",
       "has_tone_override": true
     },
@@ -452,7 +452,7 @@
       "out_col": 3,
       "source_file": "dragitem5.tga",
       "src_row": 4,
-      "src_col": 3,
+      "src_col": 4,
       "mode": "grayscale",
       "has_tone_override": true
     },
@@ -531,8 +531,8 @@
       "out_row": 3,
       "out_col": 5,
       "source_file": "dragitem3.tga",
-      "src_row": 4,
-      "src_col": 1,
+      "src_row": 6,
+      "src_col": 3,
       "mode": "grayscale",
       "has_tone_override": true
     },

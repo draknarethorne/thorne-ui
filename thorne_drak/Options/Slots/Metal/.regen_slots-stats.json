@@ -1,6 +1,6 @@
 {
   "variant": "Metal",
-  "timestamp": "2026-02-22T12:58:29.356001",
+  "timestamp": "2026-02-22T13:27:10.702933",
   "summary": {
     "items_total": 36,
     "items_with_overrides": 11,
@@ -98,8 +98,8 @@
       "fit_size_source": "default_item",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "master_shape",
+      "button_col": 1,
+      "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
       "offset_y": 1,
@@ -181,24 +181,28 @@
       "out_col": 6,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 28,
       "fit_size_source": "default_item",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "master_shape",
+      "button_col": 1,
+      "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
       "offset_y": 1,
@@ -381,18 +385,22 @@
       "out_col": 6,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 28,
       "fit_size_source": "default_item",
       "fit_mode": "tile",
@@ -548,24 +556,28 @@
       "out_col": 5,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
-      "fit_size": 28,
-      "fit_size_source": "default_item",
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "master_shape",
+      "button_col": 1,
+      "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
       "offset_y": 1,
@@ -583,18 +595,22 @@
       "out_col": 6,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1033,7 +1049,7 @@
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
       "button_col": 1,
-      "button_col_source": "default_button",
+      "button_col_source": "master_shape",
       "offset_x": 1,
       "offset_x_source": "default_item",
       "offset_y": -2,
@@ -1051,18 +1067,22 @@
       "out_col": 2,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1086,18 +1106,22 @@
       "out_col": 3,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1121,18 +1145,22 @@
       "out_col": 4,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1156,18 +1184,22 @@
       "out_col": 5,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -1191,18 +1223,22 @@
       "out_col": 6,
       "gradient": "shadow",
       "gradient_source": "variant_override",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        160,
-        155,
-        145
+        80,
+        75,
+        70
       ],
       "bottom_color": [
         80,
         75,
         70
       ],
-      "middle_color": null,
+      "middle_color": [
+        180,
+        180,
+        180
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",

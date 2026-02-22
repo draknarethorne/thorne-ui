@@ -4,7 +4,7 @@
   "source_buttons": "button_atlas_thorne01.tga",
   "cell_size": 40,
   "output_size": 256,
-  "_comment_presets": "Base gradient palette shared across all variants. Variants can add new presets or override these by name in their own gradient_presets block.",
+  "_comment_presets": "Base gradient palette shared across all variants. See .bin/DEFAULTS.md for full gradient reference. Variants can add new presets or override these by name in their own gradient_presets block.",
   "gradient_presets": {
     "gold": {
       "_comment": "Classic warm gold, top to bottom",

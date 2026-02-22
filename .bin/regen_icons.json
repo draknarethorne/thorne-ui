@@ -1,5 +1,5 @@
 {
-  "description": "Icon coordinate mappings for stat icon generation from spell_icons_thorne",
+  "_comment": "Icon coordinate mappings for stat icon generation from spell_icons_thorne. See .bin/DEFAULTS.md for configuration details.",
   "note": "Use row/col coordinates (1-10 for 10x10 grid of 22x22 icons, 1-based indexing) OR x/y coordinates (pixel positions). Script uses row/col if provided, falls back to x/y. Automatically calculates x/y from row/col: x = (col-1) * 22, y = (row-1) * 22",
   
   "AC": {

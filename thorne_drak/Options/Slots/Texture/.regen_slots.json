@@ -1,0 +1,28 @@
+{
+  "_comment": "Texture variant — same gold palette as Gold but uses 'visible' fit_mode. Instead of scaling the full tile, only the visible pixel bounds of each icon are scaled, then re-centered. Useful for seeing how icons with lots of transparent padding look when tightly cropped to their shape.",
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "gold"
+  },
+  "default_item": {
+    "fit_mode": "visible",
+    "fit_size": 30,
+    "offset_x": 0,
+    "offset_y": 0,
+    "item_opacity": 0.95
+  },
+  "item_overrides": {
+    "logo_1": { "gradient": "none" },
+    "logo_2": { "gradient": "logo" },
+    "logo_3": { "gradient": "logo" },
+    "logo_4": { "gradient": "logo" },
+    "logo_5": { "gradient": "logo" }
+  }
+}

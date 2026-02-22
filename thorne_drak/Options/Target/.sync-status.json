@@ -1,9 +1,8 @@
 {
   "window": "Target",
-  "description": "Target window with target information",
-  "default_variant": "Default",
-  "last_sync_date": "2026-02-03",
-  "last_sync_commit": "51a6e2a",
-  "in_sync": true,
-  "notes": "Initial sync - Default copy created and all variants established"
+  "filename": "EQUI_TargetWindow.xml",
+  "description": "Target window Thorne configuration",
+  "last_sync_date": "2026-02-17T21:56:10.942328",
+  "last_sync_commit": "36b97c1",
+  "in_sync": true
 }

@@ -1,0 +1,33 @@
+{
+  "_comment": "Metal variant — warm bronze on armor slots, shadow on weapons and logos. Darker, grittier feel. Override specific slots to mix the two metals.",
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "bronze"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 28,
+    "offset_x": 1,
+    "offset_y": 1,
+    "item_opacity": 0.90
+  },
+  "item_overrides": {
+    "primary":   { "gradient": "shadow" },
+    "secondary": { "gradient": "shadow" },
+    "range":     { "gradient": "shadow" },
+    "ammo":      { "gradient": "shadow" },
+    "bag":       { "gradient": "bronze" },
+    "logo_1":    { "gradient": "none" },
+    "logo_2":    { "gradient": "shadow" },
+    "logo_3":    { "gradient": "shadow" },
+    "logo_4":    { "gradient": "shadow" },
+    "logo_5":    { "gradient": "shadow" }
+  }
+}

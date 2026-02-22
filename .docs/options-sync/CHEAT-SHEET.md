@@ -16,13 +16,13 @@ Shows overall health: issue counts, properly documented files, missing imports.
 
 ### Compare Defaults vs Variants
 ```bash
-python .bin/options_default_compare.py
+python .bin/options_thorne_compare.py
 ```
 Shows which variants are identical to Default (redundant) vs custom (intentional).
 
 ### Compare Specific Window
 ```bash
-python .bin/options_default_compare.py --window "Inventory"
+python .bin/options_thorne_compare.py --window "Inventory"
 ```
 Detailed view of which variants in a window are identical to Default.
 
@@ -33,19 +33,19 @@ Shows categorized list with each file's status and specific issues.
 
 ### Sync a Single Window
 ```bash
-python .bin/options_default_sync.py --window Target
+python .bin/options_thorne_sync.py --window Target
 ```
-Backup `EQUI_TargetWindow.xml` to `Options/Target/Default/` and update metadata.
+Backup `EQUI_TargetWindow.xml` to `Options/Target/Thorne/` and update metadata.
 
 ### Sync All Windows (Dry-Run)
 ```bash
-python .bin/options_default_sync.py --all --dry-run
+python .bin/options_thorne_sync.py --all --dry-run
 ```
 Preview what would sync without making changes.
 
 ### Sync All Windows (Apply)
 ```bash
-python .bin/options_default_sync.py --all --verbose
+python .bin/options_thorne_sync.py --all --verbose
 ```
 Sync all 13 windows and show details.
 
@@ -83,12 +83,12 @@ Generate boilerplate README in `Options/Player/My Layout/README.md`
 # 1. Edit the window file
 nano thorne_drak/EQUI_TargetWindow.xml
 
-# 2. Backup to Default/
-python .bin/options_default_sync.py --window Target
+# 2. Backup to Thorne/
+python .bin/options_thorne_sync.py --window Target
 
 # 3. Commit
 git add thorne_drak/EQUI_TargetWindow.xml
-git add thorne_drak/Options/Target/Default/
+git add thorne_drak/Options/Target/Thorne/
 git commit -m "fix(target): Update layout"
 ```
 
@@ -121,7 +121,7 @@ git commit -m "feat(player): Add New Variant Name"
 
 ```bash
 # 1. Sync all windows
-python .bin/options_default_sync.py --all --verbose
+python .bin/options_thorne_sync.py --all --verbose
 
 # 2. Check documentation  
 python .bin/options_readme_checker.py --verbose
@@ -192,19 +192,19 @@ git commit -m "docs(player): Expand Standard variant documentation"
 
 ```bash
 # 1. Check what auto-sync says
-python .bin/options_default_sync.py --window Target --verbose
+python .bin/options_thorne_sync.py --window Target --verbose
 
 # 2. Manually compare files
-diff thorne_drak/EQUI_TargetWindow.xml thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml
+diff thorne_drak/EQUI_TargetWindow.xml thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml
 
 # 3. If they should be same, force resync
-python .bin/options_default_sync.py --window Target --force --verbose
+python .bin/options_thorne_sync.py --window Target --force --verbose
 
 # 4. Check metadata
 cat thorne_drak/Options/Target/.sync-status.json | python -m json.tool
 
 # 5. If metadata corrupted, regenerate
-python .bin/options_default_sync.py --window Target --force --verbose
+python .bin/options_thorne_sync.py --window Target --force --verbose
 ```
 
 ---
@@ -219,13 +219,13 @@ python .bin/options_readme_checker.py
 
 ### Monthly Detailed Audit (15 minutes)
 ```bash
-python .bin/options_readme_checker.py --verbose > /tmp/monthly_status.txt
+python .bin/options_readme_checker.py --verbose > .tmp/monthly_status.txt
 # Review detailed list, look for trends, pick files to expand
 ```
 
 ### Pre-Release Validation (30 minutes)
 ```bash
-python .bin/options_default_sync.py --all --verbose
+python .bin/options_thorne_sync.py --all --verbose
 python .bin/options_readme_checker.py --verbose
 python .bin/options_duplicate_detector.py --verbose
 # Review all three outputs
@@ -238,14 +238,14 @@ python .bin/options_duplicate_detector.py --verbose
 ### File not syncing?
 ```bash
 # See what script thinks
-python .bin/options_default_sync.py --window Target --verbose
+python .bin/options_thorne_sync.py --window Target --verbose
 
 # Actually check if they match
 diff thorne_drak/EQUI_TargetWindow.xml \
-     thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml
+     thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml
 
 # Force resync
-python .bin/options_default_sync.py --window Target --force --verbose
+python .bin/options_thorne_sync.py --window Target --force --verbose
 ```
 
 ### Format issues not auto-fixed?
@@ -282,7 +282,7 @@ ls -la thorne_drak/Options/Target/Player\ and\ Pet\ Gauges/
 | Reports | `.reports/` |
 | Window files | `thorne_drak/EQUI_*.xml` |
 | Variants | `thorne_drak/Options/[Window]/[Variant]/` |
-| Backups | `thorne_drak/Options/[Window]/Default/` |
+| Backups | `thorne_drak/Options/[Window]/Thorne/` |
 | Metadata | `thorne_drak/Options/[Window]/.sync-status.json` |
 
 ---
@@ -304,7 +304,7 @@ Windows in Sync: ___ / 13
 ## 🔐 Important Notes
 
 ### Backups Are Sacred
-- **Default/** directories are your safety net
+- **Thorne/** directories are your safety net
 - Never delete without archive first
 - These are committed to git - use them for recovery
 
@@ -314,15 +314,15 @@ Windows in Sync: ___ / 13
 - Corrupted metadata can be regenerated
 
 ### README Link Format
-Incorrect:
+Incorrect (use inline code, not links):
 ```
-[EQUI_Target.xml](../../../EQUI_TargetWindow.xml)  ❌
-[EQUI_Target.xml](thorne_drak/Options/Target/Default/EQUI_TargetWindow.xml)  ❌
+EQUI_TargetWindow.xml  ❌ (linked to ../../../EQUI_TargetWindow.xml)
+EQUI_TargetWindow.xml  ❌ (linked to thorne_drak/Options/Target/Thorne/EQUI_TargetWindow.xml)
 ```
 
-Correct:
+Correct (variant README):
 ```
-[EQUI_TargetWindow.xml](./EQUI_TargetWindow.xml)  ✓
+./EQUI_TargetWindow.xml  ✓
 ```
 
 ---
@@ -335,5 +335,5 @@ Correct:
 
 ---
 
-*Last Updated: February 3, 2026*
+*Last Updated: February 16, 2026*
 *Maintained By: Draknare Thorne*

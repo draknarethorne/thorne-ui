@@ -6,7 +6,7 @@
 	<!-- ODAKU pet window Modified for QQQuarm by Brujoloco  Nov 6 2023-->
 	<!-- 
 		Thorne UI Modifications (Feb 2026) by Draknare Thorne:
-		- Added dismiss button (PIW_LostButton) at X=130, Y=23 - red "X" button
+		- Added dismiss button (PIW_LostButton) at X=110, Y=23 - red "X" button
 		- Dismiss button positioned to avoid accidental Attack button clicks
 		- Mana gauge color changed to RGB(100,150,255) for "Thorne blue" consistency
 		- Part of Phase 5 standardization across all windows
@@ -215,12 +215,12 @@
 		<Font>1</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>130</X>
-			<Y>23</Y>
+			<X>125</X>
+			<Y>20</Y>
 		</Location>
 		<Size>
-			<CX>28</CX>
-			<CY>6</CY>
+			<CX>24</CX>
+			<CY>10</CY>
 		</Size>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -282,8 +282,8 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>16</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -318,8 +318,8 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>17</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_Tall</Background>
-			<Fill>A_GaugeFill_Tall</Fill>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
 			<Lines>A_GaugeLines</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>

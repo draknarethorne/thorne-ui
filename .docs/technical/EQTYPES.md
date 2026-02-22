@@ -291,9 +291,11 @@ Standard label colors (matching Inventory window canonical scheme):
 |------------|-----------|-----|-------|
 | **White** | 255, 255, 255 | #FFFFFF | Default text, player name, stat values |
 | **Blue (Attributes)** | 50, 160, 250 | #32A0FA | Attribute labels (STR, STA, AGI, etc) |
-| **Pink/Rose** | 200, 120, 145 | #C87891 | HP/Mana labels (alternate) |
-| **Orange** | 255, 165, 0 | #FFA500 | ATK label, FIRE resist |
-| **Cyan** | 0, 165, 255 | #00A5FF | COLD resist |
+| **HP Value Red** | 255, 100, 100 | #FF6464 | HP current/max text values |
+| **Mana Value Blue** | 100, 150, 255 | #6496FF | Mana current/max text values |
+| **Orange** | 255, 165, 0 | #FFA500 | AC label, ATK label |
+| **Fire Red** | 195, 20, 20 | #C31414 | FIRE resist |
+| **Cold Blue** | 0, 120, 255 | #0078FF | COLD resist |
 | **Purple** | 195, 0, 185 | #C300B9 | MAGIC resist |
 | **Yellow** | 205, 205, 0 | #CDCD00 | DISEASE resist |
 | **Teal** | 0, 130, 100 | #008264 | POISON resist |

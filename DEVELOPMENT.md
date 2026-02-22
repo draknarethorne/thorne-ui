@@ -2,8 +2,8 @@
 
 Implementation details, architecture decisions, and development roadmap for the Thorne UI project.
 
-**Version**: 0.6.1  
-**Last Updated**: February 7, 2026  
+**Version**: 0.7.0-dev  
+**Last Updated**: February 18, 2026  
 **Maintainer**: Draknare Thorne
 
 **Quick Links**: [Standards](.docs/STANDARDS.md) | [Phases](.development/initial-phases/) | [Technical References](.docs/technical/) | [TODO](TODO.md) | [Releases Guide](.docs/releases/RELEASES.md)
@@ -71,6 +71,29 @@ As we continue expanding Thorne UI, we're committed to:
   - Community feedback integration
 
 **Bottom Line**: Thorne UI exists to serve players, not constrain them. Every design decision asks "Does this give players more control?" rather than "What do I think looks best?"
+
+---
+
+## 🎯 Current Milestone Focus (v0.7.0)
+
+Primary objective is to complete the remaining v0.7.0 items cleanly without unnecessary scope expansion.
+
+### Completed in current cycle
+
+- ✅ Stat icon pipeline and variant regeneration
+- ✅ Target casting name and attack delay/tick display work
+- ✅ Spellbook/cast window control consistency pass
+- ✅ Thorne-first options sync workflow (`options_thorne_sync.py` + `sync-option-thorne.bat`)
+
+### Remaining v0.7.0 priorities
+
+- ⏳ Spell recast timers on Cast window (global + per-gem experience)
+- ⏳ Final low/medium-effort Nillipuss-inspired quality-of-life items
+- ⏳ Final documentation consistency pass before v0.7.0 release prep
+
+### Scope note
+
+Spellbook Meditate button is currently visual-only and not active; it should not be treated as a shipped v0.7.0 feature until functional.
 
 ---
 
@@ -255,62 +278,27 @@ Comprehensive architectural patterns and implementation guidance are documented 
 
 ---
 
-## 📊 Development Phases
+## 📚 Initial Phase Plan (Archive Reference)
 
-See [.development/initial-phases/](.development/initial-phases/) for detailed phase documentation.
+The numbered phase plan was the original scaffolding for early/mid project delivery and is now treated as historical planning context.
 
-### Phase Status Dashboard
+- Archived reference: [.development/initial-phases/](.development/initial-phases/)
+- Use this for historical rationale and implementation chronology, not day-to-day prioritization.
 
-| Phase | Status | Priority | Focus | Documentation |
-|-------|--------|----------|-------|---------------|
-| 1-2 | ✅ Complete | - | Foundation (Actions, Hotbar, Inventory) | [Details](.development/initial-phases/PHASE-1-2-FOUNDATION.md) |
-| 3 | ✅ Complete | - | Merchant Window Enhancements | [Details](.development/initial-phases/PHASE-3-MERCHANT.md) |
-| 3.5 | ✅ Complete | - | Player/Pet/Group Window Refinements | [Details](.development/initial-phases/PHASE-3.5-PLAYER-GROUP-REFINEMENTS.md) |
-| 3.7 | ✅ Complete | - | UI Infrastructure & Templates | [Details](.development/initial-phases/PHASE-3.7-INFRASTRUCTURE.md) |
-| 3.9 | ✅ Complete | - | Inventory Window Character Sheet Redesign (v0.6.0) | [Details](.development/initial-phases/PHASE-3.9-INVENTORY-REDESIGN.md) |
-| 4 | 📋 Planned | Medium | Actions Window Simplification | [Details](.development/initial-phases/PHASE-4-ACTIONS-SIMPLIFICATION.md) |
-| 5 | ✅ Complete | - | Target Window Enhancements (ToT, Level, Class) | [Details](.development/initial-phases/PHASE-5-TARGET-WINDOW.md) |
-| 5.5 | 📋 Planned | Low | Loot Window Enhancements | [Details](.development/initial-phases/PHASE-5.5-LOOT-ENHANCEMENTS.md) |
-| 6 | ✅ Complete | - | Research & Analysis (Planning for Phase 3.9) | [Details](.development/initial-phases/PHASE-6-CONTAINERS.md) |
-| 7 | 🔮 Future | Low | Integration & Asset Consolidation | [Details](.development/initial-phases/PHASE-7-INTEGRATION.md) |
-| 8 | 🔮 Future | Low | Polish & Optimization | [Details](.development/initial-phases/PHASE-8-POLISH.md) |
+### Current planning model
 
-**Legend**: ✅ Complete | 📋 Planned | 🔬 Research | 🔮 Future
+Current execution is now driven by:
 
-### Phase Summaries
+- **v0.7.0 milestone focus** (see section above)
+- **`TODO.md` active queue** for next implementation items
+- **GitHub Issues/PRs** for live status tracking and scoping
+- **`.docs/STANDARDS.md`** for implementation constraints and conventions
 
-**Phase 1-2: Foundation** ✅  
-Established core UI framework with Actions window, multi-row hotbar system, and inventory tabs integration. Discovered and documented critical client limitations.
+### What changed
 
-**Phase 3: Merchant Window Enhancements** ✅  
-Redesigned Merchant window with self-sufficient shopping experience. Added tabbed interface (Bags/Equipment/Stats) matching Inventory aesthetics. Implemented Options directory pattern for variant management.
-
-**Phase 3.5: Player/Pet/Group Window Refinements** ✅  
-Optimized PlayerWindow layout with extended stats, pet information, and casting indicators. Enhanced GroupWindow with combat states and integrated pet HP tracking. Implemented fade-safe background styling.
-
-**Phase 3.7: UI Infrastructure & Template Standardization** ✅  
-Established comprehensive gauge template library, standardized XML organization patterns, and created reusable color schemes. Implemented anatomical layout system for consistent window positioning.
-
-**Phase 3.9: Inventory Window Character Sheet Redesign** ✅  
-Completed in v0.6.0: Redesigned Inventory window to integrate character sheet functionality with AA gauge, stat blocks, and equipment grid using subwindow pattern. Features anatomical 4-column equipment layout (45x45px slots) and unified character information display. [Full details →](.development/initial-phases/PHASE-3.9-INVENTORY-REDESIGN.md)
-
-**Phase 4: Actions Window Simplification** 📋  
-Streamline Actions window by removing redundant elements, optimizing hotbar layouts, and improving visual hierarchy. [Full details →](.docs/phases/phase-4-actions-simplification.md)
-
-**Phase 5: Target Window Enhancements** ✅  
-Added Target Level and Class display to Target Window. Created separate EQUI_TargetOfTargetWindow.xml for Zeal ToT functionality (EQTypes 27/120). Key discovery: ToT requires dedicated window file, cannot be embedded in TargetWindow. [Full details →](.docs/phases/phase-5-target-window.md)
-
-**Phase 5.5: Loot Window Enhancements** 📋  
-Add Destroy button for quick item deletion and weight cur/max display to prevent over-encumbrance during looting. ✅ Fixed window height bug (v0.4.0). [Full details →](.docs/phases/phase-5.5-loot-enhancements.md)
-
-**Phase 6: Research & Analysis** ✅  
-Completed: Comprehensive multi-window analysis (default, duxaUI, QQ, Infiniti-Blue, vert, zeal, community variants) to identify UI patterns, best practices, and design approaches. Research findings directly informed Phase 3.9 inventory redesign decisions and feature prioritization. [Full details →](.development/initial-phases/PHASE-6-CONTAINERS.md)
-
-**Phase 7: Integration & Asset Consolidation** 🔮  
-Unify visual language across all windows, consolidate animation definitions, optimize texture usage.
-
-**Phase 8: Polish & Optimization** 🔮  
-Final refinements: performance optimization, accessibility improvements, documentation completion.
+- The project has moved beyond strict phase-by-phase execution.
+- Remaining work is better handled as targeted feature tracks and polish passes.
+- Historical phase docs remain valuable as archived design history and technical reference.
 
 ---
 
@@ -468,12 +456,11 @@ For comprehensive technical documentation, see:
 
 Have ideas for enhancements? Want to help?
 
-1. **Report Issues**: Use GitHub Issues for bugs or problems
-  - Example: [#26](https://github.com/draknarethorne/thorne-ui/issues/26) - MerchantSlotsWnd ScreenID mismatch (uierror.txt)
-2. **Suggest Features**: GitHub Discussions or Forums
-3. **Submit Code**: Pull requests welcome!
-4. **Test & Feedback**: Run latest builds and share results
-5. **Documentation**: Help improve guides and examples
+1. **Report Issues**: Use GitHub Issues for bugs or problems (example: [#26](https://github.com/draknarethorne/thorne-ui/issues/26) - MerchantSlotsWnd ScreenID mismatch)
+1. **Suggest Features**: GitHub Discussions or Forums
+1. **Submit Code**: Pull requests welcome!
+1. **Test & Feedback**: Run latest builds and share results
+1. **Documentation**: Help improve guides and examples
 
 ---
 
@@ -484,32 +471,37 @@ Thorne UI uses GitHub Releases to distribute packaged versions of thorne_drak. T
 ### Quick Release Process
 
 1. **Prepare for release:**
-   - Update version number in README.md Version History section
-   - Ensure all changes are committed and pushed to main
-   - Test thorne_drak in-game
+  Update version number in README.md Version History section, ensure all changes are committed and pushed to your release branch, and test `thorne_drak` in-game.
 
-2. **Create and push a version tag:**
+1. **Create and push a version tag:**
    ```bash
-   git tag -a v0.4.0 -m "Release v0.4.0: Brief description"
-   git push origin v0.4.0
+  git push origin <active-branch>
+  git tag -a v0.6.5 -m "Release v0.6.5: Brief description"
+  git push origin v0.6.5
    ```
 
-3. **Automated workflow:**
+1. **Automated workflow:**
    - GitHub Actions automatically creates the release
    - Packages thorne_drak as a ZIP file
    - Generates changelog from commits
    - Publishes release with download links
 
-4. **Review and announce:**
+1. **Review and announce:**
    - Check the release on GitHub Releases page
    - Edit release notes if needed
    - Share with the TAKP community
 
 > **Note**: Only thorne_drak is included in releases. Other variants are available in the source repository.
 
+### Release Hygiene (Avoid Unnecessary Churn)
+
+- Always update: `VERSION`, `README.md` Version History
+- Update release docs only when process/content has materially changed
+- Keep release commits focused so review and rollback are straightforward
+
 ### Detailed Guide
 
-For complete instructions, troubleshooting, and best practices, see **[Releases Guide](.docs/RELEASES.md)**.
+For complete instructions, troubleshooting, and best practices, see **[Releases Guide](.docs/releases/RELEASES.md)**.
 
 Topics covered:
 - Version numbering (semantic versioning)
@@ -520,104 +512,7 @@ Topics covered:
 
 ---
 
-## 📜 Version History
-
-**v0.6.0** (February 6, 2026)
-- ✅ **Phase 3.9 Completion**: Inventory window character sheet redesign (FINAL)
-  - Anatomical 4-column equipment layout (21 armor slots, 2px spacing)
-  - Unified 45x45px slot sizing for consistency across all window sizes
-  - Currency zone properly positioned with correct spacing
-  - AA gauge integrated with character sheet
-  - Phase 3.9 fully tested and stable for production
-- ✅ **Critical Texture Fixes**
-  - Attack Indicator texture definition added (resolves UIError.txt entries)
-  - PNG mislabeling corrected (converted to proper TGA format)
-  - UTF-8 character encoding issues fixed in XML files
-  - scrollbar_gutter.tga dimensions corrected (0x0 → 16x16)
-- ✅ **Player Window Improvements**
-  - AttackIndicator animation properly referenced across all 5 variants
-  - Gauge animation organization optimized
-  - All player window variants validated and tested
-- ✅ **Comprehensive Testing & Validation**
-  - 45 texture files verified (proper format, dimensions validated)
-  - 100 XML files validated for parsing correctness
-  - No texture loading errors or missing animations
-- ✅ **Documentation & Planning**
-  - Phase 6 research archived and summarized
-  - Stat icons implementation guide created (.development/stat-icons/)
-  - Self-sustainable window architecture philosophy documented
-  - Next phase (Stat Icons) fully planned and ready for implementation
-- ✅ **Stat Icons System**: File organization and abbreviation enhancements
-  - Removed duplicate coordinate files (backed up to .development/archives/)
-  - Enhanced master coordinates JSON with 18 icon abbreviations
-  - Added comprehensive abbreviation reference guide (.development/stat-icons/ABBREVIATIONS.md)
-  - All abbreviations documented with rationale and implementation guidelines
-  - Scripts verified working with enhanced metadata structure
-- ✅ **Development Setup**: Version management and GitHub Actions
-  - VERSION file synchronized with git tags and README
-  - Automated release workflow tested and verified
-  - Release documentation updated and organized
-
-**v0.5.0** (February 3, 2026)
-- ✅ **Phase 5**: Target Window enhancements
-  - Target of Target (ToT) window implementation (Zeal compatible)
-  - Target Level and Class displays
-  - Pet dismiss button enabled with visual improvements
-- ✅ **Pet Window**: Enhanced layout and color scheme
-  - Pet health gauge improvements (color updated to red)
-  - Created Standard and Tall Gauge variants
-  - Improved button positioning
-- ✅ **Code Quality**: Comprehensive attribution headers
-  - Added headers to 38 XML files
-  - Credited original authors and documented Thorne UI modifications
-- ✅ **Bug Fixes**: Loot window height correction
-  - Increased from 360px → 420px for proper 4×5 slot visibility
-  - Fixed Large Loot variant matching
-- ✅ **Project Infrastructure**: Version management system
-  - Created VERSION file (semantic versioning)
-  - Multi-source version tracking (VERSION file, git tags, README)
-  - Comprehensive VERSION-MANAGEMENT.md guide
-- ✅ **Documentation**: Complete reorganization and standardization
-  - Renamed all docs to UPPERCASE-WITH-HYPHENS.md convention
-  - Moved docs/ → .docs/ (hidden from EQ client)
-  - Created version-specific release directories
-  - Enhanced ThorneUI agent with GitHub MCP instructions
-- ✅ **Development Setup**: Workspace and script improvements
-  - Added .bin/ directory for utility scripts
-  - Updated workspace PATH configuration for cross-platform support
-
-**v0.4.0** (February 2, 2026)
-- ✅ **GitHub Releases**: Complete automated release infrastructure
-  - GitHub Actions workflow for automated ZIP packaging
-  - Release testing suite with validation script
-  - Public Releases page at `/releases` URL
-  - Automated changelog generation from commits
-- ✅ **Documentation**: Comprehensive releases guides
-  - Complete releases guide (RELEASES.md)
-  - FAQ covering common questions (RELEASES-FAQ.md)
-  - Testing guide (now in .development/releases/TESTING-RELEASES.md)
-  - Quick start reference (releases-quickstart.md)
-
-**v0.3.0** (February 1, 2026)
-- ✅ **Documentation**: Complete reorganization (79% reduction in main file)
-  - Modular structure with `.docs/` directory (15 specialized files)
-  - Phase documentation extracted (9 phase files, 1,571 lines)
-  - Technical references created (EQTypes 313 lines, Zeal 626 lines)
-  - Enhanced STANDARDS.md with comprehensive patterns (629 lines)
-- ✅ **Merchant Window**: Comprehensive redesign (3-tab self-sufficient UI)
-- ✅ **Actions Window**: Now resizable for collapsing inventory tabs
-- ✅ **Potion Belt**: Reminder button added to Actions Main tab
-- ✅ **Options Pattern**: Implemented variant directory structure
-
-**v0.2.0** (January 2026)
-- ✅ Hybrid hotbar + inventory display (4-row layout)
-- ✅ Vertical navigation arrows for multi-row hotbar
-- 🔍 Discovered client hardcoding limitations (buttons 11-30 don't function)
-
-**v0.1.0** (January 2026)
-- ✅ Initial Actions window with inventory tabs
-- ✅ Player stats integration
-- ⚠️ Identified window fading limitation
+For complete release history and changelog, see [README.md](README.md#-version-history).
 
 ---
 

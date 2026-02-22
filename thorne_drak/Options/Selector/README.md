@@ -11,20 +11,17 @@ This directory contains variants for the Selector window (EQUI_SelectorWnd.xml).
 
 ## Available Variants
 
-- **[Default/](Default/)**    
-  `EQUI_SelectorWnd.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_SelectorWnd.xml`
 
-- **[Vertical/](Vertical/)**  📄
+- **[Thorne/](Thorne/)**    
   `EQUI_SelectorWnd.xml`
 
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_SelectorWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_SelectorWnd.xml`.
 
 ## Metadata
 

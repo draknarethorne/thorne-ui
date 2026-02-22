@@ -1,0 +1,46 @@
+{
+  "_comment": "Patriot variant — red-white-blue 3-stop vertical gradient on all armor slots. Accessories (rings, belt, neck) get gold. Weapons get a red-dominant override. Bags get bronze. Showcases middle_color 3-stop gradients.",
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "patriot"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 28,
+    "offset_x": 1,
+    "offset_y": 1,
+    "item_opacity": 0.92
+  },
+  "gradient_presets": {
+    "patriot_weapon": {
+      "_comment": "Variant-specific: red-heavy for weapon slots — top stays red, dark blue bottom",
+      "type": "vertical",
+      "top_color": [200, 50, 50],
+      "bottom_color": [40, 60, 140]
+    }
+  },
+  "item_overrides": {
+    "ear":       { "gradient": "gold" },
+    "neck":      { "gradient": "gold" },
+    "fingers":   { "gradient": "gold" },
+    "belt":      { "gradient": "gold" },
+    "wrist":     { "gradient": "gold" },
+    "primary":   { "gradient": "patriot_weapon" },
+    "secondary": { "gradient": "patriot_weapon" },
+    "range":     { "gradient": "patriot_weapon" },
+    "ammo":      { "gradient": "shadow" },
+    "bag":       { "gradient": "bronze" },
+    "logo_1":    { "gradient": "none" },
+    "logo_2":    { "gradient": "patriot" },
+    "logo_3":    { "gradient": "patriot" },
+    "logo_4":    { "gradient": "patriot" },
+    "logo_5":    { "gradient": "patriot" }
+  }
+}

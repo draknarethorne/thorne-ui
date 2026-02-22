@@ -1,0 +1,130 @@
+{
+  "description": "Icon coordinate mappings for stat icon generation from spell_icons_thorne",
+  "note": "Use row/col coordinates (1-10 for 10x10 grid of 22x22 icons, 1-based indexing) OR x/y coordinates (pixel positions). Script uses row/col if provided, falls back to x/y. Automatically calculates x/y from row/col: x = (col-1) * 22, y = (row-1) * 22",
+  
+  "AC": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 9,
+    "col": 3,
+    "description": "Armor Class"
+  },
+  
+  "ATK": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 6,
+    "col": 1,
+    "description": "Attack"
+  },
+  
+  "HP": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 10,
+    "col": 10,
+    "description": "Hit Points"
+  },
+  
+  "MANA": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 2,
+    "col": 1,
+    "description": "Mana Points"
+  },
+  
+  "STA": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 1,
+    "col": 5,
+    "description": "Stamina"
+  },
+  
+  "Weight": {
+    "file": "spell_icons_thorne02.tga",
+    "row": 3,
+    "col": 7,
+    "description": "Character Weight"
+  },
+  
+  "Fire": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 6,
+    "col": 3,
+    "description": "Fire Resistance"
+  },
+  
+  "Cold": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 6,
+    "col": 8,
+    "description": "Cold Resistance"
+  },
+  
+  "Magic": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 7,
+    "col": 10,
+    "description": "Magic Resistance"
+  },
+  
+  "Poison": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 7,
+    "col": 2,
+    "description": "Poison Resistance"
+  },
+  
+  "Disease": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 7,
+    "col": 6,
+    "description": "Disease Resistance"
+  },
+  
+  "Reserve": {
+    "file": "spell_icons_thorne02.tga",
+    "row": 3,
+    "col": 6,
+    "description": "Dragon"
+  },
+  
+  "STR": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 1,
+    "col": 7,
+    "description": "Strength"
+  },
+  
+  "INT": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 2,
+    "col": 4,
+    "description": "Intelligence"
+  },
+  
+  "WIS": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 2,
+    "col": 5,
+    "description": "Wisdom"
+  },
+  
+  "AGI": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 1,
+    "col": 10,
+    "description": "Agility"
+  },
+  
+  "DEX": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 1,
+    "col": 9,
+    "description": "Dexterity"
+  },
+  
+  "CHA": {
+    "file": "spell_icons_thorne01.tga",
+    "row": 2,
+    "col": 6,
+    "description": "Charisma"
+  }
+}

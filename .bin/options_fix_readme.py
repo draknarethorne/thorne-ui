@@ -138,7 +138,7 @@ class ReadmeHeaderFixer:
             
             # Construct proper title if we have window/variant names
             if window_name and variant_name:
-                if variant_name.lower() == 'default':
+                if variant_name.lower() in ('default', 'thorne'):
                     proper_title = f"# Window: {window_name} - {variant_name} Variant"
                 else:
                     # Standard, Custom, etc.
@@ -294,7 +294,7 @@ class ReadmeHeaderFixer:
         """Extract window name and variant name from file path.
         
         Expected paths:
-        - thorne_drak/Options/Actions/Default/README.md -> ('Actions', 'Default')
+        - thorne_drak/Options/Actions/Thorne/README.md -> ('Actions', 'Thorne')
         - thorne_drak/Options/Actions/Standard/README.md -> ('Actions', 'Standard')
         - thorne_drak/Options/Player/Pet Bottom/README.md -> ('Player', 'Pet Bottom')
         """
@@ -334,6 +334,71 @@ class ReadmeHeaderFixer:
 
 
 def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(
+        prog="options_fix_readme.py",
+        description="""
+Auto-fix README Formatting in UI Variants
+
+Scans Options/ variants and fixes README.md files to conform to standards:
+- Proper Markdown headers (# for title, ## for sections)
+- Consistent code block formatting
+- Correct file link formatting
+- Standard section ordering
+
+FEATURES:
+  ✓ Bulk fix all READMEs or target specific window
+  ✓ Dry-run mode to preview changes
+  ✓ Preserves content while fixing formatting
+  ✓ Automatic backup before modifications
+  ✓ Detailed change reporting
+
+CAUTION: This is a DESTRUCTIVE OPERATOR. Use --dry-run first to preview.
+""",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+EXAMPLES:
+
+  # Preview changes to all READMEs
+  python .bin/options_fix_readme.py --dry-run
+
+  # Fix all READMEs with verbose output
+  python .bin/options_fix_readme.py --verbose
+
+  # Fix only Player window variants
+  python .bin/options_fix_readme.py --window Player
+
+  # Preview fixes for Target window only
+  python .bin/options_fix_readme.py --window Target --dry-run
+
+FIXES:
+  - Header formatting (# Title, ## Section)
+  - Code block syntax (``` xml, ``` json, etc.)
+  - Link formatting ([text](path))
+  - List indentation and consistency
+  - Trailing whitespace
+"""
+    )
+    
+    parser.add_argument(
+        "--window", "-w",
+        metavar="NAME",
+        help="Fix only specific window (e.g., Player, Target)"
+    )
+    parser.add_argument(
+        "--dry-run", "-d",
+        action="store_true",
+        help="Preview changes without modifying files"
+    )
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Show detailed changes for each file"
+    )
+    
+    args = parser.parse_args()
+    
     # Determine Options path
     script_dir = Path(__file__).parent
     root_dir = script_dir.parent
@@ -343,19 +408,9 @@ def main():
         print(f"ERROR: Options directory not found at {options_dir}")
         sys.exit(1)
     
-    # Parse arguments
-    dry_run = "--dry-run" in sys.argv
-    verbose = "--verbose" in sys.argv
-    window_filter = None
-    
-    if "--window" in sys.argv:
-        idx = sys.argv.index("--window")
-        if idx + 1 < len(sys.argv):
-            window_filter = sys.argv[idx + 1]
-    
     # Run fixer
-    fixer = ReadmeHeaderFixer(options_dir, dry_run=dry_run, verbose=verbose)
-    fixer.scan_and_fix(window_filter=window_filter)
+    fixer = ReadmeHeaderFixer(options_dir, dry_run=args.dry_run, verbose=args.verbose)
+    fixer.scan_and_fix(window_filter=args.window)
 
 
 if __name__ == '__main__':

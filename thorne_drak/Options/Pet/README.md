@@ -4,15 +4,12 @@
 
 This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 
-**Last Synced:** 2026-02-03  
-**Git Commit:** 5c0eb41
+**Last Synced:** 2026-02-17  
+**Git Commit:** 36b97c1
 
 ---
 
 ## Available Variants
-
-- **[Default/](Default/)**    
-  `EQUI_PetInfoWindow.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_PetInfoWindow.xml`
@@ -20,11 +17,14 @@ This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 - **[Tall Gauge/](Tall Gauge/)**  📄
   `EQUI_PetInfoWindow.xml`
 
+- **[Thorne/](Thorne/)**    
+  `EQUI_PetInfoWindow.xml`
+
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_PetInfoWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_PetInfoWindow.xml`.
 
 ## Metadata
 

@@ -11,20 +11,14 @@ This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 
 ## Available Variants
 
-- **[Default/](Default/)**  📄
-  `EQUI_GroupWindow.xml`
-
-- **[Large Gauges/](Large Gauges/)**  📄
-  `EQUI_GroupWindow.xml`
-
-- **[Standard/](Standard/)**  📄
+- **[Thorne/](Thorne/)**  📄
   `EQUI_GroupWindow.xml`
 
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_GroupWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_GroupWindow.xml`.
 
 ## Metadata
 

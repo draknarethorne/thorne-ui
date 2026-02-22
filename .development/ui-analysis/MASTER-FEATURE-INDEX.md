@@ -130,7 +130,7 @@ v0.8.0 WAVE 2 (High Dependencies)
 ## Texture Asset Requirements
 
 ### Required for v0.7.0
-- ✅ gauge_pieces01.tga (already in Thorne) - for recast timers + attack delay
+- ✅ gauge_inlay_thorne01.tga (already in Thorne) - for recast timers + attack delay
 - ✅ stat_icon_pieces01.tga (already in Thorne) - for resistance icons
 - ✅ window_pieces01-05.tga (already in Thorne) - for UI elements
 - ⚠️ Confirm resistance icon graphics exist in this file

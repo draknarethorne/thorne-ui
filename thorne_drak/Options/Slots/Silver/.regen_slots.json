@@ -1,0 +1,28 @@
+{
+  "_comment": "Silver variant — cool silver palette throughout. A clean, neutral alternative to Gold.",
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "silver"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 28,
+    "offset_x": 1,
+    "offset_y": 1,
+    "item_opacity": 0.92
+  },
+  "item_overrides": {
+    "logo_1": { "gradient": "none" },
+    "logo_2": { "gradient": "silver" },
+    "logo_3": { "gradient": "silver" },
+    "logo_4": { "gradient": "silver" },
+    "logo_5": { "gradient": "silver" }
+  }
+}

@@ -2,7 +2,7 @@
 
 **File**: [EQUI_PetInfoWindow.xml](./EQUI_PetInfoWindow.xml)
 **Version**: 1.1.0  
-**Last Updated**: 2026-02-03
+**Last Updated**: 2026-02-17
 **Status**: ✅ Enhanced variant with improved readability  
 **Author**: Draknare Thorne (modified from original by Brujoloco)
 

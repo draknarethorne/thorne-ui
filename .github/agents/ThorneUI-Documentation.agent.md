@@ -361,6 +361,13 @@ Before returning documentation:
 - ✅ Cross-references verified
 - ✅ Spelling and grammar checked
 
+## Quality Checks (When Applicable)
+
+- **Markdown changes**: run `python .bin/scan_links.py` and review `.tmp/scan_links.json`.
+- **Python changes**: run `ruff` (lint + format). If type checks are configured, run `pyright` or `mypy` as specified.
+- **XML changes**: validate XML well-formedness with the agreed checker (e.g., lxml/xmllint).
+- **Reporting**: store audit outputs in `.tmp/` (gitignored) and summarize results in your response.
+
 ## Key References
 
 - Existing docs in `.docs/` for style consistency

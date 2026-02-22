@@ -1,0 +1,883 @@
+{
+  "variant": "Silver",
+  "summary": {
+    "items_total": 26,
+    "items_with_overrides": 5,
+    "source_files": {
+      "thorne_item01.tga": "master",
+      "thorne_buttons01.tga": "master"
+    }
+  },
+  "items": [
+    {
+      "name": "ear",
+      "out_row": 1,
+      "out_col": 1,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "neck",
+      "out_row": 1,
+      "out_col": 2,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "head",
+      "out_row": 1,
+      "out_col": 3,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "master_shape",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "face",
+      "out_row": 1,
+      "out_col": 4,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "chest",
+      "out_row": 1,
+      "out_col": 5,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "secondary",
+      "out_row": 1,
+      "out_col": 6,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "master_shape",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "back",
+      "out_row": 2,
+      "out_col": 1,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 35,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "arms",
+      "out_row": 2,
+      "out_col": 2,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "shoulders",
+      "out_row": 2,
+      "out_col": 3,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "wrist",
+      "out_row": 2,
+      "out_col": 4,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "belt",
+      "out_row": 2,
+      "out_col": 5,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "range",
+      "out_row": 2,
+      "out_col": 6,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "hands",
+      "out_row": 3,
+      "out_col": 1,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "fingers",
+      "out_row": 3,
+      "out_col": 2,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "legs",
+      "out_row": 3,
+      "out_col": 3,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "feet",
+      "out_row": 3,
+      "out_col": 4,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "primary",
+      "out_row": 3,
+      "out_col": 5,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "master_shape",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "ammo",
+      "out_row": 3,
+      "out_col": 6,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "bag",
+      "out_row": 4,
+      "out_col": 1,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 35,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "logo_1",
+      "out_row": 4,
+      "out_col": 2,
+      "gradient": "none",
+      "gradient_source": "variant_override",
+      "gradient_type": "none",
+      "top_color": [
+        220,
+        200,
+        100
+      ],
+      "bottom_color": [
+        180,
+        160,
+        80
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_2",
+      "out_row": 4,
+      "out_col": 3,
+      "gradient": "silver",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_3",
+      "out_row": 4,
+      "out_col": 4,
+      "gradient": "silver",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_4",
+      "out_row": 4,
+      "out_col": 5,
+      "gradient": "silver",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "logo_5",
+      "out_row": 4,
+      "out_col": 6,
+      "gradient": "silver",
+      "gradient_source": "variant_override",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 34,
+      "fit_size_source": "master_shape",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": -2,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
+    },
+    {
+      "name": "empty_row5_col1",
+      "out_row": 5,
+      "out_col": 1,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "empty_row6_col1",
+      "out_row": 6,
+      "out_col": 1,
+      "gradient": "silver",
+      "gradient_source": "default_button",
+      "gradient_type": "vertical",
+      "top_color": [
+        214,
+        220,
+        228
+      ],
+      "bottom_color": [
+        132,
+        142,
+        156
+      ],
+      "middle_color": null,
+      "fit_size": 28,
+      "fit_size_source": "default_item",
+      "fit_mode": "tile",
+      "fit_mode_source": "default_item",
+      "button_col": 1,
+      "button_col_source": "default_button",
+      "offset_x": 1,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.92,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    }
+  ],
+  "output_file": "C:\\thorne-ui\\thorne_drak\\Options\\Slots\\Silver\\item_slots_thorne01.tga",
+  "errors": []
+}

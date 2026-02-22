@@ -25,6 +25,17 @@ Specialized agent for complex implementation tasks that require:
 
 ## Core Responsibilities
 
+### Development and Testing Infrastructure
+
+**Directory Setup:**
+- **Development**: `C:\Thorne-UI\thorne_drak\` (version controlled - work here)
+- **Testing**: `C:\TAKP\uifiles\thorne_dev\` (deployed test location)
+- **Options**: `C:\Thorne-UI\thorne_drak\Options\<Category>\<Variant>\`
+
+**Sync for Testing** (use when actively testing/refining):
+- `.\sync-thorne-ui.bat` - Full sync of thorne_drak to thorne_dev
+- `.\sync-option.bat <option>` - Sync specific Option variant for testing
+
 ### 1. Window Restructuring
 - Create new subwindow `<Screen>` elements
 - Reorganize element hierarchy
@@ -130,6 +141,13 @@ Specialized agent for complex implementation tasks that require:
 5. **Validate XML**: Check syntax and structure
 6. **Test considerations**: Suggest in-game testing approach
 7. **Return summary**: Document all changes made
+
+## Quality Checks (When Applicable)
+
+- **Markdown changes**: run `python .bin/scan_links.py` and review `.tmp/scan_links.json`.
+- **Python changes**: run `ruff` (lint + format). If type checks are configured, run `pyright` or `mypy` as specified.
+- **XML changes**: validate XML well-formedness with the agreed checker (e.g., lxml/xmllint).
+- **Reporting**: store audit outputs in `.tmp/` (gitignored) and summarize results in your response.
 
 ## Quality Checklist
 

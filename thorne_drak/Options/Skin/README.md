@@ -11,20 +11,20 @@ This directory contains variants for the Skin window (EQUI_LoadskinWnd.xml).
 
 ## Available Variants
 
-- **[Default/](Default/)**    
-  `EQUI_LoadskinWnd.xml`
-
 - **[Slightly Taller and Wider/](Slightly Taller and Wider/)**  📄
   `EQUI_LoadskinWnd.xml`
 
 - **[Standard/](Standard/)**    
   `EQUI_LoadskinWnd.xml`
 
+- **[Thorne/](Thorne/)**    
+  `EQUI_LoadskinWnd.xml`
+
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_LoadskinWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_LoadskinWnd.xml`.
 
 ## Metadata
 

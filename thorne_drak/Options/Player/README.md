@@ -4,8 +4,8 @@
 
 This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 
-**Last Synced:** 2026-02-10  
-**Git Commit:** e85f3b5
+**Last Synced:** 2026-02-17  
+**Git Commit:** 36b97c1
 
 ---
 
@@ -14,20 +14,20 @@ This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 - **[AA and XP Bottom/](AA and XP Bottom/)**  📄
   `EQUI_PlayerWindow.xml`
 
-- **[Default/](Default/)**  📄
-  `EQUI_PlayerWindow.xml`
-
 - **[Pet Bottom/](Pet Bottom/)**  📄
   `EQUI_PlayerWindow.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_PlayerNotesWindow.xml`
 
+- **[Thorne/](Thorne/)**  📄
+  `EQUI_PlayerWindow.xml`
+
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_PlayerWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_PlayerWindow.xml`.
 
 ## Metadata
 

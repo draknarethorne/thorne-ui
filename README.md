@@ -2,320 +2,246 @@
 
 # Thorne UI
 
-Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQQuarm mod**, now evolved into a standalone, documented UI suite focused on usability and maintainability.
+**The legendary UI for TAKP**—Crafted by Draknare Thorne, where classic EverQuest aesthetics meet modern playability.
+
+Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQQuarm mod**, now evolved into a standalone, fully-documented UI suite focused on **usability, flexibility, and player choice**.
 
 ---
 
-## 🎯 Project Vision
+## 🎮 What Makes Thorne UI Special
 
-**Thorne UI** provides modern, accessible user interface customizations for TAKP that respect classic EverQuest aesthetics while improving usability and visual clarity. The project emphasizes:
+**Thorne UI** respects classic EverQuest while making your gameplay better. We focus on:
 
-- **Consistency** - Unified standards across all windows and variants
-- **Readability** - Larger slots, clearer labels, appropriate spacing
-- **Flexibility** - Multiple variants for different playstyles and preferences
-- **Maintainability** - Clear documentation and coding standards for future updates
-- **Accessibility** - Well-organized tools and logical window layouts
+- **Always Visible Information** - Keep your stats, health, and buffs accessible without window juggling
+- **Player-First Design** - Multiple layout options for different playstyles; you choose how your UI looks
+- **Quality Craftsmanship** - Consistent spacing, readable text, professional appearance
+- **Easy Customization** - Pre-built Options variants let you swap layouts without editing XML
+- **Playable, Not Flashy** - Clean, uncluttered interface that gets out of your way
 
----
+### Your Data, Your Way
 
-## 📋 Project Philosophy
-
-### Design Principles
-
-1. **Responsive Layout** - Windows scale proportionally while maintaining usability
-2. **Clear Hierarchy** - Primary information is prominent, secondary information is accessible
-3. **Consistent Spacing** - Standardized margins, padding, and alignment across all windows
-4. **Color Semantics** - Colors convey meaning (e.g., purple for pet HP, blue for mana)
-5. **Legacy Compatibility** - Respects classic EverQuest UI conventions when appropriate
-
-### Development Standards
-
-All updates follow documented standards to maintain consistency. See [STANDARDS.md](.docs/STANDARDS.md) for complete guidelines on window sizing, button layouts, gauge styling, color palette, and EQType bindings.
+Every core window has **variants** to suit your preferences:
+- **Standard layouts** - Tested and balanced defaults
+- **Alternative options** - Tall/wide gauges, reorganized slots, custom colorways
+- **Mix & match** - Use different variants for different windows
+- **Extensible** - Documented and open for further customization
 
 ---
 
-## 📁 UI Variations
+<!-- SCREENSHOT PLACEHOLDER: Full UI at 1920x1080 (include Player, Inventory, Spellbook, Buffs visible) -->
+<!-- [Full UI Screenshot - Add tomorrow] -->
 
-### 🔧 thorne_drak
+---
 
-**Gameplay-Focused UI Design** - Inspired by actual gameplay experience and built for 1920x1080 resolution and larger. Designed to keep all critical information visible and accessible at all times.
+## 💾 Installation (2 Minutes)
 
-**Design Philosophy:**
+### Option 1: Download Latest Release (Easiest)
 
-- **Always-Visible Information** - Player stats, health, mana, experience visible without opening windows
-- **Multi-Purpose Windows** - Morph existing EverQuest windows to serve multiple functions with smart tabbing
-- **Quick Access Everywhere** - Key information duplicated intelligently across multiple windows for efficiency
-- **Action-Ready Layout** - Combat stats, buffs, pet info, target info all accessible without clutter
-- **Expandable Resolution Support** - Optimized for 1920x1080 and larger for maximum visibility
+1. Go to [Releases page](https://github.com/draknarethorne/thorne-ui/releases)
+2. Download `thorne_drak-vX.X.X.zip`
+3. Extract to `<TAKP Install>/uifiles/`
+4. In-game: `/loadskin thorne_drak`
 
-**Key Features:**
+### Option 2: Use Source Code
 
-- Tabbed windows providing quick access to different information types
-- Expanded slot sizing (45x45px standard) for easy clicking
-- Redesigned merchant/loot grids (5-column, vertical-scroll) with better visibility
-- Horizontal bag layout for inventory with full visual feedback
-- Extensive Options folder with alternate layouts for different playstyles
-- Player window showing stats, indicators, and quick reference information
-- Pet window with controls, health, and mana always visible
-- Group window optimized for raid visibility
+1. Clone or download this repository
+2. Copy `thorne_drak/` folder to `<TAKP Install>/uifiles/`
+3. In-game: `/loadskin thorne_drak`
 
-**Best For:** Players who value always-visible information, quick access to stats and buffs, and well-organized multi-functional windows
+**You're done.** UI updates instantly in-game.
 
-> **Note:** thorne_drak is the active development variant. Previous experimental variants (thorne_duxa, thorne_infiniti, thorne_qq) have been consolidated. For reference implementations, see the community UIs: duxaUI, Infiniti-Blue, QQQuarm
+---
+
+## 🎨 Core Features
+
+### Window Layouts & Variants
+
+**thorne_drak** - Our main variant, optimized for 1920x1080 and higher:
+
+- **Player Window** - HP, mana, buffs, experience all at a glance
+- **Inventory & Equip** - Large 45x45px slots, anatomical equipment layout for clarity
+- **Spell Book** - Clear gem placement with recast timer support
+- **Pet & Group** - Always-visible pet health/mana and raid member tracking
+- **Merchant Window** - Shop without juggling inventory; fast scrolling with 5-column layout
+- **Loot Window** - Large organized grid for quick looting
+- **Chat & Buffs** - Customizable buff display, clear chat formatting
+
+**Options for Every Window** - Don't like a layout? Try an alternative:
+- Browse `thorne_drak/Options/` for pre-built variations
+- Each option has a `README.md` explaining what's different
+- Copy the option's XML file to the root to activate
+
+See the [Options Guide](#-window-options--variants) below for details.
+
+### Accessibility & Consistency
+
+- **Readable Text** - Clear fonts, good contrast, no hidden information
+- **Logical Layout** - Windows organized by information type
+- **Consistent Spacing** - Standardized padding and alignment throughout
+- **Color Semantics** - Colors mean something (e.g., red = HP, blue = mana)
+
+<!-- SCREENSHOT PLACEHOLDER: Close-up of Player Window (show stat clarity and gauge design) -->
+<!-- [Player Window Detail - Add tomorrow] -->
+
+<!-- SCREENSHOT PLACEHOLDER: Inventory/Equipment (show anatomical layout) -->
+<!-- [Equipment Layout - Add tomorrow] -->
 
 ---
 
 ## 🙏 Credits & Inspiration
 
-- **Origin**: QQQuarm mod and its contributors (foundation and early layout concepts)
-- **Inspiration**: Nillipuss UI (feature ideas and polish targets for upcoming releases)
-- **Community references**: DuxaUI, Infiniti-Blue, QQ/QQQuarm, vert, zeal, and default UI files
-- **Custom work**: Layouts, documentation, and custom textures maintained by **Draknare Thorne**
+This project builds on the work and ideas of many contributors:
+
+- **QQQuarm mod** - Foundation and early layout concepts
+- **Nillipuss UI** - Feature inspiration and quality targets
+- **Community UIs** - DuxaUI, Infiniti-Blue, QQ, vert, zeal, and default UI files informed our design
+- **TAKP Community** - Feedback and play-testing from eager players
+
+**Maintained by**: Draknare Thorne
 
 ---
 
-## 💾 Installation
+## ⚙️ For Developers & Contributors
 
-### From GitHub Releases (Recommended)
+### Want to customize Thorne UI?
 
-1. **Download** - Visit the [Releases page](https://github.com/draknarethorne/thorne-ui/releases) and download `thorne_drak`
-2. **Extract** - Unzip the downloaded file to `<TAKP Install>/uifiles/`
-3. **Load in-game** - Use command: `/loadskin thorne_drak`
-4. **Reload** - UI will automatically refresh with new skin
+- **Contributing Guidelines** - See [STANDARDS.md](.docs/STANDARDS.md)
+- **Development Workflow** - See [DEVELOPMENT.md](DEVELOPMENT.md)
+- **Architecture & Decisions** - See [DEVELOPMENT.md](DEVELOPMENT.md)
+- **Roadmap & Priorities** - See [TODO.md](TODO.md)
 
-### From Source
+### Creating Your Own Variant
 
-1. **Clone/Download** - Get the repository source code
-2. **Copy** - Place desired `thorne_*` directory in `<TAKP Install>/uifiles/`
-3. **Load in-game** - Use command: `/loadskin thorne_drak` (or other variant)
-4. **Reload** - UI will automatically refresh with new skin
+1. Copy `thorne_drak/` to a new folder (e.g., `my_custom_ui/`)
+2. Edit XML files with any text editor
+3. Test in-game with `/loadskin my_custom_ui`
+4. Document your changes (useful for you later!)
+5. Consider contributing back to the project
 
----
-
-## ⚙️ Technical Details
-
-| Property | Value |
-|----------|-------|
-| **Format** | SIDL XML (Sony Interface Description Language) |
-| **Platform** | TAKP (Planes of Power 2002 emulation) |
-| **Editor** | Any text editor; no compilation needed |
-| **Scripting** | Pure declarative layout - no scripting support |
-| **Fonts** | Global numbered references affect entire UI |
-
-### Key Components
-
-| Component | Purpose |
-|-----------|---------|
-| `<Screen>` | Top-level window container |
-| `<Gauge>` | Progress bars bound to game data (HP, Mana, XP) |
-| `<Label>` | Text displays (static or EQType-bound) |
-| `<Button>` | Interactive controls with standard styling |
-| `<ListBox>` | Scrollable item lists (inventory, spell books) |
-| `<StaticAnimation>` | Background images and decorative elements |
+For detailed standards and patterns, see [STANDARDS.md](.docs/STANDARDS.md).
 
 ---
 
-## ✅ Current Focus (v0.7.0)
+## 📚 Documentation
 
-We are implementing the first **stat-icons and combat feature set**, inspired by Nillipuss concepts but adapted to Thorne’s standards:
+This project includes comprehensive guides:
 
-- Spell recast timers (global + per-gem)
-- Resistance icons in Actions window
-- Target spell casting name
-- Target attack delay timer
-- Spellbook meditate button
-
-**Roadmap & analysis**: See the [UI Analysis Hub](.development/ui-analysis/README.md) for the full feature index, priorities, and future phases.
-
----
-
-## 📚 Documentation Structure
-
-This project maintains comprehensive documentation organized by purpose:
-
-- **[STANDARDS.md](.docs/STANDARDS.md)** - UI development standards, button layouts, gauge styling, color palette, EQType reference, and contributing guidelines
-- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Implementation guide, workflow, architecture decisions, development roadmap (phases 1-7), and technical reference
-- **[TODO.md](TODO.md)** - Planned features, work items, and ongoing investigations organized by category
-- **[UI Analysis Hub](.development/ui-analysis/README.md)** - Comprehensive Nillipuss vs Thorne analysis and roadmap
-- **Individual window docs** - Some windows have dedicated `EQUI_*.md` files with detailed notes and history (in `thorne_drak/`)
-
-### Quick Links
-
-- **Starting development?** → Read [DEVELOPMENT.md](DEVELOPMENT.md) for workflow and architecture
-- **Need UI standards?** → See [STANDARDS.md](.docs/STANDARDS.md) for all guidelines
-- **Planning work?** → Check [TODO.md](TODO.md) for priorities and status
-- **Need feature roadmap?** → Start at [UI Analysis Hub](.development/ui-analysis/README.md)
-- **Contributing?** → Follow guidelines in [.docs/STANDARDS.md](.docs/STANDARDS.md)
+| Document | Purpose |
+|----------|---------|
+| [STANDARDS.md](.docs/STANDARDS.md) | UI development standards, button layouts, gauge styling, EQType reference |
+| [DEVELOPMENT.md](DEVELOPMENT.md) | Architecture, implementation guide, development roadmap, technical reference |
+| [TODO.md](TODO.md) | Current work items, planned features, investigations |
+| [RELEASES.md](.docs/releases/RELEASES.md) | How to create and publish releases |
 
 ---
 
-## 🔧 Getting Started
+## 🔗 Quick Links
 
-### Development Workflow
-
-1. **Copy project** to your development folder
-2. **Edit XML files** directly with any text editor
-3. **Test changes** in-game with `/loadskin thorne_drak`
-4. **Commit changes** with clear messages explaining modifications
-
-### Before Committing
-
-- ✅ Test all changes in-game
-- ✅ Verify no overlapping elements or visual glitches
-- ✅ Maintain consistent spacing and alignment
-- ✅ Follow established standards (see [.docs/STANDARDS.md](.docs/STANDARDS.md))
-- ✅ Add comments for non-obvious decisions
-- ✅ Document changes in commit message
-
-### Creating a Release
-
-Releases are created automatically through GitHub Actions when you push a version tag:
-
-```bashcd 
-# 1. Update version in README.md (Version History section)
-# 2. Commit and push all changes
-git add .
-git commit -m "Prepare for release v0.5.0"
-git push origin main
-
-# 3. Create and push a version tag (triggers automated workflow)
-git tag -a v0.5.0 -m "Release v0.5.0: Brief description of changes"
-git push origin v0.5.0
-
-# 4. GitHub Actions automatically:
-#    ✅ Creates ZIP packages (thorne_drak-v0.5.0.zip)
-#    ✅ Generates changelog from commits
-#    ✅ Publishes to Releases page
-#    ✅ Makes downloads available
-```
-
-**📚 Detailed Instructions:**
-- **Quick Start:** [.docs/releases-quickstart.md](.docs/releases-quickstart.md) - Fast reference for creating releases
-- **Complete Guide:** [.docs/RELEASES.md](.docs/RELEASES.md) - Full documentation with troubleshooting
-- **FAQ:** [.docs/RELEASES-FAQ.md](.docs/RELEASES-FAQ.md) - Common questions answered
-
-**🔗 View Releases:** https://github.com/draknarethorne/thorne-ui/releases
+- 📥 **[Download Latest Release](https://github.com/draknarethorne/thorne-ui/releases)** - Get the newest version
+- 📖 **[Full Documentation](DEVELOPMENT.md)** - Architecture, workflow, technical details
+- 📋 **[Standards Guide](.docs/STANDARDS.md)** - UI development standards and patterns
+- 🛠️ **[Roadmap & Issues](https://github.com/draknarethorne/thorne-ui/issues)** - What we're working on
+- 💬 **[GitHub Discussions](https://github.com/draknarethorne/thorne-ui/discussions)** - Chat with the community
 
 ---
 
 ## 📦 Window Options & Variants
 
-Each UI variant includes an **Options** directory with alternative window configurations and styling choices. This allows you to customize your experience without manually editing XML files.
+Most windows have **alternative layouts** available in the `Options/` directory. This lets you customize your experience without editing XML.
 
-### Options Directory (Sample Structure)
+### Using Options
+
+1. Navigate to `thorne_drak/Options/YourWindow/`
+2. Read the variant's `README.md` to understand what's different
+3. Copy the XML file to test (e.g., `Options/Player/Thorne/EQUI_PlayerWindow.xml` → `EQUI_PlayerWindow.xml`)
+4. Reload with `/loadskin thorne_drak` to see changes in-game
+5. If you like it, keep the option file. If not, revert to the original.
+
+### Directory Structure
 
 ```
 thorne_drak/
-├── EQUI_PlayerWindow.xml      (main windows in root)
+├── EQUI_PlayerWindow.xml      ← Main windows (active layout)
 ├── EQUI_Inventory.xml
-├── Options/                   (alternative layouts and configurations)
+├── Options/                   ← Alternative layouts
 │   ├── Player/
-│   │   ├── Standard/
+│   │   ├── Thorne/
 │   │   │   ├── EQUI_PlayerWindow.xml
-│   │   │   └── README.md
-│   │   └── ...more layouts as added
+│   │   │   └── README.md      ← Explains what's different
+│   │   └── ...more as added
 │   ├── Merchant/
-│   ├── Actions/
-│   ├── Hotbutton/
-│   ├── Gauges/
-│   │   ├── gauge_pieces01.tga    (shared texture assets)
-│   │   ├── gauge_pieces02.tga
-│   │   └── README.md             (gauge documentation)
-│   └── ...more as they're added
+│   ├── Inventory/
+│   └── ...more windows
+└── (textures, animations, config files)
 ```
 
-**File Types You'll Find:**
-- **`EQUI_*.xml`** - Window definition files (copy to replace main window)
-- **`README.md`** - Documentation explaining the variant/option (how to use, what changed)
-- **`*.tga`** - Texture/image files used by windows (e.g., gauge pieces, backgrounds, icons)
-
-*Note: Exact structure evolves over time as new options are created. Check the actual `Options/` directory for current offerings.*
-
-### How to Use Window Options
-
-1. **Browse available options** - Check `thorne_drak/Options/` directory for alternatives
-2. **Read the documentation** - Each folder has a `README.md` with descriptions
-3. **Test different layouts** - Try swapping `EQUI_*.xml` files to see different configurations
-4. **Handle texture files** - If an option includes custom `.tga` files, copy them to your variant root
-5. **Reload in-game** - Use `/loadskin thorne_drak 1` to see changes
-
-### Example: Trying Different Player Window Layouts
-
-- Main `EQUI_PlayerWindow.xml` contains the default layout
-- Alternative layouts are in `Options/Player/` subfolders
-- Each folder has its own `EQUI_PlayerWindow.xml` and possibly custom textures
-- Test different options to find what works best for your playstyle
+Each option includes everything needed (XML + textures). Just copy the variant, test it, and commit if you like it.
 
 ### Creating Your Own Options
 
 When you modify a window:
 
-1. **Test the main version** thoroughly
-2. **Create a subfolder** in `Options/YourWindow/` (e.g., `MyCustomLayout/`)
-3. **Copy your modified** `EQUI_WindowName.xml` into your folder
-4. **Include custom textures** - Copy any `.tga` files your option uses
-5. **Document your changes** with a `README.md` file
+1. Create a folder in `Options/YourWindow/MyVariant/`
+2. Copy your modified `EQUI_WindowName.xml` into it
+3. Include any custom `.tga` texture files it needs
+4. Write a `README.md` documenting what changed and why
+5. Share it as a contribution!
 
 ---
 
-## 🎨 Creating Variants & Options
+## 🚀 Current Development (v0.7.0)
 
-Want to create your own UI variant? Follow these steps:
+We're iterating toward **v1.0.0** with focused releases:
 
-1. Copy `thorne_drak` to new directory: `thorne_yourname`
-2. Modify XML files while respecting established standards
-3. Test thoroughly in-game
-4. Document your changes and design decisions
-5. Consider contributing back for inclusion in main project
+### What We're Working On (v0.7.0)
+- ✅ **Spell recast timers** - Know when your gems are ready
+- ✅ **Nillipuss-inspired QoL** - Small improvements that add up
+- ✅ **Final consistency pass** - Polish and alignment across windows
 
-### Organizing Your Custom Options
+### Recent Releases
+- **v0.6.5** - Spellbook polish and Thorne-first option sync
+- **v0.6.4** - Gauge system overhaul and target window enhancements
+- **v0.6.0** - Inventory redesign (Phase 3.9 completion)
 
-As you modify windows, keep them organized:
-
-1. Keep your main files in the variant root
-2. Store alternative layouts in `Options/YourWindow/LayoutName/`
-3. Document each option with a `README.md` file
-4. This structure makes it easy to switch between layouts
-
-See [.docs/STANDARDS.md](.docs/STANDARDS.md) for standards and [DEVELOPMENT.md](DEVELOPMENT.md) for architecture decisions.
-
----
-
-## 🚀 Road to v1.0.0
-
-All v0.x.x releases are **alpha/beta** versions building toward a stable v1.0.0 release. Track our progress:
-
-### Milestone Status
-
-| Category | Open Issues | Status |
-|----------|-------------|--------|
-| **Epics** | [#8](https://github.com/draknarethorne/thorne-ui/issues/8), [#12](https://github.com/draknarethorne/thorne-ui/issues/12), [#15](https://github.com/draknarethorne/thorne-ui/issues/15) | In Progress |
-| **High Priority** | [#17](https://github.com/draknarethorne/thorne-ui/issues/17) | Ready |
-| **Architecture** | [#14](https://github.com/draknarethorne/thorne-ui/issues/14), [#16](https://github.com/draknarethorne/thorne-ui/issues/16) | Planning |
-| **Polish** | [#9](https://github.com/draknarethorne/thorne-ui/issues/9), [#11](https://github.com/draknarethorne/thorne-ui/issues/11), [#13](https://github.com/draknarethorne/thorne-ui/issues/13), [#26](https://github.com/draknarethorne/thorne-ui/issues/26) | Backlog |
-
-### Key Epics for 1.0.0
-
-- **[Stat Icons Integration](https://github.com/draknarethorne/thorne-ui/issues/8)** - Option-driven stat icon layouts (text/icons/both)
-- **[UI Standards Investigation](https://github.com/draknarethorne/thorne-ui/issues/12)** - Standardize patterns from community UIs
-- **[Spellbook & Spell Gems](https://github.com/draknarethorne/thorne-ui/issues/15)** - Icon consistency and sizing improvements
-
-### Links
-
-- **[All Open Issues](https://github.com/draknarethorne/thorne-ui/issues)** - Current work items
-- **[Pull Requests](https://github.com/draknarethorne/thorne-ui/pulls)** - Active development
-- **[Releases](https://github.com/draknarethorne/thorne-ui/releases)** - Download latest versions
+**Want details?** See the [Full Version History](#-version-history) below.
 
 ---
 
 ## 📅 Version History
+
+**v0.6.5** (February 18, 2026)
+- ✅ Spellbook and casting UI polish
+  - Spellbook promoted to readability-first Thorne baseline
+  - Restored standard 84x20 Done button sizing to match Inventory standards
+  - Cast window Spellbook button standardized to 20px height with adjusted window spacing
+- ✅ Options system migration to Thorne-first variants
+  - Window option baselines migrated from `Default/` to `Thorne/` where applicable
+  - Added dedicated Thorne sync tooling for window option backups and metadata updates
+  - Added `sync-option-thorne.bat` wrapper for maintainable Windows-native sync workflow
+- ✅ Icon and variant refresh
+  - Regenerated gem icon packs across option themes and root assets
+  - Updated option metadata/readmes to match current Thorne workflow
+
+**v0.6.4** (February 15, 2026)
+- ✅ Gauge system overhaul
+  - Size-specific gauge textures and animations (tall/wide variants)
+  - Wide gauge support and line rendering improvements
+  - Consistent gauge colors and alignment across Player, Pet, Inventory, and Spellbook
+- ✅ Target window improvements
+  - Added attack tick gauge (combat timer test)
+  - Added casting spell name display with refined layout
+  - Improved target HP/casting section spacing and background alignment
+- ✅ Tooling updates
+  - Gauge regeneration and audit scripts
+  - Release/label utility scripts and documentation cleanup
+
 **v0.6.3** (February 9, 2026) _(pre-release)_
 - ✅ Cast spell window spell-name font adjusted to Font 1
 
 **v0.6.2** (February 9, 2026) _archived_
 - ✅ Inventory equipment grid refinements
   - Restored Hands slot visibility and sizing
-  - Converted layout to 6-row anatomical “paper doll” arrangement
+  - Converted layout to 6-row anatomical "paper doll" arrangement
   - Centered 3-slot rows for cleaner alignment
 - ✅ Class animation and progression layout tuning
   - ClassAnim window repositioned and resized with preserved aspect ratio

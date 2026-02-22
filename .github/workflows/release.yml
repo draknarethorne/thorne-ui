@@ -86,7 +86,7 @@ jobs:
           cat > release_notes.md << 'EOF'
           # Thorne UI v$VERSION
           
-          Custom UI files for **TAKP Quarm Server** (PoP-era EverQuest).
+          **A legendary UI for TAKP**—Draknare Thorne's masterwork where classic EverQuest aesthetics meet modern playability. Crafted for players who demand clarity, accessibility, and choice.
           
           ## Installation
           
@@ -95,25 +95,26 @@ jobs:
           3. In-game, use the command: `/loadskin thorne_drak`
           4. The UI will automatically reload with the new skin
           
-          ## About Thorne Drak UI
+          ## What's Inside
           
-          **Gameplay-focused UI design** built for 1920x1080 resolution and larger, keeping critical information visible without clutter.
+          **Gameplay-focused design** built for 1920x1080 resolution and larger—every window optimized for visibility and quick access, without clutter.
           
           **Key Features:**
-          - Tabbed windows for fast access to core info
-          - 45x45px slot sizing for easier clicking
-          - Redesigned merchant/loot grids with improved visibility
-          - Horizontal bag layout with clear visual feedback
-          - Always-visible player/pet/group information
+          - Always-visible player stats, health, and buffs (no window juggling)
+          - Large 45x45px slot sizing for easier clicking and accuracy
+          - Reorganized merchant and loot windows for faster trading and looting
+          - Multi-tab designs for quick access to related information
+          - Anatomical equipment layout for intuitive gear management
+          - Extensive Options variants for different playstyles
 
-          ## Credits & Inspiration
+          ## About This Project
 
-          - **Origin**: QQQuarm mod and its contributors
-          - **Inspiration**: Nillipuss UI (feature ideas and polish targets)
-          - **References**: DuxaUI, Infiniti-Blue, QQ/QQQuarm, vert, zeal, default UI
-          - **Custom work**: Layouts, documentation, and textures by **Draknare Thorne**
+          - **Origin**: Built on QQQuarm mod foundations  
+          - **Inspiration**: Nillipuss UI (feature ideas and quality targets)  
+          - **Community**: References and analysis from DuxaUI, Infiniti-Blue, QQ, vert, zeal, and default UI
+          - **Craft**: All custom layouts, documentation, and textures by **Draknare Thorne**  
           
-          ## What's New
+          ## What Changed in This Release
           
           EOF
           
@@ -123,21 +124,22 @@ jobs:
           # Add footer
           cat >> release_notes.md << 'EOF'
           
-          ## Documentation
+          ## Learn More
           
-          - [README.md](https://github.com/draknarethorne/thorne-ui/blob/main/README.md) - Project overview and features
-          - [STANDARDS.md](https://github.com/draknarethorne/thorne-ui/blob/main/.docs/STANDARDS.md) - UI development standards
-          - [DEVELOPMENT.md](https://github.com/draknarethorne/thorne-ui/blob/main/DEVELOPMENT.md) - Development guide
-          - [VERSION-MANAGEMENT.md](https://github.com/draknarethorne/thorne-ui/blob/main/.docs/VERSION-MANAGEMENT.md) - Version control system
+          - [README.md](https://github.com/draknarethorne/thorne-ui/blob/main/README.md) - Features, installation, and documentation  
+          - [STANDARDS.md](https://github.com/draknarethorne/thorne-ui/blob/main/.docs/STANDARDS.md) - UI development standards and patterns  
+          - [DEVELOPMENT.md](https://github.com/draknarethorne/thorne-ui/blob/main/DEVELOPMENT.md) - Architecture, workflows, and technical details  
+          - [Full Changelog](https://github.com/draknarethorne/thorne-ui/commits/main) - All commits on main branch
           
-          ## Support
+          ## Get Involved
           
-          For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/draknarethorne/thorne-ui).
+          Found an issue? Have a feature idea? Want to contribute? Visit the [GitHub repository](https://github.com/draknarethorne/thorne-ui) and open an issue or pull request.
           
           ---
           
           **Maintainer**: Draknare Thorne  
-          **License**: Custom UI for personal use with The Al'Kabor Project
+          **License**: Custom UI for personal use with The Al'Kabor Project  
+          **Repository**: [draknarethorne/thorne-ui](https://github.com/draknarethorne/thorne-ui)
           EOF
           
           # Replace $VERSION placeholder

@@ -83,7 +83,7 @@ These EQTypes **ONLY work with the Zeal client** and will display no data on van
 - The ToT window is independent - can be positioned/hidden separately
 - Graceful degradation: Window appears empty without Zeal, doesn't break UI
 
-**Example Implementation**: See [thorne_drak/EQUI_TargetOfTargetWindow.xml](../../thorne_drak/EQUI_TargetOfTargetWindow.xml) and [thorne_drak/EQUI.xml](../../thorne_drak/EQUI.xml)
+**Example Implementation**: See [.default/EQUI_TargetOfTargetWindow.xml](../../.default/EQUI_TargetOfTargetWindow.xml) and [.default/EQUI.xml](../../.default/EQUI.xml)
 
 ---
 

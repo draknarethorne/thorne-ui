@@ -2,7 +2,7 @@
 
 **File:** [EQUI_PetInfoWindow.xml](./EQUI_PetInfoWindow.xml)  
 **Version:** 1.0.0  
-**Last Updated:** February 1, 2026  
+**Last Updated:** 2026-02-17  
 **Status:** ✅ Active - Taller HP Gauge Variant  
 **Author:** Draknare Thorne
 

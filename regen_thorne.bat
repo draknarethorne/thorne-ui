@@ -1,5 +1,6 @@
 @echo off
 REM regen_thorne.bat - Wrapper to run .bin\regen_thorne.py from PowerShell/CMD
+REM Regenerates item atlases, then updates all slot variants
 REM Usage:
 REM   regen_thorne.bat                                     (Default: .Master directory)
 REM   regen_thorne.bat .Master
@@ -15,4 +16,13 @@ if "%~1"=="" (
     python "%SCRIPT_DIR%.bin\regen_thorne.py" %*
 )
 
-exit /b %errorlevel%
+if %errorlevel% neq 0 (
+    echo Error: regen_thorne.py failed with exit code %errorlevel%
+    exit /b %errorlevel%
+)
+
+echo.
+echo ======================================================================
+echo Regenerating slot variants...
+echo ======================================================================
+call "%SCRIPT_DIR%regen_slots.bat" --all

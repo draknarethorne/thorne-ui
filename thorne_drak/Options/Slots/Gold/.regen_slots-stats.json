@@ -1,11 +1,12 @@
 {
   "variant": "Gold",
+  "timestamp": "2026-02-22T08:49:35.695789",
   "summary": {
     "items_total": 26,
     "items_with_overrides": 5,
     "source_files": {
-      "thorne_item01.tga": "variant",
-      "thorne_buttons01.tga": "variant"
+      "item_atlas_thorne01.tga": "master",
+      "button_atlas_thorne01.tga": "master"
     }
   },
   "items": [

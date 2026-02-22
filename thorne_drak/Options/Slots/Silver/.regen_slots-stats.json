@@ -1,11 +1,12 @@
 {
   "variant": "Silver",
+  "timestamp": "2026-02-22T08:49:36.223926",
   "summary": {
     "items_total": 26,
     "items_with_overrides": 5,
     "source_files": {
-      "thorne_item01.tga": "master",
-      "thorne_buttons01.tga": "master"
+      "item_atlas_thorne01.tga": "master",
+      "button_atlas_thorne01.tga": "master"
     }
   },
   "items": [

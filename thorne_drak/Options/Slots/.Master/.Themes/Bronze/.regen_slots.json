@@ -1,0 +1,29 @@
+{
+  "_comment": "Bronze theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
+  "button_grid": {
+    "origin_x": 0,
+    "origin_y": 0,
+    "sep_x": 2,
+    "sep_y": 2
+  },
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "bronze"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 28,
+    "offset_x": 1,
+    "offset_y": 1,
+    "item_opacity": 0.90
+  },
+  "item_overrides": {
+    "logo_1":    { "gradient": "shadow" },
+    "logo_2":    { "gradient": "shadow" },
+    "logo_3":    { "gradient": "shadow" },
+    "logo_4":    { "gradient": "shadow" },
+    "logo_5":    { "gradient": "shadow" },
+    "logo_6":    { "gradient": "shadow" }
+  }
+}

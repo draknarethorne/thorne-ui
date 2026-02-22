@@ -51,7 +51,7 @@ python .bin/regen_slots.py Gold
 1. Reads `.bin/regen_slots.json` (master layout: all 26 item entries + source filenames)
 2. Reads `.regen_slots.json` from `thorne_drak/Options/Slots/Gold/` (variant styling: gradients, item_overrides)
 3. Merges the two configs — variant `item_overrides` layer on top of master item fields
-4. Loads `thorne_item01.tga` and `thorne_buttons01.tga` from the variant directory
+4. Loads `item_atlas_thorne01.tga` and `button_atlas_thorne01.tga` from the variant directory
 5. Composites each item entry onto its configured button background
 6. Saves `item_slots_thorne01.tga` in the variant directory
 7. Copies to `thorne_drak/` (for git commits)
@@ -115,7 +115,7 @@ Shared across all variants. Contains source filenames, grid geometry, and the fu
 ```json
 {
   "source_items": "thorne_item01.tga",
-  "source_buttons": "thorne_buttons01.tga",
+  "source_buttons": "button_atlas_thorne01.tga",
   "output_size": 256,
   "cell_size": 40,
   "items": [
@@ -185,7 +185,7 @@ Each variant directory requires a `.regen_slots.json` focused on **styling only*
 
 ### `button_grid`
 
-Controls extraction from `thorne_buttons01.tga`:
+Controls extraction from `button_atlas_thorne01.tga`:
 - `sep_x` / `sep_y` — Pixel gap between cells (default: 2px)
 - `origin_x` / `origin_y` — Pixel offset of the first button cell (default: 0)
 
@@ -240,13 +240,13 @@ Merge logic per item: `{**master_item, **item_overrides.get(name, {})}` — vari
 
 Two source textures are loaded:
 - **thorne_item01.tga** — Grid of item icon source tiles (40×40 per cell)
-- **thorne_buttons01.tga** — Grid of button background tiles (40×40 per cell, with separator pixels)
+- **button_atlas_thorne01.tga** — Grid of button background tiles (40×40 per cell, with separator pixels)
 
 ### 3. Per-Item Compositing
 
 For each item in `items`:
 1. **Extract item tile** — Crop from `thorne_item01.tga` at `(item_row, item_col)`
-2. **Extract button tile** — Crop from `thorne_buttons01.tga` using separator-aware coordinates
+2. **Extract button tile** — Crop from `button_atlas_thorne01.tga` using separator-aware coordinates
 3. **Color treatment** — Apply vertical tint gradient or direct color to item tile
 4. **Fit and offset** — Scale item to `fit_size`, center on `cell_size` canvas with offsets
 5. **Composite** — Apply `item_opacity`, paste button, paste item on top
@@ -294,7 +294,7 @@ Colors are specified as `[R, G, B]` arrays (0–255 each).
 ### `item_slots_thorne02.tga` — Colored Button Variant
 
 Second atlas using colored/tinted button backgrounds — one button row per slot type (armor, weapon,
-jewelry, bag). Requires a new `button_col` range in `thorne_buttons01.tga` or a separate source file.
+jewelry, bag). Requires a new `button_col` range in `button_atlas_thorne01.tga` or a separate source file.
 
 ### Gradient Palette Expansion
 
@@ -309,7 +309,7 @@ needed.
 
 ### Source File Naming Alignment
 
-`thorne_item01.tga` / `thorne_buttons01.tga` intermediate sources →`item_thorne01.tga` /
+`item_atlas_thorne01.tga` / `button_atlas_thorne01.tga` intermediate sources →`item_thorne01.tga` /
 `button_thorne01.tga` convention — when source pipeline naming is aligned across all scripts.
 
 ---
@@ -342,7 +342,7 @@ Variant names are case-sensitive (e.g., `Gold` not `gold`).
 
 ### Error: Missing source texture
 
-**Cause:** `thorne_item01.tga` or `thorne_buttons01.tga` not found in the variant directory.
+**Cause:** `item_atlas_thorne01.tga` or `button_atlas_thorne01.tga` not found in the variant directory.
 
 **Fix:** Source textures live in `Options/Slots/.Master/` and must be copied to the variant directory before
 running. Run `generate_thorne_item_master.py` and `generate_thorne_buttons_transparent.py` to regenerate them

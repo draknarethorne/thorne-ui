@@ -1,7 +1,7 @@
 {
   "_comment": "Master item layout config for regen_slots.py. Defines which dragitem source tiles map to which output positions. Shared across ALL slot variants — do not add colors, gradients, or button styling here. Per-variant styling lives in Options/Slots/<Variant>/.regen_slots.json.",
-  "source_items": "thorne_item01.tga",
-  "source_buttons": "thorne_buttons01.tga",
+  "source_items": "item_atlas_thorne01.tga",
+  "source_buttons": "button_atlas_thorne01.tga",
   "cell_size": 40,
   "output_size": 256,
   "_comment_presets": "Base gradient palette shared across all variants. Variants can add new presets or override these by name in their own gradient_presets block.",

@@ -10,8 +10,8 @@ Config is split across two files:
                                         default_item, button_grid, item_overrides.
 
 Each variant directory must also contain:
-  <source_items>      -- Item icon atlas (default: thorne_item01.tga, copied from .Master/)
-  <source_buttons>    -- Button background atlas (default: thorne_buttons01.tga, copied from .Master/)
+  <source_items>      -- Item icon atlas (default: item_atlas_thorne01.tga, copied from .Master/)
+  <source_buttons>    -- Button background atlas (default: button_atlas_thorne01.tga, copied from .Master/)
 
 Usage:
   python regen_slots.py --all                  # Auto-discover all configured variants
@@ -29,6 +29,7 @@ import argparse
 import json
 import shutil
 import sys
+from datetime import datetime
 from pathlib import Path
 
 from PIL import Image
@@ -274,6 +275,7 @@ class SlotGenerator:
         self.config_file = variant_dir / CONFIG_FILENAME
         self.stats: dict = {
             "variant": self.variant_name,
+            "timestamp": datetime.now().isoformat(),
             "summary": {
                 "items_total": 0,
                 "items_with_overrides": 0,
@@ -305,8 +307,8 @@ class SlotGenerator:
             variant_config = json.load(f)
 
         # Source files: master defines defaults, variant can override
-        source_items = variant_config.get("source_items", master_config.get("source_items", "thorne_item01.tga"))
-        source_buttons = variant_config.get("source_buttons", master_config.get("source_buttons", "thorne_buttons01.tga"))
+        source_items = variant_config.get("source_items", master_config.get("source_items", "item_master_thorne01.tga"))
+        source_buttons = variant_config.get("source_buttons", master_config.get("source_buttons", "button_atlas_thorne01.tga"))
 
         # Fallback: if source file not in variant dir, look in .Master/
         master_dir = self.variant_dir.parent / ".Master"
@@ -628,7 +630,7 @@ before running this script.
             dst = root_path / OUTPUT_FILENAME
             if src.exists():
                 shutil.copy2(src, dst)
-                print(f"  Copied {variant_name}/{OUTPUT_FILENAME} → thorne_drak/")
+                print(f"  Copied {variant_name}/{OUTPUT_FILENAME} -> thorne_drak/")
 
     # Deploy to thorne_dev for immediate testing
     thorne_dev_path = Path(r"C:\TAKP\uifiles\thorne_dev")
@@ -641,7 +643,7 @@ before running this script.
             dst = thorne_dev_path / OUTPUT_FILENAME
             if src.exists():
                 shutil.copy2(src, dst)
-                print(f"  Deployed {variant_name}/{OUTPUT_FILENAME} → thorne_dev/")
+                print(f"  Deployed {variant_name}/{OUTPUT_FILENAME} -> thorne_dev/")
 
     print(f"\n{'='*70}")
     print(f"SUMMARY: {success_count}/{total_count} variant(s) processed successfully")

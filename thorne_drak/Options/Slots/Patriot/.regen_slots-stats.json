@@ -1,6 +1,6 @@
 {
   "variant": "Patriot",
-  "timestamp": "2026-02-22T12:36:29.943632",
+  "timestamp": "2026-02-22T12:57:19.620738",
   "summary": {
     "items_total": 36,
     "items_with_overrides": 16,
@@ -199,16 +199,20 @@
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        255,
+        100,
+        100
       ],
       "bottom_color": [
-        40,
-        60,
-        140
+        100,
+        160,
+        240
       ],
-      "middle_color": null,
+      "middle_color": [
+        220,
+        150,
+        150
+      ],
       "fit_size": 28,
       "fit_size_source": "default_item",
       "fit_mode": "tile",
@@ -419,16 +423,20 @@
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        255,
+        100,
+        100
       ],
       "bottom_color": [
-        40,
-        60,
-        140
+        100,
+        160,
+        240
       ],
-      "middle_color": null,
+      "middle_color": [
+        220,
+        150,
+        150
+      ],
       "fit_size": 28,
       "fit_size_source": "default_item",
       "fit_mode": "tile",
@@ -600,16 +608,20 @@
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        255,
+        100,
+        100
       ],
       "bottom_color": [
-        40,
-        60,
-        140
+        100,
+        160,
+        240
       ],
-      "middle_color": null,
+      "middle_color": [
+        220,
+        150,
+        150
+      ],
       "fit_size": 28,
       "fit_size_source": "default_item",
       "fit_mode": "tile",
@@ -635,16 +647,20 @@
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        255,
+        100,
+        100
       ],
       "bottom_color": [
-        40,
-        60,
-        140
+        100,
+        160,
+        240
       ],
-      "middle_color": null,
+      "middle_color": [
+        220,
+        150,
+        150
+      ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
       "fit_mode": "tile",
@@ -758,7 +774,7 @@
       "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
-      "offset_y": -1,
+      "offset_y": 1,
       "offset_y_source": "master_shape",
       "item_opacity": 0.92,
       "item_opacity_source": "default_item",
@@ -1139,18 +1155,18 @@
       "name": "logo_2",
       "out_row": 6,
       "out_col": 2,
-      "gradient": "patriot_weapon",
+      "gradient": "shadow",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        160,
+        155,
+        145
       ],
       "bottom_color": [
-        40,
-        60,
-        140
+        80,
+        75,
+        70
       ],
       "middle_color": null,
       "fit_size": 34,
@@ -1213,18 +1229,18 @@
       "name": "logo_4",
       "out_row": 6,
       "out_col": 4,
-      "gradient": "gold",
+      "gradient": "silver",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        232,
-        209,
-        118
+        214,
+        220,
+        228
       ],
       "bottom_color": [
-        173,
-        140,
-        62
+        132,
+        142,
+        156
       ],
       "middle_color": null,
       "fit_size": 34,
@@ -1248,18 +1264,18 @@
       "name": "logo_5",
       "out_row": 6,
       "out_col": 5,
-      "gradient": "shadow",
+      "gradient": "gold",
       "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        160,
-        155,
-        145
+        232,
+        209,
+        118
       ],
       "bottom_color": [
-        80,
-        75,
-        70
+        173,
+        140,
+        62
       ],
       "middle_color": null,
       "fit_size": 34,

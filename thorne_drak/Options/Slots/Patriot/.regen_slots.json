@@ -22,10 +22,11 @@
   },
   "gradient_presets": {
     "patriot_weapon": {
-      "_comment": "Variant-specific: red-heavy for weapon slots — top stays red, dark blue bottom",
+      "_comment": "Variant-specific: bright red fading through lighter red/pink middle to bright blue for weapons",
       "type": "vertical",
-      "top_color": [200, 50, 50],
-      "bottom_color": [40, 60, 140]
+      "top_color": [255, 100, 100],
+      "middle_color": [220, 150, 150],
+      "bottom_color": [100, 160, 240]
     }
   },
   "item_overrides": {
@@ -40,10 +41,10 @@
     "pack":      { "gradient": "gold" },
     "satchel":   { "gradient": "gold" },
     "logo_1":    { "gradient": "none" },
-    "logo_2":    { "gradient": "patriot_weapon" },
+    "logo_2":    { "gradient": "shadow" },
     "logo_3":    { "gradient": "patriot" },
-    "logo_4":    { "gradient": "gold" },
-    "logo_5":    { "gradient": "shadow" },
+    "logo_4":    { "gradient": "silver" },
+    "logo_5":    { "gradient": "gold" },
     "logo_6":    { "gradient": "bronze" }
   }
 }

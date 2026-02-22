@@ -1,6 +1,6 @@
 {
   "variant": "Transparent",
-  "timestamp": "2026-02-22T12:36:30.095725",
+  "timestamp": "2026-02-22T12:53:43.143067",
   "summary": {
     "items_total": 36,
     "items_with_overrides": 6,
@@ -696,7 +696,7 @@
       "button_col_source": "default_button",
       "offset_x": 1,
       "offset_x_source": "default_item",
-      "offset_y": -1,
+      "offset_y": 1,
       "offset_y_source": "master_shape",
       "item_opacity": 0.55,
       "item_opacity_source": "default_item",

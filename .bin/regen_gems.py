@@ -35,6 +35,7 @@ import sys
 import json
 import subprocess
 import shutil
+from datetime import datetime
 from pathlib import Path
 from PIL import Image, ImageFilter
 
@@ -73,6 +74,7 @@ class GemIconGenerator:
         self.border_mode = border_mode
         self.stats = {
             "variant": self.variant_name,
+            "timestamp": datetime.now().isoformat(),
             "spell_files_processed": 0,
             "gemicon_files_created": 0,
             "spellicon_files_created": 0,

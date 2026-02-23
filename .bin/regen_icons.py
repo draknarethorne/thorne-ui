@@ -42,7 +42,6 @@ import os
 import sys
 import json
 import shutil
-from datetime import datetime
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
@@ -100,7 +99,6 @@ class StatIconGenerator:
         self.stats = {
             "file": str(output_file),
             "source_dir": str(source_dir),
-            "timestamp": datetime.now().isoformat(),
             "icons": {}
         }
         

@@ -26,7 +26,6 @@ from pathlib import Path
 import sys
 import json
 import shutil
-from datetime import datetime
 
 
 # ============================================================================
@@ -51,7 +50,6 @@ class GaugeGenerator:
         self.stats = {
             "variant": self.variant_dir.name,
             "variant_path": str(self.variant_dir),
-            "timestamp": datetime.now().isoformat(),
             "source_base_found": False,
             "source_base_name": None,
             "generated": {

@@ -373,6 +373,12 @@ Examples:
         action="store_true",
         help="Process all discovered variants"
     )
+
+    parser.add_argument(
+        "--master",
+        action="store_true",
+        help="(Consistency flag - not used, for compatibility)"
+    )
     
     parser.add_argument(
         "--border",
@@ -382,19 +388,18 @@ Examples:
         choices=["transparent", "black", "blend"],
         help="Gemicon border mode: transparent (default), black, blend. Use --border for blend."
     )
-    
+
     args = parser.parse_args()
     
-    # Determine base directory
-    script_dir = Path(__file__).parent
-    base_dir = script_dir.parent
-    
-    # Discover or use specified variants
-    if args.all:
-        variants = discover_variants(base_dir)
-        if not variants:
-            print("ERROR: No variants discovered in thorne_drak/Options/Icons/")
-            return 1
+    # If no arguments provided, show usage
+    if not args.all and not args.variants:
+        print("ERROR: No target specified.")
+        print("\nUsage:")
+        print("  python regen_gems.py --all                # All variants")
+        print("  python regen_gems.py Thorne Classic       # Specific variants")
+        print("  python regen_gems.py Thorne --border      # With border mode")
+        print("\nFor help: python regen_gems.py --help")
+        return 1
         print(f"Auto-discovered {len(variants)} variants: {', '.join(variants)}")
     elif args.variants:
         variants = args.variants

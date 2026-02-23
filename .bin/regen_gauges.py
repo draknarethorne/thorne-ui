@@ -387,58 +387,86 @@ class GaugeGenerator:
 
 def main():
     """Main entry point."""
-    # Help text
-    if '--help' in sys.argv or '-h' in sys.argv:
-        print("""
-REGENERATE GAUGE TEXTURES
+    import argparse
+    
+    parser = argparse.ArgumentParser(
+        description="Regenerate gauge textures in multiple sizes",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+GAUGE TEXTURE REGENERATION
 
 Regenerates tall (×64px) and wide (×32px) gauge texture variants from a standard
 source file. Supports multiple scaling factors with proper border preservation.
 
-AUTO-DISCOVERY:
+DISCOVERY:
     Reads from: thorne_drak/Options/Gauges/<Variant>/
-    Looks for gauge source files with pattern: gauge_inlay*_thorne0X.tga
+    Looks for: gauge_inlay*_thorne0X.tga source files
 
 VARIANTS:
     Thorne, Bars, Basic, Bubbles, Light Bubbles
 
 FEATURES:
-    ✓ Dynamic sizing from configuration lists (WIDE_WIDTHS, TALL_WIDTHS)
-    ✓ Automatic TGA format fixing (PNG→TGA conversion)
-    ✓ Smart copyback (single→thorne_drak, multi→Thorne only)
-    ✓ Automatic deployment to thorne_dev/ for immediate testing
-    ✓ Stats JSON generation (.regen_gauges-stats.json)
-    ✓ BILINEAR interpolation for fills, NEAREST for crisp lines
+    [*] Dynamic sizing (WIDE_WIDTHS, TALL_WIDTHS)
+    [*] Automatic TGA format fixing
+    [*] Smart copyback (single->thorne_drak, multi->Thorne only)
+    [*] Automatic deployment to thorne_dev/
+    [*] Stats JSON generation
 
 WORKFLOW:
     1. Edit source: thorne_drak/Options/Gauges/Thorne/gauge_inlay_thorne01.tga
-    2. Run: python regen_gauges.py --all  (or: python regen_gauges.py Thorne)
+    2. Run: python regen_gauges.py --all  (or specify: Thorne)
     3. Test: /loadskin thorne_drak
 
-To add new widths:
-    - Edit WIDE_WIDTHS for wide variants (e.g., [120, 150, 160])
-    - Edit TALL_WIDTHS for tall variants (e.g., [120, 150, 230, 240, 250, 260])
-    - Script automatically generates all combinations
+SIZE CONFIGURATION:
+    To add new widths, edit WIDE_WIDTHS and TALL_WIDTHS at top of script.
+        """,
+    )
 
-For detailed documentation, see: .bin/regen_gauges.md
-        """)
-        sys.exit(0)
+    parser.add_argument(
+        "variants",
+        nargs="*",
+        help="Gauge variant names (e.g., Thorne, Basic, Bars)"
+    )
+
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Process all discovered variants"
+    )
+
+    parser.add_argument(
+        "--master",
+        action="store_true",
+        help="(Consistency flag - not used, for compatibility)"
+    )
+
+    args = parser.parse_args()
+
+    # If no arguments provided, show usage
+    if not args.all and not args.variants:
+        print("ERROR: No target specified.")
+        print("\nUsage:")
+        print("  python regen_gauges.py --all           # All variants")
+        print("  python regen_gauges.py Thorne          # Single variant")
+        print("  python regen_gauges.py Thorne Basic    # Multiple variants")
+        print("\nFor help: python regen_gauges.py --help")
+        return 1
     
     base_path = Path(__file__).parent.parent / 'thorne_drak' / 'Options' / 'Gauges'
     root_path = Path(__file__).parent.parent / 'thorne_drak'
     
     # Determine which variants to process
-    if '--all' in sys.argv:
+    if args.all:
         # Auto-discover all variants
         if base_path.exists():
             variant_names = sorted([d.name for d in base_path.iterdir() if d.is_dir()])
             print(f"Auto-discovered {len(variant_names)} variants: {', '.join(variant_names)}\n")
         else:
             print(f"ERROR: Gauges directory not found at {base_path}")
-            sys.exit(1)
+            return 1
     else:
         # Use explicitly specified variants
-        variant_names = sys.argv[1:]
+        variant_names = args.variants
     
     print(f"{'='*70}")
     print(f"GAUGE TEXTURE REGENERATION")

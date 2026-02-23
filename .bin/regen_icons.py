@@ -395,99 +395,86 @@ def regenerate_icons(variant_dir, config_path, root_path, add_labels=True):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2 or sys.argv[1] in ('--help', '-h', 'help'):
-        print("""
-Icon Texture Regeneration Tool
-===============================
-
-Regenerates stat icon textures from icon variants in Options/Icons/ directory.
-
-USAGE:
-    python regen_icons.py --all                      # Auto-discover all variants
-    python regen_icons.py <variant> [variant2 ...]  # Specific variants
-    python regen_icons.py --help
-
-EXAMPLES:
-    # Regenerate ALL variants (auto-discovered from Options/Icons/)
-    python regen_icons.py --all
+    import argparse
     
-    # Single variant - copies to thorne_drak/ and deploys to thorne_dev/
-    python regen_icons.py Thorne
-    
-    # Multiple variants - only Thorne copied to thorne_drak/
-    python regen_icons.py Thorne Classic Duxa
-    
-    # Without text labels (clean icons only)
-    python regen_icons.py Thorne --no-labels
-    
-    # Show this help message
-    python regen_icons.py --help
-    python regen_icons.py -h
+    parser = argparse.ArgumentParser(
+        description="Generate stat icon textures from icon variants",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+ICON TEXTURE REGENERATION
 
-OPTIONS:
-    --all               Auto-discover and regenerate all variants from Options/Icons/
-    <variant>           Specific variant name (e.g., Thorne, Classic, Duxa)
-    --no-labels         Disable text labels next to icons (labels on by default)
-    root                Direct regeneration of thorne_drak/ directory
+Regenerates stat icon textures from icon variants in Options/Icons/ directory,
+with optional text labels and abbreviations.
 
-AVAILABLE VARIANTS (auto-discovered):
-    Thorne              Primary development variant
-    Classic, Duxa       Icon style variants
-    Modern, etc.        Other community variants
+DISCOVERY:
+    Reads from: thorne_drak/Options/Icons/<Variant>/
+    Auto-discovers all subdirectories as variants
+
+VARIANTS:
+    Thorne, Classic, Duxa, Infiniti, WoW, Steamworks, etc.
 
 FEATURES:
-    ✓ Auto-discovers all icon variants in Options/Icons/
-    ✓ Flexible JSON config for icon coordinate mapping
-    ✓ Extracts and resizes icons (22×22)
-    ✓ Abbreviation labels WITHIN icons (text overlay)
-    ✓ Text labels NEXT TO icons (default, use --no-labels to disable)
-    ✓ Placeholder generation for missing icons
-    ✓ Smart copyback (single→thorne_drak/, multi→Thorne only)
-    ✓ Automatic deployment to thorne_dev/ for immediate testing
+    [*] Auto-discovers all icon variants
+    [*] Flexible JSON config for icon coordinate mapping
+    [*] Extracts and resizes icons (22x22)
+    [*] Optional text labels next to icons (default: ON)
+    [*] Smart copyback (single->thorne_drak/, multi->Thorne only)
+    [*] Automatic deployment to thorne_dev/
+    [*] Stats JSON generation
 
 WORKFLOW:
     1. Edit source icons: thorne_drak/Options/Icons/Thorne/gemicons*.tga
     2. Run: python regen_icons.py --all  (or: python regen_icons.py Thorne)
     3. Test: /loadskin thorne_drak
+        """,
+    )
 
-OPTIONS:
-    --all               Auto-discover and regenerate all variants from Options/Icons/
-    <variant>           Specific variant name (e.g., Thorne, Classic, Duxa)
-    --no-labels         Disable text labels next to icons (labels on by default)
-    root                Direct regeneration of thorne_drak/ directory
+    parser.add_argument(
+        "variants",
+        nargs="*",
+        help="Icon variant names (e.g., Thorne, Classic, Duxa)"
+    )
 
-For detailed documentation, see: .bin/regen_icons.md
-        """)
-        sys.exit(0 if len(sys.argv) > 1 else 1)
-    
-    # Extract options from argv
-    # Default: add_labels=True (labels next to icons)
-    # Use --no-labels to turn them off
-    add_labels = '--no-labels' not in sys.argv
-    if '--no-labels' in sys.argv:
-        sys.argv.remove('--no-labels')
-    
-    base_path = Path(__file__).parent.parent / 'thorne_drak' / 'Options' / 'Icons'
-    root_path = Path(__file__).parent.parent / 'thorne_drak'
-    config_path = Path(__file__).parent / 'regen_icons.json'
-    
-    # Verify config exists
-    if not config_path.exists():
-        print(f"ERROR: Config file not found at {config_path}")
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Auto-discover and process all variants"
+    )
+
+    parser.add_argument(
+        "--master",
+        action="store_true",
+        help="(Consistency flag - not used, for compatibility)"
+    )
+
+    parser.add_argument(
+        "--no-labels",
+        action="store_true",
+        default=False,
+        help="Disable text labels next to icons (default: labels ON)"
+    )
+
+    args = parser.parse_args()
+
+    # If no arguments provided, show usage
+    if not args.all and not args.variants:
+        print("ERROR: No target specified.")
+        print("\nUsage:")
+        print("  python regen_icons.py --all               # All variants")
+        print("  python regen_icons.py Thorne Classic      # Specific variants")
+        print("  python regen_icons.py Thorne --no-labels  # Without labels")
+        print("\nFor help: python regen_icons.py --help")
         sys.exit(1)
     
     # Determine which variants to process
-    if '--all' in sys.argv:
-        # Auto-discover all variants from Icons directory
-        if base_path.exists():
-            variant_names = sorted([d.name for d in base_path.iterdir() if d.is_dir()])
-            print(f"Auto-discovered {len(variant_names)} variants: {', '.join(variant_names)}\n")
-        else:
-            print(f"ERROR: Icons directory not found at {base_path}")
-            sys.exit(1)
+    if args.all:
+        # Discover all variants in Options/Icons/
+        variant_names = [d.name for d in sorted(base_path.iterdir()) if d.is_dir()]
     else:
-        # Use explicitly specified variants
-        variant_names = sys.argv[1:]
+        variant_names = args.variants
+    
+    # Handle label flag
+    add_labels = not args.no_labels
     
     regenerated_variants = []  # Track which variants were successfully regenerated
     success_count = 0

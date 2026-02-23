@@ -650,7 +650,7 @@ before running this script.
     parser.add_argument(
         "variants",
         nargs="*",
-        help="Slot variant names (e.g., Gold, Silver, Metal)",
+        help="Slot variant names (e.g., Gold, Silver, Bronze)",
     )
     parser.add_argument(
         "--all",
@@ -658,14 +658,19 @@ before running this script.
         help="Process all auto-discovered variants (requires .regen_slots.json in each)",
     )
     parser.add_argument(
+        "--master",
+        action="store_true",
+        help="Explicitly allow operations on .Master/ directory (required safety gate)",
+    )
+    parser.add_argument(
         "--class",
         dest="class_name",
-        help="Class name under .Master/ (for class/theme combos). Use 'Base' for .Master.",
+        help="Class name for class/theme combos (auto-uses .Master/.Classes/<Class>/)",
     )
     parser.add_argument(
         "--theme",
         dest="theme_name",
-        help="Theme name under .Master/.Themes (for class/theme combos)",
+        help="Theme name for class/theme combos (auto-uses .Master/.Themes/<Theme>/)",
     )
     parser.add_argument(
         "--all-combos",
@@ -682,6 +687,26 @@ before running this script.
 
     script_dir = Path(__file__).parent
     base_dir = script_dir.parent
+
+    # Safety check: prevent direct .Master operations without --master flag
+    if args.variants and ".Master" in args.variants and not args.master:
+        print("ERROR: Direct .Master/ updates require --master flag")
+        print("  Usage: python regen_slots.py --master")
+        print("\nFor safer class/theme updates:")
+        print("  python regen_slots.py --all-combos")
+        print("  python regen_slots.py --class Thorne")
+        return 1
+
+    # If no arguments provided, show usage
+    if not args.all and not args.variants and not args.all_combos and not args.class_name and not args.theme_name and not args.master:
+        print("ERROR: No target specified.")
+        print("\nUsage:")
+        print("  python regen_slots.py --all                    # All variants")
+        print("  python regen_slots.py Gold Silver              # Specific variants")
+        print("  python regen_slots.py --all-combos             # All class/theme combos")
+        print("  python regen_slots.py --class Thorne           # Single class, all themes")
+        print("\nFor help: python regen_slots.py --help")
+        return 1
 
     combo_mode = bool(args.all_combos or args.class_name or args.theme_name)
 

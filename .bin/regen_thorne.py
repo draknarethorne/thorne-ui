@@ -427,11 +427,14 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python regen_thorne.py                    # Default: .Master directory
-  python regen_thorne.py .Master            # Explicit directory
-  python regen_thorne.py CustomVariant      # Custom variant directory
-    python regen_thorne.py --class Thorne      # Generate a single class override
-        python regen_thorne.py --all-classes       # .Master + class overrides under .Master/.Classes/
+  python regen_thorne.py --master           # Update .Master directory (REQUIRES --master flag)
+  python regen_thorne.py --class Thorne     # Generate single class override (safe, no --master needed)
+  python regen_thorne.py --all-classes      # Generate all classes under .Master/.Classes/
+
+SAFETY:
+  - Direct .Master/ updates REQUIRE --master flag to prevent accidental writes
+  - Class-specific updates (--class) do NOT need --master
+  - Use --all-classes to regenerate all class overrides
 
 Directory must contain .regen_thorne.json config file and source dragitem TGA files.
         """,
@@ -440,8 +443,13 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
     parser.add_argument(
         "directory",
         nargs="?",
-        default=".Master",
-        help="Target directory name within Options/Slots/ (default: .Master)",
+        default=None,
+        help="(Deprecated) Use --master flag instead",
+    )
+    parser.add_argument(
+        "--master",
+        action="store_true",
+        help="Explicitly allow updates to .Master/ directory (required safety gate)",
     )
     parser.add_argument(
         "--class",
@@ -464,10 +472,27 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
     script_dir = Path(__file__).parent
     base_dir = script_dir.parent
     slots_dir = base_dir / "thorne_drak" / "Options" / "Slots"
-    target_dir = slots_dir / args.directory
+
+    # Safety check: .Master requires explicit --master flag
+    if args.directory and args.directory == ".Master" and not args.master:
+        print("ERROR: Direct .Master/ updates require --master flag")
+        print("  Usage: python regen_thorne.py --master")
+        print("\nFor safer class-specific updates:")
+        print("  python regen_thorne.py --class Thorne")
+        return 1
 
     if args.all_classes and args.class_name:
         print("ERROR: Use --class or --all-classes, not both.")
+        return 1
+
+    # If no flags provided, show usage
+    if not args.master and not args.class_name and not args.all_classes:
+        print("ERROR: No target specified.")
+        print("\nUsage:")
+        print("  python regen_thorne.py --master              # Update .Master/")
+        print("  python regen_thorne.py --class Thorne        # Update class override")
+        print("  python regen_thorne.py --all-classes         # Update all classes")
+        print("\nFor help: python regen_thorne.py --help")
         return 1
 
     if args.class_name:
@@ -511,8 +536,32 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         print("\n[FAILED] Generation did not complete successfully.\n")
         return 1
 
-    if not target_dir.exists():
-        print(f"ERROR: Directory not found: {target_dir}")
+    if args.master:
+        master_dir = slots_dir / ".Master"
+        if not master_dir.exists():
+            print(f"ERROR: Master directory not found: {master_dir}")
+            return 1
+
+        base_config_path = master_dir / CONFIG_FILENAME
+        if not base_config_path.exists():
+            print(f"ERROR: Config not found: {base_config_path}")
+            return 1
+        with open(base_config_path, "r", encoding="utf-8") as f:
+            base_config = json.load(f)
+
+        items_dir = master_dir / ".Items"
+        generator = ThorneGenerator(
+            master_dir,
+            source_dir=items_dir,
+            verbose=args.verbose,
+        )
+        if generator.generate():
+            generator.save_stats()
+            print(f"\n{'='*70}")
+            print(f"SUMMARY: Generated {generator.stats['summary']['atlases_generated']} atlas(es)")
+            print(f"{'='*70}\n")
+            return 0
+        print("\n[FAILED] Generation did not complete successfully.\n")
         return 1
 
     if args.all_classes:

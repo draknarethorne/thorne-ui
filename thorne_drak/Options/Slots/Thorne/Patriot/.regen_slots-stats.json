@@ -41,7 +41,7 @@
       "offset_x_source": "master_shape",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -80,7 +80,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -119,7 +119,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -156,7 +156,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -193,7 +193,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -230,7 +230,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -269,7 +269,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -306,7 +306,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -343,7 +343,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -380,7 +380,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -417,7 +417,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -454,7 +454,7 @@
       "offset_x_source": "default_item",
       "offset_y": 0,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -493,7 +493,7 @@
       "offset_x_source": "master_shape",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -530,7 +530,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -569,7 +569,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -606,7 +606,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -643,7 +643,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -682,7 +682,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -721,7 +721,7 @@
       "offset_x_source": "default_item",
       "offset_y": 0,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -760,7 +760,7 @@
       "offset_x_source": "default_item",
       "offset_y": 0,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -799,7 +799,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -838,7 +838,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -875,7 +875,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -912,7 +912,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -949,7 +949,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -986,7 +986,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1023,7 +1023,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1060,7 +1060,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1097,7 +1097,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1134,7 +1134,7 @@
       "offset_x_source": "default_item",
       "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1171,7 +1171,7 @@
       "offset_x_source": "master_shape",
       "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1210,7 +1210,7 @@
       "offset_x_source": "master_shape",
       "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1249,7 +1249,7 @@
       "offset_x_source": "master_shape",
       "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1288,7 +1288,7 @@
       "offset_x_source": "master_shape",
       "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1327,7 +1327,7 @@
       "offset_x_source": "master_shape",
       "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1366,7 +1366,7 @@
       "offset_x_source": "master_shape",
       "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.92,
+      "item_opacity": 0.85,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"

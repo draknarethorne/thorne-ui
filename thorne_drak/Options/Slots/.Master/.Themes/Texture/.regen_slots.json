@@ -4,14 +4,23 @@
   "default_button": {
     "button_row": 1,
     "button_col": 2,
-    "gradient": "silver"
+    "gradient": "texture"
   },
   "default_item": {
     "fit_mode": "visible",
     "fit_size": 30,
     "offset_x": 0,
     "offset_y": 1,
-    "item_opacity": 0.95
+    "item_opacity": 0.90
+  },
+
+  "gradient_presets": {
+    "texture": {
+      "type": "diagonal_tl",
+      "top_color": [45, 48, 52],
+      "middle_color": [160, 170, 180],
+      "bottom_color": [110, 120, 130]
+    }
   },
 
   "item_overrides": {

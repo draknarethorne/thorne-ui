@@ -209,6 +209,22 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ## 📅 Version History
 
+**v0.7.0** (February 22, 2026)
+- ✅ Release-wide Options and asset modernization
+  - Standardized button, gauge, spell icon, and stat icon naming toward Thorne-prefixed conventions
+  - Expanded `thorne_drak/Options/` organization for gauges, icons, buttons, cast, and animation variants
+  - Synced root `thorne_drak` textures with regenerated canonical atlas outputs
+- ✅ Slot system foundation for long-term Options management
+  - Introduced class-aware slot pipeline structure (`.Master/.Classes`, `.Items`, `.Themes`)
+  - Added scripted generation flow for class/theme slot outputs and metadata-driven regeneration
+  - Shipped regenerated slot atlases across class/theme combinations for future extensibility
+- ✅ UI behavior and polish updates in core shipped windows
+  - Updated `EQUI_Animations.xml` and cast spell window variants for consistency with new assets
+  - Refined cast option variants and supporting docs for maintainable option workflows
+- ✅ Tooling and documentation upgrades supporting repeatable releases
+  - Unified regen tooling and batch wrappers for gauges, gems, icons, and slots
+  - Expanded development docs/reviews to capture architecture and release rationale
+
 **v0.6.5** (February 18, 2026)
 - ✅ Spellbook and casting UI polish
   - Spellbook promoted to readability-first Thorne baseline

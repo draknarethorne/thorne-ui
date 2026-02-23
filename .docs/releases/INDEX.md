@@ -1,12 +1,12 @@
 # Thorne UI Release Documentation Index
 
-## 📌 CURRENT RELEASE: v0.6.5 ✅
+## 📌 CURRENT RELEASE: v0.7.0 ✅
 
-**Status:** Patch release (Spellbook/cast polish + Thorne options sync migration)  
-**Release Date:** February 18, 2026  
+**Status:** Minor release (options framework modernization + slot foundation)  
+**Release Date:** February 22, 2026  
 **Ready for Production:** Yes!
 
-**Release Documentation:** [v0.6.5/](v0.6.5/)
+**Release Documentation:** [v0.7.0/](v0.7.0/)
 
 ## 📚 Documentation Structure (Updated Feb 18, 2026)
 
@@ -36,8 +36,8 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 
 ## 🧪 Current Pre-Release
 
-**v0.6.4 (archived)** — Gauge system overhaul + target window improvements  
-**Tag format:** `v0.6.4`
+**v0.7.1 (next)** — post-release refinement and follow-up polish  
+**Tag format:** `v0.7.1`
 
 ---
 
@@ -47,12 +47,12 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 # 1. Update version in README.md (Version History section)
 # 2. Commit and push to main
 git add README.md
-git commit -m "chore: Update version history for v0.6.5"
+git commit -m "chore: Update version history for v0.7.0"
 git push origin main
 
 # 3. Create and push a version tag (triggers GitHub Actions)
-git tag -a v0.6.5 -m "Release v0.6.5: Description of changes"
-git push origin v0.6.5
+git tag -a v0.7.0 -m "Release v0.7.0: Description of changes"
+git push origin v0.7.0
 
 # ✨ GitHub Actions handles everything:
 # - Creates ZIP packages automatically
@@ -126,6 +126,6 @@ git push origin v0.6.5
 
 ---
 
-**Status:** v0.6.5 released ✅
+**Status:** v0.7.0 released ✅
 
-**Last Updated:** February 18, 2026
+**Last Updated:** February 22, 2026

@@ -1,0 +1,20 @@
+{
+  "variant": "Oval",
+  "variant_path": "C:\\thorne-ui\\thorne_drak\\Options\\Gauges\\Oval",
+  "source_base_found": true,
+  "source_base_name": "gauge_inlay_thorne01",
+  "generated": {
+    "wide": [
+      "gauge_inlay120_thorne01.tga",
+      "gauge_inlay150_thorne01.tga"
+    ],
+    "tall": [
+      "gauge_inlay120t_thorne01.tga",
+      "gauge_inlay150t_thorne01.tga",
+      "gauge_inlay230t_thorne01.tga",
+      "gauge_inlay240t_thorne01.tga",
+      "gauge_inlay250t_thorne01.tga",
+      "gauge_inlay260t_thorne01.tga"
+    ]
+  }
+}

@@ -21,7 +21,7 @@ Then generate option-ready outputs from master assets.
 - Final swappable textures:
   - `thorne_slots01.tga` → inventory/dedicated equipment and utility slots
   - `thorne_slots02.tga` → logo-driven branded slot/button family
-- Generated from `.Master` assets and published into option variants (later: `Options/Slots/Gold`, `Silver`, `Metal`, etc.)
+- Generated from `.Master` assets and published into option variants (later: `Options/Slots/Gold`, `Silver`, `Bronze`, etc.)
 - Long-run: update animation references away from `window_pieces01/02.tga` to Thorne slot atlases where appropriate.
 
 ## Planned phases
@@ -29,7 +29,7 @@ Then generate option-ready outputs from master assets.
 1. Rebaseline + path migration to `.Master`
 2. Define exact `thorne_slots01/02` atlas contracts (required cells, coordinates, size families)
 3. Split script responsibilities (buttons, icons, colorizer, compositor)
-4. Generate option variant outputs (`Gold`, `Silver`, `Metal`, etc.)
+4. Generate option variant outputs (`Gold`, `Silver`, `Bronze`, etc.)
 5. Integrate with Options sync/deploy workflow
 
 ## Confirmed slot animation universe (from current `EQUI_Animations.xml`)

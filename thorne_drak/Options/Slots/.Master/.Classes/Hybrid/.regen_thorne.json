@@ -1,0 +1,7 @@
+{
+  "_comment": "Hybrid class item overrides. Inherits from .Master/.regen_thorne.json",
+  "_note": "Add item_overrides here for hybrid-specific armor/weapons. dragitem indices indicate which source items to use. brightness/contrast adjustments can be applied per item.",
+  "class_name": "Hybrid",
+  "item_overrides": [
+  ]
+}

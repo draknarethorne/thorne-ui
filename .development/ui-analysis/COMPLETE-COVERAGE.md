@@ -371,7 +371,7 @@ From detailed analysis:
 
 **Texture Files (14 unique .tga files):**
 - `button_dark-opaque01.tga`, `button_light-opaque01.tga` - Button texture variants
-- `gauge_pieces01.tga`, `gauge_120t_pieces01.tga`, `gauge_pieces02.tga`, `gauge_pieces03.tga`, `gauge_pieces04.tga`, `gauge_pieces05.tga` - Gauge variants (6 files)
+- `gauge_inlay_thorne01.tga`, `gauge_inlay120t_thorne01.tga`, `gauge_pieces02.tga`, `gauge_pieces03.tga`, `gauge_pieces04.tga`, `gauge_pieces05.tga` - Gauge variants (6 files)
 - `ovalbar.tga` - Oval-shaped bar texture
 - `stat_icon_pieces01.tga` - Stat icon texture sheet (for v0.7.0+)
 
@@ -439,7 +439,7 @@ From detailed analysis:
 
 **Unique texture features:**
 - **Button pieces**: button_dark-opaque01.tga, button_light-opaque01.tga (2 button texture variants)
-- **Gauge pieces**: gauge_pieces01.tga, gauge_120t_pieces01.tga, gauge_pieces02.tga, gauge_pieces03.tga, gauge_pieces04.tga, gauge_pieces05.tga (6 gauge variants including tall version)
+- **Gauge pieces**: gauge_inlay_thorne01.tga, gauge_inlay120t_thorne01.tga, gauge_pieces02.tga, gauge_pieces03.tga, gauge_pieces04.tga, gauge_pieces05.tga (6 gauge variants including tall version)
 - **Special UI elements**:
   - ovalbar.tga (oval-shaped bar texture)
   - stat_icon_pieces01.tga (stat icon texture sheet for v0.7.0+)

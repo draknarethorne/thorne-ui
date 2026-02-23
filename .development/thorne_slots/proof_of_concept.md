@@ -22,17 +22,17 @@ and generate option-ready outputs from master files.
 ### 1) `.bin/generate_thorne_buttons_transparent.py`
 
 **Current purpose**
-- Reads `thorne_drak/thorne_buttons01.tga`
+- Reads `thorne_drak/button_atlas_thorne01.tga`
 - Detects source buttons in row 1
 - Generates 5 alpha rows (95/90/85/75/50)
 - Preserves 3px border, changes inner alpha only
-- Writes back to the same `thorne_buttons01.tga`
+- Writes back to the same `button_atlas_thorne01.tga`
 
 **Inputs**
 - `thorne_drak/thorne_buttons01.tga`
 
 **Outputs**
-- `thorne_drak/thorne_buttons01.tga` (in-place rewrite)
+- `thorne_drak/button_atlas_thorne01.tga` (in-place rewrite)
 
 **Current assumptions**
 - 255x255 atlas
@@ -70,7 +70,7 @@ and generate option-ready outputs from master files.
 **Current purpose**
 - Monolithic prototype script combining multiple concerns:
   1. Builds icon tonal variants (silver/gold/hybrid)
-  2. Reads button variants from `thorne_buttons01.tga`
+  2. Reads button variants from `button_atlas_thorne01.tga`
   3. Composites icon+button outputs into preview atlases
 - Writes:
   - `thorne_drak/thorne_icons_slots01.tga`
@@ -87,7 +87,7 @@ and generate option-ready outputs from master files.
 **Recommendation**
 - **Split/replace** into pipeline stages:
   - Stage A: icon master + color rows (`thorne_icons01.tga` in `.Master`)
-  - Stage B: button alpha rows (`thorne_buttons01.tga` in `.Master`)
+  - Stage B: button alpha rows (`button_atlas_thorne01.tga` in `.Master`)
   - Stage C: compositor that only assembles from masters into option outputs
 - This script should become the **compositor only** (long-run).
 
@@ -110,7 +110,7 @@ and generate option-ready outputs from master files.
 ### 5) `.bin/regen_icons.py`
 
 **Purpose**
-- Rebuilds `staticons01.tga` from `Options/Icons/<Variant>/` sources using JSON mapping.
+- Rebuilds `stat_icons_thorne01.tga` from `Options/Icons/<Variant>/` sources using JSON mapping.
 
 **Why relevant**
 - Already demonstrates option-oriented generation and smart copy/deploy behavior.
@@ -123,7 +123,7 @@ and generate option-ready outputs from master files.
 ### 6) `.bin/regen_gems.py`
 
 **Purpose**
-- Generates `gemiconsXX.tga` + `spelliconsXX.tga` from `spellsXX.tga`, then triggers staticon regeneration.
+- Generates `gemiconsXX.tga` + `spell_icons_thorneXX.tga` from `spellsXX.tga`, then triggers staticon regeneration.
 
 **Why relevant**
 - Demonstrates staged pipeline and multi-output generation from one source family.
@@ -177,7 +177,7 @@ Proposed files:
 Proposed examples:
 - `thorne_drak/Options/Slots/Gold/`
 - `thorne_drak/Options/Slots/Silver/`
-- `thorne_drak/Options/Slots/Metal/`
+- `thorne_drak/Options/Slots/Bronze/`
 - future: texture/transparent/opaque families
 
 Each option directory eventually receives generated production textures (for inventory/look/containers/hotbuttons as applicable).
@@ -187,8 +187,8 @@ Each option directory eventually receives generated production textures (for inv
 ## Recommended script split for revised approach
 
 1. **Master Buttons Generator**
-   - Input: `.Master/thorne_buttons01.tga` source row
-   - Output: `.Master/thorne_buttons01.tga` full rows
+   - Input: `.Master/button_atlas_thorne01.tga` source row
+   - Output: `.Master/button_atlas_thorne01.tga` full rows
    - Status: adapt current `generate_thorne_buttons_transparent.py`
 
 2. **Master Icons Seeder**
@@ -198,11 +198,11 @@ Each option directory eventually receives generated production textures (for inv
 
 3. **Master Icon Colorizer** *(new)*
    - Input: `.Master/thorne_icons01.tga` base rows
-   - Output: `.Master/thorne_icons01.tga` color rows (silver/gold/metal/etc)
+   - Output: `.Master/thorne_icons01.tga` color rows (silver/gold/bronze/etc)
    - Status: extract logic from `generate_thorne_slot_variants.py`
 
 4. **Slots Compositor** *(refactor)*
-   - Input: `.Master/thorne_buttons01.tga` + `.Master/thorne_icons01.tga`
+   - Input: `.Master/button_atlas_thorne01.tga` + `.Master/thorne_icons01.tga`
    - Output: option-target textures (by variant set)
    - Status: refactor current `generate_thorne_slot_variants.py` into compositor-only
 

@@ -1,0 +1,44 @@
+{
+  "_comment": "Patriot theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
+
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "patriot"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 30,
+    "offset_x": 0,
+    "offset_y": 1,
+    "item_opacity": 0.85
+  },
+
+  "gradient_presets": {
+    "patriot_weapon": {
+      "type": "vertical",
+      "top_color": [255, 100, 100],
+      "middle_color": [220, 150, 150],
+      "bottom_color": [100, 160, 240]
+    }
+  },
+
+  "item_overrides": {
+    "ear":       { "gradient": "silver" },
+    "neck":      { "gradient": "silver" },
+    "fingers":   { "gradient": "silver" },
+    "primary":   { "gradient": "patriot_weapon" },
+    "secondary": { "gradient": "patriot_weapon" },
+    "range":     { "gradient": "patriot_weapon" },
+    "ammo":      { "gradient": "patriot_weapon" },
+    "bag":       { "gradient": "bronze" },
+    "pack":      { "gradient": "bronze" },
+    "satchel":   { "gradient": "bronze" },
+    "logo_1":    { "gradient": "patriot" },
+    "logo_2":    { "gradient": "shadow" },
+    "logo_3":    { "gradient": "gold" },
+    "logo_4":    { "gradient": "silver" },
+    "logo_5":    { "gradient": "bronze" },
+    "logo_6":    { "gradient": "patriot" }
+  }
+}

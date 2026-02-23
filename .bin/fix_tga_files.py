@@ -116,7 +116,7 @@ def main():
         epilog="""
 Examples:
   # Fix a single file
-  python fix_tga_files.py gauge_pieces01.tga
+  python fix_tga_files.py gauge_inlay_thorne01.tga
   
   # Fix all .tga files in a directory (non-recursive)
   python fix_tga_files.py ./thorne_drak/Options/Gauges
@@ -125,7 +125,7 @@ Examples:
   python fix_tga_files.py --scan .
   
   # Check which files need fixing without converting
-  python fix_tga_files.py --check gauge_pieces01.tga
+  python fix_tga_files.py --check gauge_inlay_thorne01.tga
   
   # Check all files that need fixing recursively
   python fix_tga_files.py --check --scan .

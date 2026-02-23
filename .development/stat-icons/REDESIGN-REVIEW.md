@@ -95,9 +95,9 @@ python .bin/regen_icons.py Thorne Classic Duxa
 
 **Status:** ✅ COMPLETE - Generated and verified
 
-#### a) Stat Icon Texture (`staticons01.tga`)
+#### a) Stat Icon Texture (`stat_icons_thorne01.tga`)
 
-Location: `thorne_drak/Options/Icons/Thorne/staticons01.tga`
+Location: `thorne_drak/Options/Icons/Thorne/stat_icons_thorne01.tga`
 
 - **Size:** 256×256 pixels (RGBA)
 - **Format:** TGA (Targa)
@@ -105,9 +105,9 @@ Location: `thorne_drak/Options/Icons/Thorne/staticons01.tga`
 - **Labels:** Abbreviations overlaid on icons (AC, ATK, HP, MP, ST, WT, FR, CR, MR, PR, DR, RV, STR, INT, WIS, AGI, DEX, CHA)
 - **Quality:** Properly extracted from gemicons and resized with LANCZOS interpolation
 
-#### b) Generation Metadata (`staticons01-stats.json`)
+#### b) Generation Metadata (`stat_icons_thorne01-stats.json`)
 
-Location: `thorne_drak/Options/Icons/Thorne/staticons01-stats.json`
+Location: `thorne_drak/Options/Icons/Thorne/stat_icons_thorne01-stats.json`
 
 Contains complete audit trail:
 - Source file paths and coordinates for each icon
@@ -161,7 +161,7 @@ Thorne/         → PRIMARY (main development)
 WoW/            → Options variant
 ```
 
-All have generated `staticons01.tga` files and metadata.
+All have generated `stat_icons_thorne01.tga` files and metadata.
 
 ---
 
@@ -201,7 +201,7 @@ This prevents accidentally overwriting main variant during batch operations.
 
 #### Automatic Testing
 After generation:
-- Copy to `C:\TAKP\uifiles\thorne_dev\staticons01.tga` (if exists)
+- Copy to `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (if exists)
 - Ready to test with `/loadskin thorne_drak` command
 
 ---
@@ -224,7 +224,7 @@ After generation:
 3. **Variant Support**
    - All 6 variants auto-discovered
    - Each has its own gemicon sources
-   - Each produces staticons01.tga + metadata
+   - Each produces stat_icons_thorne01.tga + metadata
 
 4. **Deployment Ready**
    - Smart copy logic prevents conflicts
@@ -284,7 +284,7 @@ After generation:
 - [x] No (0,0) placeholders
 
 ### Generation ✅
-- [x] staticons01.tga files created (all 6 variants)
+- [x] stat_icons_thorne01.tga files created (all 6 variants)
 - [x] Metadata JSON files created (all 6 variants)
 - [x] Abbreviations rendered on icons
 - [x] Icons properly sized (22×22)
@@ -400,8 +400,8 @@ The system is ready for window integration in Phase 2 (v0.7.0 Inventory work).
 ## Immediate Action Items
 
 1. **Test in-game**: Run `/loadskin thorne_drak` and verify stat icons
-2. **Review generated files**: Check staticons01.tga in variant directories
-3. **Verify metadata**: Confirm staticons01-stats.json shows all 18 icons
+2. **Review generated files**: Check stat_icons_thorne01.tga in variant directories
+3. **Verify metadata**: Confirm stat_icons_thorne01-stats.json shows all 18 icons
 4. **Next phase**: Begin Inventory window stat-icons integration
 
 **Status:** ✅ **READY FOR PHASE 2 INTEGRATION**

@@ -1,0 +1,25 @@
+{
+  "_comment": "Silver theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
+
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "silver"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 30,
+    "offset_x": 0,
+    "offset_y": 1,
+    "item_opacity": 0.85
+  },
+
+  "item_overrides": {
+    "logo_1": { "gradient": "silver_gleam" },
+    "logo_2": { "gradient": "silver_gleam" },
+    "logo_3": { "gradient": "silver_gleam" },
+    "logo_4": { "gradient": "silver_gleam" },
+    "logo_5": { "gradient": "silver_gleam" },
+    "logo_6": { "gradient": "silver_gleam" }
+  }
+}

@@ -42,9 +42,9 @@ python .bin/regen_gauges.py Thorne
 ```
 
 **What happens:**
-1. Reads source from `thorne_drak/Options/Gauges/Thorne/gauge_pieces01.tga`
+1. Reads source from `thorne_drak/Options/Gauges/Thorne/gauge_inlay_thorne01.tga`
 2. Fixes TGA format if needed (PNG→TGA conversion)
-3. Regenerates `gauge_pieces01_tall.tga` and `gauge_pieces01_wide.tga`
+3. Regenerates `gauge_inlay_thorne01_tall.tga` and `gauge_inlay_thorne01_wide.tga`
 4. Copies both to `thorne_drak/` (for git commits)
 5. Deploys both to `thorne_dev/` (ready to test in-game)
 6. Prints: `Ready to test in-game with: /loadskin thorne_drak`
@@ -70,7 +70,7 @@ python .bin/regen_gauges.py root Bars Basic Bubbles "Light Bubbles" Thorne
 
 ```bash
 # 1. Edit the source file
-#    File: thorne_drak/Options/Gauges/Thorne/gauge_pieces01.tga
+#    File: thorne_drak/Options/Gauges/Thorne/gauge_inlay_thorne01.tga
 
 # 2. Regenerate and deploy (one step)
 python .bin/regen_gauges.py Thorne
@@ -164,7 +164,7 @@ python .bin/regen_gauges.py --help                 # Show help message
 
 ### 1. Source File Detection
 
-The script looks for `gauge_pieces01.tga` in:
+The script looks for `gauge_inlay_thorne01.tga` in:
 - `thorne_drak/Options/Gauges/<Variant>/` for named variants
 - `thorne_drak/` for "root" variant
 
@@ -173,7 +173,7 @@ The script looks for `gauge_pieces01.tga` in:
 If source file is actually PNG (mislabeled):
 - Detects PNG signature automatically
 - Converts to proper TGA format (RGBA)
-- Prints: `Fixed: gauge_pieces01.tga (converted from PNG to TGA)`
+- Prints: `Fixed: gauge_inlay_thorne01.tga (converted from PNG to TGA)`
 
 ### 3. Gauge Generation
 

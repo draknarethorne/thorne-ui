@@ -8,17 +8,18 @@
 
 ## 📦 What You've Received
 
-### 1️⃣ Automation Scripts (5 total, 67 KB)
+### 1️⃣ Automation Scripts (6 total)
 
 **Location**: `.bin/` directory
 
 | Script | Size | Purpose | Status |
 |--------|------|---------|--------|
-| `sync_window_to_default.py` | 14 KB | Backup window files & update metadata | ✅ Production |
-| `options_readme_checker.py` | 21 KB | Validate all 46 README files | ✅ Production |
-| `fix_readme_headers.py` | 15 KB | Auto-fix headers, refs, metadata | ✅ Production |
-| `generate_skeletal_readme.py` | 4.4 KB | Create boilerplate READMEs | ✅ Production |
-| `duplicate_detector.py` | 13 KB | Find redundant variants | ✅ Production |
+| `options_thorne_compare.py` | — | Compare variants to Thorne baseline | ✅ Production |
+| `options_thorne_sync.py` | — | Backup window files & update metadata | ✅ Production |
+| `options_readme_checker.py` | — | Validate all 46 README files | ✅ Production |
+| `options_fix_readme.py` | — | Auto-fix headers, refs, metadata | ✅ Production |
+| `options_generate_readme.py` | — | Create boilerplate READMEs | ✅ Production |
+| `options_duplicate_detector.py` | — | Find redundant variants | ✅ Production |
 
 **All scripts feature:**
 - ✅ Dry-run modes (safe testing)
@@ -31,7 +32,7 @@
 
 ### 2️⃣ Documentation Library (7 files, 2934 lines)
 
-**Location**: `.docs/options-sync/` directory
+**Location**: `../../.docs/options-sync/` directory
 
 #### **Guide Documents**
 
@@ -60,7 +61,7 @@ Maintenance Schedule:       ✅ Complete (OPERATIONS-GUIDE.md → Maintenance)
 Troubleshooting Guide:      ✅ Complete (OPERATIONS-GUIDE.md → Troubleshooting)
 Common Workflows:           ✅ Complete (5 detailed scenarios)
 Metrics & Tracking:         ✅ Complete (DELIVERY-SUMMARY.md)
-Script Commands:            ✅ Complete (All 5 scripts documented)
+Script Commands:            ✅ Complete (All 6 scripts documented)
 Quick Lookups:              ✅ Complete (CHEAT-SHEET.md)
 Implementation Examples:    ✅ Complete (Step-by-step bash examples)
 ```
@@ -120,7 +121,7 @@ Implementation Examples:    ✅ Complete (Step-by-step bash examples)
 ### Documentation Infrastructure Complete ✅
 
 **Achievements:**
-- ✅ 5 Python scripts fully functional
+- ✅ 6 Python scripts fully functional
 - ✅ 7 comprehensive guides created (2934 lines)
 - ✅ Template system in place
 - ✅ Validation system established
@@ -149,52 +150,52 @@ Implementation Examples:    ✅ Complete (Step-by-step bash examples)
 
 ### "How do I work with windows daily?" (5 min)
 ```
-Read: .docs/options-sync/CHEAT-SHEET.md
+Read: ../../.docs/options-sync/CHEAT-SHEET.md
 → Workflow: "Made Changes to a Window File"
 ```
 
 ### "What's the complete process?" (30 min)
 ```
-Read: .docs/options-sync/OPERATIONS-GUIDE.md
+Read: ../../.docs/options-sync/OPERATIONS-GUIDE.md
 → Sections: 1-2 (Team Roles + Daily Operations)
 ```
 
 ### "How do I fix that broken README?" (10 min)
 ```
-Read: .docs/options-sync/OPERATIONS-GUIDE.md
+Read: ../../.docs/options-sync/OPERATIONS-GUIDE.md
 → Section: "Troubleshooting" → Your issue
 ```
 
 ### "What needs to be fixed?" (20 min)
 ```
-Read: .docs/options-sync/PHASE-3-ACTION-PLAN.md
+Read: ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 → Section: "Quick Issue Summary" table
 → Find your issue, follow exact steps
 ```
 
 ### "I'm new - train me" (2 hours)
 ```
-1. Read: .docs/options-sync/DELIVERY-SUMMARY.md (10 min)
-2. Read: .docs/options-sync/README.md (15 min)
-3. Read: .docs/options-sync/OPERATIONS-GUIDE.md (45 min)
+1. Read: ../../.docs/options-sync/DELIVERY-SUMMARY.md (10 min)
+2. Read: ../../.docs/options-sync/README.md (15 min)
+3. Read: ../../.docs/options-sync/OPERATIONS-GUIDE.md (45 min)
 4. Try: A workflow from CHEAT-SHEET.md (30 min)
 ```
 
 ### "What's the system overview?" (15 min)
 ```
-Read: .docs/options-sync/README.md
+Read: ../../.docs/options-sync/README.md
 → Sections: "Overview" through "Configured Windows"
 ```
 
 ### "Prepare for release" (30 min)
 ```
-Read & Follow: .docs/options-sync/OPERATIONS-GUIDE.md
+Read & Follow: ../../.docs/options-sync/OPERATIONS-GUIDE.md
 → Section: "Pre-Release Checklist"
 ```
 
 ### "Quick command lookup" (1 min)
 ```
-Bookmark: .docs/options-sync/CHEAT-SHEET.md
+Bookmark: ../../.docs/options-sync/CHEAT-SHEET.md
 → Find your exact command
 ```
 
@@ -206,11 +207,11 @@ Bookmark: .docs/options-sync/CHEAT-SHEET.md
 
 ```bash
 # 1. Read the master index
-cat .docs/options-sync/INDEX.md
+cat ../../.docs/options-sync/INDEX.md
 
 # 2. Bookmark the quick reference
 # (visual bookmark in your editor)
-.docs/options-sync/CHEAT-SHEET.md
+../../.docs/options-sync/CHEAT-SHEET.md
 
 # 3. Run the checker to see current status
 python .bin/options_readme_checker.py
@@ -220,7 +221,7 @@ python .bin/options_readme_checker.py
 
 ### Day 2-7: Execute Daily Workflows (varies)
 
-Pick from [CHEAT-SHEET.md](.docs/options-sync/CHEAT-SHEET.md):
+Pick from [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md):
 - Sync a window file
 - Check documentation
 - Create a new variant
@@ -230,7 +231,7 @@ Pick from [CHEAT-SHEET.md](.docs/options-sync/CHEAT-SHEET.md):
 
 ```bash
 # Read the full operations guide
-cat .docs/options-sync/OPERATIONS-GUIDE.md
+cat ../../.docs/options-sync/OPERATIONS-GUIDE.md
 
 # Try:
 # 1. Pre-release checklist
@@ -242,7 +243,7 @@ cat .docs/options-sync/OPERATIONS-GUIDE.md
 
 ```bash
 # Follow the action plan
-cat .docs/options-sync/PHASE-3-ACTION-PLAN.md
+cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 
 # Execute in order (4 days, 5 hours)
 # Fix all 9 format/content issues
@@ -254,15 +255,15 @@ cat .docs/options-sync/PHASE-3-ACTION-PLAN.md
 ## 📋 Execution Roadmap
 
 ### Immediate (This Week)
-- [ ] Read [CHEAT-SHEET.md](.docs/options-sync/CHEAT-SHEET.md)
+- [ ] Read [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md)
 - [ ] Bookmark it for quick reference
 - [ ] Run checker once: `python .bin/options_readme_checker.py`
-- [ ] Try one sync command: `python .bin/sync_window_to_default.py --all --dry-run`
+- [ ] Try one sync command: `python .bin/options_thorne_sync.py --all --dry-run`
 
 ### Short Term (This Month)
-- [ ] (Option A) Execute Phase 3 fixes (follow [PHASE-3-ACTION-PLAN.md](.docs/options-sync/PHASE-3-ACTION-PLAN.md))
-- [ ] (Option B) Start daily operations (use [CHEAT-SHEET.md](.docs/options-sync/CHEAT-SHEET.md))
-- [ ] (Option C) Conduct full training (use [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md))
+- [ ] (Option A) Execute Phase 3 fixes (follow [PHASE-3-ACTION-PLAN.md](../../.docs/options-sync/PHASE-3-ACTION-PLAN.md))
+- [ ] (Option B) Start daily operations (use [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md))
+- [ ] (Option C) Conduct full training (use [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md))
 
 ### Medium Term (Month 2-3)
 - [ ] Complete Phase 3 fixes (9 issues → 0 issues)
@@ -282,7 +283,7 @@ cat .docs/options-sync/PHASE-3-ACTION-PLAN.md
 
 ### Daily (automated, user-triggered)
 ```
-python .bin/sync_window_to_default.py --window [Name]
+python .bin/options_thorne_sync.py --window [Name]
 # (whenever you finish editing a window)
 ```
 
@@ -301,11 +302,11 @@ python .bin/options_readme_checker.py --verbose
 # Read XML, enhance README documentation
 
 # Save status report
-python .bin/options_readme_checker.py > /tmp/monthly_$(date +%Y%m%d).txt
+python .bin/options_readme_checker.py > .tmp/monthly_$(date +%Y%m%d).txt
 ```
 
 ### Pre-Release (30 minutes)
-See [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre-Release Checklist"
+See [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre-Release Checklist"
 
 ### Quarterly (2 hours)
 - Duplicate detection
@@ -320,7 +321,7 @@ See [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre-Relea
 ### For Developers
 ✅ Sync changes automatically with one command  
 ✅ Know exactly what's backed up and current  
-✅ Never worry about losing work (Default/ backups)  
+✅ Never worry about losing work (Thorne/ backups)  
 ✅ Clear documentation showing what each variant does  
 
 ### For Documentation Specialists
@@ -347,7 +348,7 @@ See [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre-Relea
 
 | Category | Time | Output |
 |----------|------|--------|
-| Script Development | 8 hours | 5 production-ready scripts (67 KB) |
+| Script Development | 8 hours | 6 production-ready scripts (67 KB) |
 | Documentation | 6 hours | 7 guides (2934 lines) |
 | Testing & Validation | 2 hours | 30+ files processed, all working |
 | **Total** | **16 hours** | **Complete, production-ready system** |
@@ -375,7 +376,7 @@ See [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre-Relea
 
 ## ✅ Production Readiness Checklist
 
-- ✅ All 5 scripts tested and working
+- ✅ All 6 scripts tested and working
 - ✅ All documentation complete and proofread
 - ✅ All 46 README files validated
 - ✅ All 13 windows synchronized
@@ -398,19 +399,19 @@ See [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre-Relea
 ## 🆘 Support
 
 ### Immediate Help (under 1 minute)
-→ [CHEAT-SHEET.md](.docs/options-sync/CHEAT-SHEET.md)
+→ [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md)
 
 ### Common Issues (5 minutes)
-→ [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md) → Troubleshooting section
+→ [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md) → Troubleshooting section
 
 ### Specific Problem Fixes (15-30 minutes)
-→ [PHASE-3-ACTION-PLAN.md](.docs/options-sync/PHASE-3-ACTION-PLAN.md)
+→ [PHASE-3-ACTION-PLAN.md](../../.docs/options-sync/PHASE-3-ACTION-PLAN.md)
 
 ### Full System Understanding (30-60 minutes)
-→ [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md)
+→ [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md)
 
 ### Training New Team Members (2 hours)
-→ Follow Path 2 in [INDEX.md](.docs/options-sync/INDEX.md)
+→ Follow Path 2 in [INDEX.md](../../.docs/options-sync/INDEX.md)
 
 ---
 
@@ -419,19 +420,19 @@ See [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre-Relea
 **You have 3 options:**
 
 ### Option 1: Start Using Today
-1. Bookmark [CHEAT-SHEET.md](.docs/options-sync/CHEAT-SHEET.md)
+1. Bookmark [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md)
 2. Try one command (dry-run sync)
 3. Start next window project
 
 ### Option 2: Execute Phase 3
-1. Read [PHASE-3-ACTION-PLAN.md](.docs/options-sync/PHASE-3-ACTION-PLAN.md)
+1. Read [PHASE-3-ACTION-PLAN.md](../../.docs/options-sync/PHASE-3-ACTION-PLAN.md)
 2. Follow 4-day execution plan
 3. Fix all 9 format/content issues
 4. Result: 0 issues, 100% proper documentation
 
 ### Option 3: Full Team Training
 1. Schedule 2-hour training session
-2. Have team read [OPERATIONS-GUIDE.md](.docs/options-sync/OPERATIONS-GUIDE.md)
+2. Have team read [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md)
 3. Run pre-release checklist together
 4. Everyone learns the system together
 
@@ -458,6 +459,6 @@ Ready for: 6-8+ months of independent operations
 **Date**: February 3, 2026  
 **Status**: ✅ Complete & Production Ready
 
-**Start Here**: Read [.docs/options-sync/INDEX.md](.docs/options-sync/INDEX.md) - bookmark it!
+**Start Here**: Read [../../.docs/options-sync/INDEX.md](../../.docs/options-sync/INDEX.md) - bookmark it!
 
 ---

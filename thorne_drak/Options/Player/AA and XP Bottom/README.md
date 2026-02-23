@@ -2,7 +2,7 @@
 
 **File**: [EQUI_PlayerWindow.xml](./EQUI_PlayerWindow.xml)
 **Version**: 1.0.0  
-**Last Updated**: 2026-02-03
+**Last Updated**: 2026-02-17
 **Status**: ✅ Active (First Draft Implementation)  
 **Author**: Draknare Thorne
 

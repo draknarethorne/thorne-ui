@@ -14,17 +14,17 @@ This directory contains variants for the Actions window (EQUI_ActionsWindow.xml)
 - **[Bags and Inventory/](Bags and Inventory/)**  📄
   `EQUI_ActionsWindow.xml`
 
-- **[Default/](Default/)**  📄
+- **[Standard/](Standard/)**  📄
   `EQUI_ActionsWindow.xml`
 
-- **[Standard/](Standard/)**  📄
+- **[Thorne/](Thorne/)**  📄
   `EQUI_ActionsWindow.xml`
 
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_ActionsWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_ActionsWindow.xml`.
 
 ## Metadata
 

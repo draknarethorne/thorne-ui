@@ -1,0 +1,27 @@
+{
+  "$schema": "Link Scanner Configuration",
+  "description": "Configuration for markdown link scanning - matches .eslintignore / .gitignore patterns",
+  "exclude_dirs": [
+    ".git",
+    ".tmp",
+    ".archive",
+    ".reports",
+    ".venv",
+    "venv",
+    "__pycache__",
+    "node_modules",
+    "default",
+    "*.code-search"
+  ],
+  "exclude_patterns": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/venv/**",
+    "**/__pycache__/**"
+  ],
+  "notes": {
+    "exclude_dirs": "Single directory names to exclude anywhere in the path",
+    "exclude_patterns": "Glob patterns for more complex exclusions",
+    "community_ui_variants": "Community reference UIs (duxaUI, Infiniti-Blue, QQ, etc.) are included in scans by design - they are part of the repository for reference"
+  }
+}

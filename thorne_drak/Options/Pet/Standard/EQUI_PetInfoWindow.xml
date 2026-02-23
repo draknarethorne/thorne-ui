@@ -215,12 +215,12 @@
 		<Font>1</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>130</X>
-			<Y>23</Y>
+			<X>125</X>
+			<Y>20</Y>
 		</Location>
 		<Size>
-			<CX>28</CX>
-			<CY>6</CY>
+			<CX>24</CX>
+			<CY>10</CY>
 		</Size>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>

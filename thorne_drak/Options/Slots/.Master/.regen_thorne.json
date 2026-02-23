@@ -1,0 +1,243 @@
+{
+  "_comment": "Item atlas configuration for regen_thorne.py. Defines item layout/grid, source files, and rendering modes (grayscale, invert, etc). Each item references a source icon from dragitem*.tga or logo_atlas_thorne01.tga.",
+  "cell_size": 40,
+  "output_size": 256,
+  "output_file": "item_atlas_thorne01.tga",
+  "variants": [
+    {
+      "name": "icons",
+      "cell_size": 20,
+      "output_size": 256,
+      "output_file": "item_icons_thorne01.tga"
+    }
+  ],
+  "default_tone": {
+    "_contrast_comment": "1.0=unchanged, >1.0=more vivid/rich (bright brighter + dark darker), <1.0=flatter",
+    "contrast": 1.10,
+    "_brightness_comment": "1.0=unchanged, >1.0=lighter, <1.0=darker",
+    "brightness": 0.95
+  },
+  "items": [
+    {
+      "name": "ear",
+      "out_row": 1, "out_col": 1,
+      "src_row": 3, "src_col": 2, "source_file": "dragitem2.tga",
+      "tone": {"contrast": 0.95, "brightness": 0.95}
+    },
+    {
+      "name": "neck",
+      "out_row": 1, "out_col": 2,
+      "src_row": 1, "src_col": 1, "source_file": "dragitem1.tga",
+      "tone": {"contrast": 1.0, "brightness": 0.95}
+    },
+    {
+      "name": "head",
+      "out_row": 1, "out_col": 3,
+      "src_row": 2, "src_col": 6, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.25}
+    },
+    {
+      "name": "face",
+      "out_row": 1, "out_col": 4,
+      "src_row": 3, "src_col": 4, "source_file": "dragitem8.tga",
+      "tone": {"contrast": 0.95, "brightness": 1.1}
+    },
+    {
+      "name": "chest",
+      "out_row": 1, "out_col": 5,
+      "src_row": 1, "src_col": 5, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.45}
+    },
+    {
+      "name": "secondary",
+      "out_row": 1, "out_col": 6,
+      "src_row": 1, "src_col": 2, "source_file": "dragitem2.tga",
+      "tone": {"contrast": 1.0, "brightness": 1.35}
+    },
+
+    {
+      "name": "back",
+      "out_row": 2, "out_col": 1,
+      "src_row": 2, "src_col": 4, "source_file": "dragitem5.tga",
+      "tone": {"contrast": 1.20, "brightness": 1.10}
+    },
+    {
+      "name": "arms",
+      "out_row": 2, "out_col": 2,
+      "src_row": 3, "src_col": 5, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.65, "brightness": 1.55}
+    },
+    {
+      "name": "shoulders",
+      "out_row": 2, "out_col": 3,
+      "src_row": 4, "src_col": 4, "source_file": "dragitem5.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.35}
+    },
+    {
+      "name": "wrist",
+      "out_row": 2, "out_col": 4,
+      "src_row": 6, "src_col": 5, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 1.05, "brightness": 1.20}
+    },
+    {
+      "name": "belt",
+      "out_row": 2, "out_col": 5,
+      "src_row": 5, "src_col": 5, "source_file": "dragitem2.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.4}
+    },
+    {
+      "name": "range",
+      "out_row": 2, "out_col": 6,
+      "src_row": 2, "src_col": 5, "source_file": "dragitem3.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.45}
+    },
+
+    {
+      "name": "hands",
+      "out_row": 3, "out_col": 1,
+      "src_row": 5, "src_col": 5, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.30}
+    },
+    {
+      "name": "fingers",
+      "out_row": 3, "out_col": 2,
+      "src_row": 5, "src_col": 1, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.95, "brightness": 1.05}
+    },
+    {
+      "name": "legs",
+      "out_row": 3, "out_col": 3,
+      "src_row": 4, "src_col": 5, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.15}
+    },
+    {
+      "name": "feet",
+      "out_row": 3, "out_col": 4,
+      "src_row": 2, "src_col": 5, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
+    },
+    {
+      "name": "primary",
+      "out_row": 3, "out_col": 5,
+      "src_row": 6, "src_col": 3, "source_file": "dragitem3.tga",
+      "tone": {"contrast": 0.65, "brightness": 1.3}      
+    },
+    {
+      "name": "ammo",
+      "out_row": 3, "out_col": 6,
+      "src_row": 6, "src_col": 6, "source_file": "dragitem15.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.20}
+    },
+
+    {
+      "name": "bag",
+      "out_row": 4, "out_col": 1,
+      "src_row": 6, "src_col": 5, "source_file": "dragitem2.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
+    },
+    {
+      "name": "pack",
+      "out_row": 4, "out_col": 2,
+      "src_row": 1, "src_col": 5, "source_file": "dragitem11.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
+    },
+    {
+      "name": "satchel",
+      "out_row": 4, "out_col": 3,
+      "src_row": 4, "src_col": 2, "source_file": "dragitem6.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
+    },
+    {
+      "name": "empty_row4_col4",
+      "out_row": 4, "out_col": 4,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+    {
+      "name": "empty_row4_col5",
+      "out_row": 4, "out_col": 5,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+    {
+      "name": "empty_row4_col6",
+      "out_row": 4, "out_col": 6,
+      "src_row": 1, "src_col": 1, "source_file": "empty.tga",
+      "mode": "empty"
+    },
+
+    {
+      "name": "recessed_box",
+      "out_row": 5, "out_col": 1,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+    {
+      "name": "empty_row5_col2",
+      "out_row": 5, "out_col": 2,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+    {
+      "name": "empty_row5_col3",
+      "out_row": 5, "out_col": 3,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+    {
+      "name": "empty_row5_col4",
+      "out_row": 5, "out_col": 4,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+    {
+      "name": "empty_row5_col5",
+      "out_row": 5, "out_col": 5,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+    {
+      "name": "empty_row5_col6",
+      "out_row": 5, "out_col": 6,
+      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "mode": "empty"
+    },
+
+    {
+      "name": "logo_1",
+      "out_row": 6, "out_col": 1,
+      "src_row": 1, "src_col": 1, "source_file": "logo_atlas_thorne01.tga",
+      "mode": "invert_impression", "mid_tone": 50, "imp_contrast": 0.8, "depth_gradient": true
+   },
+    {
+      "name": "logo_2",
+      "out_row": 6, "out_col": 2,
+      "src_row": 1, "src_col": 2, "source_file": "logo_atlas_thorne01.tga",
+      "mode": "invert_impression", "mid_tone": 55, "imp_contrast": 0.6, "depth_gradient": true
+    },
+    {
+      "name": "logo_3",
+      "out_row": 6, "out_col": 3,
+      "src_row": 1, "src_col": 3, "source_file": "logo_atlas_thorne01.tga",
+      "mode": "invert_impression", "mid_tone": 75, "imp_contrast": 0.6, "depth_gradient": true
+    },
+    {
+      "name": "logo_4",
+      "out_row": 6, "out_col": 4,
+      "src_row": 1, "src_col": 4, "source_file": "logo_atlas_thorne01.tga",
+      "mode": "invert_impression", "mid_tone": 95, "imp_contrast": 0.6, "depth_gradient": true
+    },
+    {
+      "name": "logo_5",
+      "out_row": 6, "out_col": 5,
+      "src_row": 1, "src_col": 5, "source_file": "logo_atlas_thorne01.tga",
+      "mode": "invert_impression", "mid_tone": 105, "imp_contrast": 0.6, "depth_gradient": true
+    },
+    {
+      "name": "logo_6",
+      "out_row": 6, "out_col": 6,
+      "src_row": 1, "src_col": 6, "source_file": "logo_atlas_thorne01.tga",
+      "mode": "invert_impression", "mid_tone": 125, "imp_contrast": 0.6, "depth_gradient": true
+    }
+  ]
+}

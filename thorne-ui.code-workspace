@@ -2,6 +2,12 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../TAKP/uifiles"
+		},
+		{
+			"path": "../Program Files (x86)/Sony/EverQuest/uifiles"
 		}
 	],
 	"settings": {
@@ -9,11 +15,19 @@
 			"**/*.backup_*": true,
 			"**/*.bak": true,
 			"**/*.old": true,
+			"**/.tmp": true,
+			"**/.reports": true,
+			"**/.venv": true,
+			"**/venv": true
 		},
 		"search.exclude": {
 			"**/*.backup_*": true,
 			"**/*.bak": true,
 			"**/*.old": true,
+			"**/.tmp": true,
+			"**/.reports": true,
+			"**/.venv": true,
+			"**/venv": true
 		},
 		"files.associations": {
 			"*.xml": "xml",
@@ -26,35 +40,54 @@
 		"editor.formatOnSave": false,
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2,
+		"editor.rulers": [
+			80,
+			132,
+			180
+		],
 		"files.trimTrailingWhitespace": false,
 		"files.insertFinalNewline": false,
+		"markdownlint.config": "${workspaceFolder}/.markdownlint.json",
+		"cSpell.configFile": "${workspaceFolder}/.cspell.json",
+		"ruff.enable": true,
+		"ruff.format.enable": true,
 		"workbench.colorCustomizations": {
 			"editorRuler.foreground": "#444444"
 		},
 		"terminal.integrated.env.windows": {
-			"PATH": "${workspaceFolder}\\.bin;${workspaceFolder};${env:PATH}"
+			"PATH": "${workspaceFolder}\\.bin;${workspaceFolder}\\.venv\\Scripts;${workspaceFolder};${env:PATH}",
+			"VIRTUAL_ENV": "${workspaceFolder}/.venv",
+			"BASH_ENV": "${workspaceFolder}/.bashrc"
 		},
 		"terminal.integrated.env.linux": {
-			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
+			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}/.venv/bin:${workspaceFolder}:${env:PATH}",
+			"VIRTUAL_ENV": "${workspaceFolder}/.venv"
 		},
 		"terminal.integrated.env.osx": {
-			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}:${env:PATH}"
+			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}/.venv/bin:${workspaceFolder}:${env:PATH}",
+			"VIRTUAL_ENV": "${workspaceFolder}/.venv"
 		},
 		"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
 		"python.terminal.activateEnvironment": true,
-		"python.analysis.typeCheckingMode": "basic"
+		"python.analysis.typeCheckingMode": "basic",
+		"ruff.fixAll": true,
+		"ruff.lineLength": 180,
+		"powershell.cwd": "Thorne-UI"
 	},
 	"extensions": {
 		"recommendations": [
 			"redhat.vscode-xml",
-			"donjayamanne.githistory",
 			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"charliermarsh.ruff",
+			"davidanson.vscode-markdownlint",
 			"ms-vscode.powershell",
-			"foxundermoon.shell-format",
-			"naumovs.color-picker",
+			"streetsidesoftware.code-spell-checker",
+			"redhat.vscode-yaml",
 			"yzhang.markdown-all-in-one",
 			"EditorConfig.EditorConfig",
-			"DotJoshJohnson.xml"
+			"GitHub.vscode-pull-request-github",
+			"donjayamanne.githistory"
 		]
 	}
 }

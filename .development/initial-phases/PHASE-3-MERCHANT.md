@@ -104,7 +104,7 @@ All labels and values use canonical Inventory window color palette:
   - MerchantWnd participates in client-controlled transparency
   - UI must account for `/viewport` transparency settings
 - **Color Standardization**: Inventory window established as canonical color reference
-  - All labels/values use [Inventory color palette](../STANDARDS.md#color-palette)
+  - All labels/values use [Inventory color palette](../../.docs/STANDARDS.md#color-palette--text-styling)
   - Consistency improves recognition across different windows
 - **Options Pattern**: Directory structure allows multiple variants without code duplication
   - Main directory: Standard/minimal variant
@@ -142,7 +142,7 @@ All labels and values use canonical Inventory window color palette:
 </Page>
 ```
 
-**EQType Bindings** (See [Technical References](../technical/eqtypes.md) for complete list):
+**EQType Bindings** (See [Technical References](../../.docs/technical/EQTYPES.md) for complete list):
 - Inventory slots: `InvSlot0` through `InvSlot28`
 - Weapon slots: `InvSlot13` (Primary), `InvSlot14` (Secondary), `InvSlot11` (Range), `InvSlot21` (Ammo)
 - Stats: `HP`, `Mana`, `AC`, `Attack`, `STR`, `STA`, `AGI`, `DEX`, `WIS`, `INT`, `CHA`
@@ -157,4 +157,4 @@ All labels and values use canonical Inventory window color palette:
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../technical/eqtypes.md)
+[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)

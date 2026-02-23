@@ -429,6 +429,61 @@ class OptionsReadmeChecker:
 
 
 def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(
+        prog="options_readme_checker.py",
+        description="""
+Validate README Documentation in UI Variants
+
+Audits Options/ variant directories to detect documentation issues:
+- Missing README.md files (orphaned variants)
+- Incomplete or poor-quality documentation
+- Out-of-sync descriptions
+- Missing required sections
+
+FEATURES:
+  ✓ Comprehensive README quality audit
+  ✓ Identification of orphaned variants (no README)
+  ✓ Detection of incomplete documentation
+  ✓ Deep analysis for variants needing attention
+  ✓ Detailed reporting with recommendations
+""",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+EXAMPLES:
+
+  # Quick scan - summary report
+  python .bin/options_readme_checker.py
+
+  # Detailed output with all issues
+  python .bin/options_readme_checker.py --verbose
+
+  # Combined with fix_readme tool:
+  python .bin/options_readme_checker.py --verbose
+  python .bin/options_fix_readme.py --dry-run
+  python .bin/options_fix_readme.py
+
+REPORTS:
+  - Console: Summary of issues found
+  - .reports/readme_check_report.json: Full audit data
+
+OUTPUT CATEGORIES:
+  - Missing: Variants without README.md
+  - Incomplete: Short or minimal documentation
+  - Out-of-sync: Descriptions don't match window type
+  - Needs Analysis: Potential improvements recommended
+"""
+    )
+    
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Show detailed analysis for each issue"
+    )
+    
+    args = parser.parse_args()
+    
     # Determine Options path
     script_dir = Path(__file__).parent
     root_dir = script_dir.parent
@@ -438,16 +493,12 @@ def main():
         print(f"ERROR: Options directory not found at {options_dir}")
         sys.exit(1)
     
-    # Parse arguments
-    verbose = "--verbose" in sys.argv
-    fix_mode = "--fix" in sys.argv
-    
     # Run checker
     checker = OptionsReadmeChecker(options_dir)
     checker.scan()
     
     # Print report
-    checker.print_report(verbose=verbose)
+    checker.print_report(verbose=args.verbose)
     
     # Save JSON report
     report_file = root_dir / ".reports" / "readme_check_report.json"

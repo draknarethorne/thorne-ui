@@ -1,9 +1,8 @@
 {
   "window": "Pet",
-  "description": "Pet information window with status display",
-  "default_variant": "Default",
-  "last_sync_date": "2026-02-03",
-  "last_sync_commit": "5c0eb41",
-  "in_sync": true,
-  "notes": "Initial sync - Default copy created and all variants established"
+  "filename": "EQUI_PetInfoWindow.xml",
+  "description": "Pet window Thorne configuration",
+  "last_sync_date": "2026-02-17T21:56:10.910993",
+  "last_sync_commit": "36b97c1",
+  "in_sync": true
 }

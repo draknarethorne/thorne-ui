@@ -1,0 +1,41 @@
+{
+  "_comment": "Thorne theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
+  "_note": "Thorne is the default theme for all classes. Necro-leaning dark silver gradients.",
+  
+  "default_button": {
+    "button_row": 1,
+    "button_col": 1,
+    "gradient": "thorne"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 30,
+    "offset_x": 0,
+    "offset_y": 1,
+    "item_opacity": 0.90
+  },
+
+  "gradient_presets": {
+    "thorne": {
+      "type": "diagonal_tl",
+      "top_color": [45, 48, 52],
+      "middle_color": [160, 170, 180],
+      "bottom_color": [110, 120, 130]
+    },
+    "thorne_logo": {
+      "type": "diagonal_tl",
+      "top_color": [70, 75, 82],
+      "middle_color": [190, 200, 210],
+      "bottom_color": [120, 130, 140]
+    }
+  },
+
+  "item_overrides": {
+    "logo_1": { "gradient": "thorne_logo" },
+    "logo_2": { "gradient": "thorne_logo" },
+    "logo_3": { "gradient": "thorne_logo" },
+    "logo_4": { "gradient": "thorne_logo" },
+    "logo_5": { "gradient": "thorne_logo" },
+    "logo_6": { "gradient": "thorne_logo" }
+  }
+}

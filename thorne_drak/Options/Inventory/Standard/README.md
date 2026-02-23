@@ -2,7 +2,7 @@
 
 **File**: [EQUI_Inventory.xml](./EQUI_Inventory.xml)
 **Version**: 1.0.0  
-**Last Updated**: 2026-02-03
+**Last Updated**: 2026-02-17
 **Status**: ✅ Standard variant  
 **Author**: Draknare Thorne
 

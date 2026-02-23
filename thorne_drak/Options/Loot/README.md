@@ -11,20 +11,20 @@ This directory contains variants for the Loot window (EQUI_LootWnd.xml).
 
 ## Available Variants
 
-- **[Default/](Default/)**    
-  `EQUI_LootWnd.xml`
-
 - **[Large Loot/](Large Loot/)**  📄
   `EQUI_LootWnd.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_LootWnd.xml`
 
+- **[Thorne/](Thorne/)**    
+  `EQUI_LootWnd.xml`
+
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_LootWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_LootWnd.xml`.
 
 ## Metadata
 

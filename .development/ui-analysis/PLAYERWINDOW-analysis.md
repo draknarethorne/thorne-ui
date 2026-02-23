@@ -126,7 +126,7 @@ Both use **EQType 24**, so the **data source is identical**. The difference is *
   
 - **Estimated Effort**: 15-20 hours design + implementation
 - **Dependencies**:
-  - gauge_pieces01.tga (Thorne has) + color variants
+  - gauge_inlay_thorne01.tga (Thorne has) + color variants
   - Animation definitions for color transitions
   - EQType system understanding
   - Careful layering to prevent Z-order issues

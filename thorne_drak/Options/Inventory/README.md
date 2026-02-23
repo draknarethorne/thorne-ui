@@ -4,27 +4,27 @@
 
 This directory contains variants for the Inventory window (EQUI_Inventory.xml).
 
-**Last Synced:** 2026-02-03  
-**Git Commit:** 5c0eb41
+**Last Synced:** 2026-02-17  
+**Git Commit:** 36b97c1
 
 ---
 
 ## Available Variants
 
-- **[Default/](Default/)**    
-  `EQUI_Inventory.xml`
-
-- **[Enhanced No Hands Bug/](Enhanced No Hands Bug/)**    
+- **[Enhanced/](Enhanced/)**    
   `EQUI_Inventory.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_Inventory.xml`
 
+- **[Thorne/](Thorne/)**    
+  `EQUI_Inventory.xml`
+
 ---
 
-## Default Configuration
+## Thorne Configuration
 
-The `Default/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_Inventory.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_Inventory.xml`.
 
 ## Metadata
 

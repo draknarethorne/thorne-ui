@@ -1,32 +1,30 @@
 # Thorne UI Release Documentation Index
 
-## 📌 CURRENT RELEASE: v0.6.2 ✅
+## 📌 CURRENT RELEASE: v0.7.0 ✅
 
-**Status:** Patch release (Inventory layout fixes + Loadskin width expansion)  
-**Release Date:** February 9, 2026  
+**Status:** Minor release (options framework modernization + slot foundation)  
+**Release Date:** February 22, 2026  
 **Ready for Production:** Yes!
 
-### For Creating New Releases (v0.6.0+)
+**Release Documentation:** [v0.7.0/](v0.7.0/)
 
-**Quick Reference:**
-1. **[RELEASES-QUICKSTART.md](RELEASES-QUICKSTART.md)** - TL;DR (push tag, GitHub does the rest)
-2. **[RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md)** - Use as template for next release prep
-3. **[RELEASES.md](RELEASES.md)** - Complete reference guide
+## 📚 Documentation Structure (Updated Feb 18, 2026)
+
+**Core Release Documents:**
+- **[RELEASES.md](RELEASES.md)** - Complete guide to creating and managing releases (includes FAQ & quick answers)
+- **[RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md)** - Template for GitHub release notes
+
+**For Creating New Releases (v0.6.0+):**
+
+See [RELEASES.md](RELEASES.md) for:
+1. Quick Answers (TL;DR: push tag, GitHub does the rest)
+2. Overview of automated GitHub Actions workflow
+3. Step-by-step process for creating releases
+4. Release checklist
+5. Version numbering guidelines
+6. Where to find releases and share with users
 
 Estimated time: 15-20 minutes prep + 5 minutes release (fully automated on GitHub)
-
-### Detailed Guides
-
-- **[RELEASES.md](RELEASES.md)** - Comprehensive guide with architecture & workflow details
-- **[RELEASES-QUICKSTART.md](RELEASES-QUICKSTART.md)** - Quick reference (push tag → GitHub handles it)
-- **[RELEASES-FAQ.md](RELEASES-FAQ.md)** - Common questions and troubleshooting
-- **[RELEASES-IMPLEMENTATION.md](../../.development/releases/RELEASES-IMPLEMENTATION.md)** - Technical implementation details (maintainer-only)
-- **[TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md)** - Testing the release workflow locally (maintainer-only)
-
-### Templates
-
-- **[RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md)** - Template for preparing releases
-- **[RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md)** - Template for release notes
 
 ---
 
@@ -38,8 +36,8 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 
 ## 🧪 Current Pre-Release
 
-**v0.6.3 (pre-release)** — Cast spell window spell-name font adjusted to Font 1  
-**Tag format:** `v0_6_3`
+**v0.7.1 (next)** — post-release refinement and follow-up polish  
+**Tag format:** `v0.7.1`
 
 ---
 
@@ -49,12 +47,12 @@ Historical release archives are stored in `.development/releases/archive/` (repo
 # 1. Update version in README.md (Version History section)
 # 2. Commit and push to main
 git add README.md
-git commit -m "chore: Update version history for v0.6.2"
+git commit -m "chore: Update version history for v0.7.0"
 git push origin main
 
 # 3. Create and push a version tag (triggers GitHub Actions)
-git tag -a v0.6.2 -m "Release v0.6.2: Description of changes"
-git push origin v0.6.2
+git tag -a v0.7.0 -m "Release v0.7.0: Description of changes"
+git push origin v0.7.0
 
 # ✨ GitHub Actions handles everything:
 # - Creates ZIP packages automatically
@@ -71,12 +69,10 @@ git push origin v0.6.2
 
 | Need | Read |
 |------|------|
-| **Prepare v0.6.0+** | [releases/RELEASE-TEMPLATE.md](releases/RELEASE-TEMPLATE.md) |
-| **Just want to create a release** | [RELEASES-QUICKSTART.md](RELEASES-QUICKSTART.md) |
+| **Creating releases (start here)** | [RELEASES.md](RELEASES.md) |
+| **GitHub release notes template** | [RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md) |
 | **What changed recently?** | [../README.md](../README.md) |
-| **Questions about the process** | [RELEASES-FAQ.md](RELEASES-FAQ.md) |
 | **How the workflow was built** | [../../.development/releases/RELEASES-IMPLEMENTATION.md](../../.development/releases/RELEASES-IMPLEMENTATION.md) |
-| **Complete reference guide** | [RELEASES.md](RELEASES.md) |
 | **Testing locally before release** | [../../.development/releases/TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md) |
 
 ---
@@ -85,7 +81,7 @@ git push origin v0.6.2
 
 **For any release, you need to:**
 
-- [ ] Review [RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md)
+- [ ] Review [RELEASES.md](RELEASES.md) (Complete process guide)
 - [ ] Update version in README.md (Version History section)
 - [ ] Commit version update
 - [ ] Create and push the release tag
@@ -124,12 +120,12 @@ git push origin v0.6.2
 
 **Documentation:**
 - [Main README](../README.md) - Project overview
-- [Development Guide](../DEVELOPMENT.md) - Development roadmap
+- [Development Guide](../../DEVELOPMENT.md) - Development roadmap
 - [Standards](../STANDARDS.md) - Code standards
 - [Phases](../../.development/initial-phases/) - Development phases (maintainer-only)
 
 ---
 
-**Status:** v0.6.2 released ✅
+**Status:** v0.7.0 released ✅
 
-**Last Updated:** February 9, 2026
+**Last Updated:** February 22, 2026

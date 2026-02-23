@@ -11,9 +11,9 @@ This guide explains how to create and manage releases for the Thorne UI project 
 **A: https://github.com/draknarethorne/thorne-ui/releases** (or click "Releases" in the right sidebar)
 
 **Q: What do I need to do?**  
-**A: Just push a git tag:** `git push origin v0.4.0` **- everything else is automatic!**
+**A: Just push a git tag:** `git push origin v0.6.5` **- everything else is automatic!**
 
-See [RELEASES-FAQ.md](RELEASES-FAQ.md) for more common questions.
+See the **Common Questions** section below for more details.
 
 ---
 
@@ -47,17 +47,17 @@ The automated workflow creates releases when you push a version tag:
 1. **Ensure all changes are committed and pushed to main:**
    ```bash
    git add .
-   git commit -m "Prepare for release v0.4.0"
+   git commit -m "Prepare for release v0.6.5"
    git push origin main
    ```
 
 2. **Create and push a version tag:**
    ```bash
    # Create an annotated tag with release notes
-   git tag -a v0.4.0 -m "Release v0.4.0: Brief description of major changes"
+   git tag -a v0.6.5 -m "Release v0.6.5: Brief description of major changes"
    
    # Push the tag to trigger the release workflow
-   git push origin v0.4.0
+   git push origin v0.6.5
    ```
 
 3. **GitHub Actions automatically:**
@@ -81,7 +81,7 @@ You can also create releases manually through the GitHub web interface:
 1. Go to your repository on GitHub
 2. Click "Releases" in the right sidebar
 3. Click "Draft a new release"
-4. Click "Choose a tag" and create a new tag (e.g., `v0.4.0`)
+4. Click "Choose a tag" and create a new tag (e.g., `v0.6.5`)
 5. Fill in the release title and description
 6. Manually upload ZIP files (if not using the workflow)
 7. Click "Publish release"
@@ -135,8 +135,8 @@ Follow semantic versioning: `vMAJOR.MINOR.PATCH`
 - **PATCH** (v0.3.1) - Bug fixes, small tweaks, documentation updates
 
 ### Examples:
-- `v0.3.0` - Current version with documentation reorganization
-- `v0.4.0` - Next minor version with new features
+- `v0.6.5` - Current patch release (Spellbook/cast polish + Thorne options sync)
+- `v0.7.0` - Next minor version with new features
 - `v1.0.0` - First major stable release
 - `v0.3.1` - Patch release fixing bugs in v0.3.0
 
@@ -184,14 +184,14 @@ If you need to delete and recreate a tag:
 
 ```bash
 # Delete local tag
-git tag -d v0.4.0
+git tag -d v0.6.5
 
 # Delete remote tag
-git push origin :refs/tags/v0.4.0
+git push origin :refs/tags/v0.6.5
 
 # Create new tag and push
-git tag -a v0.4.0 -m "Release v0.4.0"
-git push origin v0.4.0
+git tag -a v0.6.5 -m "Release v0.6.5"
+git push origin v0.6.5
 ```
 
 ## Troubleshooting
@@ -233,19 +233,19 @@ git push origin v0.4.0
 # 1. Update version in README.md
 vim README.md
 # Add entry to Version History:
-# **v0.4.0** (February 15, 2026)
+# **v0.6.5** (February 18, 2026)
 # - ✅ Group window with raid support
 # - ✅ Pet window enhancements
 # etc.
 
 # 2. Commit the version update
 git add README.md
-git commit -m "docs: Update version history for v0.4.0 release"
+git commit -m "docs: Update version history for v0.6.5 release"
 git push origin main
 
 # 3. Create and push the tag
-git tag -a v0.4.0 -m "Release v0.4.0: Group and Pet window improvements"
-git push origin v0.4.0
+git tag -a v0.6.5 -m "Release v0.6.5: Spellbook/cast polish and Thorne sync workflow"
+git push origin v0.6.5
 
 # 4. Wait for workflow (check GitHub Actions tab)
 # 5. Review release on GitHub Releases page
@@ -256,7 +256,7 @@ git push origin v0.4.0
 
 ```bash
 # Create packages manually
-zip -r thorne_drak-v0.4.0.zip thorne_drak/ -x "*.git*" "*.md"
+zip -r thorne_drak-v0.6.4.zip thorne_drak/ -x "*.git*" "*.md"
 
 # Upload through GitHub web interface
 # Go to Releases > Draft a new release
@@ -286,15 +286,25 @@ For detailed testing instructions, see **[TESTING-RELEASES.md](../../.developmen
 
 ## Common Questions
 
-See **[RELEASES-FAQ.md](RELEASES-FAQ.md)** for answers to:
+**Q: Do I need to create ZIPs locally?**  
+**A:** No - the GitHub Actions workflow creates them automatically when you push a tag.
 
-- ❓ Do I need to create ZIPs locally? (No - automated!)
-- ❓ Where can I find releases on GitHub? (Releases page URL)
-- ❓ Can users find releases without navigating the repo? (Yes - direct link)
-- ❓ What's the difference between test script and workflow?
-- ❓ How do I know the workflow succeeded?
-- ❓ What if the workflow fails?
-- ❓ And more...
+**Q: Where can I find releases on GitHub?**  
+**A:** https://github.com/draknarethorne/thorne-ui/releases (or click "Releases" in the right sidebar)
+
+**Q: Can users find releases without navigating the repo?**  
+**A:** Yes - the Releases page is directly accessible and easy to share.
+
+**Q: How do I know the workflow succeeded?**  
+**A:** Check the Actions tab (https://github.com/draknarethorne/thorne-ui/actions) and look for your release tag. It should complete in 2-3 minutes with green checkmarks.
+
+**Q: What if the workflow fails?**  
+**A:** Check the workflow logs in the Actions tab for error details. Common issues: missing VERSION  
+file, syntax errors in YAML, or permission issues. See  
+[TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md) for debugging help.
+
+**Q: What's the difference between the test script and the workflow?**  
+**A:** The test script runs locally and validates your setup before pushing. The workflow runs on GitHub's servers when you push a tag. Both use the same release.yml file.
 
 ---
 
@@ -308,5 +318,5 @@ For questions about releases or the release process:
 
 ---
 
-**Last Updated**: February 2, 2026  
+**Last Updated**: February 16, 2026  
 **Workflow Version**: 1.0

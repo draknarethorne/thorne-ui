@@ -1,0 +1,25 @@
+{
+  "_comment": "Transparent theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
+
+  "default_button": {
+    "button_row": 4,
+    "button_col": 1,
+    "gradient": "none"
+  },
+  "default_item": {
+    "fit_mode": "tile",
+    "fit_size": 30,
+    "offset_x": 0,
+    "offset_y": 1,
+    "item_opacity": 0.55
+  },
+
+  "item_overrides": {
+    "logo_1": { "gradient": "silver" },
+    "logo_2": { "gradient": "silver" },
+    "logo_3": { "gradient": "silver" },
+    "logo_4": { "gradient": "silver" },
+    "logo_5": { "gradient": "silver" },
+    "logo_6": { "gradient": "silver" }
+  }
+}

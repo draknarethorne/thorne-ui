@@ -1,0 +1,168 @@
+{
+  "file": "C:\\thorne-ui\\thorne_drak\\Options\\Icons\\Duxa\\stat_icons_thorne01.tga",
+  "source_dir": "C:\\thorne-ui\\thorne_drak\\Options\\Icons\\Duxa",
+  "icons": {
+    "AC": {
+      "position": {
+        "x": 10,
+        "y": 10
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 9, col 3"
+    },
+    "ATK": {
+      "position": {
+        "x": 10,
+        "y": 40
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 6, col 1"
+    },
+    "HP": {
+      "position": {
+        "x": 10,
+        "y": 70
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 10, col 10"
+    },
+    "MANA": {
+      "position": {
+        "x": 10,
+        "y": 100
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 2, col 1"
+    },
+    "STA": {
+      "position": {
+        "x": 10,
+        "y": 130
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 1, col 5"
+    },
+    "Weight": {
+      "position": {
+        "x": 10,
+        "y": 160
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne02.tga @ row 3, col 7"
+    },
+    "Fire": {
+      "position": {
+        "x": 90,
+        "y": 10
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 6, col 3"
+    },
+    "Cold": {
+      "position": {
+        "x": 90,
+        "y": 40
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 6, col 8"
+    },
+    "Magic": {
+      "position": {
+        "x": 90,
+        "y": 70
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 7, col 10"
+    },
+    "Poison": {
+      "position": {
+        "x": 90,
+        "y": 100
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 7, col 2"
+    },
+    "Disease": {
+      "position": {
+        "x": 90,
+        "y": 130
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 7, col 6"
+    },
+    "Reserve": {
+      "position": {
+        "x": 90,
+        "y": 160
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne02.tga @ row 3, col 6"
+    },
+    "STR": {
+      "position": {
+        "x": 170,
+        "y": 10
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 1, col 7"
+    },
+    "INT": {
+      "position": {
+        "x": 170,
+        "y": 40
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 2, col 4"
+    },
+    "WIS": {
+      "position": {
+        "x": 170,
+        "y": 70
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 2, col 5"
+    },
+    "AGI": {
+      "position": {
+        "x": 170,
+        "y": 100
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 1, col 10"
+    },
+    "DEX": {
+      "position": {
+        "x": 170,
+        "y": 130
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 1, col 9"
+    },
+    "CHA": {
+      "position": {
+        "x": 170,
+        "y": 160
+      },
+      "size": "22x22",
+      "type": "extracted",
+      "source": "spell_icons_thorne01.tga @ row 2, col 6"
+    }
+  }
+}

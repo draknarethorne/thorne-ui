@@ -1,7 +1,7 @@
 {
   "directory": "Thorne",
   "summary": {
-    "items_total": 60,
+    "items_total": 72,
     "atlases_generated": 2
   },
   "items": [
@@ -239,14 +239,14 @@
       "name": "empty_row4_col6",
       "out_row": 4,
       "out_col": 6,
-      "source_file": "placeholder.tga",
+      "source_file": "empty.tga",
       "src_row": 1,
       "src_col": 1,
       "mode": "empty",
       "has_tone_override": false
     },
     {
-      "name": "empty_row5_col1",
+      "name": "recessed_box",
       "out_row": 5,
       "out_col": 1,
       "source_file": "placeholder.tga",
@@ -303,6 +303,66 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "empty",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_1",
+      "out_row": 6,
+      "out_col": 1,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_2",
+      "out_row": 6,
+      "out_col": 2,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 2,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_3",
+      "out_row": 6,
+      "out_col": 3,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 3,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_4",
+      "out_row": 6,
+      "out_col": 4,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 4,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_5",
+      "out_row": 6,
+      "out_col": 5,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 5,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_6",
+      "out_row": 6,
+      "out_col": 6,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 6,
+      "mode": "invert_impression",
       "has_tone_override": false
     },
     {
@@ -539,14 +599,14 @@
       "name": "empty_row4_col6",
       "out_row": 4,
       "out_col": 6,
-      "source_file": "placeholder.tga",
+      "source_file": "empty.tga",
       "src_row": 1,
       "src_col": 1,
       "mode": "empty",
       "has_tone_override": false
     },
     {
-      "name": "empty_row5_col1",
+      "name": "recessed_box",
       "out_row": 5,
       "out_col": 1,
       "source_file": "placeholder.tga",
@@ -604,24 +664,71 @@
       "src_col": 1,
       "mode": "empty",
       "has_tone_override": false
+    },
+    {
+      "name": "logo_1",
+      "out_row": 6,
+      "out_col": 1,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_2",
+      "out_row": 6,
+      "out_col": 2,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 2,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_3",
+      "out_row": 6,
+      "out_col": 3,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 3,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_4",
+      "out_row": 6,
+      "out_col": 4,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 4,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_5",
+      "out_row": 6,
+      "out_col": 5,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 5,
+      "mode": "invert_impression",
+      "has_tone_override": false
+    },
+    {
+      "name": "logo_6",
+      "out_row": 6,
+      "out_col": 6,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 6,
+      "mode": "invert_impression",
+      "has_tone_override": false
     }
   ],
   "output_files": [
     "item_atlas_thorne01.tga",
     "item_icons_thorne01.tga"
   ],
-  "errors": [
-    "Failed to render logo_1: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_2: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_3: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_4: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_5: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_6: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_1: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_2: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_3: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_4: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_5: Missing source file: logo_atlas_thorne01.tga",
-    "Failed to render logo_6: Missing source file: logo_atlas_thorne01.tga"
-  ]
+  "errors": []
 }

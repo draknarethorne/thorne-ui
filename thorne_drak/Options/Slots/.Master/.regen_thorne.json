@@ -162,12 +162,12 @@
     {
       "name": "empty_row4_col6",
       "out_row": 4, "out_col": 6,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
+      "src_row": 1, "src_col": 1, "source_file": "empty.tga",
       "mode": "empty"
     },
 
     {
-      "name": "empty_row5_col1",
+      "name": "recessed_box",
       "out_row": 5, "out_col": 1,
       "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
       "mode": "empty"

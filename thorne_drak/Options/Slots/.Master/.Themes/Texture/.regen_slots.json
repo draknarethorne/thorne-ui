@@ -1,11 +1,6 @@
 {
   "_comment": "Texture theme overrides for slot styling. Inherits from .Master/.regen_slots.json",
-  "button_grid": {
-    "origin_x": 0,
-    "origin_y": 0,
-    "sep_x": 2,
-    "sep_y": 2
-  },
+
   "default_button": {
     "button_row": 1,
     "button_col": 2,
@@ -15,9 +10,10 @@
     "fit_mode": "visible",
     "fit_size": 30,
     "offset_x": 0,
-    "offset_y": 0,
+    "offset_y": 1,
     "item_opacity": 0.95
   },
+
   "item_overrides": {
     "logo_1": { "gradient": "phantom" },
     "logo_2": { "gradient": "ghost" },

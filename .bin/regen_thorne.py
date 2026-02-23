@@ -26,7 +26,6 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime
 from pathlib import Path
 
 from PIL import Image, ImageEnhance, ImageOps
@@ -155,7 +154,6 @@ class ThorneGenerator:
         self.fallback_dir = fallback_dir
         self.stats: dict = {
             "directory": str(directory.name),
-            "timestamp": datetime.now().isoformat(),
             "summary": {
                 "items_total": 0,
                 "atlases_generated": 0,

@@ -31,7 +31,6 @@ import argparse
 import json
 import shutil
 import sys
-from datetime import datetime
 from pathlib import Path
 
 from PIL import Image
@@ -298,7 +297,6 @@ class SlotGenerator:
         self.buttons_dir = buttons_dir
         self.stats: dict = {
             "variant": self.variant_name,
-            "timestamp": datetime.now().isoformat(),
             "summary": {
                 "items_total": 0,
                 "items_with_overrides": 0,

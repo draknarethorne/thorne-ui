@@ -11,6 +11,9 @@ This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 
 ## Available Variants
 
+- **[Standard/](Standard/)**    
+  `EQUI_GroupWindow.xml`
+
 - **[Thorne/](Thorne/)**  📄
   `EQUI_GroupWindow.xml`
 

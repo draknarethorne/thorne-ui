@@ -11,6 +11,9 @@ This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 
 ## Available Variants
 
+- **[Standard/](Standard/)**    
+  `EQUI_PlayerWindow.xml`
+
 - **[Thorne/](Thorne/)**  📄
   `EQUI_PlayerWindow.xml`
 

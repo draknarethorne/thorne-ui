@@ -8,12 +8,12 @@ the .sync-status.json metadata with current timestamp and git commit information
 Usage:
     python options_thorne_sync.py --window TARGET
     python options_thorne_sync.py --window Player --verbose
-    python options_thorne_sync.py --all              # Sync all 13 windows
+    python options_thorne_sync.py --all              # Sync all 15 windows
     python options_thorne_sync.py --all --dry-run    # Preview changes
     
 Options:
     --window NAME       Sync specific window (e.g., Target, Player, Group, Spellbook)
-    --all              Sync all 13 configured windows
+    --all              Sync all 15 configured windows
     --dry-run          Show what would be synced without making changes
     --verbose          Show detailed file operations
 """
@@ -30,6 +30,7 @@ from datetime import datetime
 WINDOW_MAPPING = {
     "Actions": "EQUI_ActionsWindow.xml",
     "Animations": "EQUI_Animations.xml",
+    "Buff": "EQUI_BuffWindow.xml",
     "Cast": "EQUI_CastSpellWnd.xml",
     "Group": "EQUI_GroupWindow.xml",
     "Hotbutton": "EQUI_HotbuttonWnd.xml",
@@ -336,7 +337,7 @@ def main():
 and updates sync metadata with current timestamp and git commit information.
 
 FEATURES:
-    ✓ Single window or bulk sync of all 14 configured windows
+    ✓ Single window or bulk sync of all 15 configured windows
   ✓ Dry-run mode to preview changes before applying
   ✓ Automatic parent README generation for navigation
   ✓ Metadata tracking with git commit information
@@ -352,14 +353,14 @@ EXAMPLES:
     python .bin/options_thorne_sync.py --window Player --dry-run
     python .bin/options_thorne_sync.py --window Player
 
-    # Sync all 14 windows with verbose output
+    # Sync all 15 windows with verbose output
     python .bin/options_thorne_sync.py --all --verbose
 
   # Preview what would be synced
     python .bin/options_thorne_sync.py --all --dry-run
 
 AVAILABLE WINDOWS:
-    Actions, Animations, Cast, Group, Hotbutton, Inventory, Loot,
+    Actions, Animations, Buff, Cast, Group, Hotbutton, Inventory, Loot,
     Merchant, Pet, Player, Selector, Skin, Spellbook, Target
 
 OUTPUT:
@@ -380,7 +381,7 @@ OUTPUT:
     group.add_argument(
         "--all", "-a",
         action="store_true",
-        help="Sync all 14 configured windows"
+        help="Sync all 15 configured windows"
     )
     
     parser.add_argument(

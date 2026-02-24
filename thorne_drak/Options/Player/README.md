@@ -4,21 +4,12 @@
 
 This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 
-**Last Synced:** 2026-02-17  
-**Git Commit:** 36b97c1
+**Last Synced:** 2026-02-24  
+**Git Commit:** 071a9b7
 
 ---
 
 ## Available Variants
-
-- **[AA and XP Bottom/](AA and XP Bottom/)**  📄
-  `EQUI_PlayerWindow.xml`
-
-- **[Pet Bottom/](Pet Bottom/)**  📄
-  `EQUI_PlayerWindow.xml`
-
-- **[Standard/](Standard/)**  📄
-  `EQUI_PlayerNotesWindow.xml`
 
 - **[Thorne/](Thorne/)**  📄
   `EQUI_PlayerWindow.xml`

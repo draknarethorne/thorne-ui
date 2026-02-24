@@ -4,8 +4,8 @@
 
 This directory contains variants for the Loot window (EQUI_LootWnd.xml).
 
-**Last Synced:** 2026-02-03  
-**Git Commit:** 51a6e2a
+**Last Synced:** 2026-02-24  
+**Git Commit:** 071a9b7
 
 ---
 

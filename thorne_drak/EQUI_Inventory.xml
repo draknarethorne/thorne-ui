@@ -2122,11 +2122,11 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>75</X>
+      <X>66</X>
       <Y>20</Y>
     </Location>
     <Size>
-      <CX>18</CX>
+      <CX>27</CX>
       <CY>14</CY>
     </Size>
     <Text>0</Text>
@@ -2171,7 +2171,7 @@
       <Y>20</Y>
     </Location>
     <Size>
-      <CX>18</CX>
+      <CX>27</CX>
       <CY>14</CY>
     </Size>
     <Text />

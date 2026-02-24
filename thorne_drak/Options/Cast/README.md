@@ -11,13 +11,13 @@ This directory contains variants for the Cast window (EQUI_CastSpellWnd.xml).
 
 ## Available Variants
 
-- **[Enhanced/](Enhanced/)**  📄
-  `EQUI_CastSpellWnd.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_CastSpellWnd.xml`
 
 - **[Thorne/](Thorne/)**  📄
+  `EQUI_CastSpellWnd.xml`
+
+- **[Thorne Classic/](Thorne Classic/)**  📄
   `EQUI_CastSpellWnd.xml`
 
 ---

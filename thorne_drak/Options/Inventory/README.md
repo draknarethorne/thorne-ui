@@ -11,9 +11,6 @@ This directory contains variants for the Inventory window (EQUI_Inventory.xml).
 
 ## Available Variants
 
-- **[Enhanced/](Enhanced/)**    
-  `EQUI_Inventory.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_Inventory.xml`
 

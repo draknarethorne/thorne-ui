@@ -14,9 +14,6 @@ This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 - **[Standard/](Standard/)**  📄
   `EQUI_PetInfoWindow.xml`
 
-- **[Tall Gauge/](Tall Gauge/)**  📄
-  `EQUI_PetInfoWindow.xml`
-
 - **[Thorne/](Thorne/)**    
   `EQUI_PetInfoWindow.xml`
 

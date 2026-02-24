@@ -11,13 +11,13 @@ This directory contains variants for the Actions window (EQUI_ActionsWindow.xml)
 
 ## Available Variants
 
-- **[Bags and Inventory/](Bags and Inventory/)**  📄
-  `EQUI_ActionsWindow.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_ActionsWindow.xml`
 
 - **[Thorne/](Thorne/)**  📄
+  `EQUI_ActionsWindow.xml`
+
+- **[Thorne Bags/](Thorne Bags/)**  📄
   `EQUI_ActionsWindow.xml`
 
 ---

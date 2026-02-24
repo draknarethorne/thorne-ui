@@ -11,13 +11,13 @@ This directory contains variants for the Skin window (EQUI_LoadskinWnd.xml).
 
 ## Available Variants
 
-- **[Slightly Taller and Wider/](Slightly Taller and Wider/)**  📄
-  `EQUI_LoadskinWnd.xml`
-
 - **[Standard/](Standard/)**    
   `EQUI_LoadskinWnd.xml`
 
 - **[Thorne/](Thorne/)**    
+  `EQUI_LoadskinWnd.xml`
+
+- **[Thorne Classic/](Thorne Classic/)**  📄
   `EQUI_LoadskinWnd.xml`
 
 ---

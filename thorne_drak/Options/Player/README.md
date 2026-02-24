@@ -5,7 +5,7 @@
 This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 
 **Last Synced:** 2026-02-24  
-**Git Commit:** 071a9b7
+**Git Commit:** d9b8174
 
 ---
 

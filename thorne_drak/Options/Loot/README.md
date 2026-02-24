@@ -11,9 +11,6 @@ This directory contains variants for the Loot window (EQUI_LootWnd.xml).
 
 ## Available Variants
 
-- **[Large Loot/](Large Loot/)**  📄
-  `EQUI_LootWnd.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_LootWnd.xml`
 

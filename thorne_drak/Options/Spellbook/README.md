@@ -11,13 +11,13 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 
 ## Available Variants
 
-- **[Large Icons/](Large Icons/)**    
-  `EQUI_SpellBookWnd.xml`
-
-- **[Small Icons/](Small Icons/)**  📄
+- **[Standard/](Standard/)**  📄
   `EQUI_SpellBookWnd.xml`
 
 - **[Thorne/](Thorne/)**    
+  `EQUI_SpellBookWnd.xml`
+
+- **[Thorne Large/](Thorne Large/)**    
   `EQUI_SpellBookWnd.xml`
 
 ---

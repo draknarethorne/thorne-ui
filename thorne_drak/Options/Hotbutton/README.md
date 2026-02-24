@@ -11,17 +11,14 @@ This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml
 
 ## Available Variants
 
-- **[Enhanced Four Rows/](Enhanced Four Rows/)**  📄
-  `EQUI_HotButtonWnd.xml`
-
-- **[Enhanced Two Rows/](Enhanced Two Rows/)**  📄
-  `EQUI_HotButtonWnd.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_HotButtonWnd.xml`
 
 - **[Thorne/](Thorne/)**    
   `EQUI_HotbuttonWnd.xml`
+
+- **[Thorne Vertical/](Thorne Vertical/)**  📄
+  `EQUI_HotButtonWnd.xml`
 
 ---
 

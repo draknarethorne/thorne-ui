@@ -11,19 +11,19 @@ This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 
 ## Available Variants
 
-- **[Player and Pet Gauges/](Player and Pet Gauges/)**  📄
-  `EQUI_TargetWindow.xml`
-
-- **[Player Gauges and Weight/](Player Gauges and Weight/)**  📄
-  `EQUI_TargetWindow.xml`
-
-- **[Player HP and Mana Gauges/](Player HP and Mana Gauges/)**  📄
-  `EQUI_TargetWindow.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_TargetWindow.xml`
 
 - **[Thorne/](Thorne/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Classic/](Thorne Classic/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Pet/](Thorne Pet/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Weight/](Thorne Weight/)**  📄
   `EQUI_TargetWindow.xml`
 
 ---

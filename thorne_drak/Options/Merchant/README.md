@@ -11,16 +11,13 @@ This directory contains variants for the Merchant window (EQUI_MerchantWnd.xml).
 
 ## Available Variants
 
-- **[Large inventory/](Large inventory/)**  📄
-  `EQUI_MerchantWnd.xml`
-
-- **[Large Inventory and Bags/](Large Inventory and Bags/)**  📄
-  `EQUI_MerchantWnd.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_MerchantWnd.xml`
 
 - **[Thorne/](Thorne/)**    
+  `EQUI_MerchantWnd.xml`
+
+- **[Thorne Bags/](Thorne Bags/)**  📄
   `EQUI_MerchantWnd.xml`
 
 ---

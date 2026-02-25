@@ -8,12 +8,12 @@ the .sync-status.json metadata with current timestamp and git commit information
 Usage:
     python options_thorne_sync.py --window TARGET
     python options_thorne_sync.py --window Player --verbose
-    python options_thorne_sync.py --all              # Sync all 15 windows
+    python options_thorne_sync.py --all              # Sync all 16 windows
     python options_thorne_sync.py --all --dry-run    # Preview changes
     
 Options:
     --window NAME       Sync specific window (e.g., Target, Player, Group, Spellbook)
-    --all              Sync all 15 configured windows
+    --all              Sync all 16 configured windows
     --dry-run          Show what would be synced without making changes
     --verbose          Show detailed file operations
 """
@@ -41,6 +41,7 @@ WINDOW_MAPPING = {
     "Player": "EQUI_PlayerWindow.xml",
     "Selector": "EQUI_SelectorWnd.xml",
     "Skin": "EQUI_LoadskinWnd.xml",
+    "ShortBuffs": "EQUI_ShortDurationBuffWindow.xml",
     "Spellbook": "EQUI_SpellBookWnd.xml",
     "Target": "EQUI_TargetWindow.xml",
 }
@@ -337,7 +338,7 @@ def main():
 and updates sync metadata with current timestamp and git commit information.
 
 FEATURES:
-    ✓ Single window or bulk sync of all 15 configured windows
+    ✓ Single window or bulk sync of all 16 configured windows
   ✓ Dry-run mode to preview changes before applying
   ✓ Automatic parent README generation for navigation
   ✓ Metadata tracking with git commit information
@@ -353,7 +354,7 @@ EXAMPLES:
     python .bin/options_thorne_sync.py --window Player --dry-run
     python .bin/options_thorne_sync.py --window Player
 
-    # Sync all 15 windows with verbose output
+    # Sync all 16 windows with verbose output
     python .bin/options_thorne_sync.py --all --verbose
 
   # Preview what would be synced
@@ -361,7 +362,7 @@ EXAMPLES:
 
 AVAILABLE WINDOWS:
     Actions, Animations, Buff, Cast, Group, Hotbutton, Inventory, Loot,
-    Merchant, Pet, Player, Selector, Skin, Spellbook, Target
+    Merchant, Pet, Player, Selector, Skin, ShortBuffs, Spellbook, Target
 
 OUTPUT:
   - Console: Sync report with counts and filenames
@@ -381,7 +382,7 @@ OUTPUT:
     group.add_argument(
         "--all", "-a",
         action="store_true",
-        help="Sync all 15 configured windows"
+        help="Sync all 16 configured windows"
     )
     
     parser.add_argument(

@@ -9,11 +9,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>0</Y>
+      <Y>3</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -28,8 +28,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -43,7 +43,7 @@
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -58,8 +58,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -69,11 +69,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>34</Y>
+      <Y>31</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -88,8 +88,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -99,11 +99,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>51</Y>
+      <Y>45</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -118,8 +118,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -129,11 +129,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>68</Y>
+      <Y>59</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -148,8 +148,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -159,11 +159,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>85</Y>
+      <Y>73</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -178,8 +178,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -189,11 +189,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>102</Y>
+      <Y>87</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -208,8 +208,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -219,11 +219,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>119</Y>
+      <Y>101</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -238,8 +238,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -249,11 +249,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>136</Y>
+      <Y>115</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -268,8 +268,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -279,11 +279,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>153</Y>
+      <Y>129</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -298,8 +298,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -309,11 +309,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>170</Y>
+      <Y>143</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -328,8 +328,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -339,11 +339,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>187</Y>
+      <Y>157</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -358,8 +358,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -369,18 +369,18 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>204</Y>
+      <Y>171</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
     <Style_Checkbox>false</Style_Checkbox>
     <ButtonDrawTemplate>
-      <Normal>BlueIconBackground</Normal>
+      <Normal>RedIconBackground</Normal>
       <NormalDecal>BuffIcons</NormalDecal>
     </ButtonDrawTemplate>
     <DecalOffset>
@@ -388,8 +388,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -399,11 +399,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>221</Y>
+      <Y>185</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -418,8 +418,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -429,11 +429,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>3</X>
-      <Y>238</Y>
+      <Y>199</Y>
     </Location>
     <Size>
       <CX>198</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -448,8 +448,8 @@
       <Y>0</Y>
     </DecalOffset>
     <DecalSize>
-      <CX>16</CX>
-      <CY>16</CY>
+      <CX>13</CX>
+      <CY>13</CY>
     </DecalSize>
   </Button>
 
@@ -461,11 +461,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>0</Y>
+      <Y>-1</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -485,11 +485,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>17</Y>
+      <Y>13</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -509,11 +509,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>34</Y>
+      <Y>27</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -533,11 +533,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>51</Y>
+      <Y>41</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -557,11 +557,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>68</Y>
+      <Y>55</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -581,11 +581,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>85</Y>
+      <Y>69</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -605,11 +605,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>102</Y>
+      <Y>83</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -629,11 +629,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>119</Y>
+      <Y>97</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -653,11 +653,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>136</Y>
+      <Y>111</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -677,11 +677,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>153</Y>
+      <Y>125</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -701,11 +701,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>170</Y>
+      <Y>139</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -725,11 +725,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>187</Y>
+      <Y>153</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -749,11 +749,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>204</Y>
+      <Y>167</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -773,11 +773,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>221</Y>
+      <Y>181</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -797,11 +797,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>55</X>
-      <Y>238</Y>
+      <Y>195</Y>
     </Location>
     <Size>
       <CX>344</CX>
-      <CY>16</CY>
+      <CY>13</CY>
     </Size>
     <Text></Text>
     <TextColor>
@@ -825,7 +825,7 @@
     </Location>
     <Size>
       <CX>210</CX>
-      <CY>93</CY>
+      <CY>100</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -833,7 +833,7 @@
     <!--<TooltipReference/>-->
     <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
     <Style_Titlebar>false</Style_Titlebar>
-    <Style_Closebox>false</Style_Closebox>
+    <Style_Closebox>true</Style_Closebox>
     <Style_Minimizebox>false</Style_Minimizebox>
     <Style_Border>true</Style_Border>
     <Style_Sizable>false</Style_Sizable>

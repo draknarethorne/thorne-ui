@@ -2347,7 +2347,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>218</X>
-      <Y>0</Y>
+      <Y>383</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2377,7 +2377,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
-      <Y>0</Y>
+      <Y>383</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2462,7 +2462,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>310</X>
-      <Y>0</Y>
+      <Y>383</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2523,7 +2523,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>126</X>
-      <Y>0</Y>
+      <Y>383</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2823,26 +2823,8 @@
     <Pieces>InvSlot28</Pieces>
     <Pieces>InvSlot29</Pieces>
   </Screen>
-  <!-- ZONE 9: Button Bar (428x20) - Action buttons -->
-  <Screen item="IW_ButtonBar_Wnd">
-    <ScreenID>IW_ButtonBar_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>383</Y>
-    </Location>
-    <Size>
-      <CX>428</CX>
-      <CY>20</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>IW_DoneButton</Pieces>
-    <Pieces>IW_Skills</Pieces>
-    <Pieces>IW_AltAdvBtn</Pieces>
-    <Pieces>IW_Destroy</Pieces>
-  </Screen>
+  <!-- ZONE 9 (flattened): Button Bar controls are direct main-window pieces -->
+  <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ========================================== -->
   <!-- MAIN WINDOW - Modular Architecture        -->
   <!-- ========================================== -->
@@ -2879,6 +2861,11 @@
     <Pieces>IW_Weight_Wnd</Pieces>
     <Pieces>IW_Stats_Wnd</Pieces>
     <Pieces>IW_BagZone_Wnd</Pieces>
-    <Pieces>IW_ButtonBar_Wnd</Pieces>
+    
+    <!-- ZONE 9 (flattened): Button Bar -->
+    <Pieces>IW_DoneButton</Pieces>
+    <Pieces>IW_Skills</Pieces>
+    <Pieces>IW_AltAdvBtn</Pieces>
+    <Pieces>IW_Destroy</Pieces>
   </Screen>
 </XML>

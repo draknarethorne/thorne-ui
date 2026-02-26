@@ -233,6 +233,20 @@ For TAKP/P2002 UI behavior in this project, transparency on a parent `<Screen>` 
 - For critical visibility (inventory/bag interactions), default to direct placement.
 - When experimenting with wrapper transparency behavior, test in a sandbox window first (e.g., `EQUI_MusicPlayerWnd.xml`) before touching canonical windows like Inventory.
 
+### Flattening Subwindows: Relative Position Rule (Critical)
+
+When removing a wrapper `<Screen>` and moving its child controls into the parent window's `<Pieces>`, preserve movement behavior deliberately:
+
+- ✅ **Use `<RelativePosition>true</RelativePosition>`** for controls that should move with the parent window (default for Inventory/Actions content).
+- ⚠️ **Use `<RelativePosition>false</RelativePosition>` only** for intentionally screen-anchored elements or temporary off-screen parking.
+- ❌ Do not switch to absolute positioning by default during flattening; this can make controls appear fixed to the main screen instead of the window.
+
+**Example implication:**
+
+- Flattening `IW_ButtonBar_Wnd` into `InventoryWindow` should keep button controls
+  (`IW_DoneButton`, `IW_Skills`, `IW_AltAdvBtn`, `IW_Destroy`) as
+  relative-positioned so they follow `InventoryWindow` movement.
+
 ---
 
 ### Anatomical Layout Pattern
@@ -697,7 +711,9 @@ Consider restructuring when documentation exceeds **2000 lines** or **8+ major p
 **Benefits**: Easier navigation, focused docs, better GitHub UI  
 **Drawbacks**: More files, link maintenance, git history fragmentation
 
-**Current Status**: ✅ **Completed February 2026** - DEVELOPMENT.md reorganized from 1961 → 412 lines (79% reduction). Documentation now modular with user-facing docs in `.docs/` and working docs in `.development/`.
+**Current Status**: ✅ **Completed February 2026** - DEVELOPMENT.md reorganized
+from 1961 → 412 lines (79% reduction). Documentation now modular with
+user-facing docs in `.docs/` and working docs in `.development/`.
 
 ---
 

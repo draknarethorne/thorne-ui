@@ -2086,8 +2086,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>20</Y>
+      <X>301</X>
+      <Y>308</Y>
     </Location>
     <Size>
       <CX>55</CX>
@@ -2107,8 +2107,8 @@
     <ScreenID>IW_Weight_Icon</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>55</X>
-      <Y>18</Y>
+      <X>356</X>
+      <Y>306</Y>
     </Location>
     <Size>
       <CX>18</CX>
@@ -2122,8 +2122,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>66</X>
-      <Y>20</Y>
+      <X>367</X>
+      <Y>308</Y>
     </Location>
     <Size>
       <CX>27</CX>
@@ -2144,8 +2144,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>93</X>
-      <Y>20</Y>
+      <X>394</X>
+      <Y>308</Y>
     </Location>
     <Size>
       <CX>4</CX>
@@ -2167,8 +2167,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>97</X>
-      <Y>20</Y>
+      <X>398</X>
+      <Y>308</Y>
     </Location>
     <Size>
       <CX>27</CX>
@@ -2693,27 +2693,8 @@
   </Screen>
   <!-- ZONE 5 (flattened): Currency controls are direct main-window pieces -->
   <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
-  <!-- ZONE 6: Weight (115x58) - Weight/Encumbrance -->
-  <Screen item="IW_Weight_Wnd">
-    <ScreenID>IW_Weight_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>301</X>
-      <Y>288</Y>
-    </Location>
-    <Size>
-      <CX>115</CX>
-      <CY>58</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>IW_Weight</Pieces>
-    <Pieces>IW_Weight_Icon</Pieces>
-    <Pieces>IW_CurrentWeight</Pieces>
-    <Pieces>IW_WeightSlash</Pieces>
-    <Pieces>IW_MaxWeight</Pieces>
-  </Screen>
+  <!-- ZONE 6 (flattened): Weight controls are direct main-window pieces -->
+  <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ZONE 7: Stats (115x360) - AC/ATK/HP/Mana/Attributes/Resistances -->
   <Screen item="IW_Stats_Wnd">
     <ScreenID>IW_Stats_Wnd</ScreenID>
@@ -2823,7 +2804,13 @@
     <Pieces>IW_Money1</Pieces>
     <Pieces>IW_Money2</Pieces>
     <Pieces>IW_Money3</Pieces>
-    <Pieces>IW_Weight_Wnd</Pieces>
+    
+    <!-- ZONE 6 (flattened): Weight -->
+    <Pieces>IW_Weight</Pieces>
+    <Pieces>IW_Weight_Icon</Pieces>
+    <Pieces>IW_CurrentWeight</Pieces>
+    <Pieces>IW_WeightSlash</Pieces>
+    <Pieces>IW_MaxWeight</Pieces>
     <Pieces>IW_Stats_Wnd</Pieces>
     
     <!-- ZONE 8 (flattened): Bag Zone -->

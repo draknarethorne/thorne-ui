@@ -34,6 +34,7 @@ WINDOW_MAPPING = {
     "Cast": "EQUI_CastSpellWnd.xml",
     "Group": "EQUI_GroupWindow.xml",
     "Hotbutton": "EQUI_HotbuttonWnd.xml",
+    "Inspect": "EQUI_InspectWnd.xml",
     "Inventory": "EQUI_Inventory.xml",
     "Loot": "EQUI_LootWnd.xml",
     "Merchant": "EQUI_MerchantWnd.xml",
@@ -339,7 +340,7 @@ def main():
 and updates sync metadata with current timestamp and git commit information.
 
 FEATURES:
-    ✓ Single window or bulk sync of all 16 configured windows
+  ✓ Single window or bulk sync of all 18 configured windows
   ✓ Dry-run mode to preview changes before applying
   ✓ Automatic parent README generation for navigation
   ✓ Metadata tracking with git commit information
@@ -355,7 +356,7 @@ EXAMPLES:
     python .bin/options_thorne_sync.py --window Player --dry-run
     python .bin/options_thorne_sync.py --window Player
 
-    # Sync all 16 windows with verbose output
+    # Sync all 18 windows with verbose output
     python .bin/options_thorne_sync.py --all --verbose
 
   # Preview what would be synced
@@ -383,7 +384,7 @@ OUTPUT:
     group.add_argument(
         "--all", "-a",
         action="store_true",
-        help="Sync all 16 configured windows"
+        help="Sync all 18 configured windows"
     )
     
     parser.add_argument(

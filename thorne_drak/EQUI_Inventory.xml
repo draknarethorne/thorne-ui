@@ -659,8 +659,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>0</Y>
+      <X>5</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>70</CX>
@@ -682,8 +682,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>40</X>
-      <Y>0</Y>
+      <X>45</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>60</CX>
@@ -705,8 +705,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>15</Y>
+      <X>5</X>
+      <Y>19</Y>
     </Location>
     <Size>
       <CX>100</CX>
@@ -728,8 +728,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>30</Y>
+      <X>5</X>
+      <Y>34</Y>
     </Location>
     <Size>
       <CX>100</CX>
@@ -986,8 +986,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>0</Y>
+      <X>5</X>
+      <Y>68</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -1009,8 +1009,8 @@
     <RelativePosition>true</RelativePosition>
     <Font>3</Font>
     <Location>
-      <X>64</X>
-      <Y>0</Y>
+      <X>69</X>
+      <Y>68</Y>
     </Location>
     <Size>
       <CX>25</CX>
@@ -1031,8 +1031,8 @@
     <RelativePosition>true</RelativePosition>
     <Font>2</Font>
     <Location>
-      <X>89</X>
-      <Y>0</Y>
+      <X>94</X>
+      <Y>68</Y>
     </Location>
     <Size>
       <CX>16</CX>
@@ -1054,8 +1054,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>16</Y>
+      <X>5</X>
+      <Y>84</Y>
     </Location>
     <Size>
       <CX>102</CX>
@@ -1090,8 +1090,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>25</Y>
+      <X>5</X>
+      <Y>93</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -1113,8 +1113,8 @@
     <RelativePosition>true</RelativePosition>
     <Font>3</Font>
     <Location>
-      <X>64</X>
-      <Y>25</Y>
+      <X>69</X>
+      <Y>93</Y>
     </Location>
     <Size>
       <CX>25</CX>
@@ -1135,8 +1135,8 @@
     <RelativePosition>true</RelativePosition>
     <Font>2</Font>
     <Location>
-      <X>89</X>
-      <Y>25</Y>
+      <X>94</X>
+      <Y>93</Y>
     </Location>
     <Size>
       <CX>16</CX>
@@ -1158,8 +1158,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>40</Y>
+      <X>5</X>
+      <Y>108</Y>
     </Location>
     <Size>
       <CX>102</CX>
@@ -1193,8 +1193,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>-250</X>
-      <Y>-250</Y>
+      <X>-245</X>
+      <Y>-182</Y>
     </Location>
     <Size>
       <CX>1</CX>
@@ -1215,8 +1215,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>-250</X>
-      <Y>-238</Y>
+      <X>-245</X>
+      <Y>-170</Y>
     </Location>
     <Size>
       <CX>1</CX>
@@ -1250,8 +1250,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>48</Y>
+      <X>5</X>
+      <Y>116</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -1273,8 +1273,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>56</X>
-      <Y>48</Y>
+      <X>61</X>
+      <Y>116</Y>
     </Location>
     <Size>
       <CX>27</CX>
@@ -1295,8 +1295,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>83</X>
-      <Y>48</Y>
+      <X>88</X>
+      <Y>116</Y>
     </Location>
     <Size>
       <CX>8</CX>
@@ -1317,8 +1317,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>91</X>
-      <Y>48</Y>
+      <X>96</X>
+      <Y>116</Y>
     </Location>
     <Size>
       <CX>25</CX>
@@ -2586,72 +2586,11 @@
   <!-- MODULAR ZONE ARCHITECTURE - 9 SUBWINDOWS -->
   <!-- Layout: 420x440px with independent zones  -->
   <!-- ========================================== -->
-  <!-- ZONE 1: Player Info (105x60) - Name, Level, Class, Deity -->
-  <Screen item="IW_PlayerInfo_Wnd">
-    <ScreenID>IW_PlayerInfo_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>5</X>
-      <Y>4</Y>
-    </Location>
-    <Size>
-      <CX>105</CX>
-      <CY>60</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>IW_Name</Pieces>
-    <Pieces>IW_Level</Pieces>
-    <Pieces>IW_Class</Pieces>
-    <Pieces>IW_Deity</Pieces>
-  </Screen>
-  <!-- ZONE 2: Progression (105x70) - XP/AA gauges with percentages -->
-  <Screen item="IW_Progression_Wnd">
-    <ScreenID>IW_Progression_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>5</X>
-      <Y>68</Y>
-    </Location>
-    <Size>
-      <CX>105</CX>
-      <CY>70</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>IW_EXPLabel</Pieces>
-    <Pieces>IW_EXPPercentage</Pieces>
-    <Pieces>IW_EXPPctSign</Pieces>
-    <Pieces>IW_ExpGauge</Pieces>
-    <Pieces>IW_AltAdvLabel</Pieces>
-    <Pieces>IW_AAPercentage</Pieces>
-    <Pieces>IW_AAPctSign</Pieces>
-    <Pieces>IW_AltAdvGauge</Pieces>
-    <Pieces>IW_AltAdvLabel_Dummy</Pieces>
-    <Pieces>IW_AltAdvGauge_Dummy</Pieces>
-    <Pieces>IW_AltAdvPoints</Pieces>
-    <Pieces>IW_AltAdvCurrent</Pieces>
-    <Pieces>IW_AltAdvDivider</Pieces>
-    <Pieces>IW_AltAdvTotal</Pieces>
-  </Screen>
-  <!-- ZONE 3: ClassAnim (105x160) - Character model display -->
-  <Screen item="IW_ClassAnim_Wnd">
-    <ScreenID>IW_ClassAnim_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>5</X>
-      <Y>138</Y>
-    </Location>
-    <Size>
-      <CX>105</CX>
-      <CY>160</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-  </Screen>
+  <!-- ZONE 1 (flattened): Player Info controls are direct main-window pieces -->
+  <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
+  <!-- ZONE 2 (flattened): Progression controls are direct main-window pieces -->
+  <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
+  <!-- ZONE 3 (flattened): ClassAnim wrapper removed; ClassAnim remains direct -->
   <!-- ZONE 4 (flattened): Equipment controls are direct main-window pieces -->
   <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ZONE 5 (flattened): Currency controls are direct main-window pieces -->
@@ -2691,10 +2630,30 @@
     <Style_Sizable>false</Style_Sizable>
     <Pieces>InvDummy</Pieces>
     <Pieces>InvSlot0</Pieces>
-    <Pieces>IW_PlayerInfo_Wnd</Pieces>
-    <Pieces>IW_Progression_Wnd</Pieces>
+    
+    <!-- ZONE 1 (flattened): Player Info -->
+    <Pieces>IW_Name</Pieces>
+    <Pieces>IW_Level</Pieces>
+    <Pieces>IW_Class</Pieces>
+    <Pieces>IW_Deity</Pieces>
+    
+    <!-- ZONE 2 (flattened): Progression -->
+    <Pieces>IW_EXPLabel</Pieces>
+    <Pieces>IW_EXPPercentage</Pieces>
+    <Pieces>IW_EXPPctSign</Pieces>
+    <Pieces>IW_ExpGauge</Pieces>
+    <Pieces>IW_AltAdvLabel</Pieces>
+    <Pieces>IW_AAPercentage</Pieces>
+    <Pieces>IW_AAPctSign</Pieces>
+    <Pieces>IW_AltAdvGauge</Pieces>
+    <Pieces>IW_AltAdvLabel_Dummy</Pieces>
+    <Pieces>IW_AltAdvGauge_Dummy</Pieces>
+    <Pieces>IW_AltAdvPoints</Pieces>
+    <Pieces>IW_AltAdvCurrent</Pieces>
+    <Pieces>IW_AltAdvDivider</Pieces>
+    <Pieces>IW_AltAdvTotal</Pieces>
+
     <Pieces>ClassAnim</Pieces>
-    <Pieces>IW_ClassAnim_Wnd</Pieces>
     
     <!-- ZONE 4 (flattened): Equipment Grid -->
     <Pieces>InvSlot1</Pieces>

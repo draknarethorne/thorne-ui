@@ -25,11 +25,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
+			<X>2</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -63,11 +63,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>35</X>
+			<X>32</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -101,11 +101,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>65</X>
+			<X>62</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -139,11 +139,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>95</X>
+			<X>92</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -177,11 +177,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>125</X>
+			<X>122</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -215,11 +215,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>155</X>
+			<X>152</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -253,11 +253,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>185</X>
+			<X>182</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -291,11 +291,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>215</X>
+			<X>212</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -329,11 +329,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>245</X>
+			<X>242</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -367,11 +367,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>275</X>
+			<X>272</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -405,11 +405,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>305</X>
+			<X>302</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -443,11 +443,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>335</X>
+			<X>332</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -481,11 +481,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>365</X>
+			<X>362</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -519,11 +519,11 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>395</X>
+			<X>392</X>
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>30</CX>
+			<CX>24</CX>
 			<CY>14</CY>
 		</Size>
 		<Text>0</Text>
@@ -536,502 +536,6 @@
 		<AlignCenter>true</AlignCenter>
 		<AlignRight>false</AlignRight>
 	</Label>
-
-	<!-- ============================================ -->
-	<!-- ROW 1: Direct bag slots (no wrapper)        -->
-	<!-- ============================================ -->
-	<InvSlot item = "MPW_BagSlot1">
-		<ScreenID>MPW_BagSlot1</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>2</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>22</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_BagSlot2">
-		<ScreenID>MPW_BagSlot2</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>44</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>23</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_BagSlot3">
-		<ScreenID>MPW_BagSlot3</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>86</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>24</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_BagSlot4">
-		<ScreenID>MPW_BagSlot4</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>128</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>25</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_BagSlot5">
-		<ScreenID>MPW_BagSlot5</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>170</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>26</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_BagSlot6">
-		<ScreenID>MPW_BagSlot6</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>212</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>27</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_BagSlot7">
-		<ScreenID>MPW_BagSlot7</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>254</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>28</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_BagSlot8">
-		<ScreenID>MPW_BagSlot8</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>296</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>29</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<!-- ============================================ -->
-	<!-- ROW 2: Subwindow bag slots (Style_Transparent=true) -->
-	<!-- Tests whether transparent wrapper causes fading     -->
-	<!-- ============================================ -->
-	<!-- This row tests whether Style_Transparent=true causes slot fading                    -->
-	<!-- ============================================ -->
-	<InvSlot item = "MPW_SubBagSlot1">
-		<ScreenID>MPW_SubBagSlot1</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>2</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>22</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_SubBagSlot2">
-		<ScreenID>MPW_SubBagSlot2</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>44</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>23</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_SubBagSlot3">
-		<ScreenID>MPW_SubBagSlot3</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>86</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>24</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_SubBagSlot4">
-		<ScreenID>MPW_SubBagSlot4</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>128</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>25</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_SubBagSlot5">
-		<ScreenID>MPW_SubBagSlot5</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>170</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>26</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_SubBagSlot6">
-		<ScreenID>MPW_SubBagSlot6</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>212</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>27</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_SubBagSlot7">
-		<ScreenID>MPW_SubBagSlot7</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>254</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>28</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_SubBagSlot8">
-		<ScreenID>MPW_SubBagSlot8</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>296</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>29</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<!-- Subwindow bag zone - transparent wrapper test (enabled) -->
-	<Screen item = "MPW_SubBagZone">
-		<ScreenID>MPW_SubBagZone</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>2</X>
-			<Y>88</Y>
-		</Location>
-		<Size>
-			<CX>340</CX>
-			<CY>44</CY>
-		</Size>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>true</Style_Transparent>
-		<Pieces>MPW_SubBagSlot1</Pieces>
-		<Pieces>MPW_SubBagSlot2</Pieces>
-		<Pieces>MPW_SubBagSlot3</Pieces>
-		<Pieces>MPW_SubBagSlot4</Pieces>
-		<Pieces>MPW_SubBagSlot5</Pieces>
-		<Pieces>MPW_SubBagSlot6</Pieces>
-		<Pieces>MPW_SubBagSlot7</Pieces>
-		<Pieces>MPW_SubBagSlot8</Pieces>
-	</Screen>
-
-	<!-- ============================================ -->
-	<!-- ROW 3: Subwindow bag slots (Style_Transparent=false) -->
-	<!-- Tests whether non-transparent wrapper prevents fading -->
-	<!-- ============================================ -->
-	<InvSlot item = "MPW_OpaqueBagSlot1">
-		<ScreenID>MPW_OpaqueBagSlot1</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>2</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>22</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_OpaqueBagSlot2">
-		<ScreenID>MPW_OpaqueBagSlot2</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>44</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>23</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_OpaqueBagSlot3">
-		<ScreenID>MPW_OpaqueBagSlot3</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>86</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>24</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_OpaqueBagSlot4">
-		<ScreenID>MPW_OpaqueBagSlot4</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>128</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>25</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_OpaqueBagSlot5">
-		<ScreenID>MPW_OpaqueBagSlot5</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>170</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>26</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_OpaqueBagSlot6">
-		<ScreenID>MPW_OpaqueBagSlot6</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>212</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>27</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_OpaqueBagSlot7">
-		<ScreenID>MPW_OpaqueBagSlot7</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>254</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>28</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<InvSlot item = "MPW_OpaqueBagSlot8">
-		<ScreenID>MPW_OpaqueBagSlot8</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>296</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Background>A_RecessedBox</Background>
-		<EQType>29</EQType>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-	</InvSlot>
-
-	<!-- Subwindow bag zone - temporarily disabled for crash isolation
-	<Screen item = "MPW_OpaqueBagZone">
-		<ScreenID>MPW_OpaqueBagZone</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>2</X>
-			<Y>136</Y>
-		</Location>
-		<Size>
-			<CX>340</CX>
-			<CY>44</CY>
-		</Size>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-		<Pieces>MPW_OpaqueBagSlot1</Pieces>
-		<Pieces>MPW_OpaqueBagSlot2</Pieces>
-		<Pieces>MPW_OpaqueBagSlot3</Pieces>
-		<Pieces>MPW_OpaqueBagSlot4</Pieces>
-		<Pieces>MPW_OpaqueBagSlot5</Pieces>
-		<Pieces>MPW_OpaqueBagSlot6</Pieces>
-		<Pieces>MPW_OpaqueBagSlot7</Pieces>
-		<Pieces>MPW_OpaqueBagSlot8</Pieces>
-	</Screen>
-	-->
 
 	<!-- ============================================================ -->
 	<!-- Legacy MusicPlayer compatibility controls (off-window)       -->
@@ -1633,46 +1137,17 @@
 			<CX>430</CX>
 			<CY>184</CY>
 		</Size>
-		<Text>Slot Test Window</Text>
+		<Text></Text>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
-		<TooltipReference>Inventory Slot Rendering Test Window</TooltipReference>
-		<DrawTemplate>WDT_Rounded</DrawTemplate>
+		<TooltipReference>Character Stats Window</TooltipReference>
+		<DrawTemplate>WDT_RoundedCompactTitle</DrawTemplate>
 		<Style_Titlebar>true</Style_Titlebar>
-		<Style_Closebox>true</Style_Closebox>
-		<Style_Minimizebox>true</Style_Minimizebox>
+		<Style_Closebox>false</Style_Closebox>
+		<Style_Minimizebox>false</Style_Minimizebox>
 		<Style_Border>true</Style_Border>
 		<Style_Sizable>true</Style_Sizable>
-		<Pieces>MPW_DurationMin</Pieces>
-		<Pieces>MPW_Colon2</Pieces>
-		<Pieces>MPW_DurationSec</Pieces>
-		<Pieces>MPW_Slash</Pieces>
-		<Pieces>MPW_PositionMin</Pieces>
-		<Pieces>MPW_Colon1</Pieces>
-		<Pieces>MPW_PositionSec</Pieces>
-		<Pieces>MPW_Volume</Pieces>
-		<Pieces>MPW_VolLabel</Pieces>
-		<Pieces>MPW_SongTimer</Pieces>
-		<Pieces>MPW_BackButton</Pieces>
-		<Pieces>MPW_PlayButton</Pieces>
-		<Pieces>MPW_PauseButton</Pieces>
-		<Pieces>MPW_StopButton</Pieces>
-		<Pieces>MPW_NextButton</Pieces>
-		<Pieces>MPW_RandomButton</Pieces>
-		<Pieces>MPW_DeleteButton</Pieces>
-		<Pieces>MPW_AddButton</Pieces>
-		<Pieces>MPW_ClearButton</Pieces>
-		<Pieces>MPW_SaveButton</Pieces>
-		<Pieces>MPW_SongSelector</Pieces>
-		<Pieces>MPW_BagSlot1</Pieces>
-		<Pieces>MPW_BagSlot2</Pieces>
-		<Pieces>MPW_BagSlot3</Pieces>
-		<Pieces>MPW_BagSlot4</Pieces>
-		<Pieces>MPW_BagSlot5</Pieces>
-		<Pieces>MPW_BagSlot6</Pieces>
-		<Pieces>MPW_BagSlot7</Pieces>
-		<Pieces>MPW_BagSlot8</Pieces>
 		<Pieces>MPW_Stat_AC_Icon</Pieces>
 		<Pieces>MPW_Stat_AC_Value</Pieces>
 		<Pieces>MPW_Stat_ATK_Icon</Pieces>
@@ -1701,8 +1176,6 @@
 		<Pieces>MPW_Stat_Disease_Value</Pieces>
 		<Pieces>MPW_Stat_Poison_Icon</Pieces>
 		<Pieces>MPW_Stat_Poison_Value</Pieces>
-		<Pieces>MPW_SubBagZone</Pieces>
-		<!-- <Pieces>MPW_OpaqueBagZone</Pieces> -->
 	</Screen>
 
 

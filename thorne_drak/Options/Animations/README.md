@@ -5,7 +5,7 @@
 This directory contains variants for the Animations window (EQUI_Animations.xml).
 
 **Last Synced:** 2026-02-26  
-**Git Commit:** e8d2132
+**Git Commit:** 9ce444f
 
 ---
 

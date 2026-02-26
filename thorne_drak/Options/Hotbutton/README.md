@@ -17,6 +17,9 @@ This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml
 - **[Thorne/](Thorne/)**    
   `EQUI_HotbuttonWnd.xml`
 
+- **[Thorne Horizontal/](Thorne Horizontal/)**    
+  `EQUI_HotbuttonWnd.xml`
+
 - **[Thorne Vertical/](Thorne Vertical/)**  📄
   `EQUI_HotButtonWnd.xml`
 

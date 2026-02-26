@@ -513,8 +513,8 @@
     <ScreenID>InvSlot22</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>9</X>
-      <Y>332</Y>
+      <X>110</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -531,8 +531,8 @@
     <ScreenID>InvSlot23</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>59</X>
-      <Y>332</Y>
+      <X>157</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -549,8 +549,8 @@
     <ScreenID>InvSlot24</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>109</X>
-      <Y>332</Y>
+      <X>204</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -567,8 +567,8 @@
     <ScreenID>InvSlot25</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>159</X>
-      <Y>332</Y>
+      <X>251</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -585,8 +585,8 @@
     <ScreenID>InvSlot26</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>209</X>
-      <Y>332</Y>
+      <X>110</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -603,8 +603,8 @@
     <ScreenID>InvSlot27</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>259</X>
-      <Y>332</Y>
+      <X>157</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -621,8 +621,8 @@
     <ScreenID>InvSlot28</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>309</X>
-      <Y>332</Y>
+      <X>204</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -639,8 +639,8 @@
     <ScreenID>InvSlot29</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>359</X>
-      <Y>332</Y>
+      <X>251</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -987,7 +987,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>68</Y>
+      <Y>56</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -1010,7 +1010,7 @@
     <Font>3</Font>
     <Location>
       <X>69</X>
-      <Y>68</Y>
+      <Y>56</Y>
     </Location>
     <Size>
       <CX>25</CX>
@@ -1032,7 +1032,7 @@
     <Font>2</Font>
     <Location>
       <X>94</X>
-      <Y>68</Y>
+      <Y>56</Y>
     </Location>
     <Size>
       <CX>16</CX>
@@ -1055,7 +1055,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>84</Y>
+      <Y>72</Y>
     </Location>
     <Size>
       <CX>102</CX>
@@ -1085,13 +1085,81 @@
       <LinesFill>A_GaugeLinesFill</LinesFill>
     </GaugeDrawTemplate>
   </Gauge>
+  <Label item="IW_XPHLabel">
+    <ScreenID>IW_XPHLabel</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>5</X>
+      <Y>82</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>XP/H</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>TRUE</AlignRight>
+  </Label>
+  <Label item="IW_XPHPercentage">
+    <ScreenID>IW_XPHPercentage</ScreenID>
+    <EQType>81</EQType>
+    <RelativePosition>true</RelativePosition>
+    <Font>3</Font>
+    <Location>
+      <X>69</X>
+      <Y>82</Y>
+    </Location>
+    <Size>
+      <CX>25</CX>
+      <CY>14</CY>
+    </Size>
+    <TextColor>
+      <R>240</R>
+      <G>240</G>
+      <B>240</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignLeft>false</AlignLeft>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>true</AlignRight>
+  </Label>
+  <Label item="IW_XPHPctSign">
+    <ScreenID>IW_XPHPctSign</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Font>2</Font>
+    <Location>
+      <X>94</X>
+      <Y>82</Y>
+    </Location>
+    <Size>
+      <CX>16</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>%</Text>
+    <TextColor>
+      <R>240</R>
+      <G>240</G>
+      <B>240</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignLeft>true</AlignLeft>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </Label>
   <Label item="IW_AltAdvLabel">
     <ScreenID>IW_AltAdvLabel</ScreenID>
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>93</Y>
+      <Y>103</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -1114,7 +1182,7 @@
     <Font>3</Font>
     <Location>
       <X>69</X>
-      <Y>93</Y>
+      <Y>103</Y>
     </Location>
     <Size>
       <CX>25</CX>
@@ -1136,7 +1204,7 @@
     <Font>2</Font>
     <Location>
       <X>94</X>
-      <Y>93</Y>
+      <Y>103</Y>
     </Location>
     <Size>
       <CX>16</CX>
@@ -1159,7 +1227,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>108</Y>
+      <Y>118</Y>
     </Location>
     <Size>
       <CX>102</CX>
@@ -1251,7 +1319,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>116</Y>
+      <Y>126</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -1274,7 +1342,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>61</X>
-      <Y>116</Y>
+      <Y>126</Y>
     </Location>
     <Size>
       <CX>27</CX>
@@ -1296,10 +1364,10 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>88</X>
-      <Y>116</Y>
+      <Y>126</Y>
     </Location>
     <Size>
-      <CX>8</CX>
+      <CX>4</CX>
       <CY>14</CY>
     </Size>
     <Text>/</Text>
@@ -1309,7 +1377,8 @@
       <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
-    <AlignCenter>true</AlignCenter>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
   </Label>
   <Label item="IW_AltAdvTotal">
     <ScreenID>IW_AltAdvTotal</ScreenID>
@@ -1317,8 +1386,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>96</X>
-      <Y>116</Y>
+      <X>92</X>
+      <Y>126</Y>
     </Location>
     <Size>
       <CX>25</CX>
@@ -1333,6 +1402,7 @@
     <NoWrap>true</NoWrap>
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
+    <AlignLeft>true</AlignLeft>
   </Label>
   <Label item="IW_STR">
     <ScreenID>IW_STR</ScreenID>
@@ -2081,6 +2151,110 @@
     </Size>
     <Animation>IW_Divider3</Animation>
   </StaticAnimation>
+  <Label item="IW_Bags">
+    <ScreenID>IW_Bags</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>301</X>
+      <Y>292</Y>
+    </Location>
+    <Size>
+      <CX>55</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>BAGS</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </Label>
+  <StaticAnimation item="IW_Bags_Icon">
+    <ScreenID>IW_Bags_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>356</X>
+      <Y>290</Y>
+    </Location>
+    <Size>
+      <CX>18</CX>
+      <CY>18</CY>
+    </Size>
+    <Animation>A_Icon_Bag</Animation>
+  </StaticAnimation>
+  <Label item="IW_CurrentBags">
+    <ScreenID>IW_CurrentBags</ScreenID>
+    <EQType>85</EQType>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>367</X>
+      <Y>292</Y>
+    </Location>
+    <Size>
+      <CX>27</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>0</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>true</AlignRight>
+  </Label>
+  <Label item="IW_BagsSlash">
+    <ScreenID>IW_BagsSlash</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>394</X>
+      <Y>292</Y>
+    </Location>
+    <Size>
+      <CX>4</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>/</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </Label>
+  <Label item="IW_MaxBags">
+    <ScreenID>IW_MaxBags</ScreenID>
+    <EQType>84</EQType>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>398</X>
+      <Y>292</Y>
+    </Location>
+    <Size>
+      <CX>27</CX>
+      <CY>14</CY>
+    </Size>
+    <Text />
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+    <AlignLeft>true</AlignLeft>
+  </Label>
   <Label item="IW_Weight">
     <ScreenID>IW_Weight</ScreenID>
     <Font>3</Font>
@@ -2190,8 +2364,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>15</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>287</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2229,8 +2403,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>89</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>309</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2268,8 +2442,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>163</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>331</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2307,8 +2481,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>237</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>353</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2347,7 +2521,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>218</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2377,7 +2551,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2417,12 +2591,12 @@
     <ScreenID>IW_CharacterView</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>110</X>
-      <Y>286</Y>
+      <X>307</X>
+      <Y>334</Y>
     </Location>
     <Size>
-      <CX>186</CX>
-      <CY>20</CY>
+      <CX>102</CX>
+      <CY>42</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -2440,12 +2614,12 @@
     <RelativePosition>true</RelativePosition>
     <Font>3</Font>
     <Location>
-      <X>110</X>
-      <Y>286</Y>
+      <X>307</X>
+      <Y>348</Y>
     </Location>
     <Size>
-      <CX>186</CX>
-      <CY>20</CY>
+      <CX>102</CX>
+      <CY>14</CY>
     </Size>
     <Text>Equip</Text>
     <TextColor>
@@ -2462,7 +2636,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>310</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2523,7 +2697,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>126</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2614,7 +2788,7 @@
       <Y>54</Y>
     </Location>
     <Size>
-      <CX>428</CX>
+      <CX>430</CX>
       <CY>417</CY>
     </Size>
     <Text>Inventory</Text>
@@ -2642,6 +2816,9 @@
     <Pieces>IW_EXPPercentage</Pieces>
     <Pieces>IW_EXPPctSign</Pieces>
     <Pieces>IW_ExpGauge</Pieces>
+    <Pieces>IW_XPHLabel</Pieces>
+    <Pieces>IW_XPHPercentage</Pieces>
+    <Pieces>IW_XPHPctSign</Pieces>
     <Pieces>IW_AltAdvLabel</Pieces>
     <Pieces>IW_AAPercentage</Pieces>
     <Pieces>IW_AAPctSign</Pieces>
@@ -2686,7 +2863,12 @@
     <Pieces>IW_Money2</Pieces>
     <Pieces>IW_Money3</Pieces>
     
-    <!-- ZONE 6 (flattened): Weight -->
+    <!-- ZONE 6 (flattened): Bags + Weight -->
+    <Pieces>IW_Bags</Pieces>
+    <Pieces>IW_Bags_Icon</Pieces>
+    <Pieces>IW_CurrentBags</Pieces>
+    <Pieces>IW_BagsSlash</Pieces>
+    <Pieces>IW_MaxBags</Pieces>
     <Pieces>IW_Weight</Pieces>
     <Pieces>IW_Weight_Icon</Pieces>
     <Pieces>IW_CurrentWeight</Pieces>

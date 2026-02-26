@@ -513,8 +513,8 @@
     <ScreenID>InvSlot22</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>0</Y>
+      <X>9</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -531,8 +531,8 @@
     <ScreenID>InvSlot23</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>50</X>
-      <Y>0</Y>
+      <X>59</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -549,8 +549,8 @@
     <ScreenID>InvSlot24</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>100</X>
-      <Y>0</Y>
+      <X>109</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -567,8 +567,8 @@
     <ScreenID>InvSlot25</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>150</X>
-      <Y>0</Y>
+      <X>159</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -585,8 +585,8 @@
     <ScreenID>InvSlot26</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>200</X>
-      <Y>0</Y>
+      <X>209</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -603,8 +603,8 @@
     <ScreenID>InvSlot27</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>250</X>
-      <Y>0</Y>
+      <X>259</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -621,8 +621,8 @@
     <ScreenID>InvSlot28</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>300</X>
-      <Y>0</Y>
+      <X>309</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -639,8 +639,8 @@
     <ScreenID>InvSlot29</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>350</X>
-      <Y>0</Y>
+      <X>359</X>
+      <Y>332</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -2799,30 +2799,8 @@
     <Pieces>IW_Divider2_Display</Pieces>
     <Pieces>IW_Divider3_Display</Pieces>
   </Screen>
-  <!-- ZONE 8: Bag Zone (410x45) - 8 bag slots horizontal -->
-  <Screen item="IW_BagZone_Wnd">
-    <ScreenID>IW_BagZone_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>9</X>
-      <Y>332</Y>
-    </Location>
-    <Size>
-      <CX>410</CX>
-      <CY>45</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>InvSlot22</Pieces>
-    <Pieces>InvSlot23</Pieces>
-    <Pieces>InvSlot24</Pieces>
-    <Pieces>InvSlot25</Pieces>
-    <Pieces>InvSlot26</Pieces>
-    <Pieces>InvSlot27</Pieces>
-    <Pieces>InvSlot28</Pieces>
-    <Pieces>InvSlot29</Pieces>
-  </Screen>
+  <!-- ZONE 8 (flattened): Bag slots are direct main-window pieces -->
+  <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ZONE 9 (flattened): Button Bar controls are direct main-window pieces -->
   <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ========================================== -->
@@ -2860,7 +2838,16 @@
     <Pieces>IW_Currency_Wnd</Pieces>
     <Pieces>IW_Weight_Wnd</Pieces>
     <Pieces>IW_Stats_Wnd</Pieces>
-    <Pieces>IW_BagZone_Wnd</Pieces>
+    
+    <!-- ZONE 8 (flattened): Bag Zone -->
+    <Pieces>InvSlot22</Pieces>
+    <Pieces>InvSlot23</Pieces>
+    <Pieces>InvSlot24</Pieces>
+    <Pieces>InvSlot25</Pieces>
+    <Pieces>InvSlot26</Pieces>
+    <Pieces>InvSlot27</Pieces>
+    <Pieces>InvSlot28</Pieces>
+    <Pieces>InvSlot29</Pieces>
     
     <!-- ZONE 9 (flattened): Button Bar -->
     <Pieces>IW_DoneButton</Pieces>

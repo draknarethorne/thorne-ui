@@ -437,6 +437,20 @@ thorne_drak/
 
 4. **Inventory Window Reference**: Use Inventory window as canonical source for label colors, stat patterns, spacing
 
+### Note Window Constraint (Do Not Repurpose)
+
+> **Verified February 2026** - client behavior validation
+
+`NoteWindow` has client-specific logic and expected child bindings that are not safe to repurpose for custom UI experiments in this project.
+
+**Rules:**
+
+- ✅ Keep `thorne_drak/EQUI_NoteWindow.xml` aligned to the standard Note implementation.
+- ❌ Do not repurpose `NoteWindow` for stats, bags, or experimental custom controls.
+- ❌ Do not maintain `Options/Note` variants.
+
+If temporary testing is needed, use a non-critical sandbox window instead (for example `EQUI_MusicPlayerWnd.xml`) and remove test scaffolding after validation.
+
 ---
 
 ### Color Palette & Text Styling

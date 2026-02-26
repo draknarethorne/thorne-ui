@@ -224,6 +224,13 @@ For small changes (color adjustments, minor layout tweaks, small bug fixes), add
 - **Resize behavior**: Both axes scale when dragging; be careful with horizontal limits
 - **Global positioning**: UI elements are positioned globally; same element name = same position across all tabs
 
+### NoteWindow Hard Limitation
+
+- `NoteWindow` is client-coupled and expects specific child behavior.
+- Repurposing it for custom controls (stats, bags, experimental widgets) causes unreliable behavior and UI errors.
+- Project rule: keep `thorne_drak/EQUI_NoteWindow.xml` at the standard implementation and do not maintain Note options variants.
+- For experimentation, use designated sandbox windows instead of `NoteWindow`.
+
 ---
 
 ## 🎨 Architecture Decisions & Lessons Learned

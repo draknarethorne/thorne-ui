@@ -37,6 +37,7 @@ WINDOW_MAPPING = {
     "Inventory": "EQUI_Inventory.xml",
     "Loot": "EQUI_LootWnd.xml",
     "Merchant": "EQUI_MerchantWnd.xml",
+    "Music": "EQUI_MusicPlayerWnd.xml",
     "Pet": "EQUI_PetInfoWindow.xml",
     "Player": "EQUI_PlayerWindow.xml",
     "Selector": "EQUI_SelectorWnd.xml",

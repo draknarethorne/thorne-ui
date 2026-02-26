@@ -4,12 +4,15 @@
 
 This directory contains variants for the Inventory window (EQUI_Inventory.xml).
 
-**Last Synced:** 2026-02-24  
-**Git Commit:** 071a9b7
+**Last Synced:** 2026-02-26  
+**Git Commit:** c8eb20e
 
 ---
 
 ## Available Variants
+
+- **[Fading/](Fading/)**    
+  `EQUI_Inventory.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_Inventory.xml`

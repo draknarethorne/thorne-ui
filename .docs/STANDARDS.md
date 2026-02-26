@@ -476,15 +476,15 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 | Label Type | RGB Value | Hex | Usage |
 |------------|-----------|-----|-------|
 | **White** | 255, 255, 255 | #FFFFFF | Default text, player name, stat values |
-| **Blue (Attributes)** | 50, 160, 250 | #32A0FA | Attribute labels (STR, STA, AGI, DEX, WIS, INT, CHA) |
+| **Blue (Attributes)** | 70, 180, 255 | #46B4FF | Attribute labels (STR, STA, AGI, DEX, WIS, INT, CHA) |
 | **HP Value Red** | 255, 100, 100 | #FF6464 | HP current/max text values |
 | **Mana Value Blue** | 100, 150, 255 | #6496FF | Mana current/max text values |
-| **Orange** | 255, 165, 0 | #FFA500 | AC label, ATK label |
-| **Fire Red** | 195, 20, 20 | #C31414 | FIRE resist |
-| **Cold Blue** | 0, 120, 255 | #0078FF | COLD resist |
-| **Purple** | 195, 0, 185 | #C300B9 | MAGIC resist |
-| **Yellow** | 205, 205, 0 | #CDCD00 | DISEASE resist |
-| **Teal** | 0, 130, 100 | #008264 | POISON resist |
+| **Orange** | 255, 185, 30 | #FFB91E | AC label, ATK label |
+| **Fire Red** | 255, 113, 46 | #FF712E | FIRE resist |
+| **Cold Blue** | 15, 182, 240 | #0FB6F0 | COLD resist |
+| **Magic Purple** | 255, 113, 255 | #FF71FF | MAGIC resist |
+| **Disease Yellow** | 230, 230, 0 | #E6E600 | DISEASE resist |
+| **Poison Green** | 0, 220, 0 | #00DC00 | POISON resist |
 | **Green** | 0, 205, 0 | #00CD00 | XP gauge, positive indicators |
 
 **Gauge Fill Colors**:

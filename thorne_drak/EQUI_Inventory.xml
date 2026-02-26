@@ -2190,8 +2190,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>5</Y>
+      <X>15</X>
+      <Y>304</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2229,8 +2229,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>74</X>
-      <Y>5</Y>
+      <X>89</X>
+      <Y>304</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2268,8 +2268,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>148</X>
-      <Y>5</Y>
+      <X>163</X>
+      <Y>304</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2307,8 +2307,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>222</X>
-      <Y>5</Y>
+      <X>237</X>
+      <Y>304</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2691,26 +2691,8 @@
     <Pieces>IW_CharacterView</Pieces>
     <Pieces>IW_CharacterViewLabel</Pieces>
   </Screen>
-  <!-- ZONE 5: Currency (186x35) - Platinum/Gold/Silver/Copper (horizontal, aligned with equipment grid) -->
-  <Screen item="IW_Currency_Wnd">
-    <ScreenID>IW_Currency_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>15</X>
-      <Y>299</Y>
-    </Location>
-    <Size>
-      <CX>296</CX>
-      <CY>35</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>IW_Money0</Pieces>
-    <Pieces>IW_Money1</Pieces>
-    <Pieces>IW_Money2</Pieces>
-    <Pieces>IW_Money3</Pieces>
-  </Screen>
+  <!-- ZONE 5 (flattened): Currency controls are direct main-window pieces -->
+  <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ZONE 6: Weight (115x58) - Weight/Encumbrance -->
   <Screen item="IW_Weight_Wnd">
     <ScreenID>IW_Weight_Wnd</ScreenID>
@@ -2835,7 +2817,12 @@
     <Pieces>ClassAnim</Pieces>
     <Pieces>IW_ClassAnim_Wnd</Pieces>
     <Pieces>IW_EquipmentGrid_Wnd</Pieces>
-    <Pieces>IW_Currency_Wnd</Pieces>
+    
+    <!-- ZONE 5 (flattened): Currency -->
+    <Pieces>IW_Money0</Pieces>
+    <Pieces>IW_Money1</Pieces>
+    <Pieces>IW_Money2</Pieces>
+    <Pieces>IW_Money3</Pieces>
     <Pieces>IW_Weight_Wnd</Pieces>
     <Pieces>IW_Stats_Wnd</Pieces>
     

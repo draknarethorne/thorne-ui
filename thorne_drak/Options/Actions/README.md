@@ -4,8 +4,8 @@
 
 This directory contains variants for the Actions window (EQUI_ActionsWindow.xml).
 
-**Last Synced:** 2026-02-03  
-**Git Commit:** 51a6e2a
+**Last Synced:** 2026-02-26  
+**Git Commit:** e8d2132
 
 ---
 

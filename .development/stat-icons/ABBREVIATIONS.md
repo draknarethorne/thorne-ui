@@ -51,11 +51,11 @@ These represent defensive capabilities against specific damage types.
 | Magic | MR | 2 | MR 35 | Magic damage resistance |
 | Poison | PR | 2 | PR 30 | Poison damage resistance |
 | Disease | DR | 2 | DR 25 | Disease damage resistance |
-| Reserve | RV | 2 | RV — | Reserved/future use |
+| Bag | BG | 2 | BG — | Bag capacity metric |
 
 **Usage Notes:**
 - All resistances use 2-character format for visual consistency
-- Reserve (RV) is a placeholder for future resistance types
+- Bag (BG) is used for inventory bag capacity context
 - Abbreviations follow pattern: First letter of damage type + R for Resistance
 
 **Mnemonic Pattern:**
@@ -98,7 +98,7 @@ These represent character abilities and personality traits.
 - Documentation and help files
 - Default UI variant for clarity
 
-**Short Abbreviations (AC, ATK, HP, MP, ST, WT, FR, CR, MR, PR, DR, RV, STR, INT, WIS, AGI, DEX, CHA):**
+**Short Abbreviations (AC, ATK, HP, MP, ST, WT, FR, CR, MR, PR, DR, BG, STR, INT, WIS, AGI, DEX, CHA):**
 - Primary and recommended compact display option
 - Works in all UI layouts
 - Equipment windows and character sheets
@@ -171,7 +171,7 @@ The `stat-icons-coordinates.json` file includes abbreviation metadata:
       "MR": "Magic Resistance",
       "PR": "Poison Resistance",
       "DR": "Disease Resistance",
-      "RV": "Reserved"
+      "BG": "Bag Capacity"
     },
     "attributes": {
       "S": "Strength (STR)",

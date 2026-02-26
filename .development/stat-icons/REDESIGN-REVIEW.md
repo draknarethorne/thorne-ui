@@ -48,7 +48,7 @@ Cold     → gemicons01.tga @ (168, 120)
 Magic    → gemicons01.tga @ (216, 144)
 Poison   → gemicons01.tga @ (24, 144)
 Disease  → gemicons01.tga @ (120, 144)
-Reserve  → gemicons01.tga @ (120, 48)
+Bag      → gemicons01.tga @ (120, 48)
 STR      → gemicons01.tga @ (144, 0)
 INT      → gemicons01.tga @ (24, 24)
 WIS      → gemicons01.tga @ (216, 72)
@@ -102,7 +102,7 @@ Location: `thorne_drak/Options/Icons/Thorne/stat_icons_thorne01.tga`
 - **Size:** 256×256 pixels (RGBA)
 - **Format:** TGA (Targa)
 - **Contents:** 18 stat icons, 22×22 each, arranged in 3×6 grid
-- **Labels:** Abbreviations overlaid on icons (AC, ATK, HP, MP, ST, WT, FR, CR, MR, PR, DR, RV, STR, INT, WIS, AGI, DEX, CHA)
+- **Labels:** Abbreviations overlaid on icons (AC, ATK, HP, MP, ST, WT, FR, CR, MR, PR, DR, BG, STR, INT, WIS, AGI, DEX, CHA)
 - **Quality:** Properly extracted from gemicons and resized with LANCZOS interpolation
 
 #### b) Generation Metadata (`stat_icons_thorne01-stats.json`)
@@ -373,7 +373,7 @@ ATK (10,40)         | Cold (90,40)        | INT (170,40)
 HP (10,70)          | Magic (90,70)       | WIS (170,70)
 MANA (10,100)       | Poison (90,100)     | AGI (170,100)
 STA (10,130)        | Disease (90,130)    | DEX (170,130)
-Weight (10,160)     | Reserve (90,160)    | CHA (170,160)
+Weight (10,160)     | Bag (90,160)        | CHA (170,160)
 ```
 
 Each icon: 22×22 pixels with abbreviation label

@@ -56,7 +56,7 @@ ATK     (10,40)     | Cold     (90,40)     | INT     (170,40)
 HP      (10,70)     | Magic    (90,70)     | WIS     (170,70)
 MANA    (10,100)    | Poison   (90,100)    | AGI     (170,100)
 STA     (10,130)    | Disease  (90,130)    | DEX     (170,130)
-Weight  (10,160)    | Reserve  (90,160)    | CHA     (170,160)
+Weight  (10,160)    | Bag      (90,160)    | CHA     (170,160)
 ```
 
 ### Icon Specifications
@@ -126,7 +126,7 @@ All 18 icons fully configured with source coordinates in `.bin/regen_icons.json`
 
 **Key Mappings:**
 - Player Stats (Column 1): AC, ATK, HP, MANA, STA, Weight
-- Resistances (Column 2): Fire, Cold, Magic, Poison, Disease, Reserve
+- Resistances (Column 2): Fire, Cold, Magic, Poison, Disease, Bag
 - Attributes (Column 3): STR, INT, WIS, AGI, DEX, CHA
 
 All 18 icons have complete, verified coordinates. No placeholders.

@@ -94,8 +94,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>0</Y>
+      <X>110</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -114,8 +114,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>94</X>
-      <Y>0</Y>
+      <X>204</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -134,8 +134,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>47</X>
-      <Y>0</Y>
+      <X>157</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -154,8 +154,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>141</X>
-      <Y>0</Y>
+      <X>251</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -174,8 +174,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>26</X>
-      <Y>47</Y>
+      <X>136</X>
+      <Y>51</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -194,8 +194,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>94</X>
-      <Y>94</Y>
+      <X>204</X>
+      <Y>98</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -214,8 +214,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>47</X>
-      <Y>94</Y>
+      <X>157</X>
+      <Y>98</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -234,8 +234,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>120</X>
-      <Y>47</Y>
+      <X>230</X>
+      <Y>51</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -254,8 +254,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>94</Y>
+      <X>110</X>
+      <Y>98</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -274,8 +274,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>141</X>
-      <Y>94</Y>
+      <X>251</X>
+      <Y>98</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -294,8 +294,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>94</X>
-      <Y>235</Y>
+      <X>204</X>
+      <Y>239</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -314,8 +314,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>73</X>
-      <Y>141</Y>
+      <X>183</X>
+      <Y>145</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -334,8 +334,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>235</Y>
+      <X>110</X>
+      <Y>239</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -354,8 +354,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>47</X>
-      <Y>235</Y>
+      <X>157</X>
+      <Y>239</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -374,8 +374,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>26</X>
-      <Y>141</Y>
+      <X>136</X>
+      <Y>145</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -394,8 +394,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>120</X>
-      <Y>141</Y>
+      <X>230</X>
+      <Y>145</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -414,8 +414,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>73</X>
-      <Y>47</Y>
+      <X>183</X>
+      <Y>51</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -434,8 +434,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>73</X>
-      <Y>188</Y>
+      <X>183</X>
+      <Y>192</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -454,8 +454,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>120</X>
-      <Y>188</Y>
+      <X>230</X>
+      <Y>192</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -474,8 +474,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>26</X>
-      <Y>188</Y>
+      <X>136</X>
+      <Y>192</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -494,8 +494,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>141</X>
-      <Y>235</Y>
+      <X>251</X>
+      <Y>239</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -2417,8 +2417,8 @@
     <ScreenID>IW_CharacterView</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>0</X>
-      <Y>282</Y>
+      <X>110</X>
+      <Y>286</Y>
     </Location>
     <Size>
       <CX>186</CX>
@@ -2440,8 +2440,8 @@
     <RelativePosition>true</RelativePosition>
     <Font>3</Font>
     <Location>
-      <X>0</X>
-      <Y>282</Y>
+      <X>110</X>
+      <Y>286</Y>
     </Location>
     <Size>
       <CX>186</CX>
@@ -2652,45 +2652,8 @@
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>true</Style_Transparent>
   </Screen>
-  <!-- ZONE 4: Equipment Grid (186x299) - 6-row anatomical layout + auto-equip bar -->
-  <Screen item="IW_EquipmentGrid_Wnd">
-    <ScreenID>IW_EquipmentGrid_Wnd</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>110</X>
-      <Y>4</Y>
-    </Location>
-    <Size>
-      <CX>186</CX>
-      <CY>299</CY>
-    </Size>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>InvSlot1</Pieces>
-    <Pieces>InvSlot2</Pieces>
-    <Pieces>InvSlot3</Pieces>
-    <Pieces>InvSlot4</Pieces>
-    <Pieces>InvSlot5</Pieces>
-    <Pieces>InvSlot6</Pieces>
-    <Pieces>InvSlot7</Pieces>
-    <Pieces>InvSlot8</Pieces>
-    <Pieces>InvSlot9</Pieces>
-    <Pieces>InvSlot10</Pieces>
-    <Pieces>InvSlot11</Pieces>
-    <Pieces>InvSlot12</Pieces>
-    <Pieces>InvSlot13</Pieces>
-    <Pieces>InvSlot14</Pieces>
-    <Pieces>InvSlot15</Pieces>
-    <Pieces>InvSlot16</Pieces>
-    <Pieces>InvSlot17</Pieces>
-    <Pieces>InvSlot18</Pieces>
-    <Pieces>InvSlot19</Pieces>
-    <Pieces>InvSlot20</Pieces>
-    <Pieces>InvSlot21</Pieces>
-    <Pieces>IW_CharacterView</Pieces>
-    <Pieces>IW_CharacterViewLabel</Pieces>
-  </Screen>
+  <!-- ZONE 4 (flattened): Equipment controls are direct main-window pieces -->
+  <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ZONE 5 (flattened): Currency controls are direct main-window pieces -->
   <!-- Keep logical grouping comments to preserve readability without wrapper screens. -->
   <!-- ZONE 6 (flattened): Weight controls are direct main-window pieces -->
@@ -2732,7 +2695,31 @@
     <Pieces>IW_Progression_Wnd</Pieces>
     <Pieces>ClassAnim</Pieces>
     <Pieces>IW_ClassAnim_Wnd</Pieces>
-    <Pieces>IW_EquipmentGrid_Wnd</Pieces>
+    
+    <!-- ZONE 4 (flattened): Equipment Grid -->
+    <Pieces>InvSlot1</Pieces>
+    <Pieces>InvSlot2</Pieces>
+    <Pieces>InvSlot3</Pieces>
+    <Pieces>InvSlot4</Pieces>
+    <Pieces>InvSlot5</Pieces>
+    <Pieces>InvSlot6</Pieces>
+    <Pieces>InvSlot7</Pieces>
+    <Pieces>InvSlot8</Pieces>
+    <Pieces>InvSlot9</Pieces>
+    <Pieces>InvSlot10</Pieces>
+    <Pieces>InvSlot11</Pieces>
+    <Pieces>InvSlot12</Pieces>
+    <Pieces>InvSlot13</Pieces>
+    <Pieces>InvSlot14</Pieces>
+    <Pieces>InvSlot15</Pieces>
+    <Pieces>InvSlot16</Pieces>
+    <Pieces>InvSlot17</Pieces>
+    <Pieces>InvSlot18</Pieces>
+    <Pieces>InvSlot19</Pieces>
+    <Pieces>InvSlot20</Pieces>
+    <Pieces>InvSlot21</Pieces>
+    <Pieces>IW_CharacterView</Pieces>
+    <Pieces>IW_CharacterViewLabel</Pieces>
     
     <!-- ZONE 5 (flattened): Currency -->
     <Pieces>IW_Money0</Pieces>

@@ -205,6 +205,34 @@ Use inner `<Screen>` elements to create **logical groupings** of related UI elem
 - Elements that need independent absolute positioning
 - Very simple windows with <5 elements total
 
+### Subwindow Transparency Behavior (Critical)
+
+> **Verified February 2026** - Inventory/MusicPlayer crash-fade investigation
+
+For TAKP/P2002 UI behavior in this project, transparency on a parent `<Screen>` affects all child pieces in ways that matter for usability and stability.
+
+**Observed rules:**
+
+- **Transparent parent screen (`Style_Transparent=true`) can cause child elements to appear dim/faded.**
+- Applies to `InvSlot` children even when the `InvSlot` itself has `<Style_Transparent>false</Style_Transparent>`.
+- Also observed with other child controls (for example, button visuals in Actions-related layouts).
+
+- **Non-transparent subwindow wrappers (`Style_Transparent=false`) may be unsafe in some contexts.**
+- During controlled testing, enabling an opaque wrapper subwindow in repurposed `MusicPlayerWnd` caused client instability/crash.
+- Treat opaque wrapper usage as **high-risk** unless validated in that exact window/context.
+
+**Design decision standard:**
+
+- ✅ **If you want non-faded slot rendering:** prefer placing slots directly in the main window’s `<Pieces>` (no wrapper screen).
+- ⚠️ **If you intentionally want faded/dimmed rendering:** place controls inside a transparent subwindow wrapper.
+- ❌ **Do not assume child `InvSlot` transparency settings override parent screen transparency behavior.**
+
+**Practical guidance:**
+
+- Keep wrapper screens for logical grouping only when visual side-effects are acceptable.
+- For critical visibility (inventory/bag interactions), default to direct placement.
+- When experimenting with wrapper transparency behavior, test in a sandbox window first (e.g., `EQUI_MusicPlayerWnd.xml`) before touching canonical windows like Inventory.
+
 ---
 
 ### Anatomical Layout Pattern

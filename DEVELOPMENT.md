@@ -198,6 +198,12 @@ For small changes (color adjustments, minor layout tweaks, small bug fixes), add
 
 **Workaround**: Use `/viewport` to position and size windows; use `Alt+Shift+T` to control transparency globally.
 
+**Subwindow composition rule (verified Feb 2026):**
+- Child controls (including `InvSlot` and button visuals) may appear dim/faded when placed inside a parent `<Screen>` with `Style_Transparent=true`.
+- Child `InvSlot` settings like `<Style_Transparent>false</Style_Transparent>` do **not** reliably prevent this inherited fade behavior.
+- In testing, non-transparent wrapper subwindows (`Style_Transparent=false`) inside repurposed `MusicPlayerWnd` produced client instability.
+- Preferred safe pattern for non-faded inventory visuals: place slots directly in the main window `<Pieces>` instead of inside wrapper subwindows.
+
 ### Keybinding Limitations
 
 - **Cannot bind custom windows to keys via XML** - keybindings are client-side only

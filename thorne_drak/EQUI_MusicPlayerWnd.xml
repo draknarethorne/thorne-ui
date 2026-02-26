@@ -834,7 +834,7 @@
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
 
-	<!-- Subwindow bag zone - temporarily disabled for crash isolation
+	<!-- Subwindow bag zone - transparent wrapper test (enabled) -->
 	<Screen item = "MPW_SubBagZone">
 		<ScreenID>MPW_SubBagZone</ScreenID>
 		<RelativePosition>true</RelativePosition>
@@ -858,7 +858,6 @@
 		<Pieces>MPW_SubBagSlot7</Pieces>
 		<Pieces>MPW_SubBagSlot8</Pieces>
 	</Screen>
-	-->
 
 	<!-- ============================================ -->
 	<!-- ROW 3: Subwindow bag slots (Style_Transparent=false) -->
@@ -1644,7 +1643,7 @@
 		<Style_Closebox>true</Style_Closebox>
 		<Style_Minimizebox>true</Style_Minimizebox>
 		<Style_Border>true</Style_Border>
-		<Style_Sizable>false</Style_Sizable>
+		<Style_Sizable>true</Style_Sizable>
 		<Pieces>MPW_DurationMin</Pieces>
 		<Pieces>MPW_Colon2</Pieces>
 		<Pieces>MPW_DurationSec</Pieces>
@@ -1702,7 +1701,7 @@
 		<Pieces>MPW_Stat_Disease_Value</Pieces>
 		<Pieces>MPW_Stat_Poison_Icon</Pieces>
 		<Pieces>MPW_Stat_Poison_Value</Pieces>
-		<!-- <Pieces>MPW_SubBagZone</Pieces> -->
+		<Pieces>MPW_SubBagZone</Pieces>
 		<!-- <Pieces>MPW_OpaqueBagZone</Pieces> -->
 	</Screen>
 

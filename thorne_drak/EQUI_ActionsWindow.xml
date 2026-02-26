@@ -1320,12 +1320,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>30</X>
+      <X>29</X>
       <Y>10</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>42</CX>
+      <CY>42</CY>
     </Size>
     <Text>Melee Attack</Text>
     <TextColor>
@@ -1334,8 +1334,8 @@
       <B>255</B>
     </TextColor>
     <DecalSize>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>42</CX>
+      <CY>42</CY>
     </DecalSize>
     <ButtonDrawTemplate>
       <Normal>A_SquareBtnNormal</Normal>
@@ -1350,12 +1350,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>76</X>
+      <X>74</X>
       <Y>10</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>42</CX>
+      <CY>42</CY>
     </Size>
     <Text>Range Attack</Text>
     <TextColor>
@@ -1364,8 +1364,8 @@
       <B>255</B>
     </TextColor>
     <DecalSize>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>42</CX>
+      <CY>42</CY>
     </DecalSize>
     <ButtonDrawTemplate>
       <Normal>A_SquareBtnNormal</Normal>
@@ -1380,12 +1380,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>30</X>
-      <Y>50</Y>
+      <X>7</X>
+      <Y>54</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>1</Text>
     <TextColor>
@@ -1406,12 +1406,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>76</X>
-      <Y>50</Y>
+      <X>74</X>
+      <Y>54</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>2</Text>
     <TextColor>
@@ -1432,12 +1432,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>30</X>
-      <Y>90</Y>
+      <X>7</X>
+      <Y>98</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>3</Text>
     <TextColor>
@@ -1458,12 +1458,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>76</X>
-      <Y>90</Y>
+      <X>74</X>
+      <Y>98</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>4</Text>
     <TextColor>
@@ -1502,12 +1502,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>30</X>
+      <X>7</X>
       <Y>10</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>1</Text>
     <TextColor>
@@ -1528,12 +1528,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>76</X>
+      <X>74</X>
       <Y>10</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>2</Text>
     <TextColor>
@@ -1554,12 +1554,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>30</X>
-      <Y>50</Y>
+      <X>7</X>
+      <Y>54</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>3</Text>
     <TextColor>
@@ -1580,12 +1580,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>76</X>
-      <Y>50</Y>
+      <X>74</X>
+      <Y>54</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>4</Text>
     <TextColor>
@@ -1606,12 +1606,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>30</X>
-      <Y>90</Y>
+      <X>7</X>
+      <Y>98</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>5</Text>
     <TextColor>
@@ -1632,12 +1632,12 @@
     <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>76</X>
-      <Y>90</Y>
+      <X>74</X>
+      <Y>98</Y>
     </Location>
     <Size>
-      <CX>40</CX>
-      <CY>40</CY>
+      <CX>64</CX>
+      <CY>42</CY>
     </Size>
     <Text>6</Text>
     <TextColor>

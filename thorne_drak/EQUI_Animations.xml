@@ -9611,7 +9611,7 @@
         <X>0</X>
         <Y>0</Y>
       </Hotspot>
-      <Duration>5125</Duration>
+      <Duration>3250</Duration>
     </Frames>
   </Ui2DAnimation>
   <Ui2DAnimation item="A_ClassAnim06">

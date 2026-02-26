@@ -513,8 +513,8 @@
     <ScreenID>InvSlot22</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>9</X>
-      <Y>332</Y>
+      <X>110</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -531,8 +531,8 @@
     <ScreenID>InvSlot23</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>59</X>
-      <Y>332</Y>
+      <X>157</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -549,8 +549,8 @@
     <ScreenID>InvSlot24</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>109</X>
-      <Y>332</Y>
+      <X>204</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -567,8 +567,8 @@
     <ScreenID>InvSlot25</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>159</X>
-      <Y>332</Y>
+      <X>251</X>
+      <Y>289</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -585,8 +585,8 @@
     <ScreenID>InvSlot26</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>209</X>
-      <Y>332</Y>
+      <X>110</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -603,8 +603,8 @@
     <ScreenID>InvSlot27</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>259</X>
-      <Y>332</Y>
+      <X>157</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -621,8 +621,8 @@
     <ScreenID>InvSlot28</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>309</X>
-      <Y>332</Y>
+      <X>204</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -639,8 +639,8 @@
     <ScreenID>InvSlot29</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>359</X>
-      <Y>332</Y>
+      <X>251</X>
+      <Y>336</Y>
     </Location>
     <Size>
       <CX>45</CX>
@@ -2190,8 +2190,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>15</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>287</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2229,8 +2229,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>89</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>309</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2268,8 +2268,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>163</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>331</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2307,8 +2307,8 @@
     <Font>3</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>237</X>
-      <Y>304</Y>
+      <X>29</X>
+      <Y>353</Y>
     </Location>
     <Size>
       <CX>74</CX>
@@ -2347,7 +2347,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>218</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2377,7 +2377,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>34</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2417,8 +2417,8 @@
     <ScreenID>IW_CharacterView</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>110</X>
-      <Y>286</Y>
+      <X>-250</X>
+      <Y>-250</Y>
     </Location>
     <Size>
       <CX>186</CX>
@@ -2440,8 +2440,8 @@
     <RelativePosition>true</RelativePosition>
     <Font>3</Font>
     <Location>
-      <X>110</X>
-      <Y>286</Y>
+      <X>-250</X>
+      <Y>-250</Y>
     </Location>
     <Size>
       <CX>186</CX>
@@ -2462,7 +2462,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>310</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>
@@ -2523,7 +2523,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>126</X>
-      <Y>383</Y>
+      <Y>385</Y>
     </Location>
     <Size>
       <CX>84</CX>

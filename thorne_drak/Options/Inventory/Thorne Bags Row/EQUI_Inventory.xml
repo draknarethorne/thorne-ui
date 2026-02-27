@@ -2428,13 +2428,26 @@
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
     <TooltipReference>Drop Item Here to Auto Equip</TooltipReference>
-    <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+    <DrawTemplate>WDT_RoundedDarkNoTitle</DrawTemplate>
     <Style_Titlebar>false</Style_Titlebar>
     <Style_Closebox>false</Style_Closebox>
     <Style_Minimizebox>false</Style_Minimizebox>
     <Style_Border>false</Style_Border>
     <Style_Sizable>false</Style_Sizable>
   </Screen>
+  <StaticAnimation item="IW_CharacterView_Icon">
+    <ScreenID>IW_CharacterView_Icon</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>110</X>
+      <Y>286</Y>
+    </Location>
+    <Size>
+      <CX>186</CX>
+      <CY>20</CY>
+    </Size>
+    <Animation>A_BtnPressed</Animation>
+  </StaticAnimation>
   <Label item="IW_CharacterViewLabel">
     <ScreenID>IW_CharacterViewLabel</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -2622,7 +2635,7 @@
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
     <TooltipReference>Inventory</TooltipReference>
-    <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+    <DrawTemplate>WDT_RoundedDarkNoTitle</DrawTemplate>
     <Style_Titlebar>false</Style_Titlebar>
     <Style_Closebox>true</Style_Closebox>
     <Style_Minimizebox>true</Style_Minimizebox>
@@ -2653,6 +2666,7 @@
     <Pieces>IW_AltAdvDivider</Pieces>
     <Pieces>IW_AltAdvTotal</Pieces>
 
+    <!-- ZONE 3 (flattened): Class Animation -->
     <Pieces>ClassAnim</Pieces>
     
     <!-- ZONE 4 (flattened): Equipment Grid -->
@@ -2677,8 +2691,6 @@
     <Pieces>InvSlot19</Pieces>
     <Pieces>InvSlot20</Pieces>
     <Pieces>InvSlot21</Pieces>
-    <Pieces>IW_CharacterView</Pieces>
-    <Pieces>IW_CharacterViewLabel</Pieces>
     
     <!-- ZONE 5 (flattened): Currency -->
     <Pieces>IW_Money0</Pieces>
@@ -2761,5 +2773,11 @@
     <Pieces>IW_Skills</Pieces>
     <Pieces>IW_AltAdvBtn</Pieces>
     <Pieces>IW_Destroy</Pieces>
+
+    <!-- ZONE 10 (flattened): Drop Equipment -->
+    <Pieces>IW_CharacterView</Pieces>
+    <Pieces>IW_CharacterView_Icon</Pieces>
+    <Pieces>IW_CharacterViewLabel</Pieces>
+    
   </Screen>
 </XML>

@@ -4,8 +4,8 @@
 
 This directory contains variants for the Inventory window (EQUI_Inventory.xml).
 
-**Last Synced:** 2026-02-26  
-**Git Commit:** 670bc74
+**Last Synced:** 2026-02-27  
+**Git Commit:** 3fe809f
 
 ---
 

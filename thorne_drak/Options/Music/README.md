@@ -17,16 +17,22 @@ This directory contains variants for the Music window (EQUI_MusicPlayerWnd.xml).
 - **[Thorne/](Thorne/)**    
   `EQUI_MusicPlayerWnd.xml`
 
-- **[Thorne 1x14 Stacked/](Thorne 1x14 Stacked/)**
+- **[Thorne 14x1 Stacked/](Thorne 14x1 Stacked/)**    
   `EQUI_MusicPlayerWnd.xml`
 
-- **[Thorne 2x7 Stacked/](Thorne 2x7 Stacked/)**
+- **[Thorne 1x14 Stacked/](Thorne 1x14 Stacked/)**    
   `EQUI_MusicPlayerWnd.xml`
 
-- **[Thorne 7x2 Stacked/](Thorne 7x2 Stacked/)**
+- **[Thorne 2 Row/](Thorne 2 Row/)**    
   `EQUI_MusicPlayerWnd.xml`
 
-- **[Thorne 14x1 Stacked/](Thorne 14x1 Stacked/)**
+- **[Thorne 2x7 Stacked/](Thorne 2x7 Stacked/)**    
+  `EQUI_MusicPlayerWnd.xml`
+
+- **[Thorne 7 Row/](Thorne 7 Row/)**    
+  `EQUI_MusicPlayerWnd.xml`
+
+- **[Thorne 7x2 Stacked/](Thorne 7x2 Stacked/)**    
   `EQUI_MusicPlayerWnd.xml`
 
 ---

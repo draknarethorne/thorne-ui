@@ -14,7 +14,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_ArmorClass</Animation>
 	</StaticAnimation>
@@ -26,7 +26,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>32</X>
-			<Y>18</Y>
+			<Y>20</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -52,7 +52,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Attack</Animation>
 	</StaticAnimation>
@@ -64,7 +64,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>32</X>
-			<Y>53</Y>
+			<Y>55</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -90,7 +90,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Strength</Animation>
 	</StaticAnimation>
@@ -102,7 +102,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>18</Y>
+			<Y>20</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -128,7 +128,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Stamina</Animation>
 	</StaticAnimation>
@@ -140,7 +140,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>53</Y>
+			<Y>55</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -166,7 +166,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Agility</Animation>
 	</StaticAnimation>
@@ -178,7 +178,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>88</Y>
+			<Y>90</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -204,7 +204,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Dexterity</Animation>
 	</StaticAnimation>
@@ -216,7 +216,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>123</Y>
+			<Y>125</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -242,7 +242,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Wisdom</Animation>
 	</StaticAnimation>
@@ -254,7 +254,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>158</Y>
+			<Y>160</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -280,7 +280,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Intelligence</Animation>
 	</StaticAnimation>
@@ -292,7 +292,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>193</Y>
+			<Y>195</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -318,7 +318,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_Charisma</Animation>
 	</StaticAnimation>
@@ -330,7 +330,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>228</Y>
+			<Y>230</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -356,7 +356,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_MagicResist</Animation>
 	</StaticAnimation>
@@ -368,7 +368,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>32</X>
-			<Y>88</Y>
+			<Y>90</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -394,7 +394,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_FireResist</Animation>
 	</StaticAnimation>
@@ -406,7 +406,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>32</X>
-			<Y>123</Y>
+			<Y>125</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -432,7 +432,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_ColdResist</Animation>
 	</StaticAnimation>
@@ -444,7 +444,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>32</X>
-			<Y>158</Y>
+			<Y>160</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -470,7 +470,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_DiseaseResist</Animation>
 	</StaticAnimation>
@@ -482,7 +482,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>32</X>
-			<Y>193</Y>
+			<Y>195</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -508,7 +508,7 @@
 		</Location>
 		<Size>
 			<CX>18</CX>
-			<CY>16</CY>
+			<CY>18</CY>
 		</Size>
 		<Animation>A_Icon_PoisonResist</Animation>
 	</StaticAnimation>
@@ -520,7 +520,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>32</X>
-			<Y>228</Y>
+			<Y>230</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -1137,7 +1137,7 @@
 		</Location>
 		<Size>
 			<CX>66</CX>
-			<CY>252</CY>
+			<CY>253</CY>
 		</Size>
 		<Text></Text>
 		<Style_VScroll>false</Style_VScroll>

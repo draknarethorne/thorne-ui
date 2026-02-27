@@ -6067,7 +6067,7 @@
     <Text>Bank</Text>
     <Style_Transparent>false</Style_Transparent>
     <!--<TooltipReference/>-->
-    <DrawTemplate>WDT_Rounded</DrawTemplate>
+    <DrawTemplate>WDT_RoundedDark</DrawTemplate>
     <Style_Titlebar>true</Style_Titlebar>
     <Style_Closebox>true</Style_Closebox>
     <Style_Minimizebox>false</Style_Minimizebox>

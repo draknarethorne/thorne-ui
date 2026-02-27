@@ -4,8 +4,8 @@
 
 This directory contains variants for the Music window (EQUI_MusicPlayerWnd.xml).
 
-**Last Synced:** 2026-02-26  
-**Git Commit:** 385c3eb
+**Last Synced:** 2026-02-27  
+**Git Commit:** 3285335
 
 ---
 

@@ -55,19 +55,16 @@
 			"editorRuler.foreground": "#444444"
 		},
 		"terminal.integrated.env.windows": {
-			"PATH": "${workspaceFolder}\\.bin;${workspaceFolder}\\.venv\\Scripts;${workspaceFolder};${env:PATH}",
-			"VIRTUAL_ENV": "${workspaceFolder}/.venv",
-			"BASH_ENV": "${workspaceFolder}/.bashrc"
+			"PATH": "${workspaceFolder:Thorne-UI}\\.bin;${workspaceFolder:Thorne-UI};${env:PATH}",
+			"BASH_ENV": "${workspaceFolder:Thorne-UI}/.bashrc"
 		},
 		"terminal.integrated.env.linux": {
-			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}/.venv/bin:${workspaceFolder}:${env:PATH}",
-			"VIRTUAL_ENV": "${workspaceFolder}/.venv"
+			"PATH": "${workspaceFolder:Thorne-UI}/.bin:${workspaceFolder:Thorne-UI}:${env:PATH}"
 		},
 		"terminal.integrated.env.osx": {
-			"PATH": "${workspaceFolder}/.bin:${workspaceFolder}/.venv/bin:${workspaceFolder}:${env:PATH}",
-			"VIRTUAL_ENV": "${workspaceFolder}/.venv"
+			"PATH": "${workspaceFolder:Thorne-UI}/.bin:${workspaceFolder:Thorne-UI}:${env:PATH}"
 		},
-		"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+		"python.defaultInterpreterPath": "${workspaceFolder:Thorne-UI}/.venv/Scripts/python.exe",
 		"python.terminal.activateEnvironment": true,
 		"python.analysis.typeCheckingMode": "basic",
 		"ruff.fixAll": true,

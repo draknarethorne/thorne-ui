@@ -5,10 +5,14 @@ REM Examples:
 REM   sync-option.bat spellbook/large
 REM   sync-option.bat inventory
 REM   sync-option.bat spellbook
+REM   sync-option.bat "Music/Thorne 14 Row"
 
-setlocal enabledelayedexpansion
+setlocal
 
-if "%1"=="" (
+REM Get the directory where this batch file is located
+set "SCRIPT_DIR=%~dp0"
+
+if "%~1"=="" (
     echo.
     echo Usage: sync-option.bat ^<option_path^>
     echo.
@@ -16,15 +20,13 @@ if "%1"=="" (
     echo   sync-option.bat spellbook/large
     echo   sync-option.bat inventory
     echo   sync-option.bat spellbook
+    echo   sync-option.bat "Music/Thorne 14 Row"
     echo.
+    python "%SCRIPT_DIR%.bin\sync_option.py" --help
     exit /b 1
 )
 
-REM Get the directory where this batch file is located
-set "SCRIPT_DIR=%~dp0"
-set "OPTION_PATH=%1"
-
-REM Call the Python script
-python "%SCRIPT_DIR%.bin\sync_option.py" "%OPTION_PATH%"
+REM Pass all original arguments through to Python (supports spaces, flags, etc.)
+python "%SCRIPT_DIR%.bin\sync_option.py" %*
 
 exit /b %errorlevel%

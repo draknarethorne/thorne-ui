@@ -4,8 +4,8 @@
 
 This directory contains variants for the Skin window (EQUI_LoadskinWnd.xml).
 
-**Last Synced:** 2026-02-10  
-**Git Commit:** e85f3b5
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
@@ -24,7 +24,9 @@ This directory contains variants for the Skin window (EQUI_LoadskinWnd.xml).
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_LoadskinWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `C:\Thorne-UI\thorne_drak\Options\Skin\Thorne Classic\EQUI_LoadskinWnd.xml`
 
 ## Metadata
 

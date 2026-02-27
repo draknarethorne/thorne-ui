@@ -1,8 +1,10 @@
 {
   "window": "ShortBuffs",
-  "filename": "EQUI_ShortDurationBuffWindow.xml",
-  "description": "ShortBuffs window Thorne configuration",
-  "last_sync_date": "2026-02-24T22:40:44.987423",
-  "last_sync_commit": "bc79223",
+  "filenames": [
+    "EQUI_ShortDurationBuffWindow.xml"
+  ],
+  "description": "ShortBuffs window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-02-27T17:24:49.011488",
+  "last_sync_commit": "9ac32db",
   "in_sync": true
 }

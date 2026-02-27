@@ -1,9 +1,10 @@
 {
   "window": "Selector",
-  "description": "Selector window interface",
-  "default_variant": "Default",
-  "last_sync_date": "2026-02-03",
-  "last_sync_commit": "51a6e2a",
-  "in_sync": true,
-  "notes": "Initial sync - Default copy created and all variants established"
+  "filenames": [
+    "EQUI_SelectorWnd.xml"
+  ],
+  "description": "Selector window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-02-27T17:24:49.009783",
+  "last_sync_commit": "9ac32db",
+  "in_sync": true
 }

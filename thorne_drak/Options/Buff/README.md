@@ -4,8 +4,8 @@
 
 This directory contains variants for the Buff window (EQUI_BuffWindow.xml).
 
-**Last Synced:** 2026-02-24  
-**Git Commit:** 885c307
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
@@ -24,7 +24,9 @@ This directory contains variants for the Buff window (EQUI_BuffWindow.xml).
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_BuffWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `C:\Thorne-UI\thorne_drak\Options\Buff\Thorne\EQUI_BuffWindow.xml`
 
 ## Metadata
 

@@ -4,8 +4,8 @@
 
 This directory contains variants for the Inspect window (EQUI_InspectWnd.xml).
 
-**Last Synced:** 2026-02-26  
-**Git Commit:** 670bc74
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
@@ -21,7 +21,9 @@ This directory contains variants for the Inspect window (EQUI_InspectWnd.xml).
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_InspectWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `C:\Thorne-UI\thorne_drak\Options\Inspect\Thorne\EQUI_InspectWnd.xml`
 
 ## Metadata
 

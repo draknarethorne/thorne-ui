@@ -1,8 +1,8 @@
-# Spellbook Window Options
+# Bazaar Window Options
 
 ## Overview
 
-This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml).
+This directory contains variants for the Bazaar window (EQUI_BazaarWnd.xml, EQUI_BazaarSearchWnd.xml).
 
 **Last Synced:** 2026-02-27  
 **Git Commit:** 9ac32db
@@ -11,14 +11,11 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 
 ## Available Variants
 
-- **[Standard/](Standard/)**  📄
-  `EQUI_SpellBookWnd.xml`
+- **[Standard/](Standard/)**    
+  `EQUI_BazaarSearchWnd.xml`
 
 - **[Thorne/](Thorne/)**    
-  `EQUI_SpellBookWnd.xml`
-
-- **[Thorne Large/](Thorne Large/)**    
-  `EQUI_SpellBookWnd.xml`
+  `EQUI_BazaarSearchWnd.xml`
 
 ---
 
@@ -26,7 +23,8 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Spellbook\Thorne Large\EQUI_SpellBookWnd.xml`
+- `C:\Thorne-UI\thorne_drak\Options\Bazaar\Thorne\EQUI_BazaarSearchWnd.xml`
+- `C:\Thorne-UI\thorne_drak\Options\Bazaar\Thorne\EQUI_BazaarWnd.xml`
 
 ## Metadata
 

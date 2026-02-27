@@ -1,17 +1,17 @@
-# Music Window Options
+# Stats Window Options
 
 ## Overview
 
-This directory contains variants for the Music window (EQUI_MusicPlayerWnd.xml).
+This directory contains variants for the Stats window (EQUI_MusicPlayerWnd.xml).
 
 **Last Synced:** 2026-02-27  
-**Git Commit:** 340330f
+**Git Commit:** 9ac32db
 
 ---
 
 ## Available Variants
 
-- **[Standard/](Standard/)**    
+- **[Music/](Music/)**    
   `EQUI_MusicPlayerWnd.xml`
 
 - **[Thorne/](Thorne/)**    
@@ -23,13 +23,7 @@ This directory contains variants for the Music window (EQUI_MusicPlayerWnd.xml).
 - **[Thorne 1x14 Stacked/](Thorne 1x14 Stacked/)**    
   `EQUI_MusicPlayerWnd.xml`
 
-- **[Thorne 2 Row/](Thorne 2 Row/)**    
-  `EQUI_MusicPlayerWnd.xml`
-
 - **[Thorne 2x7 Stacked/](Thorne 2x7 Stacked/)**    
-  `EQUI_MusicPlayerWnd.xml`
-
-- **[Thorne 7 Row/](Thorne 7 Row/)**    
   `EQUI_MusicPlayerWnd.xml`
 
 - **[Thorne 7x2 Stacked/](Thorne 7x2 Stacked/)**    
@@ -39,7 +33,9 @@ This directory contains variants for the Music window (EQUI_MusicPlayerWnd.xml).
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_MusicPlayerWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `C:\Thorne-UI\thorne_drak\Options\Stats\Thorne 7x2 Stacked\EQUI_MusicPlayerWnd.xml`
 
 ## Metadata
 

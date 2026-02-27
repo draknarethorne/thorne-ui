@@ -1,8 +1,10 @@
 {
   "window": "Player",
-  "filename": "EQUI_PlayerWindow.xml",
-  "description": "Player window Thorne configuration",
-  "last_sync_date": "2026-02-24T14:09:46.290399",
-  "last_sync_commit": "d9b8174",
+  "filenames": [
+    "EQUI_PlayerWindow.xml"
+  ],
+  "description": "Player window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-02-27T17:24:49.008165",
+  "last_sync_commit": "9ac32db",
   "in_sync": true
 }

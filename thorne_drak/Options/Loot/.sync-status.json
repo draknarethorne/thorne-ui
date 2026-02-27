@@ -1,8 +1,10 @@
 {
   "window": "Loot",
-  "filename": "EQUI_LootWnd.xml",
-  "description": "Loot window Thorne configuration",
-  "last_sync_date": "2026-02-24T13:05:27.421894",
-  "last_sync_commit": "071a9b7",
+  "filenames": [
+    "EQUI_LootWnd.xml"
+  ],
+  "description": "Loot window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-02-27T17:24:49.002832",
+  "last_sync_commit": "9ac32db",
   "in_sync": true
 }

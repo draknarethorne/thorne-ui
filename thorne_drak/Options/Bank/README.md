@@ -1,8 +1,8 @@
-# Spellbook Window Options
+# Bank Window Options
 
 ## Overview
 
-This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml).
+This directory contains variants for the Bank window (EQUI_BankWnd.xml).
 
 **Last Synced:** 2026-02-27  
 **Git Commit:** 9ac32db
@@ -11,14 +11,11 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 
 ## Available Variants
 
-- **[Standard/](Standard/)**  📄
-  `EQUI_SpellBookWnd.xml`
+- **[Standard/](Standard/)**    
+  `EQUI_BankWnd.xml`
 
 - **[Thorne/](Thorne/)**    
-  `EQUI_SpellBookWnd.xml`
-
-- **[Thorne Large/](Thorne Large/)**    
-  `EQUI_SpellBookWnd.xml`
+  `EQUI_BankWnd.xml`
 
 ---
 
@@ -26,7 +23,7 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Spellbook\Thorne Large\EQUI_SpellBookWnd.xml`
+- `C:\Thorne-UI\thorne_drak\Options\Bank\Thorne\EQUI_BankWnd.xml`
 
 ## Metadata
 

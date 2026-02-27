@@ -1,8 +1,10 @@
 {
   "window": "Inventory",
-  "filename": "EQUI_Inventory.xml",
-  "description": "Inventory window Thorne configuration",
-  "last_sync_date": "2026-02-27T15:45:49.078593",
-  "last_sync_commit": "3fe809f",
+  "filenames": [
+    "EQUI_Inventory.xml"
+  ],
+  "description": "Inventory window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-02-27T17:24:49.000912",
+  "last_sync_commit": "9ac32db",
   "in_sync": true
 }

@@ -4,8 +4,8 @@
 
 This directory contains variants for the Loot window (EQUI_LootWnd.xml).
 
-**Last Synced:** 2026-02-24  
-**Git Commit:** 071a9b7
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
@@ -21,7 +21,9 @@ This directory contains variants for the Loot window (EQUI_LootWnd.xml).
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_LootWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `C:\Thorne-UI\thorne_drak\Options\Loot\Thorne\EQUI_LootWnd.xml`
 
 ## Metadata
 

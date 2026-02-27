@@ -1,8 +1,10 @@
 {
   "window": "Inspect",
-  "filename": "EQUI_InspectWnd.xml",
-  "description": "Inspect window Thorne configuration",
-  "last_sync_date": "2026-02-26T16:54:22.769890",
-  "last_sync_commit": "670bc74",
+  "filenames": [
+    "EQUI_InspectWnd.xml"
+  ],
+  "description": "Inspect window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-02-27T17:24:48.999306",
+  "last_sync_commit": "9ac32db",
   "in_sync": true
 }

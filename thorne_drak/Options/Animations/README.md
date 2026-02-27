@@ -4,8 +4,8 @@
 
 This directory contains variants for the Animations window (EQUI_Animations.xml).
 
-**Last Synced:** 2026-02-26  
-**Git Commit:** 9ce444f
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
@@ -18,7 +18,9 @@ This directory contains variants for the Animations window (EQUI_Animations.xml)
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_Animations.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `C:\Thorne-UI\thorne_drak\Options\Animations\Thorne\EQUI_Animations.xml`
 
 ## Metadata
 

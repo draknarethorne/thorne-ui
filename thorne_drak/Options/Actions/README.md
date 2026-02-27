@@ -4,18 +4,12 @@
 
 This directory contains variants for the Actions window (EQUI_ActionsWindow.xml).
 
-**Last Synced:** 2026-02-26  
-**Git Commit:** e8d2132
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
 ## Available Variants
-
-- **[Bags/](Bags/)**  📄
-  `EQUI_ActionsWindow.xml`
-
-- **[Fading/](Fading/)**    
-  `EQUI_ActionsWindow.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_ActionsWindow.xml`
@@ -23,11 +17,19 @@ This directory contains variants for the Actions window (EQUI_ActionsWindow.xml)
 - **[Thorne/](Thorne/)**  📄
   `EQUI_ActionsWindow.xml`
 
+- **[Thorne Bags/](Thorne Bags/)**  📄
+  `EQUI_ActionsWindow.xml`
+
+- **[Thorne Fading/](Thorne Fading/)**    
+  `EQUI_ActionsWindow.xml`
+
 ---
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_ActionsWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `C:\Thorne-UI\thorne_drak\Options\Actions\Thorne Fading\EQUI_ActionsWindow.xml`
 
 ## Metadata
 

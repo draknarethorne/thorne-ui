@@ -5,7 +5,7 @@
 This directory contains variants for the Music window (EQUI_MusicPlayerWnd.xml).
 
 **Last Synced:** 2026-02-27  
-**Git Commit:** 3285335
+**Git Commit:** 340330f
 
 ---
 
@@ -15,6 +15,9 @@ This directory contains variants for the Music window (EQUI_MusicPlayerWnd.xml).
   `EQUI_MusicPlayerWnd.xml`
 
 - **[Thorne/](Thorne/)**    
+  `EQUI_MusicPlayerWnd.xml`
+
+- **[Thorne 2 Row/](Thorne 2 Row/)**    
   `EQUI_MusicPlayerWnd.xml`
 
 ---

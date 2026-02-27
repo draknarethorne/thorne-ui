@@ -9,16 +9,17 @@ Usage:
     python options_thorne_sync.py --window TARGET
     python options_thorne_sync.py --window Player --verbose
     python options_thorne_sync.py --all              # Sync all 16 windows
+    python options_thorne_sync.py --all --force      # Force copy all windows
     python options_thorne_sync.py --all --dry-run    # Preview changes
     
 Options:
     --window NAME       Sync specific window (e.g., Target, Player, Group, Spellbook)
     --all              Sync all 16 configured windows
+    --force            Force copy even if destination file is identical
     --dry-run          Show what would be synced without making changes
     --verbose          Show detailed file operations
 """
 
-import os
 import sys
 import json
 import shutil
@@ -26,10 +27,12 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
-# Window configuration - maps window name to EQUI_*.xml file
+# Window configuration - maps window name to one or more EQUI_*.xml files
 WINDOW_MAPPING = {
     "Actions": "EQUI_ActionsWindow.xml",
     "Animations": "EQUI_Animations.xml",
+    "Bank": "EQUI_BankWnd.xml",
+    "Bazaar": ["EQUI_BazaarWnd.xml", "EQUI_BazaarSearchWnd.xml"],
     "Buff": "EQUI_BuffWindow.xml",
     "Cast": "EQUI_CastSpellWnd.xml",
     "Group": "EQUI_GroupWindow.xml",
@@ -38,23 +41,24 @@ WINDOW_MAPPING = {
     "Inventory": "EQUI_Inventory.xml",
     "Loot": "EQUI_LootWnd.xml",
     "Merchant": "EQUI_MerchantWnd.xml",
-    "Music": "EQUI_MusicPlayerWnd.xml",
     "Pet": "EQUI_PetInfoWindow.xml",
     "Player": "EQUI_PlayerWindow.xml",
     "Selector": "EQUI_SelectorWnd.xml",
-    "Skin": "EQUI_LoadskinWnd.xml",
     "ShortBuffs": "EQUI_ShortDurationBuffWindow.xml",
+    "Skin": "EQUI_LoadskinWnd.xml",
     "Spellbook": "EQUI_SpellBookWnd.xml",
+    "Stats": "EQUI_MusicPlayerWnd.xml",
     "Target": "EQUI_TargetWindow.xml",
 }
 
 class WindowSyncer:
-    def __init__(self, workspace_root, dry_run=False, verbose=False):
+    def __init__(self, workspace_root, dry_run=False, verbose=False, force=False):
         self.workspace_root = Path(workspace_root)
         self.thorne_drak = self.workspace_root / "thorne_drak"
         self.options_root = self.thorne_drak / "Options"
         self.dry_run = dry_run
         self.verbose = verbose
+        self.force = force
         self.results = {
             "timestamp": datetime.now().isoformat(),
             "git_commit": self._get_git_commit(),
@@ -76,24 +80,19 @@ class WindowSyncer:
             )
             if result.returncode == 0:
                 return result.stdout.strip()
-        except:
+        except Exception:
             pass
         return "unknown"
     
-    def _sync_window(self, window_name, xml_file):
-        """Sync a single window file."""
-        source = self.thorne_drak / xml_file
+    def _sync_window(self, window_name, xml_files):
+        """Sync one or more files for a window."""
+        if isinstance(xml_files, str):
+            xml_files = [xml_files]
+
         dest_dir = self.options_root / window_name / "Thorne"
-        dest_file = dest_dir / xml_file
         sync_status_file = self.options_root / window_name / ".sync-status.json"
-        
-        # Validate paths
-        if not source.exists():
-            msg = f"Source file not found: {source}"
-            self.results["errors"].append({"window": window_name, "error": msg})
-            if self.verbose:
-                print(f"    [ERROR] {msg}")
-            return False
+        synced_files = []
+        skipped_files = []
         
         if not dest_dir.exists():
             msg = f"Destination directory not found: {dest_dir}"
@@ -101,47 +100,72 @@ class WindowSyncer:
             if self.verbose:
                 print(f"    [ERROR] {msg}")
             return False
-        
-        # Check if files are identical
-        if dest_file.exists():
-            source_hash = self._file_hash(source)
-            dest_hash = self._file_hash(dest_file)
-            if source_hash == dest_hash:
-                # Files identical, but still update parent README for navigation
-                if not self.dry_run:
-                    # Read existing metadata for README generation
-                    try:
-                        with open(sync_status_file, 'r') as f:
-                            metadata = json.load(f)
-                        self._generate_parent_readme(window_name, xml_file, metadata)
-                    except:
-                        pass  # If metadata read fails, skip README update
-                
-                self.results["skipped"].append({
-                    "window": window_name,
-                    "reason": "Files already identical"
-                })
-                if self.verbose:
-                    print(f"    [SKIP] Files already identical")
-                    print(f"    [README] Parent README updated")
-                return False
-        
-        # Copy file
-        if not self.dry_run:
-            try:
-                shutil.copy2(source, dest_file)
-            except Exception as e:
-                msg = f"Failed to copy file: {str(e)}"
+
+        for xml_file in xml_files:
+            source = self.thorne_drak / xml_file
+            dest_file = dest_dir / xml_file
+
+            # Validate source path
+            if not source.exists():
+                msg = f"Source file not found: {source}"
                 self.results["errors"].append({"window": window_name, "error": msg})
                 if self.verbose:
                     print(f"    [ERROR] {msg}")
-                return False
+                continue
+
+            # Check if file is identical (unless forcing)
+            if dest_file.exists() and not self.force:
+                source_hash = self._file_hash(source)
+                dest_hash = self._file_hash(dest_file)
+                if source_hash == dest_hash:
+                    skipped_files.append(xml_file)
+                    if self.verbose:
+                        print(f"    [SKIP] {xml_file} already identical")
+                    continue
+
+            # Copy file
+            if not self.dry_run:
+                try:
+                    shutil.copy2(source, dest_file)
+                except Exception as e:
+                    msg = f"Failed to copy {xml_file}: {str(e)}"
+                    self.results["errors"].append({"window": window_name, "error": msg})
+                    if self.verbose:
+                        print(f"    [ERROR] {msg}")
+                    continue
+
+            synced_files.append(xml_file)
+
+            if self.verbose:
+                status = "[FORCE]" if self.force and dest_file.exists() else "[SYNC]"
+                print(f"    {status} {xml_file}")
+                print(f"         -> {dest_file.relative_to(self.workspace_root)}")
+
+        if not synced_files and not self.force:
+            # Files identical, but still update parent README for navigation
+            if not self.dry_run:
+                try:
+                    with open(sync_status_file, 'r') as f:
+                        metadata = json.load(f)
+                    self._generate_parent_readme(window_name, xml_files, metadata)
+                except Exception:
+                    pass  # If metadata read fails, skip README update
+
+            self.results["skipped"].append({
+                "window": window_name,
+                "reason": "Files already identical",
+                "files": skipped_files
+            })
+            if self.verbose:
+                print("    [SKIP] All files already identical")
+                print("    [README] Parent README updated")
+            return False
         
         # Update metadata
         metadata = {
             "window": window_name,
-            "filename": xml_file,
-            "description": f"{window_name} window Thorne configuration",
+            "filenames": xml_files,
+            "description": f"{window_name} window Thorne configuration ({len(xml_files)} file(s))",
             "last_sync_date": datetime.now().isoformat(),
             "last_sync_commit": self.results["git_commit"],
             "in_sync": True
@@ -160,26 +184,25 @@ class WindowSyncer:
         
         # Generate parent README for navigation
         if not self.dry_run:
-            self._generate_parent_readme(window_name, xml_file, metadata)
+            self._generate_parent_readme(window_name, xml_files, metadata)
         
         self.results["synced"].append({
             "window": window_name,
-            "source": str(source.relative_to(self.workspace_root)),
-            "dest": str(dest_file.relative_to(self.workspace_root)),
+            "files": synced_files,
             "commit": self.results["git_commit"]
         })
         self.results["total_synced"] += 1
         
-        if self.verbose:
-            print(f"    [SYNC] {xml_file}")
-            print(f"         -> {dest_file.relative_to(self.workspace_root)}")
-        
         return True
     
-    def _generate_parent_readme(self, window_name, xml_file, metadata):
+    def _generate_parent_readme(self, window_name, xml_files, metadata):
         """Generate parent README.md for window directory navigation."""
+        if isinstance(xml_files, str):
+            xml_files = [xml_files]
+
         window_dir = self.options_root / window_name
         readme_path = window_dir / "README.md"
+        xml_display = ", ".join(xml_files)
         
         # Get list of variants
         variants = []
@@ -200,7 +223,7 @@ class WindowSyncer:
 
 ## Overview
 
-This directory contains variants for the {window_name} window ({xml_file}).
+This directory contains variants for the {window_name} window ({xml_display}).
 
 **Last Synced:** {metadata['last_sync_date'][:10]}  
 **Git Commit:** {metadata['last_sync_commit']}
@@ -224,7 +247,9 @@ This directory contains variants for the {window_name} window ({xml_file}).
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/{xml_file}`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+{chr(10).join([f"- `{name}`" for name in xml_files])}
 
 ## Metadata
 
@@ -243,7 +268,7 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
             with open(readme_path, 'w', encoding='utf-8') as f:
                 f.write(content)
             if self.verbose:
-                print(f"    [README] Updated parent README.md")
+                print("    [README] Updated parent README.md")
         except Exception as e:
             if self.verbose:
                 print(f"    [WARN] Failed to update parent README: {str(e)}")
@@ -257,7 +282,7 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
                 for chunk in iter(lambda: f.read(4096), b''):
                     md5.update(chunk)
             return md5.hexdigest()
-        except:
+        except Exception:
             return None
     
     def sync_window(self, window_name):
@@ -265,11 +290,11 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
         window_name = window_name.strip()
         
         # Find matching window
-        for key, xml_file in WINDOW_MAPPING.items():
+        for key, xml_files in WINDOW_MAPPING.items():
             if key.lower() == window_name.lower():
                 if self.verbose:
                     print(f"Syncing: {key}")
-                self._sync_window(key, xml_file)
+                self._sync_window(key, xml_files)
                 return True
         
         msg = f"Window not found: {window_name}. Available: {', '.join(WINDOW_MAPPING.keys())}"
@@ -282,10 +307,10 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
         if self.verbose:
             print(f"Syncing all {len(WINDOW_MAPPING)} windows...\n")
         
-        for window_name, xml_file in WINDOW_MAPPING.items():
+        for window_name, xml_files in WINDOW_MAPPING.items():
             if self.verbose:
                 print(f"  {window_name}:")
-            self._sync_window(window_name, xml_file)
+            self._sync_window(window_name, xml_files)
     
     def print_report(self):
         """Print sync report."""
@@ -302,7 +327,10 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
             print(f"\n[SYNCED] {len(self.results['synced'])} window(s)")
             for item in self.results['synced']:
                 print(f"  {item['window']}")
-                print(f"    {item['source']} -> {item['dest']}")
+                for file_name in item.get('files', []):
+                    source = self.thorne_drak / file_name
+                    dest = self.options_root / item['window'] / 'Thorne' / file_name
+                    print(f"    {source.relative_to(self.workspace_root)} -> {dest.relative_to(self.workspace_root)}")
         
         if self.results['skipped']:
             print(f"\n[SKIPPED] {len(self.results['skipped'])} window(s)")
@@ -330,41 +358,54 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 def main():
     import argparse
+    import textwrap
+
+    window_count = len(WINDOW_MAPPING)
+    available_windows = ", ".join(WINDOW_MAPPING.keys())
+    available_windows_wrapped = textwrap.fill(
+        available_windows,
+        width=72,
+        initial_indent="    ",
+        subsequent_indent="    ",
+    )
     
     parser = argparse.ArgumentParser(
         prog="options_thorne_sync.py",
-        description="""
+        description=f"""
     Sync Window to Thorne - Backup working window files to Thorne/ directory
 
     Copies the main working file from thorne_drak/ to Options/[Window]/Thorne/ 
 and updates sync metadata with current timestamp and git commit information.
 
 FEATURES:
-  ✓ Single window or bulk sync of all 18 configured windows
+    ✓ Single window or bulk sync of all {window_count} configured windows
   ✓ Dry-run mode to preview changes before applying
   ✓ Automatic parent README generation for navigation
   ✓ Metadata tracking with git commit information
   ✓ Duplicate detection (skips if already identical)
+    ✓ Force mode to re-copy files and refresh metadata/readme
 
 CAUTION: This is a DESTRUCTIVE OPERATOR. Use --dry-run first to preview.
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
+        epilog=f"""
 EXAMPLES:
 
   # Sync single window (with preview)
     python .bin/options_thorne_sync.py --window Player --dry-run
     python .bin/options_thorne_sync.py --window Player
 
-    # Sync all 18 windows with verbose output
+    # Sync all {window_count} windows with verbose output
     python .bin/options_thorne_sync.py --all --verbose
+
+    # Force re-copy and metadata refresh for all windows
+        python .bin/options_thorne_sync.py --all --force
 
   # Preview what would be synced
     python .bin/options_thorne_sync.py --all --dry-run
 
 AVAILABLE WINDOWS:
-    Actions, Animations, Buff, Cast, Group, Hotbutton, Inventory, Loot,
-    Merchant, Pet, Player, Selector, Skin, ShortBuffs, Spellbook, Target
+{available_windows_wrapped}
 
 OUTPUT:
   - Console: Sync report with counts and filenames
@@ -384,13 +425,18 @@ OUTPUT:
     group.add_argument(
         "--all", "-a",
         action="store_true",
-        help="Sync all 18 configured windows"
+        help=f"Sync all {window_count} configured windows"
     )
     
     parser.add_argument(
         "--dry-run", "-d",
         action="store_true",
         help="Preview changes without modifying files"
+    )
+    parser.add_argument(
+        "--force", "-f",
+        action="store_true",
+        help="Force copy even when source and destination are identical"
     )
     parser.add_argument(
         "--verbose", "-v",
@@ -410,7 +456,12 @@ OUTPUT:
         sys.exit(1)
     
     # Create syncer
-    syncer = WindowSyncer(workspace_root, dry_run=args.dry_run, verbose=args.verbose)
+    syncer = WindowSyncer(
+        workspace_root,
+        dry_run=args.dry_run,
+        verbose=args.verbose,
+        force=args.force,
+    )
     
     # Execute sync
     if args.all:

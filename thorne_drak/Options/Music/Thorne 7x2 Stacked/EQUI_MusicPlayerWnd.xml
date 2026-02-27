@@ -47,8 +47,8 @@
 		<ScreenID>MPW_Stat_ATK_Icon</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
-			<Y>31</Y>
+			<X>35</X>
+			<Y>2</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -63,8 +63,8 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>2</X>
-			<Y>47</Y>
+			<X>32</X>
+			<Y>18</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -86,7 +86,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>5</X>
-			<Y>60</Y>
+			<Y>37</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -102,7 +102,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>76</Y>
+			<Y>53</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -123,8 +123,8 @@
 		<ScreenID>MPW_Stat_STA_Icon</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
-			<Y>89</Y>
+			<X>35</X>
+			<Y>37</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -139,8 +139,8 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>2</X>
-			<Y>105</Y>
+			<X>32</X>
+			<Y>53</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -162,7 +162,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>5</X>
-			<Y>118</Y>
+			<Y>72</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -178,7 +178,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>134</Y>
+			<Y>88</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -199,8 +199,8 @@
 		<ScreenID>MPW_Stat_DEX_Icon</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
-			<Y>147</Y>
+			<X>35</X>
+			<Y>72</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -215,8 +215,8 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>2</X>
-			<Y>163</Y>
+			<X>32</X>
+			<Y>88</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -238,7 +238,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>5</X>
-			<Y>176</Y>
+			<Y>107</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -254,7 +254,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>192</Y>
+			<Y>123</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -275,8 +275,8 @@
 		<ScreenID>MPW_Stat_INT_Icon</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
-			<Y>205</Y>
+			<X>35</X>
+			<Y>107</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -291,8 +291,8 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>2</X>
-			<Y>221</Y>
+			<X>32</X>
+			<Y>123</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -314,7 +314,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>5</X>
-			<Y>234</Y>
+			<Y>142</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -330,7 +330,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>250</Y>
+			<Y>158</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -351,8 +351,8 @@
 		<ScreenID>MPW_Stat_Magic_Icon</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
-			<Y>263</Y>
+			<X>35</X>
+			<Y>142</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -367,8 +367,8 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>2</X>
-			<Y>279</Y>
+			<X>32</X>
+			<Y>158</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -390,7 +390,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>5</X>
-			<Y>292</Y>
+			<Y>177</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -406,7 +406,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>308</Y>
+			<Y>193</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -427,8 +427,8 @@
 		<ScreenID>MPW_Stat_Cold_Icon</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
-			<Y>321</Y>
+			<X>35</X>
+			<Y>177</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -443,8 +443,8 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>2</X>
-			<Y>337</Y>
+			<X>32</X>
+			<Y>193</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -466,7 +466,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>5</X>
-			<Y>350</Y>
+			<Y>212</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -482,7 +482,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>2</X>
-			<Y>366</Y>
+			<Y>228</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -503,8 +503,8 @@
 		<ScreenID>MPW_Stat_Poison_Icon</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>5</X>
-			<Y>379</Y>
+			<X>35</X>
+			<Y>212</Y>
 		</Location>
 		<Size>
 			<CX>18</CX>
@@ -519,8 +519,8 @@
 		<Font>3</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>2</X>
-			<Y>395</Y>
+			<X>32</X>
+			<Y>228</Y>
 		</Location>
 		<Size>
 			<CX>24</CX>
@@ -1136,8 +1136,8 @@
 			<Y>78</Y>
 		</Location>
 		<Size>
-			<CX>36</CX>
-			<CY>418</CY>
+			<CX>66</CX>
+			<CY>245</CY>
 		</Size>
 		<Text></Text>
 		<Style_VScroll>false</Style_VScroll>

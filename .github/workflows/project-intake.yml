@@ -1,0 +1,42 @@
+name: Project Intake Automation
+
+on:
+  issues:
+    types: [opened, reopened]
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_URL: ${{ vars.PROJECT_URL }}
+      ADD_TO_PROJECT_PAT: ${{ secrets.ADD_TO_PROJECT_PAT }}
+    steps:
+      - name: Check project automation configuration
+        id: cfg
+        run: |
+          if [ -z "$PROJECT_URL" ] || [ -z "$ADD_TO_PROJECT_PAT" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Add issue/PR to project board
+        if: steps.cfg.outputs.configured == 'true'
+        uses: actions/add-to-project@v1.0.2
+        with:
+          project-url: ${{ env.PROJECT_URL }}
+          github-token: ${{ env.ADD_TO_PROJECT_PAT }}
+      - name: Explain missing project automation configuration
+        if: steps.cfg.outputs.configured == 'false'
+        run: |
+          echo "Project automation is scaffolded but not configured."
+          echo "Set repository variable PROJECT_URL (full GitHub Project URL)."
+          echo "Set repository secret ADD_TO_PROJECT_PAT (classic PAT with repo + project scopes)."
+          echo "Then re-run this workflow to auto-add issues/PRs to your project board."

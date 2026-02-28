@@ -1,0 +1,65 @@
+name: Quick Issue Command
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+
+jobs:
+  create-issue-from-comment:
+    if: startsWith(github.event.comment.body, '/issue ')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create issue from slash command
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const comment = context.payload.comment;
+            const sourceIssue = context.payload.issue;
+            const raw = comment.body.trim();
+            const summary = raw.replace(/^\/issue\s+/i, '').trim();
+
+            if (!summary) {
+              core.setFailed("Usage: /issue <summary of finding>");
+              return;
+            }
+
+            const title = `testing: ${summary}`.slice(0, 120);
+            const sourceUrl = comment.html_url;
+            const sourceNumber = sourceIssue.number;
+            const sourceType = sourceIssue.pull_request ? 'PR' : 'Issue';
+
+            const body = [
+              'Auto-created from testing command.',
+              '',
+              `**Source**: ${sourceType} #${sourceNumber}`,
+              `**Comment**: ${sourceUrl}`,
+              '',
+              '## Finding',
+              summary,
+              '',
+              '## Follow-up',
+              '- [ ] Reproduce reliably',
+              '- [ ] Identify root cause',
+              '- [ ] Define acceptance criteria'
+            ].join('\n');
+
+            const created = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['testing', 'needs-triage'],
+              assignees: ['draknarethorne']
+            });
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: sourceNumber,
+              body: `Created tracking issue #${created.data.number} from this finding.`
+            });

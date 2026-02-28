@@ -1,0 +1,88 @@
+name: "🐛 Bug report"
+description: Report a bug found during testing or gameplay.
+title: "bug: "
+labels: ["bug", "needs-triage"]
+assignees:
+  - draknarethorne
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Draknare Thorne's legendary UI.
+        Please include enough detail so this can be reproduced quickly.
+
+  - type: dropdown
+    id: window
+    attributes:
+      label: Window / Component
+      description: Where did you see the bug?
+      options:
+        - Actions
+        - Bank
+        - Bazaar
+        - Buff
+        - CastSpell
+        - Group
+        - HotButton
+        - Inventory
+        - Loot
+        - Merchant
+        - Player
+        - SpellBook
+        - Target
+        - Other / Multiple
+    validations:
+      required: true
+
+  - type: input
+    id: branch
+    attributes:
+      label: Branch / Version tested
+      description: Branch name or release version
+      placeholder: feature/class-slot-images-v0.7.5 or v0.7.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: List clear, numbered steps.
+      placeholder: |
+        1. /loadskin thorne_dev 1
+        2. Open Inventory window
+        3. Click ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Evidence (optional)
+      description: Paste logs, screenshots, XML snippets, or error text.
+      render: markdown
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Validation
+      options:
+        - label: I tested this on TAKP/P2002 client and confirmed it is reproducible.
+          required: true
+        - label: I checked `.docs/STANDARDS.md` for intended behavior first.
+          required: false

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Thorne UI Development Standards
+    url: https://github.com/draknarethorne/thorne-ui/blob/main/.docs/STANDARDS.md
+    about: Review project standards before filing UI change requests.
+  - name: Development Roadmap
+    url: https://github.com/draknarethorne/thorne-ui/blob/main/DEVELOPMENT.md
+    about: Check active phases and architectural decisions.

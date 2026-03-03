@@ -229,6 +229,7 @@ class GaugeGenerator:
         # Load standard gauge
         std = Image.open(source)
         std_width = std.size[0]
+        target_width = 120
         
         # Extract individual sections (8px each)
         bg = std.crop((0, 0, std_width, 8))
@@ -238,7 +239,8 @@ class GaugeGenerator:
         
         debug_sections = [] if self.debug else None
 
-        # Scale each section vertically (8px → 16px)
+        # Scale each section vertically (8px → 16px), then normalize to 120px width.
+        # This guarantees 120t is truly 120px wide regardless of source art width.
         bg_tall = self._scale_with_borders(
             bg, std_width, interp_method="BILINEAR", preserve_black=True,
             debug_bucket=debug_sections, debug_label="background"
@@ -255,9 +257,15 @@ class GaugeGenerator:
             linesfill, std_width, interp_method="BILINEAR",
             debug_bucket=debug_sections, debug_label="linesfill"
         )
+
+        if std_width != target_width:
+            bg_tall = self._scale_horizontal_with_borders(bg_tall, target_width, interp_method="BILINEAR", preserve_black=True)
+            fill_tall = self._scale_horizontal_with_borders(fill_tall, target_width, interp_method="BILINEAR")
+            lines_tall = self._scale_horizontal_with_borders(lines_tall, target_width, interp_method="BILINEAR", preserve_black=True)
+            linesfill_tall = self._scale_horizontal_with_borders(linesfill_tall, target_width, interp_method="BILINEAR")
         
         # Create new image (120×64)
-        result = Image.new('RGBA', (std_width, 64), (0, 0, 0, 0))
+        result = Image.new('RGBA', (target_width, 64), (0, 0, 0, 0))
         result.paste(bg_tall, (0, 0))
         result.paste(fill_tall, (0, 16))
         result.paste(lines_tall, (0, 32))

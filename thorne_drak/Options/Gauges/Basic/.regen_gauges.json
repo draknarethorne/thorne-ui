@@ -1,0 +1,10 @@
+{
+  "description": "Basic gauge variant - solid black background with structural tick grid",
+  "interpolation": "BILINEAR",
+  "sections": {
+    "background": { "preserve_black": true },
+    "fill":       { "preserve_black": false },
+    "lines":      { "preserve_black": true },
+    "linesfill":  { "preserve_black": false }
+  }
+}

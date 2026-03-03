@@ -395,11 +395,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>24</Y>
+      <Y>33</Y>
     </Location>
     <Size>
       <CX>258</CX>
-      <CY>12</CY>
+      <CY>4</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
@@ -420,7 +420,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>34</EQType>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeLinesFill</Fill>
+      <Fill>A_GaugeTick_250t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -565,7 +565,7 @@
 		<GaugeOffsetX>0</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
     <TextOffsetX>5</TextOffsetX>
-    <TextOffsetY>-2</TextOffsetY>
+    <TextOffsetY>-1z</TextOffsetY>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
@@ -698,7 +698,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>25</EQType>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeLinesFill_250t</Fill>
+      <Fill>A_GaugeTick_250t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 

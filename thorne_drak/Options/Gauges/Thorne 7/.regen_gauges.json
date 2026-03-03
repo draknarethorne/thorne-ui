@@ -1,0 +1,10 @@
+{
+  "description": "Thorne 7 gauge variant - structural ticks with 7-segment style fill",
+  "interpolation": "BILINEAR",
+  "sections": {
+    "background": { "preserve_black": true },
+    "fill":       { "preserve_black": false },
+    "lines":      { "preserve_black": true },
+    "linesfill":  { "preserve_black": false }
+  }
+}

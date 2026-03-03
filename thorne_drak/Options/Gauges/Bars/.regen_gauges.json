@@ -1,0 +1,10 @@
+{
+  "description": "Bars gauge variant - dark bar segments with 5 structural ticks at 20px intervals",
+  "interpolation": "BILINEAR",
+  "sections": {
+    "background": { "preserve_black": true },
+    "fill":       { "preserve_black": false },
+    "lines":      { "preserve_black": true },
+    "linesfill":  { "preserve_black": false }
+  }
+}

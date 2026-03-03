@@ -59,12 +59,81 @@ class GaugeGenerator:
             "variant_path": str(self.variant_dir),
             "source_base_found": False,
             "source_base_name": None,
+            "config_loaded": False,
             "generated": {
                 "wide": [],
                 "tall": [],
             }
         }
+        self.config = self._load_variant_config()
+        self.stats["config_loaded"] = (self.variant_dir / ".regen_gauges.json").exists()
     
+    def _load_variant_config(self):
+        """Load per-variant config from .regen_gauges.json if present.
+
+        Config schema:
+            {
+                "description": "Human description of gauge variant",
+                "interpolation": "BILINEAR",
+                "sections": {
+                    "background": { "preserve_black": true },
+                    "fill":       { "preserve_black": false },
+                    "lines":      { "preserve_black": true },
+                    "linesfill":  { "preserve_black": false }
+                }
+            }
+
+        Defaults match the original hard-coded behavior so existing variants
+        without a config file produce identical output.
+        """
+        defaults = {
+            "interpolation": "BILINEAR",
+            "sections": {
+                "background": {"preserve_black": True},
+                "fill":       {"preserve_black": False},
+                "lines":      {"preserve_black": True},
+                "linesfill":  {"preserve_black": False},
+            }
+        }
+
+        config_file = self.variant_dir / ".regen_gauges.json"
+        if not config_file.exists():
+            return defaults
+
+        try:
+            with open(config_file) as f:
+                user_config = json.load(f)
+
+            # Merge user config over defaults
+            merged = dict(defaults)
+            if "interpolation" in user_config:
+                merged["interpolation"] = user_config["interpolation"]
+            if "sections" in user_config:
+                for section_name in list(defaults["sections"]):
+                    if section_name in user_config["sections"]:
+                        merged["sections"][section_name] = {
+                            **defaults["sections"][section_name],
+                            **user_config["sections"][section_name],
+                        }
+
+            print(f"  Loaded config: {config_file.name}")
+            return merged
+        except Exception as e:
+            print(f"  WARNING: Failed to load config {config_file.name}: {e}")
+            return defaults
+
+    def _section_preserve_black(self, section_name):
+        """Get preserve_black setting for a specific section."""
+        return self.config.get("sections", {}).get(section_name, {}).get("preserve_black", False)
+
+    def _section_interpolation(self, section_name=None):
+        """Get interpolation method. Section-level overrides top-level default."""
+        if section_name:
+            section_interp = self.config.get("sections", {}).get(section_name, {}).get("interpolation")
+            if section_interp:
+                return section_interp
+        return self.config.get("interpolation", "BILINEAR")
+
     def extract_base_name(self):
         """Extract base filename from source gauge.
         
@@ -176,29 +245,33 @@ class GaugeGenerator:
         # consistent across variants with different source widths (100/103/etc).
         if std_width != CANONICAL_BASE_WIDTH:
             print(f"    Normalizing source width {std_width} -> {CANONICAL_BASE_WIDTH} before wide scaling")
-            bg = self._scale_horizontal_with_borders(bg, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
-            fill = self._scale_horizontal_with_borders(fill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
-            lines = self._scale_horizontal_with_borders(lines, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
-            linesfill = self._scale_horizontal_with_borders(linesfill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
+            bg = self._scale_horizontal_with_borders(bg, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("background"), preserve_black=self._section_preserve_black("background"))
+            fill = self._scale_horizontal_with_borders(fill, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("fill"), preserve_black=self._section_preserve_black("fill"))
+            lines = self._scale_horizontal_with_borders(lines, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("lines"), preserve_black=self._section_preserve_black("lines"))
+            linesfill = self._scale_horizontal_with_borders(linesfill, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("linesfill"), preserve_black=self._section_preserve_black("linesfill"))
             std_width = CANONICAL_BASE_WIDTH
         
         debug_sections = [] if self.debug else None
 
         # Scale each section horizontally
         bg_wide = self._scale_horizontal_with_borders(
-            bg, width, interp_method="BILINEAR", preserve_black=True,
+            bg, width, interp_method=self._section_interpolation("background"),
+            preserve_black=self._section_preserve_black("background"),
             debug_bucket=debug_sections, debug_label="background"
         )
         fill_wide = self._scale_horizontal_with_borders(
-            fill, width, interp_method="BILINEAR",
+            fill, width, interp_method=self._section_interpolation("fill"),
+            preserve_black=self._section_preserve_black("fill"),
             debug_bucket=debug_sections, debug_label="fill"
         )
         lines_wide = self._scale_horizontal_with_borders(
-            lines, width, interp_method="BILINEAR", preserve_black=True,
+            lines, width, interp_method=self._section_interpolation("lines"),
+            preserve_black=self._section_preserve_black("lines"),
             debug_bucket=debug_sections, debug_label="lines"
         )
         linesfill_wide = self._scale_horizontal_with_borders(
-            linesfill, width, interp_method="BILINEAR",
+            linesfill, width, interp_method=self._section_interpolation("linesfill"),
+            preserve_black=self._section_preserve_black("linesfill"),
             debug_bucket=debug_sections, debug_label="linesfill"
         )
         
@@ -252,10 +325,10 @@ class GaugeGenerator:
         # tall scaling behavior consistent across source widths.
         if std_width != CANONICAL_BASE_WIDTH:
             print(f"    Normalizing source width {std_width} -> {CANONICAL_BASE_WIDTH} before tall scaling")
-            bg = self._scale_horizontal_with_borders(bg, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
-            fill = self._scale_horizontal_with_borders(fill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
-            lines = self._scale_horizontal_with_borders(lines, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
-            linesfill = self._scale_horizontal_with_borders(linesfill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
+            bg = self._scale_horizontal_with_borders(bg, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("background"), preserve_black=self._section_preserve_black("background"))
+            fill = self._scale_horizontal_with_borders(fill, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("fill"), preserve_black=self._section_preserve_black("fill"))
+            lines = self._scale_horizontal_with_borders(lines, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("lines"), preserve_black=self._section_preserve_black("lines"))
+            linesfill = self._scale_horizontal_with_borders(linesfill, CANONICAL_BASE_WIDTH, interp_method=self._section_interpolation("linesfill"), preserve_black=self._section_preserve_black("linesfill"))
             std_width = CANONICAL_BASE_WIDTH
         
         debug_sections = [] if self.debug else None
@@ -263,27 +336,31 @@ class GaugeGenerator:
         # Scale each section vertically (8px → 16px), then normalize to 120px width.
         # This guarantees 120t is truly 120px wide regardless of source art width.
         bg_tall = self._scale_with_borders(
-            bg, std_width, interp_method="BILINEAR", preserve_black=True,
+            bg, std_width, interp_method=self._section_interpolation("background"),
+            preserve_black=self._section_preserve_black("background"),
             debug_bucket=debug_sections, debug_label="background"
         )
         fill_tall = self._scale_with_borders(
-            fill, std_width, interp_method="BILINEAR",
+            fill, std_width, interp_method=self._section_interpolation("fill"),
+            preserve_black=self._section_preserve_black("fill"),
             debug_bucket=debug_sections, debug_label="fill"
         )
         lines_tall = self._scale_with_borders(
-            lines, std_width, interp_method="BILINEAR", preserve_black=True,
+            lines, std_width, interp_method=self._section_interpolation("lines"),
+            preserve_black=self._section_preserve_black("lines"),
             debug_bucket=debug_sections, debug_label="lines"
         )
         linesfill_tall = self._scale_with_borders(
-            linesfill, std_width, interp_method="BILINEAR",
+            linesfill, std_width, interp_method=self._section_interpolation("linesfill"),
+            preserve_black=self._section_preserve_black("linesfill"),
             debug_bucket=debug_sections, debug_label="linesfill"
         )
 
         if std_width != target_width:
-            bg_tall = self._scale_horizontal_with_borders(bg_tall, target_width, interp_method="BILINEAR", preserve_black=True)
-            fill_tall = self._scale_horizontal_with_borders(fill_tall, target_width, interp_method="BILINEAR")
-            lines_tall = self._scale_horizontal_with_borders(lines_tall, target_width, interp_method="BILINEAR", preserve_black=True)
-            linesfill_tall = self._scale_horizontal_with_borders(linesfill_tall, target_width, interp_method="BILINEAR")
+            bg_tall = self._scale_horizontal_with_borders(bg_tall, target_width, interp_method=self._section_interpolation("background"), preserve_black=self._section_preserve_black("background"))
+            fill_tall = self._scale_horizontal_with_borders(fill_tall, target_width, interp_method=self._section_interpolation("fill"), preserve_black=self._section_preserve_black("fill"))
+            lines_tall = self._scale_horizontal_with_borders(lines_tall, target_width, interp_method=self._section_interpolation("lines"), preserve_black=self._section_preserve_black("lines"))
+            linesfill_tall = self._scale_horizontal_with_borders(linesfill_tall, target_width, interp_method=self._section_interpolation("linesfill"), preserve_black=self._section_preserve_black("linesfill"))
         
         # Create new image (120×64)
         result = Image.new('RGBA', (target_width, 64), (0, 0, 0, 0))
@@ -339,19 +416,23 @@ class GaugeGenerator:
 
         # Scale each section horizontally
         bg_scaled = self._scale_horizontal_with_borders(
-            bg, width, interp_method="BILINEAR", preserve_black=True,
+            bg, width, interp_method=self._section_interpolation("background"),
+            preserve_black=self._section_preserve_black("background"),
             debug_bucket=debug_sections, debug_label="background"
         )
         fill_scaled = self._scale_horizontal_with_borders(
-            fill, width, interp_method="BILINEAR",
+            fill, width, interp_method=self._section_interpolation("fill"),
+            preserve_black=self._section_preserve_black("fill"),
             debug_bucket=debug_sections, debug_label="fill"
         )
         lines_scaled = self._scale_horizontal_with_borders(
-            lines, width, interp_method="BILINEAR", preserve_black=True,
+            lines, width, interp_method=self._section_interpolation("lines"),
+            preserve_black=self._section_preserve_black("lines"),
             debug_bucket=debug_sections, debug_label="lines"
         )
         linesfill_scaled = self._scale_horizontal_with_borders(
-            linesfill, width, interp_method="BILINEAR",
+            linesfill, width, interp_method=self._section_interpolation("linesfill"),
+            preserve_black=self._section_preserve_black("linesfill"),
             debug_bucket=debug_sections, debug_label="linesfill"
         )
         
@@ -815,10 +896,22 @@ DISCOVERY:
     Looks for: gauge_inlay*_thorne0X.tga source files
 
 VARIANTS:
-    Thorne, Bars, Basic, Bubbles, Light Bubbles
+    Thorne, Bars, Basic, Bubbles, Grid, Light Bubbles, Oval, Thorne 7
+
+PER-VARIANT CONFIG (.regen_gauges.json):
+    Each variant directory may contain a .regen_gauges.json config file that
+    controls scaling behavior per section (background, fill, lines, linesfill):
+      - preserve_black: true/false  (extract & re-stamp black as overlay)
+      - interpolation: BILINEAR/LANCZOS/NEAREST
+
+    Structural gauges (Thorne, Grid, Bars) use preserve_black to keep tick marks
+    crisp at 1px. Gradient gauges (Bubbles, Oval) disable it for smooth scaling.
 
 FEATURES:
+    [*] Per-variant .regen_gauges.json config
+    [*] Proportional black mask position mapping (1px→1px guaranteed)
     [*] Dynamic sizing (WIDE_WIDTHS, TALL_WIDTHS)
+    [*] Canonical normalization to 120px base width
     [*] Automatic TGA format fixing
     [*] Smart copyback (single->thorne_drak, multi->Thorne only)
     [*] Automatic deployment to thorne_dev/
@@ -826,8 +919,9 @@ FEATURES:
 
 WORKFLOW:
     1. Edit source: thorne_drak/Options/Gauges/Thorne/gauge_inlay_thorne01.tga
-    2. Run: python regen_gauges.py --all  (or specify: Thorne)
-    3. Test: /loadskin thorne_drak
+    2. Edit config: thorne_drak/Options/Gauges/Thorne/.regen_gauges.json
+    3. Run: python regen_gauges.py --all  (or specify: Thorne)
+    4. Test: /loadskin thorne_drak
 
 SIZE CONFIGURATION:
     To add new widths, edit WIDE_WIDTHS and TALL_WIDTHS at top of script.

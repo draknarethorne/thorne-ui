@@ -1,0 +1,10 @@
+{
+  "description": "Bubbles gauge variant - gradient bubble design, no structural black borders",
+  "interpolation": "BILINEAR",
+  "sections": {
+    "background": { "preserve_black": false },
+    "fill":       { "preserve_black": false },
+    "lines":      { "preserve_black": false },
+    "linesfill":  { "preserve_black": false }
+  }
+}

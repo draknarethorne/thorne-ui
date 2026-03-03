@@ -1,0 +1,10 @@
+{
+  "description": "Grid gauge variant - dense structural black grid across all sections",
+  "interpolation": "BILINEAR",
+  "sections": {
+    "background": { "preserve_black": true },
+    "fill":       { "preserve_black": false },
+    "lines":      { "preserve_black": true },
+    "linesfill":  { "preserve_black": false }
+  }
+}

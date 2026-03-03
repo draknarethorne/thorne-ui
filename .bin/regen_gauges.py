@@ -35,6 +35,7 @@ import shutil
 # To add a new tall size: add to TALL_WIDTHS
 WIDE_WIDTHS = [120, 150]  # Base is 120, can expand with 150, 160, etc.
 TALL_WIDTHS = [120, 150, 230, 240, 250, 260]  # Base is 120 (from standard), others scale from 120t
+CANONICAL_BASE_WIDTH = 120  # Normalize source section width before scaling variants
 
 
 class GaugeGenerator:
@@ -170,6 +171,16 @@ class GaugeGenerator:
         fill = std.crop((0, 8, std_width, 16))
         lines = std.crop((0, 16, std_width, 24))
         linesfill = std.crop((0, 24, std_width, 32))
+
+        # Normalize to canonical base width so downstream scaling patterns are
+        # consistent across variants with different source widths (100/103/etc).
+        if std_width != CANONICAL_BASE_WIDTH:
+            print(f"    Normalizing source width {std_width} -> {CANONICAL_BASE_WIDTH} before wide scaling")
+            bg = self._scale_horizontal_with_borders(bg, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
+            fill = self._scale_horizontal_with_borders(fill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
+            lines = self._scale_horizontal_with_borders(lines, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
+            linesfill = self._scale_horizontal_with_borders(linesfill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
+            std_width = CANONICAL_BASE_WIDTH
         
         debug_sections = [] if self.debug else None
 
@@ -236,6 +247,16 @@ class GaugeGenerator:
         fill = std.crop((0, 8, std_width, 16))
         lines = std.crop((0, 16, std_width, 24))
         linesfill = std.crop((0, 24, std_width, 32))
+
+        # Normalize to canonical base width before vertical expansion to keep
+        # tall scaling behavior consistent across source widths.
+        if std_width != CANONICAL_BASE_WIDTH:
+            print(f"    Normalizing source width {std_width} -> {CANONICAL_BASE_WIDTH} before tall scaling")
+            bg = self._scale_horizontal_with_borders(bg, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
+            fill = self._scale_horizontal_with_borders(fill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
+            lines = self._scale_horizontal_with_borders(lines, CANONICAL_BASE_WIDTH, interp_method="BILINEAR", preserve_black=True)
+            linesfill = self._scale_horizontal_with_borders(linesfill, CANONICAL_BASE_WIDTH, interp_method="BILINEAR")
+            std_width = CANONICAL_BASE_WIDTH
         
         debug_sections = [] if self.debug else None
 

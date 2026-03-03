@@ -4,8 +4,8 @@
 
 This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-03  
+**Git Commit:** e867558
 
 ---
 
@@ -17,10 +17,10 @@ This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml
 - **[Thorne/](Thorne/)**    
   `EQUI_HotbuttonWnd.xml`
 
-- **[Thorne Horizontal/](Thorne Horizontal/)**    
+- **[Thorne Inventory/](Thorne Inventory/)**    
   `EQUI_HotbuttonWnd.xml`
 
-- **[Thorne Vertical/](Thorne Vertical/)**  📄
+- **[Thorne Inventory Stacked/](Thorne Inventory Stacked/)**  📄
   `EQUI_HotButtonWnd.xml`
 
 ---
@@ -29,7 +29,7 @@ This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Hotbutton\Thorne Vertical\EQUI_HotButtonWnd.xml`
+- `C:\Thorne-UI\thorne_drak\Options\Hotbutton\Thorne Inventory Stacked\EQUI_HotButtonWnd.xml`
 
 ## Metadata
 

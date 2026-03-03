@@ -189,16 +189,18 @@ When you modify a window:
 
 ---
 
-## 🚀 Current Development (v0.7.0)
+## 🚀 Current Development (v0.7.1)
 
 We're iterating toward **v1.0.0** with focused releases:
 
-### What We're Working On (v0.7.0)
+### What We're Working On (v0.7.1)
+
 - ✅ **Spell recast timers** - Know when your gems are ready
 - ✅ **Nillipuss-inspired QoL** - Small improvements that add up
 - ✅ **Final consistency pass** - Polish and alignment across windows
 
 ### Recent Releases
+
 - **v0.6.5** - Spellbook polish and Thorne-first option sync
 - **v0.6.4** - Gauge system overhaul and target window enhancements
 - **v0.6.0** - Inventory redesign (Phase 3.9 completion)
@@ -208,6 +210,15 @@ We're iterating toward **v1.0.0** with focused releases:
 ---
 
 ## 📅 Version History
+
+**v0.7.1** (March 3, 2026)
+- ✅ Post-v0.7.0 polish and iteration pass
+  - Expanded `EQUI_HotButtonWnd.xml` utility row into a full 14-stat trial layout (MusicPlayer-style icon/value spacing)
+  - Preserved stacked bag/weapon utility arrangement while improving under-hotbar information density
+  - Synced Hotbutton option variant files and metadata with current live layout for consistency
+- ✅ Release quality updates
+  - Incremental refinement and cleanup across branch work since `v0.7.0`
+  - Prepared branch for stable tagged release handoff
 
 **v0.7.0** (February 22, 2026)
 - ✅ Release-wide Options and asset modernization

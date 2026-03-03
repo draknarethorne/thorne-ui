@@ -542,7 +542,7 @@
       <CY>16</CY>
     </Size>
     <Style_Transparent>false</Style_Transparent>
-    <Animation>A_OvalTarBG</Animation>
+    <Animation>A_GaugeBackground_250t</Animation>
   </StaticAnimation>
 
   <Gauge item="TW_TargetHP_Gauge">
@@ -583,8 +583,8 @@
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>6</EQType>
     <GaugeDrawTemplate>
-      <Background>A_OvalTarBG</Background>
-      <Fill>A_OvalTarFill</Fill>
+      <Background>A_GaugeBackground_250t</Background>
+      <Fill>A_GaugeFill_250t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -594,14 +594,14 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>52</Y>
+      <Y>54</Y>
     </Location>
     <Size>
       <CX>250</CX>
       <CY>16</CY>
     </Size>
     <Style_Transparent>false</Style_Transparent>
-    <Animation>A_OvalTarBG</Animation>
+    <Animation>A_GaugeBackground_250t</Animation>
   </StaticAnimation>
 
   <Label item="TW_Casting_Spell_Name">
@@ -610,7 +610,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>5</X>
-      <Y>52</Y>
+      <Y>54</Y>
     </Location>
     <Size>
       <CX>240</CX>
@@ -662,8 +662,8 @@
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>7</EQType>
     <GaugeDrawTemplate>
-      <Background>A_OvalTarBG</Background>
-      <Fill>A_OvalTarFill</Fill>
+      <Background>A_GaugeBackground_250t</Background>
+      <Fill>A_GaugeFill_250t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -698,7 +698,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>25</EQType>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeLinesFill</Fill>
+      <Fill>A_GaugeLinesFill_250t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 

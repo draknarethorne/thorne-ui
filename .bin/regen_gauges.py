@@ -597,44 +597,30 @@ class GaugeGenerator:
         return mask
 
     def _scale_black_mask_horizontal(self, source, target_width, threshold=None, thin_passes=0):
-        """Scale black mask horizontally with NEAREST to preserve hard black strokes."""
-        if threshold is None:
-            threshold = self.black_threshold
+        """Build a target-width black mask by proportional position mapping.
 
-        src_w, src_h = source.size
-        source_mask = self._build_black_mask(source, threshold=threshold)
-        scaled = source_mask.resize((target_width, src_h), Image.Resampling.NEAREST)
-        if thin_passes > 0:
-            scaled = self._enforce_single_pixel_runs_x(source_mask, scaled)
-        return scaled
+        Instead of scaling a bitmap mask with NEAREST (which causes inconsistent
+        doubling of 1px marks), this detects black run positions in each row
+        and re-creates them at proportionally-mapped positions in the target.
 
-    def _scale_black_mask_vertical(self, source, target_height, threshold=None, thin_passes=0):
-        """Scale black mask vertically with NEAREST to preserve hard black strokes."""
-        if threshold is None:
-            threshold = self.black_threshold
-
-        src_w, src_h = source.size
-        source_mask = self._build_black_mask(source, threshold=threshold)
-        scaled = source_mask.resize((src_w, target_height), Image.Resampling.NEAREST)
-        if thin_passes > 0:
-            scaled = self._enforce_single_pixel_runs_y(source_mask, scaled)
-        return scaled
-
-    def _enforce_single_pixel_runs_x(self, source_mask, scaled_mask):
-        """For source 1px horizontal runs, collapse stretched runs back to 1px.
-
-        Multi-pixel authored borders/ticks are preserved (not trimmed).
+        Guarantees:
+          - Single-pixel source marks always produce single-pixel target marks
+          - Multi-pixel source runs scale proportionally
+          - Consistent spacing between marks across all target widths
         """
-        src_w, src_h = source_mask.size
-        dst_w, dst_h = scaled_mask.size
-        if src_h != dst_h:
-            return scaled_mask
+        if threshold is None:
+            threshold = self.black_threshold
+
+        src_w, src_h = source.size
+        source_mask = self._build_black_mask(source, threshold=threshold)
+        target_mask = Image.new('L', (target_width, src_h), 0)
+
+        if src_w <= 1:
+            return target_mask
 
         src_px = source_mask.load()
-        out = scaled_mask.copy()
-        out_px = out.load()
-
-        scale = dst_w / src_w if src_w > 0 else 1.0
+        dst_px = target_mask.load()
+        scale = (target_width - 1) / (src_w - 1)
 
         for y in range(src_h):
             x = 0
@@ -643,40 +629,45 @@ class GaugeGenerator:
                     start = x
                     while x < src_w and src_px[x, y] > 0:
                         x += 1
-                    end = x - 1
+                    end = x - 1  # inclusive
                     run_len = end - start + 1
 
                     if run_len == 1:
-                        sx = start
-                        left = int((sx) * scale)
-                        right = int((sx + 1) * scale) - 1
-                        left = max(0, min(dst_w - 1, left))
-                        right = max(left, min(dst_w - 1, right))
-
-                        for xx in range(left, right + 1):
-                            out_px[xx, y] = 0
-                        center = (left + right) // 2
-                        out_px[center, y] = 255
+                        # Single-pixel mark -> single-pixel at mapped position
+                        tx = round(start * scale)
+                        dst_px[max(0, min(target_width - 1, tx)), y] = 255
+                    else:
+                        # Multi-pixel run -> proportionally mapped run
+                        t_start = round(start * scale)
+                        t_end = round(end * scale)
+                        t_start = max(0, min(target_width - 1, t_start))
+                        t_end = max(t_start, min(target_width - 1, t_end))
+                        for tx in range(t_start, t_end + 1):
+                            dst_px[tx, y] = 255
                 else:
                     x += 1
 
-        return out
+        return target_mask
 
-    def _enforce_single_pixel_runs_y(self, source_mask, scaled_mask):
-        """For source 1px vertical runs, collapse stretched runs back to 1px.
+    def _scale_black_mask_vertical(self, source, target_height, threshold=None, thin_passes=0):
+        """Build a target-height black mask by proportional position mapping.
 
-        Multi-pixel authored borders/ticks are preserved (not trimmed).
+        Same approach as horizontal: detects black run positions in each column
+        and re-creates them at proportionally-mapped positions in the target.
         """
-        src_w, src_h = source_mask.size
-        dst_w, dst_h = scaled_mask.size
-        if src_w != dst_w:
-            return scaled_mask
+        if threshold is None:
+            threshold = self.black_threshold
+
+        src_w, src_h = source.size
+        source_mask = self._build_black_mask(source, threshold=threshold)
+        target_mask = Image.new('L', (src_w, target_height), 0)
+
+        if src_h <= 1:
+            return target_mask
 
         src_px = source_mask.load()
-        out = scaled_mask.copy()
-        out_px = out.load()
-
-        scale = dst_h / src_h if src_h > 0 else 1.0
+        dst_px = target_mask.load()
+        scale = (target_height - 1) / (src_h - 1)
 
         for x in range(src_w):
             y = 0
@@ -685,108 +676,24 @@ class GaugeGenerator:
                     start = y
                     while y < src_h and src_px[x, y] > 0:
                         y += 1
-                    end = y - 1
+                    end = y - 1  # inclusive
                     run_len = end - start + 1
 
                     if run_len == 1:
-                        sy = start
-                        top = int((sy) * scale)
-                        bottom = int((sy + 1) * scale) - 1
-                        top = max(0, min(dst_h - 1, top))
-                        bottom = max(top, min(dst_h - 1, bottom))
-
-                        for yy in range(top, bottom + 1):
-                            out_px[x, yy] = 0
-                        center = (top + bottom) // 2
-                        out_px[x, center] = 255
+                        ty = round(start * scale)
+                        dst_px[x, max(0, min(target_height - 1, ty))] = 255
+                    else:
+                        t_start = round(start * scale)
+                        t_end = round(end * scale)
+                        t_start = max(0, min(target_height - 1, t_start))
+                        t_end = max(t_start, min(target_height - 1, t_end))
+                        for ty in range(t_start, t_end + 1):
+                            dst_px[x, ty] = 255
                 else:
                     y += 1
 
-        return out
+        return target_mask
 
-    def _thin_mask_along_x(self, mask, passes=1, run_limit=6):
-        """Thin short contiguous horizontal black runs to a single pixel per run.
-
-        Long runs (e.g., full-width horizontal borders) are preserved to avoid erasing
-        legitimate black lines.
-        """
-        passes = max(0, int(passes))
-        run_limit = max(1, int(run_limit))
-        result = mask
-
-        for _ in range(passes):
-            src = result
-            width, height = src.size
-            src_px = src.load()
-            dst = Image.new('L', (width, height), 0)
-            dst_px = dst.load()
-
-            for y in range(height):
-                x = 0
-                while x < width:
-                    if src_px[x, y] > 0:
-                        start = x
-                        while x < width and src_px[x, y] > 0:
-                            x += 1
-                        end = x - 1
-                        run_len = end - start + 1
-
-                        if run_len <= run_limit:
-                            # Collapse only short artifact runs to 1px.
-                            center = (start + end) // 2
-                            dst_px[center, y] = 255
-                        else:
-                            # Preserve long intentional runs (e.g. horizontal borders).
-                            for xx in range(start, end + 1):
-                                dst_px[xx, y] = 255
-                    else:
-                        x += 1
-
-            result = dst
-
-        return result
-
-    def _thin_mask_along_y(self, mask, passes=1, run_limit=6):
-        """Thin short contiguous vertical black runs to a single pixel per run.
-
-        Long runs (e.g., full-height vertical borders) are preserved to avoid erasing
-        legitimate black lines.
-        """
-        passes = max(0, int(passes))
-        run_limit = max(1, int(run_limit))
-        result = mask
-
-        for _ in range(passes):
-            src = result
-            width, height = src.size
-            src_px = src.load()
-            dst = Image.new('L', (width, height), 0)
-            dst_px = dst.load()
-
-            for x in range(width):
-                y = 0
-                while y < height:
-                    if src_px[x, y] > 0:
-                        start = y
-                        while y < height and src_px[x, y] > 0:
-                            y += 1
-                        end = y - 1
-                        run_len = end - start + 1
-
-                        if run_len <= run_limit:
-                            # Collapse only short artifact runs to 1px.
-                            center = (start + end) // 2
-                            dst_px[x, center] = 255
-                        else:
-                            # Preserve long intentional runs (e.g. vertical borders).
-                            for yy in range(start, end + 1):
-                                dst_px[x, yy] = 255
-                    else:
-                        y += 1
-
-            result = dst
-
-        return result
 
     def _apply_black_mask_overlay(self, target, black_mask):
         """Overlay pure opaque black onto target wherever black_mask is set."""
@@ -949,7 +856,7 @@ SIZE CONFIGURATION:
         "--black-mask-thin",
         type=int,
         default=0,
-        help="Single-pixel run collapse passes after NEAREST stretch (default: 0; preserves authored multi-pixel borders)"
+        help="(Legacy, no-op) Retained for backwards compatibility"
     )
 
     parser.add_argument(

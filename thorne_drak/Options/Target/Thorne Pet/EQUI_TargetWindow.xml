@@ -42,7 +42,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_HP_Pct">
+  <Label item="TW_PlayerHP_Pct">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <EQType>19</EQType>
@@ -63,7 +63,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_HP_PctSign">
+  <Label item="TW_PlayerHP_PctSign">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <Text>%</Text>
@@ -82,7 +82,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_Mana_Pct">
+  <Label item="TW_PlayerMana_Pct">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <EQType>20</EQType>
@@ -103,7 +103,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_Mana_PctSign">
+  <Label item="TW_PlayerMana_PctSign">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <Text>%</Text>
@@ -193,7 +193,7 @@
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
   </Label>
-  <Label item="TW_HP_Values">
+  <Label item="TW_PlayerHP_Values">
     <ScreenID>A_Label</ScreenID>
     <Font>4</Font>
     <Text>12000/12000</Text>
@@ -257,8 +257,8 @@
       <Y>34</Y>
     </Location>
   </Label>
-  <Label item="TW_Mana_Values">
-    <ScreenID>TW_Mana_Values</ScreenID>
+  <Label item="TW_PlayerMana_Values">
+    <ScreenID>TW_PlayerMana_Values</ScreenID>
     <EQType>80</EQType>
     <Font>4</Font>
     <RelativePosition>true</RelativePosition>
@@ -603,14 +603,14 @@
     <Pieces>TW_ManaTick_Gauge</Pieces>
     <Pieces>TW_TargetHP_Gauge</Pieces>
     <Pieces>TW_TargetCasting_Gauge</Pieces>
-    <Pieces>TW_Mana_Values</Pieces>
+    <Pieces>TW_PlayerManaerManaerMana_Values</Pieces>
     <Pieces>TW_TargetHP_Pct</Pieces>
     <Pieces>TW_TargetHP_PctSign</Pieces>
-    <Pieces>TW_HP_Values</Pieces>
-    <Pieces>TW_Mana_Pct</Pieces>
-    <Pieces>TW_Mana_PctSign</Pieces>
-    <Pieces>TW_HP_Pct</Pieces>
-    <Pieces>TW_HP_PctSign</Pieces>
+    <Pieces>TW_PlayerHP_Values</Pieces>
+    <Pieces>TW_PlayerMana_Pct</Pieces>
+    <Pieces>TW_PlayerMana_PctSign</Pieces>
+    <Pieces>TW_PlayerHP_Pct</Pieces>
+    <Pieces>TW_PlayerHP_PctSign</Pieces>
     <Pieces>TW_Weight_Current</Pieces>
     <Pieces>TW_Weight_Divider</Pieces>
     <Pieces>TW_Weight_Max</Pieces>

@@ -41,7 +41,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_HPPlayerLabel">
+  <Label item="TW_PlayerHPPlayerLabel">
     <ScreenID>A_Label</ScreenID>
     <Font>4</Font>
     <EQType>19</EQType>
@@ -62,7 +62,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_HP_PctSign">
+  <Label item="TW_PlayerHP_PctSign">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <Text>%</Text>
@@ -81,7 +81,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_manalabel">
+  <Label item="TW_PlayerManalabel">
     <ScreenID>A_Label</ScreenID>
     <Font>4</Font>
     <EQType>20</EQType>
@@ -102,7 +102,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_Mana_PctSign">
+  <Label item="TW_PlayerMana_PctSign">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <Text>%</Text>
@@ -442,10 +442,10 @@
     <Pieces>TW_Player_Mana_P</Pieces>
     <Pieces>Target_HPLabel</Pieces>
     <Pieces>TW_PlayerHPvalue</Pieces>
-    <Pieces>TW_manalabel</Pieces>
-    <Pieces>TW_Mana_PctSign</Pieces>
-    <Pieces>TW_HPPlayerLabel</Pieces>
-    <Pieces>TW_HP_PctSign</Pieces>
+    <Pieces>TW_PlayerManalabel</Pieces>
+    <Pieces>TW_PlayerMana_PctSign</Pieces>
+    <Pieces>TW_PlayerHPPlayerLabel</Pieces>
+    <Pieces>TW_PlayerHP_PctSign</Pieces>
     <Pieces>A_TargetBoxStaticAnim</Pieces>
     <Pieces>necessary</Pieces>
   </Screen>

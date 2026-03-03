@@ -42,7 +42,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_HP_Pct">
+  <Label item="TW_PlayerHP_Pct">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <EQType>19</EQType>
@@ -63,7 +63,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_HP_PctSign">
+  <Label item="TW_PlayerHP_PctSign">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <Text>%</Text>
@@ -82,7 +82,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_Mana_Pct">
+  <Label item="TW_PlayerMana_Pct">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <EQType>20</EQType>
@@ -103,7 +103,7 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <Label item="TW_Mana_PctSign">
+  <Label item="TW_PlayerMana_PctSign">
     <ScreenID>A_Label</ScreenID>
     <Font>2</Font>
     <Text>%</Text>
@@ -193,7 +193,7 @@
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
   </Label>
-  <Label item="TW_HP_Values">
+  <Label item="TW_PlayerHP_Values">
     <ScreenID>A_Label</ScreenID>
     <Font>4</Font>
     <Text>12000/12000</Text>
@@ -257,8 +257,8 @@
       <Y>34</Y>
     </Location>
   </Label>
-  <Label item="TW_Mana_Values">
-    <ScreenID>TW_Mana_Values</ScreenID>
+  <Label item="TW_PlayerMana_Values">
+    <ScreenID>TW_PlayerMana_Values</ScreenID>
     <EQType>80</EQType>
     <Font>4</Font>
     <RelativePosition>true</RelativePosition>
@@ -635,7 +635,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>52</Y>
+      <Y>54</Y>
     </Location>
     <Size>
       <CX>250</CX>
@@ -667,6 +667,41 @@
     </GaugeDrawTemplate>
   </Gauge>
 
+  <!-- Global Recast Timer (from CastSpellWnd EQType 25), overlaid at top of casting gauge -->
+  <Gauge item="TW_Global_Recast_Gauge">
+    <ScreenID>TW_Global_Recast_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>52</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>255</R>
+      <G>210</G>
+      <B>250</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>255</R>
+      <G>235</G>
+      <B>255</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>25</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLinesFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
   <Screen item="TargetWindow">
     <ScreenID />
     <RelativePosition>false</RelativePosition>
@@ -676,7 +711,7 @@
     </Location>
     <Size>
       <CX>260</CX>
-      <CY>76</CY>
+      <CY>78</CY>
     </Size>
     <Text>Target</Text>
     <Style_VScroll>false</Style_VScroll>
@@ -689,27 +724,34 @@
     <Style_Minimizebox>false</Style_Minimizebox>
     <Style_Border>true</Style_Border>
     <Style_Sizable>false</Style_Sizable>
+
+    <Pieces>TW_PlayerHP_Values</Pieces>
+    <Pieces>TW_PlayerHP_Pct</Pieces>
+    <Pieces>TW_PlayerHP_PctSign</Pieces>
     <Pieces>TW_PlayerHP_Gauge</Pieces>
     <Pieces>TW_PetHealth_Gauge</Pieces>
-    <Pieces>TW_AttackTick_Gauge</Pieces>
+
+    <Pieces>TW_PlayerMana_Values</Pieces>
+    <Pieces>TW_PlayerMana_Pct</Pieces>
+    <Pieces>TW_PlayerMana_PctSign</Pieces>
     <Pieces>TW_PlayerMana_Gauge</Pieces>
     <Pieces>TW_ManaTick_Gauge</Pieces>
-    <Pieces>TW_TargetHP_BG</Pieces>
-    <Pieces>TW_TargetHP_Gauge</Pieces>
-    <Pieces>TW_Casting_BG</Pieces>
-    <Pieces>TW_Casting_Gauge</Pieces>
-    <Pieces>TW_Casting_Spell_Name</Pieces>
-    <Pieces>TW_Mana_Values</Pieces>
-    <Pieces>TW_TargetHP_Pct</Pieces>
-    <Pieces>TW_TargetHP_PctSign</Pieces>
-    <Pieces>TW_HP_Values</Pieces>
-    <Pieces>TW_Mana_Pct</Pieces>
-    <Pieces>TW_Mana_PctSign</Pieces>
-    <Pieces>TW_HP_Pct</Pieces>
-    <Pieces>TW_HP_PctSign</Pieces>
+
     <Pieces>TW_Weight_Current</Pieces>
     <Pieces>TW_Weight_Divider</Pieces>
     <Pieces>TW_Weight_Max</Pieces>
+
+    <Pieces>TW_TargetHP_BG</Pieces>
+    <Pieces>TW_TargetHP_Gauge</Pieces>
+    <Pieces>TW_TargetHP_Pct</Pieces>
+    <Pieces>TW_TargetHP_PctSign</Pieces>
+    <Pieces>TW_AttackTick_Gauge</Pieces>
+
+    <Pieces>TW_Casting_BG</Pieces>
+    <Pieces>TW_Casting_Gauge</Pieces>
+    <Pieces>TW_Casting_Spell_Name</Pieces>
+    <Pieces>TW_Global_Recast_Gauge</Pieces>
+
     <Pieces>A_TargetBoxStaticAnim</Pieces>
     <Pieces>necessary</Pieces>
   </Screen>

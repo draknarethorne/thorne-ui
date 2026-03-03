@@ -94,7 +94,7 @@ Rows 4-6: Target Gauges and Info
 | Player Mana Gauge | TW_PlayerManaGauge | X=148, Y=16 | 108×8 | 2 | Blue (30,30,255) | Current player mana bar |
 | Player Mana Value | TW_PlayerManaValue | X=148, Y=25 | 45×12 | 80 | White | Current/Max Mana numeric |
 | Player Mana Percent | TW_PlayerManaPercent | X=196, Y=25 | 30×12 | 20 | White | Mana percentage display |
-| Mana Tick Gauge | TW_ManaTickGauge | X=148, Y=21 | 108×8 | 24 | Cyan (0,220,220) | Mana regeneration tick counter |
+| Mana Tick Gauge | TW_PlayerManaTickGauge | X=148, Y=21 | 108×8 | 24 | Cyan (0,220,220) | Mana regeneration tick counter |
 | Weight Display | TW_PlayerWeight | X=99, Y=18 | 45×12 | 25 | White | Current/Max inventory weight |
 
 ### Pet Status Gauge (Middle Section, Y=41-50)

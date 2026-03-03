@@ -47,9 +47,9 @@ The Standard Target Window displays your current target's information with integ
 ```text
 TargetWindow (260×50)
 ├── Player Stats (Top Row, Y=0-15)
-│   ├── TW_HPPlayerLabel ("HP" label)
+│   ├── TW_PlayerHPPlayerLabel ("HP" label)
 │   ├── TW_PlayerHPvalue (Current/Max HP, EQType 70)
-│   ├── TW_manalabel ("MANA" label)
+│   ├── TW_PlayerManalabel ("MANA" label)
 │   └── TW_Player_Mana_P (Current/Max Mana, EQType 80)
 ├── Target HP Gauge (Y=1-40, EQType 6)
 │   ├── Oval bar background (ovalbar.tga)
@@ -79,9 +79,9 @@ TargetWindow (260×50)
 
 | Element | Type | EQType | Position | Notes |
 |---------|------|--------|----------|-------|
-| TW_HPPlayerLabel | Label | - | X=4, Y=0 | "HP" text label |
+| TW_PlayerHPPlayerLabel | Label | - | X=4, Y=0 | "HP" text label |
 | TW_PlayerHPvalue | Label | 70 | X=30, Y=0 | Current/Max HP (e.g., "1500/1500") |
-| TW_manalabel | Label | - | X=115, Y=0 | "MANA" text label (uppercase) |
+| TW_PlayerManalabel | Label | - | X=115, Y=0 | "MANA" text label (uppercase) |
 | TW_Player_Mana_P | Label | 80 | X=155, Y=0 | Current/Max Mana values |
 
 ### Target Information

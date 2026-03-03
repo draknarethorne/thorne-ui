@@ -50,12 +50,12 @@ Enhanced Target Window featuring **player HP and Mana gauges** displayed above y
 ```text
 TargetWindow (260×70)
 ├── Player Stats Row 1 (Y=0-15) - Percentages and Values
-│   ├── TW_HPPlayerLabel (HP %, EQType 19)
-│   ├── TW_HP_PctSign ("%" symbol, Font 2)
+│   ├── TW_PlayerHPPlayerLabel (HP %, EQType 19)
+│   ├── TW_PlayerHP_PctSign ("%" symbol, Font 2)
 │   ├── TW_PlayerHPvalue (Current/Max HP, EQType 70)
 │   ├── TW_Player_Mana_P (Current/Max Mana, EQType 80)
-│   ├── TW_manalabel (Mana %, EQType 20)
-│   └── TW_Mana_PctSign ("%" symbol, Font 2)
+│   ├── TW_PlayerManalabel (Mana %, EQType 20)
+│   └── TW_PlayerMana_PctSign ("%" symbol, Font 2)
 ├── Player Gauges Row (Y=16-31) - Visual Health/Mana Bars
 │   ├── TW_PlayerHP_Gauge (HP bar, 122×15px, EQType 1)
 │   └── TW_PlayerMana_Gauge (Mana bar, 122×15px, EQType 2)
@@ -88,12 +88,12 @@ TargetWindow (260×70)
 
 | Element | Type | EQType | Position (X,Y) | Size (W×H) | Alignment | Notes |
 |---------|------|--------|----------------|------------|-----------|-------|
-| TW_HPPlayerLabel | Label | 19 | -1, 0 | 25×15 | Right | HP percentage value |
-| TW_HP_PctSign | Label | - | 24, 0 | 16×15 | - | "%" symbol (Font 2) |
+| TW_PlayerHPPlayerLabel | Label | 19 | -1, 0 | 25×15 | Right | HP percentage value |
+| TW_PlayerHP_PctSign | Label | - | 24, 0 | 16×15 | - | "%" symbol (Font 2) |
 | TW_PlayerHPvalue | Label | 70 | 42, 0 | 81×15 | Center | Current/Max HP (e.g., "1500/1500") |
 | TW_Player_Mana_P | Label | 80 | 132, 0 | 81×15 | Center | Current/Max Mana values |
-| TW_manalabel | Label | 20 | 214, 0 | 25×15 | Right | Mana percentage value |
-| TW_Mana_PctSign | Label | - | 239, 0 | 16×15 | - | "%" symbol (Font 2) |
+| TW_PlayerManalabel | Label | 20 | 214, 0 | 25×15 | Right | Mana percentage value |
+| TW_PlayerMana_PctSign | Label | - | 239, 0 | 16×15 | - | "%" symbol (Font 2) |
 
 **Layout Notes**:
 - HP % positioned at far left (X=-1 to X=24)
@@ -190,10 +190,10 @@ TargetWindow (260×70)
 5. **TW_Player_Mana_P** - Front layer (mana values text)
 6. **Target_HPLabel** - Front layer (target HP %)
 7. **TW_PlayerHPvalue** - Front layer (HP values text)
-8. **TW_manalabel** - Front layer (mana % text)
-9. **TW_Mana_PctSign** - Front layer (mana % symbol)
-10. **TW_HPPlayerLabel** - Front layer (HP % text)
-11. **TW_HP_PctSign** - Front layer (HP % symbol)
+8. **TW_PlayerManalabel** - Front layer (mana % text)
+9. **TW_PlayerMana_PctSign** - Front layer (mana % symbol)
+10. **TW_PlayerHPPlayerLabel** - Front layer (HP % text)
+11. **TW_PlayerHP_PctSign** - Front layer (HP % symbol)
 12. **A_TargetBoxStaticAnim** - Top layer (decorative frame)
 13. **necessary** - Utility element
 

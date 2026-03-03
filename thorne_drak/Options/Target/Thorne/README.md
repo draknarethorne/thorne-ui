@@ -65,11 +65,11 @@ The Target Window displays information about the currently selected combat targe
 
 | Element | ScreenID | EQType | Position | Size | Purpose |
 |---------|----------|--------|----------|------|---------|
-| Player HP % | TW_HP_Pct | 19 | (-1, 0) | 25×15px | HP percentage (right-aligned) |
-| Player HP % Sign | TW_HP_PctSign | — | (24, 0) | 16×15px | % symbol separator |
-| Player HP Values | TW_HP_Values | 70 | (36, 0) | 81×15px | Current/Max HP display |
-| Player Mana % | TW_Mana_Pct | 20 | (216, 0) | 25×15px | Mana percentage (right-aligned) |
-| Player Mana % Sign | TW_Mana_PctSign | — | (241, 0) | 16×15px | % symbol separator |
+| Player HP % | TW_PlayerHP_Pct | 19 | (-1, 0) | 25×15px | HP percentage (right-aligned) |
+| Player HP % Sign | TW_PlayerHP_PctSign | — | (24, 0) | 16×15px | % symbol separator |
+| Player HP Values | TW_PlayerHP_Values | 70 | (36, 0) | 81×15px | Current/Max HP display |
+| Player Mana % | TW_PlayerMana_Pct | 20 | (216, 0) | 25×15px | Mana percentage (right-aligned) |
+| Player Mana % Sign | TW_PlayerMana_PctSign | — | (241, 0) | 16×15px | % symbol separator |
 
 ### Gauge Row 1 (Player Metrics - Y=16px)
 

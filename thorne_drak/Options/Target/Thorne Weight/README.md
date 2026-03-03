@@ -49,13 +49,13 @@ The "Player Gauges and Weight" Target Window variant displays your current targe
 ```text
 TargetWindow (260×70)
 ├── Player Stats Row (Y=0, spans full width)
-│   ├── TW_HP_Pct (HP %, EQType 19)
-│   ├── TW_HP_PctSign (%)
+│   ├── TW_PlayerHP_Pct (HP %, EQType 19)
+│   ├── TW_PlayerHP_PctSign (%)
 │   ├── TW_Weight_Current (Current weight, EQType 24) - EXPERIMENTAL
 │   ├── TW_Weight_Divider (/)
 │   ├── TW_Weight_Max (Max weight, EQType 25) - EXPERIMENTAL
-│   ├── TW_Mana_Pct (Mana %, EQType 20)
-│   └── TW_Mana_PctSign (%)
+│   ├── TW_PlayerMana_Pct (Mana %, EQType 20)
+│   └── TW_PlayerMana_PctSign (%)
 ├── Player HP Gauge (Y=16, 122×15px)
 ├── Player Mana Gauge (Y=16, 122×15px)
 ├── Target HP Gauge (Y=31, centered)
@@ -67,11 +67,11 @@ TargetWindow (260×70)
 
 | Element | Position | Size | Type | Purpose |
 |---------|----------|------|------|---------|
-| TW_HP_Pct | (42, 0) | 81×15 | Value+% | Player HP display |
+| TW_PlayerHP_Pct | (42, 0) | 81×15 | Value+% | Player HP display |
 | TW_Weight_Current | (99, 12) | 25×11 | Value | Current weight (EXPERIMENTAL) |
 | TW_Weight_Divider | (123, 12) | 7×11 | Text | Weight separator (EXPERIMENTAL) |
 | TW_Weight_Max | (129, 12) | 25×11 | Value | Max weight (EXPERIMENTAL) |
-| TW_Mana_Pct | (134, 0) | 81×15 | Value+% | Player Mana display |
+| TW_PlayerMana_Pct | (134, 0) | 81×15 | Value+% | Player Mana display |
 | TW_PlayerHP_Gauge | (4, 16) | 122×15 | Gauge | HP bar (EQType 1, RGB 255,0,0) |
 | TW_PlayerMana_Gauge | (148, 16) | 122×15 | Gauge | Mana bar (EQType 2, RGB 30,30,255) |
 | Target_HP | Centered | Auto | Gauge | Target HP (EQType 6) |

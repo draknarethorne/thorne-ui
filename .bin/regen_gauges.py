@@ -21,7 +21,7 @@ Wide gauge sections (120px wide, 8px tall each, 2x horizontal scale):
   Y=24-31: LinesFill
 """
 
-from PIL import Image
+from PIL import Image, ImageOps
 from pathlib import Path
 import sys
 import json
@@ -40,13 +40,19 @@ TALL_WIDTHS = [120, 150, 230, 240, 250, 260]  # Base is 120 (from standard), oth
 class GaugeGenerator:
     """Manages gauge generation with stats tracking."""
     
-    def __init__(self, variant_dir):
+    def __init__(self, variant_dir, black_mask_thin=1, debug=False, black_threshold=0):
         """Initialize generator for a gauge variant.
         
         Args:
             variant_dir: Path to variant directory (e.g., thorne_drak/Options/Gauges/Thorne)
+            black_mask_thin: Number of thinning passes for stretched black mask
+            debug: If True, emit per-output debug visualization TGAs
+            black_threshold: Max RGB value considered black (0=exact black only)
         """
         self.variant_dir = Path(variant_dir)
+        self.black_mask_thin = max(0, int(black_mask_thin))
+        self.debug = bool(debug)
+        self.black_threshold = max(0, min(255, int(black_threshold)))
         self.stats = {
             "variant": self.variant_dir.name,
             "variant_path": str(self.variant_dir),
@@ -165,11 +171,25 @@ class GaugeGenerator:
         lines = std.crop((0, 16, std_width, 24))
         linesfill = std.crop((0, 24, std_width, 32))
         
+        debug_sections = [] if self.debug else None
+
         # Scale each section horizontally
-        bg_wide = self._scale_horizontal_with_borders(bg, width)
-        fill_wide = self._scale_horizontal_with_borders(fill, width, interp_method="BILINEAR")
-        lines_wide = self._scale_horizontal_with_borders(lines, width, interp_method="NEAREST")
-        linesfill_wide = self._scale_horizontal_with_borders(linesfill, width, interp_method="NEAREST")
+        bg_wide = self._scale_horizontal_with_borders(
+            bg, width, interp_method="BILINEAR", preserve_black=True,
+            debug_bucket=debug_sections, debug_label="background"
+        )
+        fill_wide = self._scale_horizontal_with_borders(
+            fill, width, interp_method="BILINEAR",
+            debug_bucket=debug_sections, debug_label="fill"
+        )
+        lines_wide = self._scale_horizontal_with_borders(
+            lines, width, interp_method="BILINEAR", preserve_black=True,
+            debug_bucket=debug_sections, debug_label="lines"
+        )
+        linesfill_wide = self._scale_horizontal_with_borders(
+            linesfill, width, interp_method="BILINEAR",
+            debug_bucket=debug_sections, debug_label="linesfill"
+        )
         
         # Create new image
         result = Image.new('RGBA', (width, 32), (0, 0, 0, 0))
@@ -181,6 +201,8 @@ class GaugeGenerator:
         # Save
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
+        if self.debug and debug_sections:
+            self._write_debug_canvas(output_file, debug_sections)
         self.stats["generated"]["wide"].append(output_filename)
         return True
     
@@ -214,11 +236,25 @@ class GaugeGenerator:
         lines = std.crop((0, 16, std_width, 24))
         linesfill = std.crop((0, 24, std_width, 32))
         
+        debug_sections = [] if self.debug else None
+
         # Scale each section vertically (8px → 16px)
-        bg_tall = self._scale_with_borders(bg, std_width)
-        fill_tall = self._scale_with_borders(fill, std_width, interp_method="BILINEAR")
-        lines_tall = self._scale_with_borders(lines, std_width, interp_method="NEAREST")
-        linesfill_tall = self._scale_with_borders(linesfill, std_width, interp_method="NEAREST")
+        bg_tall = self._scale_with_borders(
+            bg, std_width, interp_method="BILINEAR", preserve_black=True,
+            debug_bucket=debug_sections, debug_label="background"
+        )
+        fill_tall = self._scale_with_borders(
+            fill, std_width, interp_method="BILINEAR",
+            debug_bucket=debug_sections, debug_label="fill"
+        )
+        lines_tall = self._scale_with_borders(
+            lines, std_width, interp_method="BILINEAR", preserve_black=True,
+            debug_bucket=debug_sections, debug_label="lines"
+        )
+        linesfill_tall = self._scale_with_borders(
+            linesfill, std_width, interp_method="BILINEAR",
+            debug_bucket=debug_sections, debug_label="linesfill"
+        )
         
         # Create new image (120×64)
         result = Image.new('RGBA', (std_width, 64), (0, 0, 0, 0))
@@ -230,6 +266,8 @@ class GaugeGenerator:
         # Save
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
+        if self.debug and debug_sections:
+            self._write_debug_canvas(output_file, debug_sections)
         self.stats["generated"]["tall"].append(output_filename)
         return True
     
@@ -268,11 +306,25 @@ class GaugeGenerator:
         lines = tall.crop((0, 32, tall_width, 48))
         linesfill = tall.crop((0, 48, tall_width, 64))
         
+        debug_sections = [] if self.debug else None
+
         # Scale each section horizontally
-        bg_scaled = self._scale_horizontal_with_borders(bg, width)
-        fill_scaled = self._scale_horizontal_with_borders(fill, width, interp_method="BILINEAR")
-        lines_scaled = self._scale_horizontal_with_borders(lines, width, interp_method="NEAREST")
-        linesfill_scaled = self._scale_horizontal_with_borders(linesfill, width, interp_method="NEAREST")
+        bg_scaled = self._scale_horizontal_with_borders(
+            bg, width, interp_method="BILINEAR", preserve_black=True,
+            debug_bucket=debug_sections, debug_label="background"
+        )
+        fill_scaled = self._scale_horizontal_with_borders(
+            fill, width, interp_method="BILINEAR",
+            debug_bucket=debug_sections, debug_label="fill"
+        )
+        lines_scaled = self._scale_horizontal_with_borders(
+            lines, width, interp_method="BILINEAR", preserve_black=True,
+            debug_bucket=debug_sections, debug_label="lines"
+        )
+        linesfill_scaled = self._scale_horizontal_with_borders(
+            linesfill, width, interp_method="BILINEAR",
+            debug_bucket=debug_sections, debug_label="linesfill"
+        )
         
         # Create new image at target dimensions
         result = Image.new('RGBA', (width, 64), (0, 0, 0, 0))
@@ -284,16 +336,19 @@ class GaugeGenerator:
         # Save
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
+        if self.debug and debug_sections:
+            self._write_debug_canvas(output_file, debug_sections)
         self.stats["generated"]["tall"].append(output_filename)
         return True
     
-    def _scale_with_borders(self, section, width, interp_method="BILINEAR"):
+    def _scale_with_borders(self, section, width, interp_method="BILINEAR", preserve_black=False, debug_bucket=None, debug_label=None):
         """Scale 8px section to 16px preserving 1px top/bottom borders.
         
         Args:
             section: Image section to scale
             width: Width to preserve (no horizontal scaling)
             interp_method: Interpolation for middle section
+            preserve_black: If True, remap pure-black source pixels onto scaled output
         
         Returns:
             Scaled image (width×16)
@@ -312,7 +367,18 @@ class GaugeGenerator:
             interp = Image.Resampling.BILINEAR
         
         # Scale middle vertically (6px → 14px)
-        middle_scaled = middle.resize((width, 14), interp)
+        middle_color = None
+        section_black_mask = None
+
+        if preserve_black:
+            # Two-layer pipeline:
+            # 1) Remove black from blend input to prevent dark bleed/halos
+            # 2) Scale color layer smoothly
+            # 3) Re-apply black mask as a final pass on the whole section
+            middle_color = self._build_color_layer_without_black(middle)
+            middle_scaled = middle_color.resize((width, 14), interp)
+        else:
+            middle_scaled = middle.resize((width, 14), interp)
         
         # Keep borders crisp
         top_scaled = top.resize((width, 1), Image.Resampling.NEAREST)
@@ -323,16 +389,35 @@ class GaugeGenerator:
         result.paste(top_scaled, (0, 0))
         result.paste(middle_scaled, (0, 1))
         result.paste(bottom_scaled, (0, 15))
+
+        if preserve_black:
+            # Final-pass black overlay on full section so borders and inline strokes are
+            # applied once, as solid black, after all stretching/compositing.
+            section_black_mask = self._scale_black_mask_vertical(section, 16, thin_passes=self.black_mask_thin)
+            result = self._apply_black_mask_overlay(result, section_black_mask)
+
+        if debug_bucket is not None:
+            debug_bucket.append({
+                "label": debug_label or "section",
+                "stages": [
+                    ("source", section.copy()),
+                    ("color_no_black", (middle_color if middle_color is not None else middle).copy()),
+                    ("scaled_middle", middle_scaled.copy()),
+                    ("black_mask", section_black_mask.copy() if section_black_mask is not None else Image.new('L', result.size, 0)),
+                    ("final", result.copy()),
+                ]
+            })
         
         return result
     
-    def _scale_horizontal_with_borders(self, section, target_width, interp_method="BILINEAR"):
+    def _scale_horizontal_with_borders(self, section, target_width, interp_method="BILINEAR", preserve_black=False, debug_bucket=None, debug_label=None):
         """Scale section horizontally to target width, preserving 1px left/right borders.
         
         Args:
             section: Image section to scale
             target_width: Target width in pixels
             interp_method: Interpolation for middle section
+            preserve_black: If True, remap pure-black source pixels onto scaled output
         
         Returns:
             Scaled image (target_width×height)
@@ -353,7 +438,18 @@ class GaugeGenerator:
             interp = Image.Resampling.BILINEAR
         
         # Scale middle to (target_width - 2)
-        middle_scaled = middle.resize((target_width-2, height), interp)
+        middle_color = None
+        section_black_mask = None
+
+        if preserve_black:
+            # Two-layer pipeline:
+            # 1) Remove black from blend input to prevent dark bleed/halos
+            # 2) Scale color layer smoothly
+            # 3) Re-apply black mask as a final pass on the whole section
+            middle_color = self._build_color_layer_without_black(middle)
+            middle_scaled = middle_color.resize((target_width-2, height), interp)
+        else:
+            middle_scaled = middle.resize((target_width-2, height), interp)
         
         # Keep borders crisp
         left_scaled = left.resize((1, height), Image.Resampling.NEAREST)
@@ -364,8 +460,388 @@ class GaugeGenerator:
         result.paste(left_scaled, (0, 0))
         result.paste(middle_scaled, (1, 0))
         result.paste(right_scaled, (target_width-1, 0))
+
+        if preserve_black:
+            # Final-pass black overlay on full section so borders and inline strokes are
+            # applied once, as solid black, after all stretching/compositing.
+            section_black_mask = self._scale_black_mask_horizontal(section, target_width, thin_passes=self.black_mask_thin)
+            result = self._apply_black_mask_overlay(result, section_black_mask)
+
+        if debug_bucket is not None:
+            debug_bucket.append({
+                "label": debug_label or "section",
+                "stages": [
+                    ("source", section.copy()),
+                    ("color_no_black", (middle_color if middle_color is not None else middle).copy()),
+                    ("scaled_middle", middle_scaled.copy()),
+                    ("black_mask", section_black_mask.copy() if section_black_mask is not None else Image.new('L', result.size, 0)),
+                    ("final", result.copy()),
+                ]
+            })
         
         return result
+
+    def _is_pure_black(self, pixel, threshold=None):
+        """Return True if RGBA pixel is effectively solid black with visible alpha."""
+        if threshold is None:
+            threshold = self.black_threshold
+        r, g, b, a = pixel
+        return a > 0 and r <= threshold and g <= threshold and b <= threshold
+
+    def _build_color_layer_without_black(self, source, threshold=None):
+        """Create a color-only layer by replacing pure-black pixels with nearby non-black color.
+
+        This prevents pure black pixels from entering interpolation kernels, which is the
+        primary source of black bleed into adjacent gray during bilinear scaling.
+        """
+        if threshold is None:
+            threshold = self.black_threshold
+
+        result = source.copy()
+        src_px = source.load()
+        out_px = result.load()
+        width, height = source.size
+
+        for y in range(height):
+            for x in range(width):
+                p = src_px[x, y]
+                if self._is_pure_black(p, threshold=threshold):
+                    replacement = self._find_nearest_non_black_pixel(src_px, width, height, x, y, threshold)
+                    if replacement is None:
+                        # Fallback: make it fully transparent instead of black so it cannot darken blend.
+                        out_px[x, y] = (0, 0, 0, 0)
+                    else:
+                        out_px[x, y] = replacement
+
+        return result
+
+    def _find_nearest_non_black_pixel(self, pixels, width, height, x, y, threshold=None):
+        """Find nearest non-black pixel using expanding-radius search."""
+        if threshold is None:
+            threshold = self.black_threshold
+
+        max_radius = max(width, height)
+
+        for radius in range(1, max_radius + 1):
+            x_min = max(0, x - radius)
+            x_max = min(width - 1, x + radius)
+            y_min = max(0, y - radius)
+            y_max = min(height - 1, y + radius)
+
+            # Top and bottom edges of current ring
+            for xx in range(x_min, x_max + 1):
+                p_top = pixels[xx, y_min]
+                if not self._is_pure_black(p_top, threshold=threshold):
+                    return p_top
+
+                p_bottom = pixels[xx, y_max]
+                if not self._is_pure_black(p_bottom, threshold=threshold):
+                    return p_bottom
+
+            # Left and right edges of current ring (excluding corners already checked)
+            for yy in range(y_min + 1, y_max):
+                p_left = pixels[x_min, yy]
+                if not self._is_pure_black(p_left, threshold=threshold):
+                    return p_left
+
+                p_right = pixels[x_max, yy]
+                if not self._is_pure_black(p_right, threshold=threshold):
+                    return p_right
+
+        return None
+
+    def _build_black_mask(self, source, threshold=None):
+        """Build an L-mode binary mask for pure-black pixels (0 or 255)."""
+        if threshold is None:
+            threshold = self.black_threshold
+
+        width, height = source.size
+        mask = Image.new('L', (width, height), 0)
+        src_px = source.load()
+        m_px = mask.load()
+
+        for y in range(height):
+            for x in range(width):
+                if self._is_pure_black(src_px[x, y], threshold=threshold):
+                    m_px[x, y] = 255
+
+        return mask
+
+    def _scale_black_mask_horizontal(self, source, target_width, threshold=None, thin_passes=0):
+        """Scale black mask horizontally with NEAREST to preserve hard black strokes."""
+        if threshold is None:
+            threshold = self.black_threshold
+
+        src_w, src_h = source.size
+        source_mask = self._build_black_mask(source, threshold=threshold)
+        scaled = source_mask.resize((target_width, src_h), Image.Resampling.NEAREST)
+        if thin_passes > 0:
+            scaled = self._enforce_single_pixel_runs_x(source_mask, scaled)
+        return scaled
+
+    def _scale_black_mask_vertical(self, source, target_height, threshold=None, thin_passes=0):
+        """Scale black mask vertically with NEAREST to preserve hard black strokes."""
+        if threshold is None:
+            threshold = self.black_threshold
+
+        src_w, src_h = source.size
+        source_mask = self._build_black_mask(source, threshold=threshold)
+        scaled = source_mask.resize((src_w, target_height), Image.Resampling.NEAREST)
+        if thin_passes > 0:
+            scaled = self._enforce_single_pixel_runs_y(source_mask, scaled)
+        return scaled
+
+    def _enforce_single_pixel_runs_x(self, source_mask, scaled_mask):
+        """For source 1px horizontal runs, collapse stretched runs back to 1px.
+
+        Multi-pixel authored borders/ticks are preserved (not trimmed).
+        """
+        src_w, src_h = source_mask.size
+        dst_w, dst_h = scaled_mask.size
+        if src_h != dst_h:
+            return scaled_mask
+
+        src_px = source_mask.load()
+        out = scaled_mask.copy()
+        out_px = out.load()
+
+        scale = dst_w / src_w if src_w > 0 else 1.0
+
+        for y in range(src_h):
+            x = 0
+            while x < src_w:
+                if src_px[x, y] > 0:
+                    start = x
+                    while x < src_w and src_px[x, y] > 0:
+                        x += 1
+                    end = x - 1
+                    run_len = end - start + 1
+
+                    if run_len == 1:
+                        sx = start
+                        left = int((sx) * scale)
+                        right = int((sx + 1) * scale) - 1
+                        left = max(0, min(dst_w - 1, left))
+                        right = max(left, min(dst_w - 1, right))
+
+                        for xx in range(left, right + 1):
+                            out_px[xx, y] = 0
+                        center = (left + right) // 2
+                        out_px[center, y] = 255
+                else:
+                    x += 1
+
+        return out
+
+    def _enforce_single_pixel_runs_y(self, source_mask, scaled_mask):
+        """For source 1px vertical runs, collapse stretched runs back to 1px.
+
+        Multi-pixel authored borders/ticks are preserved (not trimmed).
+        """
+        src_w, src_h = source_mask.size
+        dst_w, dst_h = scaled_mask.size
+        if src_w != dst_w:
+            return scaled_mask
+
+        src_px = source_mask.load()
+        out = scaled_mask.copy()
+        out_px = out.load()
+
+        scale = dst_h / src_h if src_h > 0 else 1.0
+
+        for x in range(src_w):
+            y = 0
+            while y < src_h:
+                if src_px[x, y] > 0:
+                    start = y
+                    while y < src_h and src_px[x, y] > 0:
+                        y += 1
+                    end = y - 1
+                    run_len = end - start + 1
+
+                    if run_len == 1:
+                        sy = start
+                        top = int((sy) * scale)
+                        bottom = int((sy + 1) * scale) - 1
+                        top = max(0, min(dst_h - 1, top))
+                        bottom = max(top, min(dst_h - 1, bottom))
+
+                        for yy in range(top, bottom + 1):
+                            out_px[x, yy] = 0
+                        center = (top + bottom) // 2
+                        out_px[x, center] = 255
+                else:
+                    y += 1
+
+        return out
+
+    def _thin_mask_along_x(self, mask, passes=1, run_limit=6):
+        """Thin short contiguous horizontal black runs to a single pixel per run.
+
+        Long runs (e.g., full-width horizontal borders) are preserved to avoid erasing
+        legitimate black lines.
+        """
+        passes = max(0, int(passes))
+        run_limit = max(1, int(run_limit))
+        result = mask
+
+        for _ in range(passes):
+            src = result
+            width, height = src.size
+            src_px = src.load()
+            dst = Image.new('L', (width, height), 0)
+            dst_px = dst.load()
+
+            for y in range(height):
+                x = 0
+                while x < width:
+                    if src_px[x, y] > 0:
+                        start = x
+                        while x < width and src_px[x, y] > 0:
+                            x += 1
+                        end = x - 1
+                        run_len = end - start + 1
+
+                        if run_len <= run_limit:
+                            # Collapse only short artifact runs to 1px.
+                            center = (start + end) // 2
+                            dst_px[center, y] = 255
+                        else:
+                            # Preserve long intentional runs (e.g. horizontal borders).
+                            for xx in range(start, end + 1):
+                                dst_px[xx, y] = 255
+                    else:
+                        x += 1
+
+            result = dst
+
+        return result
+
+    def _thin_mask_along_y(self, mask, passes=1, run_limit=6):
+        """Thin short contiguous vertical black runs to a single pixel per run.
+
+        Long runs (e.g., full-height vertical borders) are preserved to avoid erasing
+        legitimate black lines.
+        """
+        passes = max(0, int(passes))
+        run_limit = max(1, int(run_limit))
+        result = mask
+
+        for _ in range(passes):
+            src = result
+            width, height = src.size
+            src_px = src.load()
+            dst = Image.new('L', (width, height), 0)
+            dst_px = dst.load()
+
+            for x in range(width):
+                y = 0
+                while y < height:
+                    if src_px[x, y] > 0:
+                        start = y
+                        while y < height and src_px[x, y] > 0:
+                            y += 1
+                        end = y - 1
+                        run_len = end - start + 1
+
+                        if run_len <= run_limit:
+                            # Collapse only short artifact runs to 1px.
+                            center = (start + end) // 2
+                            dst_px[x, center] = 255
+                        else:
+                            # Preserve long intentional runs (e.g. vertical borders).
+                            for yy in range(start, end + 1):
+                                dst_px[x, yy] = 255
+                    else:
+                        y += 1
+
+            result = dst
+
+        return result
+
+    def _apply_black_mask_overlay(self, target, black_mask):
+        """Overlay pure opaque black onto target wherever black_mask is set."""
+        tw, th = target.size
+        mw, mh = black_mask.size
+        if tw != mw or th != mh:
+            return target
+
+        t_px = target.load()
+        m_px = black_mask.load()
+
+        for y in range(th):
+            for x in range(tw):
+                if m_px[x, y] > 0:
+                    t_px[x, y] = (0, 0, 0, 255)
+
+        return target
+
+    def _render_debug_stage(self, image, cell_w, cell_h):
+        """Render a stage image into a debug cell with predictable sizing."""
+        if image.mode == 'L':
+            # Visualize mask as white background + black pixels
+            vis = Image.new('RGBA', image.size, (255, 255, 255, 255))
+            m_px = image.load()
+            v_px = vis.load()
+            w, h = image.size
+            for y in range(h):
+                for x in range(w):
+                    if m_px[x, y] > 0:
+                        v_px[x, y] = (0, 0, 0, 255)
+        else:
+            vis = image.convert('RGBA')
+
+        thumb = ImageOps.contain(vis, (cell_w, cell_h), Image.Resampling.NEAREST)
+        cell = Image.new('RGBA', (cell_w, cell_h), (30, 30, 30, 255))
+        ox = (cell_w - thumb.size[0]) // 2
+        oy = (cell_h - thumb.size[1]) // 2
+        cell.paste(thumb, (ox, oy), thumb)
+        return cell
+
+    def _write_debug_canvas(self, output_file, debug_sections):
+        """Write a compact 255x255 stacked debug TGA for one generated output file.
+
+        Each section row overlays all stages with small offsets, reducing whitespace and
+        making step progression easier to see in a single glance.
+        """
+        canvas = Image.new('RGBA', (255, 255), (18, 18, 18, 255))
+
+        margin = 4
+        rows = 4
+        row_gap = 2
+        row_h = 60
+        stack_w = 247
+        stack_h = 58
+        offset_step_x = 10
+        offset_step_y = 1
+
+        for row, section in enumerate(debug_sections[:rows]):
+            y0 = margin + row * (row_h + row_gap)
+            row_bg = Image.new('RGBA', (stack_w, stack_h), (28, 28, 28, 255))
+
+            stages = section.get("stages", [])[:5]
+            for idx, (_, stage_img) in enumerate(stages):
+                cell = self._render_debug_stage(stage_img, 200, 56)
+
+                # Stack with slight offset so stage progression is visible.
+                x = 2 + idx * offset_step_x
+                y = 1 + idx * offset_step_y
+
+                # Fade earlier stages slightly; keep later stages stronger.
+                alpha = min(255, 110 + idx * 35)
+                layer = cell.copy()
+                a = layer.split()[3]
+                a = a.point(lambda v: int(v * alpha / 255))
+                layer.putalpha(a)
+
+                row_bg.alpha_composite(layer, (x, y))
+
+            canvas.paste(row_bg, (margin, y0))
+
+        debug_name = f"{output_file.stem}_debug.tga"
+        debug_file = output_file.with_name(debug_name)
+        canvas.save(str(debug_file), format='TGA')
+        print(f"    Debug: {debug_name}")
     
     def save_stats(self):
         """Save generation statistics to JSON file."""
@@ -440,6 +916,26 @@ SIZE CONFIGURATION:
         help="(Consistency flag - not used, for compatibility)"
     )
 
+    parser.add_argument(
+        "--black-mask-thin",
+        type=int,
+        default=0,
+        help="Single-pixel run collapse passes after NEAREST stretch (default: 0; preserves authored multi-pixel borders)"
+    )
+
+    parser.add_argument(
+        "--black-threshold",
+        type=int,
+        default=0,
+        help="Max RGB value treated as black for mask extraction (default: 0 exact black)"
+    )
+
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Emit *_debug.tga 255x255 stacked stage visualizations"
+    )
+
     args = parser.parse_args()
 
     # If no arguments provided, show usage
@@ -454,6 +950,31 @@ SIZE CONFIGURATION:
     
     base_path = Path(__file__).parent.parent / 'thorne_drak' / 'Options' / 'Gauges'
     root_path = Path(__file__).parent.parent / 'thorne_drak'
+
+    def cleanup_debug_files(paths):
+        removed = 0
+        for path in paths:
+            if not path.exists():
+                continue
+            for file in path.glob('*_debug.tga'):
+                try:
+                    file.unlink()
+                    removed += 1
+                except Exception:
+                    pass
+        return removed
+
+    # If debug mode is off, proactively remove stale debug artifacts.
+    if not args.debug:
+        thorne_dev_path = Path('C:\\TAKP\\uifiles\\thorne_dev')
+        cleanup_targets = []
+        if base_path.exists():
+            cleanup_targets.extend([d for d in base_path.iterdir() if d.is_dir()])
+        cleanup_targets.append(root_path)
+        cleanup_targets.append(thorne_dev_path)
+        removed_count = cleanup_debug_files(cleanup_targets)
+        if removed_count > 0:
+            print(f"Removed {removed_count} stale *_debug.tga file(s)\n")
     
     # Determine which variants to process
     if args.all:
@@ -485,7 +1006,12 @@ SIZE CONFIGURATION:
         
         if variant_path.exists():
             print(f"Processing {variant}...")
-            generator = GaugeGenerator(variant_path)
+            generator = GaugeGenerator(
+                variant_path,
+                black_mask_thin=args.black_mask_thin,
+                debug=args.debug,
+                black_threshold=args.black_threshold,
+            )
             
             # Generate base tall gauge
             if generator.generate_tall_gauge():
@@ -532,12 +1058,11 @@ SIZE CONFIGURATION:
             base_name = generator.extract_base_name()
             if not base_name:
                 continue
-            
-            # Copy all generated files
-            files_to_copy = (
-                generator.stats["generated"]["wide"] +
-                generator.stats["generated"]["tall"]
-            )
+
+            # Copy full gauge asset set from selected variant directory.
+            # This includes generated sizes AND the base source gauge file
+            # (e.g., gauge_inlay_thorne01.tga), which is needed by standard gauges.
+            files_to_copy = sorted([f.name for f in variant_path.glob('gauge*.tga') if not f.name.endswith('_debug.tga')])
             
             for filename in files_to_copy:
                 src = variant_path / filename
@@ -558,12 +1083,9 @@ SIZE CONFIGURATION:
                 base_name = generator.extract_base_name()
                 if not base_name:
                     continue
-                
-                # Deploy from root_path (where we just copied to)
-                files_to_deploy = (
-                    generator.stats["generated"]["wide"] +
-                    generator.stats["generated"]["tall"]
-                )
+
+                # Deploy full gauge asset set from root_path (already copied above).
+                files_to_deploy = sorted([f.name for f in variant_path.glob('gauge*.tga') if not f.name.endswith('_debug.tga')])
                 
                 for filename in files_to_deploy:
                     src = root_path / filename

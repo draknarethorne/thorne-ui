@@ -306,7 +306,7 @@
     <Text>Give</Text>
     <Style_Transparent>false</Style_Transparent>
     <!--<TooltipReference/>-->
-    <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+    <DrawTemplate>WDT_RoundedDarkNoTitle</DrawTemplate>
     <Style_Titlebar>false</Style_Titlebar>
     <Style_Closebox>false</Style_Closebox>
     <Style_Minimizebox>false</Style_Minimizebox>

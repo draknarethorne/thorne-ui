@@ -964,7 +964,7 @@
                 <Style_HScroll>false</Style_HScroll>
                 <Style_Transparent>false</Style_Transparent>
                 <Style_Border>true</Style_Border>
-				<DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+				<DrawTemplate>WDT_RoundedDarkNoTitle</DrawTemplate>
                 <Style_Titlebar>false</Style_Titlebar>
                 <Style_Closebox>true</Style_Closebox>
 				<Pieces>ADOW_CardFeaturesLabel</Pieces>
@@ -994,4 +994,3 @@
 				<Pieces>ADOW_OnZoningLabel</Pieces>
         </Screen>
 </XML>
-

@@ -4,8 +4,8 @@
 
 This directory contains variants for the Inventory window (EQUI_Inventory.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-03  
+**Git Commit:** 277c46d
 
 ---
 
@@ -18,6 +18,9 @@ This directory contains variants for the Inventory window (EQUI_Inventory.xml).
   `EQUI_Inventory.xml`
 
 - **[Thorne Bags Row/](Thorne Bags Row/)**    
+  `EQUI_Inventory.xml`
+
+- **[Thorne Classic/](Thorne Classic/)**    
   `EQUI_Inventory.xml`
 
 - **[Thorne Fading/](Thorne Fading/)**    

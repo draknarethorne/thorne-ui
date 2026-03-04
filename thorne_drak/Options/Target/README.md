@@ -5,7 +5,7 @@
 This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 
 **Last Synced:** 2026-03-03  
-**Git Commit:** 533a280
+**Git Commit:** 277c46d
 
 ---
 
@@ -14,16 +14,19 @@ This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 - **[Standard/](Standard/)**  📄
   `EQUI_TargetWindow.xml`
 
-- **[Thorne/](Thorne/)**  📄
+- **[Thorne/](Thorne/)**    
   `EQUI_TargetWindow.xml`
 
-- **[Thorne Classic/](Thorne Classic/)**  📄
+- **[Thorne Oval/](Thorne Oval/)**  📄
   `EQUI_TargetWindow.xml`
 
-- **[Thorne Pet/](Thorne Pet/)**  📄
+- **[Thorne Oval Basic/](Thorne Oval Basic/)**  📄
   `EQUI_TargetWindow.xml`
 
-- **[Thorne Weight/](Thorne Weight/)**  📄
+- **[Thorne Oval Pet/](Thorne Oval Pet/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Oval Weight/](Thorne Oval Weight/)**  📄
   `EQUI_TargetWindow.xml`
 
 ---
@@ -32,7 +35,7 @@ This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Target\Thorne Weight\EQUI_TargetWindow.xml`
+- `C:\Thorne-UI\thorne_drak\Options\Target\Thorne Oval Weight\EQUI_TargetWindow.xml`
 
 ## Metadata
 

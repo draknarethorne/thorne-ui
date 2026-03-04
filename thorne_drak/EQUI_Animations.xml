@@ -180,6 +180,13 @@
     </Size>
   </TextureInfo>
 
+  <TextureInfo item="item_slots_thorne01.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+
   <TextureInfo item="classic_pieces01.tga">
     <Size>
       <CX>256</CX>
@@ -8715,6 +8722,331 @@
         <X>0</X>
         <Y>0</Y>
       </Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Slot atlas animations generated from Options/Slots/.Master/.regen_slots.json -->
+  <!-- Source atlas: item_slots_thorne01.tga (regen_slots.py output copied to thorne_drak/) -->
+  <Ui2DAnimation item="A_Slot_Ear">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Neck">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>40</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Head">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>80</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Face">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>120</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Chest">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>160</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Secondary">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>200</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Back">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Arms">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>40</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Shoulders">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>80</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Wrist">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>120</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Belt">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>160</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Range">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>200</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Hands">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>80</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Fingers">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>40</X><Y>80</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Legs">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>80</X><Y>80</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Feet">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>120</X><Y>80</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Primary">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>160</X><Y>80</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Ammo">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>200</X><Y>80</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Bag">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>120</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Pack">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>40</X><Y>120</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Satchel">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>80</X><Y>120</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow4Col4">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>120</X><Y>120</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow4Col5">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>160</X><Y>120</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow4Col6">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>200</X><Y>120</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_RecessedBox">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>160</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow5Col2">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>40</X><Y>160</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow5Col3">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>80</X><Y>160</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow5Col4">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>120</X><Y>160</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow5Col5">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>160</X><Y>160</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_EmptyRow5Col6">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>200</X><Y>160</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Logo1">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>200</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Logo2">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>40</X><Y>200</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Logo3">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>80</X><Y>200</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Logo4">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>120</X><Y>200</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Logo5">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>160</X><Y>200</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Logo6">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>200</X><Y>200</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Compatibility aliases for common slot naming in window files -->
+  <Ui2DAnimation item="A_Slot_Bags">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>120</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Waist">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>160</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_Ring">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>40</X><Y>80</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Slot_AboutBody">
+    <Frames>
+      <Texture>item_slots_thorne01.tga</Texture>
+      <Location><X>0</X><Y>40</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
 

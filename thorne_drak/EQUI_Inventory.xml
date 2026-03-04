@@ -101,7 +101,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvEar</Background>
+    <Background>A_Slot_Ear</Background>
     <EQType>1</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -121,7 +121,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvHead</Background>
+    <Background>A_Slot_Head</Background>
     <EQType>2</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -141,7 +141,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvFace</Background>
+    <Background>A_Slot_Face</Background>
     <EQType>3</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -161,7 +161,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvEar</Background>
+    <Background>A_Slot_Ear</Background>
     <EQType>4</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -181,7 +181,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvNeck</Background>
+    <Background>A_Slot_Neck</Background>
     <EQType>5</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -201,7 +201,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvShoulders</Background>
+    <Background>A_Slot_Shoulders</Background>
     <EQType>6</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -221,7 +221,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvArms</Background>
+    <Background>A_Slot_Arms</Background>
     <EQType>7</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -241,7 +241,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvAboutBody</Background>
+    <Background>A_Slot_AboutBody</Background>
     <EQType>8</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -261,7 +261,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvWrist</Background>
+    <Background>A_Slot_Wrist</Background>
     <EQType>9</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -281,7 +281,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvWrist</Background>
+    <Background>A_Slot_Wrist</Background>
     <EQType>10</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -301,7 +301,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvRange</Background>
+    <Background>A_Slot_Range</Background>
     <EQType>11</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -321,7 +321,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvHands</Background>
+    <Background>A_Slot_Hands</Background>
     <EQType>12</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -341,7 +341,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvPrimary</Background>
+    <Background>A_Slot_Primary</Background>
     <EQType>13</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -361,7 +361,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvSecondary</Background>
+    <Background>A_Slot_Secondary</Background>
     <EQType>14</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -381,7 +381,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvRing</Background>
+    <Background>A_Slot_Ring</Background>
     <EQType>15</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -401,7 +401,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvRing</Background>
+    <Background>A_Slot_Ring</Background>
     <EQType>16</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -421,7 +421,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvChest</Background>
+    <Background>A_Slot_Chest</Background>
     <EQType>17</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -441,7 +441,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvLegs</Background>
+    <Background>A_Slot_Legs</Background>
     <EQType>18</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -461,7 +461,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvFeet</Background>
+    <Background>A_Slot_Feet</Background>
     <EQType>19</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -481,7 +481,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvWaist</Background>
+    <Background>A_Slot_Waist</Background>
     <EQType>20</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -501,7 +501,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_InvAmmo</Background>
+    <Background>A_Slot_Ammo</Background>
     <EQType>21</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -520,7 +520,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>22</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -538,7 +538,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>23</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -556,7 +556,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>24</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -574,7 +574,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>25</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -592,7 +592,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>26</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -610,7 +610,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>27</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -628,7 +628,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>28</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -646,7 +646,7 @@
       <CX>45</CX>
       <CY>45</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Bags</Background>
     <EQType>29</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>

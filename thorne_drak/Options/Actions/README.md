@@ -4,8 +4,8 @@
 
 This directory contains variants for the Actions window (EQUI_ActionsWindow.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-03  
+**Git Commit:** 190dc50
 
 ---
 
@@ -14,10 +14,13 @@ This directory contains variants for the Actions window (EQUI_ActionsWindow.xml)
 - **[Standard/](Standard/)**  📄
   `EQUI_ActionsWindow.xml`
 
-- **[Thorne/](Thorne/)**  📄
+- **[Thorne/](Thorne/)**    
   `EQUI_ActionsWindow.xml`
 
 - **[Thorne Bags/](Thorne Bags/)**  📄
+  `EQUI_ActionsWindow.xml`
+
+- **[Thorne Classic/](Thorne Classic/)**  📄
   `EQUI_ActionsWindow.xml`
 
 - **[Thorne Fading/](Thorne Fading/)**    

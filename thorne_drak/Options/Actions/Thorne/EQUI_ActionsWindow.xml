@@ -1653,6 +1653,7 @@
       <PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
     </ButtonDrawTemplate>
   </Button>
+
   <Page item="ActionsAbilitiesPage">
     <ScreenID>ActionsAbilitiesPage</ScreenID>
     <!--<Font>3</Font>-->
@@ -1671,259 +1672,299 @@
     <Pieces>AAP_FifthAbilityButton</Pieces>
     <Pieces>AAP_SixthAbilityButton</Pieces>
   </Page>
-  <!-- TabBox Brings all the Actions Pages Together -->
-  <TabBox item="ACTW_ActionsSubwindows">
-    <ScreenID>ACTW_ActionsSubwindows</ScreenID>
-    <!--<Font>3</Font>-->
+
+  <!-- Row 1: HEAD (LEar, Face, Head, REar) -->
+  <InvSlot item="ACTW_LEar">
+    <ScreenID>ACTW_LEar</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>4</X>
-      <Y>8</Y>
+      <X>13</X>
+      <Y>1</Y>
     </Location>
     <Size>
-      <CX>145</CX>
-      <CY>170</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <TabBorderTemplate>FT_DefTabBorder</TabBorderTemplate>
-    <PageBorderTemplate>FT_DefPageBorder</PageBorderTemplate>
-    <Pages>ActionsInfoPage</Pages>
-    <Pages>ActionsMainPage</Pages>
-    <Pages>ActionsAbilitiesPage</Pages>
-    <Pages>ActionsCombatPage</Pages>
-    <Pages>ActionsSocialsPage</Pages>
-  </TabBox>
-  <!-- INVENTORY TabBox - Independent tab system for equipment -->
-  <TabBox item="ACTW_InventorySubwindows">
-    <ScreenID>ACTW_InventorySubwindows</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>4</X>
-      <Y>180</Y>
-    </Location>
-    <Size>
-      <CX>145</CX>
-      <CY>203</CY>
-    </Size>
-    <TabBorderTemplate>FT_DefTabBorder</TabBorderTemplate>
-    <PageBorderTemplate>FT_DefPageBorder</PageBorderTemplate>
-    <Pages>ActionsEquipmentPage1</Pages>
-    <Pages>ActionsEquipmentPage2</Pages>
-  </TabBox>
-  <!-- Equipment Slot Definitions for Page 1 (Bags + Weapons) -->
-  <!-- Bag Slot 22 -->
-  <InvSlot item="ACTW_BagSlot22">
-    <ScreenID>ACTW_BagSlot22</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>55</X>
-      <Y>2</Y>
-    </Location>
-    <Size>
-      <CX>44</CX>
-      <CY>44</CY>
-    </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>22</EQType>
+    <Background>A_Slot_Ear</Background>
+    <EQType>1</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Bag Slot 23 -->
-  <InvSlot item="ACTW_BagSlot23">
-    <ScreenID>ACTW_BagSlot23</ScreenID>
+  <InvSlot item="ACTW_Head">
+    <ScreenID>ACTW_Head</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>99</X>
-      <Y>2</Y>
+      <X>73</X>
+      <Y>1</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>23</EQType>
+    <Background>A_Slot_Head</Background>
+    <EQType>2</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Bag Slot 24 -->
-  <InvSlot item="ACTW_BagSlot24">
-    <ScreenID>ACTW_BagSlot24</ScreenID>
+  <InvSlot item="ACTW_Face">
+    <ScreenID>ACTW_Face</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>55</X>
-      <Y>46</Y>
+      <X>43</X>
+      <Y>1</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>24</EQType>
+    <Background>A_Slot_Face</Background>
+    <EQType>3</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Bag Slot 25 -->
-  <InvSlot item="ACTW_BagSlot25">
-    <ScreenID>ACTW_BagSlot25</ScreenID>
+  <InvSlot item="ACTW_REar">
+    <ScreenID>ACTW_REar</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>99</X>
-      <Y>46</Y>
+      <X>103</X>
+      <Y>1</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>25</EQType>
+    <Background>A_Slot_Ear</Background>
+    <EQType>4</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Primary Weapon -->
-  <InvSlot item="ACTW_Primary">
-    <ScreenID>ACTW_Primary</ScreenID>
+
+  <!-- Row 2: TORSO (Neck, Chest, AboutBody) -->
+  <InvSlot item="ACTW_Neck">
+    <ScreenID>ACTW_Neck</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>2</X>
-      <Y>2</Y>
+      <X>30</X>
+      <Y>31</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_InvPrimary</Background>
-    <EQType>13</EQType>
+    <Background>A_Slot_Neck</Background>
+    <EQType>5</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Range -->
-  <InvSlot item="ACTW_Range">
-    <ScreenID>ACTW_Range</ScreenID>
+  <InvSlot item="ACTW_Chest">
+    <ScreenID>ACTW_Chest</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>2</X>
-      <Y>90</Y>
+      <X>60</X>
+      <Y>31</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_InvRange</Background>
-    <EQType>11</EQType>
+    <Background>A_Slot_Chest</Background>
+    <EQType>17</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Bag Slot 26 -->
-  <InvSlot item="ACTW_BagSlot26">
-    <ScreenID>ACTW_BagSlot26</ScreenID>
+  <InvSlot item="ACTW_AboutBody">
+    <ScreenID>ACTW_AboutBody</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>55</X>
-      <Y>90</Y>
+      <X>90</X>
+      <Y>31</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>26</EQType>
+    <Background>A_Slot_AboutBody</Background>
+    <EQType>8</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Bag Slot 27 -->
-  <InvSlot item="ACTW_BagSlot27">
-    <ScreenID>ACTW_BagSlot27</ScreenID>
+
+  <!-- Row 3: ARM (LWrist, Arms, Shoulders, RWrist) -->
+  <InvSlot item="ACTW_LWrist">
+    <ScreenID>ACTW_LWrist</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>99</X>
-      <Y>90</Y>
+      <X>13</X>
+      <Y>61</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>27</EQType>
+    <Background>A_Slot_Wrist</Background>
+    <EQType>9</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Bag Slot 28 -->
-  <InvSlot item="ACTW_BagSlot28">
-    <ScreenID>ACTW_BagSlot28</ScreenID>
+  <InvSlot item="ACTW_RWrist">
+    <ScreenID>ACTW_RWrist</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>55</X>
-      <Y>134</Y>
+      <X>103</X>
+      <Y>61</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>28</EQType>
+    <Background>A_Slot_Wrist</Background>
+    <EQType>10</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Bag Slot 29 -->
-  <InvSlot item="ACTW_BagSlot29">
-    <ScreenID>ACTW_BagSlot29</ScreenID>
+  <InvSlot item="ACTW_Shoulders">
+    <ScreenID>ACTW_Shoulders</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>99</X>
-      <Y>134</Y>
+      <X>73</X>
+      <Y>61</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
-    <EQType>29</EQType>
+    <Background>A_Slot_Shoulders</Background>
+    <EQType>6</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Secondary Weapon -->
-  <InvSlot item="ACTW_Secondary">
-    <ScreenID>ACTW_Secondary</ScreenID>
+  <InvSlot item="ACTW_Arms">
+    <ScreenID>ACTW_Arms</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>2</X>
-      <Y>46</Y>
+      <X>43</X>
+      <Y>61</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_InvSecondary</Background>
-    <EQType>14</EQType>
+    <Background>A_Slot_Arms</Background>
+    <EQType>7</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Ammo -->
-  <InvSlot item="ACTW_Ammo">
-    <ScreenID>ACTW_Ammo</ScreenID>
+
+  <!-- Row 4: HAND (LRing, Hands, RRing) -->
+  <InvSlot item="ACTW_Hands">
+    <ScreenID>ACTW_Hands</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>2</X>
-      <Y>134</Y>
+      <X>60</X>
+      <Y>91</Y>
     </Location>
     <Size>
-      <CX>44</CX>
-      <CY>44</CY>
+      <CX>28</CX>
+      <CY>28</CY>
     </Size>
-    <Background>A_InvAmmo</Background>
-    <EQType>21</EQType>
+    <Background>A_Slot_Hands</Background>
+    <EQType>12</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
   </InvSlot>
-  <!-- Info Page: Player stats summary -->
-  <Page item="ActionsInfoPage">
-    <ScreenID>ActionsInfoPage</ScreenID>
+  <InvSlot item="ACTW_LRing">
+    <ScreenID>ACTW_LRing</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>30</X>
+      <Y>91</Y>
+    </Location>
+    <Size>
+      <CX>28</CX>
+      <CY>28</CY>
+    </Size>
+    <Background>A_Slot_Ring</Background>
+    <EQType>15</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+  </InvSlot>
+  <InvSlot item="ACTW_RRing">
+    <ScreenID>ACTW_RRing</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>90</X>
+      <Y>91</Y>
+    </Location>
+    <Size>
+      <CX>28</CX>
+      <CY>28</CY>
+    </Size>
+    <Background>A_Slot_Ring</Background>
+    <EQType>16</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+  </InvSlot>
+
+  <!-- Row 5: LOWER (Waist, Legs, Feet) -->
+  <InvSlot item="ACTW_Waist">
+    <ScreenID>ACTW_Waist</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>30</X>
+      <Y>121</Y>
+    </Location>
+    <Size>
+      <CX>28</CX>
+      <CY>28</CY>
+    </Size>
+    <Background>A_Slot_Waist</Background>
+    <EQType>20</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+  </InvSlot>
+  <InvSlot item="ACTW_Legs">
+    <ScreenID>ACTW_Legs</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>121</Y>
+    </Location>
+    <Size>
+      <CX>28</CX>
+      <CY>28</CY>
+    </Size>
+    <Background>A_Slot_Legs</Background>
+    <EQType>18</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+  </InvSlot>
+  <InvSlot item="ACTW_Feet">
+    <ScreenID>ACTW_Feet</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>90</X>
+      <Y>121</Y>
+    </Location>
+    <Size>
+      <CX>28</CX>
+      <CY>28</CY>
+    </Size>
+    <Background>A_Slot_Feet</Background>
+    <EQType>19</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+  </InvSlot>
+
+    <!-- Info Page: Inventory -->
+  <Page item="ActionsInventoryPage">
+    <ScreenID>ActionsInventoryPage</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
     <Style_Border>false</Style_Border>
     <DrawTemplate>WDT_Def</DrawTemplate>
-    <TabText>Info</TabText>
+    <TabText>Worn</TabText>
     <TabIcon>A_MainTabIcon</TabIcon>
     <TabIconActive>A_MainTabActiveIcon</TabIconActive>
     <AlignLeft>true</AlignLeft>
@@ -1937,390 +1978,30 @@
       <G>200</G>
       <B>0</B>
     </TabTextActiveColor>
-    <Pieces>ACTW_PlayerName</Pieces>
-    <Pieces>ACTW_LevelLabel</Pieces>
-    <Pieces>ACTW_Level</Pieces>
-    <Pieces>ACTW_PlayerClass</Pieces>
-    <Pieces>ACTW_HP</Pieces>
-    <Pieces>ACTW_CurrentHP</Pieces>
-    <Pieces>ACTW_Mana</Pieces>
-    <Pieces>ACTW_CurrentMana</Pieces>
-    <Pieces>ACTW_ACLabel</Pieces>
-    <Pieces>ACTW_CurrentAC</Pieces>
-    <Pieces>ACTW_ATKLabel</Pieces>
-    <Pieces>ACTW_CurrentATK</Pieces>
-    <Pieces>ACTW_WeightLabel</Pieces>
-    <Pieces>ACTW_CurrentWeight</Pieces>
-    <Pieces>ACTW_WeightDivider</Pieces>
-    <Pieces>ACTW_MaxWeight</Pieces>
-    <Pieces>ACTW_AALabel</Pieces>
-    <Pieces>ACTW_CurrentAA</Pieces>
-    <Pieces>ACTW_AADivider</Pieces>
-    <Pieces>ACTW_MaxAA</Pieces>
-  </Page>
-  <!-- Equipment Page 1: Bags + Weapons -->
-  <Page item="ActionsEquipmentPage1">
-    <ScreenID>ActionsEquipmentPage1</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <Style_Border>false</Style_Border>
-    <DrawTemplate>WDT_Def</DrawTemplate>
-    <TabText>Bags</TabText>
-    <AlignLeft>true</AlignLeft>
-    <TabTextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TabTextColor>
-    <TabTextActiveColor>
-      <R>0</R>
-      <G>200</G>
-      <B>0</B>
-    </TabTextActiveColor>
-    <Pieces>ACTW_BagSlot22</Pieces>
-    <Pieces>ACTW_BagSlot23</Pieces>
-    <Pieces>ACTW_BagSlot24</Pieces>
-    <Pieces>ACTW_BagSlot25</Pieces>
-    <Pieces>ACTW_Primary</Pieces>
-    <Pieces>ACTW_Range</Pieces>
-    <Pieces>ACTW_BagSlot26</Pieces>
-    <Pieces>ACTW_BagSlot27</Pieces>
-    <Pieces>ACTW_BagSlot28</Pieces>
-    <Pieces>ACTW_BagSlot29</Pieces>
-    <Pieces>ACTW_Secondary</Pieces>
-    <Pieces>ACTW_Ammo</Pieces>
-  </Page>
-  <!-- Equipment Slot Definitions for Page 2 (Worn Armor/Jewelry) -->
-  <!-- Left Ear -->
-  <InvSlot item="ACTW_LEar">
-    <ScreenID>ACTW_LEar</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>0</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvEar</Background>
-    <EQType>1</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Head -->
-  <InvSlot item="ACTW_Head">
-    <ScreenID>ACTW_Head</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>36</X>
-      <Y>0</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvHead</Background>
-    <EQType>2</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Face -->
-  <InvSlot item="ACTW_Face">
-    <ScreenID>ACTW_Face</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>36</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvFace</Background>
-    <EQType>3</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Right Ear -->
-  <InvSlot item="ACTW_REar">
-    <ScreenID>ACTW_REar</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>72</X>
-      <Y>0</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvEar</Background>
-    <EQType>4</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Neck -->
-  <InvSlot item="ACTW_Neck">
-    <ScreenID>ACTW_Neck</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>36</X>
-      <Y>36</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvNeck</Background>
-    <EQType>5</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Shoulders -->
-  <InvSlot item="ACTW_Shoulders">
-    <ScreenID>ACTW_Shoulders</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>72</X>
-      <Y>36</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvShoulders</Background>
-    <EQType>6</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Arms -->
-  <InvSlot item="ACTW_Arms">
-    <ScreenID>ACTW_Arms</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>72</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvArms</Background>
-    <EQType>7</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Chest -->
-  <InvSlot item="ACTW_Chest">
-    <ScreenID>ACTW_Chest</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>36</X>
-      <Y>72</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvChest</Background>
-    <EQType>17</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- About Body (Cloak) -->
-  <InvSlot item="ACTW_AboutBody">
-    <ScreenID>ACTW_AboutBody</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>72</X>
-      <Y>72</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvAboutBody</Background>
-    <EQType>8</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Waist -->
-  <InvSlot item="ACTW_Waist">
-    <ScreenID>ACTW_Waist</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>36</X>
-      <Y>108</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvWaist</Background>
-    <EQType>20</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Left Wrist -->
-  <InvSlot item="ACTW_LWrist">
-    <ScreenID>ACTW_LWrist</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>108</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvWrist</Background>
-    <EQType>9</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Right Wrist -->
-  <InvSlot item="ACTW_RWrist">
-    <ScreenID>ACTW_RWrist</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>72</X>
-      <Y>108</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvWrist</Background>
-    <EQType>10</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Hands -->
-  <InvSlot item="ACTW_Hands">
-    <ScreenID>ACTW_Hands</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>36</X>
-      <Y>144</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvHands</Background>
-    <EQType>12</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Left Ring -->
-  <InvSlot item="ACTW_LRing">
-    <ScreenID>ACTW_LRing</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>0</X>
-      <Y>144</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvRing</Background>
-    <EQType>15</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Right Ring -->
-  <InvSlot item="ACTW_RRing">
-    <ScreenID>ACTW_RRing</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>72</X>
-      <Y>144</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvRing</Background>
-    <EQType>16</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Legs -->
-  <InvSlot item="ACTW_Legs">
-    <ScreenID>ACTW_Legs</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>108</X>
-      <Y>108</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvLegs</Background>
-    <EQType>18</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Feet -->
-  <InvSlot item="ACTW_Feet">
-    <ScreenID>ACTW_Feet</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>108</X>
-      <Y>144</Y>
-    </Location>
-    <Size>
-      <CX>36</CX>
-      <CY>36</CY>
-    </Size>
-    <Background>A_InvFeet</Background>
-    <EQType>19</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-  </InvSlot>
-  <!-- Equipment Page 2: Worn Armor/Jewelry -->
-  <Page item="ActionsEquipmentPage2">
-    <ScreenID>ActionsEquipmentPage2</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <Style_Border>false</Style_Border>
-    <DrawTemplate>WDT_Def</DrawTemplate>
-    <TabText>Worn</TabText>
-    <AlignLeft>true</AlignLeft>
-    <TabTextColor>
-      <R>255</R>
-      <G>255</G>
-      <B>255</B>
-    </TabTextColor>
-    <TabTextActiveColor>
-      <R>0</R>
-      <G>200</G>
-      <B>0</B>
-    </TabTextActiveColor>
+    <!-- Row 1: HEAD -->
     <Pieces>ACTW_LEar</Pieces>
-    <Pieces>ACTW_Head</Pieces>
     <Pieces>ACTW_Face</Pieces>
+    <Pieces>ACTW_Head</Pieces>
     <Pieces>ACTW_REar</Pieces>
+    <!-- Row 2: TORSO -->
     <Pieces>ACTW_Neck</Pieces>
-    <Pieces>ACTW_Shoulders</Pieces>
-    <Pieces>ACTW_Arms</Pieces>
     <Pieces>ACTW_Chest</Pieces>
     <Pieces>ACTW_AboutBody</Pieces>
-    <Pieces>ACTW_Waist</Pieces>
+    <!-- Row 3: ARM -->
     <Pieces>ACTW_LWrist</Pieces>
+    <Pieces>ACTW_Arms</Pieces>
+    <Pieces>ACTW_Shoulders</Pieces>
     <Pieces>ACTW_RWrist</Pieces>
-    <Pieces>ACTW_Hands</Pieces>
+    <!-- Row 4: HAND -->
     <Pieces>ACTW_LRing</Pieces>
+    <Pieces>ACTW_Hands</Pieces>
     <Pieces>ACTW_RRing</Pieces>
+    <!-- Row 5: LOWER -->
+    <Pieces>ACTW_Waist</Pieces>
     <Pieces>ACTW_Legs</Pieces>
     <Pieces>ACTW_Feet</Pieces>
   </Page>
+
   <!-- Player Info Labels (below Actions tabs) -->
   <Label item="ACTW_PlayerName">
     <ScreenID>ACTW_PlayerName</ScreenID>
@@ -2345,6 +2026,7 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+
   <!-- Player Level Label (on same line as Name, right side) -->
   <Label item="ACTW_LevelLabel">
     <ScreenID>ACTW_LevelLabel</ScreenID>
@@ -2778,6 +2460,75 @@
     <AlignCenter>false</AlignCenter>
     <AlignRight>false</AlignRight>
   </Label>
+
+   <!-- Info Page: Player stats summary -->
+  <Page item="ActionsInfoPage">
+    <ScreenID>ActionsInfoPage</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Border>false</Style_Border>
+    <DrawTemplate>WDT_Def</DrawTemplate>
+    <TabText>Info</TabText>
+    <TabIcon>A_MainTabIcon</TabIcon>
+    <TabIconActive>A_MainTabActiveIcon</TabIconActive>
+    <AlignLeft>true</AlignLeft>
+    <TabTextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TabTextColor>
+    <TabTextActiveColor>
+      <R>0</R>
+      <G>200</G>
+      <B>0</B>
+    </TabTextActiveColor>
+    <Pieces>ACTW_PlayerName</Pieces>
+    <Pieces>ACTW_LevelLabel</Pieces>
+    <Pieces>ACTW_Level</Pieces>
+    <Pieces>ACTW_PlayerClass</Pieces>
+    <Pieces>ACTW_HP</Pieces>
+    <Pieces>ACTW_CurrentHP</Pieces>
+    <Pieces>ACTW_Mana</Pieces>
+    <Pieces>ACTW_CurrentMana</Pieces>
+    <Pieces>ACTW_ACLabel</Pieces>
+    <Pieces>ACTW_CurrentAC</Pieces>
+    <Pieces>ACTW_ATKLabel</Pieces>
+    <Pieces>ACTW_CurrentATK</Pieces>
+    <Pieces>ACTW_WeightLabel</Pieces>
+    <Pieces>ACTW_CurrentWeight</Pieces>
+    <Pieces>ACTW_WeightDivider</Pieces>
+    <Pieces>ACTW_MaxWeight</Pieces>
+    <Pieces>ACTW_AALabel</Pieces>
+    <Pieces>ACTW_CurrentAA</Pieces>
+    <Pieces>ACTW_AADivider</Pieces>
+    <Pieces>ACTW_MaxAA</Pieces>
+  </Page>
+
+  <!-- TabBox Brings all the Actions Pages Together -->
+  <TabBox item="ACTW_ActionsSubwindows">
+    <ScreenID>ACTW_ActionsSubwindows</ScreenID>
+    <!--<Font>3</Font>-->
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>4</X>
+      <Y>8</Y>
+    </Location>
+    <Size>
+      <CX>145</CX>
+      <CY>170</CY>
+    </Size>
+    <TabBorderTemplate>FT_DefTabBorder</TabBorderTemplate>
+    <PageBorderTemplate>FT_DefPageBorder</PageBorderTemplate>
+    <!--<Pages>ActionsInfoPage</Pages>-->
+    <Pages>ActionsInventoryPage</Pages>
+    <Pages>ActionsMainPage</Pages>
+    <Pages>ActionsAbilitiesPage</Pages>
+    <Pages>ActionsCombatPage</Pages>
+    <Pages>ActionsSocialsPage</Pages>
+  </TabBox>
+
   <Screen item="ActionsWindow">
     <!--<ScreenID/>-->
     <!--<Font>3</Font>-->

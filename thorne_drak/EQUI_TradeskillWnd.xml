@@ -238,7 +238,7 @@
 		<TooltipReference>This is the currently open Tradeskill Container</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -321,7 +321,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -348,7 +348,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -376,7 +376,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -403,7 +403,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -431,7 +431,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -458,7 +458,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -486,7 +486,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -513,7 +513,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -541,7 +541,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -568,7 +568,7 @@
 		<TooltipReference>This area will display the components required for the selected recipe</TooltipReference>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>

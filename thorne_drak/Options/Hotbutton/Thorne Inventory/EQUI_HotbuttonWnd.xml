@@ -409,7 +409,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -427,7 +427,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -445,7 +445,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -463,7 +463,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -481,7 +481,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -499,7 +499,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -517,7 +517,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -535,7 +535,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -553,7 +553,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -571,7 +571,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -822,7 +822,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>13</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -871,7 +871,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>14</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -920,7 +920,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>22</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -969,7 +969,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>23</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1018,7 +1018,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>24</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1067,7 +1067,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>25</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1116,7 +1116,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>26</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1165,7 +1165,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>27</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1214,7 +1214,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>28</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1263,7 +1263,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>29</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1312,7 +1312,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1361,7 +1361,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>2</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1410,7 +1410,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>3</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1459,7 +1459,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>4</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1508,7 +1508,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>5</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1557,7 +1557,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1606,7 +1606,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>17</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1655,7 +1655,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>7</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1704,7 +1704,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>12</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1753,7 +1753,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>8</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1802,7 +1802,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>20</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1851,7 +1851,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>18</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1900,7 +1900,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>19</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1949,7 +1949,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>9</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1998,7 +1998,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>10</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -2047,7 +2047,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>15</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -2096,7 +2096,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>16</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -2145,7 +2145,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>11</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -2194,7 +2194,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>21</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -2243,7 +2243,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>0</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>

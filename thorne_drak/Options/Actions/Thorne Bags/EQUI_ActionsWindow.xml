@@ -1721,7 +1721,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>22</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1738,7 +1738,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>23</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1755,7 +1755,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>24</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1772,7 +1772,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>25</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1823,7 +1823,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>26</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1840,7 +1840,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>27</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1857,7 +1857,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>28</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1874,7 +1874,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>29</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>

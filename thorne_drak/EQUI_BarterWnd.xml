@@ -361,7 +361,7 @@
 			<B>255</B>
 		</TextColor>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_PlatinumCoin</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -397,7 +397,7 @@
 			<B>255</B>
 		</TextColor>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_GoldCoin</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -433,7 +433,7 @@
 			<B>255</B>
 		</TextColor>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_SilverCoin</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -469,7 +469,7 @@
 			<B>255</B>
 		</TextColor>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_CopperCoin</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>

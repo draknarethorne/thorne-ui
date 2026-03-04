@@ -34,4 +34,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../.docs/options-sync/)

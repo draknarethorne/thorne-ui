@@ -4,8 +4,8 @@
 
 This directory contains variants for the Bank window (EQUI_BankWnd.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-04  
+**Git Commit:** f46c029
 
 ---
 
@@ -34,4 +34,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../.docs/options-sync/)

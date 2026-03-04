@@ -32,7 +32,7 @@ This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `EQUI_HotButtonWnd.xml`
+- `EQUI_HotbuttonWnd.xml`
 
 ## Metadata
 
@@ -43,4 +43,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../.docs/options-sync/)

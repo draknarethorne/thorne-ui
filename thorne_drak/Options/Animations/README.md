@@ -4,8 +4,8 @@
 
 This directory contains variants for the Animations window (EQUI_Animations.xml).
 
-**Last Synced:** 2026-03-03  
-**Git Commit:** 277c46d
+**Last Synced:** 2026-03-04  
+**Git Commit:** f46c029
 
 ---
 
@@ -31,4 +31,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../.docs/options-sync/)

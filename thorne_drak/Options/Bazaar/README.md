@@ -23,8 +23,8 @@ This directory contains variants for the Bazaar window (EQUI_BazaarWnd.xml, EQUI
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `EQUI_BazaarSearchWnd.xml`
 - `EQUI_BazaarWnd.xml`
+- `EQUI_BazaarSearchWnd.xml`
 
 ## Metadata
 
@@ -35,4 +35,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../.docs/options-sync/)

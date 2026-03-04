@@ -389,41 +389,6 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- Attack Tick Gauge (combat timer - positioned under Pet HP) -->
-  <Gauge item="TW_AttackTick_Gauge">
-    <ScreenID>AttackTick_Gauge</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>1</X>
-      <Y>33</Y>
-    </Location>
-    <Size>
-      <CX>258</CX>
-      <CY>4</CY>
-    </Size>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <TextOffsetY>-50</TextOffsetY>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>true</Style_Transparent>
-    <FillTint>
-      <R>220</R>
-      <G>180</G>
-      <B>0</B>
-    </FillTint>
-    <LinesFillTint>
-      <R>220</R>
-      <G>180</G>
-      <B>0</B>
-    </LinesFillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <EQType>34</EQType>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeTick_250t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
   <!-- Mana Tick Gauge (standard size for compact Target Window) -->
   <Gauge item="TW_ManaTick_Gauge">
     <ScreenID>ManaTick_Gauge</ScreenID>
@@ -459,7 +424,42 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- Experimental: Player HP and Mana Gauges on Target Window -->
+  <!-- Attack Tick Gauge (combat timer - positioned under Pet HP) -->
+  <Gauge item="TW_AttackTick_Gauge">
+    <ScreenID>AttackTick_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>33</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>4</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetY>-50</TextOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>220</R>
+      <G>180</G>
+      <B>0</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>220</R>
+      <G>180</G>
+      <B>0</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>34</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeTick_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Player HP and Mana Gauges on Target Window -->
   <Gauge item="TW_PlayerHP_Gauge">
     <ScreenID>PlayerHP_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>

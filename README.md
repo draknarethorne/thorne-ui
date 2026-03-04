@@ -211,6 +211,16 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ## 📅 Version History
 
+**v0.7.2** (March 3, 2026)
+- ✅ Slot art system expansion across Actions and Inspect windows
+  - Repurposed Actions window Info tab as Worn equipment mini-slots (28x28, 5-row anatomical grid)
+  - Redesigned Inspect window with full 6-row anatomical layout (40x40, Inventory-matching)
+  - Migrated all slot backgrounds to `A_Slot_*` art system across both windows
+  - Added `A_Slot_Logo5` branding element to Inspect window (left side, subtle signature)
+- ✅ Actions window Options update
+  - Added Thorne Classic option variant preserving previous Actions layout
+  - Updated Options README and sync metadata
+
 **v0.7.1** (March 3, 2026)
 - ✅ Post-v0.7.0 polish and iteration pass
   - Expanded `EQUI_HotButtonWnd.xml` utility row into a full 14-stat trial layout (MusicPlayer-style icon/value spacing)

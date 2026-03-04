@@ -4,8 +4,8 @@
 
 This directory contains variants for the Bazaar window (EQUI_BazaarWnd.xml, EQUI_BazaarSearchWnd.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-04  
+**Git Commit:** 31f21c4
 
 ---
 

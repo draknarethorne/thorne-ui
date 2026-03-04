@@ -8879,7 +8879,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_Pack">
+  <Ui2DAnimation item="A_Slot_Backpack">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>40</X><Y>120</Y></Location>
@@ -8895,7 +8895,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_EmptyRow4Col4">
+  <Ui2DAnimation item="A_Slot_Pack">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>120</X><Y>120</Y></Location>
@@ -8903,7 +8903,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_EmptyRow4Col5">
+  <Ui2DAnimation item="A_Slot_Box">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>160</X><Y>120</Y></Location>
@@ -8911,7 +8911,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_EmptyRow4Col6">
+  <Ui2DAnimation item="A_Slot_OpenBox">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>200</X><Y>120</Y></Location>
@@ -8919,7 +8919,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_RecessedBox">
+  <Ui2DAnimation item="A_Slot_Empty">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>0</X><Y>160</Y></Location>
@@ -8927,7 +8927,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_EmptyRow5Col2">
+  <Ui2DAnimation item="A_Slot_TreasureChest">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>40</X><Y>160</Y></Location>
@@ -8935,7 +8935,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_EmptyRow5Col3">
+  <Ui2DAnimation item="A_Slot_Spellbook">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>80</X><Y>160</Y></Location>
@@ -8943,7 +8943,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_EmptyRow5Col4">
+  <Ui2DAnimation item="A_Slot_Lantern">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>120</X><Y>160</Y></Location>
@@ -8951,7 +8951,7 @@
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>
-  <Ui2DAnimation item="A_Slot_EmptyRow5Col5">
+  <Ui2DAnimation item="A_Slot_Spell">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>160</X><Y>160</Y></Location>
@@ -9017,14 +9017,6 @@
   </Ui2DAnimation>
 
   <!-- Compatibility aliases for common slot naming in window files -->
-  <Ui2DAnimation item="A_Slot_Bags">
-    <Frames>
-      <Texture>item_slots_thorne01.tga</Texture>
-      <Location><X>0</X><Y>120</Y></Location>
-      <Size><CX>40</CX><CY>40</CY></Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-    </Frames>
-  </Ui2DAnimation>
   <Ui2DAnimation item="A_Slot_Waist">
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>

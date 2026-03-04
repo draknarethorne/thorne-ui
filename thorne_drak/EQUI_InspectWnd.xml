@@ -1,426 +1,428 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <XML ID="EQInterfaceDefinitionLanguage">
   <Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes" />
-  <!-- IS_L_EAR		1 -->
-  <InvSlot item="INSW_InvSlot1">
-    <ScreenID>InvSlot1</ScreenID>
-    <!--<Font>3</Font>-->
+
+  <!-- ============================================================ -->
+  <!-- Thorne UI - Inspect Window                                   -->
+  <!-- Anatomical 6-row grid (40x40 slots, 42px spacing)            -->
+  <!-- Logo branding element on left, equipment grid on right       -->
+  <!-- Grid offset: X=56, Y=4  |  Stagger offset: +21px            -->
+  <!-- ============================================================ -->
+
+  <!-- Thorne Logo Branding (left side, vertically centered) -->
+  <StaticAnimation item="INSW_Logo">
+    <ScreenID>INSW_Logo</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>41</X>
-      <Y>2</Y>
+      <X>8</X>
+      <Y>109</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvEar</Background>
+    <Animation>A_Slot_Logo5</Animation>
+    <Style_Transparent>true</Style_Transparent>
+  </StaticAnimation>
+
+  <!-- ==================== Row 1: Head Level (Y=4) ==================== -->
+
+  <!-- IS_L_EAR    1 -->
+  <InvSlot item="INSW_InvSlot1">
+    <ScreenID>InvSlot1</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>56</X>
+      <Y>4</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Ear</Background>
     <EQType>8001</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_HEAD		2 -->
-  <InvSlot item="INSW_InvSlot2">
-    <ScreenID>InvSlot2</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>158</X>
-      <Y>2</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvHead</Background>
-    <EQType>8002</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_FACE		3 -->
+  <!-- IS_FACE     3 -->
   <InvSlot item="INSW_InvSlot3">
     <ScreenID>InvSlot3</ScreenID>
-    <!--<Font>3</Font>-->
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>119</X>
-      <Y>2</Y>
+      <X>98</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvFace</Background>
+    <Background>A_Slot_Face</Background>
     <EQType>8003</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_R_EAR		4 -->
-  <InvSlot item="INSW_InvSlot4">
-    <ScreenID>InvSlot4</ScreenID>
-    <!--<Font>3</Font>-->
+  <!-- IS_HEAD     2 -->
+  <InvSlot item="INSW_InvSlot2">
+    <ScreenID>InvSlot2</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>197</X>
-      <Y>2</Y>
+      <X>140</X>
+      <Y>4</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvEar</Background>
+    <Background>A_Slot_Head</Background>
+    <EQType>8002</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_R_EAR    4 -->
+  <InvSlot item="INSW_InvSlot4">
+    <ScreenID>InvSlot4</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>182</X>
+      <Y>4</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Ear</Background>
     <EQType>8004</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_NECK		5 -->
+
+  <!-- ============= Row 2: Upper Torso (Y=46, staggered) ============= -->
+
+  <!-- IS_NECK     5 -->
   <InvSlot item="INSW_InvSlot5">
     <ScreenID>InvSlot5</ScreenID>
-    <!--<Font>3</Font>-->
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>80</X>
-      <Y>2</Y>
+      <X>77</X>
+      <Y>46</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvNeck</Background>
+    <Background>A_Slot_Neck</Background>
     <EQType>8005</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_SHOULDERS	6 -->
-  <InvSlot item="INSW_InvSlot6">
-    <ScreenID>InvSlot6</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>2</X>
-      <Y>80</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvShoulders</Background>
-    <EQType>8006</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_ARMS		7 -->
-  <InvSlot item="INSW_InvSlot7">
-    <ScreenID>InvSlot7</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>80</X>
-      <Y>41</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvArms</Background>
-    <EQType>8007</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_ABOUT_BODY	8 -->
-  <InvSlot item="INSW_InvSlot8">
-    <ScreenID>InvSlot8</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>80</X>
-      <Y>80</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvAboutBody</Background>
-    <EQType>8008</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_L_WRIST		9 -->
-  <InvSlot item="INSW_InvSlot9">
-    <ScreenID>InvSlot9</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>41</X>
-      <Y>41</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvWrist</Background>
-    <EQType>8009</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_R_WRIST		10 -->
-  <InvSlot item="INSW_InvSlot10">
-    <ScreenID>InvSlot10</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>158</X>
-      <Y>41</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvWrist</Background>
-    <EQType>8010</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_RANGE		11 -->
-  <InvSlot item="INSW_InvSlot11">
-    <ScreenID>InvSlot11</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>158</X>
-      <Y>119</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvRange</Background>
-    <EQType>8011</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_HANDS		12 -->
-  <InvSlot item="INSW_InvSlot12">
-    <ScreenID>InvSlot12</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>119</X>
-      <Y>41</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvHands</Background>
-    <EQType>8012</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_PRIMARY		13 -->
-  <InvSlot item="INSW_InvSlot13">
-    <ScreenID>InvSlot13</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>80</X>
-      <Y>119</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvPrimary</Background>
-    <EQType>8013</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_SECONDARY	14 -->
-  <InvSlot item="INSW_InvSlot14">
-    <ScreenID>InvSlot14</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>119</X>
-      <Y>119</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvSecondary</Background>
-    <EQType>8014</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_L_FINGERS	15 -->
-  <InvSlot item="INSW_InvSlot15">
-    <ScreenID>InvSlot15</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>2</X>
-      <Y>41</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvRing</Background>
-    <EQType>8015</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_R_FINGERS	16 -->
-  <InvSlot item="INSW_InvSlot16">
-    <ScreenID>InvSlot16</ScreenID>
-    <!--<Font>3</Font>-->
-    <RelativePosition>true</RelativePosition>
-    <Location>
-      <X>197</X>
-      <Y>41</Y>
-    </Location>
-    <Size>
-      <CX>40</CX>
-      <CY>40</CY>
-    </Size>
-    <Background>A_InvRing</Background>
-    <EQType>8016</EQType>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
-    <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
-  </InvSlot>
-  <!-- IS_CHEST		17 -->
+  <!-- IS_CHEST    17 -->
   <InvSlot item="INSW_InvSlot17">
     <ScreenID>InvSlot17</ScreenID>
-    <!--<Font>3</Font>-->
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>41</X>
-      <Y>80</Y>
+      <X>119</X>
+      <Y>46</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvChest</Background>
+    <Background>A_Slot_Chest</Background>
     <EQType>8017</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_LEGS		18 -->
-  <InvSlot item="INSW_InvSlot18">
-    <ScreenID>InvSlot18</ScreenID>
-    <!--<Font>3</Font>-->
+  <!-- IS_ABOUT_BODY 8 -->
+  <InvSlot item="INSW_InvSlot8">
+    <ScreenID>InvSlot8</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>158</X>
-      <Y>80</Y>
+      <X>161</X>
+      <Y>46</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvLegs</Background>
-    <EQType>8018</EQType>
+    <Background>A_Slot_AboutBody</Background>
+    <EQType>8008</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_FEET		19 -->
-  <InvSlot item="INSW_InvSlot19">
-    <ScreenID>InvSlot19</ScreenID>
-    <!--<Font>3</Font>-->
+
+  <!-- =================== Row 3: Arms Level (Y=88) =================== -->
+
+  <!-- IS_L_WRIST  9 -->
+  <InvSlot item="INSW_InvSlot9">
+    <ScreenID>InvSlot9</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>197</X>
-      <Y>80</Y>
+      <X>56</X>
+      <Y>88</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvFeet</Background>
-    <EQType>8019</EQType>
+    <Background>A_Slot_Wrist</Background>
+    <EQType>8009</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_WAIST		20 -->
-  <InvSlot item="INSW_InvSlot20">
-    <ScreenID>InvSlot20</ScreenID>
-    <!--<Font>3</Font>-->
+  <!-- IS_ARMS     7 -->
+  <InvSlot item="INSW_InvSlot7">
+    <ScreenID>InvSlot7</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>98</X>
+      <Y>88</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Arms</Background>
+    <EQType>8007</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_SHOULDERS 6 -->
+  <InvSlot item="INSW_InvSlot6">
+    <ScreenID>InvSlot6</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>140</X>
+      <Y>88</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Shoulders</Background>
+    <EQType>8006</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_R_WRIST  10 -->
+  <InvSlot item="INSW_InvSlot10">
+    <ScreenID>InvSlot10</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>182</X>
+      <Y>88</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Wrist</Background>
+    <EQType>8010</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+
+  <!-- =============== Row 4: Hands Level (Y=130, staggered) =========== -->
+
+  <!-- IS_L_FINGERS 15 -->
+  <InvSlot item="INSW_InvSlot15">
+    <ScreenID>InvSlot15</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>77</X>
+      <Y>130</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Ring</Background>
+    <EQType>8015</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_HANDS    12 -->
+  <InvSlot item="INSW_InvSlot12">
+    <ScreenID>InvSlot12</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>119</X>
-      <Y>80</Y>
+      <Y>130</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvWaist</Background>
+    <Background>A_Slot_Hands</Background>
+    <EQType>8012</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_R_FINGERS 16 -->
+  <InvSlot item="INSW_InvSlot16">
+    <ScreenID>InvSlot16</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>161</X>
+      <Y>130</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Ring</Background>
+    <EQType>8016</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+
+  <!-- ============ Row 5: Lower Body (Y=172, staggered) =============== -->
+
+  <!-- IS_WAIST    20 -->
+  <InvSlot item="INSW_InvSlot20">
+    <ScreenID>InvSlot20</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>77</X>
+      <Y>172</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Waist</Background>
     <EQType>8020</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
   </InvSlot>
-  <!-- IS_AMMO		21 -->
-  <InvSlot item="INSW_InvSlot21">
-    <ScreenID>InvSlot21</ScreenID>
-    <!--<Font>3</Font>-->
+  <!-- IS_LEGS     18 -->
+  <InvSlot item="INSW_InvSlot18">
+    <ScreenID>InvSlot18</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>197</X>
-      <Y>119</Y>
+      <X>119</X>
+      <Y>172</Y>
     </Location>
     <Size>
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_InvAmmo</Background>
+    <Background>A_Slot_Legs</Background>
+    <EQType>8018</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_FEET     19 -->
+  <InvSlot item="INSW_InvSlot19">
+    <ScreenID>InvSlot19</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>161</X>
+      <Y>172</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Feet</Background>
+    <EQType>8019</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+
+  <!-- ================ Row 6: Weapons Level (Y=214) ================== -->
+
+  <!-- IS_PRIMARY  13 -->
+  <InvSlot item="INSW_InvSlot13">
+    <ScreenID>InvSlot13</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>56</X>
+      <Y>214</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Primary</Background>
+    <EQType>8013</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_SECONDARY 14 -->
+  <InvSlot item="INSW_InvSlot14">
+    <ScreenID>InvSlot14</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>98</X>
+      <Y>214</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Secondary</Background>
+    <EQType>8014</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_RANGE    11 -->
+  <InvSlot item="INSW_InvSlot11">
+    <ScreenID>InvSlot11</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>140</X>
+      <Y>214</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Range</Background>
+    <EQType>8011</EQType>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+  </InvSlot>
+  <!-- IS_AMMO     21 -->
+  <InvSlot item="INSW_InvSlot21">
+    <ScreenID>InvSlot21</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>182</X>
+      <Y>214</Y>
+    </Location>
+    <Size>
+      <CX>40</CX>
+      <CY>40</CY>
+    </Size>
+    <Background>A_Slot_Ammo</Background>
     <EQType>8021</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <TooltipReference />
   </InvSlot>
+
+  <!-- ======================== Edit & Button ========================== -->
+
   <Editbox item="INSW_Edit">
     <ScreenID>INSW_Edit</ScreenID>
     <DrawTemplate>WDT_Inner</DrawTemplate>
@@ -429,10 +431,10 @@
     <Style_Border>true</Style_Border>
     <Location>
       <X>0</X>
-      <Y>160</Y>
+      <Y>258</Y>
     </Location>
     <Size>
-      <CX>240</CX>
+      <CX>228</CX>
       <CY>150</CY>
     </Size>
     <TextColor>
@@ -444,20 +446,17 @@
   </Editbox>
   <Button item="INSW_DoneButton">
     <ScreenID>DoneButton</ScreenID>
-    <!--<Font>3</Font>-->
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>83</X>
-      <Y>308</Y>
+      <X>78</X>
+      <Y>412</Y>
     </Location>
     <Size>
       <CX>80</CX>
       <CY>20</CY>
     </Size>
     <Style_Transparent>false</Style_Transparent>
-    <!--<TooltipReference/>-->
     <Style_Checkbox>false</Style_Checkbox>
-    <!--<RadioGroup/>-->
     <Text>Done</Text>
     <TextColor>
       <R>255</R>
@@ -472,16 +471,18 @@
       <PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
     </ButtonDrawTemplate>
   </Button>
+
+  <!-- ======================== Main Window ============================ -->
+
   <Screen item="InspectWnd">
-    <!--<ScreenID/>-->
     <RelativePosition>false</RelativePosition>
     <Location>
       <X>200</X>
       <Y>0</Y>
     </Location>
     <Size>
-      <CX>247</CX>
-      <CY>354</CY>
+      <CX>236</CX>
+      <CY>460</CY>
     </Size>
     <Text>Inspect</Text>
     <Style_VScroll>false</Style_VScroll>
@@ -494,27 +495,36 @@
     <Style_Minimizebox>false</Style_Minimizebox>
     <Style_Border>true</Style_Border>
     <Style_Sizable>false</Style_Sizable>
+    <!-- Logo branding -->
+    <Pieces>INSW_Logo</Pieces>
+    <!-- Row 1: Head Level -->
     <Pieces>INSW_InvSlot1</Pieces>
-    <Pieces>INSW_InvSlot2</Pieces>
     <Pieces>INSW_InvSlot3</Pieces>
+    <Pieces>INSW_InvSlot2</Pieces>
     <Pieces>INSW_InvSlot4</Pieces>
+    <!-- Row 2: Upper Torso -->
     <Pieces>INSW_InvSlot5</Pieces>
-    <Pieces>INSW_InvSlot6</Pieces>
-    <Pieces>INSW_InvSlot7</Pieces>
-    <Pieces>INSW_InvSlot8</Pieces>
-    <Pieces>INSW_InvSlot9</Pieces>
-    <Pieces>INSW_InvSlot10</Pieces>
-    <Pieces>INSW_InvSlot11</Pieces>
-    <Pieces>INSW_InvSlot12</Pieces>
-    <Pieces>INSW_InvSlot13</Pieces>
-    <Pieces>INSW_InvSlot14</Pieces>
-    <Pieces>INSW_InvSlot15</Pieces>
-    <Pieces>INSW_InvSlot16</Pieces>
     <Pieces>INSW_InvSlot17</Pieces>
+    <Pieces>INSW_InvSlot8</Pieces>
+    <!-- Row 3: Arms Level -->
+    <Pieces>INSW_InvSlot9</Pieces>
+    <Pieces>INSW_InvSlot7</Pieces>
+    <Pieces>INSW_InvSlot6</Pieces>
+    <Pieces>INSW_InvSlot10</Pieces>
+    <!-- Row 4: Hands Level -->
+    <Pieces>INSW_InvSlot15</Pieces>
+    <Pieces>INSW_InvSlot12</Pieces>
+    <Pieces>INSW_InvSlot16</Pieces>
+    <!-- Row 5: Lower Body -->
+    <Pieces>INSW_InvSlot20</Pieces>
     <Pieces>INSW_InvSlot18</Pieces>
     <Pieces>INSW_InvSlot19</Pieces>
-    <Pieces>INSW_InvSlot20</Pieces>
+    <!-- Row 6: Weapons -->
+    <Pieces>INSW_InvSlot13</Pieces>
+    <Pieces>INSW_InvSlot14</Pieces>
+    <Pieces>INSW_InvSlot11</Pieces>
     <Pieces>INSW_InvSlot21</Pieces>
+    <!-- Controls -->
     <Pieces>INSW_Edit</Pieces>
     <Pieces>INSW_DoneButton</Pieces>
   </Screen>

@@ -536,6 +536,48 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         print("\n[FAILED] Generation did not complete successfully.\n")
         return 1
 
+    if args.all_classes:
+        master_dir = slots_dir / ".Master"
+        base_config_path = master_dir / CONFIG_FILENAME
+        if not base_config_path.exists():
+            print(f"ERROR: Config not found: {base_config_path}")
+            return 1
+        with open(base_config_path, "r", encoding="utf-8") as f:
+            base_config = json.load(f)
+
+        class_dirs = _discover_class_overrides(master_dir)
+        total = 1 + len(class_dirs)
+        success = 0
+
+        # Generate base .Master
+        items_dir = master_dir / ".Items"
+        generator = ThorneGenerator(master_dir, source_dir=items_dir, fallback_dir=master_dir, verbose=args.verbose)
+        if generator.generate():
+            generator.save_stats()
+            success += 1
+
+        # Generate each class override, using .Master sources and merged config
+        for class_dir in class_dirs:
+            class_config_path = class_dir / CONFIG_FILENAME
+            with open(class_config_path, "r", encoding="utf-8") as f:
+                class_config = json.load(f)
+            merged_config = _merge_config(base_config, class_config)
+            generator = ThorneGenerator(
+                class_dir,
+                config_override=merged_config,
+                source_dir=items_dir,
+                fallback_dir=master_dir,
+                verbose=args.verbose,
+            )
+            if generator.generate():
+                generator.save_stats()
+                success += 1
+
+        print(f"\n{'='*70}")
+        print(f"SUMMARY: Generated {success}/{total} atlas(es)")
+        print(f"{'='*70}\n")
+        return 0 if success == total else 1
+
     if args.master:
         master_dir = slots_dir / ".Master"
         if not master_dir.exists():
@@ -553,6 +595,7 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         generator = ThorneGenerator(
             master_dir,
             source_dir=items_dir,
+            fallback_dir=master_dir,
             verbose=args.verbose,
         )
         if generator.generate():
@@ -563,47 +606,6 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
             return 0
         print("\n[FAILED] Generation did not complete successfully.\n")
         return 1
-
-    if args.all_classes:
-        master_dir = slots_dir / ".Master"
-        base_config_path = master_dir / CONFIG_FILENAME
-        if not base_config_path.exists():
-            print(f"ERROR: Config not found: {base_config_path}")
-            return 1
-        with open(base_config_path, "r", encoding="utf-8") as f:
-            base_config = json.load(f)
-
-        class_dirs = _discover_class_overrides(master_dir)
-        total = 1 + len(class_dirs)
-        success = 0
-
-        # Generate base .Master
-        items_dir = master_dir / ".Items"
-        generator = ThorneGenerator(master_dir, source_dir=items_dir, verbose=args.verbose)
-        if generator.generate():
-            generator.save_stats()
-            success += 1
-
-        # Generate each class override, using .Master sources and merged config
-        for class_dir in class_dirs:
-            class_config_path = class_dir / CONFIG_FILENAME
-            with open(class_config_path, "r", encoding="utf-8") as f:
-                class_config = json.load(f)
-            merged_config = _merge_config(base_config, class_config)
-            generator = ThorneGenerator(
-                class_dir,
-                config_override=merged_config,
-                source_dir=items_dir,
-                verbose=args.verbose,
-            )
-            if generator.generate():
-                generator.save_stats()
-                success += 1
-
-        print(f"\n{'='*70}")
-        print(f"SUMMARY: Generated {success}/{total} atlas(es)")
-        print(f"{'='*70}\n")
-        return 0 if success == total else 1
 
     generator = ThorneGenerator(
         target_dir,

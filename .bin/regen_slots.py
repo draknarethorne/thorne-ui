@@ -777,7 +777,47 @@ before running this script.
                 if generator.generate():
                     generator.save_stats()
                     success_count += 1
-        regenerated_variants = []
+                    regenerated_variants.append((f"{resolved_class_name}/{theme_name}", output_dir))
+
+        # Smart copyback for combo mode:
+        #   --all-combos         → copy Thorne/Thorne (primary class + primary theme)
+        #   --class X            → copy X/Thorne (specified class + primary theme)
+        #   --class X --theme Y  → copy X/Y (single combo, just copy it)
+        PRIMARY_CLASS = "Thorne"
+        PRIMARY_THEME = "Thorne"
+
+        if len(regenerated_variants) == 1:
+            # Single combo — always copy it
+            combo_to_copy = regenerated_variants[0]
+        else:
+            # Multiple combos — find the primary
+            if args.class_name:
+                # --class specified: look for <class>/Thorne
+                target_label = f"{args.class_name}/{PRIMARY_THEME}"
+            else:
+                # --all-combos: look for Thorne/Thorne
+                target_label = f"{PRIMARY_CLASS}/{PRIMARY_THEME}"
+
+            combo_to_copy = None
+            for label, path in regenerated_variants:
+                if label == target_label:
+                    combo_to_copy = (label, path)
+                    break
+
+        if combo_to_copy:
+            combo_label, combo_path = combo_to_copy
+            root_path = base_dir / "thorne_drak"
+            src = combo_path / OUTPUT_FILENAME
+            if src.exists():
+                dst = root_path / OUTPUT_FILENAME
+                shutil.copy2(src, dst)
+                print(f"\n  Copied {combo_label}/{OUTPUT_FILENAME} -> thorne_drak/")
+
+                thorne_dev_path = Path(r"C:\TAKP\uifiles\thorne_dev")
+                if thorne_dev_path.exists():
+                    dst_dev = thorne_dev_path / OUTPUT_FILENAME
+                    shutil.copy2(src, dst_dev)
+                    print(f"  Deployed {combo_label}/{OUTPUT_FILENAME} -> thorne_dev/")
     else:
         for variant in variants:
             variant_dir = base_dir / "thorne_drak" / "Options" / "Slots" / variant
@@ -796,6 +836,8 @@ before running this script.
         print(f"\n{'='*70}")
         print(f"SUMMARY: {success_count}/{total_count} combo(s) processed successfully")
         print(f"{'='*70}\n")
+        if success_count > 0 and combo_to_copy:
+            print("Ready to test in-game with: /loadskin thorne_dev\n")
         return 0 if success_count == total_count else 1
 
     # Smart copyback: single variant → copy it; multiple → copy Gold (primary)

@@ -409,7 +409,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -427,7 +427,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -445,7 +445,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -463,7 +463,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -481,7 +481,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -499,7 +499,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -517,7 +517,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -535,7 +535,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -553,7 +553,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -571,7 +571,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -779,38 +779,6 @@
 	</SpellGem>
 
 
-
-	<Button item = "HB2_Button1">
-		<ScreenID>HB2_Button1</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>434</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Primary</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
-
 	<InvSlot item = "HB2_InvSlot1">
 		<ScreenID>HB2_InvSlot1</ScreenID>
 		<RelativePosition>true</RelativePosition>
@@ -822,43 +790,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Primary</Background>
 		<EQType>13</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button2">
-		<ScreenID>HB2_Button2</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>476</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Secondary</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot2">
 		<ScreenID>HB2_InvSlot2</ScreenID>
@@ -871,43 +808,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Secondary</Background>
 		<EQType>14</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button3">
-		<ScreenID>HB2_Button3</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>518</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag1</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot3">
 		<ScreenID>HB2_InvSlot3</ScreenID>
@@ -920,43 +826,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>22</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button4">
-		<ScreenID>HB2_Button4</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>560</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag2</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot4">
 		<ScreenID>HB2_InvSlot4</ScreenID>
@@ -969,43 +844,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>23</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button5">
-		<ScreenID>HB2_Button5</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>602</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag3</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot5">
 		<ScreenID>HB2_InvSlot5</ScreenID>
@@ -1018,43 +862,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>24</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button6">
-		<ScreenID>HB2_Button6</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>644</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag4</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot6">
 		<ScreenID>HB2_InvSlot6</ScreenID>
@@ -1067,43 +880,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>25</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button7">
-		<ScreenID>HB2_Button7</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>686</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot7">
 		<ScreenID>HB2_InvSlot7</ScreenID>
@@ -1116,43 +898,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button8">
-		<ScreenID>HB2_Button8</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>728</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot8">
 		<ScreenID>HB2_InvSlot8</ScreenID>
@@ -1165,43 +916,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button9">
-		<ScreenID>HB2_Button9</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>770</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot9">
 		<ScreenID>HB2_InvSlot9</ScreenID>
@@ -1214,43 +934,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB2_Button10">
-		<ScreenID>HB2_Button10</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>812</X>
-			<Y>2</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB2_InvSlot10">
 		<ScreenID>HB2_InvSlot10</ScreenID>
@@ -1263,7 +952,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1789,37 +1478,6 @@
 		<AlignRight>false</AlignRight>
 	</Label>
 
-	<Button item = "HB4_Button1">
-		<ScreenID>HB4_Button1</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>434</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Range</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
-
 	<InvSlot item = "HB4_InvSlot1">
 		<ScreenID>HB4_InvSlot1</ScreenID>
 		<RelativePosition>true</RelativePosition>
@@ -1831,43 +1489,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Range</Background>
 		<EQType>11</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button2">
-		<ScreenID>HB4_Button2</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>476</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Ammo</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot2">
 		<ScreenID>HB4_InvSlot2</ScreenID>
@@ -1880,43 +1507,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Ammo</Background>
 		<EQType>21</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button3">
-		<ScreenID>HB4_Button3</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>518</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag5</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot3">
 		<ScreenID>HB4_InvSlot3</ScreenID>
@@ -1929,43 +1525,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>26</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button4">
-		<ScreenID>HB4_Button4</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>560</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag6</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot4">
 		<ScreenID>HB4_InvSlot4</ScreenID>
@@ -1978,43 +1543,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>27</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button5">
-		<ScreenID>HB4_Button5</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>602</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag7</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot5">
 		<ScreenID>HB4_InvSlot5</ScreenID>
@@ -2027,43 +1561,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>28</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button6">
-		<ScreenID>HB4_Button6</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>644</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text>Bag8</Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot6">
 		<ScreenID>HB4_InvSlot6</ScreenID>
@@ -2076,43 +1579,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Bags</Background>
 		<EQType>29</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button7">
-		<ScreenID>HB4_Button7</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>686</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot7">
 		<ScreenID>HB4_InvSlot7</ScreenID>
@@ -2125,43 +1597,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button8">
-		<ScreenID>HB4_Button8</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>728</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot8">
 		<ScreenID>HB4_InvSlot8</ScreenID>
@@ -2174,43 +1615,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button9">
-		<ScreenID>HB4_Button9</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>770</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot9">
 		<ScreenID>HB4_InvSlot9</ScreenID>
@@ -2223,43 +1633,12 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
-
-	<Button item = "HB4_Button10">
-		<ScreenID>HB4_Button10</ScreenID>
-		<Font>1</Font>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>812</X>
-			<Y>46</Y>
-		</Location>
-		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
-		</Size>
-		<Text></Text>
-		<TextColor>
-			<R>255</R>
-			<G>255</G>
-			<B>255</B>
-		</TextColor>
-		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
-		</DecalSize>
-		<ButtonDrawTemplate>
-			<Normal>A_SquareBtnNormal</Normal>
-			<Pressed>A_SquareBtnPressed</Pressed>
-			<Flyby>A_SquareBtnFlyby</Flyby>
-			<Disabled>A_SquareBtnDisabled</Disabled>
-			<PressedFlyby>A_SquareBtnPressedFlyby</PressedFlyby>
-		</ButtonDrawTemplate>
-	</Button>
 
 	<InvSlot item = "HB4_InvSlot10">
 		<ScreenID>HB4_InvSlot10</ScreenID>
@@ -2272,12 +1651,13 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_RecessedBox</Background>
 		<EQType>-1</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 	</InvSlot>
+
 	<Screen item = "HotButtonWnd">
 		<ScreenID/>
 		<Font>2</Font>
@@ -2301,9 +1681,11 @@
 		<Style_Minimizebox>false</Style_Minimizebox>
 		<Style_Border>true</Style_Border>
 		<Style_Sizable>true</Style_Sizable>
+
 		<Pieces>HB_PageLeftButton</Pieces>
 		<Pieces>HB_PageRightButton</Pieces>
 		<Pieces>HB_CurrentPageLabel</Pieces>
+
 		<Pieces>HB_Button1</Pieces>
 		<Pieces>HB_Button2</Pieces>
 		<Pieces>HB_Button3</Pieces>
@@ -2335,26 +1717,16 @@
 		<Pieces>HB_SpellGem9</Pieces>
 		<Pieces>HB_SpellGem10</Pieces>
 
-		<Pieces>HB2_Button1</Pieces>
-		<Pieces>HB2_Button2</Pieces>
-		<Pieces>HB2_Button3</Pieces>
-		<Pieces>HB2_Button4</Pieces>
-		<Pieces>HB2_Button5</Pieces>
-		<Pieces>HB2_Button6</Pieces>
-		<Pieces>HB2_Button7</Pieces>
-		<Pieces>HB2_Button8</Pieces>
-		<Pieces>HB2_Button9</Pieces>
-		<Pieces>HB2_Button10</Pieces>
 		<Pieces>HB2_InvSlot1</Pieces>
 		<Pieces>HB2_InvSlot2</Pieces>
 		<Pieces>HB2_InvSlot3</Pieces>
 		<Pieces>HB2_InvSlot4</Pieces>
 		<Pieces>HB2_InvSlot5</Pieces>
 		<Pieces>HB2_InvSlot6</Pieces>
-		<Pieces>HB2_InvSlot7</Pieces>
+		<!--<Pieces>HB2_InvSlot7</Pieces>
 		<Pieces>HB2_InvSlot8</Pieces>
 		<Pieces>HB2_InvSlot9</Pieces>
-		<Pieces>HB2_InvSlot10</Pieces>
+		<Pieces>HB2_InvSlot10</Pieces>-->
 
 		<Pieces>HB3_AC_Icon</Pieces>
 		<Pieces>HB3_AC_Value</Pieces>
@@ -2385,26 +1757,16 @@
 		<Pieces>HB3_PR_Icon</Pieces>
 		<Pieces>HB3_PR_Value</Pieces>
 
-		<Pieces>HB4_Button1</Pieces>
-		<Pieces>HB4_Button2</Pieces>
-		<Pieces>HB4_Button3</Pieces>
-		<Pieces>HB4_Button4</Pieces>
-		<Pieces>HB4_Button5</Pieces>
-		<Pieces>HB4_Button6</Pieces>
-		<Pieces>HB4_Button7</Pieces>
-		<Pieces>HB4_Button8</Pieces>
-		<Pieces>HB4_Button9</Pieces>
-		<Pieces>HB4_Button10</Pieces>
 		<Pieces>HB4_InvSlot1</Pieces>
 		<Pieces>HB4_InvSlot2</Pieces>
 		<Pieces>HB4_InvSlot3</Pieces>
 		<Pieces>HB4_InvSlot4</Pieces>
 		<Pieces>HB4_InvSlot5</Pieces>
 		<Pieces>HB4_InvSlot6</Pieces>
-		<Pieces>HB4_InvSlot7</Pieces>
+		<!--<Pieces>HB4_InvSlot7</Pieces>
 		<Pieces>HB4_InvSlot8</Pieces>
 		<Pieces>HB4_InvSlot9</Pieces>
-		<Pieces>HB4_InvSlot10</Pieces>
+		<Pieces>HB4_InvSlot10</Pieces>-->
 	</Screen>
 
 </XML>

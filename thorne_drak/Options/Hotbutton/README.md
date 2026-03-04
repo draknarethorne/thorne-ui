@@ -5,7 +5,7 @@
 This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml).
 
 **Last Synced:** 2026-03-03  
-**Git Commit:** e867558
+**Git Commit:** b901568
 
 ---
 
@@ -15,6 +15,9 @@ This directory contains variants for the Hotbutton window (EQUI_HotbuttonWnd.xml
   `EQUI_HotButtonWnd.xml`
 
 - **[Thorne/](Thorne/)**    
+  `EQUI_HotbuttonWnd.xml`
+
+- **[Thorne Classic/](Thorne Classic/)**    
   `EQUI_HotbuttonWnd.xml`
 
 - **[Thorne Inventory/](Thorne Inventory/)**    

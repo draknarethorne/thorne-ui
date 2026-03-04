@@ -13,23 +13,23 @@
       "name": "ear",
       "out_row": 1,
       "out_col": 1,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -37,11 +37,11 @@
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_x": 1,
+      "offset_x_source": "master_shape",
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -50,23 +50,23 @@
       "name": "neck",
       "out_row": 1,
       "out_col": 2,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -76,9 +76,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -87,23 +87,23 @@
       "name": "head",
       "out_row": 1,
       "out_col": 3,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -113,9 +113,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -124,23 +124,23 @@
       "name": "face",
       "out_row": 1,
       "out_col": 4,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -150,9 +150,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -161,23 +161,23 @@
       "name": "chest",
       "out_row": 1,
       "out_col": 5,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -187,9 +187,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -198,23 +198,23 @@
       "name": "secondary",
       "out_row": 1,
       "out_col": 6,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -224,9 +224,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -235,35 +235,35 @@
       "name": "back",
       "out_row": 2,
       "out_col": 1,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
-      "fit_size": 35,
-      "fit_size_source": "master_shape",
+      "fit_size": 30,
+      "fit_size_source": "default_item",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -272,23 +272,23 @@
       "name": "arms",
       "out_row": 2,
       "out_col": 2,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -298,9 +298,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -309,23 +309,23 @@
       "name": "shoulders",
       "out_row": 2,
       "out_col": 3,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -335,9 +335,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -346,23 +346,23 @@
       "name": "wrist",
       "out_row": 2,
       "out_col": 4,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -372,9 +372,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -383,23 +383,23 @@
       "name": "belt",
       "out_row": 2,
       "out_col": 5,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -409,9 +409,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -420,26 +420,26 @@
       "name": "range",
       "out_row": 2,
       "out_col": 6,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
-      "fit_size": 30,
-      "fit_size_source": "default_item",
+      "fit_size": 28,
+      "fit_size_source": "master_shape",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 2,
@@ -447,8 +447,8 @@
       "offset_x": 0,
       "offset_x_source": "default_item",
       "offset_y": 0,
-      "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -457,23 +457,23 @@
       "name": "hands",
       "out_row": 3,
       "out_col": 1,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -481,11 +481,11 @@
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_x": 1,
+      "offset_x_source": "master_shape",
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -494,35 +494,35 @@
       "name": "fingers",
       "out_row": 3,
       "out_col": 2,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
+      "fit_size": 30,
+      "fit_size_source": "default_item",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -531,247 +531,25 @@
       "name": "legs",
       "out_row": 3,
       "out_col": 3,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
-      ],
-      "middle_color": [
-        210,
-        220,
-        235
-      ],
-      "fit_size": 30,
-      "fit_size_source": "default_item",
-      "fit_mode": "visible",
-      "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": 0,
-      "offset_y_source": "default_item",
-      "item_opacity": 0.95,
-      "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
-    },
-    {
-      "name": "feet",
-      "out_row": 3,
-      "out_col": 4,
-      "gradient": "silver",
-      "gradient_source": "default_button",
-      "gradient_type": "vertical",
-      "top_color": [
+        110,
         120,
-        130,
-        145
-      ],
-      "bottom_color": [
-        150,
-        160,
-        175
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
-      ],
-      "fit_size": 30,
-      "fit_size_source": "default_item",
-      "fit_mode": "visible",
-      "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": 0,
-      "offset_y_source": "default_item",
-      "item_opacity": 0.95,
-      "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
-    },
-    {
-      "name": "primary",
-      "out_row": 3,
-      "out_col": 5,
-      "gradient": "silver",
-      "gradient_source": "default_button",
-      "gradient_type": "vertical",
-      "top_color": [
-        120,
-        130,
-        145
-      ],
-      "bottom_color": [
-        150,
         160,
-        175
+        170,
+        180
       ],
-      "middle_color": [
-        210,
-        220,
-        235
-      ],
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
-      "fit_mode": "visible",
-      "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": 0,
-      "offset_y_source": "default_item",
-      "item_opacity": 0.95,
-      "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
-    },
-    {
-      "name": "ammo",
-      "out_row": 3,
-      "out_col": 6,
-      "gradient": "silver",
-      "gradient_source": "default_button",
-      "gradient_type": "vertical",
-      "top_color": [
-        120,
-        130,
-        145
-      ],
-      "bottom_color": [
-        150,
-        160,
-        175
-      ],
-      "middle_color": [
-        210,
-        220,
-        235
-      ],
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
-      "fit_mode": "visible",
-      "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": 0,
-      "offset_y_source": "default_item",
-      "item_opacity": 0.95,
-      "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
-    },
-    {
-      "name": "bag",
-      "out_row": 4,
-      "out_col": 1,
-      "gradient": "silver",
-      "gradient_source": "default_button",
-      "gradient_type": "vertical",
-      "top_color": [
-        120,
-        130,
-        145
-      ],
-      "bottom_color": [
-        150,
-        160,
-        175
-      ],
-      "middle_color": [
-        210,
-        220,
-        235
-      ],
-      "fit_size": 34,
-      "fit_size_source": "master_shape",
-      "fit_mode": "visible",
-      "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -1,
-      "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
-      "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
-    },
-    {
-      "name": "pack",
-      "out_row": 4,
-      "out_col": 2,
-      "gradient": "silver",
-      "gradient_source": "default_button",
-      "gradient_type": "vertical",
-      "top_color": [
-        120,
-        130,
-        145
-      ],
-      "bottom_color": [
-        150,
-        160,
-        175
-      ],
-      "middle_color": [
-        210,
-        220,
-        235
-      ],
-      "fit_size": 36,
-      "fit_size_source": "master_shape",
-      "fit_mode": "visible",
-      "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -1,
-      "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
-      "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
-    },
-    {
-      "name": "satchel",
-      "out_row": 4,
-      "out_col": 3,
-      "gradient": "silver",
-      "gradient_source": "default_button",
-      "gradient_type": "vertical",
-      "top_color": [
-        120,
-        130,
-        145
-      ],
-      "bottom_color": [
-        150,
-        160,
-        175
-      ],
-      "middle_color": [
-        210,
-        220,
-        235
-      ],
-      "fit_size": 34,
+      "fit_size": 31,
       "fit_size_source": "master_shape",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
@@ -780,8 +558,230 @@
       "offset_x": 0,
       "offset_x_source": "default_item",
       "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.9,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "feet",
+      "out_row": 3,
+      "out_col": 4,
+      "gradient": "texture",
+      "gradient_source": "default_button",
+      "gradient_type": "diagonal_tl",
+      "top_color": [
+        45,
+        48,
+        52
+      ],
+      "bottom_color": [
+        110,
+        120,
+        130
+      ],
+      "middle_color": [
+        160,
+        170,
+        180
+      ],
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.9,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "primary",
+      "out_row": 3,
+      "out_col": 5,
+      "gradient": "texture",
+      "gradient_source": "default_button",
+      "gradient_type": "diagonal_tl",
+      "top_color": [
+        45,
+        48,
+        52
+      ],
+      "bottom_color": [
+        110,
+        120,
+        130
+      ],
+      "middle_color": [
+        160,
+        170,
+        180
+      ],
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.9,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "ammo",
+      "out_row": 3,
+      "out_col": 6,
+      "gradient": "texture",
+      "gradient_source": "default_button",
+      "gradient_type": "diagonal_tl",
+      "top_color": [
+        45,
+        48,
+        52
+      ],
+      "bottom_color": [
+        110,
+        120,
+        130
+      ],
+      "middle_color": [
+        160,
+        170,
+        180
+      ],
+      "fit_size": 30,
+      "fit_size_source": "default_item",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.9,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "bag",
+      "out_row": 4,
+      "out_col": 1,
+      "gradient": "texture",
+      "gradient_source": "default_button",
+      "gradient_type": "diagonal_tl",
+      "top_color": [
+        45,
+        48,
+        52
+      ],
+      "bottom_color": [
+        110,
+        120,
+        130
+      ],
+      "middle_color": [
+        160,
+        170,
+        180
+      ],
+      "fit_size": 30,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 0,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "pack",
+      "out_row": 4,
+      "out_col": 2,
+      "gradient": "texture",
+      "gradient_source": "default_button",
+      "gradient_type": "diagonal_tl",
+      "top_color": [
+        45,
+        48,
+        52
+      ],
+      "bottom_color": [
+        110,
+        120,
+        130
+      ],
+      "middle_color": [
+        160,
+        170,
+        180
+      ],
+      "fit_size": 32,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 0,
+      "offset_y_source": "master_shape",
+      "item_opacity": 0.9,
+      "item_opacity_source": "default_item",
+      "overrides_applied": [],
+      "has_override": false
+    },
+    {
+      "name": "satchel",
+      "out_row": 4,
+      "out_col": 3,
+      "gradient": "texture",
+      "gradient_source": "default_button",
+      "gradient_type": "diagonal_tl",
+      "top_color": [
+        45,
+        48,
+        52
+      ],
+      "bottom_color": [
+        110,
+        120,
+        130
+      ],
+      "middle_color": [
+        160,
+        170,
+        180
+      ],
+      "fit_size": 30,
+      "fit_size_source": "master_shape",
+      "fit_mode": "visible",
+      "fit_mode_source": "default_item",
+      "button_col": 2,
+      "button_col_source": "default_button",
+      "offset_x": 0,
+      "offset_x_source": "default_item",
+      "offset_y": 1,
+      "offset_y_source": "default_item",
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -790,23 +790,23 @@
       "name": "empty_row4_col4",
       "out_row": 4,
       "out_col": 4,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -816,9 +816,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -827,23 +827,23 @@
       "name": "empty_row4_col5",
       "out_row": 4,
       "out_col": 5,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -853,9 +853,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -864,23 +864,23 @@
       "name": "empty_row4_col6",
       "out_row": 4,
       "out_col": 6,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -890,34 +890,34 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
     },
     {
-      "name": "empty_row5_col1",
+      "name": "recessed_box",
       "out_row": 5,
       "out_col": 1,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -927,9 +927,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -938,23 +938,23 @@
       "name": "empty_row5_col2",
       "out_row": 5,
       "out_col": 2,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -964,9 +964,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -975,23 +975,23 @@
       "name": "empty_row5_col3",
       "out_row": 5,
       "out_col": 3,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1001,9 +1001,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1012,23 +1012,23 @@
       "name": "empty_row5_col4",
       "out_row": 5,
       "out_col": 4,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1038,9 +1038,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1049,23 +1049,23 @@
       "name": "empty_row5_col5",
       "out_row": 5,
       "out_col": 5,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1075,9 +1075,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1086,23 +1086,23 @@
       "name": "empty_row5_col6",
       "out_row": 5,
       "out_col": 6,
-      "gradient": "silver",
+      "gradient": "texture",
       "gradient_source": "default_button",
-      "gradient_type": "vertical",
+      "gradient_type": "diagonal_tl",
       "top_color": [
-        120,
-        130,
-        145
+        45,
+        48,
+        52
       ],
       "bottom_color": [
-        150,
-        160,
-        175
+        110,
+        120,
+        130
       ],
       "middle_color": [
-        210,
-        220,
-        235
+        160,
+        170,
+        180
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1112,9 +1112,9 @@
       "button_col_source": "default_button",
       "offset_x": 0,
       "offset_x_source": "default_item",
-      "offset_y": 0,
+      "offset_y": 1,
       "offset_y_source": "default_item",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [],
       "has_override": false
@@ -1145,13 +1145,13 @@
       "fit_size_source": "master_shape",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
-      "button_col": 1,
-      "button_col_source": "master_shape",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -2,
+      "button_col": 2,
+      "button_col_source": "default_button",
+      "offset_x": -1,
+      "offset_x_source": "master_shape",
+      "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1186,11 +1186,11 @@
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -2,
+      "offset_x": -1,
+      "offset_x_source": "master_shape",
+      "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1225,11 +1225,11 @@
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -2,
+      "offset_x": -1,
+      "offset_x_source": "master_shape",
+      "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1260,11 +1260,11 @@
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -2,
+      "offset_x": -1,
+      "offset_x_source": "master_shape",
+      "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1295,11 +1295,11 @@
       "fit_mode_source": "default_item",
       "button_col": 2,
       "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -2,
+      "offset_x": -1,
+      "offset_x_source": "master_shape",
+      "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"
@@ -1332,13 +1332,13 @@
       "fit_size_source": "master_shape",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
-      "button_col": 2,
-      "button_col_source": "default_button",
-      "offset_x": 0,
-      "offset_x_source": "default_item",
-      "offset_y": -2,
+      "button_col": 1,
+      "button_col_source": "master_shape",
+      "offset_x": -1,
+      "offset_x_source": "master_shape",
+      "offset_y": -1,
       "offset_y_source": "master_shape",
-      "item_opacity": 0.95,
+      "item_opacity": 0.9,
       "item_opacity_source": "default_item",
       "overrides_applied": [
         "gradient"

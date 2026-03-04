@@ -132,13 +132,13 @@
     {
       "name": "bag",
       "out_row": 4, "out_col": 1,
-      "src_row": 6, "src_col": 5, "source_file": "dragitem2.tga",
+      "src_row": 4, "src_col": 1, "source_file": "dragitem2.tga",
       "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
-      "name": "pack",
+      "name": "backpack",
       "out_row": 4, "out_col": 2,
-      "src_row": 1, "src_col": 5, "source_file": "dragitem11.tga",
+      "src_row": 6, "src_col": 5, "source_file": "dragitem2.tga",
       "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
@@ -148,54 +148,53 @@
       "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
-      "name": "empty_row4_col4",
+      "name": "pack",
       "out_row": 4, "out_col": 4,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
+      "src_row": 1, "src_col": 5, "source_file": "dragitem11.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
-      "name": "empty_row4_col5",
+      "name": "box",
       "out_row": 4, "out_col": 5,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
+      "src_row": 2, "src_col": 1, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
-      "name": "empty_row4_col6",
+      "name": "open_box",
       "out_row": 4, "out_col": 6,
-      "src_row": 1, "src_col": 1, "source_file": "empty.tga",
-      "mode": "empty"
+      "src_row": 3, "src_col": 2, "source_file": "dragitem7.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
     },
 
     {
-      "name": "recessed_box",
+      "name": "empty",
       "out_row": 5, "out_col": 1,
       "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
       "mode": "empty"
     },
     {
-      "name": "empty_row5_col2",
+      "name": "treasurechest",
       "out_row": 5, "out_col": 2,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
+      "src_row": 1, "src_col": 3, "source_file": "dragitem10.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
-      "name": "empty_row5_col3",
+      "name": "spellbook",
       "out_row": 5, "out_col": 3,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
+      "src_row": 2, "src_col": 5, "source_file": "dragitem8.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
-      "name": "empty_row5_col4",
+      "name": "lantern",
       "out_row": 5, "out_col": 4,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
+      "src_row": 2, "src_col": 3, "source_file": "dragitem7.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}
     },
     {
-      "name": "empty_row5_col5",
+      "name": "spell",
       "out_row": 5, "out_col": 5,
-      "src_row": 1, "src_col": 1, "source_file": "placeholder.tga",
-      "mode": "empty"
-    },
+      "src_row": 5, "src_col": 1, "source_file": "dragitem1.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.9}    },
     {
       "name": "empty_row5_col6",
       "out_row": 5, "out_col": 6,

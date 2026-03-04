@@ -113,7 +113,7 @@ python .bin/options_readme_checker.py --help
 .\sync-thorne-ui.bat
 ```
 
-Syncs entire `thorne_drak/` to `C:\TAKP\uifiles\thorne_dev\` for in-game testing.
+Syncs entire `thorne_drak/` to `<TAKP>\uifiles\thorne_dev\` for in-game testing.
 
 **Use when:** Testing full UI changes, ready to commit to git
 
@@ -123,7 +123,7 @@ Syncs entire `thorne_drak/` to `C:\TAKP\uifiles\thorne_dev\` for in-game testing
 
 ## Documentation Standards
 
-All scripts follow the pattern defined in [STANDARDS.md](STANDARDS.md):
+All scripts follow the pattern defined in [STANDARDS.md](../.docs/STANDARDS.md):
 
 - **Simple scripts**: One-liner + `--help` in README.md
 - **Complex scripts**: Individual `.md` file + `--help` in script

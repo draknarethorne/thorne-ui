@@ -23,7 +23,7 @@ This directory contains variants for the Bank window (EQUI_BankWnd.xml).
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Bank\Thorne\EQUI_BankWnd.xml`
+- `EQUI_BankWnd.xml`
 
 ## Metadata
 
@@ -34,4 +34,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)

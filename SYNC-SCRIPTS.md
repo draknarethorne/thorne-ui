@@ -4,8 +4,8 @@
 
 The Thorne UI project uses a **development → testing → release** workflow:
 
-- **Development**: `C:\Thorne-UI\thorne_drak\` (version controlled)
-- **Testing**: `C:\TAKP\uifiles\thorne_dev\` (deployed test location)
+- **Development**: `<REPO_ROOT>\thorne_drak\` (version controlled)
+- **Testing**: `<TAKP>\uifiles\thorne_dev\` (deployed test location)
 - **Release**: Changes pushed to GitHub, users install via releases
 
 ## Sync Scripts
@@ -24,7 +24,7 @@ The Thorne UI project uses a **development → testing → release** workflow:
 - Need to deploy all recent changes at once
 
 **What it does:**
-- Copies all files from `C:\Thorne-UI\thorne_drak\` to `C:\TAKP\uifiles\thorne_dev\`
+- Copies all files from `<REPO_ROOT>\thorne_drak\` to `<TAKP>\uifiles\thorne_dev\`
 - Uses robocopy with mirroring (removes extra files in dest)
 - Excludes git, backup, and temporary files
 - In-game: `/loadskin thorne_dev`
@@ -91,7 +91,7 @@ thorne_drak/
 ## Best Practices
 
 ### During Development
-- ❌ **Don't sync** - Work stays in `C:\Thorne-UI\` until ready to test
+- ❌ **Don't sync** - Work stays in `<REPO_ROOT>\` until ready to test
 - ✅ **Commit regularly** - Version control main development files
 - ✅ **XML validation** - Run validation before syncing
 
@@ -102,7 +102,7 @@ thorne_drak/
 
 ### After Testing
 - ✅ **Review changes** - Present modifications for approval
-- ✅ **Update documentation** - Document finalchanges and decisions
+- ✅ **Update documentation** - Document final changes and decisions
 - ✅ **Commit approved work** - Version control only after testing/approval
 
 ### What NOT to Do
@@ -162,7 +162,7 @@ thorne_drak/
 - Excludes only .md files, hidden files, and system files
 
 **Q: Lost work after sync?**
-- A: Work should be in `C:\Thorne-UI\` (version controlled)
+- A: Work should be in `<REPO_ROOT>\` (version controlled)
 - `thorne_dev` is a deployment target, not source of truth
 
 ---

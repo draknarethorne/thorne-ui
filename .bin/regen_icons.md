@@ -271,7 +271,7 @@ Each icon:
 ### 6. Automatic Deployment
 
 After copyback, automatically copies to:
-- `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (testing directory)
+- `<TAKP>\uifiles\thorne_dev\stat_icons_thorne01.tga` (testing directory)
 
 **Benefits:**
 - No need to run separate sync script
@@ -396,7 +396,7 @@ thorne_drak/
 
 **Cause:** Directory path or permissions issue
 
-**Fix:** Check that `C:\TAKP\uifiles\thorne_dev\` exists and is writable
+**Fix:** Check that `<TAKP>\uifiles\thorne_dev\` exists and is writable
 
 ---
 
@@ -470,7 +470,7 @@ Results in:
 - `thorne_drak/Options/Icons/Duxa/stat_icons_thorne01.tga` (with labels)  
 - `thorne_drak/Options/Icons/Thorne/stat_icons_thorne01.tga` (with labels)
 - `thorne_drak/stat_icons_thorne01.tga` (with labels - Thorne copy)
-- `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (with labels - deployment)
+- `<TAKP>\uifiles\thorne_dev\stat_icons_thorne01.tga` (with labels - deployment)
 
 ### Generate all variants, then specific variant without labels
 

@@ -35,7 +35,7 @@ This directory contains variants for the Stats window (EQUI_MusicPlayerWnd.xml).
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Stats\Thorne 7x2 Stacked\EQUI_MusicPlayerWnd.xml`
+- `EQUI_MusicPlayerWnd.xml`
 
 ## Metadata
 
@@ -46,4 +46,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)

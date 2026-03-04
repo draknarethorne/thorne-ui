@@ -403,7 +403,7 @@ Current animations are defined in:
 
 ## File References
 
-All files analyzed are located in: `c:\thorne-ui\thorne_drak\EQUI_*.xml`
+All files analyzed are located in: `../../thorne_drak/EQUI_*.xml`
 
 Key files:
 - `EQUI_Inventory.xml` - Equipment + bag slots

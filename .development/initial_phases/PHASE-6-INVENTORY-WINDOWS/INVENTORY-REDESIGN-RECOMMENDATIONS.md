@@ -721,7 +721,7 @@ See [ZONE-BALANCE-ANALYSIS.md](ZONE-BALANCE-ANALYSIS.md) for complete mathematic
 - [INVENTORY-ANALYSIS-NEMESIS.md](INVENTORY-ANALYSIS-NEMESIS.md) - Integrated stats
 - [INVENTORY-ANALYSIS-QQQUARM.md](INVENTORY-ANALYSIS-QQQUARM.md) - Percentages, 3-column
 - [INVENTORY-REDESIGN-FINAL-PLAN.md](INVENTORY-REDESIGN-FINAL-PLAN.md) - Current plan
-- [STANDARDS.md](../../.docs/STANDARDS.md) - Color palette, layout standards
+- [STANDARDS.md](../../../.docs/STANDARDS.md) - Color palette, layout standards
 
 ---
 

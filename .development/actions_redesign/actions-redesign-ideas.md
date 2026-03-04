@@ -23,11 +23,11 @@ All found files include a `TabBox` for actions and wire it into the root window 
 
 Examples:
 
-- `c:\TAKP\uifiles\default\EQUI_ActionsWindow.xml`
-- `c:\TAKP\uifiles\QQ\EQUI_ActionsWindow.xml`
-- `c:\TAKP\uifiles\Nillipuss\EQUI_ActionsWindow.xml`
-- `c:\TAKP\uifiles\duxaUI\EQUI_ActionsWindow.xml`
-- `c:\Thorne-UI\thorne_drak\EQUI_ActionsWindow.xml`
+- `../../default/EQUI_ActionsWindow.xml`
+- `../../QQ/EQUI_ActionsWindow.xml`
+- `../../Nillipuss/EQUI_ActionsWindow.xml`
+- `../../duxaUI/EQUI_ActionsWindow.xml`
+- `../../thorne_drak/EQUI_ActionsWindow.xml`
 
 ### Page model is also universal
 

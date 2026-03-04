@@ -444,10 +444,6 @@ Then adjust window size to 220×100px to fit new layout.
 
 ## Related Files
 
-- [README.md](README.md) - Main documentation hub
-- [ROADMAP.md](ROADMAP.md) - Future phases and enhancement ideas
-- [EQUI_ActionsWindow.md](EQUI_ActionsWindow.md) - Actions window documentation
-- [EQUI_MerchantWnd.md](EQUI_MerchantWnd.md) - Merchant window documentation
 - Reference: `default/EQUI_HotButtonWnd.xml` - Original P2002 client hotbar
 
 ---

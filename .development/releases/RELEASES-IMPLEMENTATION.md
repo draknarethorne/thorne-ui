@@ -29,12 +29,6 @@ Created comprehensive documentation for managing releases:
   - Best practices
   - Examples
 
-- **[RELEASES-QUICKSTART.md](../../.docs/releases/RELEASES-QUICKSTART.md)** - Quick reference:
-  - Pre-release checklist
-  - Commands to create a release
-  - What happens automatically
-  - Common troubleshooting
-
 - **[.docs/releases/RELEASE-NOTES-TEMPLATE.md](../../.docs/releases/RELEASE-NOTES-TEMPLATE.md)** - Template for:
   - Manual release notes
   - Editing auto-generated notes
@@ -244,7 +238,6 @@ For complete testing instructions, see **[TESTING-RELEASES.md](TESTING-RELEASES.
 For questions about the release system:
 - Test the workflow: [TESTING-RELEASES.md](TESTING-RELEASES.md)
 - Review the detailed guide: [RELEASES.md](../../.docs/releases/RELEASES.md)
-- Check the quick start: [RELEASES-QUICKSTART.md](../../.docs/releases/RELEASES-QUICKSTART.md)
 - Review the workflow file: `.github/workflows/release.yml`
 
 ---

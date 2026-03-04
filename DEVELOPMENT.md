@@ -2,11 +2,11 @@
 
 Implementation details, architecture decisions, and development roadmap for the Thorne UI project.
 
-**Version**: 0.7.0-dev  
-**Last Updated**: February 18, 2026  
+**Version**: 0.7.2  
+**Last Updated**: March 4, 2026  
 **Maintainer**: Draknare Thorne
 
-**Quick Links**: [Standards](.docs/STANDARDS.md) | [Phases](.development/initial-phases/) | [Technical References](.docs/technical/) | [TODO](TODO.md) | [Releases Guide](.docs/releases/RELEASES.md)
+**Quick Links**: [Standards](.docs/STANDARDS.md) | [Phases](.development/initial_phases/) | [Technical References](.docs/technical/) | [TODO](TODO.md) | [Releases Guide](.docs/releases/RELEASES.md)
 
 ---
 
@@ -285,7 +285,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
   - Custom UI folders need their own EQUI.xml to load ToT window
 - Independent window - can be positioned/hidden separately
 
-**See**: [EQUI_TargetOfTargetWindow.xml](thorne_drak/EQUI_TargetOfTargetWindow.xml) and [EQUI.xml](thorne_drak/EQUI.xml) for implementation example.
+**See**: [EQUI_TargetOfTargetWindow.xml](.default/EQUI_TargetOfTargetWindow.xml) and [EQUI.xml](.default/EQUI.xml) for implementation example.
 
 **See**: [STANDARDS.md - Implementation Patterns](.docs/STANDARDS.md#implementation-patterns) for comprehensive architectural pattern reference including these discoveries plus Options Directory pattern, color palette, and gauge templates.
 
@@ -295,7 +295,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
 
 The numbered phase plan was the original scaffolding for early/mid project delivery and is now treated as historical planning context.
 
-- Archived reference: [.development/initial-phases/](.development/initial-phases/)
+- Archived reference: [.development/initial_phases/](.development/initial_phases/)
 - Use this for historical rationale and implementation chronology, not day-to-day prioritization.
 
 ### Current planning model

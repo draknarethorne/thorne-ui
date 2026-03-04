@@ -26,7 +26,7 @@ This directory contains variants for the Merchant window (EQUI_MerchantWnd.xml).
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Merchant\Thorne Bags\EQUI_MerchantWnd.xml`
+- `EQUI_MerchantWnd.xml`
 
 ## Metadata
 
@@ -37,4 +37,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)

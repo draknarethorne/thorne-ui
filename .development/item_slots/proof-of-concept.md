@@ -11,7 +11,7 @@ Create a clean inventory of existing `.bin` scripts that currently process or su
 - **Archive / replace**
 
 Target direction: shift generation roots into:
-- `C:\Thorne-UI\thorne_drak\Options\Slots\.Master`
+- `<REPO_ROOT>\thorne_drak\Options\Slots\.Master`
 
 and generate option-ready outputs from master files.
 

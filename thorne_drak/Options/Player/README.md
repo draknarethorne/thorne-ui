@@ -23,7 +23,7 @@ This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Player\Thorne\EQUI_PlayerWindow.xml`
+- `EQUI_PlayerWindow.xml`
 
 ## Metadata
 
@@ -34,4 +34,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)

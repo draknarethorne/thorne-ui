@@ -23,8 +23,8 @@ This directory is the **craftsman's workshop** for Thorne UI—where legendary i
 - 🎯 **SpellBook meditate button** (SpellBookWnd)
 
 **For v0.7.0 Implementation Details:**
-→ See [.docs/ROADMAP-v0.7.0.md](..//.docs/ROADMAP-v0.7.0.md)  
-→ See [ui-analysis/README.md](./ui-analysis/README.md) (comprehensive feature analysis)
+→ See [.docs/ROADMAP-v0.7.0.md](../.docs/ROADMAP-v0.7.0.md)  
+→ See [ui-analysis/README.md](./ui_analysis/README.md) (comprehensive feature analysis)
 
 ## Directory Structure (Organized by Purpose)
 
@@ -91,17 +91,16 @@ Architecture decisions, system patterns, and infrastructure evolution record.
 ## How to Navigate
 
 **I want to know what to build next:**  
-→ [ui-analysis/MASTER-FEATURE-INDEX.md](ui-analysis/MASTER-FEATURE-INDEX.md)
+→ [ui_analysis/MASTER-FEATURE-INDEX.md](ui_analysis/MASTER-FEATURE-INDEX.md)
 
 **I want to see all window analyses:**  
-→ [ui-analysis/README.md](ui-analysis/README.md)
+→ [ui_analysis/README.md](ui_analysis/README.md)
 
 **I want to understand current v0.7.0 plans:**  
-→ [../docs/ROADMAP-v0.7.0.md](../.docs/ROADMAP-v0.7.0.md)  
-→ [ui-analysis/ANALYSIS-COMPLETE.md](ui-analysis/ANALYSIS-COMPLETE.md)
+→ [.docs/ROADMAP-v0.7.0.md](../.docs/ROADMAP-v0.7.0.md)
 
 **I want to see what phase we're on:**  
-→ [initial-phases/README.md](initial-phases/README.md)
+→ [initial_phases/README.md](initial_phases/README.md)
 
 
 

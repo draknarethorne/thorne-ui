@@ -214,5 +214,4 @@ To switch to other variants:
 ---
 
 **Part of**: [Thorne UI](../../../../README.md)  
-**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)  
-**Related Variants**: [Large Loot](../Large%20Loot/README.md)
+**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)

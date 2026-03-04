@@ -2,7 +2,7 @@
 
 Complete guidelines for maintaining consistency across all Thorne UI variants and ongoing development.
 
-**Quick Links**: [Development Guide](../DEVELOPMENT.md) | [Phases](../.development/initial-phases/README.md) | [Technical References](technical/README.md) | [Releases](releases/RELEASES.md)
+**Quick Links**: [Development Guide](../DEVELOPMENT.md) | [Phases](../.development/initial_phases/README.md) | [Technical References](technical/README.md) | [Releases](releases/RELEASES.md)
 
 ---
 
@@ -700,8 +700,8 @@ Consider restructuring when documentation exceeds **2000 lines** or **8+ major p
 **Cross-Linking Pattern**:
 ```markdown
 <!-- Master index -->
-### [Phase 3.9](../.development/initial-phases/PHASE-3.9-INVENTORY-REDESIGN.md)
-**Status**: PLANNED | [Full Documentation →](../.development/initial-phases/PHASE-3.9-INVENTORY-REDESIGN.md)
+### [Phase 3.9](../.development/initial_phases/PHASE-3.9-INVENTORY-REDESIGN.md)
+**Status**: PLANNED | [Full Documentation →](../.development/initial_phases/PHASE-3.9-INVENTORY-REDESIGN.md)
 
 <!-- Phase file -->
 # Phase 3.9: Inventory Window Redesign

@@ -95,7 +95,7 @@ Window sizes and default positions vary:
 - Difficult to maintain UI layout contracts
 
 **Opportunity**:
-- Create [WINDOW-REGISTRY.md](WINDOW-REGISTRY.md)
+- Create WINDOW-REGISTRY.md (planned)
 - Document:
   - Standard dimensions (width × height)
   - Default screen position (X, Y)
@@ -167,7 +167,7 @@ Same animations referenced with different naming schemes:
 - No documentation of animation purpose/compatibility
 
 **Opportunity**:
-- Create [ANIMATION-REGISTRY.md](ANIMATION-REGISTRY.md)
+- Create ANIMATION-REGISTRY.md (planned)
 - Document:
   - Animation name and purpose
   - Dimensions (width × height) 
@@ -343,7 +343,7 @@ Before proceeding to implementation, consider:
 
 ## Related Files
 
-- Current standards: [STANDARDS.md](STANDARDS.md)
-- Gauge system: [Gauge Sizing Standards Table](STANDARDS.md#standard-gauge-sizes)
-- Color palette: [Gauge Fill Colors](STANDARDS.md#gauge-fill-colors)
+- Current standards: [../../.docs/STANDARDS.md](../../.docs/STANDARDS.md)
+- Gauge system: [Gauge Sizing Standards Table](../../.docs/STANDARDS.md#standard-gauge-sizes)
+- Color palette: [Gauge Fill Colors](../../.docs/STANDARDS.md#gauge-fill-colors)
 

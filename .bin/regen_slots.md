@@ -273,7 +273,7 @@ Saves `item_slots_thorne01.tga` (RGBA, `output_size × output_size`) to the vari
 
 ### 7. Automatic Deployment
 
-After copyback, copies to `C:\TAKP\uifiles\thorne_dev\` for immediate in-game testing.
+After copyback, copies to `<TAKP>\uifiles\thorne_dev\` for immediate in-game testing.
 
 ---
 

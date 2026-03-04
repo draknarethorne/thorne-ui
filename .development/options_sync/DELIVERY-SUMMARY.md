@@ -290,12 +290,12 @@ cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 ### Immediate (This Week)
 
 **Option A: Execute Phase 3 Fixes**
-- Follow [PHASE-3-ACTION-PLAN.md](PHASE-3-ACTION-PLAN.md)
+- Follow [PHASE-3-ACTION-PLAN.md](../initial_phases/PHASE-3-ACTION-PLAN.md)
 - Fix 9 format/content issues (2.5 hours)
 - Result: 0 format issues, all files properly documented
 
 **Option B: Start Operations**
-- Begin using scripts daily with [CHEAT-SHEET.md](CHEAT-SHEET.md)
+- Begin using scripts daily with [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md)
 - Address issues as they arise
 - Phase 3 can proceed in parallel
 
@@ -355,19 +355,19 @@ cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 ## Support & Questions
 
 ### For Script Issues
-→ See "[Scripts Reference](OPERATIONS-GUIDE.md#scripts-reference)" section in OPERATIONS-GUIDE.md
+→ See "[Scripts Reference](../../.docs/options-sync/OPERATIONS-GUIDE.md#scripts-reference)" section in OPERATIONS-GUIDE.md
 
 ### For Daily Tasks
-→ Use [CHEAT-SHEET.md](CHEAT-SHEET.md) - most tasks are 1-3 commands
+→ Use [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md) - most tasks are 1-3 commands
 
 ### For Specific Workflows
-→ Search [OPERATIONS-GUIDE.md](OPERATIONS-GUIDE.md#common-workflows) for your scenario
+→ Search [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md#common-workflows) for your scenario
 
 ### For Phase 3 Fixes
-→ Follow [PHASE-3-ACTION-PLAN.md](PHASE-3-ACTION-PLAN.md) step-by-step
+→ Follow [PHASE-3-ACTION-PLAN.md](../initial_phases/PHASE-3-ACTION-PLAN.md) step-by-step
 
 ### For System Architecture
-→ Read [README.md](README.md) overview and directory structure
+→ Read [THORNE-UI-OPTIONS-SYNC-DELIVERY.md](THORNE-UI-OPTIONS-SYNC-DELIVERY.md) overview and directory structure
 
 ---
 

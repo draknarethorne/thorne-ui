@@ -261,7 +261,7 @@ cat ../../.docs/options-sync/PHASE-3-ACTION-PLAN.md
 - [ ] Try one sync command: `python .bin/options_thorne_sync.py --all --dry-run`
 
 ### Short Term (This Month)
-- [ ] (Option A) Execute Phase 3 fixes (follow [PHASE-3-ACTION-PLAN.md](../../.docs/options-sync/PHASE-3-ACTION-PLAN.md))
+- [ ] (Option A) Execute Phase 3 fixes (follow [PHASE-3-ACTION-PLAN.md](../initial_phases/PHASE-3-ACTION-PLAN.md))
 - [ ] (Option B) Start daily operations (use [CHEAT-SHEET.md](../../.docs/options-sync/CHEAT-SHEET.md))
 - [ ] (Option C) Conduct full training (use [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md))
 
@@ -405,13 +405,13 @@ See [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre
 → [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md) → Troubleshooting section
 
 ### Specific Problem Fixes (15-30 minutes)
-→ [PHASE-3-ACTION-PLAN.md](../../.docs/options-sync/PHASE-3-ACTION-PLAN.md)
+→ [PHASE-3-ACTION-PLAN.md](../initial_phases/PHASE-3-ACTION-PLAN.md)
 
 ### Full System Understanding (30-60 minutes)
 → [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md)
 
 ### Training New Team Members (2 hours)
-→ Follow Path 2 in [INDEX.md](../../.docs/options-sync/INDEX.md)
+→ Follow Path 2 in [INDEX.md](../../.docs/releases/INDEX.md)
 
 ---
 
@@ -425,7 +425,7 @@ See [OPERATIONS-GUIDE.md](../../.docs/options-sync/OPERATIONS-GUIDE.md) → "Pre
 3. Start next window project
 
 ### Option 2: Execute Phase 3
-1. Read [PHASE-3-ACTION-PLAN.md](../../.docs/options-sync/PHASE-3-ACTION-PLAN.md)
+1. Read [PHASE-3-ACTION-PLAN.md](../initial_phases/PHASE-3-ACTION-PLAN.md)
 2. Follow 4-day execution plan
 3. Fix all 9 format/content issues
 4. Result: 0 issues, 100% proper documentation
@@ -459,6 +459,6 @@ Ready for: 6-8+ months of independent operations
 **Date**: February 3, 2026  
 **Status**: ✅ Complete & Production Ready
 
-**Start Here**: Read [../../.docs/options-sync/INDEX.md](../../.docs/options-sync/INDEX.md) - bookmark it!
+**Start Here**: Read [../../.docs/releases/INDEX.md](../../.docs/releases/INDEX.md) - bookmark it!
 
 ---

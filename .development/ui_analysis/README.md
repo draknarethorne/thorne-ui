@@ -8,8 +8,6 @@
 
 ## 🚀 QUICK START
 
-**Analysis Complete!** → **[ANALYSIS-COMPLETE.md](./ANALYSIS-COMPLETE.md)** (Full summary + next steps)
-
 **Want to know what to build?** → **[MASTER-FEATURE-INDEX.md](./MASTER-FEATURE-INDEX.md)** ⭐
 - All 18 features ranked by priority
 - v0.7.0: 6 features ready (9-17 hours)
@@ -26,17 +24,6 @@
 - Windows ranked by feature difference magnitude
 - Line count comparisons
 - Implementation scope for each
-
-**Want to see the comprehensive scan results?** → **[COMPREHENSIVE-SCAN.md](./COMPREHENSIVE-SCAN.md)** 🆕
-- All 47 main EQUI_*.xml files analyzed
-- 40 windows confirmed identical (no action needed)
-- 5 opportunity windows identified
-- Top 5 implementation priorities
-
-**Want to see consolidation status?** → **[CONSOLIDATION-STATUS.md](./CONSOLIDATION-STATUS.md)**
-- What was analyzed, what was consolidated
-- Documentation sync status
-- Ready-to-implement status
 
 ---
 
@@ -131,7 +118,7 @@ From 100% coverage analysis:
 For detailed analysis of windows with major differences:
 
 - [**INVENTORY-analysis.md**](./INVENTORY-analysis.md) - Equipment/bag organization differences
-- [**PLAYER-analysis.md**](./PLAYER-analysis.md) - Character stats and gauge display
+- [**PLAYERWINDOW-analysis.md**](./PLAYERWINDOW-analysis.md) - Character stats and gauge display
 - [**ITEMDISPLAY-analysis.md**](./ITEMDISPLAY-analysis.md) - Item detail window design
 - [**CASTSPELL-analysis.md**](./CASTSPELL-analysis.md) - Spell casting interface
 

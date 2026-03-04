@@ -208,7 +208,7 @@ If source file is actually PNG (mislabeled):
 ### 5. Automatic Deployment
 
 After copyback, automatically copies to:
-- `C:\TAKP\uifiles\thorne_dev\` (testing directory)
+- `<TAKP>\uifiles\thorne_dev\` (testing directory)
 
 **Benefits:**
 - No need to run separate sync script
@@ -289,7 +289,7 @@ img.convert('RGBA').save('file.tga', format='TGA')
 
 **Cause:** Directory path or permissions issue
 
-**Fix:** Check that `C:\TAKP\uifiles\thorne_dev\` exists and is writable
+**Fix:** Check that `<TAKP>\uifiles\thorne_dev\` exists and is writable
 
 ---
 

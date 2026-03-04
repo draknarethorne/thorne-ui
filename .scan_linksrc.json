@@ -19,6 +19,9 @@
     "**/venv/**",
     "**/__pycache__/**"
   ],
+  "exclude_paths": [
+    ".github/agents"
+  ],
   "notes": {
     "exclude_dirs": "Single directory names to exclude anywhere in the path",
     "exclude_patterns": "Glob patterns for more complex exclusions",

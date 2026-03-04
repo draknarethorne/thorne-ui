@@ -210,12 +210,14 @@ class WindowSyncer:
             for item in sorted(window_dir.iterdir()):
                 if item.is_dir() and not item.name.startswith('.'):
                     # Check if variant has XML file
-                    xml_files = list(item.glob("EQUI*.xml"))
-                    if xml_files:
+                    # NOTE: Use a different variable to avoid shadowing
+                    # the xml_files parameter (which we need later)
+                    variant_xmls = list(item.glob("EQUI*.xml"))
+                    if variant_xmls:
                         variants.append({
                             "name": item.name,
                             "has_readme": (item / "README.md").exists(),
-                            "xml_file": xml_files[0].name
+                            "xml_file": variant_xmls[0].name
                         })
         
         # Generate README content
@@ -243,13 +245,16 @@ This directory contains variants for the {window_name} window ({xml_display}).
         else:
             content += "*No variants found*\n\n"
         
+        # Use filename-only (relative) references — never absolute paths
+        xml_names = [name if isinstance(name, str) else name.name for name in xml_files]
+        
         content += f"""---
 
 ## Thorne Configuration
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-{chr(10).join([f"- `{name}`" for name in xml_files])}
+{chr(10).join([f"- `{name}`" for name in xml_names])}
 
 ## Metadata
 

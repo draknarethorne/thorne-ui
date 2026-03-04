@@ -94,7 +94,7 @@ python .bin/options_readme_checker.py
 **Scenario**: You've updated `EQUI_TargetWindow.xml` in `thorne_drak/`
 
 ```bash
-cd /d C:\TAKP\uifiles
+cd /d <TAKP>\uifiles
 
 # 1. Edit the window file
 # (make your changes in the XML)
@@ -134,7 +134,7 @@ git diff --stat thorne_drak/EQUI_TargetWindow.xml thorne_drak/Options/Target/Tho
 **Scenario**: Weekly documentation health check
 
 ```bash
-cd /d C:\TAKP\uifiles
+cd /d <TAKP>\uifiles
 
 # Quick overview
 python .bin/options_readme_checker.py
@@ -168,7 +168,7 @@ python .bin/options_readme_checker.py > weekly_status_$(date +%Y%m%d).txt
 **Scenario**: You want to create a new Player window variant with custom layout
 
 ```bash
-cd /d C:\TAKP\uifiles
+cd /d <TAKP>\uifiles
 
 # 1. Create variant directory
 mkdir "thorne_drak/Options/Player/Custom AA Layout"
@@ -211,7 +211,7 @@ git commit -m "feat(player): Add Custom AA Layout variant"
 ### Step 1: Synchronize All Windows (15 min)
 
 ```bash
-cd /d C:\TAKP\uifiles
+cd /d <TAKP>\uifiles
 
 # Preview changes without modifying
 python .bin/options_thorne_sync.py --all --dry-run
@@ -503,7 +503,7 @@ python .bin/options_fix_readme.py --window Player --verbose
 ```
 
 **Fixes Applied**:
-- File references: `../../../file` → `[file.xml](./file.xml)`
+- File references: `../../../file` → `[file.xml](./file.xml)` syntax
 - Title formatting: Extracts variant names from paths
 - Metadata ordering: Standardizes field order
 - Author field: Ensures "Draknare Thorne" present

@@ -23,7 +23,7 @@ This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Group\Thorne\EQUI_GroupWindow.xml`
+- `EQUI_GroupWindow.xml`
 
 ## Metadata
 
@@ -34,4 +34,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)

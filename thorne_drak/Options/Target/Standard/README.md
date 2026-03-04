@@ -143,8 +143,7 @@ Based on the original Lunakin Oval Target design, the following modifications ha
 
 1. **Backup Current File** (if customized):
    ```bash
-   cd C:\Program Files (x86)\EverQuest\uifiles\thorne_drak
-   copy EQUI_TargetWindow.xml EQUI_TargetWindow.xml.backup
+   copy thorne_drak\EQUI_TargetWindow.xml thorne_drak\EQUI_TargetWindow.xml.backup
    ```
 
 2. **Copy Standard Variant**:
@@ -174,7 +173,7 @@ Based on the original Lunakin Oval Target design, the following modifications ha
 ### Window Transparency
 - `Style_Transparent=false` prevents client-enforced fading
 - Window remains fully visible at all times (non-fadeable)
-- See [DEVELOPMENT.md](../../../DEVELOPMENT.md#client-enforced-fading) for fading limitations
+- See [DEVELOPMENT.md](../../../../DEVELOPMENT.md#client-enforced-fading) for fading limitations
 
 ### Credits
 - **Original Design**: Lunakin (Oval Target)
@@ -215,10 +214,10 @@ EQTypes 70 and 80 (Player HP/Mana cur/max values) **only work with Zeal client**
 
 ## See Also
 
-- [STANDARDS.md](../../../.docs/STANDARDS.md) - Thorne UI design standards
-- [DEVELOPMENT.md](../../../DEVELOPMENT.md) - Development workflow and architecture
-- [.docs/technical/eqtypes.md](../../../.docs/technical/eqtypes.md) - Complete EQType reference
-- [.docs/technical/zeal-features.md](../../../.docs/technical/zeal-features.md) - Zeal client enhancements
+- [STANDARDS.md](../../../../.docs/STANDARDS.md) - Thorne UI design standards
+- [DEVELOPMENT.md](../../../../DEVELOPMENT.md) - Development workflow and architecture
+- [.docs/technical/eqtypes.md](../../../../.docs/technical/EQTYPES.md) - Complete EQType reference
+- [.docs/technical/zeal-features.md](../../../../.docs/technical/ZEAL-FEATURES.md) - Zeal client enhancements
 
 ---
 

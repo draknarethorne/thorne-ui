@@ -20,7 +20,7 @@ This directory contains variants for the Animations window (EQUI_Animations.xml)
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Animations\Thorne\EQUI_Animations.xml`
+- `EQUI_Animations.xml`
 
 ## Metadata
 
@@ -31,4 +31,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)

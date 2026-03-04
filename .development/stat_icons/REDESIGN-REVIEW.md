@@ -201,7 +201,7 @@ This prevents accidentally overwriting main variant during batch operations.
 
 #### Automatic Testing
 After generation:
-- Copy to `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (if exists)
+- Copy to `<TAKP>\uifiles\thorne_dev\stat_icons_thorne01.tga` (if exists)
 - Ready to test with `/loadskin thorne_drak` command
 
 ---

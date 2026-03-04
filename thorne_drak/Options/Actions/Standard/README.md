@@ -267,5 +267,4 @@ To switch to other variants:
 ---
 
 **Part of**: [Thorne UI](../../../../README.md)  
-**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)  
-**Related Variants**: [Bags and Inventory](../Bags%20and%20Inventory/README.md)
+**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)

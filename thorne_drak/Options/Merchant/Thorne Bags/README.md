@@ -433,10 +433,6 @@ All resist labels positioned at X=230; all values at X=290
 
 ## Related Files
 
-- [README.md](README.md) - Main documentation hub
-- [ROADMAP.md](ROADMAP.md) - Future phases and enhancements
-- [EQUI_ActionsWindow.md](EQUI_ActionsWindow.md) - Actions window documentation
-- [EQUI_HotButtonWnd.md](EQUI_HotButtonWnd.md) - Hotbar window documentation
 - Reference: `thorne_drak/EQUI_Inventory.xml` - Color scheme and pattern source
 
 ---

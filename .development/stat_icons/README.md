@@ -26,7 +26,7 @@
 
 ```bash
 # Auto-discover all icon variants and regenerate
-cd C:\Thorne-UI
+cd <REPO_ROOT>
 python .bin/regen_icons.py --all
 
 # Or regenerate single variant (most common)
@@ -150,7 +150,7 @@ All 18 icons have complete, verified coordinates. No placeholders.
 
 ### ✅ Smart Deployment
 - Automatic copying to `thorne_drak/stat_icons_thorne01.tga`
-- Direct deployment to `C:\TAKP\uifiles\thorne_dev/` for testing
+- Direct deployment to `<TAKP>\uifiles\thorne_dev/` for testing
 - In-game testing: `/loadskin thorne_drak`
 
 ### ✅ Detailed Metadata

@@ -122,7 +122,7 @@ git push origin v0.7.0
 - [Main README](../README.md) - Project overview
 - [Development Guide](../../DEVELOPMENT.md) - Development roadmap
 - [Standards](../STANDARDS.md) - Code standards
-- [Phases](../../.development/initial-phases/) - Development phases (maintainer-only)
+- [Phases](../../.development/initial_phases/) - Development phases (maintainer-only)
 
 ---
 

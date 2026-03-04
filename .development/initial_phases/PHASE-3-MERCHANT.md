@@ -37,12 +37,12 @@
 - Compact footprint for minimal screen usage
 - Compatible with separate Inventory/Stats windows
 
-**Options Variant**: [thorne_drak/Options/Merchant/Large Inventory and Bags/EQUI_MerchantWnd.xml](../../thorne_drak/Options/Merchant/Large%20Inventory%20and%20Bags/EQUI_MerchantWnd.xml)
+**Options Variant**: [thorne_drak/Options/Merchant/Thorne Bags/EQUI_MerchantWnd.xml](../../thorne_drak/Options/Merchant/Thorne%20Bags/EQUI_MerchantWnd.xml)
 - 3-tab comprehensive interface (Bags/Equipment/Stats)
 - 1676 lines of SIDL XML
 - Self-sufficient shopping experience
 
-**Documentation**: [Options/Merchant/Large Inventory and Bags/README.md](../../thorne_drak/Options/Merchant/Large%20Inventory%20and%20Bags/README.md)
+**Documentation**: [Options/Merchant/Thorne Bags/README.md](../../thorne_drak/Options/Merchant/Thorne%20Bags/README.md)
 - Installation instructions
 - Tab descriptions
 - Feature overview

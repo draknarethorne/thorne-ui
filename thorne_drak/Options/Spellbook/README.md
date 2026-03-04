@@ -26,7 +26,7 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `C:\Thorne-UI\thorne_drak\Options\Spellbook\Thorne Large\EQUI_SpellBookWnd.xml`
+- `EQUI_SpellBookWnd.xml`
 
 ## Metadata
 
@@ -37,4 +37,4 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 
 ---
 
-**Part of:** [Thorne UI Options System](../../.docs/options-sync/)
+**Part of:** [Thorne UI Options System](../../../.docs/options-sync/)

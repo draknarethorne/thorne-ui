@@ -197,7 +197,7 @@ Then load with:
 
 ## See Also
 
-- [Group Window - Standard](../../Group/Standard/README.md)
-- [Pet Window - Tall Gauge](../../Pet/Tall%20Gauge/README.md)
-- [Player Window - Pet Bottom](../../Player/Pet%20Bottom/README.md)
+- [Group Window](../../Group/README.md)
+- [Pet Window](../../Pet/README.md)
+- [Player Window](../../Player/README.md)
 - [Target Window - Standard](../Standard/README.md)

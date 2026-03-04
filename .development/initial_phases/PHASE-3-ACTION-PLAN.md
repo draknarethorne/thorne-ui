@@ -68,7 +68,7 @@ Decision needed: Keep as documentation-only or find/restore XML
 Files with format issues can be auto-fixed. Run this to fix 3 files automatically:
 
 ```bash
-cd /d C:\TAKP\uifiles
+cd /d <TAKP>\uifiles
 
 # These have file reference format issues that auto-fix can resolve:
 # - Hotbutton/Four Rows Inventory and Bags
@@ -285,7 +285,7 @@ python .bin/options_readme_checker.py --verbose | grep "Player and Pet"
 
 ```bash
 # 1. Search .archive for possibly deleted files
-ls -la C:\TAKP\uifiles\.archive\ | grep -i "group\|inventory"
+ls -la <TAKP>\uifiles\.archive\ | grep -i "group\|inventory"
 
 # 2. Search git history
 git log --all --diff-filter=D --summary | grep -i "Large Gauges\|Dark Slots"

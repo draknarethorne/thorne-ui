@@ -4,8 +4,8 @@
 
 This directory contains variants for the Cast window (EQUI_CastSpellWnd.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-04  
+**Git Commit:** c5de808
 
 ---
 

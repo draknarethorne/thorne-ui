@@ -495,8 +495,8 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 |------------|----------|---------------|------------|--------|-------|
 | **Player HP** | 255, 0, 0 | 220, 220, 0 | #FF0000 | 1 | Bright red fill (main Player/Target windows) |
 | **Player Mana** | 30, 30, 255 | 0, 220, 220 | #1E1EFF | 2 | Deep blue fill; text labels use RGB(100,150,255) |
-| **Pet Health** | 200, 80, 200 | 0, 0, 0 or 150, 60, 150 | #C850C8 | 16 | Purple (window-specific line tint) |
-| **Pet Mana** | 100, 150, 255 | 70, 105, 180 | #6496FF | 17 | Same blue as player mana |
+| **Pet Health** | 200, 80, 200 | 0, 0, 0 | #C850C8 | 16 | Purple (LinesFill varies by window; see Window-Specific) |
+| **Pet Mana** | 100, 150, 255 | 70, 105, 180 | #6496FF | 17 | Blue; also EQType for group pet HP in GroupWindow context |
 | **Stamina** | 240, 240, 0 | 0, 220, 0 | #F0F000 | 3 | Yellow fill with green line tint |
 | **Experience (XP)** | 220, 150, 0 | 100, 160, 255 | #DC9600 | 4 | Orange fill with blue line tint |
 | **AA Points** | 220, 200, 0 | 0, 220, 220 | #DCC800 | 5 | Yellow fill with cyan line tint |
@@ -505,6 +505,19 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 | **Mana Tick (Tall)** | 0, 220, 220 | 0, 220, 220 | #00DCDC | 24 | LinesFill only, 120px wide (Player/Pet windows) |
 | **Target HP** | 240, 0, 0 | 220, 220, 0 | #F00000 | 6 | Oval gauge style |
 | **Casting Bar** | 240, 0, 240 | 220, 220, 0 | #F000F0 | 7 | Magenta for spell casting |
+| **Global Recast** | 255, 210, 250 | 255, 235, 255 | #FFD2FA | 25 | Light pink; thin 3px bar (CastSpellWnd, TargetWindow) |
+| **Spell Recast (gems)** | 200, 0, 200 | 0, 220, 220 | #C800C8 | 26–33 | Dark magenta; per-spell cooldown bars (CastSpellWnd) |
+| **Attack Timer** | 220, 180, 0 | 220, 180, 0 | #DCB400 | 34 | Gold/amber tick bar (TargetWindow) |
+
+**Window-Specific Gauge Colors**:
+
+> Some gauges use intentionally different colors depending on window context.
+> These are **not** overrides — they reflect the design intent for each window.
+
+| Gauge Type | Fill RGB | LinesFill RGB | EQType | Window | Notes |
+|------------|----------|---------------|--------|--------|-------|
+| **Group Member HP** | 220, 0, 0 | 220, 220, 0 | 11–15 | GroupWindow | Slightly darker red than Player HP (220 vs 255) |
+| **Group Pet HP** | 170, 60, 170 | 220, 220, 0 | 17–21 | GroupWindow | Dark purple; thin 2px bars under group HP gauges |
 
 **Standard Gauge Sizes**:
 

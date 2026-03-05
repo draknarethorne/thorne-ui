@@ -1,0 +1,32 @@
+{
+  "_comment": "Configuration for generate_thorne_button_atlas.py. Generates transparency variants of the button source atlas by reading the solid top row and producing 5 additional opacity rows with preserved opaque borders.",
+
+  "source": {
+    "_comment": "Path relative to thorne_drak/Options/Slots/.Master/",
+    "file": "button_atlas_thorne01.tga"
+  },
+
+  "output": {
+    "file": "button_atlas_thorne01.tga",
+    "_comment": "Updated in-place (same file). 255x255 atlas, 40px cells, 2px gaps."
+  },
+
+  "grid": {
+    "cell_size": 40,
+    "spacing": 2,
+    "cols": 6,
+    "rows": 6,
+    "atlas_size": 255
+  },
+
+  "border": {
+    "_comment": "Opaque border width preserved on all transparency variants. Border pixels keep A=255 regardless of row transparency level.",
+    "width": 3
+  },
+
+  "transparency_rows": {
+    "_comment": "Alpha values for each row (1-6). Row 1 is the source row (fully opaque, A=255). Rows 2-6 reduce inner opacity while preserving opaque borders. Same levels as the logo atlas for cross-atlas consistency.",
+    "alpha_values": [255, 242, 230, 217, 191, 128],
+    "_alpha_note": "255=100%, 242=95%, 230=90%, 217=85%, 191=75%, 128=50%"
+  }
+}

@@ -4,8 +4,8 @@
 
 This directory contains variants for the Inspect window (EQUI_InspectWnd.xml).
 
-**Last Synced:** 2026-03-03  
-**Git Commit:** 842aaaf
+**Last Synced:** 2026-03-04  
+**Git Commit:** 55e49a5
 
 ---
 

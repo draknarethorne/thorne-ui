@@ -187,6 +187,13 @@
     </Size>
   </TextureInfo>
 
+  <TextureInfo item="logo_atlas_thorne01.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+
   <TextureInfo item="classic_pieces01.tga">
     <Size>
       <CX>256</CX>
@@ -9011,6 +9018,60 @@
     <Frames>
       <Texture>item_slots_thorne01.tga</Texture>
       <Location><X>200</X><Y>200</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- ===== Logo Atlas Variants (Row 1, full opacity) ===== -->
+  <!-- logo_atlas_thorne01.tga: 40px cells, 2px spacing      -->
+  <!-- Col 1: Source  |  Col 2: Radial Top Bias              -->
+  <!-- Col 3: Radial Glow  |  Col 4: Bottom Light            -->
+  <!-- Col 5: Top Light  |  Col 6: Rim Light                 -->
+  <Ui2DAnimation item="A_Logo_1">
+    <Frames>
+      <Texture>logo_atlas_thorne01.tga</Texture>
+      <Location><X>0</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Logo_2">
+    <Frames>
+      <Texture>logo_atlas_thorne01.tga</Texture>
+      <Location><X>42</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Logo_3">
+    <Frames>
+      <Texture>logo_atlas_thorne01.tga</Texture>
+      <Location><X>84</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Logo_4">
+    <Frames>
+      <Texture>logo_atlas_thorne01.tga</Texture>
+      <Location><X>126</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Logo_5">
+    <Frames>
+      <Texture>logo_atlas_thorne01.tga</Texture>
+      <Location><X>168</X><Y>0</Y></Location>
+      <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_Logo_6">
+    <Frames>
+      <Texture>logo_atlas_thorne01.tga</Texture>
+      <Location><X>210</X><Y>0</Y></Location>
       <Size><CX>40</CX><CY>40</CY></Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>

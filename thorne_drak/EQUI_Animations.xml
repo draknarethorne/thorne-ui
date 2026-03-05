@@ -194,6 +194,13 @@
     </Size>
   </TextureInfo>
 
+  <TextureInfo item="logo_icons_thorne01.tga">
+    <Size>
+      <CX>128</CX>
+      <CY>64</CY>
+    </Size>
+  </TextureInfo>
+
   <TextureInfo item="classic_pieces01.tga">
     <Size>
       <CX>256</CX>
@@ -9073,6 +9080,26 @@
       <Texture>logo_atlas_thorne01.tga</Texture>
       <Location><X>210</X><Y>0</Y></Location>
       <Size><CX>40</CX><CY>40</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- ===== Logo Icon Variants (18x18 for tab icons) ===== -->
+  <!-- logo_icons_thorne01.tga: 18px cells, 2px spacing      -->
+  <!-- Row 1 (Y=0): Normal gray  |  Row 2 (Y=20): Gold tint  -->
+  <Ui2DAnimation item="A_LogoIcon_6">
+    <Frames>
+      <Texture>logo_icons_thorne01.tga</Texture>
+      <Location><X>100</X><Y>0</Y></Location>
+      <Size><CX>18</CX><CY>18</CY></Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_LogoIcon_6_Gold">
+    <Frames>
+      <Texture>logo_icons_thorne01.tga</Texture>
+      <Location><X>100</X><Y>20</Y></Location>
+      <Size><CX>18</CX><CY>18</CY></Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
     </Frames>
   </Ui2DAnimation>

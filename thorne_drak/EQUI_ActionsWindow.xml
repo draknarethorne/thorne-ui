@@ -1965,8 +1965,8 @@
     <Style_Border>false</Style_Border>
     <DrawTemplate>WDT_Def</DrawTemplate>
     <TabText>Worn</TabText>
-    <TabIcon>A_MainTabIcon</TabIcon>
-    <TabIconActive>A_MainTabActiveIcon</TabIconActive>
+    <TabIcon>A_LogoIcon_6</TabIcon>
+    <TabIconActive>A_LogoIcon_6_Gold</TabIconActive>
     <AlignLeft>true</AlignLeft>
     <TabTextColor>
       <R>255</R>

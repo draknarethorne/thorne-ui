@@ -70,5 +70,23 @@
     "_comment": "Alpha values for each row (1-6). Row 1 is fully opaque (255). Rows 2-6 reduce opacity. Same levels as the button atlas for consistency.",
     "alpha_values": [255, 242, 230, 217, 191, 128],
     "_alpha_note": "255=100%, 242=95%, 230=90%, 217=85%, 191=75%, 128=50%"
+  },
+
+  "icons": {
+    "_comment": "18x18 tab icons generated from Row 1 of the logo atlas. Normal gray + gold tint rows. Output saved to thorne_drak/ root.",
+    "enabled": true,
+    "output_file": "logo_icons_thorne01.tga",
+    "icon_size": 18,
+    "icon_spacing": 2,
+    "atlas_width": 128,
+    "atlas_height": 64,
+    "shift_up": 4,
+    "_shift_comment": "Pixels to shift content upward after downscale. Removes faint near-zero-alpha top rows from the 40→18 resize.",
+    "gold_tint": {
+      "_comment": "Muted warm bronze matching original EQ tab icons in window_pieces01.tga. Targets bright px avg ~(160,140,95).",
+      "r_multiplier": 1.05,
+      "g_multiplier": 0.92,
+      "b_multiplier": 0.62
+    }
   }
 }

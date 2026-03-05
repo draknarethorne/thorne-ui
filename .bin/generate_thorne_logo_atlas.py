@@ -282,6 +282,91 @@ def apply_transparency(source: Image.Image, target_alpha: int) -> Image.Image:
     return result
 
 
+def gold_tint(source: Image.Image, r_mul: float, g_mul: float, b_mul: float) -> Image.Image:
+    """Apply warm gold/bronze tint to a grayscale image.
+
+    Multiplies each channel independently to shift gray toward gold. Matches
+    the muted bronze aesthetic of original EQ tab icons in window_pieces01.tga.
+    """
+    result = source.copy()
+    pixels = result.load()
+    w, h = result.size
+
+    for y in range(h):
+        for x in range(w):
+            r, g, b, a = pixels[x, y]
+            if a == 0:
+                continue
+            v = r  # grayscale — R == G == B
+            pixels[x, y] = (
+                min(255, int(v * r_mul)),
+                min(255, int(v * g_mul)),
+                min(255, int(v * b_mul)),
+                a,
+            )
+
+    return result
+
+
+def generate_icons(row1_variants: list[Image.Image], config: dict) -> None:
+    """Generate 18x18 tab icon atlas from Row 1 lighting variants.
+
+    Creates a small atlas with two rows:
+      - Row 1 (Y=0): Normal gray icons (shifted up)
+      - Row 2 (Y=icon_size+spacing): Gold-tinted icons (shifted up)
+
+    Output is saved to thorne_drak/ root for direct use by the EQ client.
+    """
+    icons_cfg = config.get("icons")
+    if not icons_cfg or not icons_cfg.get("enabled", False):
+        print("\n  Icon generation: disabled")
+        return
+
+    icon_size = icons_cfg["icon_size"]
+    icon_spacing = icons_cfg["icon_spacing"]
+    atlas_w = icons_cfg["atlas_width"]
+    atlas_h = icons_cfg["atlas_height"]
+    shift_up = icons_cfg["shift_up"]
+    gold_cfg = icons_cfg["gold_tint"]
+    r_mul = gold_cfg["r_multiplier"]
+    g_mul = gold_cfg["g_multiplier"]
+    b_mul = gold_cfg["b_multiplier"]
+
+    output_path = SCRIPT_DIR.parent / "thorne_drak" / icons_cfg["output_file"]
+    cols = len(row1_variants)
+
+    atlas = Image.new("RGBA", (atlas_w, atlas_h), (0, 0, 0, 0))
+
+    print(f"\nIcon atlas ({atlas_w}x{atlas_h}, {icon_size}px icons, shift_up={shift_up}):")
+
+    for c, variant in enumerate(row1_variants):
+        # Downscale 40→18 with high-quality filter
+        icon = variant.resize((icon_size, icon_size), Image.LANCZOS)
+
+        # Shift up to remove faint top rows
+        shifted = Image.new("RGBA", (icon_size, icon_size), (0, 0, 0, 0))
+        shifted.paste(icon, (0, -shift_up))
+
+        dx = c * (icon_size + icon_spacing)
+
+        # Row 1: normal gray
+        atlas.paste(shifted, (dx, 0))
+
+        # Row 2: gold tinted
+        gold = gold_tint(shifted, r_mul, g_mul, b_mul)
+        atlas.paste(gold, (dx, icon_size + icon_spacing))
+
+        pix = shifted.load()
+        opaque = sum(
+            1 for x in range(icon_size) for y in range(icon_size)
+            if pix[x, y][3] > 0
+        )
+        print(f"  Col {c + 1}: {opaque}px  normal@({dx},0)  gold@({dx},{icon_size + icon_spacing})")
+
+    save_tga(atlas, output_path)
+    print(f"  Saved: {output_path}")
+
+
 def main() -> None:
     dry_run = "--dry-run" in sys.argv
 
@@ -391,6 +476,9 @@ def main() -> None:
     print(f"  Columns: {' | '.join(col_modes)}")
     print(f"  Rows: {num_rows} transparency levels (100% → 50%)")
     print(f"  Grid: {cell_size}px cells, {spacing}px gaps")
+
+    # --- Icon atlas generation ---
+    generate_icons(row1_variants, config)
 
 
 if __name__ == "__main__":

@@ -211,6 +211,24 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ## 📅 Version History
 
+**v0.7.3** (March 4, 2026)
+- ✅ Logo atlas generation and branding system
+  - Built `generate_thorne_logo_atlas.py` with 7 lighting modes (source, flat, radial_glow, radial_top_bias, bottom_light, top_light, rim_light)
+  - JSON-driven config for atlas layout, transparency rows, and icon generation
+  - Created `logo_atlas_thorne01.tga` (256x256, 6 columns × 6 transparency rows)
+- ✅ Tab icon branding for Actions window
+  - Added 18×18 icon atlas (`logo_icons_thorne01.tga`) with LANCZOS downscale from 40px logos
+  - Gold-tinted active tab variant matching original EQ bronze aesthetic (R×1.05, G×0.92, B×0.62)
+  - ActionsInventoryPage tab branded with Thorne logo (normal + gold active states)
+- ✅ Gauge and UI polish
+  - Casting gauge and group pet HP color standardization
+  - Slot background migration to `A_Slot_*` art system across key windows
+  - Comprehensive gauge color audit and multi-color design documentation
+- ✅ Documentation and options updates
+  - Updated Options README files across all categories
+  - Added Bazaar and Actions option documentation
+  - Expanded development standards with gauge color specifications
+
 **v0.7.2** (March 3, 2026)
 - ✅ Slot art system expansion across Actions and Inspect windows
   - Repurposed Actions window Info tab as Worn equipment mini-slots (28x28, 5-row anatomical grid)

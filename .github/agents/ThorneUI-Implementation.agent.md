@@ -132,6 +132,14 @@ Specialized agent for complex implementation tasks that require:
 </Gauge>
 ```
 
+### SIDL Gotchas (Must Know)
+
+1. **AutoStretch** — `<AutoStretch>true</AutoStretch>` auto-sizes window height based on child Pieces count. Don't hardcode `<Size>` height when AutoStretch is active (e.g., Container bags use this for 4-10 slot variants from one template).
+2. **Definition Order = Z-Order** — Elements defined later render on top. Put backgrounds before foreground elements.
+3. **Elements Outside Parent Screen** — InvSlot/Gauge/Label are defined as siblings OUTSIDE the main Screen, then pulled in via `<Pieces>`. The Screen contains layout; elements live above it.
+4. **EQ Client Fallback** — Missing `EQUI_*.xml` falls back to `default/`. Only override files you intend to change.
+5. **Zeal EQTypes** — EQTypes 69-73, 80-86 are Zeal-only. Note Zeal dependency in comments when using these.
+
 ## Task Execution Process
 
 1. **Check branch**: Verify current git branch is appropriate for the work

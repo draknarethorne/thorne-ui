@@ -201,16 +201,6 @@ def validate_xml_file(file_path):
         }
 ```
 
-## Validation Scripts
-
-Store validation scripts in `.bin/validation/`:
-
-- `validate_xml_syntax.py` - XML well-formedness
-- `check_standards_compliance.py` - Color/spacing/sizing checks
-- `verify_eqtypes.py` - EQType context validation
-- `detect_layout_conflicts.py` - Overlap detection
-- `cross_window_consistency.py` - Multi-window comparison
-
 ## Test Report Format
 
 ```markdown
@@ -269,28 +259,6 @@ Store validation scripts in `.bin/validation/`:
 - [ ] Review warnings
 - [ ] Re-run validation
 - [ ] Test in-game
-```
-
-## Automated Testing Tools
-
-### Run All Validators
-
-```bash
-# Execute complete test suite
-python .bin/validation/run_all_tests.py --scope thorne_drak/EQUI_Inventory.xml
-
-# Run specific test category
-python .bin/validation/validate_xml_syntax.py thorne_drak/**/*.xml
-
-# Check standards compliance
-python .bin/validation/check_standards_compliance.py --strict
-```
-
-### Continuous Validation
-
-```bash
-# Watch mode for development
-python .bin/validation/watch_and_validate.py --directory thorne_drak/
 ```
 
 ## Deliverables

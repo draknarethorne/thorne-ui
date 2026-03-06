@@ -175,6 +175,35 @@ Always read `.docs/STANDARDS.md` "XML Organization Best Practices" before modify
 
 **When editing poorly-commented files**, add comments to the sections you touch — don't leave a file worse than you found it. Well-commented examples: `EQUI_Inventory.xml`, `EQUI_PlayerWindow.xml`, `EQUI_GroupWindow.xml`.
 
+### SIDL Gotchas & Key Behaviors
+
+**These cause real bugs if you don't know them:**
+
+1. **AutoStretch** — `<AutoStretch>true</AutoStretch>` makes a window auto-size its height based on the number of child `<Pieces>` elements. Used in Container windows so one template handles 4-slot through 10-slot bags. Don't hardcode `<Size>` height when AutoStretch is in play.
+
+2. **Element Definition Order = Z-Order** — Elements defined LATER in the XML render ON TOP. If a background overlaps a button, move the background definition earlier in the file.
+
+3. **Elements Outside Parent Screen** — `<InvSlot>`, `<Gauge>`, `<Label>`, etc. are often defined as siblings OUTSIDE the main `<Screen>` element, then pulled in via `<Pieces>`. The `<Screen>` contains layout properties; the element definitions live above it.
+
+4. **EQ Client Fallback Loading** — The TAKP client reads ALL `EQUI_*.xml` files in the active skin directory. If a file is MISSING, it falls back to `default/`. Only include files you intend to override. The `default/` directory is the literal fallback, not just reference material.
+
+5. **EQUI_ Prefix Required** — The client only loads XML files with `EQUI_` prefix (or `EQLSUI_` for login). Custom filenames are ignored.
+
+6. **Zeal-Only EQTypes** — EQTypes 69-73 and 80-86 are Zeal client extensions. They work ONLY with the Zeal client, not stock TAKP. Always note Zeal dependency when using these. See `.docs/technical/EQTYPES.md`.
+
+7. **DrawTemplate Names** — Common templates: `WDT_Inner` (inner border), `WDT_Outer` (main window frame). `ButtonDrawTemplate` is a child element, not a simple string. Check existing files for correct usage.
+
+### Options Variant Pattern
+
+**When to create an Option vs modify the main file:**
+- **Modify main**: The change is the new standard for all users (spacing fix, bug fix, standard improvement)
+- **Create Option**: The change is a preference others might not want (compact layout, alternative stat display, different visual style)
+
+**Options structure**: `thorne_drak/Options/<Category>/<Variant>/`
+- Each Option directory contains ONLY the XML file(s) that differ from main
+- Options are tested by syncing: `.\sync-option.bat <category>/<variant>`
+- Always update `thorne_drak/Options/<Category>/README.md` when adding/changing variants
+
 ### SIDL XML Structure
 ```xml
 <XML ID="EQType">
@@ -227,22 +256,6 @@ Always read `.docs/STANDARDS.md` "XML Organization Best Practices" before modify
 - **Spell Management**: Gem slots, spell book navigation
 - **Group Windows**: Player health bars, class indicators
 - **Cast Bar**: Spell casting progress indicators
-
-## Common Customizations
-
-### Popular Modifications
-1. **Buff Window Layouts**: Horizontal vs vertical arrangements
-2. **Player Window Variants**: Different stat displays (INT/WIS/ROG builds)
-3. **Hotbar Configurations**: Vertical, horizontal, or custom page arrangements
-4. **Container Windows**: Custom bag layouts and sizing
-5. **Target Windows**: Extended information displays
-6. **Spell Gems**: Alternative positioning and sizing
-
-### Performance Optimizations
-- Reduce texture resolution where appropriate
-- Minimize overlapping transparent elements
-- Use simple backgrounds instead of complex animations
-- Optimize list box item counts
 
 ## Workflow
 
@@ -312,32 +325,6 @@ When assisting with UI customizations:
 
 ## Tools & Capabilities
 
-### Core Tools
-Available tools for UI development:
-- File reading/editing (XML, INI, TGA references)
-- Git operations (commits, branches, PRs)
-- Web search for EverQuest UI documentation
-- Code search across repository
-- Directory navigation and file management
-- Memory system for persistent context
-- Todo list management for tracking multi-step work
-
-### MCP Server Integrations
-
-**GitHub MCP Server** (already configured above):
-- Pull request management and reviews
-- Issue tracking and search
-- File operations and commits
-- Repository browsing
-
-**Pylance MCP Server** (Python-specific operations):
-- Execute Python code snippets directly
-- Analyze Python imports and dependencies
-- Validate Python syntax without saving
-- Get Python environment information
-- Invoke refactoring operations (unused imports, type annotations, etc.)
-- Query Pylance documentation
-
 ### Subagent Delegation
 
 **When to delegate to specialized subagents:**
@@ -367,24 +354,6 @@ runSubagent({
 - Provide complete instructions in the prompt
 - Specify exactly what information to return
 - Agent returns single message with results
-
-## Common Issues & Solutions
-
-### XML Syntax Errors
-- Unclosed tags or mismatched elements
-- Invalid attribute values
-- Incorrect element nesting
-
-### Layout Problems
-- Overlapping elements (check Location/Size values)
-- Missing textures (verify .tga file references)
-- Incorrect window anchoring
-- Z-order conflicts
-
-### Compatibility Issues
-- Screen resolution differences
-- Custom font requirements
-- Texture file compatibility
 
 ## Reference Resources
 
@@ -517,86 +486,9 @@ This project uses the **GitHub MCP Server** for streamlined repository managemen
 - `activate_pull_request_management_tools` - Access PR details and status
 - `activate_github_search_tools` - Search issues, PRs, code
 
-### Creating Pull Requests (Preferred Workflow)
+### Creating Pull Requests
 
-**ALWAYS use GitHub MCP tools instead of manual instructions.**
-
-```markdown
-# ✅ CORRECT: Use MCP tools directly
-1. Activate repository management tools
-2. Create PR with proper title/body
-3. Link related issues if applicable
-
-# ❌ INCORRECT: Don't provide manual PR creation links
-"Visit https://github.com/draknarethorne/thorne-ui/pull/new/..."
-```
-
-**Example PR Creation Process:**
-
-```
-1. Activate tools:
-   activate_repository_management_tools()
-
-2. Create PR:
-   create_pull_request(
-     owner: "draknarethorne",
-     repo: "thorne-ui", 
-     head: "feature/release-documentation-cleanup",
-     base: "main",
-     title: "Release Documentation Cleanup and v0.5.0 Prep",
-     body: "## Summary\n\n- Reorganized release docs..."
-   )
-
-3. Verify creation and provide PR link to user
-```
-
-### PR Review Workflow
-
-When reviewing or commenting on PRs:
-
-1. **Create pending review first:**
-   ```
-   mcp_github_pull_request_review_write(
-     method: "create",
-     owner: "draknarethorne",
-     repo: "thorne-ui",
-     pullNumber: 5,
-     body: "Initial review notes"
-   )
-   ```
-
-2. **Add inline comments:**
-   ```
-   mcp_github_add_comment_to_pending_review(
-     path: "thorne_drak/EQUI_PlayerWindow.xml",
-     line: 45,
-     body: "Consider adjusting gauge width",
-     side: "RIGHT"
-   )
-   ```
-
-3. **Submit review:**
-   ```
-   mcp_github_pull_request_review_write(
-     method: "submit_pending",
-     event: "APPROVE" | "REQUEST_CHANGES" | "COMMENT"
-   )
-   ```
-
-### Search Syntax
-
-**Query format for searching PRs:**
-
-```
-state:open author:draknarethorne label:enhancement
-is:pr is:open head:feature/release-documentation-cleanup
-```
-
-**Common patterns:**
-- `is:pr state:open` - All open PRs
-- `is:pr state:closed merged:true` - Merged PRs
-- `is:pr author:USERNAME` - PRs by specific author
-- `is:pr label:bug` - PRs with bug label
+**Use GitHub MCP tools** (available via tool list) instead of manual PR creation links. Use `mcp_github_create_pull_request` with owner `draknarethorne`, repo `thorne-ui`.
 
 ---
 

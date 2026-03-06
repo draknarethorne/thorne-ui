@@ -53,13 +53,13 @@ Standardized window widths for consistent layout:
 
 **Color Standards:**
 
-| EQType | Purpose | Color (RGB) |
-|--------|---------|------------|
-| 1 | Player HP | 255, 0, 0 (Red) |
-| 2 | Player Mana | 30, 30, 255 (Deep Blue fill) |
-| 16 | Pet HP | 200, 80, 200 (Purple) |
-| 17 | Pet Mana | 100, 150, 255 (Bright Blue) |
-| 11-21 | Group Member HP | Consistent across members |
+| EQType | Purpose         | Color (RGB)                  |
+| ------ | --------------- | ---------------------------- |
+| 1      | Player HP       | 255, 0, 0 (Red)              |
+| 2      | Player Mana     | 30, 30, 255 (Deep Blue fill) |
+| 16     | Pet HP          | 200, 80, 200 (Purple)        |
+| 17     | Pet Mana        | 100, 150, 255 (Bright Blue)  |
+| 11-21  | Group Member HP | Consistent across members    |
 
 ### Label Display
 
@@ -112,6 +112,7 @@ Game client dynamically replaces with real data when available.
 - **WDT_RoundedNoTitle**: Avoid in new development (replaced by WDT_Rounded in Phase 3.7)
 
 **Template Usage Pattern**:
+
 ```xml
 <Screen item="WindowName">
     <DrawTemplate>WDT_Rounded</DrawTemplate>
@@ -134,6 +135,7 @@ Game client dynamically replaces with real data when available.
 Use inner `<Screen>` elements to create **logical groupings** of related UI elements:
 
 ✅ **Recommended Use Cases**:
+
 - Equipment slot grids (all 21 worn slots together)
 - Stat display sections (AC, ATK, HP, Mana, Resistances grouped)
 - Progression displays (XP gauge + AA gauge + labels)
@@ -142,6 +144,7 @@ Use inner `<Screen>` elements to create **logical groupings** of related UI elem
 - Player info sections (name, level, class, deity)
 
 **Benefits**:
+
 1. **Group Movement**: Change one `Location` to move entire cluster
 2. **Relative Positioning**: Child elements use coords relative to parent
 3. **Logical Code Structure**: XML hierarchy mirrors visual hierarchy
@@ -155,7 +158,7 @@ Use inner `<Screen>` elements to create **logical groupings** of related UI elem
 <!-- Parent window -->
 <Screen item="InventoryWindow">
     <Size><CX>450</CX><CY>400</CY></Size>
-    
+
     <!-- Inner Screen: Equipment Grid Zone -->
     <Screen item="IW_EquipmentGrid">
         <ScreenID>IW_EquipmentGrid</ScreenID>
@@ -169,7 +172,7 @@ Use inner `<Screen>` elements to create **logical groupings** of related UI elem
         <!-- ... more slot pieces ... -->
         <Pieces>InvSlot21</Pieces>
     </Screen>
-    
+
     <!-- Inner Screen: Stats Zone -->
     <Screen item="IW_StatsZone">
         <ScreenID>IW_StatsZone</ScreenID>
@@ -196,11 +199,13 @@ Use inner `<Screen>` elements to create **logical groupings** of related UI elem
 ```
 
 **Naming Convention for Subwindows**:
+
 - Prefix with parent window acronym: `IW_` for InventoryWindow, `PW_` for PlayerWindow
 - Descriptive name: `EquipmentGrid`, `StatsZone`, `ProgressionZone`
 - Full example: `IW_EquipmentGrid`, `PW_GaugeCluster`, `GW_MemberList`
 
 **When NOT to Use Inner Screens**:
+
 - Single standalone elements (one label, one button)
 - Elements that need independent absolute positioning
 - Very simple windows with <5 elements total
@@ -265,12 +270,14 @@ When displaying equipment slots, use **anatomical ordering** (head-to-toe, left-
 4. **Row 4 - WEAPONS LEVEL**: Primary, Secondary, Range, Ammo (EQTypes 13, 14, 11, 21)
 
 **Rationale**:
+
 - Mirrors how players naturally think about gear (top to bottom)
 - Symmetric layout (left/right equipment mirrored around center)
 - Logical grouping by body region
 - Consistent across all windows displaying equipment
 
 **Application**:
+
 - **Inventory Window**: Full 21-slot anatomical grid
 - **Actions Window**: Partial display maintains same sequence/grouping
 - **Hotbar Window**: Inventory quick-access follows same pattern
@@ -289,6 +296,7 @@ When displaying equipment slots, use **anatomical ordering** (head-to-toe, left-
 Use for: HP, Mana, Stamina, XP, AA gauges requiring vertical stacking
 
 **Template Structure**:
+
 ```xml
 <Gauge item="HP_Gauge">
     <EQType>1</EQType>
@@ -306,23 +314,25 @@ Use for: HP, Mana, Stamina, XP, AA gauges requiring vertical stacking
 
 **Gauge Color Standards** (Expanded):
 
-| Purpose | Fill RGB | LinesFill RGB | Notes |
-|---------|----------|---------------|-------|
-| Player HP | 255, 0, 0 | 220, 220, 0 | Red fill, gold line tint |
-| Player Mana | 30, 30, 255 | 0, 220, 220 | Deep blue fill, cyan line tint |
-| Pet HP | 200, 80, 200 | 0, 0, 0 | Purple fill (PlayerWindow implementation) |
-| Pet Mana | 100, 150, 255 | 70, 105, 180 | Bright blue gauge |
-| Stamina/Breath | 240, 240, 0 | 0, 220, 0 | Yellow fill, green line tint |
-| XP Progress | 220, 150, 0 | 100, 160, 255 | Orange fill, blue line tint |
-| AA Progress | 220, 200, 0 | 0, 220, 220 | Yellow fill, cyan line tint |
-| Group Member HP | 255, 0, 0 | 180, 0, 0 | Red (legacy/group variants) |
+| Purpose         | Fill RGB      | LinesFill RGB | Notes                                     |
+| --------------- | ------------- | ------------- | ----------------------------------------- |
+| Player HP       | 255, 0, 0     | 220, 220, 0   | Red fill, gold line tint                  |
+| Player Mana     | 30, 30, 255   | 0, 220, 220   | Deep blue fill, cyan line tint            |
+| Pet HP          | 200, 80, 200  | 0, 0, 0       | Purple fill (PlayerWindow implementation) |
+| Pet Mana        | 100, 150, 255 | 70, 105, 180  | Bright blue gauge                         |
+| Stamina/Breath  | 240, 240, 0   | 0, 220, 0     | Yellow fill, green line tint              |
+| XP Progress     | 220, 150, 0   | 100, 160, 255 | Orange fill, blue line tint               |
+| AA Progress     | 220, 200, 0   | 0, 220, 220   | Yellow fill, cyan line tint               |
+| Group Member HP | 255, 0, 0     | 180, 0, 0     | Red (legacy/group variants)               |
 
 **Vertical Spacing**:
+
 - **14px gauges**: Use 17px vertical spacing (14px gauge + 3px gap)
 - **24px gauges**: Use 27px vertical spacing (24px gauge + 3px gap)
 - Maintains consistent rhythm across window
 
 **Label Overlay Pattern**:
+
 ```xml
 <Label item="HP_Value">
     <RelativePosition>true</RelativePosition>
@@ -351,6 +361,7 @@ Use for: HP, Mana, Stamina, XP, AA gauges requiring vertical stacking
 8. **Comments**: Section dividers, explanations
 
 **Section Comments**:
+
 ```xml
 <!-- ========================================== -->
 <!-- LEFT ZONE: Character Identity & Info      -->
@@ -371,11 +382,13 @@ Use for: HP, Mana, Stamina, XP, AA gauges requiring vertical stacking
 ```
 
 **Element Naming**:
+
 - **ScreenID**: Always set for debugging (`<ScreenID>IW_EquipmentGrid</ScreenID>`)
 - **Item Attribute**: Descriptive, unique (`item="Label_AC"`, `item="HP_Gauge"`)
 - **Prefix Convention**: `IW_` (InventoryWindow), `PW_` (PlayerWindow), `GW_` (GroupWindow)
 
 **RelativePosition**:
+
 - Set `<RelativePosition>true</RelativePosition>` for ALL child elements within Screens
 - Enables repositioning parent without recalculating all children
 - Exception: Top-level window Screen (no parent, uses absolute positioning)
@@ -408,7 +421,6 @@ thorne_drak/
    - Clean, simple layout
    - No tabs or complex features (where applicable)
    - Baseline for all users
-   
 2. **Options Directory**: Contains **feature-rich variants**
    - Tabbed interfaces (Merchant, Inventory)
    - Expanded stat displays (Actions, Player)
@@ -418,17 +430,20 @@ thorne_drak/
 **When to Create Options Variants**:
 
 ✅ **Create variant when**:
+
 - Adding features some users may not want (tabs, extra stats)
 - Providing alternative layouts (vertical vs horizontal)
 - Offering different information density levels (minimal vs detailed)
 - Supporting different play styles (raid-focused vs solo-focused)
 
 ❌ **Don't create variant for**:
+
 - Minor tweaks (change one color, move one label slightly)
 - Bug fixes (fix should go in both main and Options variants)
 - Template updates (WDT_Rounded adoption should be universal)
 
 **Naming Convention**:
+
 - **README.md**: Explain purpose of each variant, installation instructions
 - **Standard**: Feature-complete variant (may have tabs, stats, etc.)
 - **Descriptive Names**: "Dark Slots", "Vertical Bags", "Large Inventory", "Pet Bottom"
@@ -473,59 +488,59 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 
 **Label Colors** (for stats, attributes, resistances):
 
-| Label Type | RGB Value | Hex | Usage |
-|------------|-----------|-----|-------|
-| **White** | 255, 255, 255 | #FFFFFF | Default text, player name, stat values |
-| **Blue (Attributes)** | 70, 180, 255 | #46B4FF | Attribute labels (STR, STA, AGI, DEX, WIS, INT, CHA) |
-| **HP Value Red** | 255, 100, 100 | #FF6464 | HP current/max text values |
-| **Mana Value Blue** | 100, 150, 255 | #6496FF | Mana current/max text values |
-| **Orange** | 255, 185, 30 | #FFB91E | AC label, ATK label |
-| **Fire Red** | 255, 113, 46 | #FF712E | FIRE resist |
-| **Cold Blue** | 15, 182, 240 | #0FB6F0 | COLD resist |
-| **Magic Purple** | 255, 113, 255 | #FF71FF | MAGIC resist |
-| **Disease Yellow** | 230, 230, 0 | #E6E600 | DISEASE resist |
-| **Poison Green** | 0, 220, 0 | #00DC00 | POISON resist |
-| **Green** | 0, 205, 0 | #00CD00 | XP gauge, positive indicators |
+| Label Type            | RGB Value     | Hex     | Usage                                                |
+| --------------------- | ------------- | ------- | ---------------------------------------------------- |
+| **White**             | 255, 255, 255 | #FFFFFF | Default text, player name, stat values               |
+| **Blue (Attributes)** | 70, 180, 255  | #46B4FF | Attribute labels (STR, STA, AGI, DEX, WIS, INT, CHA) |
+| **HP Value Red**      | 255, 100, 100 | #FF6464 | HP current/max text values                           |
+| **Mana Value Blue**   | 100, 150, 255 | #6496FF | Mana current/max text values                         |
+| **Orange**            | 255, 185, 30  | #FFB91E | AC label, ATK label                                  |
+| **Fire Red**          | 255, 113, 46  | #FF712E | FIRE resist                                          |
+| **Cold Blue**         | 15, 182, 240  | #0FB6F0 | COLD resist                                          |
+| **Magic Purple**      | 255, 113, 255 | #FF71FF | MAGIC resist                                         |
+| **Disease Yellow**    | 230, 230, 0   | #E6E600 | DISEASE resist                                       |
+| **Poison Green**      | 0, 220, 0     | #00DC00 | POISON resist                                        |
+| **Green**             | 0, 205, 0     | #00CD00 | XP gauge, positive indicators                        |
 
 **Gauge Fill Colors**:
 
 > **Standard Gauge RGB Values** - Use these exact values across all windows for consistency
 
-| Gauge Type | Fill RGB | LinesFill RGB | Hex (Fill) | EQType | Notes |
-|------------|----------|---------------|------------|--------|-------|
-| **Player HP** | 255, 0, 0 | 220, 220, 0 | #FF0000 | 1 | Bright red fill (main Player/Target windows) |
-| **Player Mana** | 30, 30, 255 | 0, 220, 220 | #1E1EFF | 2 | Deep blue fill; text labels use RGB(100,150,255) |
-| **Pet Health** | 200, 80, 200 | 0, 0, 0 | #C850C8 | 16 | Purple (LinesFill varies by window; see Window-Specific) |
-| **Pet Mana** | 100, 150, 255 | 70, 105, 180 | #6496FF | 17 | Blue; also EQType for group pet HP in GroupWindow context |
-| **Stamina** | 240, 240, 0 | 0, 220, 0 | #F0F000 | 3 | Yellow fill with green line tint |
-| **Experience (XP)** | 220, 150, 0 | 100, 160, 255 | #DC9600 | 4 | Orange fill with blue line tint |
-| **AA Points** | 220, 200, 0 | 0, 220, 220 | #DCC800 | 5 | Yellow fill with cyan line tint |
-| **Breath Meter** | 0, 240, 240 | 0, 0, 0 | #00F0F0 | 8 | Cyan for underwater breathing |
-| **Mana Tick (Standard)** | 0, 220, 220 | 0, 220, 220 | #00DCDC | 24 | LinesFill only, 103px wide (compact windows) |
-| **Mana Tick (Tall)** | 0, 220, 220 | 0, 220, 220 | #00DCDC | 24 | LinesFill only, 120px wide (Player/Pet windows) |
-| **Target HP** | 240, 0, 0 | 220, 220, 0 | #F00000 | 6 | Oval gauge style |
-| **Casting Bar** | 240, 0, 240 | 220, 220, 0 | #F000F0 | 7 | Magenta for spell casting |
-| **Global Recast** | 255, 210, 250 | 255, 235, 255 | #FFD2FA | 25 | Light pink; thin 3px bar (CastSpellWnd, TargetWindow) |
-| **Spell Recast (gems)** | 200, 0, 200 | 0, 220, 220 | #C800C8 | 26–33 | Dark magenta; per-spell cooldown bars (CastSpellWnd) |
-| **Attack Timer** | 220, 180, 0 | 220, 180, 0 | #DCB400 | 34 | Gold/amber tick bar (TargetWindow) |
+| Gauge Type               | Fill RGB      | LinesFill RGB | Hex (Fill) | EQType | Notes                                                     |
+| ------------------------ | ------------- | ------------- | ---------- | ------ | --------------------------------------------------------- |
+| **Player HP**            | 255, 0, 0     | 220, 220, 0   | #FF0000    | 1      | Bright red fill (main Player/Target windows)              |
+| **Player Mana**          | 30, 30, 255   | 0, 220, 220   | #1E1EFF    | 2      | Deep blue fill; text labels use RGB(100,150,255)          |
+| **Pet Health**           | 200, 80, 200  | 0, 0, 0       | #C850C8    | 16     | Purple (LinesFill varies by window; see Window-Specific)  |
+| **Pet Mana**             | 100, 150, 255 | 70, 105, 180  | #6496FF    | 17     | Blue; also EQType for group pet HP in GroupWindow context |
+| **Stamina**              | 240, 240, 0   | 0, 220, 0     | #F0F000    | 3      | Yellow fill with green line tint                          |
+| **Experience (XP)**      | 220, 150, 0   | 100, 160, 255 | #DC9600    | 4      | Orange fill with blue line tint                           |
+| **AA Points**            | 220, 200, 0   | 0, 220, 220   | #DCC800    | 5      | Yellow fill with cyan line tint                           |
+| **Breath Meter**         | 0, 240, 240   | 0, 0, 0       | #00F0F0    | 8      | Cyan for underwater breathing                             |
+| **Mana Tick (Standard)** | 0, 220, 220   | 0, 220, 220   | #00DCDC    | 24     | LinesFill only, 103px wide (compact windows)              |
+| **Mana Tick (Tall)**     | 0, 220, 220   | 0, 220, 220   | #00DCDC    | 24     | LinesFill only, 120px wide (Player/Pet windows)           |
+| **Target HP**            | 240, 0, 0     | 220, 220, 0   | #F00000    | 6      | Oval gauge style                                          |
+| **Casting Bar**          | 240, 0, 240   | 220, 220, 0   | #F000F0    | 7      | Magenta for spell casting                                 |
+| **Global Recast**        | 255, 210, 250 | 255, 235, 255 | #FFD2FA    | 25     | Light pink; thin 3px bar (CastSpellWnd, TargetWindow)     |
+| **Spell Recast (gems)**  | 200, 0, 200   | 0, 220, 220   | #C800C8    | 26–33  | Dark magenta; per-spell cooldown bars (CastSpellWnd)      |
+| **Attack Timer**         | 220, 180, 0   | 220, 180, 0   | #DCB400    | 34     | Gold/amber tick bar (TargetWindow)                        |
 
 **Window-Specific Gauge Colors**:
 
 > Some gauges use intentionally different colors depending on window context.
 > These are **not** overrides — they reflect the design intent for each window.
 
-| Gauge Type | Fill RGB | LinesFill RGB | EQType | Window | Notes |
-|------------|----------|---------------|--------|--------|-------|
-| **Group Member HP** | 220, 0, 0 | 220, 220, 0 | 11–15 | GroupWindow | Slightly darker red than Player HP (220 vs 255) |
-| **Group Pet HP** | 170, 60, 170 | 220, 220, 0 | 17–21 | GroupWindow | Dark purple; thin 2px bars under group HP gauges |
+| Gauge Type          | Fill RGB     | LinesFill RGB | EQType | Window      | Notes                                            |
+| ------------------- | ------------ | ------------- | ------ | ----------- | ------------------------------------------------ |
+| **Group Member HP** | 220, 0, 0    | 220, 220, 0   | 11–15  | GroupWindow | Slightly darker red than Player HP (220 vs 255)  |
+| **Group Pet HP**    | 170, 60, 170 | 220, 220, 0   | 17–21  | GroupWindow | Dark purple; thin 2px bars under group HP gauges |
 
 **Standard Gauge Sizes**:
 
-| Gauge Style | Width (CX) | Height (CY) | LinesFill Animation | Usage |
-|-------------|------------|-------------|---------------------|-------|
-| **Standard** | 103px | 8px | A_GaugeLinesFill | Compact windows (Target, Breath) |
-| **Tall** | 120px | 15px | A_GaugeLinesFill_Tall | Player/Pet windows (more visible) |
-| **Wide** | 250px | 15px | (uses oval animations) | Target oval gauges (horizontal emphasis) |
+| Gauge Style  | Width (CX) | Height (CY) | LinesFill Animation    | Usage                                    |
+| ------------ | ---------- | ----------- | ---------------------- | ---------------------------------------- |
+| **Standard** | 103px      | 8px         | A_GaugeLinesFill       | Compact windows (Target, Breath)         |
+| **Tall**     | 120px      | 15px        | A_GaugeLinesFill_Tall  | Player/Pet windows (more visible)        |
+| **Wide**     | 250px      | 15px        | (uses oval animations) | Target oval gauges (horizontal emphasis) |
 
 **Gauge XML Template**:
 
@@ -639,16 +654,17 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 
 **Font Standards**:
 
-| Font ID | Size (approx) | Usage |
-|---------|---------------|-------|
-| 0 | Small | Tooltips, secondary info |
-| 1 | Small | Compact labels |
-| 2 | Medium | Standard labels |
-| 3 | Medium | **Default for most UI elements** |
-| 4 | Large | Button text, section headers |
-| 5 | Large | Title bars, window names |
+| Font ID | Size (approx) | Usage                            |
+| ------- | ------------- | -------------------------------- |
+| 0       | Small         | Tooltips, secondary info         |
+| 1       | Small         | Compact labels                   |
+| 2       | Medium        | Standard labels                  |
+| 3       | Medium        | **Default for most UI elements** |
+| 4       | Large         | Button text, section headers     |
+| 5       | Large         | Title bars, window names         |
 
 **NoWrap Property**:
+
 - **Always use** `<NoWrap>true</NoWrap>` for numeric values
 - Prevents truncation when values exceed expected width
 - Examples: HP/Mana current/max, AC, ATK, Weight displays
@@ -658,16 +674,19 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 ### Cross-Window Consistency Rules
 
 **Equipment Slot Ordering**:
+
 - ALL windows displaying equipment slots MUST use anatomical pattern
 - Applies to: Inventory, Actions, Hotbar, Inspect, any custom windows
 - No exceptions unless functionally impossible
 
 **Gauge Vertical Spacing**:
+
 - 14px gauges: 17px spacing (3px gap)
 - 24px gauges: 27px spacing (3px gap)
 - Consistent rhythm across all windows with stacked gauges
 
 **Stat Display Order** (when showing multiple stats):
+
 1. AC (Armor Class)
 2. ATK (Attack)
 3. HP (current or current/max)
@@ -677,6 +696,7 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 7. Weight (Current/Max)
 
 **Color Consistency**:
+
 - Pet elements: Purple family (`200, 80, 200`)
 - Player HP: Always red (`255, 0, 0`)
 - Player Mana gauge fill: `30, 30, 255` (value text remains `100, 150, 255`)
@@ -693,6 +713,7 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 Consider restructuring when documentation exceeds **2000 lines** or **8+ major phases**.
 
 **Current Structure (February 2026)**:
+
 ```
 .docs/
 ├── STANDARDS.md                 # This file
@@ -702,22 +723,26 @@ Consider restructuring when documentation exceeds **2000 lines** or **8+ major p
 │   └── README.md
 
 .development/
-├── initial-phases/
+├── initial_phases/
 │   ├── PHASE-3.9-INVENTORY-REDESIGN.md
-│   ├── PHASE-4-ACTIONS-SIMPLIFICATION.md
-│   └── PHASE-6-CONTAINERS.md
-└── architecture/
-    └── README.md
+│   └── PHASE-5-TARGET-WINDOW.md
+├── archive/              # Archived phase docs
+└── README.md
 ```
 
 **Cross-Linking Pattern**:
+
 ```markdown
 <!-- Master index -->
+
 ### [Phase 3.9](../.development/initial_phases/PHASE-3.9-INVENTORY-REDESIGN.md)
+
 **Status**: PLANNED | [Full Documentation →](../.development/initial_phases/PHASE-3.9-INVENTORY-REDESIGN.md)
 
 <!-- Phase file -->
+
 # Phase 3.9: Inventory Window Redesign
+
 [← Back to Development Guide](../DEVELOPMENT.md#phases)
 ```
 
@@ -734,15 +759,15 @@ user-facing docs in `.docs/` and working docs in `.development/`.
 
 Bindings discovered and verified for TAKP:
 
-| EQType | Binding | Notes |
-|--------|---------|-------|
-| 1 | Player HP | Red gauge, displays health |
-| 2 | Player Mana | Blue gauge, displays mana/power |
-| 11-21 | Group Member HP | One per group member slot |
-| 35-39 | Group HP Labels | Current/max health text display |
-| 16 | Pet HP | Pet health, purple color |
-| 17 | Pet Mana | Pet stamina/mana, blue color |
-| 69 | Pet HP Label | Pet health value display |
+| EQType | Binding         | Notes                           |
+| ------ | --------------- | ------------------------------- |
+| 1      | Player HP       | Red gauge, displays health      |
+| 2      | Player Mana     | Blue gauge, displays mana/power |
+| 11-21  | Group Member HP | One per group member slot       |
+| 35-39  | Group HP Labels | Current/max health text display |
+| 16     | Pet HP          | Pet health, purple color        |
+| 17     | Pet Mana        | Pet stamina/mana, blue color    |
+| 69     | Pet HP Label    | Pet health value display        |
 
 ---
 
@@ -811,6 +836,7 @@ Research needed on how to allow dragging of windows without visible title bars. 
 ## 📜 Version History
 
 **v1.0.0** (February 1, 2026)
+
 - ✅ Comprehensive standards documentation created
 - ✅ Layout & Organization Standards (subwindow pattern, anatomical layout)
 - ✅ Gauge Templates & Styling (6 gauge template definitions)

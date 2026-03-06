@@ -68,6 +68,10 @@ These 24 entries are the minimum baseline set to account for in the first atlas 
 
 ## Status
 
-- Script inventory + rebaseline analysis complete in `proof_of_concept.md`
-- Slot animation baseline extracted (24 items) and added here
-- Next: draft concrete coordinate map for `thorne_slots01.tga` and `thorne_slots02.tga`
+- ✅ Script inventory + rebaseline analysis complete in `proof_of_concept.md`
+- ✅ Slot animation baseline extracted (24 items) and added here
+- ✅ Pipeline fully built and operational: `regen_slots.bat` / `.bin/regen_slots.py`
+- ✅ `.Master/.Classes/` structure created (Caster, Melee, Hybrid, Thorne) × `.Themes` (7 color themes)
+- ✅ Atlas generation working across 4 classes × 7 themes = 28 outputs
+- ⏳ `item_overrides` arrays in `.regen_thorne.json` configs are **still empty** (all classes use default item set)
+- ⏳ Next: Populate class-specific item overrides and regenerate (see [ROADMAP-v0.7.5.md](../../.docs/ROADMAP-v0.7.5.md))

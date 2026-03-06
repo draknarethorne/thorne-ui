@@ -11,12 +11,14 @@
 ## 📚 Documentation Structure (Updated Feb 18, 2026)
 
 **Core Release Documents:**
+
 - **[RELEASES.md](RELEASES.md)** - Complete guide to creating and managing releases (includes FAQ & quick answers)
 - **[RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md)** - Template for GitHub release notes
 
 **For Creating New Releases (v0.6.0+):**
 
 See [RELEASES.md](RELEASES.md) for:
+
 1. Quick Answers (TL;DR: push tag, GitHub does the rest)
 2. Overview of automated GitHub Actions workflow
 3. Step-by-step process for creating releases
@@ -30,14 +32,14 @@ Estimated time: 15-20 minutes prep + 5 minutes release (fully automated on GitHu
 
 ## 📜 Historical Release Archives
 
-Historical release archives are stored in `.development/releases/archive/` (repository-only; not shipped in release packages).
+Historical release archives are stored in `.development/archive/` (repository-only; not shipped in release packages).
 
 ---
 
 ## 🧪 Current Pre-Release
 
-**v0.7.1 (next)** — post-release refinement and follow-up polish  
-**Tag format:** `v0.7.1`
+**v0.7.5 (next)** — class-specific slot images and item slot overrides  
+**Tag format:** `v0.7.5`
 
 ---
 
@@ -67,13 +69,13 @@ git push origin v0.7.0
 
 ## 📊 Document Selection Guide
 
-| Need | Read |
-|------|------|
-| **Creating releases (start here)** | [RELEASES.md](RELEASES.md) |
-| **GitHub release notes template** | [RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md) |
-| **What changed recently?** | [../README.md](../README.md) |
-| **How the workflow was built** | [../../.development/releases/RELEASES-IMPLEMENTATION.md](../../.development/releases/RELEASES-IMPLEMENTATION.md) |
-| **Testing locally before release** | [../../.development/releases/TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md) |
+| Need                               | Read                                                                                                           |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Creating releases (start here)** | [RELEASES.md](RELEASES.md)                                                                                     |
+| **GitHub release notes template**  | [RELEASE-NOTES-TEMPLATE.md](RELEASE-NOTES-TEMPLATE.md)                                                         |
+| **What changed recently?**         | [../README.md](../README.md)                                                                                   |
+| **How the workflow was built**     | [../../.development/archive/RELEASES-IMPLEMENTATION.md](../../.development/archive/RELEASES-IMPLEMENTATION.md) |
+| **Testing locally before release** | [../../.development/archive/TESTING-RELEASES.md](../../.development/archive/TESTING-RELEASES.md)               |
 
 ---
 
@@ -95,16 +97,19 @@ git push origin v0.7.0
 ## 🎓 Release Strategy
 
 ### v0.4.0 (February 2, 2026)
+
 - **Purpose:** Establish release infrastructure
 - **Documentation:** Comprehensive (infrastructure setup)
 - **Size:** Large (first time setup)
 
 ### v0.5.0 (February 3, 2026)
+
 - **Purpose:** Standardize release process
 - **Documentation:** Moderate (checklist + changes)
 - **Size:** Streamlined
 
 ### v0.6.0+ (Future)
+
 - **Purpose:** Simple repeatable releases
 - **Documentation:** Template-based (copy, customize, release!)
 - **Size:** Minimal prep
@@ -114,11 +119,13 @@ git push origin v0.7.0
 ## 🔗 Quick Links
 
 **Actions & Releases:**
+
 - [GitHub Actions](https://github.com/draknarethorne/thorne-ui/actions) - Monitor workflows
 - [GitHub Releases](https://github.com/draknarethorne/thorne-ui/releases) - View all releases
 - [Main Repository](https://github.com/draknarethorne/thorne-ui) - Project home
 
 **Documentation:**
+
 - [Main README](../README.md) - Project overview
 - [Development Guide](../../DEVELOPMENT.md) - Development roadmap
 - [Standards](../STANDARDS.md) - Code standards

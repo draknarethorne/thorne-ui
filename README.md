@@ -21,6 +21,7 @@ Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQue
 ### Your Data, Your Way
 
 Every core window has **variants** to suit your preferences:
+
 - **Standard layouts** - Tested and balanced defaults
 - **Alternative options** - Tall/wide gauges, reorganized slots, custom colorways
 - **Mix & match** - Use different variants for different windows
@@ -67,6 +68,7 @@ Every core window has **variants** to suit your preferences:
 - **Chat & Buffs** - Customizable buff display, clear chat formatting
 
 **Options for Every Window** - Don't like a layout? Try an alternative:
+
 - Browse `thorne_drak/Options/` for pre-built variations
 - Each option has a `README.md` explaining what's different
 - Copy the option's XML file to the root to activate
@@ -126,12 +128,12 @@ For detailed standards and patterns, see [STANDARDS.md](.docs/STANDARDS.md).
 
 This project includes comprehensive guides:
 
-| Document | Purpose |
-|----------|---------|
-| [STANDARDS.md](.docs/STANDARDS.md) | UI development standards, button layouts, gauge styling, EQType reference |
-| [DEVELOPMENT.md](DEVELOPMENT.md) | Architecture, implementation guide, development roadmap, technical reference |
-| [TODO.md](TODO.md) | Current work items, planned features, investigations |
-| [RELEASES.md](.docs/releases/RELEASES.md) | How to create and publish releases |
+| Document                                  | Purpose                                                                      |
+| ----------------------------------------- | ---------------------------------------------------------------------------- |
+| [STANDARDS.md](.docs/STANDARDS.md)        | UI development standards, button layouts, gauge styling, EQType reference    |
+| [DEVELOPMENT.md](DEVELOPMENT.md)          | Architecture, implementation guide, development roadmap, technical reference |
+| [TODO.md](TODO.md)                        | Current work items, planned features, investigations                         |
+| [RELEASES.md](.docs/releases/RELEASES.md) | How to create and publish releases                                           |
 
 ---
 
@@ -195,21 +197,33 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ### What We're Working On (v0.7.5)
 
-- 🔨 **Class slot icon system** - Unique slot art per class for equipment windows
+- ⏳ **Slot class item overrides** - Class-specific armor/weapon representations in slot art
+- ✅ **Container & options sync** - Container slot spacing, inventory logos, Thorne option sync (v0.7.4)
+- ✅ **Logo atlas & tab branding** - 7 lighting modes, Actions tab branded (v0.7.3)
+- ✅ **Slot art expansion** - Actions mini-slots, Inspect anatomical layout (v0.7.2)
+- ✅ **HotButton stat layout** - 14-stat trial with icon/value spacing (v0.7.1)
+
+### Coming Up
+
+- **v0.8.0** - Multi-color health gauges, enhanced group displays
+- **v1.0.0** - Logo branding (CharSelect, Inventory), documentation pass, release polish
 
 ### Recent Releases
 
 - **v0.7.4** - Container slot spacing, inventory logos, Thorne option sync
-- **v0.7.3** - Logo atlas generation and branding system
-- **v0.7.2** - Slot art system expansion across Actions and Inspect windows
+- **v0.7.3** - Logo atlas, tab icon branding, gauge polish
+- **v0.7.0** - Spell recast timers, stat icons, Options modernization
+- **v0.6.5** - Spellbook polish and Thorne-first option sync
+- **v0.6.0** - Inventory redesign (Phase 3.9 completion)
 
-**Want details?** See the [Full Version History](#-version-history) below.
+**Want details?** See the [Full Version History](#-version-history) below or the [versioned roadmaps](.docs/).
 
 ---
 
 ## 📅 Version History
 
 **v0.7.4** (March 6, 2026)
+
 - ✅ Container window slot spacing overhaul
   - Replaced compressed -1px overlap with proper 1px gap (41px step matching inventory feel)
   - Two-column layout: X=7/48 in 96px window, left-aligned for clean appearance
@@ -224,6 +238,7 @@ We're iterating toward **v1.0.0** with focused releases:
   - Updated sync metadata and option READMEs
 
 **v0.7.3** (March 4, 2026)
+
 - ✅ Logo atlas generation and branding system
   - Built `generate_thorne_logo_atlas.py` with 7 lighting modes (source, flat, radial_glow, radial_top_bias, bottom_light, top_light, rim_light)
   - JSON-driven config for atlas layout, transparency rows, and icon generation
@@ -242,6 +257,7 @@ We're iterating toward **v1.0.0** with focused releases:
   - Expanded development standards with gauge color specifications
 
 **v0.7.2** (March 3, 2026)
+
 - ✅ Slot art system expansion across Actions and Inspect windows
   - Repurposed Actions window Info tab as Worn equipment mini-slots (28x28, 5-row anatomical grid)
   - Redesigned Inspect window with full 6-row anatomical layout (40x40, Inventory-matching)
@@ -252,6 +268,7 @@ We're iterating toward **v1.0.0** with focused releases:
   - Updated Options README and sync metadata
 
 **v0.7.1** (March 3, 2026)
+
 - ✅ Post-v0.7.0 polish and iteration pass
   - Expanded `EQUI_HotButtonWnd.xml` utility row into a full 14-stat trial layout (MusicPlayer-style icon/value spacing)
   - Preserved stacked bag/weapon utility arrangement while improving under-hotbar information density
@@ -261,6 +278,7 @@ We're iterating toward **v1.0.0** with focused releases:
   - Prepared branch for stable tagged release handoff
 
 **v0.7.0** (February 22, 2026)
+
 - ✅ Release-wide Options and asset modernization
   - Standardized button, gauge, spell icon, and stat icon naming toward Thorne-prefixed conventions
   - Expanded `thorne_drak/Options/` organization for gauges, icons, buttons, cast, and animation variants
@@ -277,6 +295,7 @@ We're iterating toward **v1.0.0** with focused releases:
   - Expanded development docs/reviews to capture architecture and release rationale
 
 **v0.6.5** (February 18, 2026)
+
 - ✅ Spellbook and casting UI polish
   - Spellbook promoted to readability-first Thorne baseline
   - Restored standard 84x20 Done button sizing to match Inventory standards
@@ -290,6 +309,7 @@ We're iterating toward **v1.0.0** with focused releases:
   - Updated option metadata/readmes to match current Thorne workflow
 
 **v0.6.4** (February 15, 2026)
+
 - ✅ Gauge system overhaul
   - Size-specific gauge textures and animations (tall/wide variants)
   - Wide gauge support and line rendering improvements
@@ -303,9 +323,11 @@ We're iterating toward **v1.0.0** with focused releases:
   - Release/label utility scripts and documentation cleanup
 
 **v0.6.3** (February 9, 2026) _(pre-release)_
+
 - ✅ Cast spell window spell-name font adjusted to Font 1
 
 **v0.6.2** (February 9, 2026) _archived_
+
 - ✅ Inventory equipment grid refinements
   - Restored Hands slot visibility and sizing
   - Converted layout to 6-row anatomical "paper doll" arrangement
@@ -317,12 +339,14 @@ We're iterating toward **v1.0.0** with focused releases:
 - ✅ New Options variants for Inventory (Default + Enhanced No Hands Bug)
 
 **v0.6.1** (February 7, 2026) _archived_
+
 - ✅ Attack Indicator now displays correctly in Player Window
 - ✅ Recessed box visuals refined
   - Darker recessed background for better contrast
   - Size adjusted to 40x40 for improved alignment
 
 **v0.6.0** (February 6, 2026)
+
 - ✅ Phase 3.9: Inventory system redesign (final version)
   - Anatomical 4-column equipment layout (21 armor slots, 2px spacing)
   - Unified 45x45px slot sizing for consistency
@@ -339,6 +363,7 @@ We're iterating toward **v1.0.0** with focused releases:
 - ✅ Comprehensive texture validation (45 .tga files verified)
 
 **v0.5.0** (February 3, 2026)
+
 - ✅ Phase 5: Target Window enhancements (ToT, player gauges, target info)
 - ✅ Pet window improvements (dismiss button, color updates)
 - ✅ Comprehensive XML attribution headers (38 files)
@@ -348,6 +373,7 @@ We're iterating toward **v1.0.0** with focused releases:
 - ✅ Naming standardization across all documentation files
 
 **v0.4.0** (February 2, 2026)
+
 - ✅ GitHub Releases infrastructure with automated workflow
 - ✅ Automated ZIP packaging triggered by version tags
 - ✅ Release testing suite with validation script
@@ -356,6 +382,7 @@ We're iterating toward **v1.0.0** with focused releases:
 - ✅ Automated changelog generation from commits
 
 **v0.3.0** (February 1, 2026) _archived_
+
 - ✅ Complete documentation reorganization (modular structure with .docs/ directory)
 - ✅ Phase documentation extracted to individual files (9 phases)
 - ✅ Technical references created (EQTypes, Zeal features)
@@ -365,11 +392,13 @@ We're iterating toward **v1.0.0** with focused releases:
 - ✅ Potion Belt reminder button added to Actions Main tab
 
 **v0.2.0** (January 2026) _archived_
+
 - ✅ Hybrid hotbar + inventory display (4-row layout)
 - ✅ Vertical navigation arrows for multi-row hotbar
 - 🔍 Discovered client hardcoding limitations (buttons 11-30 don't function)
 
 **v0.1.0** (January 2026) _archived_
+
 - ✅ Initial Actions window with inventory tabs
 - ✅ Player stats integration
 - ⚠️ Identified window fading limitation

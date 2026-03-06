@@ -1,147 +1,75 @@
-# Thorne UI v0.7.0 Roadmap
+# Thorne UI v0.7.0 Roadmap — SHIPPED
 
-**Version:** 0.7.0-dev  
-**Status:** In Development (February 18, 2026)  
-**Target Release:** March 2026  
-**Estimated Effort:** 9-17 hours of implementation work
+**Version:** 0.7.0
+**Status:** ✅ Shipped (February 22, 2026)
+**Tag:** [v0.7.0](https://github.com/draknarethorne/thorne-ui/releases/tag/v0.7.0)
 
----
-
-## Vision
-
-Thorne UI v0.7.0 carries forward the legendary baseline established in v0.6.0 (inventory redesign) and v0.6.5 (spellbook polish) while adding critical quality-of-life enhancements and visual polish that EverQuest players have long requested.
-
-This release focuses on **actionability and clarity**—bringing real-time combat information directly into the player's visual field and making spell management more intuitive.
+> **Archive Notice:** This roadmap is complete. All v0.7.0 features have shipped. For current work, see [ROADMAP-v0.7.5.md](ROADMAP-v0.7.5.md) or [ROADMAP-v0.8.0.md](ROADMAP-v0.8.0.md).
 
 ---
 
-## ✅ Confirmed Features (v0.7.0)
+## What Shipped
 
-### 1. Spell Recast Timers (CastSpellWnd)
-**Priority:** 🔴 High | **Effort:** 2-3 hours | **Impact:** Essential for combat
+### 1. Spell Recast Timers (CastSpellWnd) ✅
 
-Display remaining recast time for each spell gem, allowing casters to see exactly when spells will be available without hovering or checking individual timers.
-
-**What's New:**
 - Individual spell gem recast time display
-- Global spell recast timer (countdown until ALL spells available)
+- Global spell recast timer (countdown until all spells available)
 - Clear visual distinction between gems on cooldown vs. ready
-- Reference: [MASTER-FEATURE-INDEX.md](../.development/ui_analysis/MASTER-FEATURE-INDEX.md) Spell Recast Timers section
+- Implemented in both Cast window and Target window
 
-### 2. Target Window Enhancements (TargetWindow)
-**Priority:** 🔴 High | **Effort:** 1-2 hours (spell name) + 1-2 hours (attack delay) | **Impact:** Critical information at a glance
+### 2. Target Window Enhancements (TargetWindow) ✅
 
-Know what spell your target is casting and how fast they attack—essential for both PvP and group play.
+- Current Casting Spell Display — shows name of spell being cast by target
+- Attack Delay Timer — visual countdown of target's next attack
+- Improved information hierarchy and visibility
 
-**What's New:**
-- **Current Casting Spell Display** - Shows name of spell currently being cast by target
-- **Attack Delay Timer** - Visual countdown of when target's next attack lands
-- **Improved visibility** - Larger, clearer information hierarchy
+### 3. Stat Icons & Elemental Resistances ✅
 
-**Reference:** [TARGETWINDOW-analysis.md](../.development/ui_analysis/TARGETWINDOW-analysis.md)
+- 18 stat icons (Player Stats, Resistances, Attributes) across 3 windows (HotButton, Stat Icon Bar, Inventory)
+- Stat icon generation pipeline (`regen_icons.py`) with 6 icon pack variants (Classic, Duxa, Infiniti, Steamworks, Thorne, WoW)
+- `stat_icons_thorne01.tga` atlas with centralized `<Ui2DAnimation>` definitions in `EQUI_Animations.xml`
 
-### 3. Actions Window: Elemental Resistance Icons (ActionsWindow)
-**Priority:** 🟡 Medium | **Effort:** 2-3 hours | **Impact:** At-a-glance elemental status
+### 4. SpellBook Meditate Button — Hidden ⚫
 
-Display character's elemental resistance status with stat icons, making it immediately obvious which resists are active and their strength.
+- Meditate button exists visually in spellbook but is **not functional** in the TAKP client
+- Confirmed as a client limitation — button will remain hidden in the UI
+- Not included as a shipped feature
 
-**What's New:**
-- Fiery Descent, Resolve, Ice, Water, Poison, Disease resistances visualized as icons
-- Color-coded strength (gradient or tiers)
-- Integrates with stat_icon_pieces texture strategy from Phase 3.9
-- Reference: [ACTIONSWINDOW-analysis.md](../.development/ui_analysis/ACTIONSWINDOW-analysis.md)
+### 5. Release Infrastructure ✅
 
-### 4. SpellBook: Meditate Button (SpellBookWnd)
-**Priority:** 🟢 Low | **Effort:** 0.5-1 hour | **Impact:** Convenience (saves macro slot)
-
-Add a dedicated meditation button within the SpellBook window, allowing players to meditate directly without a macro.
-
-**What's New:**
-- Meditate button in spellbook for Clerics/Shamans/Bards
-- Consistent visual style with current spellbook design
-- References: [SPELLBOOK-analysis.md](../.development/ui_analysis/SPELLBOOK-analysis.md)
-
-### 5. Implementation & Testing
-**Effort:** 2-4 hours | **Impact:** Quality assurance
-
-Comprehensive in-game testing, documentation, variant validation, and option sync deployment.
+- Standardized button, gauge, spell icon, and stat icon naming (Thorne-prefixed conventions)
+- Expanded `Options/` organization for gauges, icons, buttons, cast, and animation variants
+- Slot system foundation (`.Master/.Classes`, `.Items`, `.Themes`) with scripted generation
+- Unified regen tooling and batch wrappers for all asset pipelines
 
 ---
 
-## Feature Details Reference
+## Timeline (Actual)
 
-For detailed implementation guidance, analysis, and decision rationale, see:
-
-- **[MASTER-FEATURE-INDEX.md](../.development/ui_analysis/MASTER-FEATURE-INDEX.md)** - Comprehensive feature breakdown with code examples
-- **Window-Specific Analysis:**
-  - [CASTSPELL-analysis.md](../.development/ui_analysis/CASTSPELL-analysis.md) - Spell recast timer implementation
-  - [TARGETWINDOW-analysis.md](../.development/ui_analysis/TARGETWINDOW-analysis.md) - Target window enhancements
-  - [ACTIONSWINDOW-analysis.md](../.development/ui_analysis/ACTIONSWINDOW-analysis.md) - Resistance icons
+| Milestone              | Date         | Status |
+| ---------------------- | ------------ | ------ |
+| Feature Implementation | Feb 22, 2026 | ✅     |
+| In-Game Testing        | Feb 22, 2026 | ✅     |
+| v0.7.0 Release         | Feb 22, 2026 | ✅     |
 
 ---
 
-## 📊 Timeline
+## Successor Milestones
 
-| Milestone | Target Date | Status |
-|-----------|-------------|--------|
-| **Feature Implementation** | Feb 25, 2026 | 🟡 In Progress |
-| **In-Game Testing** | Mar 1, 2026 | ⏳ Queued |
-| **Variant Sync** | Mar 3, 2026 | ⏳ Queued |
-| **v0.7.0 Release** | Mar 7, 2026 | ⏳ Planned |
+- **[ROADMAP-v0.7.5.md](ROADMAP-v0.7.5.md)** — Art system expansion and slot class overrides
+- **[ROADMAP-v0.8.0.md](ROADMAP-v0.8.0.md)** — Multi-color gauges and enhanced group displays
+- **[ROADMAP-v1.0.0.md](ROADMAP-v1.0.0.md)** — Logo branding, documentation, and release polish
 
 ---
 
-## 🎯 v0.8.0 Preview
+## Reference
 
-Looking ahead: The analysis identified 5 additional features for v0.8.0 (46-69 hours):
-- **Buff Window Enhancements** - Duration labels, spell timers, short-buff window
-- **Group Window Improvements** - Enhanced player displays and status
-- **Hotbar Layout Variants** - Additional button arrangement options
-- **Merchant Window Integration** - Character stat/equipment panel in merchant trade view
-- **Player Window Polish** - HP gauge colors, Zeal tick visualization
-
-See [MASTER-FEATURE-INDEX.md - v0.8.0 Features](../.development/ui_analysis/MASTER-FEATURE-INDEX.md#-v08-medium-complexity-features-extensive-but-targeted) for details.
-
-**Current Focus:** v0.7.0 ships first; v0.8.0 decisions made after v0.7.0 user feedback (Q2 2026).
+- [MASTER-FEATURE-INDEX.md](../.development/ui_analysis/MASTER-FEATURE-INDEX.md) — Feature analysis source
+- [STANDARDS.md](STANDARDS.md) — UI design standards
+- [README.md](../README.md) — Full version history
 
 ---
 
-## 📚 Related Documentation
-
-### For Users
-- [README.md](../README.md) - Feature overview, installation, support
-- [STANDARDS.md](STANDARDS.md) - UI consistency and design guidelines
-
-### For Developers
-- [DEVELOPMENT.md](../DEVELOPMENT.md) - Architecture, phases, contribution guide
-- [ui-analysis/README.md](../.development/ui_analysis/) - Detailed analysis hub (window-by-window breakdowns)
-- [stat-icons/README.md](../.development/stat_icons/) - Stat icon implementation guide
-
-### Research & Archives
-- [Phase 3.9: Inventory Redesign](../.development/initial_phases/PHASE-3.9-INVENTORY-REDESIGN.md) - v0.6.0 foundation
-
----
-
-## 🎨 Design Philosophy
-
-v0.7.0 features embody Thorne UI's core values:
-
-✅ **Clarity** - Information the player needs is immediately visible  
-✅ **Accessibility** - No macros required for essential actions  
-✅ **Consistency** - Features align with existing UI standards  
-✅ **Legendary Craftsmanship** - Polish every detail  
-
----
-
-## Questions & Feedback
-
-- **Technical questions?** See [DEVELOPMENT.md](../DEVELOPMENT.md)
-- **Feature requests?** Refer to [MASTER-FEATURE-INDEX.md](../.development/ui_analysis/MASTER-FEATURE-INDEX.md)
-- **Found a bug?** Open an issue on GitHub
-- **Want to contribute?** See [DEVELOPMENT.md#contribution-guide](../DEVELOPMENT.md#contribution-guide)
-
----
-
-**Maintained by:** Draknare Thorne  
-**Last Updated:** February 18, 2026  
-**Next Review:** Post v0.7.0 release (March 2026)
+**Maintained by:** Draknare Thorne
+**Last Updated:** March 2026
+**Status:** Archived — v0.7.0 shipped

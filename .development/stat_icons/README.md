@@ -16,7 +16,7 @@
 ✅ **Generation:** Complete - production-ready script and automation  
 ✅ **Output:** Complete - 256×256 RGBA textures with all icons  
 ✅ **Documentation:** Complete - usage guides and specifications  
-⏳ **Window Integration:** In Progress (v0.7.0 Inventory work)
+✅ **Window Integration:** Complete (v0.7.0 — HotButton bar, Stat Icon Bar, Inventory window)
 
 ---
 
@@ -113,18 +113,22 @@ thorne_drak/
 All 18 icons fully configured with source coordinates in `.bin/regen_icons.json`:
 
 **Example entry:**
+
 ```json
 {
   "AC": {
     "file": "gemicons01.tga",
-    "x": 192, "y": 216,
-    "w": 24, "h": 24,
+    "x": 192,
+    "y": 216,
+    "w": 24,
+    "h": 24,
     "description": "Armor Class"
   }
 }
 ```
 
 **Key Mappings:**
+
 - Player Stats (Column 1): AC, ATK, HP, MANA, STA, Weight
 - Resistances (Column 2): Fire, Cold, Magic, Poison, Disease, Bag
 - Attributes (Column 3): STR, INT, WIS, AGI, DEX, CHA
@@ -136,6 +140,7 @@ All 18 icons have complete, verified coordinates. No placeholders.
 ## Features
 
 ### ✅ Automated Generation
+
 - Reads config from `.bin/regen_icons.json`
 - Extracts icons from gemicon source files
 - Resizes 24×24 → 22×22 pixels (LANCZOS interpolation)
@@ -144,17 +149,21 @@ All 18 icons have complete, verified coordinates. No placeholders.
 - Generates metadata JSON with audit trail
 
 ### ✅ Multi-Variant Support
+
 - Auto-discovers all icon variants in `Options/Icons/`
 - Currently supported: Thorne, Classic, Duxa, Infiniti, Steamworks, WoW
 - Smart copy logic: Single variant → copies to `thorne_drak/`; Multiple → Thorne only
 
 ### ✅ Smart Deployment
+
 - Automatic copying to `thorne_drak/stat_icons_thorne01.tga`
 - Direct deployment to `<TAKP>\uifiles\thorne_dev/` for testing
 - In-game testing: `/loadskin thorne_drak`
 
 ### ✅ Detailed Metadata
+
 Generates `stat_icons_thorne01-stats.json` with:
+
 - Source file and coordinates for each icon
 - Position in final texture
 - Type: "extracted" vs "placeholder"
@@ -165,22 +174,26 @@ Generates `stat_icons_thorne01-stats.json` with:
 ## Command Reference
 
 ### Regenerate All Variants
+
 ```bash
 python .bin/regen_icons.py --all
 ```
 
 ### Regenerate Single Variant
+
 ```bash
 python .bin/regen_icons.py Thorne
 python .bin/regen_icons.py Classic
 ```
 
 ### With Reference Labels
+
 ```bash
 python .bin/regen_icons.py Thorne --labels
 ```
 
 ### Multiple Variants
+
 ```bash
 python .bin/regen_icons.py Thorne Classic Duxa
 ```
@@ -191,27 +204,31 @@ See [.bin/regen_icons.md](../../.bin/regen_icons.md) for comprehensive usage gui
 
 ## Documentation
 
-| Document | Purpose |
-|----------|---------|
-| **README.md** | This file - system overview and quick reference |
-| **ABBREVIATIONS.md** | Icon shorthand reference (AC, MP, ST, FR, etc.) |
-| **REDESIGN-REVIEW.md** | Complete technical analysis and design review |
+| Document                | Purpose                                         |
+| ----------------------- | ----------------------------------------------- |
+| **README.md**           | This file - system overview and quick reference |
+| **ABBREVIATIONS.md**    | Icon shorthand reference (AC, MP, ST, FR, etc.) |
+| **REDESIGN-REVIEW.md**  | Complete technical analysis and design review   |
 | **.bin/regen_icons.md** | Detailed usage guide (490 lines) with workflows |
-| **.bin/README.md** | Script index with quick reference |
+| **.bin/README.md**      | Script index with quick reference               |
 
 ---
 
-## Next Phase: Window Integration (v0.7.0)
+## Window Integration ✅ COMPLETE
 
-**Goal:** Integrate stat icons into Inventory window with Options-driven display modes
+**Shipped in v0.7.0 (March 2026)**
 
-**Tasks:**
-1. Create Options/UI variants (text-only, icons-only, icons+text)
-2. Modify EQUI_Inventory.xml to support stat icon display
-3. Test with Player, Target, Merchant windows
-4. Release as v0.7.0
+Stat icons are now integrated into three windows:
 
-See [REDESIGN-REVIEW.md](REDESIGN-REVIEW.md) for complete integration roadmap.
+1. **HotButton Window** — Stat icons displayed below hotbuttons (part of major hotbar revision)
+2. **Stat Icon Bar** — MusicPlayerWnd repurposed as a dedicated stat icon display bar
+3. **Inventory Window** — Stat icons added alongside equipment grid
+
+All integration uses `stat_icons_thorne01.tga` atlas with `<Ui2DAnimation>` definitions centralized in `EQUI_Animations.xml`.
+
+**Remaining Polish:** Minor alignment/positioning refinement on Inventory window (tracked in [ROADMAP-v1.0.0.md](../../.docs/ROADMAP-v1.0.0.md) Quality & Polish section).
+
+See [REDESIGN-REVIEW.md](REDESIGN-REVIEW.md) for complete technical analysis.
 
 ---
 

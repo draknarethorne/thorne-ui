@@ -8,6 +8,14 @@
 
 ## 1. Gauge System Standardization
 
+### Architectural Decision (March 2026)
+
+> **✅ DECIDED**: All Thorne-specific custom animations and textures are **centralized in `EQUI_Animations.xml`** rather than distributed across window files. This applies to gauges, slots, icons, stat icons, logos, and all other custom `<Ui2DAnimation>` / `<TextureInfo>` definitions.
+>
+> **Rationale**: Thorne UI has a large and growing library of custom animations — many reused across multiple windows. A single authoritative file is easier to maintain and audit. Options variants swap TGA files themselves (via `Options/Gauges/`, `Options/Icons/`, `Options/Slots/`, etc.), not animation definitions.
+>
+> See: [ROADMAP-v1.0.0.md](../../.docs/ROADMAP-v1.0.0.md) Enhancement #5 for full rationale.
+
 ### Current State: Highly Repeated Gauge Patterns
 
 Every window that displays health/mana/stamina/XP repeats the entire gauge XML block:
@@ -32,7 +40,8 @@ Every window that displays health/mana/stamina/XP repeats the entire gauge XML b
 </Gauge>
 ```
 
-**Problem**: 
+**Problem**:
+
 - 20+ files with identical gauge structures
 - Any change to base gauge pattern requires updating multiple files
 - Different identifier naming schemes (some use `TW_`, `PW_`, `IW_` prefixes inconsistently)
@@ -41,12 +50,14 @@ Every window that displays health/mana/stamina/XP repeats the entire gauge XML b
 **Opportunities**:
 
 #### Option A: XML Template Includes (Complex, Advanced)
+
 - Create shared gauge templates (if supported by EQUI XML parser)
 - Define once, reference many times
 - **Risk**: Requires validation that EQ client supports includes
 - **Benefit**: Single source of truth for gauge structures
 
 #### Option B: Code Generation Pattern (Medium effort)
+
 - Create Python script to generate gauge XML blocks from config file
 - Feed into build process
 - Config file format:
@@ -71,6 +82,7 @@ Every window that displays health/mana/stamina/XP repeats the entire gauge XML b
 - **Risk**: Requires build process setup
 
 #### Option C: CSS-like Constants System (Immediate, Low-hanging fruit)
+
 - Create `EQUI_GaugeConstants.xml` or separate constant file
 - Define reusable gauge "classes" with standard properties
 - **Current Best Option**: Low risk, high value
@@ -83,18 +95,20 @@ Every window that displays health/mana/stamina/XP repeats the entire gauge XML b
 
 Window sizes and default positions vary:
 
-| File | Window Size | Default X | Default Y |
-|------|------------|-----------|-----------|
-| EQUI_PlayerWindow.xml | 234×140 | Varies | Varies |
-| EQUI_TargetWindow.xml | 260×78 | Varies | Varies |
-| EQUI_BuffWindow.xml | 160×160 | Varies | Varies |
+| File                  | Window Size | Default X | Default Y |
+| --------------------- | ----------- | --------- | --------- |
+| EQUI_PlayerWindow.xml | 234×140     | Varies    | Varies    |
+| EQUI_TargetWindow.xml | 260×78      | Varies    | Varies    |
+| EQUI_BuffWindow.xml   | 160×160     | Varies    | Varies    |
 
 **Problem**:
+
 - Default positions not documented consistently
 - No central registry of "standard" window sizes
 - Difficult to maintain UI layout contracts
 
 **Opportunity**:
+
 - Create WINDOW-REGISTRY.md (planned)
 - Document:
   - Standard dimensions (width × height)
@@ -119,6 +133,7 @@ Every window that displays text repeats RGB color definitions:
 ```
 
 **Problem**:
+
 - No central color reference
 - Risk of RGB values drifting across files
 - If we want to adjust a color (e.g., "player white"), must update 20+ files
@@ -141,6 +156,7 @@ Every window that displays text repeats RGB color definitions:
 ```
 
 Then reference in files:
+
 ```xml
 <FillTint><Color ref="Gauge_PlayerHP"/></FillTint>
 ```
@@ -155,22 +171,24 @@ Then reference in files:
 
 Same animations referenced with different naming schemes:
 
-| Animation | Used as | Instances |
-|-----------|---------|-----------|
-| `A_GaugeFill` | Fill animation | Player HP, Mana, Stamina, XP, AA, Pet |
-| `A_GaugeLinesFill` | LinesFill animation | Mana tick (compact) |
-| `A_GaugeLinesFill_Tall` | LinesFill animation | Mana tick (player window) |
+| Animation               | Used as             | Instances                             |
+| ----------------------- | ------------------- | ------------------------------------- |
+| `A_GaugeFill`           | Fill animation      | Player HP, Mana, Stamina, XP, AA, Pet |
+| `A_GaugeLinesFill`      | LinesFill animation | Mana tick (compact)                   |
+| `A_GaugeLinesFill_Tall` | LinesFill animation | Mana tick (player window)             |
 
 **Problem**:
+
 - Animation references scattered across many files
 - Hard to validate which animations are actually used
 - No documentation of animation purpose/compatibility
 
 **Opportunity**:
+
 - Create ANIMATION-REGISTRY.md (planned)
 - Document:
   - Animation name and purpose
-  - Dimensions (width × height) 
+  - Dimensions (width × height)
   - Compatible gauges/element types
   - Usage count across repository
   - Texture source reference
@@ -195,14 +213,17 @@ Document standardized spacing rules:
 ## Standard Gauge Spacing
 
 ### Compact Windows (8px gauges)
+
 - Vertical gap between gauges: -2px (slight overlap)
 - This allows line fills to display close but separate
 
-### Tall Windows (15px gauges)  
+### Tall Windows (15px gauges)
+
 - Vertical gap between gauges: 3px
 - Pattern: 15px + 3px = 18px total spacing
 
 ### Mana Tick Special Case
+
 - Always overlaps with mana gauge by 1-2px
 - Visual line displays at bottom of overlap zone
 ```
@@ -228,6 +249,7 @@ Different windows use different zone division schemes:
 ```
 
 **Opportunity**:
+
 - Establish zone division guidelines
 - Document when to use monolithic vs. split-zone approach
 - Create templates for common patterns
@@ -239,6 +261,7 @@ Different windows use different zone division schemes:
 ### Current State: Generally Good
 
 Prefixes established:
+
 - `PW_` = PlayerWindow element
 - `TW_` = TargetWindow element
 - `IW_` = InventoryWindow element
@@ -254,6 +277,7 @@ Prefixes established:
 ### Current State: Mostly Consistent
 
 Established patterns:
+
 - `PW_Label_*` for constant labels
 - `PW_Value_*` for dynamic value displays
 - `PW_*_Pct` for percentage displays
@@ -265,40 +289,48 @@ Established patterns:
 
 ## Implementation Priority Matrix
 
-| Opportunity | Effort | Value | Complexity | Priority |
-|------------|--------|-------|-----------|----------|
-| **Gauge Constants Doc** | Low | High | Low | 🔴 **NOW** |
-| **Window Registry Doc** | Low | Medium | Low | 🟠 HIGH |
-| **Animation Registry Doc** | Low | Medium | Low | 🟠 HIGH |
-| **Gauge Spacing Rules Doc** | Low | Medium | Low | 🟠 HIGH |
-| **RGB Color Constants** | High | High | High | 🟡 MEDIUM |
-| **XML Template System** | Very High | Very High | Very High | 🟢 FUTURE |
-| **Code Generation** | Very High | High | High | 🟢 FUTURE |
+| Opportunity                 | Effort    | Value     | Complexity | Priority   |
+| --------------------------- | --------- | --------- | ---------- | ---------- |
+| **Gauge Constants Doc**     | Low       | High      | Low        | 🔴 **NOW** |
+| **Window Registry Doc**     | Low       | Medium    | Low        | 🟠 HIGH    |
+| **Animation Registry Doc**  | Low       | Medium    | Low        | 🟠 HIGH    |
+| **Gauge Spacing Rules Doc** | Low       | Medium    | Low        | 🟠 HIGH    |
+| **RGB Color Constants**     | High      | High      | High       | 🟡 MEDIUM  |
+| **XML Template System**     | Very High | Very High | Very High  | 🟢 FUTURE  |
+| **Code Generation**         | Very High | High      | High       | 🟢 FUTURE  |
 
 ---
 
 ## Recommended Next Steps (Phase 1)
 
 ### 1. **Gauge Properties Reference** [IMMEDIATE]
+
 Create `GAUGE-PROPERTIES-REFERENCE.md`:
+
 - Table of all gauge standard properties
 - Default values template
 - Copy-paste ready examples
 
 ### 2. **Window Dimensions Registry** [IMMEDIATE]
+
 Create `WINDOW-DIMENSIONS.md`:
+
 - Table: Window Name | Width | Height | Purpose | Default Location
 - Rationale for each dimension
 - Links to files implementing each window
 
 ### 3. **Animation Compatibility Matrix** [IMMEDIATE]
+
 Create `ANIMATION-COMPATIBILITY.md`:
+
 - Table: Animation | Dimensions | Compatible EQTypes | Files Using
 - Document which animations work with which gauges
 - Warn about mismatches
 
 ### 4. **Spacing Standards Reference** [IMMEDIATE]
+
 Expand STANDARDS.md with:
+
 - Vertical spacing rules for different window types
 - Horizontal alignment rules
 - Gap standardization (when to use -2px overlap vs. 3px gap)
@@ -308,13 +340,16 @@ Expand STANDARDS.md with:
 ## Long-Term Vision (Phase 2+)
 
 ### Build System Integration
+
 Once standardization documented:
+
 1. Create Python build script that validates XML consistency
 2. Auto-generate certain XML sections from config
 3. Validate that all gauges follow standard patterns
 4. Warn on deviations
 
 ### Validation Rules
+
 ```
 - All HP gauges must be RGB(255, 0, 0)
 - All mana gauges must be RGB(100, 150, 255)
@@ -346,4 +381,3 @@ Before proceeding to implementation, consider:
 - Current standards: [../../.docs/STANDARDS.md](../../.docs/STANDARDS.md)
 - Gauge system: [Gauge Sizing Standards Table](../../.docs/STANDARDS.md#standard-gauge-sizes)
 - Color palette: [Gauge Fill Colors](../../.docs/STANDARDS.md#gauge-fill-colors)
-

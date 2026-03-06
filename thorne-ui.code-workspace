@@ -15,7 +15,6 @@
 			"**/*.backup_*": true,
 			"**/*.bak": true,
 			"**/*.old": true,
-			"**/.tmp": true,
 			"**/.reports": true,
 			"**/.venv": true,
 			"**/venv": true

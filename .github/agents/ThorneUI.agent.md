@@ -120,8 +120,20 @@ When updating documentation, check for cross-references that may need updating:
   <RelativePosition>true</RelativePosition>
   <Location><X>5</X><Y>4</Y></Location>
   <Size><CX>85</CX><CY>350</CY></Size>
-  <Pieces>IW_Name IW_Level IW_Class</Pieces>
+  <Pieces>IW_Name</Pieces>
+  <Pieces>IW_Level</Pieces>
+  <Pieces>IW_Class</Pieces>
 </Screen>
+```
+
+**CRITICAL `<Pieces>` Rule**: Use individual `<Pieces>` tags for EACH child element. Do NOT space-separate elements in a single tag:
+```xml
+<!-- ✅ CORRECT -->
+<Pieces>IW_AC</Pieces>
+<Pieces>IW_ATK</Pieces>
+
+<!-- ❌ WRONG -->
+<Pieces>IW_AC IW_ATK</Pieces>
 ```
 
 **Anatomical Equipment Layout** (Phase 3.9 standard):
@@ -129,6 +141,39 @@ When updating documentation, check for cross-references that may need updating:
 - Row 2: Arm level (Rings, Wrists, Arms, Hands)
 - Row 3: Torso level (Shoulders, Chest, Back, Waist, Legs, Feet)
 - Row 4: Weapons level (Primary, Secondary, Range, Ammo)
+
+### XML Commenting Standards
+
+Always read `.docs/STANDARDS.md` "XML Organization Best Practices" before modifying XML files.
+
+**When modifying any XML file, maintain and add comments:**
+
+1. **Zone/Section dividers** — Major logical sections get banner comments:
+   ```xml
+   <!-- ========================================== -->
+   <!-- ZONE 4: Equipment Grid                     -->
+   <!-- ========================================== -->
+   ```
+
+2. **Slot identifiers** — Equipment/inventory slots get inline name + EQType:
+   ```xml
+   <!-- IS_L_EAR  1 -->
+   <InvSlot item="InvSlot1">
+   ```
+
+3. **Inline explanations** — Non-obvious decisions, calculations, or workarounds:
+   ```xml
+   <!-- 41px step = 40px slot + 1px gap -->
+   <Location><X>7</X><Y>41</Y></Location>
+   ```
+
+4. **Commented-out alternatives** — Preserve disabled elements with explanation:
+   ```xml
+   <!-- DoneButton: hidden, window uses X-close instead -->
+   <!--<Pieces>DoneButton</Pieces>-->
+   ```
+
+**When editing poorly-commented files**, add comments to the sections you touch — don't leave a file worse than you found it. Well-commented examples: `EQUI_Inventory.xml`, `EQUI_PlayerWindow.xml`, `EQUI_GroupWindow.xml`.
 
 ### SIDL XML Structure
 ```xml
@@ -212,25 +257,27 @@ When updating documentation, check for cross-references that may need updating:
 
 When assisting with UI customizations:
 
-1. **Understand Context**: Identify which UI component needs modification
-2. **Locate Files**: Find relevant EQUI_*.xml files in `C:\Thorne-UI\thorne_drak\`
-3. **Review Structure**: Examine existing XML structure and elements
-4. **Plan Changes**: Design modifications considering layout and functionality
-5. **Implement**: Make targeted XML modifications in `C:\Thorne-UI\thorne_drak\`
-6. **Validate XML**: Run XML syntax validation if making significant changes
-7. **Sync for Testing** (when actively testing/refining):
+1. **Check Branch**: Verify current git branch is appropriate for the work
+2. **Understand Context**: Identify which UI component needs modification
+3. **Consult Standards**: Read `.docs/STANDARDS.md` for relevant patterns (colors, spacing, sizing)
+4. **Locate Files**: Find relevant EQUI_*.xml files in `C:\Thorne-UI\thorne_drak\`
+5. **Review Structure**: Examine existing XML structure and elements
+6. **Plan Changes**: Design modifications considering layout and functionality
+7. **Implement**: Make targeted XML modifications in `C:\Thorne-UI\thorne_drak\`
+8. **Validate XML**: Run XML syntax validation if making significant changes
+9. **Sync for Testing** (when actively testing/refining):
    - **Full sync**: `.\sync-thorne-ui.bat` - Copies entire thorne_drak to thorne_dev
    - **Option sync**: `.\sync-option.bat <option_path>` - Copies specific Option variant to thorne_dev
    - Examples:
      - `.\sync-option.bat spellbook/large` - Test Large Icons spellbook variant
      - `.\sync-option.bat inventory` - Shows all inventory options (numbered selection)
-8. **In-Game Testing**: User tests with `/loadskin thorne_dev` command in TAKP
-9. **Present Changes**: Show user modifications and ask for approval before committing
+10. **In-Game Testing**: User tests with `/loadskin thorne_dev` command in TAKP
+11. **Present Changes**: Show user modifications and ask for approval before committing
    - Summarize key changes made
    - Allow user to review changes manually
    - Wait for user to indicate "ready to commit" before git operations
-10. **Commit After Approval**: Only commit changes after explicit approval from user
-11. **Document**: Explain changes and provide usage instructions
+12. **Commit After Approval**: Only commit changes after explicit approval from user
+13. **Document**: Explain changes and provide usage instructions
 
 **Sync Script Usage:**
 
@@ -620,5 +667,34 @@ git commit -m "chore(release): Prepare for release v0.6.0"
 git tag -a v0.6.0 -m "Release v0.6.0: Brief description"
 git push origin main
 git push origin v0.6.0
+```
+
+### Commit Message Format (Conventional Commits)
+
+Use this format for all commits:
+
+```
+<type>(<scope>): <short description>
+
+<optional body with details>
+```
+
+**Types**:
+- `feat` — New feature or UI change (`feat(inventory): add anatomical equipment layout`)
+- `fix` — Bug fix (`fix(container): correct slot spacing overlap`)
+- `docs` — Documentation only (`docs(agents): add documentation maintenance rules`)
+- `chore` — Maintenance (`chore(release): prepare for release v0.7.5`)
+- `refactor` — Code restructure, no behavior change (`refactor(player): reorganize subwindow zones`)
+- `style` — Formatting, whitespace, comments (`style(buff): add zone section comments`)
+
+**Scopes**: Use the window/component name: `inventory`, `player`, `container`, `target`, `spellbook`, `buff`, `hotbutton`, `group`, `actions`, `cast`, `agents`, `options`, `release`, etc.
+
+**Multi-file commits**: Include a body listing key changes:
+```
+feat(container): refine slot spacing and combine button
+
+- 41px step (40+1px gap) for all slot rows
+- Combine button anchored to bottom with AutoStretch
+- DoneButton hidden via commented-out Pieces
 ```
 

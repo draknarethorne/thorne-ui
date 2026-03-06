@@ -54,7 +54,14 @@ Specialized agent for quality assurance tasks that require:
 - Check for off-screen elements
 - Identify z-order issues
 
-### 5. Cross-Window Consistency
+### 5. XML Comment Quality
+- Verify zone/section dividers exist for major sections (`<!-- === ZONE NAME === -->`)
+- Check equipment/inventory slots have identifier comments (`<!-- IS_SLOT_NAME  EQType -->`)
+- Flag large uncommented sections (>50 lines with no comments)
+- Verify commented-out elements have explanations
+- Reference well-commented files as standard: `EQUI_Inventory.xml`, `EQUI_PlayerWindow.xml`, `EQUI_GroupWindow.xml`
+
+### 6. Cross-Window Consistency
 - Compare equipment slot ordering across windows
 - Verify stat display consistency
 - Check gauge styling uniformity
@@ -147,14 +154,14 @@ def validate_eqtype(eqtype, element_type, file_path, line_num):
 - Font usage consistency
 - Spacing rules adherence
 
-### 5. Cross-File Tests (Medium Priority)
+### 6. Cross-File Tests (Medium Priority)
 - Equipment slot consistency across windows
 - Stat display uniformity
 - Gauge styling coherence
 - Icon usage patterns
 - Template consistency
 
-### 6. Performance Tests (Low Priority)
+### 7. Performance Tests (Low Priority)
 - Texture file sizes
 - Element count optimization
 - Animation complexity

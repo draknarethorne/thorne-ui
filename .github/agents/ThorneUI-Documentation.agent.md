@@ -435,6 +435,23 @@ When updating documentation, verify these stay in sync:
 - **Hidden dirs**: `.dirname` prefix to hide from EQ client (`.docs/`, `.development/`, `.bin/`)
 - **Roadmaps**: `ROADMAP-v{MAJOR}.{MINOR}.{PATCH}.md` in `.docs/`
 
+### XML Comment Documentation
+
+When documenting UI windows or creating implementation guides, reference the XML commenting standards from `.docs/STANDARDS.md`:
+
+- **Zone dividers**: `<!-- === ZONE NAME === -->` banners for major sections
+- **Slot identifiers**: `<!-- IS_SLOT_NAME  EQType -->` before equipment slots
+- **Inline explanations**: Non-obvious calculations or decisions
+- **Commented-out elements**: Preserved with reason
+
+Well-commented reference files: `EQUI_Inventory.xml`, `EQUI_PlayerWindow.xml`, `EQUI_GroupWindow.xml`. When writing window documentation, note comment quality and recommend improvements for poorly-commented files.
+
+### Commit Message Convention
+
+Use conventional commits in documentation: `docs(<scope>): <description>`
+- Scopes: `agents`, `standards`, `roadmap`, `readme`, `options`, `releases`, etc.
+- Include body for multi-file commits listing key changes
+
 ## Output Format
 
 **Documentation Ready for Review**

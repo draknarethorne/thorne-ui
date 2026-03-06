@@ -134,13 +134,34 @@ Specialized agent for complex implementation tasks that require:
 
 ## Task Execution Process
 
-1. **Read current state**: Load existing XML structure
-2. **Plan modifications**: Calculate new coordinates and hierarchy
-3. **Create todo list**: Break into logical sub-tasks
-4. **Implement changes**: Use multi_replace_string_in_file for efficiency
-5. **Validate XML**: Check syntax and structure
-6. **Test considerations**: Suggest in-game testing approach
-7. **Return summary**: Document all changes made
+1. **Check branch**: Verify current git branch is appropriate for the work
+2. **Consult standards**: Read `.docs/STANDARDS.md` for relevant patterns before editing
+3. **Read current state**: Load existing XML structure
+4. **Plan modifications**: Calculate new coordinates and hierarchy
+5. **Create todo list**: Break into logical sub-tasks
+6. **Implement changes**: Use multi_replace_string_in_file for efficiency
+7. **Add/update XML comments**: Maintain zone dividers, slot identifiers, inline explanations (see below)
+8. **Validate XML**: Check syntax and structure
+9. **Test considerations**: Suggest in-game testing approach
+10. **Return summary**: Document all changes made
+
+### XML Commenting Requirements
+
+**When modifying any XML file, maintain and add comments per `.docs/STANDARDS.md`:**
+
+- **Zone/section dividers**: Use `<!-- === ZONE NAME === -->` banners for major sections
+- **Slot identifiers**: Add `<!-- IS_SLOT_NAME  EQType -->` before equipment/inventory slots
+- **Inline explanations**: Document non-obvious calculations (`<!-- 41px step = 40 + 1px gap -->`)
+- **Commented-out alternatives**: Explain why elements are disabled
+- **Don't strip existing comments**: Preserve comments from previous work even when restructuring
+
+**When editing poorly-commented files**, add comments to the sections you touch.
+
+### Commit Message Format
+
+Use conventional commits: `<type>(<scope>): <description>`
+- `feat(inventory)`, `fix(container)`, `refactor(player)`, `style(buff)`, etc.
+- Include a body for multi-file commits listing key changes
 
 ## Quality Checks (When Applicable)
 

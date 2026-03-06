@@ -191,6 +191,7 @@ When producing analysis reports:
 - Check `.development/` for prior analysis before duplicating work
 - Use `UPPERCASE-WITH-HYPHENS.md` naming for new analysis files
 - Run `python .bin/scan_links.py` if analysis includes cross-references to other docs
+- Note XML comment quality across variants (well-commented vs bare files) as it affects maintainability
 
 ## Output Format
 

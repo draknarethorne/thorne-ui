@@ -92,7 +92,7 @@
     <!--<Font>3</Font>-->
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>48</X>
+      <X>46</X>
       <Y>0</Y>
     </Location>
     <Size>
@@ -111,7 +111,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>7</X>
-      <Y>41</Y>
+      <Y>39</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -128,8 +128,8 @@
     <ScreenID>ContainerSlot4</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>48</X>
-      <Y>41</Y>
+      <X>46</X>
+      <Y>39</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -147,7 +147,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>7</X>
-      <Y>82</Y>
+      <Y>78</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -164,8 +164,8 @@
     <ScreenID>ContainerSlot6</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>48</X>
-      <Y>82</Y>
+      <X>46</X>
+      <Y>78</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -183,7 +183,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>7</X>
-      <Y>123</Y>
+      <Y>117</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -200,8 +200,8 @@
     <ScreenID>ContainerSlot8</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>48</X>
-      <Y>123</Y>
+      <X>46</X>
+      <Y>117</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -219,7 +219,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>7</X>
-      <Y>164</Y>
+      <Y>156</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -236,8 +236,8 @@
     <ScreenID>ContainerSlot10</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>48</X>
-      <Y>164</Y>
+      <X>46</X>
+      <Y>156</Y>
     </Location>
     <Size>
       <CX>40</CX>
@@ -262,10 +262,10 @@
     <TopAnchorOffset>22</TopAnchorOffset>
     <BottomAnchorOffset>2</BottomAnchorOffset>
     <LeftAnchorOffset>7</LeftAnchorOffset>
-    <RightAnchorOffset>88</RightAnchorOffset>
+    <RightAnchorOffset>86</RightAnchorOffset>
     <Location>
-      <X>7</X>
-      <Y>233</Y>
+      <X>20</X>
+      <Y>274</Y>
     </Location>
     <Size>
       <CX>60</CX>
@@ -297,7 +297,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>25</X>
-      <Y>245</Y>
+      <Y>312</Y>
     </Location>
     <Size>
       <CX>50</CX>

@@ -18,11 +18,10 @@
     - Mana color standardization: RGB(100,150,255) for "Thorne blue"
     - Part of Phase 5 Target Window enhancements
     
-    Phase 6 Experimental Additions (Feb 2026):
+    Phase 6 Additions (Feb 2026):
     - Added player weight display (EQType 24/25) centered between HP/Mana gauges
     - Position: X=90-147, Y=20 (vertically centered in gauge area)
-    - Format: "999/999" (current/max) in compact Font 2
-    - EXPERIMENTAL: May be removed if cluttered or not useful in testing
+    - Format: "999/999" (current/max) in compact Font 1
   -->
   <Label item="necessary">
     <ScreenID>HPPercLabel</ScreenID>
@@ -122,11 +121,11 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <!-- EXPERIMENTAL: Player Weight Display (centered between HP/Mana gauges) -->
+  <!-- Player Weight Display (centered between HP/Mana gauges) -->
   <!-- Current Weight (right-aligned, EQType 24) -->
   <Label item="TW_Weight_Current">
     <ScreenID>TW_Weight_Current</ScreenID>
-    <Font>2</Font>
+    <Font>1</Font>
     <EQType>24</EQType>
     <RelativePosition>true</RelativePosition>
     <Location>
@@ -150,7 +149,7 @@
   <!-- Weight Divider "/" -->
   <Label item="TW_Weight_Divider">
     <ScreenID>TW_Weight_Divider</ScreenID>
-    <Font>2</Font>
+    <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>123</X>
@@ -172,7 +171,7 @@
   <!-- Max Weight (left-aligned, EQType 25) -->
   <Label item="TW_Weight_Max">
     <ScreenID>TW_Weight_Max</ScreenID>
-    <Font>2</Font>
+    <Font>1</Font>
     <EQType>25</EQType>
     <RelativePosition>true</RelativePosition>
     <Location>

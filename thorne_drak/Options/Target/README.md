@@ -4,8 +4,8 @@
 
 This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 
-**Last Synced:** 2026-03-03  
-**Git Commit:** 277c46d
+**Last Synced:** 2026-03-06  
+**Git Commit:** 0b78b6f
 
 ---
 

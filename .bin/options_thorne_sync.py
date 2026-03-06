@@ -35,6 +35,7 @@ WINDOW_MAPPING = {
     "Bazaar": ["EQUI_BazaarWnd.xml", "EQUI_BazaarSearchWnd.xml"],
     "Buff": "EQUI_BuffWindow.xml",
     "Cast": "EQUI_CastSpellWnd.xml",
+    "Container": "EQUI_Container.xml",
     "Group": "EQUI_GroupWindow.xml",
     "Hotbutton": "EQUI_HotbuttonWnd.xml",
     "Inspect": "EQUI_InspectWnd.xml",

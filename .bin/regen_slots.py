@@ -634,15 +634,10 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python regen_slots.py --all              # All configured variants
-  python regen_slots.py Gold               # Single variant
-  python regen_slots.py Gold Silver Metal  # Multiple variants
-    python regen_slots.py --all-combos        # All class/theme combos
-    python regen_slots.py --class Caster --theme Gold
-
-Note: Each variant directory must contain a .regen_slots.json config file.
-Source files (item/button atlases) should be copied from Options/Slots/.Master/
-before running this script.
+  python regen_slots.py --all                  # All class/theme combos
+  python regen_slots.py --class Caster         # Single class, all themes
+  python regen_slots.py --class Caster --theme Gold
+  python regen_slots.py Gold Silver Metal       # Legacy standalone variants
 
     Combo mode notes:
     - Themes live in Options/Slots/.Master/.Themes/<Theme>/.regen_slots.json
@@ -659,7 +654,7 @@ before running this script.
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Process all auto-discovered variants (requires .regen_slots.json in each)",
+        help="Generate all class/theme combos (same as --all-combos)",
     )
     parser.add_argument(
         "--master",
@@ -679,7 +674,7 @@ before running this script.
     parser.add_argument(
         "--all-combos",
         action="store_true",
-        help="Generate all class/theme combos from .Master and .Master/.Themes",
+        help="(Alias for --all) Generate all class/theme combos",
     )
     parser.add_argument(
         "--verbose",
@@ -701,27 +696,24 @@ before running this script.
         print("  python regen_slots.py --class Thorne")
         return 1
 
+    # --all is now an alias for --all-combos
+    if args.all:
+        args.all_combos = True
+
     # If no arguments provided, show usage
-    if not args.all and not args.variants and not args.all_combos and not args.class_name and not args.theme_name and not args.master:
+    if not args.all_combos and not args.variants and not args.class_name and not args.theme_name and not args.master:
         print("ERROR: No target specified.")
         print("\nUsage:")
-        print("  python regen_slots.py --all                    # All variants")
-        print("  python regen_slots.py Gold Silver              # Specific variants")
-        print("  python regen_slots.py --all-combos             # All class/theme combos")
+        print("  python regen_slots.py --all                    # All class/theme combos")
         print("  python regen_slots.py --class Thorne           # Single class, all themes")
+        print("  python regen_slots.py --class Thorne --theme Gold")
+        print("  python regen_slots.py Gold Silver              # Legacy standalone variants")
         print("\nFor help: python regen_slots.py --help")
         return 1
 
     combo_mode = bool(args.all_combos or args.class_name or args.theme_name)
 
-    if args.all:
-        variants = discover_variants(base_dir)
-        if not variants:
-            print("ERROR: No configured variants found in thorne_drak/Options/Slots/")
-            print(f"  Each variant directory needs a {CONFIG_FILENAME} config file.")
-            return 1
-        print(f"Auto-discovered {len(variants)} variant(s): {', '.join(variants)}")
-    elif args.variants and not combo_mode:
+    if args.variants and not combo_mode:
         variants = args.variants
     elif not combo_mode:
         parser.print_help()

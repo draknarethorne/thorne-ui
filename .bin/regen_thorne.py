@@ -5,10 +5,9 @@ grayscale item icon atlases. Output (thorne_item01.tga + variants) is consumed b
 regen_slots.py to generate finished slot textures.
 
 Usage:
-    python regen_thorne.py                       # Default: .Master directory
-    python regen_thorne.py .Master               # Explicit directory
+    python regen_thorne.py --all                 # All class overrides under .Master/.Classes/
     python regen_thorne.py --class Thorne        # Generate a single class override
-    python regen_thorne.py --all-classes         # .Master + class overrides under .Master/.Classes/
+    python regen_thorne.py --master              # Update .Master/ directory
     python regen_thorne.py --help                # Show help
 
 Inputs (per directory):
@@ -132,6 +131,32 @@ def extract_cell(img: Image.Image, row: int, col: int, cell_size: int) -> Image.
     return img.crop((x, y, x + cell_size, y + cell_size))
 
 
+def extract_cell_grid(
+    img: Image.Image,
+    row: int,
+    col: int,
+    grid: dict,
+    fallback_cell_size: int,
+) -> Image.Image:
+    """Extract a cell using explicit grid parameters (origin, step, cell size).
+
+    Grid keys:
+        origin_x, origin_y  -- pixel offset to top-left of row=0,col=0 cell
+        step_x, step_y      -- pixel distance between cell origins
+        cell_w, cell_h      -- content size to crop (may differ from step)
+    All values default to fallback_cell_size with 0 origin if not provided.
+    """
+    origin_x = int(grid.get("origin_x", 0))
+    origin_y = int(grid.get("origin_y", 0))
+    step_x = int(grid.get("step_x", fallback_cell_size))
+    step_y = int(grid.get("step_y", fallback_cell_size))
+    cell_w = int(grid.get("cell_w", fallback_cell_size))
+    cell_h = int(grid.get("cell_h", fallback_cell_size))
+    x = origin_x + col * step_x
+    y = origin_y + row * step_y
+    return img.crop((x, y, x + cell_w, y + cell_h))
+
+
 # ---------------------------------------------------------------------------
 # ThorneGenerator class
 # ---------------------------------------------------------------------------
@@ -186,6 +211,7 @@ class ThorneGenerator:
         source_cell_size: int,
         output_cell_size: int,
         default_tone: dict,
+        source_grids: dict | None = None,
     ) -> Image.Image:
         """Render a single item tile from config entry."""
         mode = entry.get("mode", "grayscale")
@@ -202,8 +228,15 @@ class ThorneGenerator:
 
         src_img = sources[source_file]
 
+        # Resolve grid: per-item src_grid > source_grids[file] > default (cell_size, no gaps)
+        grid = entry.get("src_grid")
+        if grid is None and source_grids:
+            grid = source_grids.get(source_file)
+
         if source_mode == "full":
             tile = src_img.resize((source_cell_size, source_cell_size), Image.Resampling.LANCZOS)
+        elif grid:
+            tile = extract_cell_grid(src_img, src_row, src_col, grid, source_cell_size)
         else:
             tile = extract_cell(src_img, src_row, src_col, source_cell_size)
 
@@ -228,8 +261,8 @@ class ThorneGenerator:
         else:
             result = to_grayscale_rgba(tile, contrast=contrast, brightness=brightness)
 
-        # Scale to output cell size if different from source
-        if output_cell_size != source_cell_size:
+        # Scale to output cell size if tile dimensions differ
+        if result.size != (output_cell_size, output_cell_size):
             result = result.resize((output_cell_size, output_cell_size), Image.Resampling.LANCZOS)
 
         return result
@@ -243,6 +276,7 @@ class ThorneGenerator:
         output_size: int,
         default_tone: dict,
         atlas_name: str = "base",
+        source_grids: dict | None = None,
     ) -> Image.Image:
         """Generate a single atlas with the given cell and output sizes."""
         atlas = Image.new("RGBA", (output_size, output_size), (0, 0, 0, 0))
@@ -253,7 +287,7 @@ class ThorneGenerator:
             name = entry.get("name", "(unnamed)")
 
             try:
-                tile = self.render_item(entry, sources, source_cell_size, output_cell_size, default_tone)
+                tile = self.render_item(entry, sources, source_cell_size, output_cell_size, default_tone, source_grids=source_grids)
                 x = out_col * output_cell_size
                 y = out_row * output_cell_size
                 atlas.alpha_composite(tile, (x, y))
@@ -305,6 +339,7 @@ class ThorneGenerator:
         base_output_size = int(config.get("output_size", 256))
         base_output_filename = config.get("output_file", "item_atlas_thorne01.tga")
         default_tone = config.get("default_tone", {"contrast": 1.10, "brightness": 0.95})
+        source_grids = config.get("source_grids", {})
         items = config.get("items", [])
         variants = config.get("variants", [])
 
@@ -317,7 +352,8 @@ class ThorneGenerator:
         # Generate base atlas
         print(f"\n  Generating base atlas ({base_output_filename})...")
         atlas = self.generate_atlas(
-            items, sources, base_cell_size, base_cell_size, base_output_size, default_tone, atlas_name="base"
+            items, sources, base_cell_size, base_cell_size, base_output_size, default_tone, atlas_name="base",
+            source_grids=source_grids,
         )
         out_base = self.directory / base_output_filename
         atlas.save(out_base, format="TGA")
@@ -335,7 +371,8 @@ class ThorneGenerator:
 
             print(f"\n  Generating variant '{variant_name}' ({variant_output_filename})...")
             variant_atlas = self.generate_atlas(
-                items, sources, base_cell_size, variant_cell_size, variant_output_size, default_tone, atlas_name=variant_name
+                items, sources, base_cell_size, variant_cell_size, variant_output_size, default_tone, atlas_name=variant_name,
+                source_grids=source_grids,
             )
             out_variant = self.directory / variant_output_filename
             variant_atlas.save(out_variant, format="TGA")
@@ -398,8 +435,11 @@ def _merge_variants(base_variants: list[dict], override_variants: list[dict]) ->
 
 def _merge_config(base: dict, override: dict) -> dict:
     merged = {**base, **override}
-    if "items" in base or "items" in override:
-        merged["items"] = _merge_items(base.get("items", []), override.get("items", []))
+    # Class configs may use "item_overrides" (preferred) or "items" for override entries
+    override_items = override.get("item_overrides", override.get("items", []))
+    if "items" in base or override_items:
+        merged["items"] = _merge_items(base.get("items", []), override_items)
+    merged.pop("item_overrides", None)  # Merged into "items"; don't pass through
     if "variants" in base or "variants" in override:
         merged["variants"] = _merge_variants(base.get("variants", []), override.get("variants", []))
     return merged
@@ -427,14 +467,13 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
+  python regen_thorne.py --all              # Generate all classes under .Master/.Classes/
+  python regen_thorne.py --class Thorne     # Generate single class override
   python regen_thorne.py --master           # Update .Master directory (REQUIRES --master flag)
-  python regen_thorne.py --class Thorne     # Generate single class override (safe, no --master needed)
-  python regen_thorne.py --all-classes      # Generate all classes under .Master/.Classes/
 
 SAFETY:
   - Direct .Master/ updates REQUIRE --master flag to prevent accidental writes
-  - Class-specific updates (--class) do NOT need --master
-  - Use --all-classes to regenerate all class overrides
+  - Class-specific updates (--class, --all) do NOT need --master
 
 Directory must contain .regen_thorne.json config file and source dragitem TGA files.
         """,
@@ -457,9 +496,14 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         help="Class name under .Master/.Classes to generate (uses base + class overrides).",
     )
     parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Generate atlases for all class overrides under .Master/.Classes/",
+    )
+    parser.add_argument(
         "--all-classes",
         action="store_true",
-        help="Generate atlases for .Master and all class overrides under .Master/.Classes/",
+        help="(Alias for --all) Generate all class override atlases",
     )
     parser.add_argument(
         "--verbose",
@@ -481,17 +525,21 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         print("  python regen_thorne.py --class Thorne")
         return 1
 
+    # --all is the primary flag; --all-classes is an alias
+    if args.all:
+        args.all_classes = True
+
     if args.all_classes and args.class_name:
-        print("ERROR: Use --class or --all-classes, not both.")
+        print("ERROR: Use --class or --all, not both.")
         return 1
 
     # If no flags provided, show usage
     if not args.master and not args.class_name and not args.all_classes:
         print("ERROR: No target specified.")
         print("\nUsage:")
+        print("  python regen_thorne.py --all                 # All class atlases")
+        print("  python regen_thorne.py --class Thorne        # Single class atlas")
         print("  python regen_thorne.py --master              # Update .Master/")
-        print("  python regen_thorne.py --class Thorne        # Update class override")
-        print("  python regen_thorne.py --all-classes         # Update all classes")
         print("\nFor help: python regen_thorne.py --help")
         return 1
 

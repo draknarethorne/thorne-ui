@@ -17,6 +17,14 @@
     "_brightness_comment": "1.0=unchanged, >1.0=lighter, <1.0=darker",
     "brightness": 0.95
   },
+  "source_grids": {
+    "_comment": "Grid params for source files with gaps. Dragitems use default (40px cells, no gaps).",
+    "logo_atlas_thorne01.tga": {
+      "origin_x": 0, "origin_y": 0,
+      "step_x": 42, "step_y": 42,
+      "cell_w": 40, "cell_h": 40
+    }
+  },
   "items": [
     {
       "name": "ear",
@@ -188,7 +196,7 @@
       "name": "lantern",
       "out_row": 5, "out_col": 4,
       "src_row": 2, "src_col": 3, "source_file": "dragitem7.tga",
-      "tone": {"contrast": 0.75, "brightness": 1.9}
+      "tone": {"contrast": 0.75, "brightness": 1.2}
     },
     {
       "name": "spell",

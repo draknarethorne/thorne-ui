@@ -27,9 +27,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -64,9 +64,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -101,9 +101,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -138,9 +138,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -175,9 +175,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -212,9 +212,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -249,9 +249,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -286,9 +286,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -323,9 +323,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -360,9 +360,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -397,9 +397,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -434,9 +434,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 28,
       "fit_size_source": "master_shape",
@@ -471,9 +471,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -508,9 +508,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -545,9 +545,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 31,
       "fit_size_source": "master_shape",
@@ -582,9 +582,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -619,9 +619,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -656,12 +656,12 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
-      "fit_size": 30,
-      "fit_size_source": "default_item",
+      "fit_size": 32,
+      "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
       "button_col": 1,
@@ -693,9 +693,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "master_shape",
@@ -713,7 +713,7 @@
       "has_override": false
     },
     {
-      "name": "pack",
+      "name": "backpack",
       "out_row": 4,
       "out_col": 2,
       "gradient": "gold",
@@ -730,9 +730,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 32,
       "fit_size_source": "master_shape",
@@ -767,9 +767,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "master_shape",
@@ -787,7 +787,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row4_col4",
+      "name": "pack",
       "out_row": 4,
       "out_col": 4,
       "gradient": "gold",
@@ -804,9 +804,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -824,7 +824,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row4_col5",
+      "name": "box",
       "out_row": 4,
       "out_col": 5,
       "gradient": "gold",
@@ -841,9 +841,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -861,7 +861,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row4_col6",
+      "name": "open_box",
       "out_row": 4,
       "out_col": 6,
       "gradient": "gold",
@@ -878,9 +878,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -898,7 +898,7 @@
       "has_override": false
     },
     {
-      "name": "recessed_box",
+      "name": "empty",
       "out_row": 5,
       "out_col": 1,
       "gradient": "gold",
@@ -915,9 +915,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -935,7 +935,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col2",
+      "name": "treasurechest",
       "out_row": 5,
       "out_col": 2,
       "gradient": "gold",
@@ -952,9 +952,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -972,7 +972,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col3",
+      "name": "spellbook",
       "out_row": 5,
       "out_col": 3,
       "gradient": "gold",
@@ -989,9 +989,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1009,7 +1009,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col4",
+      "name": "lantern",
       "out_row": 5,
       "out_col": 4,
       "gradient": "gold",
@@ -1026,9 +1026,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1046,7 +1046,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col5",
+      "name": "spell",
       "out_row": 5,
       "out_col": 5,
       "gradient": "gold",
@@ -1063,9 +1063,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1100,9 +1100,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",

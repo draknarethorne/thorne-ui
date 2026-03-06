@@ -660,8 +660,8 @@
         170,
         180
       ],
-      "fit_size": 30,
-      "fit_size_source": "default_item",
+      "fit_size": 32,
+      "fit_size_source": "master_shape",
       "fit_mode": "visible",
       "fit_mode_source": "default_item",
       "button_col": 2,
@@ -713,7 +713,7 @@
       "has_override": false
     },
     {
-      "name": "pack",
+      "name": "backpack",
       "out_row": 4,
       "out_col": 2,
       "gradient": "texture",
@@ -787,7 +787,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row4_col4",
+      "name": "pack",
       "out_row": 4,
       "out_col": 4,
       "gradient": "texture",
@@ -824,7 +824,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row4_col5",
+      "name": "box",
       "out_row": 4,
       "out_col": 5,
       "gradient": "texture",
@@ -861,7 +861,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row4_col6",
+      "name": "open_box",
       "out_row": 4,
       "out_col": 6,
       "gradient": "texture",
@@ -898,7 +898,7 @@
       "has_override": false
     },
     {
-      "name": "recessed_box",
+      "name": "empty",
       "out_row": 5,
       "out_col": 1,
       "gradient": "texture",
@@ -935,7 +935,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col2",
+      "name": "treasurechest",
       "out_row": 5,
       "out_col": 2,
       "gradient": "texture",
@@ -972,7 +972,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col3",
+      "name": "spellbook",
       "out_row": 5,
       "out_col": 3,
       "gradient": "texture",
@@ -1009,7 +1009,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col4",
+      "name": "lantern",
       "out_row": 5,
       "out_col": 4,
       "gradient": "texture",
@@ -1046,7 +1046,7 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col5",
+      "name": "spell",
       "out_row": 5,
       "out_col": 5,
       "gradient": "texture",
@@ -1137,9 +1137,9 @@
         100
       ],
       "middle_color": [
-        150,
-        160,
-        180
+        195,
+        205,
+        225
       ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
@@ -1176,9 +1176,9 @@
         125
       ],
       "middle_color": [
-        190,
-        195,
-        205
+        215,
+        220,
+        230
       ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
@@ -1215,9 +1215,9 @@
         70
       ],
       "middle_color": [
-        180,
-        180,
-        180
+        215,
+        215,
+        215
       ],
       "fit_size": 34,
       "fit_size_source": "master_shape",

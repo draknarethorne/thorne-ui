@@ -2,7 +2,7 @@
   "variant": "Caster/Patriot",
   "summary": {
     "items_total": 36,
-    "items_with_overrides": 16,
+    "items_with_overrides": 25,
     "source_files": {
       "item_atlas_thorne01.tga": "variant",
       "button_atlas_thorne01.tga": "master"
@@ -241,23 +241,23 @@
       "name": "back",
       "out_row": 2,
       "out_col": 1,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "silver",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        130,
+        145
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        160,
+        175
       ],
       "middle_color": [
+        210,
         220,
-        220,
-        220
+        235
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -271,8 +271,10 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
       "name": "arms",
@@ -352,23 +354,23 @@
       "name": "wrist",
       "out_row": 2,
       "out_col": 4,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "silver",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        130,
+        145
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        160,
+        175
       ],
       "middle_color": [
+        210,
         220,
-        220,
-        220
+        235
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -382,8 +384,10 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
       "name": "belt",
@@ -672,8 +676,8 @@
         150,
         150
       ],
-      "fit_size": 30,
-      "fit_size_source": "default_item",
+      "fit_size": 32,
+      "fit_size_source": "master_shape",
       "fit_mode": "tile",
       "fit_mode_source": "default_item",
       "button_col": 1,
@@ -707,9 +711,9 @@
         60
       ],
       "middle_color": [
+        235,
         200,
-        150,
-        95
+        145
       ],
       "fit_size": 30,
       "fit_size_source": "master_shape",
@@ -729,7 +733,7 @@
       "has_override": true
     },
     {
-      "name": "pack",
+      "name": "backpack",
       "out_row": 4,
       "out_col": 2,
       "gradient": "bronze",
@@ -746,9 +750,9 @@
         60
       ],
       "middle_color": [
+        235,
         200,
-        150,
-        95
+        145
       ],
       "fit_size": 32,
       "fit_size_source": "master_shape",
@@ -785,9 +789,9 @@
         60
       ],
       "middle_color": [
+        235,
         200,
-        150,
-        95
+        145
       ],
       "fit_size": 30,
       "fit_size_source": "master_shape",
@@ -807,26 +811,26 @@
       "has_override": true
     },
     {
-      "name": "empty_row4_col4",
+      "name": "pack",
       "out_row": 4,
       "out_col": 4,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "bronze",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        75,
+        40
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        100,
+        60
       ],
       "middle_color": [
-        220,
-        220,
-        220
+        235,
+        200,
+        145
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -840,30 +844,32 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
-      "name": "empty_row4_col5",
+      "name": "box",
       "out_row": 4,
       "out_col": 5,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "bronze",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        75,
+        40
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        100,
+        60
       ],
       "middle_color": [
-        220,
-        220,
-        220
+        235,
+        200,
+        145
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -877,30 +883,32 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
-      "name": "empty_row4_col6",
+      "name": "open_box",
       "out_row": 4,
       "out_col": 6,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "bronze",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        75,
+        40
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        100,
+        60
       ],
       "middle_color": [
-        220,
-        220,
-        220
+        235,
+        200,
+        145
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -914,11 +922,13 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
-      "name": "recessed_box",
+      "name": "empty",
       "out_row": 5,
       "out_col": 1,
       "gradient": "patriot",
@@ -955,26 +965,26 @@
       "has_override": false
     },
     {
-      "name": "empty_row5_col2",
+      "name": "treasurechest",
       "out_row": 5,
       "out_col": 2,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "bronze",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        75,
+        40
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        100,
+        60
       ],
       "middle_color": [
-        220,
-        220,
-        220
+        235,
+        200,
+        145
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -988,30 +998,32 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
-      "name": "empty_row5_col3",
+      "name": "spellbook",
       "out_row": 5,
       "out_col": 3,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "silver",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        130,
+        145
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        160,
+        175
       ],
       "middle_color": [
+        210,
         220,
-        220,
-        220
+        235
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1025,30 +1037,32 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
-      "name": "empty_row5_col4",
+      "name": "lantern",
       "out_row": 5,
       "out_col": 4,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "silver",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        130,
+        145
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        160,
+        175
       ],
       "middle_color": [
+        210,
         220,
-        220,
-        220
+        235
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1062,30 +1076,32 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
-      "name": "empty_row5_col5",
+      "name": "spell",
       "out_row": 5,
       "out_col": 5,
-      "gradient": "patriot",
-      "gradient_source": "default_button",
+      "gradient": "silver",
+      "gradient_source": "variant_override",
       "gradient_type": "vertical",
       "top_color": [
-        200,
-        50,
-        50
+        120,
+        130,
+        145
       ],
       "bottom_color": [
-        50,
-        90,
-        180
+        150,
+        160,
+        175
       ],
       "middle_color": [
+        210,
         220,
-        220,
-        220
+        235
       ],
       "fit_size": 30,
       "fit_size_source": "default_item",
@@ -1099,8 +1115,10 @@
       "offset_y_source": "default_item",
       "item_opacity": 0.85,
       "item_opacity_source": "default_item",
-      "overrides_applied": [],
-      "has_override": false
+      "overrides_applied": [
+        "gradient"
+      ],
+      "has_override": true
     },
     {
       "name": "empty_row5_col6",
@@ -1196,9 +1214,9 @@
         70
       ],
       "middle_color": [
-        180,
-        180,
-        180
+        215,
+        215,
+        215
       ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
@@ -1235,9 +1253,9 @@
         70
       ],
       "middle_color": [
-        220,
-        200,
-        120
+        240,
+        225,
+        160
       ],
       "fit_size": 34,
       "fit_size_source": "master_shape",
@@ -1313,9 +1331,9 @@
         60
       ],
       "middle_color": [
+        235,
         200,
-        150,
-        95
+        145
       ],
       "fit_size": 34,
       "fit_size_source": "master_shape",

@@ -189,27 +189,39 @@ When you modify a window:
 
 ---
 
-## 🚀 Current Development (v0.7.1)
+## 🚀 Current Development (v0.7.5)
 
 We're iterating toward **v1.0.0** with focused releases:
 
-### What We're Working On (v0.7.1)
+### What We're Working On (v0.7.5)
 
-- ✅ **Spell recast timers** - Know when your gems are ready
-- ✅ **Nillipuss-inspired QoL** - Small improvements that add up
-- ✅ **Final consistency pass** - Polish and alignment across windows
+- 🔨 **Class slot icon system** - Unique slot art per class for equipment windows
 
 ### Recent Releases
 
-- **v0.6.5** - Spellbook polish and Thorne-first option sync
-- **v0.6.4** - Gauge system overhaul and target window enhancements
-- **v0.6.0** - Inventory redesign (Phase 3.9 completion)
+- **v0.7.4** - Container slot spacing, inventory logos, Thorne option sync
+- **v0.7.3** - Logo atlas generation and branding system
+- **v0.7.2** - Slot art system expansion across Actions and Inspect windows
 
 **Want details?** See the [Full Version History](#-version-history) below.
 
 ---
 
 ## 📅 Version History
+
+**v0.7.4** (March 6, 2026)
+- ✅ Container window slot spacing overhaul
+  - Replaced compressed -1px overlap with proper 1px gap (41px step matching inventory feel)
+  - Two-column layout: X=7/48 in 96px window, left-aligned for clean appearance
+  - Combine button anchors realigned to slot grid width
+  - Added Container option (Standard/Thorne variants)
+- ✅ Inventory window branding
+  - Added Thorne logo flanks at Ring equipment row (25×25 A_Logo_6)
+  - Positioned at slot grid edges for subtle, balanced branding
+- ✅ Target window layout refinements
+- ✅ Thorne option sync across all categories
+  - Synced logos and updates to Actions, Animations, Inventory, Target options
+  - Updated sync metadata and option READMEs
 
 **v0.7.3** (March 4, 2026)
 - ✅ Logo atlas generation and branding system

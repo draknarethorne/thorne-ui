@@ -312,7 +312,25 @@ Before returning test results:
 
 - `.docs/STANDARDS.md` - Validation rules reference
 - `.docs/technical/EQTYPES.md` - EQType validation data
-- `.bin/validation/` - Test scripts directory
+- `.bin/validation/` - Test scripts directory (if present)
+- `.docs/ROADMAP-v*.md` - Active milestone for scope context
+- `DEVELOPMENT.md` - Project design philosophy
+- `TODO.md` - Current roadmap and shipped releases
+
+### Documentation Validation
+
+**Markdown link checking** is a testing responsibility:
+- Run `python .bin/scan_links.py` to validate all markdown cross-references
+- Review output in `.tmp/scan_links.json` (gitignored)
+- Check for broken links to archived docs (`.development/archive/`)
+- Verify roadmap cross-references (`README.md` ↔ `TODO.md` ↔ `.docs/ROADMAP-v*.md`)
+- Validate Options README files match actual Options directory contents
+
+**Documentation structure to be aware of:**
+- `.docs/` — Standards, roadmaps (`ROADMAP-v*.md`), releases, technical references
+- `.development/` — Workshop (phase docs, analysis, working notes)
+- `.development/archive/` — Superseded docs (git mv'd for history preservation)
+- Root: `README.md`, `DEVELOPMENT.md`, `TODO.md`
 
 ## Output Format
 

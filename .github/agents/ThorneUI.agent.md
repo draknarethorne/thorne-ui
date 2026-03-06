@@ -40,12 +40,52 @@ Assist with development, customization, and modification of EverQuest UI files f
   - Zeal client extensions (EQTypes 69-73, 80-86)
   
 - **`DEVELOPMENT.md`** - Project roadmap and architecture decisions
-  - Phase breakdown, implementation patterns, lessons learned
+  - Design philosophy, implementation patterns, architecture notes
   
-- **`.development/initial-phases/`** - Detailed phase documentation
-  - PHASE-3.9-INVENTORY-REDESIGN.md - Completed Phase 3.9 (v0.6.0 inventory redesign, see `.development/initial-phases/`)
-  - PHASE-6-INVENTORY-WINDOWS/ - Archived inventory research (Feb 4-16, 2026, analysis of community UI variants)
-  - Analysis documents for community UI comparisons
+- **Versioned Roadmaps** (`.docs/ROADMAP-v*.md`):
+  - `ROADMAP-v0.7.0.md` — Shipped (spell recast timers, stat icons, options)
+  - `ROADMAP-v0.7.5.md` — Active milestone (slot class overrides)
+  - `ROADMAP-v0.8.0.md` — Next (multi-color gauges, group displays)
+  - `ROADMAP-v1.0.0.md` — Release polish and future tracking
+
+- **`TODO.md`** - Lean development tracker with roadmap links and shipped release summary
+
+- **`.development/`** - Internal workshop (NOT published in releases)
+  - `initial_phases/` — Phase documentation (completed phases)
+  - `ui_analysis/` — Community UI variant analysis and feature index
+  - `item_slots/` — Class-specific slot art pipeline
+  - `stat_icons/` — Stat icon system (complete)
+  - `archive/` — Superseded docs (git mv'd here for history preservation)
+
+### Documentation Maintenance Rules
+
+**When making ANY changes, update the relevant documentation:**
+
+#### After Feature/UI Work
+1. **README.md** — Update "What We're Working On" checkmarks and "Recent Releases" if applicable
+2. **TODO.md** — Update shipped release table or active task status
+3. **Active ROADMAP** (`.docs/ROADMAP-v*.md`) — Check off completed items in the current milestone
+
+#### After a Release
+1. **`VERSION`** file — Bump version (single source of truth, plain text like `0.7.4`)
+2. **README.md** — Add Version History entry with date and bullet points, update "Current Development" section
+3. **Git tag** — `git tag -a vX.Y.Z -m "Release vX.Y.Z: description"`
+4. **TODO.md** — Add row to "Shipped Releases" table
+
+#### Documentation File Conventions
+- **Naming**: `UPPERCASE-WITH-HYPHENS.md` for docs, `README.md` for directory indexes
+- **Hidden dirs**: Use `.dirname` prefix (`.docs/`, `.development/`, `.bin/`) to hide from EQ client
+- **Archiving stale docs**: `git mv` to `.development/archive/` (preserves history)
+- **Roadmaps**: One per milestone version in `.docs/ROADMAP-v*.md`
+- **Link validation**: Run `python .bin/scan_links.py` after markdown changes; review `.tmp/scan_links.json`
+
+#### Cross-Reference Rules
+When updating documentation, check for cross-references that may need updating:
+- `README.md` ↔ `TODO.md` (version numbers, release lists)
+- `DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
+- `.development/README.md` ↔ `.docs/ROADMAP-v*.md` (current focus)
+- `.docs/releases/INDEX.md` (current release pointer)
+- Options `README.md` files (when Options are added/changed)
 
 ### EverQuest UI File Structure
 - **EQUI_*.xml files**: Individual window definitions (PlayerWindow, Inventory, SpellBook, etc.)
@@ -314,7 +354,7 @@ runSubagent({
 ### Community UI Variants in Repository
 
 **Thorne UI Variants** (Primary Development):
-- `thorne_drak/`: Main development variant (Inventory redesign shipped v0.6.0, current focus v0.7.0 stat icons)
+- `thorne_drak/`: Main development variant (see active roadmap in `.docs/ROADMAP-v*.md`)
 
 **Community Reference UIs** (Analysis & Inspiration):
 - `default/`: Baseline EverQuest UI files (reference implementation)

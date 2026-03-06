@@ -190,7 +190,22 @@ manage_todo_list(operation: "write", todoList: [
 
 - `.docs/STANDARDS.md` - Layout patterns, color codes, spacing rules
 - `.docs/technical/EQTYPES.md` - EQType reference for all elements
-- `.development/initial-phases/PHASE-6-INVENTORY-WINDOWS/INVENTORY-REDESIGN-FINAL-PLAN.md` - Implementation specs
+- `.docs/ROADMAP-v*.md` - Active milestone specs and completed items
+- `.development/` - Phase docs, analysis, and working notes
+- `DEVELOPMENT.md` - Project design philosophy and architecture
+- `TODO.md` - Lean roadmap table and shipped releases summary
+
+### Documentation Updates After Implementation
+
+**When implementation work warrants it, update these docs:**
+
+1. **README.md** — Update "What We're Working On" checkmarks if completing a listed feature
+2. **Active ROADMAP** (`.docs/ROADMAP-v*.md`) — Check off completed items in the current milestone
+3. **Options READMEs** — When creating or modifying Options variants, update `thorne_drak/Options/<Category>/README.md`
+4. **`.development/`** — Save working notes, analysis, or implementation specs to the relevant subdirectory
+5. **Link validation** — Run `python .bin/scan_links.py` if any markdown was modified
+
+**Do NOT update VERSION file or tag releases** — that's a separate release workflow step, not part of implementation.
 
 ## Output Format
 

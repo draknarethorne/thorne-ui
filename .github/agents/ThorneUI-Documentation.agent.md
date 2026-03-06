@@ -370,11 +370,70 @@ Before returning documentation:
 
 ## Key References
 
-- Existing docs in `.docs/` for style consistency
-- Phase docs in `.development/initial-phases/`
-- Phase research in `.development/initial-phases/PHASE-6-INVENTORY-WINDOWS/`
-- DEVELOPMENT.md for project context
-- README.md for tone/voice
+### Documentation Structure
+
+**Root-level docs** (player-facing + project overview):
+- `README.md` — Version History, Current Development, feature overview
+- `DEVELOPMENT.md` — Design philosophy, quick links, architecture notes
+- `TODO.md` — Lean roadmap table linking to versioned roadmaps, shipped releases summary
+
+**`.docs/`** (standards, roadmaps, release tracking):
+- `STANDARDS.md` — UI development standards (sizing, colors, spacing)
+- `VERSION-MANAGEMENT.md` — SemVer rules, VERSION file, tagging process
+- `ROADMAP-v0.7.0.md` / `ROADMAP-v0.7.5.md` / `ROADMAP-v0.8.0.md` / `ROADMAP-v1.0.0.md` — Versioned milestones
+- `releases/INDEX.md` — Current release pointer and release doc structure
+- `releases/RELEASES.md` — Cumulative release notes
+- `technical/EQTYPES.md` — EQType reference for all element contexts
+- `templates/` — Document templates (release notes, etc.)
+- `options-sync/` — Options sync metadata and documentation
+
+**`.development/`** (internal workshop, NOT published):
+- `README.md` — Workshop index with current focus and directory breakdown
+- `initial_phases/` — Completed phase documentation
+- `ui_analysis/` — Community variant analysis documents
+- `item_slots/` — Class-specific slot art pipeline
+- `stat_icons/` — Stat icon system docs
+- `archive/` — Superseded docs (preserved via `git mv` for history)
+
+### Documentation Maintenance Procedures
+
+**When writing or updating any documentation:**
+
+1. **README.md Version History** — Add entries when a version is tagged:
+   ```markdown
+   ### v0.7.4 — 2026-02-22
+   - Container slot spacing refined (1px gaps)
+   - Options sync for Target, Actions, Animations
+   ```
+
+2. **TODO.md Shipped Releases** — Add row to the table when a version ships:
+   ```markdown
+   | v0.7.4 | 2026-02-22 | Container spacing, Options sync |
+   ```
+
+3. **Active ROADMAP** (`.docs/ROADMAP-v*.md`) — Check off items as they complete
+
+4. **Link validation** — Run `python .bin/scan_links.py` after markdown changes; review `.tmp/scan_links.json`
+
+5. **Archiving stale docs** — Use `git mv <file> .development/archive/` (preserves commit history)
+
+6. **Options READMEs** — When Options categories are added/changed, update `thorne_drak/Options/<Category>/README.md`
+
+### Cross-Reference Checklist
+
+When updating documentation, verify these stay in sync:
+- `README.md` ↔ `TODO.md` (version numbers, shipped release lists)
+- `DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
+- `.development/README.md` ↔ `.docs/ROADMAP-v*.md` (current focus)
+- `.docs/releases/INDEX.md` (current release pointer)
+- Options `README.md` files (when Options are added/changed)
+
+### File Naming Conventions
+
+- **Documentation files**: `UPPERCASE-WITH-HYPHENS.md`
+- **Directory indexes**: `README.md`
+- **Hidden dirs**: `.dirname` prefix to hide from EQ client (`.docs/`, `.development/`, `.bin/`)
+- **Roadmaps**: `ROADMAP-v{MAJOR}.{MINOR}.{PATCH}.md` in `.docs/`
 
 ## Output Format
 

@@ -1,0 +1,93 @@
+{
+  "_comment": "Druid class item overrides",
+  "_note": "Nature-themed leather armor, scimitar, no shield. Green/earthy palette. Sources from dragitem9/10/12/13/26/29 for variety.",
+  "class_name": "Druid",
+  "item_overrides": [
+    {
+      "name": "ear",
+      "out_row": 1, "out_col": 1,
+      "src_row": 2, "src_col": 2, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 0.95, "brightness": 0.95}
+    },
+    {
+      "name": "head",
+      "out_row": 1, "out_col": 3,
+      "src_row": 1, "src_col": 3, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 1.05, "brightness": 1.05}
+    },
+    {
+      "name": "chest",
+      "out_row": 1, "out_col": 5,
+      "src_row": 3, "src_col": 5, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.45}
+    },
+    {
+      "name": "secondary",
+      "out_row": 1, "out_col": 6,
+      "src_row": 3, "src_col": 4, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 0.80, "brightness": 1.35}
+    },
+
+    {
+      "name": "arms",
+      "out_row": 2, "out_col": 2,
+      "src_row": 1, "src_col": 6, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.45}
+    },
+    {
+      "name": "shoulders",
+      "out_row": 2, "out_col": 3,
+      "src_row": 3, "src_col": 2, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.35}
+    },
+    {
+      "name": "wrist",
+      "out_row": 2, "out_col": 4,
+      "src_row": 4, "src_col": 2, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 1.05, "brightness": 1.00}
+    },
+    {
+      "name": "range",
+      "out_row": 2, "out_col": 6,
+      "src_row": 2, "src_col": 5, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 0.55, "brightness": 1.95}
+    },
+
+    {
+      "name": "hands",
+      "out_row": 3, "out_col": 1,
+      "src_row": 4, "src_col": 4, "source_file": "dragitem4.tga",
+      "tone": {"contrast": 0.95, "brightness": 0.75}
+    },
+    {
+      "name": "fingers",
+      "out_row": 3, "out_col": 2,
+      "src_row": 4, "src_col": 5, "source_file": "dragitem12.tga",
+      "tone": {"contrast": 0.95, "brightness": 1.05}
+    },
+    {
+      "name": "legs",
+      "out_row": 3, "out_col": 3,
+      "src_row": 3, "src_col": 3, "source_file": "dragitem13.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.15}
+    },
+    {
+      "name": "feet",
+      "out_row": 3, "out_col": 4,
+      "src_row": 4, "src_col": 1, "source_file": "dragitem10.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.90}
+    },
+    {
+      "name": "primary",
+      "out_row": 3, "out_col": 5,
+      "src_row": 3, "src_col": 2, "source_file": "dragitem3.tga",
+      "tone": {"contrast": 0.65, "brightness": 1.30}
+    },
+    {
+      "name": "ammo",
+      "out_row": 3, "out_col": 6,
+      "src_row": 5, "src_col": 1, "source_file": "dragitem10.tga",
+      "tone": {"contrast": 0.75, "brightness": 1.20}
+    }
+  ]
+}

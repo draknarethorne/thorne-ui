@@ -20,6 +20,7 @@ Usage:
     python .bin/vision_classify.py --hybrid dragitem1    # Hybrid: one file
     python .bin/vision_classify.py --describe             # Update descriptions via Ollama
     python .bin/vision_classify.py --describe dragitem1   # Describe one file
+    python .bin/vision_classify.py --build-refs           # Build CLIP reference centroids
     python .bin/vision_classify.py --test                # Test all tiers on dragitem1
 
 Options:
@@ -57,33 +58,42 @@ CACHE_DIR = ITEMS_DIR / ".cache"
 
 CELL = 40
 GRID = 6
+CLIP_REFS_PATH = CACHE_DIR / "clip_refs.npz"
 
-# ─── Valid subcategories (from generate_catalog.py) ──────────────────
+# ─── Valid subcategories (loaded from _slot_map in item_catalog.json) ─
+# The _slot_map is the single source of truth for categories, subcategories,
+# and equipment slot assignments. Populated at startup by load_valid_subs().
 
-VALID_SUBS = {
-    # armor
-    "helm": "armor", "cap": "armor", "breastplate": "armor", "tunic": "armor",
-    "robe": "armor", "shield_round": "armor", "shield_kite": "armor",
-    "shield_tower": "armor", "shield_ornate": "armor", "gauntlets": "armor",
-    "gloves": "armor", "bracer": "armor", "pauldrons": "armor",
-    "greaves": "armor", "boots": "armor", "cloak": "armor", "cape": "armor",
-    "belt": "armor", "face": "armor",
-    # jewelry
-    "ring": "jewelry", "earring": "jewelry", "necklace": "jewelry",
-    "bracelet": "jewelry", "charm": "jewelry", "crown": "jewelry",
-    # weapon
-    "sword_long": "weapon", "sword_short": "weapon", "sword_2h": "weapon",
-    "katana": "weapon", "dagger": "weapon", "axe": "weapon", "mace": "weapon",
-    "spear": "weapon", "staff": "weapon", "bow": "weapon", "arrow": "weapon",
-    # container
-    "bag": "container", "box": "container",
-    # misc
-    "scroll": "misc", "spell": "misc", "potion": "misc", "food": "misc",
-    "instrument": "misc", "gem": "misc", "lightstone": "misc",
-    "spellbook": "misc", "lantern": "misc", "fishing": "misc", "other": "misc",
-    # empty
-    "empty": "empty",
-}
+VALID_SUBS: dict[str, str] = {}  # sub -> cat (populated at runtime)
+
+
+def load_valid_subs(catalog: dict) -> dict[str, str]:
+    """Build flat {sub: cat} dict from _slot_map in catalog."""
+    subs: dict[str, str] = {}
+    for cat, cat_subs in catalog.get("_slot_map", {}).items():
+        if isinstance(cat_subs, dict):
+            for sub in cat_subs:
+                subs[sub] = cat
+    return subs
+
+
+def validate_catalog_subs(catalog: dict) -> list[str]:
+    """Check all cell entries for subcategories not in _slot_map.
+    Returns list of warning strings. Prints them too."""
+    warnings = []
+    for file_key, cells in catalog.items():
+        if file_key.startswith("_"):
+            continue
+        for ck, entry in cells.items():
+            sub = entry.get("sub", "")
+            if sub and sub not in VALID_SUBS:
+                msg = f"  WARNING: {file_key} {ck} has sub '{sub}' not in _slot_map"
+                warnings.append(msg)
+    if warnings:
+        print(f"\n  === {len(warnings)} unknown subcategories ===")
+        for w in warnings:
+            print(w)
+    return warnings
 
 
 # ─── Catalog I/O ─────────────────────────────────────────────────────
@@ -94,22 +104,65 @@ def load_catalog() -> dict:
     return {"_meta": {}, "_slot_map": {}}
 
 
+
 def save_catalog(catalog: dict) -> None:
-    """Save catalog in compact format (one item per line)."""
-    lines = ["{"]
-    keys = list(catalog.keys())
-    for ki, key in enumerate(keys):
-        val = catalog[key]
-        comma = "," if ki < len(keys) - 1 else ""
+    """Save catalog in compact format (one item per line, slot_map pretty-printed)."""
+    from datetime import datetime
+
+    # Update meta stats
+    stats = {"confirmed": 0, "high": 0, "guess": 0, "vision": 0, "total": 0}
+    for key, cells in catalog.items():
         if key.startswith("_"):
-            lines.append(f"  {json.dumps(key)}: {json.dumps(val, separators=(',', ':'))}{comma}")
-        elif isinstance(val, dict):
-            inner_keys = list(val.keys())
-            lines.append(f"  {json.dumps(key)}: {{")
-            for ii, ik in enumerate(inner_keys):
-                ic = "," if ii < len(inner_keys) - 1 else ""
-                lines.append(f"    {json.dumps(ik)}: {json.dumps(val[ik], separators=(',', ':'))}{ic}")
-            lines.append(f"  }}{comma}")
+            continue
+        for entry in cells.values():
+            s = entry.get("status", "guess")
+            stats[s] = stats.get(s, 0) + 1
+            stats["total"] += 1
+    catalog["_meta"] = {
+        "version": "2.0",
+        "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        **stats,
+    }
+
+    lines = ["{"]
+
+    # Meta block
+    lines.append(f'  "_meta": {json.dumps(catalog["_meta"])},') 
+
+    # Slot map block (nested by category, pretty-printed)
+    slot_map = catalog.get("_slot_map", {})
+    if slot_map:
+        lines.append('  "_slot_map": {')
+        cat_keys = list(slot_map.keys())
+        for ci, cat_name in enumerate(cat_keys):
+            subs = slot_map[cat_name]
+            lines.append(f'    "{cat_name}": {{')
+            sub_items = list(subs.items())
+            for si, (sub, slot) in enumerate(sub_items):
+                comma = "," if si < len(sub_items) - 1 else ""
+                lines.append(f'      "{sub}": "{slot}"{comma}')
+            comma = "," if ci < len(cat_keys) - 1 else ""
+            lines.append(f"    }}{comma}")
+        lines.append("  },")
+
+    # File data blocks
+    file_keys = sorted(
+        (k for k in catalog if not k.startswith("_")),
+        key=lambda k: int(k.replace("dragitem", "")),
+    )
+    for i, fk in enumerate(file_keys):
+        cells = catalog[fk]
+        lines.append(f'  "{fk}": {{')
+        cell_keys = sorted(cells.keys(), key=lambda ck: tuple(
+            int(x) for x in ck.strip("[]").split(",")
+        ))
+        for j, ck in enumerate(cell_keys):
+            entry = cells[ck]
+            comma = "," if j < len(cell_keys) - 1 else ""
+            lines.append(f'    "{ck}": {json.dumps(entry, separators=(",", ":"))}{comma}')
+        trail = "," if i < len(file_keys) - 1 else ""
+        lines.append(f"  }}{trail}")
+
     lines.append("}")
     CATALOG_JSON.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -478,6 +531,128 @@ def classify_clip(img: Image.Image) -> tuple[str, float]:
     return (sub, confidence)
 
 
+# ─── CLIP Reference (Exemplar) System ────────────────────────────────
+
+_clip_ref_centroids = None   # dict[sub_name, np.ndarray (512-d)]
+_clip_ref_labels = None      # list[str] of sub names matching centroid order
+_clip_ref_matrix = None      # np.ndarray shape (N, 512) for fast batch cosine sim
+
+
+def build_clip_references(catalog: dict) -> dict:
+    """Encode all confirmed non-empty cells with CLIP, average by subcategory.
+
+    Saves centroid vectors to clip_refs.npz for fast loading.
+    Returns {sub: np.ndarray} centroid dict.
+    """
+    import torch
+
+    load_clip()
+
+    # Collect confirmed items grouped by sub
+    groups: dict[str, list[Path]] = {}
+    for file_key, cells in catalog.items():
+        if file_key.startswith("_"):
+            continue
+        for ck, entry in cells.items():
+            if entry.get("status") != "confirmed":
+                continue
+            sub = entry.get("sub", "")
+            if not sub or sub == "empty":
+                continue
+            row, col = parse_cell_key(ck)
+            p = png_path(file_key, row, col)
+            if p.exists():
+                groups.setdefault(sub, []).append(p)
+
+    if not groups:
+        print("  No confirmed items found to build references.")
+        return {}
+
+    # Encode all images and compute centroids
+    centroids = {}
+    total_images = sum(len(v) for v in groups.values())
+    encoded = 0
+
+    for sub, paths in sorted(groups.items()):
+        embeddings = []
+        for p in paths:
+            img = load_png(p, upscale=4, bg_color=(255, 255, 255),
+                           resample=Image.Resampling.LANCZOS)
+            img_rgb = img.convert("RGB")
+            img_tensor = _clip_preprocess(img_rgb).unsqueeze(0)
+
+            with torch.no_grad():
+                feat = _clip_model.encode_image(img_tensor)
+                feat /= feat.norm(dim=-1, keepdim=True)
+                embeddings.append(feat.squeeze(0).numpy())
+
+            encoded += 1
+
+        # Average and re-normalize
+        centroid = np.mean(embeddings, axis=0)
+        centroid = centroid / (np.linalg.norm(centroid) + 1e-8)
+        centroids[sub] = centroid
+        print(f"    {sub:20s}  {len(paths):3d} images -> centroid", flush=True)
+
+    # Save to npz
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    labels = sorted(centroids.keys())
+    matrix = np.stack([centroids[s] for s in labels])
+    np.savez(CLIP_REFS_PATH, labels=np.array(labels), centroids=matrix)
+
+    print(f"\n  Saved: {len(labels)} centroids ({total_images} images) -> {CLIP_REFS_PATH.name}")
+    return centroids
+
+
+def load_clip_references() -> bool:
+    """Load pre-built CLIP reference centroids. Returns True if loaded."""
+    global _clip_ref_centroids, _clip_ref_labels, _clip_ref_matrix
+
+    if _clip_ref_matrix is not None:
+        return True
+
+    if not CLIP_REFS_PATH.exists():
+        return False
+
+    data = np.load(CLIP_REFS_PATH, allow_pickle=False)
+    labels = list(data["labels"])
+    matrix = data["centroids"]
+
+    _clip_ref_labels = labels
+    _clip_ref_matrix = matrix
+    _clip_ref_centroids = {l: matrix[i] for i, l in enumerate(labels)}
+    return True
+
+
+def classify_clip_ref(img: Image.Image) -> tuple[str, float]:
+    """Classify an image against CLIP reference centroids (exemplar matching).
+
+    Returns (catalog_sub, confidence) where confidence is cosine similarity.
+    Much higher confidence spread than text-based CLIP.
+    """
+    import torch
+
+    load_clip()
+    if _clip_ref_matrix is None:
+        raise RuntimeError("CLIP references not loaded. Run --build-refs first.")
+
+    img_rgb = img.convert("RGB")
+    img_tensor = _clip_preprocess(img_rgb).unsqueeze(0)
+
+    with torch.no_grad():
+        feat = _clip_model.encode_image(img_tensor)
+        feat /= feat.norm(dim=-1, keepdim=True)
+        feat_np = feat.squeeze(0).numpy()
+
+    # Cosine similarity against all centroids (matrix is already normalized)
+    sims = _clip_ref_matrix @ feat_np
+    best_idx = int(np.argmax(sims))
+    best_sub = _clip_ref_labels[best_idx]
+    best_conf = float(sims[best_idx])
+
+    return (best_sub, best_conf)
+
+
 # ═════════════════════════════════════════════════════════════════════
 # TIER 3: Ollama Local Vision LLM
 # ═════════════════════════════════════════════════════════════════════
@@ -732,7 +907,7 @@ def classify_file(
             if is_empty_cell(p):
                 results[ck] = ("empty", "empty", 1.0, "")
                 if uses_ollama:
-                    print(f"    [{idx}/{total}] {ck} → empty", flush=True)
+                    print(f"    [{idx}/{total}] {ck} -> empty", flush=True)
                 continue
 
             # Load and classify — CLIP uses white bg + LANCZOS, others use black + NEAREST
@@ -753,10 +928,13 @@ def classify_file(
                 img = load_png(p, upscale=4)
                 sub, conf, desc = classify_ollama(img, model=ollama_model)
             elif backend == "hybrid":
-                # Pass 1: CLIP classifies (white bg, smooth upscale)
+                # Pass 1: CLIP classifies — use refs if available, else text labels
                 img_clip = load_png(p, upscale=4, bg_color=(255, 255, 255),
                                     resample=Image.Resampling.LANCZOS)
-                sub, conf = classify_clip(img_clip)
+                if _clip_ref_matrix is not None:
+                    sub, conf = classify_clip_ref(img_clip)
+                else:
+                    sub, conf = classify_clip(img_clip)
                 # Pass 2: Ollama describes (black bg for pixel art LLM)
                 if conf > 0.02 and sub != "other":
                     img_ollama = load_png(p, upscale=4)
@@ -769,7 +947,7 @@ def classify_file(
 
             if uses_ollama:
                 desc_tag = f"  \"{desc}\"" if desc else ""
-                print(f"    [{idx}/{total}] {ck} → {cat}/{sub} ({conf:.2f}){desc_tag}", flush=True)
+                print(f"    [{idx}/{total}] {ck} -> {cat}/{sub} ({conf:.2f}){desc_tag}", flush=True)
 
     return results
 
@@ -872,10 +1050,17 @@ def test_accuracy(catalog: dict, backend: str, model: str | None = None):
         elif backend == "ollama":
             img = load_png(path, upscale=4)
             pred_sub, conf, ai_desc = classify_ollama(img, model=ollama_model)
+        elif backend == "clip-ref":
+            img = load_png(path, upscale=4, bg_color=(255, 255, 255),
+                           resample=Image.Resampling.LANCZOS)
+            pred_sub, conf = classify_clip_ref(img)
         elif backend == "hybrid":
             img_clip = load_png(path, upscale=4, bg_color=(255, 255, 255),
                                 resample=Image.Resampling.LANCZOS)
-            pred_sub, conf = classify_clip(img_clip)
+            if _clip_ref_matrix is not None:
+                pred_sub, conf = classify_clip_ref(img_clip)
+            else:
+                pred_sub, conf = classify_clip(img_clip)
             img_ollama = load_png(path, upscale=4)
             ai_desc = describe_ollama(img_ollama, pred_sub, model=ollama_model)
         else:
@@ -883,20 +1068,20 @@ def test_accuracy(catalog: dict, backend: str, model: str | None = None):
 
         if pred_sub == true_sub:
             correct += 1
-            marker = "✓"
-        elif backend in ("clip", "hybrid"):
+            marker = "OK"
+        elif backend in ("clip", "clip-ref", "hybrid"):
             # For CLIP-based backends, count as correct if same CLIP group
             true_group = SUB_TO_CLIP_GROUP.get(true_sub, true_sub)
             pred_group = SUB_TO_CLIP_GROUP.get(pred_sub, pred_sub)
             if true_group == pred_group:
                 correct += 1
-                marker = "≈"  # near-match (same group, different sub)
+                marker = "~~"  # near-match (same group, different sub)
             else:
                 wrong.append((file_key, ck, true_sub, pred_sub, conf))
-                marker = "✗"
+                marker = "XX"
         else:
             wrong.append((file_key, ck, true_sub, pred_sub, conf))
-            marker = "✗"
+            marker = "XX"
 
         desc_tag = f"  \"{ai_desc}\"" if ai_desc else ""
         print(f"    {marker} {file_key} {ck:8s} true={true_sub:15s} pred={pred_sub:15s} conf={conf:.2f}{desc_tag}")
@@ -904,14 +1089,14 @@ def test_accuracy(catalog: dict, backend: str, model: str | None = None):
     elapsed = time.time() - t0
     acc = correct / len(ground_truth) * 100
 
-    print(f"\n  {'─' * 50}")
+    print(f"\n  {'-' * 50}")
     print(f"  Accuracy: {correct}/{len(ground_truth)} = {acc:.1f}%")
     print(f"  Time: {elapsed:.1f}s ({elapsed/len(ground_truth):.2f}s/item)")
 
     if wrong:
         print(f"\n  Misclassified ({len(wrong)}):")
         for fk, ck, true, pred, conf in wrong:
-            print(f"    {fk} {ck}: {true} → {pred} ({conf:.2f})")
+            print(f"    {fk} {ck}: {true} -> {pred} ({conf:.2f})")
 
     return acc
 
@@ -939,6 +1124,7 @@ def main():
     group.add_argument("--ollama", action="store_true", help="Tier 3: Ollama vision LLM")
     group.add_argument("--hybrid", action="store_true", help="CLIP classify + Ollama describe")
     group.add_argument("--describe", action="store_true", help="Ollama description-only pass")
+    group.add_argument("--build-refs", action="store_true", help="Build CLIP reference centroids from confirmed items")
     group.add_argument("--test", action="store_true", help="Test all available backends")
 
     parser.add_argument("--force", action="store_true", help="Re-classify confirmed items")
@@ -947,6 +1133,27 @@ def main():
     args = parser.parse_args()
 
     catalog = load_catalog()
+
+    # Load valid subcategories from _slot_map (single source of truth)
+    global VALID_SUBS
+    VALID_SUBS = load_valid_subs(catalog)
+    if not VALID_SUBS:
+        print("ERROR: _slot_map is empty in item_catalog.json")
+        sys.exit(1)
+
+    # Validate all cell subs against _slot_map
+    validate_catalog_subs(catalog)
+
+    # ── Build refs mode ──
+    if args.build_refs:
+        print("\n  Building CLIP reference centroids from confirmed items...")
+        refs = build_clip_references(catalog)
+        if refs:
+            # Run quick accuracy test with the new refs
+            print("\n  Quick accuracy test with new references...")
+            load_clip_references()
+            test_accuracy(catalog, "clip-ref")
+        return
 
     # ── Test mode ──
     if args.test:
@@ -965,6 +1172,13 @@ def main():
             test_accuracy(catalog, "clip", model=args.model)
         except Exception as e:
             print(f"  CLIP test failed: {e}")
+
+        # Test CLIP-ref if references exist
+        if load_clip_references():
+            try:
+                test_accuracy(catalog, "clip-ref", model=args.model)
+            except Exception as e:
+                print(f"  CLIP-ref test failed: {e}")
 
         # Test Hybrid (CLIP + Ollama describe) if Ollama is running
         if check_ollama():
@@ -1016,6 +1230,11 @@ def main():
         if not check_ollama():
             print("ERROR: Hybrid mode needs Ollama running. Start it with: ollama serve")
             sys.exit(1)
+        # Auto-load CLIP refs if available
+        if load_clip_references():
+            print(f"  CLIP references loaded: {len(_clip_ref_labels)} types")
+        else:
+            print("  No CLIP references found — using text labels (run --build-refs to improve)")
     elif args.describe:
         backend = "describe"
         if not check_ollama():
@@ -1062,7 +1281,7 @@ def main():
                     catalog, file_key, results, force=args.force,
                 )
                 total_updated += updated
-                print(f"    → {updated} descriptions updated")
+                print(f"    -> {updated} descriptions updated")
             else:
                 for ck in sorted(results.keys(), key=lambda k: parse_cell_key(k)):
                     sub, desc = results[ck]
@@ -1081,12 +1300,12 @@ def main():
             if not args.dry_run:
                 updated = apply_results(catalog, file_key, results, backend, force=args.force)
                 total_updated += updated
-                print(f"    → {updated} cells updated")
+                print(f"    -> {updated} cells updated")
             else:
                 for ck in sorted(results.keys(), key=lambda k: parse_cell_key(k)):
                     cat, sub, conf, desc = results[ck]
                     desc_tag = f"  \"{desc}\"" if desc else ""
-                    print(f"    {ck:8s} → {cat}/{sub} ({conf:.2f}){desc_tag}")
+                    print(f"    {ck:8s} -> {cat}/{sub} ({conf:.2f}){desc_tag}")
                 total_updated += len(results)
 
     elapsed = time.time() - t0

@@ -62,33 +62,44 @@ CELL = 40
 GRID = 6
 ALPHA_THRESH = 30
 
-# ─── Master Categories ──────────────────────────────────────────────
+# ─── Master Categories (loaded from _slot_map in item_catalog.json) ──
+# The _slot_map is the single source of truth for categories, subcategories,
+# and equipment slot assignments. These are populated at startup by
+# load_master_categories().
 
-MASTER_CATEGORIES = {
-    "armor": [
-        "helm", "cap", "breastplate", "tunic", "robe",
-        "shield_round", "shield_kite", "shield_tower", "shield_ornate",
-        "gauntlets", "gloves", "bracer", "pauldrons", "greaves", "boots",
-        "cloak", "cape", "belt", "face",
-    ],
-    "jewelry": ["ring", "earring", "necklace", "bracelet", "charm", "crown"],
-    "weapon": [
-        "sword_long", "sword_short", "sword_2h", "katana",
-        "dagger", "axe", "mace", "spear", "staff", "bow", "arrow",
-    ],
-    "container": ["bag", "box"],
-    "misc": [
-        "scroll", "spell", "potion", "food", "instrument", "gem",
-        "lightstone", "spellbook", "lantern", "fishing", "other",
-    ],
-    "empty": ["empty"],
-}
+MASTER_CATEGORIES: dict[str, list[str]] = {}  # cat -> [sub, ...]
+VALID_SUBS: dict[str, str] = {}               # sub -> cat
 
-# Flat lookup for validation
-VALID_SUBS = {}
-for cat, subs in MASTER_CATEGORIES.items():
-    for sub in subs:
-        VALID_SUBS[sub] = cat
+
+def load_master_categories(catalog: dict) -> None:
+    """Populate MASTER_CATEGORIES and VALID_SUBS from _slot_map in catalog."""
+    global MASTER_CATEGORIES, VALID_SUBS
+    slot_map = catalog.get("_slot_map", {})
+    MASTER_CATEGORIES = {cat: list(subs.keys()) for cat, subs in slot_map.items()}
+    VALID_SUBS = {}
+    for cat, subs in slot_map.items():
+        for sub in subs:
+            VALID_SUBS[sub] = cat
+
+
+def validate_catalog_subs(catalog: dict) -> list[str]:
+    """Check all cell entries for subcategories not in _slot_map.
+    Returns list of warning strings. Prints them too."""
+    warnings = []
+    for file_key, cells in catalog.items():
+        if file_key.startswith("_"):
+            continue
+        for ck, entry in cells.items():
+            sub = entry.get("sub", "")
+            if sub and sub not in VALID_SUBS:
+                msg = f"  WARNING: {file_key} {ck} has sub '{sub}' not in _slot_map"
+                warnings.append(msg)
+    if warnings:
+        print(f"\n  === {len(warnings)} unknown subcategories ===")
+        for w in warnings:
+            print(w)
+        print("  Add them to _slot_map in item_catalog.json or fix the cell entry.\n")
+    return warnings
 
 
 # ─── Feature Extraction ─────────────────────────────────────────────
@@ -436,11 +447,15 @@ def save_feature_cache(cache: dict[str, list[float]]) -> None:
 # ─── Catalog JSON I/O ───────────────────────────────────────────────
 
 def load_catalog() -> dict:
-    """Load existing catalog or return empty structure."""
+    """Load existing catalog, populate globals from _slot_map, and validate."""
     if CATALOG_JSON.exists():
         with open(CATALOG_JSON, encoding="utf-8") as f:
-            return json.load(f)
-    return {"_meta": {"version": "2.0"}}
+            catalog = json.load(f)
+    else:
+        catalog = {"_meta": {"version": "2.0"}}
+    load_master_categories(catalog)
+    validate_catalog_subs(catalog)
+    return catalog
 
 
 def flatten_slot_map(catalog: dict) -> dict[str, list[str]]:

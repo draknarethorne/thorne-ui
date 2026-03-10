@@ -1,7 +1,7 @@
 {
-  "_comment": "Ranger class item overrides (auto-generated from item data pipeline)",
-  "_note": "Chain melee/caster \u2014 bows, dual wield, nature",
-  "class_name": "Ranger",
+  "_comment": "Warrior class item overrides (auto-generated from item data pipeline)",
+  "_note": "Plate tank \u2014 highest AC, physical stats",
+  "class_name": "Warrior",
   "item_overrides": [
     {
       "name": "ear",
@@ -19,9 +19,9 @@
       "name": "neck",
       "out_row": 1,
       "out_col": 2,
-      "src_row": 2,
-      "src_col": 4,
-      "source_file": "dragitem4.tga",
+      "src_row": 1,
+      "src_col": 6,
+      "source_file": "dragitem2.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -31,9 +31,9 @@
       "name": "head",
       "out_row": 1,
       "out_col": 3,
-      "src_row": 1,
-      "src_col": 1,
-      "source_file": "dragitem2.tga",
+      "src_row": 2,
+      "src_col": 6,
+      "source_file": "dragitem7.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -43,9 +43,9 @@
       "name": "face",
       "out_row": 1,
       "out_col": 4,
-      "src_row": 6,
-      "src_col": 4,
-      "source_file": "dragitem16.tga",
+      "src_row": 1,
+      "src_col": 2,
+      "source_file": "dragitem1.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -55,9 +55,9 @@
       "name": "chest",
       "out_row": 1,
       "out_col": 5,
-      "src_row": 4,
-      "src_col": 5,
-      "source_file": "dragitem1.tga",
+      "src_row": 2,
+      "src_col": 3,
+      "source_file": "dragitem4.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -67,9 +67,9 @@
       "name": "secondary",
       "out_row": 1,
       "out_col": 6,
-      "src_row": 5,
-      "src_col": 3,
-      "source_file": "dragitem24.tga",
+      "src_row": 6,
+      "src_col": 4,
+      "source_file": "dragitem25.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -79,9 +79,9 @@
       "name": "back",
       "out_row": 2,
       "out_col": 1,
-      "src_row": 3,
-      "src_col": 6,
-      "source_file": "dragitem1.tga",
+      "src_row": 6,
+      "src_col": 3,
+      "source_file": "dragitem10.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -103,9 +103,9 @@
       "name": "shoulders",
       "out_row": 2,
       "out_col": 3,
-      "src_row": 5,
-      "src_col": 2,
-      "source_file": "dragitem9.tga",
+      "src_row": 1,
+      "src_col": 5,
+      "source_file": "dragitem5.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -128,7 +128,7 @@
       "out_row": 2,
       "out_col": 5,
       "src_row": 4,
-      "src_col": 6,
+      "src_col": 1,
       "source_file": "dragitem1.tga",
       "tone": {
         "contrast": 1.0,
@@ -151,7 +151,7 @@
       "name": "hands",
       "out_row": 3,
       "out_col": 1,
-      "src_row": 3,
+      "src_row": 6,
       "src_col": 5,
       "source_file": "dragitem1.tga",
       "tone": {
@@ -175,9 +175,9 @@
       "name": "legs",
       "out_row": 3,
       "out_col": 3,
-      "src_row": 4,
-      "src_col": 4,
-      "source_file": "dragitem10.tga",
+      "src_row": 3,
+      "src_col": 1,
+      "source_file": "dragitem4.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -187,9 +187,9 @@
       "name": "feet",
       "out_row": 3,
       "out_col": 4,
-      "src_row": 4,
-      "src_col": 2,
-      "source_file": "dragitem2.tga",
+      "src_row": 3,
+      "src_col": 4,
+      "source_file": "dragitem10.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0

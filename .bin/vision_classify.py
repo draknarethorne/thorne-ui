@@ -1,4 +1,19 @@
-"""vision_classify.py -- AI-powered icon classification for EQ dragitem sprites.
+"""vision_classify.py -- DEPRECATED / EXPERIMENTAL
+
+This script was the AI-powered icon classification system using multiple
+backends (HOG, CLIP, Ollama). It is preserved as a reference for the AI
+techniques used (CLIP zero-shot, HOG feature matching, Ollama vision LLM)
+but is NO LONGER USED in the active pipeline.
+
+Replaced by:
+  - extract_eq_items.py   (Quarm SQL database → real item data)
+  - pick_class_icons.py   (stat-weighted scoring per class + slot)
+
+Those scripts use actual game item data rather than visual classification.
+
+Original description follows:
+---
+AI-powered icon classification for EQ dragitem sprites.
 
 Three classification backends (tiers), each with different tradeoffs:
 

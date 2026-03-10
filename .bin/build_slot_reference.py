@@ -5,8 +5,8 @@ Reads eq_items.csv (produced by extract_eq_items.py) and generates a
 reference mapping of which dragitem icons are used by which EQ class
 archetypes at each equipment slot.
 
-Output: .cache/slot_icon_reference.json
-        .cache/slot_icon_reference.csv  (flat summary for human reading)
+Output: thorne_drak/Options/Slots/.Master/.Items/.cache/slot_icon_reference.json
+        thorne_drak/Options/Slots/.Master/.Items/.cache/slot_icon_reference.csv
 
 Usage:
     python .bin/build_slot_reference.py
@@ -19,7 +19,8 @@ from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-CACHE_DIR = os.path.join(PROJECT_ROOT, '.cache')
+CACHE_DIR = os.path.join(PROJECT_ROOT, 'thorne_drak', 'Options', 'Slots',
+                        '.Master', '.Items', '.cache')
 
 CSV_IN = os.path.join(CACHE_DIR, 'eq_items.csv')
 JSON_OUT = os.path.join(CACHE_DIR, 'slot_icon_reference.json')

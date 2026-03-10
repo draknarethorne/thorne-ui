@@ -5,7 +5,7 @@ Parses INSERT INTO `items` VALUES(...) statements and outputs a CSV with
 all columns relevant to class-specific slot art mapping.
 
 Source: SecretsOTheP/EQMacEmu Quarm database dump
-Output: .cache/eq_items.csv  (+ .cache/eq_items.json for programmatic use)
+Output: thorne_drak/Options/Slots/.Master/.Items/.cache/eq_items.csv  (+.json)
 
 Usage:
     python .bin/extract_eq_items.py
@@ -24,7 +24,8 @@ from collections import Counter
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 TMP_DIR = os.path.join(PROJECT_ROOT, '.tmp')
-CACHE_DIR = os.path.join(PROJECT_ROOT, '.cache')
+CACHE_DIR = os.path.join(PROJECT_ROOT, 'thorne_drak', 'Options', 'Slots',
+                        '.Master', '.Items', '.cache')
 
 # Find the main SQL file (colon in filename gets mangled on Windows)
 sql_files = glob.glob(os.path.join(TMP_DIR, 'quarm_*.sql'))

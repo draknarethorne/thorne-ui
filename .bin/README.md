@@ -139,14 +139,14 @@ class-specific icon recommendations for equipment slot art.
 **Run order matters** — each step depends on the previous:
 
 ```bash
-python .bin/extract_eq_items.py      # Step 1: SQL → .cache/eq_items.csv + .json
-python .bin/build_slot_reference.py  # Step 2: CSV → .cache/slot_icon_reference.*
-python .bin/pick_class_icons.py      # Step 3: CSV → .cache/class_icon_picks.* + HTML
+python .bin/extract_eq_items.py      # Step 1: SQL → .Items/.cache/eq_items.*
+python .bin/build_slot_reference.py  # Step 2: CSV → .Items/.cache/slot_icon_reference.*
+python .bin/pick_class_icons.py      # Step 3: CSV → .Items/.cache/class_icon_picks.* + HTML
 ```
 
 - **extract_eq_items.py** — Parses Quarm SQL dump (from `.tmp/`) into item CSV/JSON with stats and dragitem mapping
 - **build_slot_reference.py** — Groups items by archetype and slot, counts icon frequency
-- **pick_class_icons.py** — Scores icons for 9 class groupings using stat-priority weights, generates visual HTML
+- **pick_class_icons.py** — Scores icons for 15 individual EQ classes using stat-priority weights, generates visual HTML
 
 **Prerequisite:** Quarm SQL dump in `.tmp/quarm_*.sql` (see [ITEM-DATA-PIPELINE.md](../.development/item_slots/ITEM-DATA-PIPELINE.md))
 

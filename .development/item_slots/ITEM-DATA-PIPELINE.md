@@ -19,7 +19,7 @@ class-specific icon recommendations for equipment slot art.
   build_slot_reference.py        Step 2: CSV → archetype/slot icon reference
   pick_class_icons.py            Step 3: CSV → class-specific scored icon picks + HTML
 
-.cache/                        ← Generated outputs (gitignored, regenerable)
+.Items/.cache/                 ← Generated outputs (gitignored, regenerable)
   eq_items.csv                   26,971 items with stats + dragitem mapping
   eq_items.json                  Same data, JSON format
   slot_icon_reference.csv        Archetype → slot → icon summary
@@ -97,7 +97,7 @@ col      = cell // 6 + 1        # 1-based, col-major ordering
 ### extract_eq_items.py
 
 **Input:** `.tmp/quarm_*.sql` (Quarm database dump)
-**Output:** `.cache/eq_items.csv`, `.cache/eq_items.json`
+**Output:** `.Items/.cache/eq_items.csv`, `.Items/.cache/eq_items.json`
 
 Parses `INSERT INTO items VALUES(...)` statements. Extracts 159 columns per
 item including stats (STR, STA, AGI, DEX, INT, WIS, CHA, HP, Mana, AC, resists),
@@ -105,8 +105,8 @@ class/slot bitmasks, icon numbers, and derived dragitem mapping fields.
 
 ### build_slot_reference.py
 
-**Input:** `.cache/eq_items.csv`
-**Output:** `.cache/slot_icon_reference.json`, `.cache/slot_icon_reference.csv`
+**Input:** `.Items/.cache/eq_items.csv`
+**Output:** `.Items/.cache/slot_icon_reference.json`, `.Items/.cache/slot_icon_reference.csv`
 
 Groups items by archetype (Melee/Hybrid/Priest/Caster) and equipment slot,
 counting which dragitem icons appear and how frequently. Useful for seeing the
@@ -114,16 +114,18 @@ full universe of icons available per slot before narrowing to class-specific pic
 
 ### pick_class_icons.py
 
-**Input:** `.cache/eq_items.csv`
-**Output:** `.cache/class_icon_picks.json`, `.cache/class_icon_picks.csv`, `.cache/class_icon_picks.html`
+**Input:** `.Items/.cache/eq_items.csv`
+**Output:** `.Items/.cache/class_icon_picks.json`, `.Items/.cache/class_icon_picks.csv`, `.Items/.cache/class_icon_picks.html`
 
-Scores icons for 9 class groupings (Melee, Hybrid, Priest, Caster, Bard, Druid,
-Monk, Necro, Ranger) using stat-priority weights. Scoring includes:
+Scores icons for all 15 individual EQ classes (Warrior, Rogue, Monk, Paladin,
+Shadowknight, Bard, Ranger, Shaman, Beastlord, Cleric, Druid, Necromancer,
+Wizard, Magician, Enchanter) using stat-priority weights. Scoring includes:
 
 - **Stat score** — weighted average of item stats matching class priorities
+- **Class specificity** — log-scale multiplier (0.5–2.0×) rewarding class-specific items
 - **Count bonus** — rewards well-represented icons (capped at 20 items × 0.5)
-- **Exclusivity bonus** — rewards icons unique to a class group (30% of stat score)
-- **Min-2-item preference** — icons with 2+ items rank above single-item outliers
+- **Class-restricted filtering** — armor slots drop all-class items, keeping only class-restricted gear
+- **Multi-slot penalty** — 0.3× for icons where all items also fit weapon slots (prevents shields in back)
 - **GM filter** — items with HP >500, Mana >500, or AC >300 are excluded
 
 The HTML output includes inline PNG thumbnails for visual verification of picks.
@@ -147,16 +149,16 @@ process. These are safe to delete — all production logic lives in `.bin/`.
 Only the SQL dump files (`quarm_*.sql`, supporting `.sql` files, and
 `quarm-db.tar.gz`) are needed as source data.
 
-### Adding a new class grouping
+### Adding or adjusting a class
 
 1. Edit `pick_class_icons.py` → `CLASS_PROFILES` dict
-2. Add the class name and stat weights
+2. Add/adjust the class name, bitmask, and stat weights
 3. Re-run Step 3
 4. Check the HTML output for reasonable icon differentiation
 
 ### Verifying icon mappings
 
-Open `.cache/class_icon_picks.html` in a browser. Each icon pick shows:
+Open `.Items/.cache/class_icon_picks.html` in a browser. Each icon pick shows:
 - Inline PNG thumbnail (from dragitem cache)
 - Icon number and dragitem coordinates
 - Score breakdown, top stats, and example item names

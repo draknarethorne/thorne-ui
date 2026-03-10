@@ -24,9 +24,9 @@ Formula:
 
   Min 2 items required to be "rank 1" pick (unless no 2+ icon exists).
 
-Output: .cache/class_icon_picks.csv   (flat: class, slot, icon, score, dragitem info)
-        .cache/class_icon_picks.json  (structured: class -> slot -> ranked icons)
-        .cache/class_icon_picks.html  (visual grid with icon PNGs)
+Output: thorne_drak/Options/Slots/.Master/.Items/.cache/class_icon_picks.csv
+        thorne_drak/Options/Slots/.Master/.Items/.cache/class_icon_picks.json
+        thorne_drak/Options/Slots/.Master/.Items/.cache/class_icon_picks.html
 
 Usage:
     python .bin/pick_class_icons.py
@@ -39,8 +39,7 @@ from collections import Counter, defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-CACHE_DIR = os.path.join(PROJECT_ROOT, '.cache')
-IMG_BASE = os.path.join(PROJECT_ROOT, 'thorne_drak', 'Options', 'Slots',
+CACHE_DIR = os.path.join(PROJECT_ROOT, 'thorne_drak', 'Options', 'Slots',
                         '.Master', '.Items', '.cache')
 
 CSV_IN = os.path.join(CACHE_DIR, 'eq_items.csv')
@@ -296,7 +295,7 @@ def icon_png_path(icon):
     cell = adjusted % 36
     row = cell % 6 + 1   # 1-based, col-major
     col = cell // 6 + 1  # 1-based, col-major
-    return f"../thorne_drak/Options/Slots/.Master/.Items/.cache/dragitem{dragitem_file}/r{row}c{col}.png"
+    return f"dragitem{dragitem_file}/r{row}c{col}.png"
 
 
 def icon_png_exists(icon):
@@ -306,7 +305,7 @@ def icon_png_exists(icon):
     cell = adjusted % 36
     row = cell % 6 + 1   # 1-based, col-major
     col = cell // 6 + 1  # 1-based, col-major
-    path = os.path.join(IMG_BASE, f"dragitem{dragitem_file}", f"r{row}c{col}.png")
+    path = os.path.join(CACHE_DIR, f"dragitem{dragitem_file}", f"r{row}c{col}.png")
     return os.path.exists(path)
 
 

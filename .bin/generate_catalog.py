@@ -1,4 +1,19 @@
-"""generate_catalog.py -- Iterative EQ dragitem icon catalog with learning.
+"""generate_catalog.py -- DEPRECATED / EXPERIMENTAL
+
+This script was the original AI-powered icon catalog builder using pixel
+feature analysis and iterative learning. It is preserved as a reference for
+the AI classification techniques used (HOG features, exemplar learning,
+confidence scoring) but is NO LONGER USED in the active pipeline.
+
+Replaced by:
+  - extract_eq_items.py   (Quarm SQL database → real item data)
+  - pick_class_icons.py   (stat-weighted scoring per class + slot)
+
+Those scripts use actual game item data rather than visual classification.
+
+Original description follows:
+---
+Iterative EQ dragitem icon catalog with learning.
 
 Identifies items in dragitem*.tga sprite sheets by analyzing pixel features,
 then improves classifications over time as items are confirmed by the user.

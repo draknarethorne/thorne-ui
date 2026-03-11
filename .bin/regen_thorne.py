@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -104,6 +105,83 @@ def to_inverted_impression_rgba(
                 op[x, y] = (0, 0, 0, 0)
 
     return out
+
+
+def auto_tone_grayscale(img: Image.Image) -> tuple[Image.Image, dict]:
+    """Auto-adjust grayscale tile luminance for slot icon embossing.
+
+    Analyzes visible pixel luminance after neutral grayscale conversion
+    and applies gamma correction to bring the mean into the target range
+    (85-175). Prevents both too-dark (invisible emboss) and too-bright
+    (washed-out) icons.
+
+    Returns (corrected RGBA image, stats dict with before/after metrics).
+    """
+    rgba = img.convert("RGBA")
+    r, g, b, a = rgba.split()
+    gray = ImageOps.grayscale(Image.merge("RGB", (r, g, b)))
+
+    # Measure visible pixel luminance (skip fully transparent)
+    gray_data = list(gray.getdata())
+    alpha_data = list(a.getdata())
+    pixels = [g for g, av in zip(gray_data, alpha_data) if av > 0]
+
+    stats: dict = {"auto_tone": True, "visible_pixels": len(pixels)}
+
+    if not pixels:
+        stats["action"] = "empty"
+        return Image.merge("RGBA", (gray, gray, gray, a)), stats
+
+    mean_lum = sum(pixels) / len(pixels)
+    stats["mean_before"] = round(mean_lum, 1)
+
+    # Target range derived from hand-tuned Master atlas luminance analysis.
+    # Master cells sit at mean 100-190; 85-175 captures the usable band.
+    TARGET_LOW = 85
+    TARGET_HIGH = 175
+    TARGET_MEAN = 120
+
+    if TARGET_LOW <= mean_lum <= TARGET_HIGH:
+        # Acceptable range — mild standard enhancement only
+        enhanced = ImageEnhance.Contrast(gray).enhance(1.05)
+        stats["action"] = "passthrough"
+        stats["gamma"] = 1.0
+        stats["contrast_adj"] = 1.05
+        after_data = list(enhanced.getdata())
+        after_px = [g for g, av in zip(after_data, alpha_data) if av > 0]
+        stats["mean_after"] = round(sum(after_px) / len(after_px), 1) if after_px else 0
+        return Image.merge("RGBA", (enhanced, enhanced, enhanced, a)), stats
+
+    # Gamma correction: shift mean_lum → TARGET_MEAN
+    # Formula: new_pixel = 255 * (old_pixel / 255) ^ gamma
+    # Solving: gamma = log(TARGET/255) / log(mean/255)
+    gamma = math.log(TARGET_MEAN / 255) / math.log(max(mean_lum, 5) / 255)
+    gamma = max(0.25, min(3.0, gamma))
+
+    lut = [min(255, int(255 * (i / 255.0) ** gamma)) for i in range(256)]
+    corrected = gray.point(lut)
+
+    # Post-gamma contrast adjustment:
+    # Heavy brightening (low gamma) flattens detail → boost contrast
+    # Heavy darkening (high gamma) can crush → soften contrast
+    if gamma < 0.6:
+        contrast_adj = 1.15
+    elif gamma > 1.5:
+        contrast_adj = 0.90
+    else:
+        contrast_adj = 1.05
+
+    corrected = ImageEnhance.Contrast(corrected).enhance(contrast_adj)
+
+    stats["action"] = "gamma_corrected"
+    stats["gamma"] = round(gamma, 3)
+    stats["contrast_adj"] = contrast_adj
+
+    after_data = list(corrected.getdata())
+    after_px = [g for g, av in zip(after_data, alpha_data) if av > 0]
+    stats["mean_after"] = round(sum(after_px) / len(after_px), 1) if after_px else 0
+
+    return Image.merge("RGBA", (corrected, corrected, corrected, a)), stats
 
 
 def load_sources(directory: Path, fallback_dir: Path | None = None) -> dict[str, Image.Image]:
@@ -191,6 +269,7 @@ class ThorneGenerator:
         self.verbose = verbose
         self._dot_count = 0
         self._dot_line_open = False
+        self._last_auto_stats: dict | None = None
 
     def _progress_dot(self) -> None:
         print(".", end="", flush=True)
@@ -213,6 +292,7 @@ class ThorneGenerator:
         output_cell_size: int,
         default_tone: dict,
         source_grids: dict | None = None,
+        auto_tone_default: bool = False,
     ) -> Image.Image:
         """Render a single item tile from config entry."""
         mode = entry.get("mode", "grayscale")
@@ -241,6 +321,11 @@ class ThorneGenerator:
         else:
             tile = extract_cell(src_img, src_row, src_col, source_cell_size)
 
+        self._last_auto_stats = None
+        has_tone = "tone" in entry
+        # Priority: explicit per-item tone > auto_tone (per-item or config-level) > default_tone
+        use_auto = entry.get("auto_tone", False) or (auto_tone_default and not has_tone)
+
         tone = entry.get("tone", {})
         contrast = float(tone.get("contrast", default_tone.get("contrast", 1.10)))
         brightness = float(tone.get("brightness", default_tone.get("brightness", 0.95)))
@@ -259,6 +344,8 @@ class ThorneGenerator:
                 contrast=imp_contrast,
                 depth_gradient=depth_gradient,
             )
+        elif use_auto:
+            result, self._last_auto_stats = auto_tone_grayscale(tile)
         else:
             result = to_grayscale_rgba(tile, contrast=contrast, brightness=brightness)
 
@@ -278,6 +365,7 @@ class ThorneGenerator:
         default_tone: dict,
         atlas_name: str = "base",
         source_grids: dict | None = None,
+        auto_tone_default: bool = False,
     ) -> Image.Image:
         """Generate a single atlas with the given cell and output sizes."""
         atlas = Image.new("RGBA", (output_size, output_size), (0, 0, 0, 0))
@@ -288,7 +376,7 @@ class ThorneGenerator:
             name = entry.get("name", "(unnamed)")
 
             try:
-                tile = self.render_item(entry, sources, source_cell_size, output_cell_size, default_tone, source_grids=source_grids)
+                tile = self.render_item(entry, sources, source_cell_size, output_cell_size, default_tone, source_grids=source_grids, auto_tone_default=auto_tone_default)
                 x = out_col * output_cell_size
                 y = out_row * output_cell_size
                 atlas.alpha_composite(tile, (x, y))
@@ -308,7 +396,10 @@ class ThorneGenerator:
                     "src_col": entry.get("src_col", 1),
                     "mode": entry.get("mode", "grayscale"),
                     "has_tone_override": "tone" in entry,
+                    "auto_tone": entry.get("auto_tone", False) or auto_tone_default,
                 }
+                if self._last_auto_stats:
+                    item_stat["auto_tone_result"] = self._last_auto_stats
                 self.stats["items"].append(item_stat)
                 self.stats["summary"]["items_total"] += 1
 
@@ -340,6 +431,7 @@ class ThorneGenerator:
         base_output_size = int(config.get("output_size", 256))
         base_output_filename = config.get("output_file", "item_atlas_thorne01.tga")
         default_tone = config.get("default_tone", {"contrast": 1.10, "brightness": 0.95})
+        auto_tone_default = bool(config.get("auto_tone", False))
         source_grids = config.get("source_grids", {})
         items = config.get("items", [])
         variants = config.get("variants", [])
@@ -354,7 +446,7 @@ class ThorneGenerator:
         print(f"\n  Generating base atlas ({base_output_filename})...")
         atlas = self.generate_atlas(
             items, sources, base_cell_size, base_cell_size, base_output_size, default_tone, atlas_name="base",
-            source_grids=source_grids,
+            source_grids=source_grids, auto_tone_default=auto_tone_default,
         )
         out_base = self.directory / base_output_filename
         atlas.save(out_base, format="TGA")
@@ -373,7 +465,7 @@ class ThorneGenerator:
             print(f"\n  Generating variant '{variant_name}' ({variant_output_filename})...")
             variant_atlas = self.generate_atlas(
                 items, sources, base_cell_size, variant_cell_size, variant_output_size, default_tone, atlas_name=variant_name,
-                source_grids=source_grids,
+                source_grids=source_grids, auto_tone_default=auto_tone_default,
             )
             out_variant = self.directory / variant_output_filename
             variant_atlas.save(out_variant, format="TGA")
@@ -409,7 +501,12 @@ def _merge_items(base_items: list[dict], override_items: list[dict]) -> list[dic
         if name in base_by_name:
             for idx, item in enumerate(merged):
                 if item.get("name") == name:
-                    merged[idx] = {**item, **override}
+                    result = {**item, **override}
+                    # When override changes icon source but doesn't specify tone,
+                    # drop inherited tone so config-level auto_tone can apply
+                    if "source_file" in override and "tone" not in override:
+                        result.pop("tone", None)
+                    merged[idx] = result
                     break
         else:
             merged.append(override)

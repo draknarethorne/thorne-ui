@@ -28,9 +28,6 @@ SLOT_NAME_MAP = {
     "waist": "belt",
 }
 
-# ----- default tone (neutral — tune per class later if desired) -----
-DEFAULT_TONE = {"contrast": 1.0, "brightness": 1.0}
-
 
 def load_master_grid(path):
     """Load master .regen_thorne.json and return grid positions for equipment slots."""
@@ -56,7 +53,6 @@ def build_override(regen_name, grid_pos, pick):
         "src_row": pick["dragitem_row"],
         "src_col": pick["dragitem_col"],
         "source_file": f"dragitem{pick['dragitem_file']}.tga",
-        "tone": dict(DEFAULT_TONE),
     }
 
 
@@ -96,6 +92,44 @@ def generate_class_regen(class_name, class_data, grid):
     }
 
 
+# ----- compact JSON formatter (matches Master .regen_thorne.json style) -----
+
+def _format_item(item):
+    """Format a single item override in compact Master-style layout."""
+    lines = []
+    lines.append('    {')
+    lines.append(f'      "name": {json.dumps(item["name"])},')
+    lines.append(f'      "out_row": {item["out_row"]}, "out_col": {item["out_col"]},')
+    src_line = f'      "src_row": {item["src_row"]}, "src_col": {item["src_col"]}, "source_file": {json.dumps(item["source_file"])}'
+    if "tone" in item:
+        t = item["tone"]
+        lines.append(src_line + ',')
+        lines.append(f'      "tone": {{"contrast": {t["contrast"]}, "brightness": {t["brightness"]}}}')
+    else:
+        lines.append(src_line)
+    lines.append('    }')
+    return '\n'.join(lines)
+
+
+def _format_regen_json(data):
+    """Format .regen_thorne.json in compact Master-compatible style."""
+    lines = []
+    lines.append('{')
+    lines.append(f'  "_comment": {json.dumps(data["_comment"])},')
+    lines.append(f'  "_note": {json.dumps(data["_note"])},')
+    lines.append(f'  "class_name": {json.dumps(data["class_name"])},')
+    lines.append('  "item_overrides": [')
+
+    items = data["item_overrides"]
+    for i, item in enumerate(items):
+        suffix = ',' if i < len(items) - 1 else ''
+        lines.append(_format_item(item) + suffix)
+
+    lines.append('  ]')
+    lines.append('}')
+    return '\n'.join(lines) + '\n'
+
+
 def main():
     # Load source data
     with open(PICKS_FILE, encoding="utf-8") as f:
@@ -117,8 +151,7 @@ def main():
         # Write .regen_thorne.json
         out_path = os.path.join(out_dir, ".regen_thorne.json")
         with open(out_path, "w", encoding="utf-8", newline="\n") as f:
-            json.dump(regen, f, indent=2)
-            f.write("\n")
+            f.write(_format_regen_json(regen))
 
         n_overrides = len(regen["item_overrides"])
         print(f"  {class_name:15s} -> {n_overrides} slot overrides -> {out_path}")

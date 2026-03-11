@@ -13,7 +13,17 @@
       "src_row": 5,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 671,
+        "mean_before": 182.4,
+        "action": "gamma_corrected",
+        "gamma": 2.248,
+        "contrast_adj": 0.9,
+        "mean_after": 139.6
+      }
     },
     {
       "name": "neck",
@@ -23,7 +33,17 @@
       "src_row": 5,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 360,
+        "mean_before": 108.9,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 102.8
+      }
     },
     {
       "name": "head",
@@ -33,7 +53,17 @@
       "src_row": 3,
       "src_col": 6,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 959,
+        "mean_before": 32.3,
+        "action": "gamma_corrected",
+        "gamma": 0.365,
+        "contrast_adj": 1.15,
+        "mean_after": 106.8
+      }
     },
     {
       "name": "face",
@@ -43,7 +73,17 @@
       "src_row": 2,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 752,
+        "mean_before": 64.0,
+        "action": "gamma_corrected",
+        "gamma": 0.545,
+        "contrast_adj": 1.15,
+        "mean_after": 106.4
+      }
     },
     {
       "name": "chest",
@@ -53,17 +93,37 @@
       "src_row": 5,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 839,
+        "mean_before": 144.8,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 141.7
+      }
     },
     {
       "name": "secondary",
       "out_row": 1,
       "out_col": 6,
-      "source_file": "dragitem25.tga",
-      "src_row": 2,
-      "src_col": 4,
+      "source_file": "dragitem21.tga",
+      "src_row": 1,
+      "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 888,
+        "mean_before": 53.2,
+        "action": "gamma_corrected",
+        "gamma": 0.481,
+        "contrast_adj": 1.15,
+        "mean_after": 106.2
+      }
     },
     {
       "name": "back",
@@ -73,7 +133,17 @@
       "src_row": 2,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 837,
+        "mean_before": 35.1,
+        "action": "gamma_corrected",
+        "gamma": 0.38,
+        "contrast_adj": 1.15,
+        "mean_after": 96.5
+      }
     },
     {
       "name": "arms",
@@ -83,7 +153,17 @@
       "src_row": 3,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 649,
+        "mean_before": 46.6,
+        "action": "gamma_corrected",
+        "gamma": 0.444,
+        "contrast_adj": 1.15,
+        "mean_after": 101.9
+      }
     },
     {
       "name": "shoulders",
@@ -93,7 +173,17 @@
       "src_row": 3,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 809,
+        "mean_before": 29.2,
+        "action": "gamma_corrected",
+        "gamma": 0.348,
+        "contrast_adj": 1.15,
+        "mean_after": 102.2
+      }
     },
     {
       "name": "wrist",
@@ -103,7 +193,17 @@
       "src_row": 5,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 508,
+        "mean_before": 133.0,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 128.4
+      }
     },
     {
       "name": "belt",
@@ -113,17 +213,37 @@
       "src_row": 4,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 926,
+        "mean_before": 50.3,
+        "action": "gamma_corrected",
+        "gamma": 0.464,
+        "contrast_adj": 1.15,
+        "mean_after": 104.4
+      }
     },
     {
       "name": "range",
       "out_row": 2,
       "out_col": 6,
-      "source_file": "dragitem8.tga",
-      "src_row": 4,
-      "src_col": 3,
+      "source_file": "dragitem3.tga",
+      "src_row": 3,
+      "src_col": 6,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 244,
+        "mean_before": 175.7,
+        "action": "gamma_corrected",
+        "gamma": 2.024,
+        "contrast_adj": 0.9,
+        "mean_after": 144.0
+      }
     },
     {
       "name": "hands",
@@ -133,7 +253,17 @@
       "src_row": 5,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1025,
+        "mean_before": 76.6,
+        "action": "gamma_corrected",
+        "gamma": 0.627,
+        "contrast_adj": 1.05,
+        "mean_after": 113.0
+      }
     },
     {
       "name": "fingers",
@@ -143,7 +273,17 @@
       "src_row": 4,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 609,
+        "mean_before": 105.4,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 100.3
+      }
     },
     {
       "name": "legs",
@@ -153,7 +293,17 @@
       "src_row": 6,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 538,
+        "mean_before": 52.4,
+        "action": "gamma_corrected",
+        "gamma": 0.476,
+        "contrast_adj": 1.15,
+        "mean_after": 104.6
+      }
     },
     {
       "name": "feet",
@@ -163,17 +313,37 @@
       "src_row": 2,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1053,
+        "mean_before": 44.0,
+        "action": "gamma_corrected",
+        "gamma": 0.429,
+        "contrast_adj": 1.15,
+        "mean_after": 107.5
+      }
     },
     {
       "name": "primary",
       "out_row": 3,
       "out_col": 5,
-      "source_file": "dragitem19.tga",
-      "src_row": 4,
-      "src_col": 4,
+      "source_file": "dragitem3.tga",
+      "src_row": 1,
+      "src_col": 6,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 247,
+        "mean_before": 50.5,
+        "action": "gamma_corrected",
+        "gamma": 0.466,
+        "contrast_adj": 1.15,
+        "mean_after": 100.9
+      }
     },
     {
       "name": "ammo",
@@ -183,7 +353,17 @@
       "src_row": 5,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 281,
+        "mean_before": 135.9,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 130.6
+      }
     },
     {
       "name": "bag",
@@ -193,7 +373,8 @@
       "src_row": 4,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "backpack",
@@ -203,7 +384,8 @@
       "src_row": 6,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "satchel",
@@ -213,7 +395,8 @@
       "src_row": 4,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "pack",
@@ -223,7 +406,8 @@
       "src_row": 1,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "box",
@@ -233,7 +417,8 @@
       "src_row": 2,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "open_box",
@@ -243,7 +428,8 @@
       "src_row": 3,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "empty",
@@ -253,7 +439,8 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "empty",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "treasurechest",
@@ -263,7 +450,8 @@
       "src_row": 1,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "spellbook",
@@ -273,7 +461,8 @@
       "src_row": 2,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "lantern",
@@ -283,7 +472,8 @@
       "src_row": 2,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "spell",
@@ -293,7 +483,8 @@
       "src_row": 5,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "empty_row5_col6",
@@ -303,7 +494,8 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "empty",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_1",
@@ -313,7 +505,8 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_2",
@@ -323,7 +516,8 @@
       "src_row": 1,
       "src_col": 2,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_3",
@@ -333,7 +527,8 @@
       "src_row": 1,
       "src_col": 3,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_4",
@@ -343,7 +538,8 @@
       "src_row": 1,
       "src_col": 4,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_5",
@@ -353,7 +549,8 @@
       "src_row": 1,
       "src_col": 5,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_6",
@@ -363,7 +560,8 @@
       "src_row": 1,
       "src_col": 6,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "ear",
@@ -373,7 +571,17 @@
       "src_row": 5,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 671,
+        "mean_before": 182.4,
+        "action": "gamma_corrected",
+        "gamma": 2.248,
+        "contrast_adj": 0.9,
+        "mean_after": 139.6
+      }
     },
     {
       "name": "neck",
@@ -383,7 +591,17 @@
       "src_row": 5,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 360,
+        "mean_before": 108.9,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 102.8
+      }
     },
     {
       "name": "head",
@@ -393,7 +611,17 @@
       "src_row": 3,
       "src_col": 6,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 959,
+        "mean_before": 32.3,
+        "action": "gamma_corrected",
+        "gamma": 0.365,
+        "contrast_adj": 1.15,
+        "mean_after": 106.8
+      }
     },
     {
       "name": "face",
@@ -403,7 +631,17 @@
       "src_row": 2,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 752,
+        "mean_before": 64.0,
+        "action": "gamma_corrected",
+        "gamma": 0.545,
+        "contrast_adj": 1.15,
+        "mean_after": 106.4
+      }
     },
     {
       "name": "chest",
@@ -413,17 +651,37 @@
       "src_row": 5,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 839,
+        "mean_before": 144.8,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 141.7
+      }
     },
     {
       "name": "secondary",
       "out_row": 1,
       "out_col": 6,
-      "source_file": "dragitem25.tga",
-      "src_row": 2,
-      "src_col": 4,
+      "source_file": "dragitem21.tga",
+      "src_row": 1,
+      "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 888,
+        "mean_before": 53.2,
+        "action": "gamma_corrected",
+        "gamma": 0.481,
+        "contrast_adj": 1.15,
+        "mean_after": 106.2
+      }
     },
     {
       "name": "back",
@@ -433,7 +691,17 @@
       "src_row": 2,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 837,
+        "mean_before": 35.1,
+        "action": "gamma_corrected",
+        "gamma": 0.38,
+        "contrast_adj": 1.15,
+        "mean_after": 96.5
+      }
     },
     {
       "name": "arms",
@@ -443,7 +711,17 @@
       "src_row": 3,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 649,
+        "mean_before": 46.6,
+        "action": "gamma_corrected",
+        "gamma": 0.444,
+        "contrast_adj": 1.15,
+        "mean_after": 101.9
+      }
     },
     {
       "name": "shoulders",
@@ -453,7 +731,17 @@
       "src_row": 3,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 809,
+        "mean_before": 29.2,
+        "action": "gamma_corrected",
+        "gamma": 0.348,
+        "contrast_adj": 1.15,
+        "mean_after": 102.2
+      }
     },
     {
       "name": "wrist",
@@ -463,7 +751,17 @@
       "src_row": 5,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 508,
+        "mean_before": 133.0,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 128.4
+      }
     },
     {
       "name": "belt",
@@ -473,17 +771,37 @@
       "src_row": 4,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 926,
+        "mean_before": 50.3,
+        "action": "gamma_corrected",
+        "gamma": 0.464,
+        "contrast_adj": 1.15,
+        "mean_after": 104.4
+      }
     },
     {
       "name": "range",
       "out_row": 2,
       "out_col": 6,
-      "source_file": "dragitem8.tga",
-      "src_row": 4,
-      "src_col": 3,
+      "source_file": "dragitem3.tga",
+      "src_row": 3,
+      "src_col": 6,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 244,
+        "mean_before": 175.7,
+        "action": "gamma_corrected",
+        "gamma": 2.024,
+        "contrast_adj": 0.9,
+        "mean_after": 144.0
+      }
     },
     {
       "name": "hands",
@@ -493,7 +811,17 @@
       "src_row": 5,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1025,
+        "mean_before": 76.6,
+        "action": "gamma_corrected",
+        "gamma": 0.627,
+        "contrast_adj": 1.05,
+        "mean_after": 113.0
+      }
     },
     {
       "name": "fingers",
@@ -503,7 +831,17 @@
       "src_row": 4,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 609,
+        "mean_before": 105.4,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 100.3
+      }
     },
     {
       "name": "legs",
@@ -513,7 +851,17 @@
       "src_row": 6,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 538,
+        "mean_before": 52.4,
+        "action": "gamma_corrected",
+        "gamma": 0.476,
+        "contrast_adj": 1.15,
+        "mean_after": 104.6
+      }
     },
     {
       "name": "feet",
@@ -523,17 +871,37 @@
       "src_row": 2,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1053,
+        "mean_before": 44.0,
+        "action": "gamma_corrected",
+        "gamma": 0.429,
+        "contrast_adj": 1.15,
+        "mean_after": 107.5
+      }
     },
     {
       "name": "primary",
       "out_row": 3,
       "out_col": 5,
-      "source_file": "dragitem19.tga",
-      "src_row": 4,
-      "src_col": 4,
+      "source_file": "dragitem3.tga",
+      "src_row": 1,
+      "src_col": 6,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 247,
+        "mean_before": 50.5,
+        "action": "gamma_corrected",
+        "gamma": 0.466,
+        "contrast_adj": 1.15,
+        "mean_after": 100.9
+      }
     },
     {
       "name": "ammo",
@@ -543,7 +911,17 @@
       "src_row": 5,
       "src_col": 4,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 281,
+        "mean_before": 135.9,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 130.6
+      }
     },
     {
       "name": "bag",
@@ -553,7 +931,8 @@
       "src_row": 4,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "backpack",
@@ -563,7 +942,8 @@
       "src_row": 6,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "satchel",
@@ -573,7 +953,8 @@
       "src_row": 4,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "pack",
@@ -583,7 +964,8 @@
       "src_row": 1,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "box",
@@ -593,7 +975,8 @@
       "src_row": 2,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "open_box",
@@ -603,7 +986,8 @@
       "src_row": 3,
       "src_col": 2,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "empty",
@@ -613,7 +997,8 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "empty",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "treasurechest",
@@ -623,7 +1008,8 @@
       "src_row": 1,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "spellbook",
@@ -633,7 +1019,8 @@
       "src_row": 2,
       "src_col": 5,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "lantern",
@@ -643,7 +1030,8 @@
       "src_row": 2,
       "src_col": 3,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "spell",
@@ -653,7 +1041,8 @@
       "src_row": 5,
       "src_col": 1,
       "mode": "grayscale",
-      "has_tone_override": true
+      "has_tone_override": true,
+      "auto_tone": true
     },
     {
       "name": "empty_row5_col6",
@@ -663,7 +1052,8 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "empty",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_1",
@@ -673,7 +1063,8 @@
       "src_row": 1,
       "src_col": 1,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_2",
@@ -683,7 +1074,8 @@
       "src_row": 1,
       "src_col": 2,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_3",
@@ -693,7 +1085,8 @@
       "src_row": 1,
       "src_col": 3,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_4",
@@ -703,7 +1096,8 @@
       "src_row": 1,
       "src_col": 4,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_5",
@@ -713,7 +1107,8 @@
       "src_row": 1,
       "src_col": 5,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     },
     {
       "name": "logo_6",
@@ -723,7 +1118,8 @@
       "src_row": 1,
       "src_col": 6,
       "mode": "invert_impression",
-      "has_tone_override": false
+      "has_tone_override": false,
+      "auto_tone": true
     }
   ],
   "output_files": [

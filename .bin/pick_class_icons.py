@@ -74,12 +74,22 @@ CLASS_PROFILES = {
         'weights': {'astr': 3.0, 'asta': 2.0, 'aagi': 1.5, 'adex': 1.0,
                     'hp': 1.0, 'ac': 1.0, 'mana': 0.0},
         'description': 'Plate tank — highest AC, physical stats',
+        'weapon_hints': {
+            'primary': {'2H-Slash', '2H-Blunt', '1H-Slash'},
+            'secondary': {'Shield'},
+            'range': {'Archery'},
+        },
     },
     'Rogue': {
         'eq_classes': {'ROG'},
         'weights': {'aagi': 3.0, 'adex': 2.0, 'astr': 1.5, 'asta': 1.0,
                     'hp': 1.0, 'ac': 0.5, 'mana': 0.0},
         'description': 'Chain DPS — agility, dexterity, backstab',
+        'weapon_hints': {
+            'primary': {'Piercing', '1H-Slash'},
+            'secondary': {'Piercing', '1H-Slash'},
+            'range': {'Archery', 'Piercing'},
+        },
     },
     # ── LEATHER/CLOTH MELEE ──
     'Monk': {
@@ -87,6 +97,10 @@ CLASS_PROFILES = {
         'weights': {'aagi': 3.0, 'asta': 2.0, 'astr': 1.5, 'adex': 1.0,
                     'hp': 1.0, 'ac': 0.75, 'mana': 0.0},
         'description': 'Agility melee — cloth/leather, weight restrictions',
+        'weapon_hints': {
+            'primary': {'H2H', '1H-Blunt'},
+            'secondary': {'H2H', '1H-Blunt'},
+        },
     },
     # ── PLATE HYBRIDS ──
     'Paladin': {
@@ -94,18 +108,33 @@ CLASS_PROFILES = {
         'weights': {'asta': 2.5, 'astr': 2.0, 'awis': 1.5, 'acha': 1.0,
                     'hp': 1.0, 'mana': 0.75, 'ac': 1.0},
         'description': 'Plate healer/tank — stamina, wisdom, charisma',
+        'weapon_hints': {
+            'primary': {'2H-Slash', '1H-Slash', '1H-Blunt'},
+            'secondary': {'Shield'},
+            'range': {'Archery'},
+        },
     },
     'Shadowknight': {
         'eq_classes': {'SHD'},
         'weights': {'astr': 2.5, 'asta': 2.0, 'aint': 1.5, 'adex': 0.75,
                     'hp': 1.0, 'mana': 0.75, 'ac': 1.0},
         'description': 'Plate dark knight — strength, intelligence, lifetaps',
+        'weapon_hints': {
+            'primary': {'2H-Slash', '1H-Slash', '2H-Blunt'},
+            'secondary': {'Shield'},
+            'range': {'Archery'},
+        },
     },
     'Bard': {
         'eq_classes': {'BRD'},
         'weights': {'acha': 3.0, 'adex': 1.5, 'asta': 1.0, 'astr': 0.75, 'aagi': 0.75,
                     'hp': 1.0, 'mana': 0.5, 'ac': 0.75},
         'description': 'Plate support — charisma, dexterity, songs',
+        'weapon_hints': {
+            'primary': {'1H-Slash', '1H-Blunt', 'Piercing'},
+            'secondary': {'Percussion', 'String-Inst', 'Wind-Inst', 'Brass-Inst', 'Shield'},
+            'range': {'Percussion', 'String-Inst', 'Wind-Inst', 'Brass-Inst'},
+        },
     },
     # ── CHAIN HYBRIDS ──
     'Ranger': {
@@ -113,18 +142,31 @@ CLASS_PROFILES = {
         'weights': {'astr': 2.0, 'asta': 1.5, 'adex': 1.5, 'awis': 1.0, 'aagi': 1.0,
                     'hp': 1.0, 'mana': 0.5, 'ac': 0.75},
         'description': 'Chain melee/caster — bows, dual wield, nature',
+        'weapon_hints': {
+            'primary': {'1H-Slash', '2H-Slash'},
+            'secondary': {'1H-Slash', 'Piercing'},
+            'range': {'Archery'},
+        },
     },
     'Shaman': {
         'eq_classes': {'SHM'},
         'weights': {'awis': 3.0, 'asta': 2.0, 'acha': 1.0, 'astr': 0.75,
                     'mana': 1.0, 'hp': 0.75, 'ac': 0.75},
         'description': 'Chain priest — wisdom, slow, buffs, melee hybrid',
+        'weapon_hints': {
+            'primary': {'1H-Blunt', '2H-Blunt'},
+            'secondary': {'Shield'},
+        },
     },
     'Beastlord': {
         'eq_classes': {'BST'},
         'weights': {'asta': 2.0, 'astr': 2.0, 'awis': 1.5, 'adex': 1.0, 'aagi': 1.0,
                     'hp': 1.0, 'mana': 0.75, 'ac': 0.75},
         'description': 'Leather melee/priest — balanced physical + wisdom',
+        'weapon_hints': {
+            'primary': {'H2H', '1H-Blunt'},
+            'secondary': {'H2H', '1H-Blunt'},
+        },
     },
     # ── LEATHER/CLOTH PRIESTS ──
     'Cleric': {
@@ -132,12 +174,20 @@ CLASS_PROFILES = {
         'weights': {'awis': 3.0, 'asta': 1.5, 'acha': 1.0,
                     'mana': 1.0, 'hp': 0.75, 'ac': 0.75},
         'description': 'Plate priest — wisdom, healing, high AC',
+        'weapon_hints': {
+            'primary': {'1H-Blunt', '2H-Blunt'},
+            'secondary': {'Shield'},
+        },
     },
     'Druid': {
         'eq_classes': {'DRU'},
         'weights': {'awis': 3.0, 'asta': 1.5, 'aint': 0.75,
                     'mana': 1.0, 'hp': 0.75, 'ac': 0.5},
         'description': 'Leather priest — wisdom, nature, versatile',
+        'weapon_hints': {
+            'primary': {'1H-Blunt', '2H-Blunt'},
+            'secondary': {'Shield'},
+        },
     },
     # ── INTELLIGENCE CASTERS ──
     'Necromancer': {
@@ -145,24 +195,40 @@ CLASS_PROFILES = {
         'weights': {'aint': 3.0, 'asta': 1.5, 'astr': 0.5,
                     'mana': 1.0, 'hp': 0.75, 'ac': 0.25},
         'description': 'Cloth caster — intelligence, dark arts, pets',
+        'weapon_hints': {
+            'primary': {'1H-Blunt', 'Piercing', '2H-Blunt'},
+            'secondary': {'Light', 'Tome', 'Armor'},
+        },
     },
     'Wizard': {
         'eq_classes': {'WIZ'},
         'weights': {'aint': 3.0, 'asta': 1.5,
                     'mana': 1.0, 'hp': 0.5, 'ac': 0.25},
         'description': 'Cloth caster — intelligence, nukes, evocation',
+        'weapon_hints': {
+            'primary': {'1H-Blunt', '2H-Blunt', 'Piercing'},
+            'secondary': {'Light', 'Tome', 'Armor'},
+        },
     },
     'Magician': {
         'eq_classes': {'MAG'},
         'weights': {'aint': 3.0, 'asta': 1.5, 'acha': 0.5,
                     'mana': 1.0, 'hp': 0.5, 'ac': 0.25},
         'description': 'Cloth caster — intelligence, pets, conjuration',
+        'weapon_hints': {
+            'primary': {'1H-Blunt', '2H-Blunt', 'Piercing'},
+            'secondary': {'Light', 'Tome', 'Armor'},
+        },
     },
     'Enchanter': {
         'eq_classes': {'ENC'},
         'weights': {'aint': 2.5, 'acha': 2.5, 'asta': 1.0,
                     'mana': 1.0, 'hp': 0.5, 'ac': 0.25},
         'description': 'Cloth caster — intelligence, charisma, crowd control',
+        'weapon_hints': {
+            'primary': {'1H-Blunt', 'Piercing'},
+            'secondary': {'Light', 'Tome', 'Armor'},
+        },
     },
 }
 
@@ -191,16 +257,11 @@ MAX_HP = 500
 MAX_MANA = 500
 MAX_AC = 300
 
-# Armor slots where class-restricted items should be preferred over all-class.
-# If enough class-restricted items exist (>=2 icons with 2+ items), use only those.
-# Otherwise fall back to the full item pool.
-ARMOR_SLOTS = {'head', 'face', 'neck', 'shoulder', 'arms', 'back', 'wrist',
-               'hands', 'fingers', 'chest', 'legs', 'feet', 'waist'}
-
 # Bitmask for weapon/shield slots (primary|secondary|range). Items whose icon
 # ONLY appears on multi-slot items that also fit a weapon slot get penalised
-# when scored for an armor slot — e.g. a shield icon in the 'back' slot.
+# when scored for a non-weapon slot — e.g. a shield icon in the 'back' slot.
 WEAPON_SLOT_MASK = 8192 | 16384 | 2048  # primary | secondary | range
+WEAPON_SLOTS = {'primary', 'secondary', 'range', 'ammo'}
 
 # Max classes an item can equip and still count as "class-restricted"
 MAX_CLASSES_FOR_RESTRICTED = 6
@@ -569,18 +630,17 @@ def main():
             if not slot_items:
                 continue
 
-            # For armor slots, try class-restricted items first
+            # Prefer class-restricted items to drive icon variety across classes.
+            # Fall back to the full pool only when the restricted pool is empty
+            # or has just 1 icon (which means it can't differentiate this class).
             use_restricted = False
-            if slot_name in ARMOR_SLOTS:
-                restricted = [i for i in slot_items
-                              if bin(int(i['classes'])).count('1') <= MAX_CLASSES_FOR_RESTRICTED]
-                # Check if restricted pool has enough variety (2+ icons with 2+ items)
-                if restricted:
-                    icon_counts = Counter(int(i['icon']) for i in restricted)
-                    multi_item_icons = sum(1 for c in icon_counts.values() if c >= 2)
-                    if multi_item_icons >= 2:
-                        slot_items = restricted
-                        use_restricted = True
+            restricted = [i for i in slot_items
+                          if bin(int(i['classes'])).count('1') <= MAX_CLASSES_FOR_RESTRICTED]
+            if restricted:
+                icon_counts = Counter(int(i['icon']) for i in restricted)
+                if len(icon_counts) >= 2:
+                    slot_items = restricted
+                    use_restricted = True
 
             # Group by icon
             by_icon = defaultdict(list)
@@ -621,13 +681,31 @@ def main():
                 # Penalise icons where ALL items are multi-slot and also
                 # equippable in a weapon/shield slot. A shield icon picked
                 # for 'back' confuses players — they expect a cloak.
-                if slot_name in ARMOR_SLOTS:
+                if slot_name not in WEAPON_SLOTS:
                     all_also_weapon = all(
                         int(i['slots']) & WEAPON_SLOT_MASK
                         for i in icon_items
                     )
                     if all_also_weapon:
                         total_score *= 0.3   # heavy penalty
+
+                # Weapon-type hint bonus/penalty — nudge weapon slots
+                # toward item-types typical for this class archetype.
+                hint_types = profile.get('weapon_hints', {}).get(slot_name)
+                if hint_types and slot_name in WEAPON_SLOTS:
+                    typed = [i for i in icon_items if i.get('itemtype_str', '')]
+                    if typed:
+                        match_count = sum(
+                            1 for i in typed
+                            if i['itemtype_str'] in hint_types
+                        )
+                        match_ratio = match_count / len(typed)
+                        # 60%+ matching items → up to 1.5x boost
+                        # <20% matching → 0.6x penalty
+                        if match_ratio >= 0.6:
+                            total_score *= 1.0 + 0.5 * match_ratio
+                        elif match_ratio < 0.2:
+                            total_score *= 0.6
 
                 scored.append({
                     'icon': icon,
@@ -651,8 +729,27 @@ def main():
 
             results[class_name]['slots'][slot_name] = ranked[:10]  # top 10
 
-            # CSV rows — top 5 per class+slot
-            for rank, pick in enumerate(ranked[:5], 1):
+        # Cross-slot dedup: no two weapon slots should share the same
+        # top icon. Walk slots in priority order; when a collision is
+        # found, demote the duplicate in the lower-priority slot.
+        weapon_order = ['primary', 'secondary', 'range', 'ammo']
+        claimed_icons = {}   # icon -> slot_name (first wins)
+        for ws in weapon_order:
+            picks = results[class_name]['slots'].get(ws, [])
+            if not picks:
+                continue
+            while picks and picks[0]['icon'] in claimed_icons:
+                # Demote: rotate the duplicate to the end
+                demoted = picks.pop(0)
+                picks.append(demoted)
+            if picks:
+                claimed_icons[picks[0]['icon']] = ws
+            results[class_name]['slots'][ws] = picks
+
+        for slot_name in SLOT_ORDER:
+            # CSV rows — top 5 per class+slot (from stored results, post-dedup)
+            slot_picks = results[class_name]['slots'].get(slot_name, [])
+            for rank, pick in enumerate(slot_picks[:5], 1):
                 csv_rows.append({
                     'class': class_name,
                     'slot': slot_name,

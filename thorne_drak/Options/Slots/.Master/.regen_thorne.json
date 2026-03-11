@@ -11,7 +11,9 @@
       "output_file": "item_icons_thorne01.tga"
     }
   ],
+  "auto_tone": true,
   "default_tone": {
+    "_comment": "Fallback for items with explicit per-item tone overrides",
     "_contrast_comment": "1.0=unchanged, >1.0=more vivid/rich (bright brighter + dark darker), <1.0=flatter",
     "contrast": 1.10,
     "_brightness_comment": "1.0=unchanged, >1.0=lighter, <1.0=darker",
@@ -97,7 +99,7 @@
       "name": "range",
       "out_row": 2, "out_col": 6,
       "src_row": 2, "src_col": 5, "source_file": "dragitem3.tga",
-      "tone": {"contrast": 0.75, "brightness": 1.45}
+      "tone": {"contrast": 0.65, "brightness": 0.95}
     },
 
     {

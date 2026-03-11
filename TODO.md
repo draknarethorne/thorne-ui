@@ -2,7 +2,7 @@
 
 Development tracker for Thorne UI. For detailed implementation plans, see the versioned roadmaps in `.docs/`.
 
-**Current Branch:** `main`
+**Current Branch:** `feature/gauges-v0.8.0`
 **Maintainer:** Draknare Thorne
 
 ---
@@ -13,7 +13,7 @@ Development tracker for Thorne UI. For detailed implementation plans, see the ve
 | ------- | ----------- | ----------------------------------- | ----------------------------------------- |
 | v0.7.0  | ✅ Shipped  | Recast timers, stat icons, options  | [ROADMAP-v0.7.0](.docs/ROADMAP-v0.7.0.md) |
 | v0.7.5  | ✅ Shipped  | Slot art expansion, class overrides | [ROADMAP-v0.7.5](.docs/ROADMAP-v0.7.5.md) |
-| v0.8.0  | ⏳ Planning | Multi-color gauges, group displays  | [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) |
+| v0.8.0  | 🔨 Active  | Multi-color gauges, group displays  | [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) |
 | v1.0.0  | ⏳ Planning | Logo branding, docs, release polish | [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md) |
 
 ---

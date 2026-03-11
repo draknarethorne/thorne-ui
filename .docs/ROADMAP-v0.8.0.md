@@ -1,7 +1,8 @@
 # Thorne UI v0.8.0 Roadmap
 
 **Version:** 0.8.0-dev
-**Status:** Planning (Q2 2026)
+**Status:** 🔨 Active (Q2 2026)
+**Branch:** `feature/gauges-v0.8.0`
 **Previous:** [ROADMAP-v0.7.5.md](ROADMAP-v0.7.5.md)
 
 ---

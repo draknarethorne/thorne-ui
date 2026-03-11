@@ -7,9 +7,9 @@
       "name": "ear",
       "out_row": 1,
       "out_col": 1,
-      "src_row": 3,
+      "src_row": 6,
       "src_col": 6,
-      "source_file": "dragitem16.tga",
+      "source_file": "dragitem1.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -19,8 +19,8 @@
       "name": "neck",
       "out_row": 1,
       "out_col": 2,
-      "src_row": 4,
-      "src_col": 1,
+      "src_row": 3,
+      "src_col": 3,
       "source_file": "dragitem16.tga",
       "tone": {
         "contrast": 1.0,
@@ -43,7 +43,7 @@
       "name": "face",
       "out_row": 1,
       "out_col": 4,
-      "src_row": 6,
+      "src_row": 5,
       "src_col": 4,
       "source_file": "dragitem16.tga",
       "tone": {
@@ -55,9 +55,9 @@
       "name": "chest",
       "out_row": 1,
       "out_col": 5,
-      "src_row": 5,
+      "src_row": 6,
       "src_col": 6,
-      "source_file": "dragitem5.tga",
+      "source_file": "dragitem12.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -67,9 +67,9 @@
       "name": "secondary",
       "out_row": 1,
       "out_col": 6,
-      "src_row": 2,
-      "src_col": 5,
-      "source_file": "dragitem25.tga",
+      "src_row": 5,
+      "src_col": 1,
+      "source_file": "dragitem14.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -91,9 +91,9 @@
       "name": "arms",
       "out_row": 2,
       "out_col": 2,
-      "src_row": 1,
-      "src_col": 2,
-      "source_file": "dragitem18.tga",
+      "src_row": 2,
+      "src_col": 5,
+      "source_file": "dragitem5.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -103,9 +103,9 @@
       "name": "shoulders",
       "out_row": 2,
       "out_col": 3,
-      "src_row": 3,
-      "src_col": 4,
-      "source_file": "dragitem5.tga",
+      "src_row": 6,
+      "src_col": 3,
+      "source_file": "dragitem8.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -115,9 +115,9 @@
       "name": "wrist",
       "out_row": 2,
       "out_col": 4,
-      "src_row": 4,
-      "src_col": 5,
-      "source_file": "dragitem5.tga",
+      "src_row": 1,
+      "src_col": 6,
+      "source_file": "dragitem4.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -187,9 +187,9 @@
       "name": "feet",
       "out_row": 3,
       "out_col": 4,
-      "src_row": 1,
-      "src_col": 3,
-      "source_file": "dragitem8.tga",
+      "src_row": 5,
+      "src_col": 4,
+      "source_file": "dragitem2.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0
@@ -199,9 +199,9 @@
       "name": "primary",
       "out_row": 3,
       "out_col": 5,
-      "src_row": 3,
-      "src_col": 5,
-      "source_file": "dragitem22.tga",
+      "src_row": 6,
+      "src_col": 4,
+      "source_file": "dragitem9.tga",
       "tone": {
         "contrast": 1.0,
         "brightness": 1.0

@@ -237,7 +237,7 @@ ATK (10,40)              Cold (90,40)             INT (170,40)
 HP (10,70)               Magic (90,70)            WIS (170,70)
 MANA (10,100)            Poison (90,100)          AGI (170,100)
 STA (10,130)             Disease (90,130)         DEX (170,130)
-Weight (10,160)          Reserve (90,160)         CHA (170,160)
+Weight (10,160)          Bag (90,160)             CHA (170,160)
 ```
 
 Each icon:
@@ -271,7 +271,7 @@ Each icon:
 ### 6. Automatic Deployment
 
 After copyback, automatically copies to:
-- `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (testing directory)
+- `<TAKP>\uifiles\thorne_dev\stat_icons_thorne01.tga` (testing directory)
 
 **Benefits:**
 - No need to run separate sync script
@@ -300,7 +300,7 @@ Three columns of six icons each:
 | HP       | Magic    | WIS      |
 | MANA     | Poison   | AGI      |
 | STA      | Disease  | DEX      |
-| Weight   | Reserve  | CHA      |
+| Weight   | Bag      | CHA      |
 
 ### Abbreviations (In-Game)
 
@@ -318,7 +318,7 @@ CR     = Cold Resistance
 MR     = Magic Resistance
 PR     = Poison Resistance
 DR     = Disease Resistance
-RV     = Reserve (Dragon Resist)
+BG     = Bag Capacity
 STR    = Strength
 INT    = Intelligence
 WIS    = Wisdom
@@ -396,7 +396,7 @@ thorne_drak/
 
 **Cause:** Directory path or permissions issue
 
-**Fix:** Check that `C:\TAKP\uifiles\thorne_dev\` exists and is writable
+**Fix:** Check that `<TAKP>\uifiles\thorne_dev\` exists and is writable
 
 ---
 
@@ -470,7 +470,7 @@ Results in:
 - `thorne_drak/Options/Icons/Duxa/stat_icons_thorne01.tga` (with labels)  
 - `thorne_drak/Options/Icons/Thorne/stat_icons_thorne01.tga` (with labels)
 - `thorne_drak/stat_icons_thorne01.tga` (with labels - Thorne copy)
-- `C:\TAKP\uifiles\thorne_dev\stat_icons_thorne01.tga` (with labels - deployment)
+- `<TAKP>\uifiles\thorne_dev\stat_icons_thorne01.tga` (with labels - deployment)
 
 ### Generate all variants, then specific variant without labels
 

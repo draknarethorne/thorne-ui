@@ -176,7 +176,22 @@ When completing analysis task, return:
 
 - `.docs/STANDARDS.md` - Standards for comparison
 - `.docs/technical/EQTYPES.md` - EQType reference
-- `.development/initial-phases/PHASE-6-INVENTORY-WINDOWS/INVENTORY-REDESIGN-FINAL-PLAN.md` - Current work context
+- `.docs/ROADMAP-v*.md` - Active milestone roadmaps (check current focus)
+- `.development/ui_analysis/` - Existing community variant analysis docs
+- `.development/initial_phases/` - Completed phase documentation
+- `.development/archive/` - Superseded docs (preserved for history)
+- `DEVELOPMENT.md` - Project design philosophy and architecture
+- `TODO.md` - Lean roadmap table and shipped releases summary
+
+### Documentation Awareness
+
+When producing analysis reports:
+- Save analysis docs to `.development/ui_analysis/` or appropriate subdirectory
+- Reference `.docs/STANDARDS.md` patterns when comparing variants
+- Check `.development/` for prior analysis before duplicating work
+- Use `UPPERCASE-WITH-HYPHENS.md` naming for new analysis files
+- Run `python .bin/scan_links.py` if analysis includes cross-references to other docs
+- Note XML comment quality across variants (well-commented vs bare files) as it affects maintainability
 
 ## Output Format
 

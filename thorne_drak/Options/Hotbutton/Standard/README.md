@@ -204,5 +204,4 @@ To switch to other variants:
 ---
 
 **Part of**: [Thorne UI](../../../../README.md)  
-**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)  
-**Related Variants**: [Two Rows Inventory and Bags](../Two%20Rows%20Inventory%20and%20Bags/README.md), [Four Rows Inventory and Bags](../Four%20Rows%20Inventory%20and%20Bags/README.md)
+**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)

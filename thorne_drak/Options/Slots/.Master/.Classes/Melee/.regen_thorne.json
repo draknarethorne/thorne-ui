@@ -1,7 +1,0 @@
-{
-  "_comment": "Melee class item overrides. Inherits from .Master/.regen_thorne.json",
-  "_note": "Add item_overrides here for melee-specific armor/weapons. dragitem indices indicate which source items to use. brightness/contrast adjustments can be applied per item.",
-  "class_name": "Melee",
-  "item_overrides": [
-  ]
-}

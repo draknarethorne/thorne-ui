@@ -1,8 +1,9 @@
 {
   "variant": "Grid",
-  "variant_path": "C:\\thorne-ui\\thorne_drak\\Options\\Gauges\\Grid",
+  "variant_path": "C:\\Thorne-UI\\thorne_drak\\Options\\Gauges\\Grid",
   "source_base_found": true,
   "source_base_name": "gauge_inlay_thorne01",
+  "config_loaded": true,
   "generated": {
     "wide": [
       "gauge_inlay120_thorne01.tga",

@@ -4,27 +4,29 @@
 
 This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml).
 
-**Last Synced:** 2026-02-17  
-**Git Commit:** 36b97c1
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
 ## Available Variants
 
-- **[Large Icons/](Large Icons/)**    
-  `EQUI_SpellBookWnd.xml`
-
-- **[Small Icons/](Small Icons/)**  📄
+- **[Standard/](Standard/)**  📄
   `EQUI_SpellBookWnd.xml`
 
 - **[Thorne/](Thorne/)**    
+  `EQUI_SpellBookWnd.xml`
+
+- **[Thorne Large/](Thorne Large/)**    
   `EQUI_SpellBookWnd.xml`
 
 ---
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_SpellBookWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `EQUI_SpellBookWnd.xml`
 
 ## Metadata
 

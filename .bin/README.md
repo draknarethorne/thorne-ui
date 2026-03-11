@@ -113,7 +113,7 @@ python .bin/options_readme_checker.py --help
 .\sync-thorne-ui.bat
 ```
 
-Syncs entire `thorne_drak/` to `C:\TAKP\uifiles\thorne_dev\` for in-game testing.
+Syncs entire `thorne_drak/` to `<TAKP>\uifiles\thorne_dev\` for in-game testing.
 
 **Use when:** Testing full UI changes, ready to commit to git
 
@@ -123,11 +123,34 @@ Syncs entire `thorne_drak/` to `C:\TAKP\uifiles\thorne_dev\` for in-game testing
 
 ## Documentation Standards
 
-All scripts follow the pattern defined in [STANDARDS.md](STANDARDS.md):
+All scripts follow the pattern defined in [STANDARDS.md](../.docs/STANDARDS.md):
 
 - **Simple scripts**: One-liner + `--help` in README.md
 - **Complex scripts**: Individual `.md` file + `--help` in script
 - **Tool categories**: Grouped by function with cross-references
+
+---
+
+### Item Data Pipeline
+
+Scripts for extracting EQ item stats from the Quarm SQL dump and generating
+class-specific icon recommendations for equipment slot art.
+
+**Run order matters** — each step depends on the previous:
+
+```bash
+python .bin/extract_eq_items.py      # Step 1: SQL → .Items/.cache/eq_items.*
+python .bin/build_slot_reference.py  # Step 2: CSV → .Items/.cache/slot_icon_reference.*
+python .bin/pick_class_icons.py      # Step 3: CSV → .Items/.cache/class_icon_picks.* + HTML
+```
+
+- **extract_eq_items.py** — Parses Quarm SQL dump (from `.tmp/`) into item CSV/JSON with stats and dragitem mapping
+- **build_slot_reference.py** — Groups items by archetype and slot, counts icon frequency
+- **pick_class_icons.py** — Scores icons for 15 individual EQ classes using stat-priority weights, generates visual HTML
+
+**Prerequisite:** Quarm SQL dump in `.tmp/quarm_*.sql` (see [ITEM-DATA-PIPELINE.md](../.development/item_slots/ITEM-DATA-PIPELINE.md))
+
+📖 **For full pipeline documentation, see [.development/item_slots/ITEM-DATA-PIPELINE.md](../.development/item_slots/ITEM-DATA-PIPELINE.md)**
 
 ---
 
@@ -139,6 +162,9 @@ All scripts follow the pattern defined in [STANDARDS.md](STANDARDS.md):
 | Regen single gauge + test | `python .bin/regen_gauges.py Thorne` |
 | Regen all stat icons | `python .bin/regen_icons.py --all` |
 | Regen stat icons with labels | `python .bin/regen_icons.py --all --labels` |
+| Extract items from SQL dump | `python .bin/extract_eq_items.py` |
+| Build slot icon reference | `python .bin/build_slot_reference.py` |
+| Pick class icons + HTML | `python .bin/pick_class_icons.py` |
 | Full sync to TAKP | `.\sync-thorne-ui.bat` |
 | Fix TGA files | `python .bin/fix_tga_files.py <dir>` |
 | Get help | `python .bin/<script>.py --help` |

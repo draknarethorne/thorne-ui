@@ -1,6 +1,6 @@
 {
-  "file": "C:\\thorne-ui\\thorne_drak\\Options\\Icons\\Duxa\\stat_icons_thorne01.tga",
-  "source_dir": "C:\\thorne-ui\\thorne_drak\\Options\\Icons\\Duxa",
+  "file": "C:\\Thorne-UI\\thorne_drak\\Options\\Icons\\Duxa\\stat_icons_thorne01.tga",
+  "source_dir": "C:\\Thorne-UI\\thorne_drak\\Options\\Icons\\Duxa",
   "icons": {
     "AC": {
       "position": {
@@ -54,7 +54,7 @@
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spell_icons_thorne02.tga @ row 3, col 7"
+      "source": "spell_icons_thorne02.tga @ row 4, col 5"
     },
     "Fire": {
       "position": {
@@ -101,14 +101,14 @@
       "type": "extracted",
       "source": "spell_icons_thorne01.tga @ row 7, col 6"
     },
-    "Reserve": {
+    "Bag": {
       "position": {
         "x": 90,
         "y": 160
       },
       "size": "22x22",
       "type": "extracted",
-      "source": "spell_icons_thorne02.tga @ row 3, col 6"
+      "source": "spell_icons_thorne02.tga @ row 3, col 7"
     },
     "STR": {
       "position": {

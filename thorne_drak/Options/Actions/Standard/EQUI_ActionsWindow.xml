@@ -667,9 +667,9 @@
     </Size>
     <Text>STR</Text>
     <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
+      <R>70</R>
+      <G>180</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -712,9 +712,9 @@
     </Size>
     <Text>STA</Text>
     <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
+      <R>70</R>
+      <G>180</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -757,9 +757,9 @@
     </Size>
     <Text>AGI</Text>
     <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
+      <R>70</R>
+      <G>180</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -802,9 +802,9 @@
     </Size>
     <Text>DEX</Text>
     <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
+      <R>70</R>
+      <G>180</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -847,9 +847,9 @@
     </Size>
     <Text>WIS</Text>
     <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
+      <R>70</R>
+      <G>180</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -892,9 +892,9 @@
     </Size>
     <Text>CHA</Text>
     <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
+      <R>70</R>
+      <G>180</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -937,9 +937,9 @@
     </Size>
     <Text>INT</Text>
     <TextColor>
-      <R>50</R>
-      <G>160</G>
-      <B>250</B>
+      <R>70</R>
+      <G>180</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -1003,8 +1003,8 @@
     <Text>POISON</Text>
     <TextColor>
       <R>0</R>
-      <G>130</G>
-      <B>100</B>
+      <G>220</G>
+      <B>0</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -1043,9 +1043,9 @@
     </Size>
     <Text>MAGIC</Text>
     <TextColor>
-      <R>195</R>
-      <G>0</G>
-      <B>185</B>
+      <R>255</R>
+      <G>113</G>
+      <B>255</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -1084,8 +1084,8 @@
     </Size>
     <Text>DISEASE</Text>
     <TextColor>
-      <R>205</R>
-      <G>205</G>
+      <R>230</R>
+      <G>230</G>
       <B>0</B>
     </TextColor>
     <NoWrap>true</NoWrap>
@@ -1125,9 +1125,9 @@
     </Size>
     <Text>FIRE</Text>
     <TextColor>
-      <R>195</R>
-      <G>20</G>
-      <B>20</B>
+      <R>255</R>
+      <G>113</G>
+      <B>46</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -1166,9 +1166,9 @@
     </Size>
     <Text>COLD</Text>
     <TextColor>
-      <R>0</R>
-      <G>120</G>
-      <B>255</B>
+      <R>15</R>
+      <G>182</G>
+      <B>240</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -1188,8 +1188,8 @@
     <Text>ATK</Text>
     <TextColor>
       <R>255</R>
-      <G>165</G>
-      <B>0</B>
+      <G>185</G>
+      <B>30</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -1232,8 +1232,8 @@
     <Text>AC</Text>
     <TextColor>
       <R>255</R>
-      <G>165</G>
-      <B>0</B>
+      <G>185</G>
+      <B>30</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignLeft>true</AlignLeft>
@@ -1719,7 +1719,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>22</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1736,7 +1736,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>23</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1753,7 +1753,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>24</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1770,7 +1770,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>25</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1821,7 +1821,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>26</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1838,7 +1838,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>27</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1855,7 +1855,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>28</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -1872,7 +1872,7 @@
       <CX>44</CX>
       <CY>44</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>29</EQType>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -2520,8 +2520,8 @@
     <Text>AC</Text>
     <TextColor>
       <R>255</R>
-      <G>165</G>
-      <B>0</B>
+      <G>185</G>
+      <B>30</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignCenter>false</AlignCenter>
@@ -2565,8 +2565,8 @@
     <Text>ATK</Text>
     <TextColor>
       <R>255</R>
-      <G>165</G>
-      <B>0</B>
+      <G>185</G>
+      <B>30</B>
     </TextColor>
     <NoWrap>true</NoWrap>
     <AlignCenter>false</AlignCenter>

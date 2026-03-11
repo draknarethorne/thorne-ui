@@ -1,0 +1,11 @@
+{
+  "window": "Bazaar",
+  "filenames": [
+    "EQUI_BazaarWnd.xml",
+    "EQUI_BazaarSearchWnd.xml"
+  ],
+  "description": "Bazaar window Thorne configuration (2 file(s))",
+  "last_sync_date": "2026-03-04T17:15:45.735337",
+  "last_sync_commit": "31f21c4",
+  "in_sync": true
+}

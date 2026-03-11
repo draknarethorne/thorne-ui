@@ -211,7 +211,7 @@ This regenerates `stat_icons_thorne01.tga` in the variant directory without need
 
 ### 6. Automatic Deployment
 
-After copyback, copies to `C:\TAKP\uifiles\thorne_dev\` for immediate in-game testing.
+After copyback, copies to `<TAKP>\uifiles\thorne_dev\` for immediate in-game testing.
 
 ---
 
@@ -275,7 +275,7 @@ python .bin/regen_icons.py Thorne
 
 **Cause:** Directory path or permissions issue.
 
-**Fix:** Check that `C:\TAKP\uifiles\thorne_dev\` exists and is writable.
+**Fix:** Check that `<TAKP>\uifiles\thorne_dev\` exists and is writable.
 
 ---
 

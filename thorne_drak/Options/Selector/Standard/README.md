@@ -162,8 +162,6 @@ A vertical orientation variant is now available that features:
 - **Closebox enabled**: Easy window management
 - **Use case**: Players preferring vertical toolbar layout or with limited horizontal screen space
 
-See [Window Selector - Vertical](../Vertical/README.md) for full details.
-
 ---
 
 ## Testing Recommendations
@@ -196,7 +194,6 @@ See [Window Selector - Vertical](../Vertical/README.md) for full details.
 ## See Also
 
 - [Options Directory Overview](../../README.md)
-- [Window Selector - Vertical](../Vertical/README.md) (Vertical layout)
 
 ---
 

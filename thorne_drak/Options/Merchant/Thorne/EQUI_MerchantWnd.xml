@@ -20,7 +20,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6000</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -39,7 +39,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6001</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -58,7 +58,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6002</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -77,7 +77,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6003</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -96,7 +96,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6004</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -115,7 +115,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6005</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -134,7 +134,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6006</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -153,7 +153,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6007</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -172,7 +172,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6008</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -191,7 +191,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6009</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -210,7 +210,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6010</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -229,7 +229,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6011</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -248,7 +248,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6012</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -267,7 +267,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6013</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -286,7 +286,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6014</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -305,7 +305,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6015</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -324,7 +324,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6016</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -343,7 +343,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6017</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -362,7 +362,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6018</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -381,7 +381,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6019</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -400,7 +400,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6020</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -419,7 +419,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6021</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -438,7 +438,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6022</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -457,7 +457,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6023</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -476,7 +476,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6024</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -495,7 +495,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6025</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -514,7 +514,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6026</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -533,7 +533,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6027</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -552,7 +552,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6028</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -571,7 +571,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6029</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -590,7 +590,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6030</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -609,7 +609,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6031</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -628,7 +628,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6032</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -647,7 +647,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6033</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -666,7 +666,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6034</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -685,7 +685,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6035</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -704,7 +704,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6036</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -723,7 +723,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6037</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -742,7 +742,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6038</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -761,7 +761,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6039</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -780,7 +780,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6040</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -799,7 +799,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6041</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -818,7 +818,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6042</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -837,7 +837,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6043</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -856,7 +856,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6044</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -875,7 +875,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6045</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -894,7 +894,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6046</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -913,7 +913,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6047</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -932,7 +932,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6048</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -951,7 +951,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6049</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -970,7 +970,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6050</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -989,7 +989,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6051</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1008,7 +1008,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6052</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1027,7 +1027,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6053</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1046,7 +1046,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6054</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1065,7 +1065,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6055</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1084,7 +1084,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6056</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1103,7 +1103,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6057</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1122,7 +1122,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6058</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1141,7 +1141,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6059</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1160,7 +1160,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6060</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1179,7 +1179,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6061</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1198,7 +1198,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6062</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1217,7 +1217,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6063</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1236,7 +1236,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6064</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1255,7 +1255,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6065</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1274,7 +1274,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6066</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1293,7 +1293,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6067</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1312,7 +1312,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6068</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1331,7 +1331,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6069</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1350,7 +1350,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6070</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1369,7 +1369,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6071</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1388,7 +1388,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6072</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1407,7 +1407,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6073</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1426,7 +1426,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6074</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1445,7 +1445,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6075</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1464,7 +1464,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6076</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1483,7 +1483,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6077</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1502,7 +1502,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6078</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1521,7 +1521,7 @@
 			<CX>45</CX>
 			<CY>45</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>6079</EQType>
 		<ItemOffsetX>2</ItemOffsetX>
 		<ItemOffsetY>2</ItemOffsetY>
@@ -1591,7 +1591,7 @@
 		<Style_Transparent>false</Style_Transparent>
 		<Style_Checkbox>false</Style_Checkbox>
 		<ButtonDrawTemplate>
-			<Normal>A_RecessedBox</Normal>
+			<Normal>A_Slot_Empty</Normal>
 			<NormalDecal>A_DragItem</NormalDecal>
 		</ButtonDrawTemplate>
 		<DecalOffset>
@@ -1719,7 +1719,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>22</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1736,7 +1736,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>23</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1753,7 +1753,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>24</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1770,7 +1770,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>25</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1787,7 +1787,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>26</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1804,7 +1804,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>27</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1821,7 +1821,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>28</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -1838,7 +1838,7 @@
 			<CX>40</CX>
 			<CY>40</CY>
 		</Size>
-		<Background>A_RecessedBox</Background>
+		<Background>A_Slot_Empty</Background>
 		<EQType>29</EQType>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -3692,7 +3692,7 @@
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
-		<DrawTemplate>WDT_Rounded</DrawTemplate>
+		<DrawTemplate>WDT_RoundedDark</DrawTemplate>
 		<Style_Titlebar>true</Style_Titlebar>
 		<Style_Closebox>true</Style_Closebox>
 		<Style_Minimizebox>false</Style_Minimizebox>

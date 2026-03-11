@@ -2,11 +2,11 @@
 
 Implementation details, architecture decisions, and development roadmap for the Thorne UI project.
 
-**Version**: 0.7.0-dev  
-**Last Updated**: February 18, 2026  
+**Version**: 0.7.3  
+**Last Updated**: March 2026  
 **Maintainer**: Draknare Thorne
 
-**Quick Links**: [Standards](.docs/STANDARDS.md) | [Phases](.development/initial-phases/) | [Technical References](.docs/technical/) | [TODO](TODO.md) | [Releases Guide](.docs/releases/RELEASES.md)
+**Quick Links**: [Standards](.docs/STANDARDS.md) | [Phases](.development/initial_phases/) | [Technical References](.docs/technical/) | [TODO](TODO.md) | [Releases Guide](.docs/releases/RELEASES.md) | [Roadmaps](.docs/)
 
 ---
 
@@ -74,26 +74,27 @@ As we continue expanding Thorne UI, we're committed to:
 
 ---
 
-## 🎯 Current Milestone Focus (v0.7.0)
+## 🎯 Current Milestone
 
-Primary objective is to complete the remaining v0.7.0 items cleanly without unnecessary scope expansion.
+**Active:** v0.7.5 — Slot art expansion and class item overrides  
+**Branch:** `feature/class-slot-images-v0.7.5`
 
-### Completed in current cycle
+### v0.7.0 through v0.7.3 — ✅ Shipped
 
-- ✅ Stat icon pipeline and variant regeneration
-- ✅ Target casting name and attack delay/tick display work
-- ✅ Spellbook/cast window control consistency pass
-- ✅ Thorne-first options sync workflow (`options_thorne_sync.py` + `sync-option-thorne.bat`)
+All v0.7.0 features shipped (spell recast timers, stat icons, target enhancements, options modernization). Post-release iterations v0.7.1–v0.7.3 added HotButton 14-stat layout, slot art expansion across Actions/Inspect windows, logo atlas generation with 7 lighting modes, and tab icon branding.
 
-### Remaining v0.7.0 priorities
+See [ROADMAP-v0.7.0](.docs/ROADMAP-v0.7.0.md) and [ROADMAP-v0.7.5](.docs/ROADMAP-v0.7.5.md) for details.
 
-- ⏳ Spell recast timers on Cast window (global + per-gem experience)
-- ⏳ Final low/medium-effort Nillipuss-inspired quality-of-life items
-- ⏳ Final documentation consistency pass before v0.7.0 release prep
+### Current focus (v0.7.5)
 
-### Scope note
+- ⏳ Populate class-specific `item_overrides` in slot configs (Caster, Melee, Hybrid, Thorne)
+- ⏳ Regenerate slot atlases (4 classes × 7 themes = 28 outputs)
+- ⏳ Visual verification and in-game testing
 
-Spellbook Meditate button is currently visual-only and not active; it should not be treated as a shipped v0.7.0 feature until functional.
+### Upcoming milestones
+
+- **v0.8.0** — Multi-color health gauges, enhanced group displays → [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md)
+- **v1.0.0** — Logo branding, documentation pass, release polish → [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md)
 
 ---
 
@@ -127,6 +128,7 @@ Spellbook Meditate button is currently visual-only and not active; it should not
 ### Standard Workflow
 
 1. **Check if file exists in thorne_drak**
+
    ```bash
    ls thorne_drak/EQUI_*.xml
    ```
@@ -137,12 +139,15 @@ Spellbook Meditate button is currently visual-only and not active; it should not
    - Prevents loss of prior work
 
 3. **If file does NOT exist**: Copy from default and modify
+
    ```bash
    cp default/EQUI_WindowName.xml thorne_drak/
    ```
+
    - Add to `EQUI.xml` include list if needed
 
 4. **Test in-game**
+
    ```bash
    /loadskin thorne_drak
    ```
@@ -165,9 +170,10 @@ Spellbook Meditate button is currently visual-only and not active; it should not
 - **Quick Hit Guidelines**: What qualifies as a quick hit vs. a phase
 
 For small changes (color adjustments, minor layout tweaks, small bug fixes), add them to the **Quick Wins** section of TODO.md with:
+
 - **Description**: What needs to change
 - **Reason**: Why this improves the UI
-- **Affected Files**: Which EQUI_*.xml files need updates
+- **Affected Files**: Which EQUI\_\*.xml files need updates
 - **Testing**: How to verify the change
 
 **When to use Quick Wins**: If it takes < 30 minutes to implement, it's a quick win, not a phase.
@@ -181,11 +187,13 @@ For small changes (color adjustments, minor layout tweaks, small bug fixes), add
 **Problem**: Certain window types participate in client-controlled transparency/fading.
 
 **Windows that FADE** (avoid for critical UI):
+
 - ✗ ActionsWindow (includes buttons/slots with items)
 - ✗ MerchantWnd (item slots fade)
 - ✗ Container windows (bags)
 
 **Windows that DON'T FADE** (safe for core UI):
+
 - ✓ HotButtonWnd (Hotbar)
 - ✓ PotionBeltWnd
 - ✓ PlayerWindow
@@ -197,6 +205,13 @@ For small changes (color adjustments, minor layout tweaks, small bug fixes), add
 - ✓ CompassWnd
 
 **Workaround**: Use `/viewport` to position and size windows; use `Alt+Shift+T` to control transparency globally.
+
+**Subwindow composition rule (verified Feb 2026):**
+
+- Child controls (including `InvSlot` and button visuals) may appear dim/faded when placed inside a parent `<Screen>` with `Style_Transparent=true`.
+- Child `InvSlot` settings like `<Style_Transparent>false</Style_Transparent>` do **not** reliably prevent this inherited fade behavior.
+- In testing, non-transparent wrapper subwindows (`Style_Transparent=false`) inside repurposed `MusicPlayerWnd` produced client instability.
+- Preferred safe pattern for non-faded inventory visuals: place slots directly in the main window `<Pieces>` instead of inside wrapper subwindows.
 
 ### Keybinding Limitations
 
@@ -218,6 +233,13 @@ For small changes (color adjustments, minor layout tweaks, small bug fixes), add
 - **Resize behavior**: Both axes scale when dragging; be careful with horizontal limits
 - **Global positioning**: UI elements are positioned globally; same element name = same position across all tabs
 
+### NoteWindow Hard Limitation
+
+- `NoteWindow` is client-coupled and expects specific child behavior.
+- Repurposing it for custom controls (stats, bags, experimental widgets) causes unreliable behavior and UI errors.
+- Project rule: keep `thorne_drak/EQUI_NoteWindow.xml` at the standard implementation and do not maintain Note options variants.
+- For experimentation, use designated sandbox windows instead of `NoteWindow`.
+
 ---
 
 ## 🎨 Architecture Decisions & Lessons Learned
@@ -233,6 +255,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
 **Impact**: Cannot reuse InvSlot/Label across tabs if different positions are needed.
 
 **Solution**: Duplicate elements with unique names
+
 - Example: `MW_Primary` (Equipment tab) vs `MW_Bags_Primary` (Bags tab)
 - Allows independent positioning per tab
 
@@ -247,6 +270,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
 ### Class Animation Implementation
 
 **Correct Pattern**:
+
 ```xml
 <StaticAnimation item="ClassAnim">
   <Animation>A_ClassAnim01</Animation>
@@ -263,6 +287,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
 **Impact**: ToT display requires a separate `EQUI_TargetOfTargetWindow.xml` file AND EQUI.xml modification.
 
 **Solution**: Create dedicated ToT window file:
+
 - File: `EQUI_TargetOfTargetWindow.xml`
 - Screen item: `<Screen item="TargetOfTargetWindow">`
 - EQType 27: ToT HP Gauge
@@ -272,7 +297,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
   - Custom UI folders need their own EQUI.xml to load ToT window
 - Independent window - can be positioned/hidden separately
 
-**See**: [EQUI_TargetOfTargetWindow.xml](thorne_drak/EQUI_TargetOfTargetWindow.xml) and [EQUI.xml](thorne_drak/EQUI.xml) for implementation example.
+**See**: [EQUI_TargetOfTargetWindow.xml](.default/EQUI_TargetOfTargetWindow.xml) and [EQUI.xml](.default/EQUI.xml) for implementation example.
 
 **See**: [STANDARDS.md - Implementation Patterns](.docs/STANDARDS.md#implementation-patterns) for comprehensive architectural pattern reference including these discoveries plus Options Directory pattern, color palette, and gauge templates.
 
@@ -282,7 +307,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
 
 The numbered phase plan was the original scaffolding for early/mid project delivery and is now treated as historical planning context.
 
-- Archived reference: [.development/initial-phases/](.development/initial-phases/)
+- Archived reference: [.development/initial_phases/](.development/initial_phases/)
 - Use this for historical rationale and implementation chronology, not day-to-day prioritization.
 
 ### Current planning model
@@ -307,6 +332,7 @@ Current execution is now driven by:
 ### Community Features
 
 #### Damage Meter / DPS Tracking
+
 - Parse combat messages for damage calculations
 - Display running DPS counter
 - Track pet vs. player damage
@@ -314,6 +340,7 @@ Current execution is now driven by:
 - **Status**: Requires DLL injection (Zeal integration)
 
 #### Spell Timers / Buff Tracker
+
 - Track spell recast times visually
 - Display buff remaining duration
 - Warn on buff expiration
@@ -321,6 +348,7 @@ Current execution is now driven by:
 - **Status**: Possible but requires robust spell parsing
 
 #### Chat Enhancements
+
 - Customizable chat window tabs
 - Damage/heal/miss highlighting
 - Spell casting notifications
@@ -328,6 +356,7 @@ Current execution is now driven by:
 - **Status**: Might be achievable via existing chat system
 
 #### Loot Log / Drop Tracker
+
 - Track items looted from mobs
 - Highlight valuable drops
 - Zone-specific drop history
@@ -337,12 +366,14 @@ Current execution is now driven by:
 ### Advanced UI Features
 
 #### Raid Awareness HUD
+
 - Frame rate counter, network lag display
 - Group member status (HP bars, distance, facing)
 - Target threat indicator
 - **Status**: Requires Zeal integration; helpful for organized groups
 
 #### Keybind Manager
+
 - Visual UI for rebinding keys
 - Macro editor with save/load profiles
 - Conflict detection
@@ -377,7 +408,6 @@ For comprehensive technical documentation, see:
 
 ## 🐛 Troubleshooting
 
-
 ### UI Not Loading
 
 - **Check**: Is `thorne_drak/EQUI.xml` present?
@@ -405,36 +435,39 @@ For comprehensive technical documentation, see:
 
 ## 📚 Essential Slash Commands
 
-| Command | Purpose |
-|---------|---------|
-| `/loadskin thorne_drak` | Reload UI with thorne_drak skin |
-| `/loadskin thorne_drak 1` | Force reload (clears cache) |
-| `/viewport save` | Save window positions |
-| `/viewport load` | Load saved positions |
-| `/viewport reset` | Reset all windows to defaults |
-| `/hotbutton` | Toggle hotbar window |
-| `/potionbelt` | Toggle potion belt window |
-| `/inventory` | Toggle inventory window |
-| `/charinfo` | Toggle character info (player stats) |
-| `/actions` | Toggle actions window |
+| Command                   | Purpose                              |
+| ------------------------- | ------------------------------------ |
+| `/loadskin thorne_drak`   | Reload UI with thorne_drak skin      |
+| `/loadskin thorne_drak 1` | Force reload (clears cache)          |
+| `/viewport save`          | Save window positions                |
+| `/viewport load`          | Load saved positions                 |
+| `/viewport reset`         | Reset all windows to defaults        |
+| `/hotbutton`              | Toggle hotbar window                 |
+| `/potionbelt`             | Toggle potion belt window            |
+| `/inventory`              | Toggle inventory window              |
+| `/charinfo`               | Toggle character info (player stats) |
+| `/actions`                | Toggle actions window                |
 
 ---
 
 ## 🎓 Best Practices
 
 ### Code Quality
+
 - ✓ Use `multi_replace_string_in_file` for bulk edits (safer than manual)
 - ✓ Always include 3-5 lines of context when editing XML
 - ✓ Test with `/loadskin thorne_drak 1` after every change
 - ✓ Validate XML: ensure well-formed before committing
 
 ### Git Workflow
+
 - ✓ Use feature branches: `feature/window-name-enhancement`
 - ✓ Commit frequently with descriptive messages
 - ✓ Reference specific changes: files modified, values changed, reasoning
 - ✓ Include architectural decisions in commit messages
 
 ### Development
+
 - ✓ Reference working UIs (duxa, default, Inventory) for patterns
 - ✓ Use consistent naming conventions (e.g., `MW_Bags_*` prefix)
 - ✓ Test edge cases: minimum window sizes, max values, text overflow
@@ -471,13 +504,14 @@ Thorne UI uses GitHub Releases to distribute packaged versions of thorne_drak. T
 ### Quick Release Process
 
 1. **Prepare for release:**
-  Update version number in README.md Version History section, ensure all changes are committed and pushed to your release branch, and test `thorne_drak` in-game.
+   Update version number in README.md Version History section, ensure all changes are committed and pushed to your release branch, and test `thorne_drak` in-game.
 
 1. **Create and push a version tag:**
+
    ```bash
-  git push origin <active-branch>
-  git tag -a v0.6.5 -m "Release v0.6.5: Brief description"
-  git push origin v0.6.5
+   git push origin <active-branch>
+   git tag -a v0.6.5 -m "Release v0.6.5: Brief description"
+   git push origin v0.6.5
    ```
 
 1. **Automated workflow:**
@@ -504,6 +538,7 @@ Thorne UI uses GitHub Releases to distribute packaged versions of thorne_drak. T
 For complete instructions, troubleshooting, and best practices, see **[Releases Guide](.docs/releases/RELEASES.md)**.
 
 Topics covered:
+
 - Version numbering (semantic versioning)
 - Release checklist
 - Manual vs. automated releases

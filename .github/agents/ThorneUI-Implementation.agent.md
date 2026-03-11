@@ -132,15 +132,44 @@ Specialized agent for complex implementation tasks that require:
 </Gauge>
 ```
 
+### SIDL Gotchas (Must Know)
+
+1. **AutoStretch** — `<AutoStretch>true</AutoStretch>` auto-sizes window height based on child Pieces count. Don't hardcode `<Size>` height when AutoStretch is active (e.g., Container bags use this for 4-10 slot variants from one template).
+2. **Definition Order = Z-Order** — Elements defined later render on top. Put backgrounds before foreground elements.
+3. **Elements Outside Parent Screen** — InvSlot/Gauge/Label are defined as siblings OUTSIDE the main Screen, then pulled in via `<Pieces>`. The Screen contains layout; elements live above it.
+4. **EQ Client Fallback** — Missing `EQUI_*.xml` falls back to `default/`. Only override files you intend to change.
+5. **Zeal EQTypes** — EQTypes 69-73, 80-86 are Zeal-only. Note Zeal dependency in comments when using these.
+
 ## Task Execution Process
 
-1. **Read current state**: Load existing XML structure
-2. **Plan modifications**: Calculate new coordinates and hierarchy
-3. **Create todo list**: Break into logical sub-tasks
-4. **Implement changes**: Use multi_replace_string_in_file for efficiency
-5. **Validate XML**: Check syntax and structure
-6. **Test considerations**: Suggest in-game testing approach
-7. **Return summary**: Document all changes made
+1. **Check branch**: Verify current git branch is appropriate for the work
+2. **Consult standards**: Read `.docs/STANDARDS.md` for relevant patterns before editing
+3. **Read current state**: Load existing XML structure
+4. **Plan modifications**: Calculate new coordinates and hierarchy
+5. **Create todo list**: Break into logical sub-tasks
+6. **Implement changes**: Use multi_replace_string_in_file for efficiency
+7. **Add/update XML comments**: Maintain zone dividers, slot identifiers, inline explanations (see below)
+8. **Validate XML**: Check syntax and structure
+9. **Test considerations**: Suggest in-game testing approach
+10. **Return summary**: Document all changes made
+
+### XML Commenting Requirements
+
+**When modifying any XML file, maintain and add comments per `.docs/STANDARDS.md`:**
+
+- **Zone/section dividers**: Use `<!-- === ZONE NAME === -->` banners for major sections
+- **Slot identifiers**: Add `<!-- IS_SLOT_NAME  EQType -->` before equipment/inventory slots
+- **Inline explanations**: Document non-obvious calculations (`<!-- 41px step = 40 + 1px gap -->`)
+- **Commented-out alternatives**: Explain why elements are disabled
+- **Don't strip existing comments**: Preserve comments from previous work even when restructuring
+
+**When editing poorly-commented files**, add comments to the sections you touch.
+
+### Commit Message Format
+
+Use conventional commits: `<type>(<scope>): <description>`
+- `feat(inventory)`, `fix(container)`, `refactor(player)`, `style(buff)`, etc.
+- Include a body for multi-file commits listing key changes
 
 ## Quality Checks (When Applicable)
 
@@ -190,7 +219,22 @@ manage_todo_list(operation: "write", todoList: [
 
 - `.docs/STANDARDS.md` - Layout patterns, color codes, spacing rules
 - `.docs/technical/EQTYPES.md` - EQType reference for all elements
-- `.development/initial-phases/PHASE-6-INVENTORY-WINDOWS/INVENTORY-REDESIGN-FINAL-PLAN.md` - Implementation specs
+- `.docs/ROADMAP-v*.md` - Active milestone specs and completed items
+- `.development/` - Phase docs, analysis, and working notes
+- `DEVELOPMENT.md` - Project design philosophy and architecture
+- `TODO.md` - Lean roadmap table and shipped releases summary
+
+### Documentation Updates After Implementation
+
+**When implementation work warrants it, update these docs:**
+
+1. **README.md** — Update "What We're Working On" checkmarks if completing a listed feature
+2. **Active ROADMAP** (`.docs/ROADMAP-v*.md`) — Check off completed items in the current milestone
+3. **Options READMEs** — When creating or modifying Options variants, update `thorne_drak/Options/<Category>/README.md`
+4. **`.development/`** — Save working notes, analysis, or implementation specs to the relevant subdirectory
+5. **Link validation** — Run `python .bin/scan_links.py` if any markdown was modified
+
+**Do NOT update VERSION file or tag releases** — that's a separate release workflow step, not part of implementation.
 
 ## Output Format
 

@@ -16,6 +16,7 @@ desktop.ini
 .archive/
 .reports/
 .tmp/
+.cache/
 
 # Python environment and dependencies
 .venv/

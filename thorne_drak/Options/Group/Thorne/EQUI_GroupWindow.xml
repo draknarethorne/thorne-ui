@@ -137,9 +137,9 @@
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>51</R>
-				<G>192</G>
-				<B>51</B>
+				<R>170</R>
+				<G>60</G>
+				<B>170</B>
 		</FillTint>
 		<LinesFillTint>
 				<R>220</R>
@@ -266,9 +266,9 @@
 		<Style_Transparent>true</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>51</R>
-				<G>192</G>
-				<B>51</B>
+				<R>170</R>
+				<G>60</G>
+				<B>170</B>
 		</FillTint>
 		<LinesFillTint>
 				<R>220</R>
@@ -395,9 +395,9 @@
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>51</R>
-				<G>192</G>
-				<B>51</B>
+				<R>170</R>
+				<G>60</G>
+				<B>170</B>
 		</FillTint>
 		<LinesFillTint>
 				<R>220</R>
@@ -524,9 +524,9 @@
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>51</R>
-				<G>192</G>
-				<B>51</B>
+				<R>170</R>
+				<G>60</G>
+				<B>170</B>
 		</FillTint>
 		<LinesFillTint>
 				<R>220</R>
@@ -653,9 +653,9 @@
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>51</R>
-				<G>192</G>
-				<B>51</B>
+				<R>170</R>
+				<G>60</G>
+				<B>170</B>
 		</FillTint>
 		<LinesFillTint>
 				<R>220</R>

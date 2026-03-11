@@ -3,9 +3,9 @@ name: ThorneUI
 description: 'Expert agent for EverQuest TAKP/P2002 UI file customizations and modifications. Specializes in XML-based UI configurations, layout optimization, and custom UI development for classic EverQuest (2002 era).'
 user-invokable: true
 disable-model-invocation: false
-model: Auto (copilot)
+model: Claude Opus 4.6 (copilot)
 target: vscode
-tools: ['vscode/getProjectSetupInfo', 'vscode/installExtension', 'vscode/newWorkspace', 'vscode/openSimpleBrowser', 'vscode/runCommand', 'vscode/askQuestions', 'vscode/vscodeAPI', 'vscode/extensions', 'execute/runNotebookCell', 'execute/testFailure', 'execute/getTerminalOutput', 'execute/awaitTerminal', 'execute/killTerminal', 'execute/createAndRunTask', 'execute/runInTerminal', 'execute/runTests', 'read/getNotebookSummary', 'read/problems', 'read/readFile', 'read/terminalSelection', 'read/terminalLastCommand', 'agent/runSubagent', 'edit/createDirectory', 'edit/createFile', 'edit/createJupyterNotebook', 'edit/editFiles', 'edit/editNotebook', 'search/changes', 'search/codebase', 'search/fileSearch', 'search/listDirectory', 'search/searchResults', 'search/textSearch', 'search/usages', 'web/fetch', 'github/add_comment_to_pending_review', 'github/add_issue_comment', 'github/assign_copilot_to_issue', 'github/create_branch', 'github/create_or_update_file', 'github/create_pull_request', 'github/create_repository', 'github/delete_file', 'github/fork_repository', 'github/get_commit', 'github/get_file_contents', 'github/get_label', 'github/get_latest_release', 'github/get_me', 'github/get_release_by_tag', 'github/get_tag', 'github/get_team_members', 'github/get_teams', 'github/issue_read', 'github/issue_write', 'github/list_branches', 'github/list_commits', 'github/list_issue_types', 'github/list_issues', 'github/list_pull_requests', 'github/list_releases', 'github/list_tags', 'github/merge_pull_request', 'github/pull_request_read', 'github/pull_request_review_write', 'github/push_files', 'github/request_copilot_review', 'github/search_code', 'github/search_issues', 'github/search_pull_requests', 'github/search_repositories', 'github/search_users', 'github/sub_issue_write', 'github/update_pull_request', 'github/update_pull_request_branch', 'pylance-mcp-server/pylanceDocuments', 'pylance-mcp-server/pylanceFileSyntaxErrors', 'pylance-mcp-server/pylanceImports', 'pylance-mcp-server/pylanceInstalledTopLevelModules', 'pylance-mcp-server/pylanceInvokeRefactoring', 'pylance-mcp-server/pylancePythonEnvironments', 'pylance-mcp-server/pylanceRunCodeSnippet', 'pylance-mcp-server/pylanceSettings', 'pylance-mcp-server/pylanceSyntaxErrors', 'pylance-mcp-server/pylanceUpdatePythonEnvironment', 'pylance-mcp-server/pylanceWorkspaceRoots', 'pylance-mcp-server/pylanceWorkspaceUserFiles', 'vscode.mermaid-chat-features/renderMermaidDiagram', 'memory', 'github.vscode-pull-request-github/issue_fetch', 'github.vscode-pull-request-github/suggest-fix', 'github.vscode-pull-request-github/searchSyntax', 'github.vscode-pull-request-github/doSearch', 'github.vscode-pull-request-github/renderIssues', 'github.vscode-pull-request-github/activePullRequest', 'github.vscode-pull-request-github/openPullRequest', 'ms-python.python/getPythonEnvironmentInfo', 'ms-python.python/getPythonExecutableCommand', 'ms-python.python/installPythonPackage', 'ms-python.python/configurePythonEnvironment', 'todo']
+tools: [vscode/getProjectSetupInfo, vscode/installExtension, vscode/newWorkspace, vscode/openSimpleBrowser, vscode/runCommand, vscode/askQuestions, vscode/vscodeAPI, vscode/extensions, execute/runNotebookCell, execute/testFailure, execute/getTerminalOutput, execute/awaitTerminal, execute/killTerminal, execute/createAndRunTask, execute/runInTerminal, execute/runTests, read/getNotebookSummary, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, github/add_comment_to_pending_review, github/add_issue_comment, github/assign_copilot_to_issue, github/create_branch, github/create_or_update_file, github/create_pull_request, github/create_repository, github/delete_file, github/fork_repository, github/get_commit, github/get_file_contents, github/get_label, github/get_latest_release, github/get_me, github/get_release_by_tag, github/get_tag, github/get_team_members, github/get_teams, github/issue_read, github/issue_write, github/list_branches, github/list_commits, github/list_issue_types, github/list_issues, github/list_pull_requests, github/list_releases, github/list_tags, github/merge_pull_request, github/pull_request_read, github/pull_request_review_write, github/push_files, github/request_copilot_review, github/search_code, github/search_issues, github/search_pull_requests, github/search_repositories, github/search_users, github/sub_issue_write, github/update_pull_request, github/update_pull_request_branch, pylance-mcp-server/pylanceDocuments, pylance-mcp-server/pylanceFileSyntaxErrors, pylance-mcp-server/pylanceImports, pylance-mcp-server/pylanceInstalledTopLevelModules, pylance-mcp-server/pylanceInvokeRefactoring, pylance-mcp-server/pylancePythonEnvironments, pylance-mcp-server/pylanceRunCodeSnippet, pylance-mcp-server/pylanceSettings, pylance-mcp-server/pylanceSyntaxErrors, pylance-mcp-server/pylanceUpdatePythonEnvironment, pylance-mcp-server/pylanceWorkspaceRoots, pylance-mcp-server/pylanceWorkspaceUserFiles, vscode.mermaid-chat-features/renderMermaidDiagram, memory, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/suggest-fix, github.vscode-pull-request-github/searchSyntax, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/renderIssues, github.vscode-pull-request-github/activePullRequest, github.vscode-pull-request-github/openPullRequest, ms-python.python/getPythonEnvironmentInfo, ms-python.python/getPythonExecutableCommand, ms-python.python/installPythonPackage, ms-python.python/configurePythonEnvironment, todo]
 argument-hint: 'UI component or window to customize'
 ---
 
@@ -40,12 +40,52 @@ Assist with development, customization, and modification of EverQuest UI files f
   - Zeal client extensions (EQTypes 69-73, 80-86)
   
 - **`DEVELOPMENT.md`** - Project roadmap and architecture decisions
-  - Phase breakdown, implementation patterns, lessons learned
+  - Design philosophy, implementation patterns, architecture notes
   
-- **`.development/initial-phases/`** - Detailed phase documentation
-  - PHASE-3.9-INVENTORY-REDESIGN.md - Completed Phase 3.9 (v0.6.0 inventory redesign, see `.development/initial-phases/`)
-  - PHASE-6-INVENTORY-WINDOWS/ - Archived inventory research (Feb 4-16, 2026, analysis of community UI variants)
-  - Analysis documents for community UI comparisons
+- **Versioned Roadmaps** (`.docs/ROADMAP-v*.md`):
+  - `ROADMAP-v0.7.0.md` — Shipped (spell recast timers, stat icons, options)
+  - `ROADMAP-v0.7.5.md` — Active milestone (slot class overrides)
+  - `ROADMAP-v0.8.0.md` — Next (multi-color gauges, group displays)
+  - `ROADMAP-v1.0.0.md` — Release polish and future tracking
+
+- **`TODO.md`** - Lean development tracker with roadmap links and shipped release summary
+
+- **`.development/`** - Internal workshop (NOT published in releases)
+  - `initial_phases/` — Phase documentation (completed phases)
+  - `ui_analysis/` — Community UI variant analysis and feature index
+  - `item_slots/` — Class-specific slot art pipeline
+  - `stat_icons/` — Stat icon system (complete)
+  - `archive/` — Superseded docs (git mv'd here for history preservation)
+
+### Documentation Maintenance Rules
+
+**When making ANY changes, update the relevant documentation:**
+
+#### After Feature/UI Work
+1. **README.md** — Update "What We're Working On" checkmarks and "Recent Releases" if applicable
+2. **TODO.md** — Update shipped release table or active task status
+3. **Active ROADMAP** (`.docs/ROADMAP-v*.md`) — Check off completed items in the current milestone
+
+#### After a Release
+1. **`VERSION`** file — Bump version (single source of truth, plain text like `0.7.4`)
+2. **README.md** — Add Version History entry with date and bullet points, update "Current Development" section
+3. **Git tag** — `git tag -a vX.Y.Z -m "Release vX.Y.Z: description"`
+4. **TODO.md** — Add row to "Shipped Releases" table
+
+#### Documentation File Conventions
+- **Naming**: `UPPERCASE-WITH-HYPHENS.md` for docs, `README.md` for directory indexes
+- **Hidden dirs**: Use `.dirname` prefix (`.docs/`, `.development/`, `.bin/`) to hide from EQ client
+- **Archiving stale docs**: `git mv` to `.development/archive/` (preserves history)
+- **Roadmaps**: One per milestone version in `.docs/ROADMAP-v*.md`
+- **Link validation**: Run `python .bin/scan_links.py` after markdown changes; review `.tmp/scan_links.json`
+
+#### Cross-Reference Rules
+When updating documentation, check for cross-references that may need updating:
+- `README.md` ↔ `TODO.md` (version numbers, release lists)
+- `DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
+- `.development/README.md` ↔ `.docs/ROADMAP-v*.md` (current focus)
+- `.docs/releases/INDEX.md` (current release pointer)
+- Options `README.md` files (when Options are added/changed)
 
 ### EverQuest UI File Structure
 - **EQUI_*.xml files**: Individual window definitions (PlayerWindow, Inventory, SpellBook, etc.)
@@ -80,8 +120,20 @@ Assist with development, customization, and modification of EverQuest UI files f
   <RelativePosition>true</RelativePosition>
   <Location><X>5</X><Y>4</Y></Location>
   <Size><CX>85</CX><CY>350</CY></Size>
-  <Pieces>IW_Name IW_Level IW_Class</Pieces>
+  <Pieces>IW_Name</Pieces>
+  <Pieces>IW_Level</Pieces>
+  <Pieces>IW_Class</Pieces>
 </Screen>
+```
+
+**CRITICAL `<Pieces>` Rule**: Use individual `<Pieces>` tags for EACH child element. Do NOT space-separate elements in a single tag:
+```xml
+<!-- ✅ CORRECT -->
+<Pieces>IW_AC</Pieces>
+<Pieces>IW_ATK</Pieces>
+
+<!-- ❌ WRONG -->
+<Pieces>IW_AC IW_ATK</Pieces>
 ```
 
 **Anatomical Equipment Layout** (Phase 3.9 standard):
@@ -89,6 +141,68 @@ Assist with development, customization, and modification of EverQuest UI files f
 - Row 2: Arm level (Rings, Wrists, Arms, Hands)
 - Row 3: Torso level (Shoulders, Chest, Back, Waist, Legs, Feet)
 - Row 4: Weapons level (Primary, Secondary, Range, Ammo)
+
+### XML Commenting Standards
+
+Always read `.docs/STANDARDS.md` "XML Organization Best Practices" before modifying XML files.
+
+**When modifying any XML file, maintain and add comments:**
+
+1. **Zone/Section dividers** — Major logical sections get banner comments:
+   ```xml
+   <!-- ========================================== -->
+   <!-- ZONE 4: Equipment Grid                     -->
+   <!-- ========================================== -->
+   ```
+
+2. **Slot identifiers** — Equipment/inventory slots get inline name + EQType:
+   ```xml
+   <!-- IS_L_EAR  1 -->
+   <InvSlot item="InvSlot1">
+   ```
+
+3. **Inline explanations** — Non-obvious decisions, calculations, or workarounds:
+   ```xml
+   <!-- 41px step = 40px slot + 1px gap -->
+   <Location><X>7</X><Y>41</Y></Location>
+   ```
+
+4. **Commented-out alternatives** — Preserve disabled elements with explanation:
+   ```xml
+   <!-- DoneButton: hidden, window uses X-close instead -->
+   <!--<Pieces>DoneButton</Pieces>-->
+   ```
+
+**When editing poorly-commented files**, add comments to the sections you touch — don't leave a file worse than you found it. Well-commented examples: `EQUI_Inventory.xml`, `EQUI_PlayerWindow.xml`, `EQUI_GroupWindow.xml`.
+
+### SIDL Gotchas & Key Behaviors
+
+**These cause real bugs if you don't know them:**
+
+1. **AutoStretch** — `<AutoStretch>true</AutoStretch>` makes a window auto-size its height based on the number of child `<Pieces>` elements. Used in Container windows so one template handles 4-slot through 10-slot bags. Don't hardcode `<Size>` height when AutoStretch is in play.
+
+2. **Element Definition Order = Z-Order** — Elements defined LATER in the XML render ON TOP. If a background overlaps a button, move the background definition earlier in the file.
+
+3. **Elements Outside Parent Screen** — `<InvSlot>`, `<Gauge>`, `<Label>`, etc. are often defined as siblings OUTSIDE the main `<Screen>` element, then pulled in via `<Pieces>`. The `<Screen>` contains layout properties; the element definitions live above it.
+
+4. **EQ Client Fallback Loading** — The TAKP client reads ALL `EQUI_*.xml` files in the active skin directory. If a file is MISSING, it falls back to `default/`. Only include files you intend to override. The `default/` directory is the literal fallback, not just reference material.
+
+5. **EQUI_ Prefix Required** — The client only loads XML files with `EQUI_` prefix (or `EQLSUI_` for login). Custom filenames are ignored.
+
+6. **Zeal-Only EQTypes** — EQTypes 69-73 and 80-86 are Zeal client extensions. They work ONLY with the Zeal client, not stock TAKP. Always note Zeal dependency when using these. See `.docs/technical/EQTYPES.md`.
+
+7. **DrawTemplate Names** — Common templates: `WDT_Inner` (inner border), `WDT_Outer` (main window frame). `ButtonDrawTemplate` is a child element, not a simple string. Check existing files for correct usage.
+
+### Options Variant Pattern
+
+**When to create an Option vs modify the main file:**
+- **Modify main**: The change is the new standard for all users (spacing fix, bug fix, standard improvement)
+- **Create Option**: The change is a preference others might not want (compact layout, alternative stat display, different visual style)
+
+**Options structure**: `thorne_drak/Options/<Category>/<Variant>/`
+- Each Option directory contains ONLY the XML file(s) that differ from main
+- Options are tested by syncing: `.\sync-option.bat <category>/<variant>`
+- Always update `thorne_drak/Options/<Category>/README.md` when adding/changing variants
 
 ### SIDL XML Structure
 ```xml
@@ -143,22 +257,6 @@ Assist with development, customization, and modification of EverQuest UI files f
 - **Group Windows**: Player health bars, class indicators
 - **Cast Bar**: Spell casting progress indicators
 
-## Common Customizations
-
-### Popular Modifications
-1. **Buff Window Layouts**: Horizontal vs vertical arrangements
-2. **Player Window Variants**: Different stat displays (INT/WIS/ROG builds)
-3. **Hotbar Configurations**: Vertical, horizontal, or custom page arrangements
-4. **Container Windows**: Custom bag layouts and sizing
-5. **Target Windows**: Extended information displays
-6. **Spell Gems**: Alternative positioning and sizing
-
-### Performance Optimizations
-- Reduce texture resolution where appropriate
-- Minimize overlapping transparent elements
-- Use simple backgrounds instead of complex animations
-- Optimize list box item counts
-
 ## Workflow
 
 ### Development and Testing Structure
@@ -172,25 +270,27 @@ Assist with development, customization, and modification of EverQuest UI files f
 
 When assisting with UI customizations:
 
-1. **Understand Context**: Identify which UI component needs modification
-2. **Locate Files**: Find relevant EQUI_*.xml files in `C:\Thorne-UI\thorne_drak\`
-3. **Review Structure**: Examine existing XML structure and elements
-4. **Plan Changes**: Design modifications considering layout and functionality
-5. **Implement**: Make targeted XML modifications in `C:\Thorne-UI\thorne_drak\`
-6. **Validate XML**: Run XML syntax validation if making significant changes
-7. **Sync for Testing** (when actively testing/refining):
+1. **Check Branch**: Verify current git branch is appropriate for the work
+2. **Understand Context**: Identify which UI component needs modification
+3. **Consult Standards**: Read `.docs/STANDARDS.md` for relevant patterns (colors, spacing, sizing)
+4. **Locate Files**: Find relevant EQUI_*.xml files in `C:\Thorne-UI\thorne_drak\`
+5. **Review Structure**: Examine existing XML structure and elements
+6. **Plan Changes**: Design modifications considering layout and functionality
+7. **Implement**: Make targeted XML modifications in `C:\Thorne-UI\thorne_drak\`
+8. **Validate XML**: Run XML syntax validation if making significant changes
+9. **Sync for Testing** (when actively testing/refining):
    - **Full sync**: `.\sync-thorne-ui.bat` - Copies entire thorne_drak to thorne_dev
    - **Option sync**: `.\sync-option.bat <option_path>` - Copies specific Option variant to thorne_dev
    - Examples:
      - `.\sync-option.bat spellbook/large` - Test Large Icons spellbook variant
      - `.\sync-option.bat inventory` - Shows all inventory options (numbered selection)
-8. **In-Game Testing**: User tests with `/loadskin thorne_dev` command in TAKP
-9. **Present Changes**: Show user modifications and ask for approval before committing
+10. **In-Game Testing**: User tests with `/loadskin thorne_dev` command in TAKP
+11. **Present Changes**: Show user modifications and ask for approval before committing
    - Summarize key changes made
    - Allow user to review changes manually
    - Wait for user to indicate "ready to commit" before git operations
-10. **Commit After Approval**: Only commit changes after explicit approval from user
-11. **Document**: Explain changes and provide usage instructions
+12. **Commit After Approval**: Only commit changes after explicit approval from user
+13. **Document**: Explain changes and provide usage instructions
 
 **Sync Script Usage:**
 
@@ -225,32 +325,6 @@ When assisting with UI customizations:
 
 ## Tools & Capabilities
 
-### Core Tools
-Available tools for UI development:
-- File reading/editing (XML, INI, TGA references)
-- Git operations (commits, branches, PRs)
-- Web search for EverQuest UI documentation
-- Code search across repository
-- Directory navigation and file management
-- Memory system for persistent context
-- Todo list management for tracking multi-step work
-
-### MCP Server Integrations
-
-**GitHub MCP Server** (already configured above):
-- Pull request management and reviews
-- Issue tracking and search
-- File operations and commits
-- Repository browsing
-
-**Pylance MCP Server** (Python-specific operations):
-- Execute Python code snippets directly
-- Analyze Python imports and dependencies
-- Validate Python syntax without saving
-- Get Python environment information
-- Invoke refactoring operations (unused imports, type annotations, etc.)
-- Query Pylance documentation
-
 ### Subagent Delegation
 
 **When to delegate to specialized subagents:**
@@ -281,24 +355,6 @@ runSubagent({
 - Specify exactly what information to return
 - Agent returns single message with results
 
-## Common Issues & Solutions
-
-### XML Syntax Errors
-- Unclosed tags or mismatched elements
-- Invalid attribute values
-- Incorrect element nesting
-
-### Layout Problems
-- Overlapping elements (check Location/Size values)
-- Missing textures (verify .tga file references)
-- Incorrect window anchoring
-- Z-order conflicts
-
-### Compatibility Issues
-- Screen resolution differences
-- Custom font requirements
-- Texture file compatibility
-
 ## Reference Resources
 
 ### Key UI Files to Know
@@ -314,7 +370,7 @@ runSubagent({
 ### Community UI Variants in Repository
 
 **Thorne UI Variants** (Primary Development):
-- `thorne_drak/`: Main development variant (Inventory redesign shipped v0.6.0, current focus v0.7.0 stat icons)
+- `thorne_drak/`: Main development variant (see active roadmap in `.docs/ROADMAP-v*.md`)
 
 **Community Reference UIs** (Analysis & Inspiration):
 - `default/`: Baseline EverQuest UI files (reference implementation)
@@ -430,86 +486,9 @@ This project uses the **GitHub MCP Server** for streamlined repository managemen
 - `activate_pull_request_management_tools` - Access PR details and status
 - `activate_github_search_tools` - Search issues, PRs, code
 
-### Creating Pull Requests (Preferred Workflow)
+### Creating Pull Requests
 
-**ALWAYS use GitHub MCP tools instead of manual instructions.**
-
-```markdown
-# ✅ CORRECT: Use MCP tools directly
-1. Activate repository management tools
-2. Create PR with proper title/body
-3. Link related issues if applicable
-
-# ❌ INCORRECT: Don't provide manual PR creation links
-"Visit https://github.com/draknarethorne/thorne-ui/pull/new/..."
-```
-
-**Example PR Creation Process:**
-
-```
-1. Activate tools:
-   activate_repository_management_tools()
-
-2. Create PR:
-   create_pull_request(
-     owner: "draknarethorne",
-     repo: "thorne-ui", 
-     head: "feature/release-documentation-cleanup",
-     base: "main",
-     title: "Release Documentation Cleanup and v0.5.0 Prep",
-     body: "## Summary\n\n- Reorganized release docs..."
-   )
-
-3. Verify creation and provide PR link to user
-```
-
-### PR Review Workflow
-
-When reviewing or commenting on PRs:
-
-1. **Create pending review first:**
-   ```
-   mcp_github_pull_request_review_write(
-     method: "create",
-     owner: "draknarethorne",
-     repo: "thorne-ui",
-     pullNumber: 5,
-     body: "Initial review notes"
-   )
-   ```
-
-2. **Add inline comments:**
-   ```
-   mcp_github_add_comment_to_pending_review(
-     path: "thorne_drak/EQUI_PlayerWindow.xml",
-     line: 45,
-     body: "Consider adjusting gauge width",
-     side: "RIGHT"
-   )
-   ```
-
-3. **Submit review:**
-   ```
-   mcp_github_pull_request_review_write(
-     method: "submit_pending",
-     event: "APPROVE" | "REQUEST_CHANGES" | "COMMENT"
-   )
-   ```
-
-### Search Syntax
-
-**Query format for searching PRs:**
-
-```
-state:open author:draknarethorne label:enhancement
-is:pr is:open head:feature/release-documentation-cleanup
-```
-
-**Common patterns:**
-- `is:pr state:open` - All open PRs
-- `is:pr state:closed merged:true` - Merged PRs
-- `is:pr author:USERNAME` - PRs by specific author
-- `is:pr label:bug` - PRs with bug label
+**Use GitHub MCP tools** (available via tool list) instead of manual PR creation links. Use `mcp_github_create_pull_request` with owner `draknarethorne`, repo `thorne-ui`.
 
 ---
 
@@ -580,5 +559,34 @@ git commit -m "chore(release): Prepare for release v0.6.0"
 git tag -a v0.6.0 -m "Release v0.6.0: Brief description"
 git push origin main
 git push origin v0.6.0
+```
+
+### Commit Message Format (Conventional Commits)
+
+Use this format for all commits:
+
+```
+<type>(<scope>): <short description>
+
+<optional body with details>
+```
+
+**Types**:
+- `feat` — New feature or UI change (`feat(inventory): add anatomical equipment layout`)
+- `fix` — Bug fix (`fix(container): correct slot spacing overlap`)
+- `docs` — Documentation only (`docs(agents): add documentation maintenance rules`)
+- `chore` — Maintenance (`chore(release): prepare for release v0.7.5`)
+- `refactor` — Code restructure, no behavior change (`refactor(player): reorganize subwindow zones`)
+- `style` — Formatting, whitespace, comments (`style(buff): add zone section comments`)
+
+**Scopes**: Use the window/component name: `inventory`, `player`, `container`, `target`, `spellbook`, `buff`, `hotbutton`, `group`, `actions`, `cast`, `agents`, `options`, `release`, etc.
+
+**Multi-file commits**: Include a body listing key changes:
+```
+feat(container): refine slot spacing and combine button
+
+- 41px step (40+1px gap) for all slot rows
+- Combine button anchored to bottom with AutoStretch
+- DoneButton hidden via commented-out Pieces
 ```
 

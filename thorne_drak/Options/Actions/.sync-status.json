@@ -1,9 +1,10 @@
 {
   "window": "Actions",
-  "description": "Actions window with player info and social commands",
-  "default_variant": "Default",
-  "last_sync_date": "2026-02-03",
-  "last_sync_commit": "51a6e2a",
-  "in_sync": true,
-  "notes": "Initial sync - Default copy created and all variants established"
+  "filenames": [
+    "EQUI_ActionsWindow.xml"
+  ],
+  "description": "Actions window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-03-06T12:13:54.587260",
+  "last_sync_commit": "0b78b6f",
+  "in_sync": true
 }

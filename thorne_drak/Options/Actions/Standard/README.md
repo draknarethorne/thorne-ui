@@ -126,7 +126,7 @@ ActionsWindow
 - **Independent Tab Systems**: Actions and Inventory TabBoxes operate independently, allowing different pages active simultaneously
 - **EQType Coverage**: Full coverage of character stats (1-25), HP/Mana (70/80), weight (24/25), AA (36/37), and all equipment slots (1-29)
 - **Button Templates**: Uses `A_SquareBtnNormal` for action buttons, `A_SmallBtnNormal` for social buttons
-- **Background Templates**: `A_RecessedBox` for bag slots, specialized backgrounds (A_InvPrimary, A_InvHead, etc.) for equipment
+- **Background Templates**: `A_Slot_Empty` for bag slots, specialized backgrounds (A_InvPrimary, A_InvHead, etc.) for equipment
 - **Tab Navigation**: Each TabBox has icon-based tabs with active/inactive states
 - **Font Usage**: Font 2 for stats/labels, Font 3 for player info
 
@@ -267,5 +267,4 @@ To switch to other variants:
 ---
 
 **Part of**: [Thorne UI](../../../../README.md)  
-**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)  
-**Related Variants**: [Bags and Inventory](../Bags%20and%20Inventory/README.md)
+**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)

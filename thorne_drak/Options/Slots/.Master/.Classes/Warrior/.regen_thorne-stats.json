@@ -1,0 +1,1130 @@
+{
+  "directory": "Warrior",
+  "summary": {
+    "items_total": 72,
+    "atlases_generated": 2
+  },
+  "items": [
+    {
+      "name": "ear",
+      "out_row": 1,
+      "out_col": 1,
+      "source_file": "dragitem1.tga",
+      "src_row": 5,
+      "src_col": 6,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 555,
+        "mean_before": 186.5,
+        "action": "gamma_corrected",
+        "gamma": 2.409,
+        "contrast_adj": 0.9,
+        "mean_after": 141.4
+      }
+    },
+    {
+      "name": "neck",
+      "out_row": 1,
+      "out_col": 2,
+      "source_file": "dragitem4.tga",
+      "src_row": 1,
+      "src_col": 4,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 794,
+        "mean_before": 151.1,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 148.0
+      }
+    },
+    {
+      "name": "head",
+      "out_row": 1,
+      "out_col": 3,
+      "source_file": "dragitem2.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1044,
+        "mean_before": 88.2,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 84.8
+      }
+    },
+    {
+      "name": "face",
+      "out_row": 1,
+      "out_col": 4,
+      "source_file": "dragitem1.tga",
+      "src_row": 1,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 794,
+        "mean_before": 130.8,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 127.3
+      }
+    },
+    {
+      "name": "chest",
+      "out_row": 1,
+      "out_col": 5,
+      "source_file": "dragitem4.tga",
+      "src_row": 2,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1018,
+        "mean_before": 33.9,
+        "action": "gamma_corrected",
+        "gamma": 0.374,
+        "contrast_adj": 1.15,
+        "mean_after": 109.9
+      }
+    },
+    {
+      "name": "secondary",
+      "out_row": 1,
+      "out_col": 6,
+      "source_file": "dragitem25.tga",
+      "src_row": 6,
+      "src_col": 4,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 911,
+        "mean_before": 106.0,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 102.4
+      }
+    },
+    {
+      "name": "back",
+      "out_row": 2,
+      "out_col": 1,
+      "source_file": "dragitem10.tga",
+      "src_row": 6,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 684,
+        "mean_before": 30.2,
+        "action": "gamma_corrected",
+        "gamma": 0.353,
+        "contrast_adj": 1.15,
+        "mean_after": 96.2
+      }
+    },
+    {
+      "name": "arms",
+      "out_row": 2,
+      "out_col": 2,
+      "source_file": "dragitem2.tga",
+      "src_row": 5,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 815,
+        "mean_before": 115.5,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 111.6
+      }
+    },
+    {
+      "name": "shoulders",
+      "out_row": 2,
+      "out_col": 3,
+      "source_file": "dragitem9.tga",
+      "src_row": 5,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 876,
+        "mean_before": 155.2,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 152.4
+      }
+    },
+    {
+      "name": "wrist",
+      "out_row": 2,
+      "out_col": 4,
+      "source_file": "dragitem5.tga",
+      "src_row": 4,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 747,
+        "mean_before": 127.9,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 124.0
+      }
+    },
+    {
+      "name": "belt",
+      "out_row": 2,
+      "out_col": 5,
+      "source_file": "dragitem7.tga",
+      "src_row": 4,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 882,
+        "mean_before": 65.4,
+        "action": "gamma_corrected",
+        "gamma": 0.554,
+        "contrast_adj": 1.15,
+        "mean_after": 102.6
+      }
+    },
+    {
+      "name": "range",
+      "out_row": 2,
+      "out_col": 6,
+      "source_file": "dragitem25.tga",
+      "src_row": 4,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 202,
+        "mean_before": 131.4,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 125.6
+      }
+    },
+    {
+      "name": "hands",
+      "out_row": 3,
+      "out_col": 1,
+      "source_file": "dragitem1.tga",
+      "src_row": 6,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 821,
+        "mean_before": 131.1,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 127.4
+      }
+    },
+    {
+      "name": "fingers",
+      "out_row": 3,
+      "out_col": 2,
+      "source_file": "dragitem19.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 486,
+        "mean_before": 143.8,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 139.6
+      }
+    },
+    {
+      "name": "legs",
+      "out_row": 3,
+      "out_col": 3,
+      "source_file": "dragitem4.tga",
+      "src_row": 4,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 803,
+        "mean_before": 114.0,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 110.1
+      }
+    },
+    {
+      "name": "feet",
+      "out_row": 3,
+      "out_col": 4,
+      "source_file": "dragitem10.tga",
+      "src_row": 3,
+      "src_col": 4,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 892,
+        "mean_before": 18.2,
+        "action": "gamma_corrected",
+        "gamma": 0.286,
+        "contrast_adj": 1.15,
+        "mean_after": 79.2
+      }
+    },
+    {
+      "name": "primary",
+      "out_row": 3,
+      "out_col": 5,
+      "source_file": "dragitem20.tga",
+      "src_row": 6,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 224,
+        "mean_before": 89.5,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 82.0
+      }
+    },
+    {
+      "name": "ammo",
+      "out_row": 3,
+      "out_col": 6,
+      "source_file": "dragitem3.tga",
+      "src_row": 3,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 232,
+        "mean_before": 102.2,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 95.2
+      }
+    },
+    {
+      "name": "bag",
+      "out_row": 4,
+      "out_col": 1,
+      "source_file": "dragitem2.tga",
+      "src_row": 4,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "backpack",
+      "out_row": 4,
+      "out_col": 2,
+      "source_file": "dragitem2.tga",
+      "src_row": 6,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "satchel",
+      "out_row": 4,
+      "out_col": 3,
+      "source_file": "dragitem6.tga",
+      "src_row": 4,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "pack",
+      "out_row": 4,
+      "out_col": 4,
+      "source_file": "dragitem11.tga",
+      "src_row": 1,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "box",
+      "out_row": 4,
+      "out_col": 5,
+      "source_file": "dragitem4.tga",
+      "src_row": 2,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "open_box",
+      "out_row": 4,
+      "out_col": 6,
+      "source_file": "dragitem7.tga",
+      "src_row": 3,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "empty",
+      "out_row": 5,
+      "out_col": 1,
+      "source_file": "placeholder.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "empty",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "treasurechest",
+      "out_row": 5,
+      "out_col": 2,
+      "source_file": "dragitem10.tga",
+      "src_row": 1,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "spellbook",
+      "out_row": 5,
+      "out_col": 3,
+      "source_file": "dragitem8.tga",
+      "src_row": 2,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "lantern",
+      "out_row": 5,
+      "out_col": 4,
+      "source_file": "dragitem7.tga",
+      "src_row": 2,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "spell",
+      "out_row": 5,
+      "out_col": 5,
+      "source_file": "dragitem1.tga",
+      "src_row": 5,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "empty_row5_col6",
+      "out_row": 5,
+      "out_col": 6,
+      "source_file": "placeholder.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "empty",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_1",
+      "out_row": 6,
+      "out_col": 1,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_2",
+      "out_row": 6,
+      "out_col": 2,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 2,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_3",
+      "out_row": 6,
+      "out_col": 3,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 3,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_4",
+      "out_row": 6,
+      "out_col": 4,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 4,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_5",
+      "out_row": 6,
+      "out_col": 5,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 5,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_6",
+      "out_row": 6,
+      "out_col": 6,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 6,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "ear",
+      "out_row": 1,
+      "out_col": 1,
+      "source_file": "dragitem1.tga",
+      "src_row": 5,
+      "src_col": 6,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 555,
+        "mean_before": 186.5,
+        "action": "gamma_corrected",
+        "gamma": 2.409,
+        "contrast_adj": 0.9,
+        "mean_after": 141.4
+      }
+    },
+    {
+      "name": "neck",
+      "out_row": 1,
+      "out_col": 2,
+      "source_file": "dragitem4.tga",
+      "src_row": 1,
+      "src_col": 4,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 794,
+        "mean_before": 151.1,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 148.0
+      }
+    },
+    {
+      "name": "head",
+      "out_row": 1,
+      "out_col": 3,
+      "source_file": "dragitem2.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1044,
+        "mean_before": 88.2,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 84.8
+      }
+    },
+    {
+      "name": "face",
+      "out_row": 1,
+      "out_col": 4,
+      "source_file": "dragitem1.tga",
+      "src_row": 1,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 794,
+        "mean_before": 130.8,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 127.3
+      }
+    },
+    {
+      "name": "chest",
+      "out_row": 1,
+      "out_col": 5,
+      "source_file": "dragitem4.tga",
+      "src_row": 2,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 1018,
+        "mean_before": 33.9,
+        "action": "gamma_corrected",
+        "gamma": 0.374,
+        "contrast_adj": 1.15,
+        "mean_after": 109.9
+      }
+    },
+    {
+      "name": "secondary",
+      "out_row": 1,
+      "out_col": 6,
+      "source_file": "dragitem25.tga",
+      "src_row": 6,
+      "src_col": 4,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 911,
+        "mean_before": 106.0,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 102.4
+      }
+    },
+    {
+      "name": "back",
+      "out_row": 2,
+      "out_col": 1,
+      "source_file": "dragitem10.tga",
+      "src_row": 6,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 684,
+        "mean_before": 30.2,
+        "action": "gamma_corrected",
+        "gamma": 0.353,
+        "contrast_adj": 1.15,
+        "mean_after": 96.2
+      }
+    },
+    {
+      "name": "arms",
+      "out_row": 2,
+      "out_col": 2,
+      "source_file": "dragitem2.tga",
+      "src_row": 5,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 815,
+        "mean_before": 115.5,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 111.6
+      }
+    },
+    {
+      "name": "shoulders",
+      "out_row": 2,
+      "out_col": 3,
+      "source_file": "dragitem9.tga",
+      "src_row": 5,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 876,
+        "mean_before": 155.2,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 152.4
+      }
+    },
+    {
+      "name": "wrist",
+      "out_row": 2,
+      "out_col": 4,
+      "source_file": "dragitem5.tga",
+      "src_row": 4,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 747,
+        "mean_before": 127.9,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 124.0
+      }
+    },
+    {
+      "name": "belt",
+      "out_row": 2,
+      "out_col": 5,
+      "source_file": "dragitem7.tga",
+      "src_row": 4,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 882,
+        "mean_before": 65.4,
+        "action": "gamma_corrected",
+        "gamma": 0.554,
+        "contrast_adj": 1.15,
+        "mean_after": 102.6
+      }
+    },
+    {
+      "name": "range",
+      "out_row": 2,
+      "out_col": 6,
+      "source_file": "dragitem25.tga",
+      "src_row": 4,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 202,
+        "mean_before": 131.4,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 125.6
+      }
+    },
+    {
+      "name": "hands",
+      "out_row": 3,
+      "out_col": 1,
+      "source_file": "dragitem1.tga",
+      "src_row": 6,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 821,
+        "mean_before": 131.1,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 127.4
+      }
+    },
+    {
+      "name": "fingers",
+      "out_row": 3,
+      "out_col": 2,
+      "source_file": "dragitem19.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 486,
+        "mean_before": 143.8,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 139.6
+      }
+    },
+    {
+      "name": "legs",
+      "out_row": 3,
+      "out_col": 3,
+      "source_file": "dragitem4.tga",
+      "src_row": 4,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 803,
+        "mean_before": 114.0,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 110.1
+      }
+    },
+    {
+      "name": "feet",
+      "out_row": 3,
+      "out_col": 4,
+      "source_file": "dragitem10.tga",
+      "src_row": 3,
+      "src_col": 4,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 892,
+        "mean_before": 18.2,
+        "action": "gamma_corrected",
+        "gamma": 0.286,
+        "contrast_adj": 1.15,
+        "mean_after": 79.2
+      }
+    },
+    {
+      "name": "primary",
+      "out_row": 3,
+      "out_col": 5,
+      "source_file": "dragitem20.tga",
+      "src_row": 6,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 224,
+        "mean_before": 89.5,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 82.0
+      }
+    },
+    {
+      "name": "ammo",
+      "out_row": 3,
+      "out_col": 6,
+      "source_file": "dragitem3.tga",
+      "src_row": 3,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": false,
+      "auto_tone": true,
+      "auto_tone_result": {
+        "auto_tone": true,
+        "visible_pixels": 232,
+        "mean_before": 102.2,
+        "action": "passthrough",
+        "gamma": 1.0,
+        "contrast_adj": 1.05,
+        "mean_after": 95.2
+      }
+    },
+    {
+      "name": "bag",
+      "out_row": 4,
+      "out_col": 1,
+      "source_file": "dragitem2.tga",
+      "src_row": 4,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "backpack",
+      "out_row": 4,
+      "out_col": 2,
+      "source_file": "dragitem2.tga",
+      "src_row": 6,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "satchel",
+      "out_row": 4,
+      "out_col": 3,
+      "source_file": "dragitem6.tga",
+      "src_row": 4,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "pack",
+      "out_row": 4,
+      "out_col": 4,
+      "source_file": "dragitem11.tga",
+      "src_row": 1,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "box",
+      "out_row": 4,
+      "out_col": 5,
+      "source_file": "dragitem4.tga",
+      "src_row": 2,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "open_box",
+      "out_row": 4,
+      "out_col": 6,
+      "source_file": "dragitem7.tga",
+      "src_row": 3,
+      "src_col": 2,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "empty",
+      "out_row": 5,
+      "out_col": 1,
+      "source_file": "placeholder.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "empty",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "treasurechest",
+      "out_row": 5,
+      "out_col": 2,
+      "source_file": "dragitem10.tga",
+      "src_row": 1,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "spellbook",
+      "out_row": 5,
+      "out_col": 3,
+      "source_file": "dragitem8.tga",
+      "src_row": 2,
+      "src_col": 5,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "lantern",
+      "out_row": 5,
+      "out_col": 4,
+      "source_file": "dragitem7.tga",
+      "src_row": 2,
+      "src_col": 3,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "spell",
+      "out_row": 5,
+      "out_col": 5,
+      "source_file": "dragitem1.tga",
+      "src_row": 5,
+      "src_col": 1,
+      "mode": "grayscale",
+      "has_tone_override": true,
+      "auto_tone": true
+    },
+    {
+      "name": "empty_row5_col6",
+      "out_row": 5,
+      "out_col": 6,
+      "source_file": "placeholder.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "empty",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_1",
+      "out_row": 6,
+      "out_col": 1,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 1,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_2",
+      "out_row": 6,
+      "out_col": 2,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 2,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_3",
+      "out_row": 6,
+      "out_col": 3,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 3,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_4",
+      "out_row": 6,
+      "out_col": 4,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 4,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_5",
+      "out_row": 6,
+      "out_col": 5,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 5,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    },
+    {
+      "name": "logo_6",
+      "out_row": 6,
+      "out_col": 6,
+      "source_file": "logo_atlas_thorne01.tga",
+      "src_row": 1,
+      "src_col": 6,
+      "mode": "invert_impression",
+      "has_tone_override": false,
+      "auto_tone": true
+    }
+  ],
+  "output_files": [
+    "item_atlas_thorne01.tga",
+    "item_icons_thorne01.tga"
+  ],
+  "errors": []
+}

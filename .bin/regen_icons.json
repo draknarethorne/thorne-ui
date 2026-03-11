@@ -39,9 +39,9 @@
   
   "Weight": {
     "file": "spell_icons_thorne02.tga",
-    "row": 3,
-    "col": 7,
-    "description": "Character Weight"
+    "row": 4,
+    "col": 5,
+    "description": "Weight Capacity"
   },
   
   "Fire": {
@@ -79,11 +79,11 @@
     "description": "Disease Resistance"
   },
   
-  "Reserve": {
+  "Bag": {
     "file": "spell_icons_thorne02.tga",
     "row": 3,
-    "col": 6,
-    "description": "Dragon"
+    "col": 7,
+    "description": "Bag Capacity"
   },
   
   "STR": {

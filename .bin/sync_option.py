@@ -1,209 +1,298 @@
 #!/usr/bin/env python3
-r"""
-Sync Option Script - Copy Option variant files to thorne_dev for testing
+"""
+Sync a single UI Option variant into thorne_dev for in-game testing.
 
-This script copies all files (.xml, .tga, etc.) from an Options subdirectory
-in thorne_drak to the main thorne_dev directory for in-game testing.
-
-Workflow:
-  - Development happens in C:\Thorne-UI\thorne_drak (version controlled)
-  - Options variants stored in C:\Thorne-UI\thorne_drak\Options\<Category>\<Variant>\
-  - Testing happens in C:\TAKP\uifiles\thorne_dev (deployed test location)
-  - This script copies option files to thorne_dev root, overwriting main files
-
-Usage:
-    python sync_option.py <option_path>
-    
 Examples:
-    python sync_option.py spellbook/large    # Copy Large Icons spellbook variant
-    python sync_option.py inventory          # Show all inventory options (numbered)
-    python sync_option.py spellbook          # Show all spellbook options (numbered)
-
-Files Copied:
-    - All .xml, .tga, and other UI files from selected option
-    - Excludes: .md files (README.md), hidden files, system files
+  python .bin/sync_option.py spellbook/large
+  python .bin/sync_option.py "Music/Thorne 14 Row"
+  python .bin/sync_option.py --list
+  python .bin/sync_option.py --list inventory
+  python .bin/sync_option.py --option spellbook/large --dry-run --verbose
 """
 
-import os
-import sys
+from __future__ import annotations
+
+import argparse
 import shutil
+from pathlib import Path
+from typing import List
 
-def normalize_path(path_str):
-    """Normalize path separators and case for searching"""
-    return path_str.lower().replace('\\', '/').strip('/')
+DEFAULT_SOURCE = Path(r"C:\Thorne-UI\thorne_drak")
+DEFAULT_DEST = Path(r"C:\TAKP\uifiles\thorne_dev")
 
-def find_matching_options(base_path, search_pattern):
-    """Find all Options directories matching the search pattern"""
-    if not os.path.isdir(base_path):
+EXCLUDED_FILENAMES = {"Thumbs.db", ".DS_Store"}
+EXCLUDED_EXTENSIONS = {".md"}
+
+
+def normalize_path(path_str: str) -> str:
+    return path_str.lower().replace("\\", "/").strip("/")
+
+
+def option_dir_has_ui_file(path: Path) -> bool:
+    if not path.is_dir():
+        return False
+    return any(f.name.startswith("EQUI_") and f.suffix.lower() == ".xml" for f in path.iterdir() if f.is_file())
+
+
+def find_matching_options(options_root: Path, search_pattern: str) -> List[str]:
+    if not options_root.is_dir():
         return []
-    
+
+    raw_pattern = search_pattern.strip().replace("\\", "/").strip("/")
     normalized_pattern = normalize_path(search_pattern)
-    matches = []
-    
-    # If pattern contains a slash, it's a specific path like "spellbook/large"
-    if '/' in search_pattern:
-        parts = [p.strip() for p in search_pattern.split('/')]
-        # Try to find exact match first
-        target_path = os.path.join(base_path, *parts)
-        if os.path.isdir(target_path):
-            has_xml = any(f.startswith('EQUI_') and f.endswith('.xml') for f in os.listdir(target_path))
-            if has_xml:
-                return [os.path.relpath(target_path, base_path)]
-        
-        # Try case-insensitive match
-        current = base_path
-        for i, part in enumerate(parts):
-            matched = False
-            if os.path.isdir(current):
-                for item in os.listdir(current):
-                    if normalize_path(item).startswith(normalize_path(part)):
-                        current = os.path.join(current, item)
-                        matched = True
-                        break
-            if not matched:
+    matches: List[str] = []
+
+    # Full path form: category/variant
+    if "/" in raw_pattern:
+        parts = [p for p in raw_pattern.split("/") if p]
+
+        exact = options_root.joinpath(*parts)
+        if option_dir_has_ui_file(exact):
+            return [str(exact.relative_to(options_root)).replace("\\", "/")]
+
+        # Fuzzy prefix match per path segment (case-insensitive)
+        current = options_root
+        matched = True
+        for part in parts:
+            candidates = [
+                child for child in current.iterdir()
+                if child.is_dir() and normalize_path(child.name).startswith(normalize_path(part))
+            ]
+            if not candidates:
+                matched = False
                 break
-        
-        if matched and os.path.isdir(current):
-            has_xml = any(f.startswith('EQUI_') and f.endswith('.xml') for f in os.listdir(current))
-            if has_xml:
-                return [os.path.relpath(current, base_path)]
-    else:
-        # Search for a category like "spellbook"
-        for item in os.listdir(base_path):
-            item_path = os.path.join(base_path, item)
-            if os.path.isdir(item_path) and normalize_path(item).startswith(normalized_pattern):
-                # List all subdirectories in this category
-                for subitem in sorted(os.listdir(item_path)):
-                    subitem_path = os.path.join(item_path, subitem)
-                    if os.path.isdir(subitem_path):
-                        rel = os.path.relpath(subitem_path, base_path)
-                        has_xml = any(f.startswith('EQUI_') and f.endswith('.xml') for f in os.listdir(subitem_path))
-                        if has_xml:
-                            matches.append(rel)
-    
-    return sorted(list(set(matches)))
+            current = sorted(candidates, key=lambda p: p.name.lower())[0]
 
-def sync_option(source_dir, dest_dir, option_path):
-    """
-    Copy all UI files from a specific option directory to main thorne_dev directory.
-    This copies the option's files into thorne_dev root for testing.
-    """
-    source = os.path.join(source_dir, 'Options', option_path)
-    dest = dest_dir  # Copy directly to main thorne_dev directory
-    
-    if not os.path.isdir(source):
-        return False, f"Source directory not found: {source}"
-    
-    # Ensure destination directory exists
-    os.makedirs(dest, exist_ok=True)
-    
-    # Get all files in source directory (not recursive)
-    try:
-        copied_files = []
-        skipped_files = []
-        
-        for filename in os.listdir(source):
-            source_file = os.path.join(source, filename)
-            
-            # Skip directories
-            if os.path.isdir(source_file):
-                continue
-            
-            # Skip .md files (README.md, etc.)
-            if filename.lower().endswith('.md'):
-                skipped_files.append(filename)
-                continue
-            
-            # Skip hidden files and system files
-            if filename.startswith('.') or filename in ['Thumbs.db', '.DS_Store']:
-                continue
-            
-            # Copy the file
-            dest_file = os.path.join(dest, filename)
-            shutil.copy2(source_file, dest_file)
-            copied_files.append(filename)
-        
-        if copied_files:
-            file_list = ', '.join(copied_files) if len(copied_files) <= 5 else f"{', '.join(copied_files[:5])}, ..."
-            return True, f"Copied {len(copied_files)} file(s): {file_list}"
-        else:
-            if skipped_files:
-                return True, f"No files to copy (skipped {len(skipped_files)} .md files)"
-            else:
-                return True, "No files found in option directory"
-                
-    except Exception as e:
-        return False, f"Error during copy: {str(e)}"
+        if matched and option_dir_has_ui_file(current):
+            return [str(current.relative_to(options_root)).replace("\\", "/")]
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: sync_option.py <option_path>")
-        print("\nExamples:")
-        print("  sync_option.py spellbook/large")
-        print("  sync_option.py inventory")
-        print("  sync_option.py spellbook")
-        sys.exit(1)
-    
-    search_pattern = sys.argv[1]
-    
-    # Base paths
-    source_base = r"C:\Thorne-UI\thorne_drak"
-    dest_base = r"C:\TAKP\uifiles\thorne_dev"
-    options_dir = os.path.join(source_base, 'Options')
-    
-    if not os.path.isdir(options_dir):
-        print(f"Error: Options directory not found: {options_dir}")
-        sys.exit(1)
-    
-    # Find matching options
-    print(f"\nSearching for options matching '{search_pattern}'...\n")
-    matches = find_matching_options(options_dir, search_pattern)
-    
-    if not matches:
-        print(f"No options found matching '{search_pattern}'")
-        print("\nAvailable Options:")
-        for item in sorted(os.listdir(options_dir)):
-            item_path = os.path.join(options_dir, item)
-            if os.path.isdir(item_path):
-                print(f"  {item}/")
-                for subitem in sorted(os.listdir(item_path)):
-                    if os.path.isdir(os.path.join(item_path, subitem)):
-                        print(f"    - {subitem}")
-        sys.exit(1)
-    
-    if len(matches) == 1:
-        selected = matches[0]
-    else:
-        print("Multiple options found:")
-        for i, match in enumerate(matches, 1):
-            print(f"  {i}. {match}")
-        
-        while True:
-            try:
-                selection = input(f"\nSelect option (1-{len(matches)}): ").strip()
-                index = int(selection) - 1
-                if 0 <= index < len(matches):
-                    selected = matches[index]
-                    break
-                else:
-                    print(f"Invalid selection. Please enter a number between 1 and {len(matches)}")
-            except ValueError:
-                print(f"Invalid input. Please enter a number between 1 and {len(matches)}")
-    
-    print(f"\nSyncing: {selected}")
-    print(f"From: {os.path.join(source_base, 'Options', selected)}")
-    print(f"To:   {dest_base} (main directory)")
+        return []
+
+    # Category-only form: inventory / spellbook / music
+    for category in sorted([d for d in options_root.iterdir() if d.is_dir()], key=lambda p: p.name.lower()):
+        if not normalize_path(category.name).startswith(normalized_pattern):
+            continue
+
+        for variant in sorted([d for d in category.iterdir() if d.is_dir()], key=lambda p: p.name.lower()):
+            if option_dir_has_ui_file(variant):
+                matches.append(str(variant.relative_to(options_root)).replace("\\", "/"))
+
+    return sorted(set(matches), key=str.lower)
+
+
+def list_available(options_root: Path, category_filter: str | None = None) -> int:
+    if not options_root.is_dir():
+        print(f"Error: Options directory not found: {options_root}")
+        return 1
+
+    if category_filter:
+        matches = find_matching_options(options_root, category_filter)
+        if not matches:
+            print(f"No options found for category/pattern: {category_filter}")
+            return 1
+
+        print(f"\nMatching options for '{category_filter}':")
+        for m in matches:
+            print(f"  - {m}")
+        print()
+        return 0
+
+    print("\nAvailable option categories and variants:")
+    for category in sorted([d for d in options_root.iterdir() if d.is_dir()], key=lambda p: p.name.lower()):
+        variants = [
+            variant.name
+            for variant in sorted([d for d in category.iterdir() if d.is_dir()], key=lambda p: p.name.lower())
+            if option_dir_has_ui_file(variant)
+        ]
+        if not variants:
+            continue
+
+        print(f"\n{category.name}/")
+        for v in variants:
+            print(f"  - {v}")
+
     print()
-    
-    success, message = sync_option(source_base, dest_base, selected)
-    
-    if success:
-        print(f"✓ {message}")
+    return 0
+
+
+def copy_option_files(source_option_dir: Path, dest_dir: Path, *, dry_run: bool, verbose: bool) -> tuple[bool, str]:
+    if not source_option_dir.is_dir():
+        return False, f"Source option directory not found: {source_option_dir}"
+
+    files_to_copy: List[Path] = []
+    skipped: List[str] = []
+
+    for item in sorted(source_option_dir.iterdir(), key=lambda p: p.name.lower()):
+        if item.is_dir():
+            continue
+        if item.name.startswith("."):
+            continue
+        if item.name in EXCLUDED_FILENAMES:
+            continue
+        if item.suffix.lower() in EXCLUDED_EXTENSIONS:
+            skipped.append(item.name)
+            continue
+        files_to_copy.append(item)
+
+    if not files_to_copy:
+        if skipped:
+            return True, f"No files copied (skipped {len(skipped)} markdown file(s))."
+        return True, "No files found to copy."
+
+    if not dry_run:
+        dest_dir.mkdir(parents=True, exist_ok=True)
+
+    copied: List[str] = []
+    for src in files_to_copy:
+        dst = dest_dir / src.name
+        if dry_run:
+            copied.append(src.name)
+            continue
+
+        shutil.copy2(src, dst)
+        copied.append(src.name)
+        if verbose:
+            print(f"  copied: {src.name}")
+
+    preview = ", ".join(copied[:5])
+    suffix = "" if len(copied) <= 5 else ", ..."
+    return True, f"Copied {len(copied)} file(s): {preview}{suffix}"
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="sync_option.py",
+        description="Copy one option variant from thorne_drak/Options to thorne_dev root for testing.",
+        formatter_class=argparse.RawTextHelpFormatter,
+        epilog=(
+            "Examples:\n"
+            "  sync-option.bat spellbook/large\n"
+            "  sync-option.bat \"Music/Thorne 14 Row\"\n"
+            "  sync-option.bat --list\n"
+            "  sync-option.bat --list music\n"
+            "  sync-option.bat --option inventory/enhanced --dry-run --verbose"
+        ),
+    )
+
+    parser.add_argument(
+        "option_path",
+        nargs="?",
+        help="Option path under Options, e.g. spellbook/large or 'Music/Thorne 14 Row'.",
+    )
+    parser.add_argument(
+        "--option",
+        dest="option_flag",
+        help="Same as positional option_path (takes precedence when provided).",
+    )
+    parser.add_argument(
+        "--list",
+        nargs="?",
+        const="",
+        metavar="CATEGORY",
+        help="List options (all if no category is provided).",
+    )
+    parser.add_argument(
+        "--source",
+        default=str(DEFAULT_SOURCE),
+        help=f"Source thorne_drak directory (default: {DEFAULT_SOURCE})",
+    )
+    parser.add_argument(
+        "--dest",
+        default=str(DEFAULT_DEST),
+        help=f"Destination thorne_dev directory (default: {DEFAULT_DEST})",
+    )
+    parser.add_argument("--dry-run", action="store_true", help="Show what would copy without writing files.")
+    parser.add_argument("--verbose", action="store_true", help="Show detailed file operations.")
+    parser.add_argument(
+        "--no-interactive",
+        action="store_true",
+        help="Fail instead of prompting when multiple options match.",
+    )
+
+    return parser
+
+
+def choose_match(matches: List[str], *, no_interactive: bool) -> str | None:
+    if not matches:
+        return None
+    if len(matches) == 1:
+        return matches[0]
+
+    print("Multiple options found:")
+    for idx, item in enumerate(matches, 1):
+        print(f"  {idx}. {item}")
+
+    if no_interactive:
+        print("\nError: Multiple matches found and --no-interactive was specified.")
+        return None
+
+    while True:
+        choice = input(f"\nSelect option (1-{len(matches)}): ").strip()
+        try:
+            index = int(choice) - 1
+            if 0 <= index < len(matches):
+                return matches[index]
+        except ValueError:
+            pass
+        print(f"Invalid selection. Enter a number between 1 and {len(matches)}.")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(list(argv) if argv is not None else None)
+
+    source_base = Path(args.source)
+    options_root = source_base / "Options"
+    dest_base = Path(args.dest)
+
+    if args.list is not None:
+        category = args.list.strip() or None
+        return list_available(options_root, category)
+
+    requested = (args.option_flag or args.option_path or "").strip()
+    if not requested:
+        parser.print_help()
+        return 1
+
+    if not options_root.is_dir():
+        print(f"Error: Options directory not found: {options_root}")
+        return 1
+
+    print(f"\nSearching for options matching '{requested}'...")
+    matches = find_matching_options(options_root, requested)
+    selected = choose_match(matches, no_interactive=args.no_interactive)
+
+    if not selected:
+        print(f"\nNo options found matching '{requested}'.")
+        print("\nTip: run with --list to browse available options.")
+        return 1
+
+    source_option_dir = options_root / Path(selected)
+
+    print(f"\nSelected: {selected}")
+    print(f"From: {source_option_dir}")
+    print(f"To:   {dest_base}")
+    if args.dry_run:
+        print("Mode: dry-run")
+
+    ok, message = copy_option_files(
+        source_option_dir,
+        dest_base,
+        dry_run=args.dry_run,
+        verbose=args.verbose,
+    )
+
+    if not ok:
+        print(f"\n✗ {message}")
+        return 1
+
+    print(f"\n✓ {message}")
+    if not args.dry_run:
         print("\nReady to test in TAKP")
         print("In-game command: /loadskin thorne_dev")
-    else:
-        print(f"✗ {message}")
-        sys.exit(1)
 
-if __name__ == '__main__':
-    main()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

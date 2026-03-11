@@ -47,7 +47,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 class StatIconGenerator:
-    """Generate stat icon files with abbreviations."""
+    """Generate stat icon files."""
     
     # Master layout - where each icon should be placed in 256x256 output
     MASTER_LAYOUT = {
@@ -62,7 +62,7 @@ class StatIconGenerator:
         "Magic":    {"x": 90,  "y": 70,  "col": 2, "row": 3},
         "Poison":   {"x": 90,  "y": 100, "col": 2, "row": 4},
         "Disease":  {"x": 90,  "y": 130, "col": 2, "row": 5},
-        "Reserve":  {"x": 90,  "y": 160, "col": 2, "row": 6},
+        "Bag":      {"x": 90,  "y": 160, "col": 2, "row": 6},
         "STR":      {"x": 170, "y": 10,  "col": 3, "row": 1},
         "INT":      {"x": 170, "y": 40,  "col": 3, "row": 2},
         "WIS":      {"x": 170, "y": 70,  "col": 3, "row": 3},
@@ -74,11 +74,11 @@ class StatIconGenerator:
     # Abbreviations for each icon
     ABBREVIATIONS = {
         "AC": "AC", "ATK": "ATK", "HP": "HP", "MANA": "MP", "STA": "ST", "Weight": "WT",
-        "Fire": "FR", "Cold": "CR", "Magic": "MR", "Poison": "PR", "Disease": "DR", "Reserve": "RV",
+        "Fire": "FR", "Cold": "CR", "Magic": "MR", "Poison": "PR", "Disease": "DR", "Bag": "BG",
         "STR": "STR", "INT": "INT", "WIS": "WIS", "AGI": "AGI", "DEX": "DEX", "CHA": "CHA",
     }
     
-    def __init__(self, source_dir, config_path, output_file, add_abbreviations=False, add_labels=True):
+    def __init__(self, source_dir, config_path, output_file, add_labels=True):
         """
         Initialize the generator.
         
@@ -86,12 +86,10 @@ class StatIconGenerator:
             source_dir: Directory containing spellicon files (e.g., thorne_drak/Options/Icons/Thorne)
             config_path: Path to JSON config file with icon coordinate mappings (source from spell_icons_thorne)
             output_file: Output path for staticons texture file
-            add_abbreviations: Whether to add abbreviation labels within icons (default: False - keep icons clean)
             add_labels: Whether to add text labels next to icons (default: True)
         """
         self.source_dir = Path(source_dir)
         self.output_file = Path(output_file)
-        self.add_abbreviations = add_abbreviations
         self.add_labels = add_labels
         self.config = None
         self.font = None
@@ -213,29 +211,6 @@ class StatIconGenerator:
             print(f"  WARNING: Failed to extract from {source_file}: {e}")
             return self._create_placeholder(target_size)
     
-    def _add_abbreviation_label(self, img, text, font_size=8):
-        """Add abbreviation text label to icon image."""
-        try:
-            draw = ImageDraw.Draw(img)
-            
-            # Try to load a bold font, fall back to default
-            try:
-                font = ImageFont.truetype("arial.ttf", font_size)
-            except:
-                try:
-                    font = ImageFont.truetype("Arial", font_size)
-                except:
-                    font = ImageFont.load_default()
-            
-            # Draw text in bottom right
-            text_color = (0, 0, 0, 255)  # Black
-            draw.text((2, 16), text, fill=text_color, font=font)
-            
-            return img
-        except Exception as e:
-            print(f"  WARNING: Failed to add abbreviation: {e}")
-            return img
-    
     def generate(self):
         """Generate the stat icon file."""
         print(f"\n{'='*70}")
@@ -274,11 +249,6 @@ class StatIconGenerator:
                 # Extract icon
                 icon = self._extract_icon(source_file, src_x, src_y, src_w, src_h)
                 
-                # Add abbreviation if enabled
-                if self.add_abbreviations and icon_name in self.ABBREVIATIONS:
-                    abbr = self.ABBREVIATIONS[icon_name]
-                    icon = self._add_abbreviation_label(icon, abbr, font_size=7)
-                
                 icon_type = "extracted"
                 source_info_display = f"{source_file} @ {coord_format}"
                 print(f"  OK {icon_name:8} at ({x:3},{y:3}) <- {source_info_display}")
@@ -310,9 +280,6 @@ class StatIconGenerator:
         # Save output
         output_img.save(self.output_file)
         print(f"\n[OK] Generated: {self.output_file}")
-        
-        if self.add_abbreviations:
-            print("[OK] Abbreviations added within icons")
         
         if self.add_labels:
             print("[OK] Text labels added next to icons")
@@ -377,7 +344,6 @@ def regenerate_icons(variant_dir, config_path, root_path, add_labels=True):
             variant_dir,
             config_path,
             output_file,
-            add_abbreviations=False,
             add_labels=add_labels
         )
         
@@ -396,6 +362,13 @@ def regenerate_icons(variant_dir, config_path, root_path, add_labels=True):
 
 if __name__ == '__main__':
     import argparse
+
+    # Resolve project paths relative to this script location.
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent
+    root_path = repo_root / 'thorne_drak'
+    base_path = root_path / 'Options' / 'Icons'
+    config_path = script_dir / 'regen_icons.json'
     
     parser = argparse.ArgumentParser(
         description="Generate stat icon textures from icon variants",
@@ -404,7 +377,7 @@ if __name__ == '__main__':
 ICON TEXTURE REGENERATION
 
 Regenerates stat icon textures from icon variants in Options/Icons/ directory,
-with optional text labels and abbreviations.
+with optional helper text labels.
 
 DISCOVERY:
     Reads from: thorne_drak/Options/Icons/<Variant>/
@@ -456,6 +429,19 @@ WORKFLOW:
 
     args = parser.parse_args()
 
+    # Validate required paths before processing variants.
+    if not root_path.exists():
+        print(f"ERROR: thorne_drak directory not found: {root_path}")
+        sys.exit(1)
+
+    if not base_path.exists():
+        print(f"ERROR: Icon variants directory not found: {base_path}")
+        sys.exit(1)
+
+    if not config_path.exists():
+        print(f"ERROR: Config file not found: {config_path}")
+        sys.exit(1)
+
     # If no arguments provided, show usage
     if not args.all and not args.variants:
         print("ERROR: No target specified.")
@@ -489,7 +475,6 @@ WORKFLOW:
                     root_path,
                     config_path,
                     output_file,
-                    add_abbreviations=True,
                     add_labels=add_labels
                 )
                 if generator.generate():
@@ -501,7 +486,12 @@ WORKFLOW:
             variant_path = base_path / variant
             
             if variant_path.exists():
-                success, variant_name, path = regenerate_icons(variant_path, config_path, root_path, add_labels=add_labels)
+                success, variant_name, path = regenerate_icons(
+                    variant_path,
+                    config_path,
+                    root_path,
+                    add_labels=add_labels,
+                )
                 if success:
                     success_count += 1
                     regenerated_variants.append((variant_name, path))

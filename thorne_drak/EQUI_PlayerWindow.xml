@@ -548,7 +548,7 @@
 		<ScreenID>PW_XP_PerHour_Label</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>164</X>
+			<X>163</X>
 			<Y>76</Y>
 		</Location>
 		<Size>
@@ -569,7 +569,7 @@
 		<RelativePosition>true</RelativePosition>
 		<EQType>81</EQType>
 		<Location>
-			<X>194</X>
+			<X>193</X>
 			<Y>76</Y>
 		</Location>
 		<Size>
@@ -591,7 +591,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Font>2</Font>
 		<Location>
-			<X>215</X>
+			<X>214</X>
 			<Y>76</Y>
 		</Location>
 		<Size>
@@ -648,6 +648,26 @@
 		</GaugeDrawTemplate>
 	</Gauge>
 
+	<Label item="PW_AA_Label">
+		<ScreenID>PW_AA_Label</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>163</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>30</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>AA</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
 	<!-- AA XP Percent -->
 	<Label item="PW_AAXP_Pct">
 		<ScreenID>PW_AAXP_Pct</ScreenID>
@@ -699,7 +719,7 @@
 		<RelativePosition>true</RelativePosition>
 		<EQType>36</EQType>
 		<Location>
-			<X>168</X>
+			<X>176</X>
 			<Y>94</Y>
 		</Location>
 		<Size>
@@ -721,11 +741,11 @@
 		<ScreenID>PW_AA_Divider</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>195</X>
+			<X>203</X>
 			<Y>94</Y>
 		</Location>
 		<Size>
-			<CX>8</CX>
+			<CX>4</CX>
 			<CY>12</CY>
 		</Size>
 		<Text>/</Text>
@@ -735,7 +755,8 @@
 			<B>255</B>
 		</TextColor>
 		<NoWrap>true</NoWrap>
-		<AlignCenter>true</AlignCenter>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
 	</Label>
 
 	<!-- AA Total Points (spent) -->
@@ -744,7 +765,7 @@
 		<RelativePosition>true</RelativePosition>
 		<EQType>37</EQType>
 		<Location>
-			<X>203</X>
+			<X>206</X>
 			<Y>94</Y>
 		</Location>
 		<Size>
@@ -850,6 +871,86 @@
 		<NoWrap>true</NoWrap>
 	</Label>
 
+	<!-- ====================================================================== -->
+	<!-- WEIGHT DISPLAY (cur/max aligned under HP/Mana dividers) -->
+	<!-- ====================================================================== -->
+	<!-- Current Weight (right-aligned, EQType 24) -->
+	<Label item="PW_Weight_Current">
+		<ScreenID>PW_Weight_Current</ScreenID>
+    <Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<EQType>24</EQType>
+		<Location>
+			<X>176</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>9999</Text>
+		<TooltipReference>Current Weight</TooltipReference>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- Weight Divider "/" (centered under HP/Mana dividers) -->
+	<Label item="PW_Weight_Divider">
+		<ScreenID>PW_Weight_Divider</ScreenID>
+    <Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>203</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>4</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>/</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- Max Weight (left-aligned, EQType 25) -->
+	<Label item="PW_Weight_Max">
+		<ScreenID>PW_Weight_Max</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>25</EQType>
+   	<Font>3</Font>		
+		<Location>
+			<X>206</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>9999</Text>
+		<TooltipReference>Max Weight</TooltipReference>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+    <AlignLeft>true</AlignLeft>
+	</Label>
+
 	<!-- Pet HP Value (dummy - client doesn't provide actual value, but label needed for tooltip reference) -->
 	<Label item="Pet_HP">
 		<ScreenID>PetHP</ScreenID>
@@ -931,6 +1032,7 @@
 		<Pieces>PW_XP_PerHour_PctSign</Pieces>
 
 		<Pieces>PW_Gauge_AAXP</Pieces>
+		<Pieces>PW_AA_Label</Pieces>
 		<Pieces>PW_AAXP_Pct</Pieces>
 		<Pieces>PW_AAXP_PctSign</Pieces>
 		<Pieces>PW_AA_Current</Pieces>
@@ -940,7 +1042,12 @@
 		<Pieces>PW_Gauge_PetHP</Pieces>
 		<Pieces>PW_Pet_Pct</Pieces>
 		<Pieces>PW_Pet_PctSign</Pieces>
-		 <!-- Dummy for client-->
+
+		<Pieces>PW_Weight_Current</Pieces>
+		<Pieces>PW_Weight_Divider</Pieces>
+		<Pieces>PW_Weight_Max</Pieces>
+
+		<!-- Dummy for client-->
 		<Pieces>Pet_HP</Pieces>
 	</Screen>
 

@@ -185,5 +185,4 @@ To switch to other variants:
 ---
 
 **Part of**: [Thorne UI](../../../../README.md)  
-**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)  
-**Related Variants**: [Dark Slots and Color Weapons](../Dark%20Slots%20and%20Color%20Weapons/README.md)
+**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)

@@ -54,7 +54,14 @@ Specialized agent for quality assurance tasks that require:
 - Check for off-screen elements
 - Identify z-order issues
 
-### 5. Cross-Window Consistency
+### 5. XML Comment Quality
+- Verify zone/section dividers exist for major sections (`<!-- === ZONE NAME === -->`)
+- Check equipment/inventory slots have identifier comments (`<!-- IS_SLOT_NAME  EQType -->`)
+- Flag large uncommented sections (>50 lines with no comments)
+- Verify commented-out elements have explanations
+- Reference well-commented files as standard: `EQUI_Inventory.xml`, `EQUI_PlayerWindow.xml`, `EQUI_GroupWindow.xml`
+
+### 6. Cross-Window Consistency
 - Compare equipment slot ordering across windows
 - Verify stat display consistency
 - Check gauge styling uniformity
@@ -147,14 +154,14 @@ def validate_eqtype(eqtype, element_type, file_path, line_num):
 - Font usage consistency
 - Spacing rules adherence
 
-### 5. Cross-File Tests (Medium Priority)
+### 6. Cross-File Tests (Medium Priority)
 - Equipment slot consistency across windows
 - Stat display uniformity
 - Gauge styling coherence
 - Icon usage patterns
 - Template consistency
 
-### 6. Performance Tests (Low Priority)
+### 7. Performance Tests (Low Priority)
 - Texture file sizes
 - Element count optimization
 - Animation complexity
@@ -193,16 +200,6 @@ def validate_xml_file(file_path):
             "errors": [{"line": e.lineno, "message": str(e)}]
         }
 ```
-
-## Validation Scripts
-
-Store validation scripts in `.bin/validation/`:
-
-- `validate_xml_syntax.py` - XML well-formedness
-- `check_standards_compliance.py` - Color/spacing/sizing checks
-- `verify_eqtypes.py` - EQType context validation
-- `detect_layout_conflicts.py` - Overlap detection
-- `cross_window_consistency.py` - Multi-window comparison
 
 ## Test Report Format
 
@@ -264,28 +261,6 @@ Store validation scripts in `.bin/validation/`:
 - [ ] Test in-game
 ```
 
-## Automated Testing Tools
-
-### Run All Validators
-
-```bash
-# Execute complete test suite
-python .bin/validation/run_all_tests.py --scope thorne_drak/EQUI_Inventory.xml
-
-# Run specific test category
-python .bin/validation/validate_xml_syntax.py thorne_drak/**/*.xml
-
-# Check standards compliance
-python .bin/validation/check_standards_compliance.py --strict
-```
-
-### Continuous Validation
-
-```bash
-# Watch mode for development
-python .bin/validation/watch_and_validate.py --directory thorne_drak/
-```
-
 ## Deliverables
 
 When completing validation task, return:
@@ -312,7 +287,25 @@ Before returning test results:
 
 - `.docs/STANDARDS.md` - Validation rules reference
 - `.docs/technical/EQTYPES.md` - EQType validation data
-- `.bin/validation/` - Test scripts directory
+- `.bin/validation/` - Test scripts directory (if present)
+- `.docs/ROADMAP-v*.md` - Active milestone for scope context
+- `DEVELOPMENT.md` - Project design philosophy
+- `TODO.md` - Current roadmap and shipped releases
+
+### Documentation Validation
+
+**Markdown link checking** is a testing responsibility:
+- Run `python .bin/scan_links.py` to validate all markdown cross-references
+- Review output in `.tmp/scan_links.json` (gitignored)
+- Check for broken links to archived docs (`.development/archive/`)
+- Verify roadmap cross-references (`README.md` ↔ `TODO.md` ↔ `.docs/ROADMAP-v*.md`)
+- Validate Options README files match actual Options directory contents
+
+**Documentation structure to be aware of:**
+- `.docs/` — Standards, roadmaps (`ROADMAP-v*.md`), releases, technical references
+- `.development/` — Workshop (phase docs, analysis, working notes)
+- `.development/archive/` — Superseded docs (git mv'd for history preservation)
+- Root: `README.md`, `DEVELOPMENT.md`, `TODO.md`
 
 ## Output Format
 

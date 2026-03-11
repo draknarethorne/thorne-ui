@@ -1,0 +1,50 @@
+name: "✨ Feature request"
+description: Propose new UI functionality or workflow automation.
+title: "feat: "
+labels: ["enhancement", "needs-triage"]
+assignees:
+  - draknarethorne
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What pain point are we solving?
+      placeholder: During testing, creating and tracking issues manually is slow...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior or workflow.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / files likely affected
+      description: XML windows, scripts, workflows, docs, etc.
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk level
+      options:
+        - low
+        - medium
+        - high
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Standards alignment
+      options:
+        - label: This request preserves classic EQ aesthetics and player-first customization.
+          required: true
+        - label: I reviewed existing variants/options before requesting this.
+          required: false

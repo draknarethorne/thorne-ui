@@ -33,7 +33,7 @@
       "_comment": "Gold (vertical) — dark → light → med-dark",
       "type": "vertical",
       "top_color": [140, 110, 50],
-      "middle_color": [220, 200, 120],
+      "middle_color": [240, 225, 160],
       "bottom_color": [170, 140, 70]
     },
     "silver": {
@@ -47,7 +47,7 @@
       "_comment": "Bronze (vertical) — dark → light → med-dark",
       "type": "vertical",
       "top_color": [120, 75, 40],
-      "middle_color": [200, 150, 95],
+      "middle_color": [235, 200, 145],
       "bottom_color": [150, 100, 60]
     },
     "platinum": {
@@ -63,7 +63,7 @@
       "_comment": "Gold gleam (diagonal)",
       "type": "diagonal_tl",
       "top_color": [140, 110, 50],
-      "middle_color": [220, 200, 120],
+      "middle_color": [240, 225, 160],
       "bottom_color": [170, 140, 70]
     },
     "silver_gleam": {
@@ -77,7 +77,7 @@
       "_comment": "Bronze gleam (diagonal)",
       "type": "diagonal_tl",
       "top_color": [120, 75, 40],
-      "middle_color": [200, 150, 95],
+      "middle_color": [235, 200, 145],
       "bottom_color": [150, 100, 60]
     },
     "platinum_gleam": {
@@ -105,21 +105,21 @@
       "_comment": "Dark to light gray middle to dark diagonal blend. Shows nice tonal transition.",
       "type": "diagonal_tl",
       "top_color": [80, 75, 70],
-      "middle_color": [180, 180, 180],
+      "middle_color": [215, 215, 215],
       "bottom_color": [80, 75, 70]
     },
     "phantom": {
       "_comment": "Muted blue-gray metal haze",
       "type": "vertical",
       "top_color": [90, 95, 110],
-      "middle_color": [150, 160, 180],
+      "middle_color": [195, 205, 225],
       "bottom_color": [80, 85, 100]
     },
     "ghost": {
       "_comment": "Soft pale gray metal sheen",
       "type": "vertical",
       "top_color": [120, 125, 135],
-      "middle_color": [190, 195, 205],
+      "middle_color": [215, 220, 230],
       "bottom_color": [110, 115, 125]
     },
     "patriot": {
@@ -167,20 +167,20 @@
     {"name": "legs", "item_row": 3, "item_col": 3, "out_row": 3, "out_col": 3, "fit_size": 31},
     {"name": "feet", "item_row": 3, "item_col": 4, "out_row": 3, "out_col": 4},
     {"name": "primary", "item_row": 3, "item_col": 5, "out_row": 3, "out_col": 5},
-    {"name": "ammo", "item_row": 3, "item_col": 6, "out_row": 3, "out_col": 6},
+    {"name": "ammo", "item_row": 3, "item_col": 6, "out_row": 3, "out_col": 6, "fit_size": 32},
     
     {"name": "bag", "item_row": 4, "item_col": 1, "out_row": 4, "out_col": 1, "fit_size": 30, "offset_y": 0},
-    {"name": "pack", "item_row": 4, "item_col": 2, "out_row": 4, "out_col": 2, "fit_size": 32, "offset_y": 0},
+    {"name": "backpack", "item_row": 4, "item_col": 2, "out_row": 4, "out_col": 2, "fit_size": 32, "offset_y": 0},
     {"name": "satchel", "item_row": 4, "item_col": 3, "out_row": 4, "out_col": 3, "fit_size": 30},
-    {"name": "empty_row4_col4", "item_row": 4, "item_col": 4, "out_row": 4, "out_col": 4},
-    {"name": "empty_row4_col5", "item_row": 4, "item_col": 5, "out_row": 4, "out_col": 5},
-    {"name": "empty_row4_col6", "item_row": 4, "item_col": 6, "out_row": 4, "out_col": 6},
+    {"name": "pack", "item_row": 4, "item_col": 4, "out_row": 4, "out_col": 4},
+    {"name": "box", "item_row": 4, "item_col": 5, "out_row": 4, "out_col": 5},
+    {"name": "open_box", "item_row": 4, "item_col": 6, "out_row": 4, "out_col": 6},
     
-    {"name": "recessed_box", "item_row": 5, "item_col": 1, "out_row": 5, "out_col": 1},
-    {"name": "empty_row5_col2", "item_row": 5, "item_col": 2, "out_row": 5, "out_col": 2},
-    {"name": "empty_row5_col3", "item_row": 5, "item_col": 3, "out_row": 5, "out_col": 3},
-    {"name": "empty_row5_col4", "item_row": 5, "item_col": 4, "out_row": 5, "out_col": 4},
-    {"name": "empty_row5_col5", "item_row": 5, "item_col": 5, "out_row": 5, "out_col": 5},
+    {"name": "empty", "item_row": 5, "item_col": 1, "out_row": 5, "out_col": 1},
+    {"name": "treasurechest", "item_row": 5, "item_col": 2, "out_row": 5, "out_col": 2},
+    {"name": "spellbook", "item_row": 5, "item_col": 3, "out_row": 5, "out_col": 3},
+    {"name": "lantern", "item_row": 5, "item_col": 4, "out_row": 5, "out_col": 4},
+    {"name": "spell", "item_row": 5, "item_col": 5, "out_row": 5, "out_col": 5},
     {"name": "empty_row5_col6", "item_row": 5, "item_col": 6, "out_row": 5, "out_col": 6},
     
     {"name": "logo_1", "item_row": 6, "item_col": 1, "out_row": 6, "out_col": 1, "fit_size": 34, "offset_x": -1, "offset_y": -1},

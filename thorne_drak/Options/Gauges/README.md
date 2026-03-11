@@ -1,9 +1,9 @@
 # Gauge Options
 
 **Directory**: `thorne_drak/Options/Gauges/`  
-**Version**: 3.0.0  
-**Last Updated**: February 21, 2026  
-**Status**: ✅ Active - Subdirectory-Based Organization  
+**Version**: 4.0.0  
+**Last Updated**: March 3, 2026  
+**Status**: ✅ Active — Per-Variant Config System  
 **Author**: Draknare Thorne
 
 ---
@@ -13,7 +13,8 @@
 This directory contains gauge texture variants for HP, Mana, Stamina, Experience, and Pet Health bars used throughout Thorne UI. Each subdirectory contains a complete set of pre-built textures at all supported sizes — just copy the files for your chosen variant into the main `thorne_drak/` directory.
 
 **Key Features:**
-- **7 Visual Styles**: Multiple gauge aesthetics to match your preference
+- **8 Visual Styles**: Multiple gauge aesthetics to match your preference
+- **Per-Variant Config**: Each variant has a `.regen_gauges.json` controlling scaling behavior
 - **Subdirectory Organization**: Each variant isolated in its own folder
 - **Multiple Sizes**: Wide (120, 150) and tall (120t, 150t, 230t, 240t, 250t, 260t) — all pre-built and ready to use
 - **Easy Switching**: Copy desired variant's `.tga` files to main thorne_drak directory
@@ -115,8 +116,22 @@ All variants contain the same complete set of generated size files (see [Generat
 - Softer rounded edges
 - Organic gauge shape
 - Distinct from traditional rectangular bars
+- Uses LANCZOS interpolation for crispness
 
 **Best For**: Players who prefer a more stylized, shaped gauge
+
+---
+
+### **[Thorne 7/](Thorne%207/)**
+
+**Visual Style**: 7-segment display style ticks
+
+**Features**:
+- Structural tick marks with 7-segment aesthetic
+- Clear visual segmentation
+- Strong grid definition
+
+**Best For**: Players who want segmented, technical gauge readouts
 
 ---
 
@@ -136,7 +151,7 @@ Every variant directory contains the same complete set of pre-built texture file
 | `gauge_inlay250t_thorne01.tga` | 250×64 | Tall | 250px wide tall |
 | `gauge_inlay260t_thorne01.tga` | 260×64 | Tall | 260px wide tall |
 
-> **Developers**: Size variants are generated from `gauge_inlay_thorne01.tga` using `.bin/regen_gauges.py`. See the repository source for details.
+> **Developers**: Size variants are generated from `gauge_inlay_thorne01.tga` using `.bin/regen_gauges.py`. Per-variant scaling behavior is controlled by `.regen_gauges.json` config files. See [Per-Variant Config](#per-variant-config-system) for details.
 
 ## 🔧 How to Switch Gauge Variants
 
@@ -179,6 +194,63 @@ For advanced users who want to test a variant without copying files:
 4. Reload UI in-game
 
 ## 📐 Technical Specifications
+
+### Per-Variant Config System
+
+Each gauge variant contains a `.regen_gauges.json` file that controls how `regen_gauges.py` scales that variant’s textures. This is essential because gauge art styles have fundamentally different needs:
+
+- **Structural gauges** (Thorne, Grid, Basic, Bars, Thorne 7) have black tick marks and borders that must remain crisp 1px lines when scaled
+- **Gradient gauges** (Bubbles, Light Bubbles, Oval) have smooth color gradients where exact-black pixels are incidental edges, not structural features
+
+#### Config Schema
+
+```json
+{
+  "description": "Human description of this gauge variant",
+  "interpolation": "BILINEAR",
+  "sections": {
+    "background": { "preserve_black": true },
+    "fill":       { "preserve_black": false },
+    "lines":      { "preserve_black": true },
+    "linesfill":  { "preserve_black": false }
+  }
+}
+```
+
+#### Config Properties
+
+| Property | Values | Default | Description |
+|----------|--------|---------|-------------|
+| `description` | string | — | Human-readable description of the variant style |
+| `interpolation` | `"BILINEAR"`, `"LANCZOS"`, `"NEAREST"` | `"BILINEAR"` | Default scaling algorithm for all sections |
+| `sections.<name>.preserve_black` | `true` / `false` | varies | Whether to extract and re-stamp black pixels as a separate overlay |
+| `sections.<name>.interpolation` | `"BILINEAR"`, `"LANCZOS"`, `"NEAREST"` | top-level | Per-section interpolation override |
+
+#### How `preserve_black` Works
+
+When `preserve_black: true`:
+1. Black pixels are extracted from the source section into a binary mask
+2. Black pixels are replaced with nearest non-black color for smooth interpolation
+3. The color layer is scaled with the chosen interpolation method
+4. The black mask is proportionally mapped to the target size (guaranteeing 1px marks stay 1px)
+5. Solid black is stamped onto the scaled result at mask positions
+
+When `preserve_black: false`:
+1. The entire section is scaled directly with the chosen interpolation method
+2. Any black in the output is natural interpolation of dark source content
+
+#### Variant Config Summary
+
+| Variant | BG preserve_black | Lines preserve_black | Interpolation | Reason |
+|---------|-------------------|---------------------|---------------|--------|
+| Thorne | `true` | `true` | BILINEAR | Structural ticks at 6px intervals |
+| Grid | `true` | `true` | BILINEAR | Dense structural grid pattern |
+| Basic | `true` | `true` | BILINEAR | Solid black BG + structural ticks |
+| Thorne 7 | `true` | `true` | BILINEAR | 7-segment structural ticks |
+| Bars | `true` | `true` | BILINEAR | 5 structural ticks + border row |
+| Bubbles | `false` | `false` | BILINEAR | Gradient edges, not structural |
+| Light Bubbles | `false` | `false` | BILINEAR | Minimal incidental black |
+| Oval | `false` | `false` | LANCZOS | Near-black gradients, crisper scaling |
 
 ### Standard Gauge Layout (gauge_inlay_thorne01.tga - 103x32 or 100x32)
 
@@ -237,7 +309,7 @@ Available in **all variants** (auto-generated by regen script). Provides taller 
 
 ## 🎮 Current Active Configuration
 
-**File**: [EQUI_Animations.xml](EQUI_Animations.xml)
+**File**: [EQUI_Animations.xml](../../EQUI_Animations.xml)
 
 The animations file in this directory contains gauge animation definitions that reference `gauge_inlay_thorne01.tga`. By default, this points to textures in the main `thorne_drak/` directory, which should contain your chosen variant.
 
@@ -259,11 +331,26 @@ To create your own gauge texture variant:
 1. **Create subdirectory**: `Options/Gauges/YourVariantName/`
 2. **Extract gauge textures** from source UI (see extraction guide below)
 3. **Save as** `gauge_inlay_thorne01.tga` in your new variant directory
-4. **Copy to thorne_drak/** to test:
+4. **Create `.regen_gauges.json`** config (see [Per-Variant Config](#per-variant-config-system)):
+   ```json
+   {
+     "description": "Your variant description",
+     "interpolation": "BILINEAR",
+     "sections": {
+       "background": { "preserve_black": true },
+       "fill":       { "preserve_black": false },
+       "lines":      { "preserve_black": true },
+       "linesfill":  { "preserve_black": false }
+     }
+   }
+   ```
+   Set `preserve_black: false` for sections with gradient-based black (no structural borders).
+5. **Generate sizes**: `python .bin/regen_gauges.py YourVariantName`
+6. **Copy to thorne_drak/** to test:
    ```powershell
    Copy-Item "thorne_drak\Options\Gauges\YourVariantName\*.tga" "thorne_drak\"
    ```
-5. **Test** in-game: `/loadskin thorne_drak 1`
+7. **Test** in-game: `/loadskin thorne_drak 1`
 
 > **Developers (repo clone)**: Run `regen_gauges YourVariantName` to auto-generate all size variants from the source texture.
 
@@ -293,7 +380,7 @@ python .bin/extract_gauge_texture.py --source <ui_name> --output Options/Gauges/
 - **[../../EQUI_Animations.xml](../../EQUI_Animations.xml)** - Main animations file (in thorne_drak root)
 - **[../Player/README.md](../Player/README.md)** - Player window gauge usage
 - **[../Pet/README.md](../Pet/README.md)** - Pet window gauge configuration
-- **[../../.docs/STANDARDS.md](../../.docs/STANDARDS.md)** - Gauge styling standards
+- **[STANDARDS.md](../../../.docs/STANDARDS.md)** - Gauge styling standards
 
 ---
 
@@ -374,11 +461,11 @@ regen_gauges Thorne
 ## 📦 Repository Information
 
 **Repository**: [draknarethorne/thorne-ui](https://github.com/draknarethorne/thorne-ui)  
-**Documentation**: [Thorne UI Standards](.docs/STANDARDS.md)  
+**Documentation**: [Thorne UI Standards](../../../.docs/STANDARDS.md)  
 **Issues**: [GitHub Issues](https://github.com/draknarethorne/thorne-ui/issues)
 
 ---
 
 *Maintainer: Draknare Thorne*  
-*Last Updated: February 21, 2026*  
-*Status: ✅ Active - 7 Variants, Full Size Generation*
+*Last Updated: March 3, 2026*  
+*Status: ✅ Active — 8 Variants, Per-Variant Config, Full Size Generation*

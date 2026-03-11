@@ -1,9 +1,10 @@
 {
   "window": "Merchant",
-  "description": "Merchant window for trading with NPCs",
-  "default_variant": "Default",
-  "last_sync_date": "2026-02-03",
-  "last_sync_commit": "51a6e2a",
-  "in_sync": true,
-  "notes": "Initial sync - Default copy created and all variants established"
+  "filenames": [
+    "EQUI_MerchantWnd.xml"
+  ],
+  "description": "Merchant window Thorne configuration (1 file(s))",
+  "last_sync_date": "2026-02-27T17:24:49.004635",
+  "last_sync_commit": "9ac32db",
+  "in_sync": true
 }

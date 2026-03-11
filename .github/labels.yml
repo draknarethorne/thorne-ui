@@ -1,0 +1,75 @@
+- name: bug
+  color: "d73a4a"
+  description: Something is broken and needs a fix.
+
+- name: enhancement
+  color: "a2eeef"
+  description: New feature or improvement request.
+
+- name: testing
+  color: "1d76db"
+  description: Findings captured during in-game or workflow testing.
+
+- name: needs-triage
+  color: "fbca04"
+  description: Newly captured work awaiting classification and prioritization.
+
+- name: priority:critical
+  color: "b60205"
+  description: Crash, data loss, or blocked gameplay.
+
+- name: priority:high
+  color: "d93f0b"
+  description: Significant impact; should be addressed soon.
+
+- name: priority:medium
+  color: "fbca04"
+  description: Noticeable impact but not blocking core play.
+
+- name: priority:low
+  color: "0e8a16"
+  description: Minor issue or cosmetic improvement.
+
+- name: ui:actions
+  color: "5319e7"
+  description: Work related to Actions window/components.
+
+- name: ui:inventory
+  color: "5319e7"
+  description: Work related to Inventory window/components.
+
+- name: ui:merchant
+  color: "5319e7"
+  description: Work related to Merchant window/components.
+
+- name: ui:bazaar
+  color: "5319e7"
+  description: Work related to Bazaar window/components.
+
+- name: ui:player
+  color: "5319e7"
+  description: Work related to Player window/components.
+
+- name: ui:group
+  color: "5319e7"
+  description: Work related to Group window/components.
+
+- name: ui:target
+  color: "5319e7"
+  description: Work related to Target window/components.
+
+- name: ui:spellbook
+  color: "5319e7"
+  description: Work related to SpellBook window/components.
+
+- name: ui:loot
+  color: "5319e7"
+  description: Work related to Loot window/components.
+
+- name: automation
+  color: "0052cc"
+  description: GitHub workflow/process automation work.
+
+- name: docs
+  color: "0075ca"
+  description: Documentation updates.

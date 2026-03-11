@@ -36,7 +36,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3008</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -53,7 +53,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3009</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -70,7 +70,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3010</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -87,7 +87,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3011</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -104,7 +104,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3012</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -121,7 +121,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3013</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -138,7 +138,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3014</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -155,7 +155,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3015</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -347,7 +347,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3000</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -364,7 +364,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3001</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -381,7 +381,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3002</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -398,7 +398,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3003</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -415,7 +415,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3004</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -432,7 +432,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3005</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -449,7 +449,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3006</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -466,7 +466,7 @@
       <CX>40</CX>
       <CY>40</CY>
     </Size>
-    <Background>A_RecessedBox</Background>
+    <Background>A_Slot_Empty</Background>
     <EQType>3007</EQType>
     <ItemOffsetX>2</ItemOffsetX>
     <ItemOffsetY>2</ItemOffsetY>
@@ -702,7 +702,7 @@
     <Text>Trade</Text>
     <Style_Transparent>false</Style_Transparent>
     <!--<TooltipReference/>-->
-    <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+    <DrawTemplate>WDT_RoundedDarkNoTitle</DrawTemplate>
     <Style_Titlebar>false</Style_Titlebar>
     <Style_Closebox>false</Style_Closebox>
     <Style_Minimizebox>false</Style_Minimizebox>

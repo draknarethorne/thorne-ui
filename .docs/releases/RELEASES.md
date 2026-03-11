@@ -20,6 +20,7 @@ See the **Common Questions** section below for more details.
 ## Overview
 
 GitHub Releases provide a way to package and distribute versions of the Thorne UI with:
+
 - **Automatic ZIP creation** - No manual packaging needed!
 - **Downloadable packages** - ZIP files created by GitHub Actions
 - **Version-tagged releases** - Organized by semantic version
@@ -29,6 +30,7 @@ GitHub Releases provide a way to package and distribute versions of the Thorne U
 ## What Gets Released
 
 Each release includes:
+
 1. **thorne_drak package** - The primary UI variant (`thorne_drak-v{VERSION}.zip`)
 2. **Complete package** - thorne_drak with all documentation (`thorne-ui-v{VERSION}.zip`)
 3. **Release notes** - Auto-generated from git commits since the last release
@@ -45,6 +47,7 @@ Each release includes:
 The automated workflow creates releases when you push a version tag:
 
 1. **Ensure all changes are committed and pushed to main:**
+
    ```bash
    git add .
    git commit -m "Prepare for release v0.6.5"
@@ -52,10 +55,11 @@ The automated workflow creates releases when you push a version tag:
    ```
 
 2. **Create and push a version tag:**
+
    ```bash
    # Create an annotated tag with release notes
    git tag -a v0.6.5 -m "Release v0.6.5: Brief description of major changes"
-   
+
    # Push the tag to trigger the release workflow
    git push origin v0.6.5
    ```
@@ -93,11 +97,13 @@ You can also create releases manually through the GitHub web interface:
 ### For You (Repository Owner)
 
 **Direct URL:**
+
 ```
 https://github.com/draknarethorne/thorne-ui/releases
 ```
 
 **Navigation paths:**
+
 1. From repository homepage → Click "Releases" in right sidebar
 2. From repository homepage → Click on the releases badge/number
 3. From top menu → Repository → Releases section
@@ -107,11 +113,13 @@ https://github.com/draknarethorne/thorne-ui/releases
 Users can access releases without navigating through your repository:
 
 **Share this URL for downloads:**
+
 ```
 https://github.com/draknarethorne/thorne-ui/releases
 ```
 
 **What users see:**
+
 - List of all releases (newest first)
 - Version numbers and dates
 - Release notes with what's new
@@ -119,6 +127,7 @@ https://github.com/draknarethorne/thorne-ui/releases
 - Installation instructions
 
 **Advantages:**
+
 - Direct link to downloads
 - No need to browse repository structure
 - Bookmark-able URL
@@ -135,6 +144,7 @@ Follow semantic versioning: `vMAJOR.MINOR.PATCH`
 - **PATCH** (v0.3.1) - Bug fixes, small tweaks, documentation updates
 
 ### Examples:
+
 - `v0.6.5` - Current patch release (Spellbook/cast polish + Thorne options sync)
 - `v0.7.0` - Next minor version with new features
 - `v1.0.0` - First major stable release
@@ -275,12 +285,13 @@ Before creating your first release, test that the workflow works correctly:
 ```
 
 This validates:
+
 - YAML syntax
 - Required files exist
 - Package creation
 - Release notes generation
 
-For detailed testing instructions, see **[TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md)** (maintainer-only).
+For detailed testing instructions, see **[TESTING-RELEASES.md](../../.development/archive/TESTING-RELEASES.md)** (maintainer-only).
 
 ---
 
@@ -301,7 +312,7 @@ For detailed testing instructions, see **[TESTING-RELEASES.md](../../.developmen
 **Q: What if the workflow fails?**  
 **A:** Check the workflow logs in the Actions tab for error details. Common issues: missing VERSION  
 file, syntax errors in YAML, or permission issues. See  
-[TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md) for debugging help.
+[TESTING-RELEASES.md](../../.development/archive/TESTING-RELEASES.md) for debugging help.
 
 **Q: What's the difference between the test script and the workflow?**  
 **A:** The test script runs locally and validates your setup before pushing. The workflow runs on GitHub's servers when you push a tag. Both use the same release.yml file.
@@ -311,7 +322,8 @@ file, syntax errors in YAML, or permission issues. See
 ## Support
 
 For questions about releases or the release process:
-- Test the workflow: [TESTING-RELEASES.md](../../.development/releases/TESTING-RELEASES.md) (maintainer-only)
+
+- Test the workflow: [TESTING-RELEASES.md](../../.development/archive/TESTING-RELEASES.md) (maintainer-only)
 - Open an issue on GitHub
 - Check the [DEVELOPMENT.md](../../DEVELOPMENT.md) guide
 - Review existing releases for examples

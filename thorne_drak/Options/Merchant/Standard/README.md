@@ -192,5 +192,4 @@ To switch to other variants:
 ---
 
 **Part of**: [Thorne UI](../../../../README.md)  
-**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)  
-**Related Variants**: [Large Inventory and Bags](../Large%20Inventory%20and%20Bags/README.md), [Large inventory](../Large%20inventory/README.md)
+**Standards**: [Development Standards](../../../../.docs/STANDARDS.md)

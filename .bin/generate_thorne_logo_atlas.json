@@ -1,0 +1,92 @@
+{
+  "_comment": "Configuration for generate_thorne_logo_atlas.py. Each column applies a different lighting technique to the source logo. Transparency rows then fade all columns uniformly.",
+
+  "source": {
+    "_comment": "Path relative to thorne_drak/Options/Slots/.Master/",
+    "file": "logo_atlas_thorne01.tga",
+    "row": 1,
+    "col": 1
+  },
+
+  "output": {
+    "file": "logo_atlas_thorne01.tga",
+    "_comment": "Updated in-place (same file). 255x255 atlas, 40px cells, 2px gaps."
+  },
+
+  "grid": {
+    "cell_size": 40,
+    "spacing": 2,
+    "cols": 6,
+    "rows": 6,
+    "atlas_size": 255
+  },
+
+  "lighting_columns": {
+    "_comment": "Each column applies a different lighting technique. Modes: source, flat, radial_glow, top_light, radial_top_bias, rim_light. All modes use target_gray as the brightening target.",
+    "columns": [
+      {
+        "mode": "source",
+        "_comment": "Original logo, no effect — dark baseline"
+      },
+      {
+        "mode": "radial_top_bias",
+        "target_gray": 180,
+        "intensity": 0.85,
+        "falloff": 1.0,
+        "radial_weight": 0.55,
+        "_comment": "Center glow with 45% top bias — directional warmth with radial core"
+      },
+      {
+        "mode": "radial_glow",
+        "target_gray": 180,
+        "intensity": 0.90,
+        "falloff": 1.1,
+        "_comment": "Center bright, edges dark — inner fire radiating from the dragon"
+      },
+      {
+        "mode": "bottom_light",
+        "target_gray": 190,
+        "intensity": 0.90,
+        "falloff": 0.6,
+        "_comment": "Strong underlight — dark crown, bright tail. Mirror of top_light."
+      },
+      {
+        "mode": "top_light",
+        "target_gray": 190,
+        "intensity": 0.90,
+        "falloff": 0.6,
+        "_comment": "Strong overhead light — bright crown, deep dark tail"
+      },
+      {
+        "mode": "rim_light",
+        "target_gray": 170,
+        "intensity": 1.0,
+        "_comment": "Edges glow, interior stays dark — backlit silhouette halo"
+      }
+    ]
+  },
+
+  "transparency_rows": {
+    "_comment": "Alpha values for each row (1-6). Row 1 is fully opaque (255). Rows 2-6 reduce opacity. Same levels as the button atlas for consistency.",
+    "alpha_values": [255, 242, 230, 217, 191, 128],
+    "_alpha_note": "255=100%, 242=95%, 230=90%, 217=85%, 191=75%, 128=50%"
+  },
+
+  "icons": {
+    "_comment": "18x18 tab icons generated from Row 1 of the logo atlas. Normal gray + gold tint rows. Output saved to thorne_drak/ root.",
+    "enabled": true,
+    "output_file": "logo_icons_thorne01.tga",
+    "icon_size": 18,
+    "icon_spacing": 2,
+    "atlas_width": 128,
+    "atlas_height": 64,
+    "shift_up": 4,
+    "_shift_comment": "Pixels to shift content upward after downscale. Removes faint near-zero-alpha top rows from the 40→18 resize.",
+    "gold_tint": {
+      "_comment": "Muted warm bronze matching original EQ tab icons in window_pieces01.tga. Targets bright px avg ~(160,140,95).",
+      "r_multiplier": 1.05,
+      "g_multiplier": 0.92,
+      "b_multiplier": 0.62
+    }
+  }
+}

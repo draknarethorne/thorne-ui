@@ -4,18 +4,12 @@
 
 This directory contains variants for the Merchant window (EQUI_MerchantWnd.xml).
 
-**Last Synced:** 2026-02-03  
-**Git Commit:** 51a6e2a
+**Last Synced:** 2026-02-27  
+**Git Commit:** 9ac32db
 
 ---
 
 ## Available Variants
-
-- **[Large inventory/](Large inventory/)**  📄
-  `EQUI_MerchantWnd.xml`
-
-- **[Large Inventory and Bags/](Large Inventory and Bags/)**  📄
-  `EQUI_MerchantWnd.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_MerchantWnd.xml`
@@ -23,11 +17,16 @@ This directory contains variants for the Merchant window (EQUI_MerchantWnd.xml).
 - **[Thorne/](Thorne/)**    
   `EQUI_MerchantWnd.xml`
 
+- **[Thorne Bags/](Thorne Bags/)**  📄
+  `EQUI_MerchantWnd.xml`
+
 ---
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_MerchantWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `EQUI_MerchantWnd.xml`
 
 ## Metadata
 

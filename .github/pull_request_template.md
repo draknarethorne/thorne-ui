@@ -2,6 +2,14 @@
 
 Fill in summary here.
 
+## Linked Issue(s)
+
+<!-- Required: use one of the following -->
+<!-- Closes #123 -->
+<!-- Related to #123 -->
+
+Closes #
+
 ## Changes
 
 List changes here.
@@ -18,6 +26,7 @@ Optional screenshots or notes.
 
 ## Checklist
 
+- [ ] PR body links at least one issue (`Closes #...` or `Related to #...`)
 - [ ] Follows `.docs/STANDARDS.md`
 - [ ] Window(s) remain self-sustainable (no unintended cross-file dependencies)
 - [ ] Options variants documented (if new variants were added)

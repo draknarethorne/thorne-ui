@@ -1,0 +1,55 @@
+name: "🧪 UI testing finding"
+description: Quickly capture findings from live testing without writing a full bug report.
+title: "testing: "
+labels: ["testing", "needs-triage"]
+assignees:
+  - draknarethorne
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this lightweight form during active testing sessions.
+        Keep it short now; details can be expanded during triage.
+
+  - type: input
+    id: session
+    attributes:
+      label: Testing session context
+      description: Character/class/server and what was being tested.
+      placeholder: TAKP - Ranger 60 - Inventory options sync pass
+    validations:
+      required: true
+
+  - type: textarea
+    id: finding
+    attributes:
+      label: Finding
+      description: What did you observe?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - critical (crash, data loss, blocked gameplay)
+        - high (major usability/functionality impact)
+        - medium (noticeable but playable)
+        - low (cosmetic or minor mismatch)
+    validations:
+      required: true
+
+  - type: textarea
+    id: candidate_fix
+    attributes:
+      label: Candidate fix (optional)
+      description: Any idea for a fix, file, or EQType to inspect?
+
+  - type: checkboxes
+    id: followup
+    attributes:
+      label: Follow-up
+      options:
+        - label: Convert this to a full bug if reproducible across sessions.
+          required: false

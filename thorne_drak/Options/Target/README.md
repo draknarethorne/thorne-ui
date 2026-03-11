@@ -4,33 +4,38 @@
 
 This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 
-**Last Synced:** 2026-02-17  
-**Git Commit:** 36b97c1
+**Last Synced:** 2026-03-06  
+**Git Commit:** 0b78b6f
 
 ---
 
 ## Available Variants
 
-- **[Player and Pet Gauges/](Player and Pet Gauges/)**  📄
-  `EQUI_TargetWindow.xml`
-
-- **[Player Gauges and Weight/](Player Gauges and Weight/)**  📄
-  `EQUI_TargetWindow.xml`
-
-- **[Player HP and Mana Gauges/](Player HP and Mana Gauges/)**  📄
-  `EQUI_TargetWindow.xml`
-
 - **[Standard/](Standard/)**  📄
   `EQUI_TargetWindow.xml`
 
-- **[Thorne/](Thorne/)**  📄
+- **[Thorne/](Thorne/)**    
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Oval/](Thorne Oval/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Oval Basic/](Thorne Oval Basic/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Oval Pet/](Thorne Oval Pet/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Oval Weight/](Thorne Oval Weight/)**  📄
   `EQUI_TargetWindow.xml`
 
 ---
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_TargetWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `EQUI_TargetWindow.xml`
 
 ## Metadata
 

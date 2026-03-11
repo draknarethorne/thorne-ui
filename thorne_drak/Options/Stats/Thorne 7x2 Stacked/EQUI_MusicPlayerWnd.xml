@@ -1,0 +1,1199 @@
+<?xml version = "1.0"?>
+<XML ID = "EQInterfaceDefinitionLanguage">
+	<Schema xmlns = "EverQuestData" xmlns:dt = "EverQuestDataTypes"/>
+
+	<!-- ============================================ -->
+	<!-- Stats Row (top)                             -->
+	<!-- ============================================ -->
+	<StaticAnimation item = "MPW_Stat_AC_Icon">
+		<ScreenID>MPW_Stat_AC_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>35</X>
+			<Y>2</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_ArmorClass</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_AC_Value">
+		<ScreenID>MPW_Stat_AC_Value</ScreenID>
+		<EQType>22</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>32</X>
+			<Y>20</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_ATK_Icon">
+		<ScreenID>MPW_Stat_ATK_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>35</X>
+			<Y>37</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Attack</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_ATK_Value">
+		<ScreenID>MPW_Stat_ATK_Value</ScreenID>
+		<EQType>23</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>32</X>
+			<Y>55</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_STR_Icon">
+		<ScreenID>MPW_Stat_STR_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>5</X>
+			<Y>2</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Strength</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_STR_Value">
+		<ScreenID>MPW_Stat_STR_Value</ScreenID>
+		<EQType>5</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>20</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_STA_Icon">
+		<ScreenID>MPW_Stat_STA_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>5</X>
+			<Y>37</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Stamina</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_STA_Value">
+		<ScreenID>MPW_Stat_STA_Value</ScreenID>
+		<EQType>6</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>55</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_AGI_Icon">
+		<ScreenID>MPW_Stat_AGI_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>5</X>
+			<Y>72</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Agility</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_AGI_Value">
+		<ScreenID>MPW_Stat_AGI_Value</ScreenID>
+		<EQType>8</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>90</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_DEX_Icon">
+		<ScreenID>MPW_Stat_DEX_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>5</X>
+			<Y>107</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Dexterity</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_DEX_Value">
+		<ScreenID>MPW_Stat_DEX_Value</ScreenID>
+		<EQType>7</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>125</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_WIS_Icon">
+		<ScreenID>MPW_Stat_WIS_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>5</X>
+			<Y>142</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Wisdom</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_WIS_Value">
+		<ScreenID>MPW_Stat_WIS_Value</ScreenID>
+		<EQType>9</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>160</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_INT_Icon">
+		<ScreenID>MPW_Stat_INT_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>5</X>
+			<Y>177</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Intelligence</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_INT_Value">
+		<ScreenID>MPW_Stat_INT_Value</ScreenID>
+		<EQType>10</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>195</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_CHA_Icon">
+		<ScreenID>MPW_Stat_CHA_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>5</X>
+			<Y>212</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_Charisma</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_CHA_Value">
+		<ScreenID>MPW_Stat_CHA_Value</ScreenID>
+		<EQType>11</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>230</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_Magic_Icon">
+		<ScreenID>MPW_Stat_Magic_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>35</X>
+			<Y>72</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_MagicResist</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_Magic_Value">
+		<ScreenID>MPW_Stat_Magic_Value</ScreenID>
+		<EQType>16</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>32</X>
+			<Y>90</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_Fire_Icon">
+		<ScreenID>MPW_Stat_Fire_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>35</X>
+			<Y>107</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_FireResist</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_Fire_Value">
+		<ScreenID>MPW_Stat_Fire_Value</ScreenID>
+		<EQType>14</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>32</X>
+			<Y>125</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_Cold_Icon">
+		<ScreenID>MPW_Stat_Cold_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>35</X>
+			<Y>142</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_ColdResist</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_Cold_Value">
+		<ScreenID>MPW_Stat_Cold_Value</ScreenID>
+		<EQType>15</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>32</X>
+			<Y>160</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_Disease_Icon">
+		<ScreenID>MPW_Stat_Disease_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>35</X>
+			<Y>177</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_DiseaseResist</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_Disease_Value">
+		<ScreenID>MPW_Stat_Disease_Value</ScreenID>
+		<EQType>13</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>32</X>
+			<Y>195</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<StaticAnimation item = "MPW_Stat_Poison_Icon">
+		<ScreenID>MPW_Stat_Poison_Icon</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>35</X>
+			<Y>212</Y>
+		</Location>
+		<Size>
+			<CX>18</CX>
+			<CY>18</CY>
+		</Size>
+		<Animation>A_Icon_PoisonResist</Animation>
+	</StaticAnimation>
+
+	<Label item ="MPW_Stat_Poison_Value">
+		<ScreenID>MPW_Stat_Poison_Value</ScreenID>
+		<EQType>12</EQType>
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>32</X>
+			<Y>230</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ===================================================================== -->
+	<!-- Legacy MusicPlayer compatibility controls (client-required children)  -->
+	<!-- IMPORTANT: These must remain in MusicPlayerWnd Pieces to avoid UIErrors -->
+	<!-- (missing PlayButton/StopButton/etc). Keep hidden via absolute parking. -->
+	<!-- ===================================================================== -->
+	<Combobox item = "MPW_SongSelector">
+		<ScreenID>SongSelector</ScreenID>
+		<DrawTemplate>WDT_Inner</DrawTemplate>
+		<TooltipReference>This is the currently selected song.</TooltipReference>
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ListHeight>240</ListHeight>
+		<Button>BDT_Combo</Button>
+		<Style_Border>true</Style_Border>
+	</Combobox>
+
+	<Label item ="MPW_PositionMin">
+		<ScreenID/>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1000</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>16</CY>
+		</Size>
+		<EQType>78</EQType>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item ="MPW_Colon2">
+		<ScreenID/>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1024</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>5</CX>
+			<CY>16</CY>
+		</Size>
+		<Text>:</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<Label item ="MPW_PositionSec">
+		<ScreenID/>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1029</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>16</CY>
+		</Size>
+		<EQType>79</EQType>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<Label item ="MPW_Slash">
+		<ScreenID/>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1053</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>8</CX>
+			<CY>16</CY>
+		</Size>
+		<Text>/</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<Label item ="MPW_DurationMin">
+		<ScreenID>DurationMin</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1061</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>16</CY>
+		</Size>
+		<EQType>76</EQType>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item ="MPW_Colon1">
+		<ScreenID/>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1085</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>5</CX>
+			<CY>16</CY>
+		</Size>
+		<Text>:</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<Label item ="MPW_DurationSec">
+		<ScreenID/>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1090</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>16</CY>
+		</Size>
+		<EQType>77</EQType>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<Gauge item = "MPW_SongTimer">
+		<ScreenID>SongTimer</ScreenID>
+		<!--<Font>3</Font>-->
+		<TextColor>
+				<R>240</R>
+				<G>240</G>
+				<B>240</B>
+		</TextColor>
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<TextOffsetX>-50</TextOffsetX>
+		<GaugeOffsetY>16</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint>
+				<R>220</R>
+				<G>220</G>
+				<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+				<R>0</R>
+				<G>0</G>
+				<B>220</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<EQType>22</EQType>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground</Background>
+			<Fill>A_GaugeFill</Fill>
+			<Lines>A_GaugeLines</Lines>
+			<LinesFill>A_GaugeLinesFill</LinesFill>
+			<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
+			<EndCapRight>A_GaugeEndCapRight</EndCapRight>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<Label item ="MPW_VolLabel">
+		<ScreenID/>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1128</X>
+			<Y>1000</Y>
+		</Location>
+		<Size>
+			<CX>100</CX>
+			<CY>20</CY>
+		</Size>
+		<Text>Volume</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<Slider item = "MPW_Volume">
+		<ScreenID>Volume</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<SliderArt>SDT_DefSlider</SliderArt>
+	</Slider>
+
+	<Button item = "MPW_BackButton">
+		<ScreenID>BackButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Back</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Back</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_PlayButton">
+		<ScreenID>PlayButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Play a song</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Play</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_PauseButton">
+		<ScreenID>PauseButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pause playing</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Pause</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_StopButton">
+		<ScreenID>StopButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Stop playing</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Stop</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_NextButton">
+		<ScreenID>NextButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Skip to next song</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Next</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_RandomButton">
+		<ScreenID>RandomButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Push down for random song selection</TooltipReference>
+		<Style_Checkbox>true</Style_Checkbox>
+		<Text>Random</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_DeleteButton">
+		<ScreenID>DeleteButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Delete the current song from the playlist.</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Delete</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_AddButton">
+		<ScreenID>AddButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Add the filename to the left to the playlist.</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Add</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_ClearButton">
+		<ScreenID>ClearButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Clears the current playlist.</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Clear</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "MPW_SaveButton">
+		<ScreenID>SaveButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>-50</X>
+			<Y>-50</Y>
+		</Location>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Save the current playlist.</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Save</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_SmallBtnNormal</Normal>
+			<Pressed>A_SmallBtnPressed</Pressed>
+			<Flyby>A_SmallBtnFlyby</Flyby>
+			<Disabled>A_SmallBtnDisabled</Disabled>
+			<PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Screen item = "MusicPlayerWnd">
+		<ScreenID/>
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>200</X>
+			<Y>78</Y>
+		</Location>
+		<Size>
+			<CX>66</CX>
+			<CY>253</CY>
+		</Size>
+		<Text></Text>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Character Stats Window</TooltipReference>
+		<DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+		<Style_Titlebar>false</Style_Titlebar>
+		<Style_Closebox>false</Style_Closebox>
+		<Style_Minimizebox>false</Style_Minimizebox>
+		<Style_Border>true</Style_Border>
+		<Style_Sizable>false</Style_Sizable>
+		<Pieces>MPW_Stat_AC_Icon</Pieces>
+		<Pieces>MPW_Stat_AC_Value</Pieces>
+		<Pieces>MPW_Stat_ATK_Icon</Pieces>
+		<Pieces>MPW_Stat_ATK_Value</Pieces>
+		<Pieces>MPW_Stat_STR_Icon</Pieces>
+		<Pieces>MPW_Stat_STR_Value</Pieces>
+		<Pieces>MPW_Stat_STA_Icon</Pieces>
+		<Pieces>MPW_Stat_STA_Value</Pieces>
+		<Pieces>MPW_Stat_AGI_Icon</Pieces>
+		<Pieces>MPW_Stat_AGI_Value</Pieces>
+		<Pieces>MPW_Stat_DEX_Icon</Pieces>
+		<Pieces>MPW_Stat_DEX_Value</Pieces>
+		<Pieces>MPW_Stat_WIS_Icon</Pieces>
+		<Pieces>MPW_Stat_WIS_Value</Pieces>
+		<Pieces>MPW_Stat_INT_Icon</Pieces>
+		<Pieces>MPW_Stat_INT_Value</Pieces>
+		<Pieces>MPW_Stat_CHA_Icon</Pieces>
+		<Pieces>MPW_Stat_CHA_Value</Pieces>
+		<Pieces>MPW_Stat_Magic_Icon</Pieces>
+		<Pieces>MPW_Stat_Magic_Value</Pieces>
+		<Pieces>MPW_Stat_Fire_Icon</Pieces>
+		<Pieces>MPW_Stat_Fire_Value</Pieces>
+		<Pieces>MPW_Stat_Cold_Icon</Pieces>
+		<Pieces>MPW_Stat_Cold_Value</Pieces>
+		<Pieces>MPW_Stat_Disease_Icon</Pieces>
+		<Pieces>MPW_Stat_Disease_Value</Pieces>
+		<Pieces>MPW_Stat_Poison_Icon</Pieces>
+		<Pieces>MPW_Stat_Poison_Value</Pieces>
+
+		<!-- Client-required hidden children to prevent MusicPlayer missing-piece UI errors -->
+		<Pieces>MPW_SongSelector</Pieces>
+		<Pieces>MPW_SongTimer</Pieces>
+		<Pieces>MPW_Volume</Pieces>
+		<Pieces>MPW_BackButton</Pieces>
+		<Pieces>MPW_PlayButton</Pieces>
+		<Pieces>MPW_PauseButton</Pieces>
+		<Pieces>MPW_StopButton</Pieces>
+		<Pieces>MPW_NextButton</Pieces>
+		<Pieces>MPW_RandomButton</Pieces>
+		<Pieces>MPW_DeleteButton</Pieces>
+		<Pieces>MPW_AddButton</Pieces>
+		<Pieces>MPW_ClearButton</Pieces>
+		<Pieces>MPW_SaveButton</Pieces>
+	</Screen>
+
+
+</XML>

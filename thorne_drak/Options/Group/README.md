@@ -4,12 +4,15 @@
 
 This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 
-**Last Synced:** 2026-02-03  
-**Git Commit:** 51a6e2a
+**Last Synced:** 2026-03-04  
+**Git Commit:** c5de808
 
 ---
 
 ## Available Variants
+
+- **[Standard/](Standard/)**    
+  `EQUI_GroupWindow.xml`
 
 - **[Thorne/](Thorne/)**  📄
   `EQUI_GroupWindow.xml`
@@ -18,7 +21,9 @@ This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_GroupWindow.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `EQUI_GroupWindow.xml`
 
 ## Metadata
 

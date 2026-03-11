@@ -634,15 +634,10 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python regen_slots.py --all              # All configured variants
-  python regen_slots.py Gold               # Single variant
-  python regen_slots.py Gold Silver Metal  # Multiple variants
-    python regen_slots.py --all-combos        # All class/theme combos
-    python regen_slots.py --class Caster --theme Gold
-
-Note: Each variant directory must contain a .regen_slots.json config file.
-Source files (item/button atlases) should be copied from Options/Slots/.Master/
-before running this script.
+  python regen_slots.py --all                  # All class/theme combos
+  python regen_slots.py --class Caster         # Single class, all themes
+  python regen_slots.py --class Caster --theme Gold
+  python regen_slots.py Gold Silver Metal       # Legacy standalone variants
 
     Combo mode notes:
     - Themes live in Options/Slots/.Master/.Themes/<Theme>/.regen_slots.json
@@ -659,7 +654,7 @@ before running this script.
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Process all auto-discovered variants (requires .regen_slots.json in each)",
+        help="Generate all class/theme combos (same as --all-combos)",
     )
     parser.add_argument(
         "--master",
@@ -679,7 +674,7 @@ before running this script.
     parser.add_argument(
         "--all-combos",
         action="store_true",
-        help="Generate all class/theme combos from .Master and .Master/.Themes",
+        help="(Alias for --all) Generate all class/theme combos",
     )
     parser.add_argument(
         "--verbose",
@@ -701,27 +696,24 @@ before running this script.
         print("  python regen_slots.py --class Thorne")
         return 1
 
+    # --all is now an alias for --all-combos
+    if args.all:
+        args.all_combos = True
+
     # If no arguments provided, show usage
-    if not args.all and not args.variants and not args.all_combos and not args.class_name and not args.theme_name and not args.master:
+    if not args.all_combos and not args.variants and not args.class_name and not args.theme_name and not args.master:
         print("ERROR: No target specified.")
         print("\nUsage:")
-        print("  python regen_slots.py --all                    # All variants")
-        print("  python regen_slots.py Gold Silver              # Specific variants")
-        print("  python regen_slots.py --all-combos             # All class/theme combos")
+        print("  python regen_slots.py --all                    # All class/theme combos")
         print("  python regen_slots.py --class Thorne           # Single class, all themes")
+        print("  python regen_slots.py --class Thorne --theme Gold")
+        print("  python regen_slots.py Gold Silver              # Legacy standalone variants")
         print("\nFor help: python regen_slots.py --help")
         return 1
 
     combo_mode = bool(args.all_combos or args.class_name or args.theme_name)
 
-    if args.all:
-        variants = discover_variants(base_dir)
-        if not variants:
-            print("ERROR: No configured variants found in thorne_drak/Options/Slots/")
-            print(f"  Each variant directory needs a {CONFIG_FILENAME} config file.")
-            return 1
-        print(f"Auto-discovered {len(variants)} variant(s): {', '.join(variants)}")
-    elif args.variants and not combo_mode:
+    if args.variants and not combo_mode:
         variants = args.variants
     elif not combo_mode:
         parser.print_help()
@@ -777,7 +769,47 @@ before running this script.
                 if generator.generate():
                     generator.save_stats()
                     success_count += 1
-        regenerated_variants = []
+                    regenerated_variants.append((f"{resolved_class_name}/{theme_name}", output_dir))
+
+        # Smart copyback for combo mode:
+        #   --all-combos         → copy Thorne/Thorne (primary class + primary theme)
+        #   --class X            → copy X/Thorne (specified class + primary theme)
+        #   --class X --theme Y  → copy X/Y (single combo, just copy it)
+        PRIMARY_CLASS = "Thorne"
+        PRIMARY_THEME = "Thorne"
+
+        if len(regenerated_variants) == 1:
+            # Single combo — always copy it
+            combo_to_copy = regenerated_variants[0]
+        else:
+            # Multiple combos — find the primary
+            if args.class_name:
+                # --class specified: look for <class>/Thorne
+                target_label = f"{args.class_name}/{PRIMARY_THEME}"
+            else:
+                # --all-combos: look for Thorne/Thorne
+                target_label = f"{PRIMARY_CLASS}/{PRIMARY_THEME}"
+
+            combo_to_copy = None
+            for label, path in regenerated_variants:
+                if label == target_label:
+                    combo_to_copy = (label, path)
+                    break
+
+        if combo_to_copy:
+            combo_label, combo_path = combo_to_copy
+            root_path = base_dir / "thorne_drak"
+            src = combo_path / OUTPUT_FILENAME
+            if src.exists():
+                dst = root_path / OUTPUT_FILENAME
+                shutil.copy2(src, dst)
+                print(f"\n  Copied {combo_label}/{OUTPUT_FILENAME} -> thorne_drak/")
+
+                thorne_dev_path = Path(r"C:\TAKP\uifiles\thorne_dev")
+                if thorne_dev_path.exists():
+                    dst_dev = thorne_dev_path / OUTPUT_FILENAME
+                    shutil.copy2(src, dst_dev)
+                    print(f"  Deployed {combo_label}/{OUTPUT_FILENAME} -> thorne_dev/")
     else:
         for variant in variants:
             variant_dir = base_dir / "thorne_drak" / "Options" / "Slots" / variant
@@ -796,6 +828,8 @@ before running this script.
         print(f"\n{'='*70}")
         print(f"SUMMARY: {success_count}/{total_count} combo(s) processed successfully")
         print(f"{'='*70}\n")
+        if success_count > 0 and combo_to_copy:
+            print("Ready to test in-game with: /loadskin thorne_dev\n")
         return 0 if success_count == total_count else 1
 
     # Smart copyback: single variant → copy it; multiple → copy Gold (primary)

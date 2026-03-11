@@ -4,15 +4,12 @@
 
 This directory contains variants for the Cast window (EQUI_CastSpellWnd.xml).
 
-**Last Synced:** 2026-02-20  
-**Git Commit:** 30e0671
+**Last Synced:** 2026-03-04  
+**Git Commit:** c5de808
 
 ---
 
 ## Available Variants
-
-- **[Enhanced/](Enhanced/)**  📄
-  `EQUI_CastSpellWnd.xml`
 
 - **[Standard/](Standard/)**  📄
   `EQUI_CastSpellWnd.xml`
@@ -20,11 +17,16 @@ This directory contains variants for the Cast window (EQUI_CastSpellWnd.xml).
 - **[Thorne/](Thorne/)**  📄
   `EQUI_CastSpellWnd.xml`
 
+- **[Thorne Classic/](Thorne Classic/)**  📄
+  `EQUI_CastSpellWnd.xml`
+
 ---
 
 ## Thorne Configuration
 
-The `Thorne/` directory contains the current synchronized backup of the main working file from `thorne_drak/EQUI_CastSpellWnd.xml`.
+The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
+
+- `EQUI_CastSpellWnd.xml`
 
 ## Metadata
 

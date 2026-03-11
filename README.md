@@ -191,29 +191,27 @@ When you modify a window:
 
 ---
 
-## 🚀 Current Development (v0.7.5)
+## 🚀 Current Development (v0.8.0)
 
 We're iterating toward **v1.0.0** with focused releases:
 
-### What We're Working On (v0.7.5)
+### Coming Up (v0.8.0)
 
-- ⏳ **Slot class item overrides** - Class-specific armor/weapon representations in slot art
-- ✅ **Container & options sync** - Container slot spacing, inventory logos, Thorne option sync (v0.7.4)
-- ✅ **Logo atlas & tab branding** - 7 lighting modes, Actions tab branded (v0.7.3)
-- ✅ **Slot art expansion** - Actions mini-slots, Inspect anatomical layout (v0.7.2)
-- ✅ **HotButton stat layout** - 14-stat trial with icon/value spacing (v0.7.1)
+- ⏳ **Multi-color health gauges** - 4 variants on MusicPlayerWnd, roll out to Player/Target/Group/Pet
+- ⏳ **Enhanced group displays** - Analysis and implementation
 
-### Coming Up
+### Future (v1.0.0)
 
-- **v0.8.0** - Multi-color health gauges, enhanced group displays
-- **v1.0.0** - Logo branding (CharSelect, Inventory), documentation pass, release polish
+- **Logo branding** - CharSelect, Inventory & key screens
+- **Documentation pass** - 60 XML files, Options READMEs, registry docs
+- **Release polish** - Field naming, button consistency, final QA
 
 ### Recent Releases
 
+- **v0.7.5** - Class-specific slot art (15 classes × 7 themes), auto-tone, weapon archetype scoring
 - **v0.7.4** - Container slot spacing, inventory logos, Thorne option sync
 - **v0.7.3** - Logo atlas, tab icon branding, gauge polish
 - **v0.7.0** - Spell recast timers, stat icons, Options modernization
-- **v0.6.5** - Spellbook polish and Thorne-first option sync
 - **v0.6.0** - Inventory redesign (Phase 3.9 completion)
 
 **Want details?** See the [Full Version History](#-version-history) below or the [versioned roadmaps](.docs/).
@@ -221,6 +219,24 @@ We're iterating toward **v1.0.0** with focused releases:
 ---
 
 ## 📅 Version History
+
+**v0.7.5** (March 10, 2026)
+
+- ✅ Class-specific slot item overrides for 15 EQ classes
+  - Built automated icon scoring pipeline: SQL extraction → stat-weighted scoring → icon selection
+  - Class specificity multiplier, exclusivity bonus, confidence penalty for robust picks
+  - Weapon archetype hints per class (Bard: blade primary/instrument secondary, Cleric: mace/shield, etc.)
+  - Cross-slot deduplication across primary/secondary/range/ammo
+  - Class-restricted item filtering on all equipment slots with relaxed fallback threshold
+- ✅ Auto-tone gamma correction for Research atlas icons
+  - Config-level `auto_tone: true` default with per-item override priority
+  - Targets mean luminance 85–175 range for consistent icon readability
+- ✅ Regenerated 112 slot combos (16 classes × 7 themes)
+  - Each class uses archetype-typical armor, weapons, and accessories
+  - Caster secondaries show orbs/wands/tomes, not shields
+  - Bard instruments, Monk H2H, Rogue daggers — all class-appropriate
+- ✅ Compact Master-style JSON formatter for Research config generation
+- ✅ Promoted 15 class atlases from .Research/ to .Classes/ (production-ready)
 
 **v0.7.4** (March 6, 2026)
 

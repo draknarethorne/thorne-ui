@@ -1,8 +1,8 @@
 # Thorne UI v0.7.5 Roadmap
 
-**Version:** 0.7.5-dev
-**Status:** 🟡 In Progress (March 2026)
-**Branch:** `feature/class-slot-images-v0.7.5`
+**Version:** 0.7.5
+**Status:** ✅ Shipped (March 10, 2026)
+**Branch:** `feature/class-slot-images-v0.7.5` (merged to `main`)
 **Previous:** [ROADMAP-v0.7.0.md](ROADMAP-v0.7.0.md) (shipped)
 
 ---
@@ -41,27 +41,24 @@ v0.7.5 extends the art system and asset pipelines introduced in v0.7.0 — expan
 
 ---
 
-## ⏳ Remaining (v0.7.5)
+## ✅ Shipped (v0.7.5)
 
 ### Slot Class Item Overrides
 
-**Priority:** 🟡 Medium | **Effort:** Medium | **Branch:** `feature/class-slot-images-v0.7.5`
+**Priority:** ✅ Complete | **Effort:** Medium | **Branch:** `feature/class-slot-images-v0.7.5`
 
-Define custom item overrides in each class `.regen_thorne.json` config, then regenerate the full set of slot atlases across all class × theme combinations.
+Built an automated icon scoring pipeline to select class-appropriate item icons for 15 EQ classes, then generated all slot atlas combinations.
 
-**Current State:**
-- Slot pipeline infrastructure is complete (`regen_slots.bat` / `.bin/regen_slots.py`)
-- `.Master/.Classes/` configs exist for Caster, Melee, Hybrid, and Thorne
-- All `item_overrides` arrays are currently **empty** — each class uses the default item set
-
-**Implementation Steps:**
-1. Review dragitem source files in `.Master/.Items/` (`dragitem1.tga` through `dragitem15.tga`)
-2. For each class (Caster, Melee, Hybrid, Thorne), select class-appropriate armor and weapon representations
-3. Populate `item_overrides` in each `.regen_thorne.json`
-4. Run `regen_slots.bat` to regenerate all 4 classes × 7 themes = 28 atlas outputs
-5. Verify generated atlases visually and test in-game
-
-**Cross-Reference:** [item_slots/README.md](../.development/item_slots/README.md)
+**What was built:**
+- `pick_class_icons.py` — Stat-weighted scoring with class specificity, exclusivity, and confidence penalties
+- Per-class `weapon_hints` for archetype-typical item types (Bard instruments, Cleric maces, etc.)
+- Cross-slot deduplication across primary/secondary/range/ammo
+- Class-restricted item filtering on all equipment slots
+- Auto-tone gamma correction targeting luminance 85–175 for icon readability
+- `generate_regen_json.py` — Compact Master-style JSON formatter
+- `regen_thorne.py` — Config-level `auto_tone` default with per-item override priority
+- 112 slot combos generated (16 classes × 7 themes)
+- 15 class atlases promoted from `.Research/` to `.Classes/` (production-ready)
 
 ### Final Polish
 
@@ -75,8 +72,9 @@ Define custom item overrides in each class `.regen_thorne.json` config, then reg
 | Milestone             | Target         | Status |
 | --------------------- | -------------- | ------ |
 | v0.7.1–v0.7.3 Polish | Mar 2–4, 2026  | ✅     |
-| Class Slot Overrides  | Mar 2026       | ⏳     |
-| v0.7.5 Release        | Mar 2026       | ⏳     |
+| v0.7.4 Container/Logo | Mar 6, 2026    | ✅     |
+| Class Slot Overrides  | Mar 10, 2026   | ✅     |
+| v0.7.5 Release        | Mar 10, 2026   | ✅     |
 
 ---
 

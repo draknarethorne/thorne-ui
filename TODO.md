@@ -2,7 +2,7 @@
 
 Development tracker for Thorne UI. For detailed implementation plans, see the versioned roadmaps in `.docs/`.
 
-**Current Branch:** `feature/class-slot-images-v0.7.5`
+**Current Branch:** `main`
 **Maintainer:** Draknare Thorne
 
 ---
@@ -12,7 +12,7 @@ Development tracker for Thorne UI. For detailed implementation plans, see the ve
 | Version | Status      | Focus                               | Link                                      |
 | ------- | ----------- | ----------------------------------- | ----------------------------------------- |
 | v0.7.0  | ✅ Shipped  | Recast timers, stat icons, options  | [ROADMAP-v0.7.0](.docs/ROADMAP-v0.7.0.md) |
-| v0.7.5  | 🟡 Active   | Slot art expansion, class overrides | [ROADMAP-v0.7.5](.docs/ROADMAP-v0.7.5.md) |
+| v0.7.5  | ✅ Shipped  | Slot art expansion, class overrides | [ROADMAP-v0.7.5](.docs/ROADMAP-v0.7.5.md) |
 | v0.8.0  | ⏳ Planning | Multi-color gauges, group displays  | [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) |
 | v1.0.0  | ⏳ Planning | Logo branding, docs, release polish | [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md) |
 
@@ -24,6 +24,7 @@ Development tracker for Thorne UI. For detailed implementation plans, see the ve
 
 | Version | Date       | Highlights                                                                 |
 | ------- | ---------- | -------------------------------------------------------------------------- |
+| v0.7.5  | 2026-03-10 | Class slot art (15 classes × 7 themes), auto-tone, weapon archetypes      |
 | v0.7.3  | 2026-03-04 | Logo atlas (7 lighting modes), tab icon branding, gauge polish             |
 | v0.7.2  | 2026-03-03 | Slot art expansion (Actions 28×28, Inspect 40×40), dark rounded templates  |
 | v0.7.1  | 2026-03-02 | HotButton 14-stat layout, post-v0.7.0 polish                               |
@@ -52,12 +53,14 @@ Group Window, Pet Window, Player Window, Inventory (Phase 3.9), Actions Window (
 
 ## Remaining Work
 
-### v0.7.5 — Slot Class Overrides (Active)
+### v0.7.5 — Slot Class Overrides (✅ Shipped)
 
-- [ ] Populate `item_overrides` in class configs (Caster, Melee, Hybrid, Thorne)
-- [ ] Run `regen_slots.bat` for all 4 classes × 7 themes
-- [ ] Visual verification of generated atlases
-- [ ] In-game testing and Options README updates
+- [x] Build automated icon scoring pipeline (SQL → stat-weighted scoring → icon picks)
+- [x] Per-class weapon archetype hints and cross-slot dedup
+- [x] Auto-tone gamma correction for Research icons
+- [x] Promote 15 class atlases to .Classes/ (production-ready)
+- [x] Run `regen_slots.py --all` for 16 classes × 7 themes (112 combos)
+- [x] Visual verification and in-game testing
 
 ### v0.8.0 — Advanced Visual Systems
 

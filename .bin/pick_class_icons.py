@@ -20,7 +20,8 @@ Formula:
   spec_mult    = 1.0 + avg(1/n_classes_per_item)  (1.07-2.0x)
   count_bonus  = min(item_count, 20) * 0.5  (caps at 10.0)
   excl_bonus   = stat_score * 0.3 if icon unique to this class
-  total_score  = (stat_score * spec_mult) + count_bonus + excl_bonus
+  confidence   = min(item_count, 8) / 8  (0.125-1.0x, penalises tiny samples)
+  total_score  = ((stat_score * spec_mult) + excl_bonus) * confidence + count_bonus
 
   Min 2 items required to be "rank 1" pick (unless no 2+ icon exists).
 
@@ -284,7 +285,13 @@ def score_icon_group(items_for_icon, weights, exclusivity=1.0, target_class_bit=
     # Items usable by 1 class get 2x, items usable by all get ~1.07x
     spec_mult = class_specificity(items_for_icon, target_class_bit)
 
-    total = (avg_score * spec_mult) + count_bonus + excl_bonus
+    # Confidence penalty — small samples have volatile averages.
+    # Icons backed by 8+ items get full credit; fewer items scale down
+    # the stat-derived scoring proportionally (count_bonus unaffected).
+    MIN_CONFIDENT_COUNT = 8
+    confidence = min(len(items_for_icon), MIN_CONFIDENT_COUNT) / MIN_CONFIDENT_COUNT
+
+    total = ((avg_score * spec_mult) + excl_bonus) * confidence + count_bonus
     return avg_score, len(items_for_icon), total
 
 

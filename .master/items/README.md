@@ -6,7 +6,7 @@ class-specific equipment slot art in Thorne UI.
 ## Directory Layout
 
 ```
-.Items/
+items/
   dragitem1.tga … dragitem34.tga   # Source sprite sheets (6×6 grid, 40px cells)
   README.md                         # This file
   .cache/
@@ -33,7 +33,7 @@ python .bin/extract_eq_items.py
 ```
 
 **Source:** `.tmp/quarm_*.sql` (not tracked — download separately)
-**Output:** `.Items/.cache/eq_items.csv` + `.json`
+**Output:** `items/.cache/eq_items.csv` + `.json`
 
 ### 2. build_slot_reference.py — Archetype Slot Reference
 
@@ -44,7 +44,7 @@ python .bin/build_slot_reference.py
 ```
 
 **Input:** `eq_items.csv`
-**Output:** `.Items/.cache/slot_icon_reference.csv` + `.json`
+**Output:** `items/.cache/slot_icon_reference.csv` + `.json`
 
 ### 3. pick_class_icons.py — Class-Specific Icon Scoring
 
@@ -56,7 +56,7 @@ python .bin/pick_class_icons.py
 ```
 
 **Input:** `eq_items.csv`
-**Output:** `.Items/.cache/class_icon_picks.csv` + `.json` + `.html`
+**Output:** `items/.cache/class_icon_picks.csv` + `.json` + `.html`
 
 ### Icon → Dragitem Formula
 

@@ -67,7 +67,7 @@ from PIL import Image
 # ─── Paths ───────────────────────────────────────────────────────────
 
 REPO = Path(__file__).resolve().parent.parent
-ITEMS_DIR = REPO / "thorne_drak" / "Options" / "Slots" / ".Master" / ".Items"
+ITEMS_DIR = REPO / ".master" / "items"
 CATALOG_JSON = ITEMS_DIR / "item_catalog.json"
 CACHE_DIR = ITEMS_DIR / ".cache"
 

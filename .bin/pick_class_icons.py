@@ -25,9 +25,9 @@ Formula:
 
   Min 2 items required to be "rank 1" pick (unless no 2+ icon exists).
 
-Output: thorne_drak/Options/Slots/.Master/.Items/.cache/class_icon_picks.csv
-        thorne_drak/Options/Slots/.Master/.Items/.cache/class_icon_picks.json
-        thorne_drak/Options/Slots/.Master/.Items/.cache/class_icon_picks.html
+Output: .master/items/.cache/class_icon_picks.csv
+        .master/items/.cache/class_icon_picks.json
+        .master/items/.cache/class_icon_picks.html
 
 Usage:
     python .bin/pick_class_icons.py
@@ -40,8 +40,7 @@ from collections import Counter, defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-CACHE_DIR = os.path.join(PROJECT_ROOT, 'thorne_drak', 'Options', 'Slots',
-                        '.Master', '.Items', '.cache')
+CACHE_DIR = os.path.join(PROJECT_ROOT, '.master', 'items', '.cache')
 
 CSV_IN = os.path.join(CACHE_DIR, 'eq_items.csv')
 JSON_OUT = os.path.join(CACHE_DIR, 'class_icon_picks.json')

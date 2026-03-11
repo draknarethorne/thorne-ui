@@ -4,20 +4,20 @@ Composites item icons onto button backgrounds to produce themed inventory and eq
 slot textures for each variant in Options/Slots/.
 
 Config is split across two files:
-    Options/Slots/.Master/.regen_slots.json  -- Master layout: which dragitem maps to which output slot.
-                                                                                         Shared across ALL variants. Do not add colors here.
-    <variant>/.regen_slots.json              -- Variant styling: gradient_presets, default_button,
-                                                                                         default_item, button_grid, item_overrides.
+    .master/.regen_slots.json       -- Master layout: which dragitem maps to which output slot.
+                                       Shared across ALL variants. Do not add colors here.
+    <variant>/.regen_slots.json     -- Variant styling: gradient_presets, default_button,
+                                       default_item, button_grid, item_overrides.
 
 Each variant directory must also contain:
-  <source_items>      -- Item icon atlas (default: item_atlas_thorne01.tga, copied from .Master/)
-  <source_buttons>    -- Button background atlas (default: button_atlas_thorne01.tga, copied from .Master/)
+  <source_items>      -- Item icon atlas (default: item_atlas_thorne01.tga, copied from .master/)
+  <source_buttons>    -- Button background atlas (default: button_atlas_thorne01.tga, copied from .master/)
 
 Usage:
   python regen_slots.py --all                  # Auto-discover all configured variants
   python regen_slots.py Gold                   # Single variant
   python regen_slots.py Gold Silver Metal      # Multiple variants
-    python regen_slots.py --all-combos           # All class/theme combos (.Master/.Themes)
+    python regen_slots.py --all-combos           # All class/theme combos (.master/themes)
     python regen_slots.py --class Caster --theme Gold
   python regen_slots.py --help                 # Show help
 
@@ -42,10 +42,7 @@ except ImportError:
 CONFIG_FILENAME = ".regen_slots.json"
 MASTER_CONFIG_PATH = (
     Path(__file__).resolve().parents[1]
-    / "thorne_drak"
-    / "Options"
-    / "Slots"
-    / ".Master"
+    / ".master"
     / CONFIG_FILENAME
 )
 OUTPUT_FILENAME = "item_slots_thorne01.tga"
@@ -296,7 +293,7 @@ class SlotGenerator:
         self.variant_name = variant_name or variant_dir.name
         self.config_file = config_file or (variant_dir / CONFIG_FILENAME)
         self.output_dir = output_dir or variant_dir
-        self.master_dir = master_dir or (variant_dir.parent / ".Master")
+        self.master_dir = master_dir or (Path(__file__).resolve().parents[1] / ".master")
         self.items_dir = items_dir
         self.buttons_dir = buttons_dir
         self.stats: dict = {
@@ -351,11 +348,11 @@ class SlotGenerator:
         source_items = variant_config.get("source_items", master_config.get("source_items", "item_master_thorne01.tga"))
         source_buttons = variant_config.get("source_buttons", master_config.get("source_buttons", "button_atlas_thorne01.tga"))
 
-        # Fallback: if source file not in variant dir, look in .Master/
+        # Fallback: if source file not in variant dir, look in .master/
         master_dir = self.master_dir
 
         def _resolve_source(filename: str) -> tuple[Image.Image | None, str]:
-            """Load a source TGA, falling back to .Master/ if not in variant dir."""
+            """Load a source TGA, falling back to .master/ if not in variant dir."""
             p = (self.items_dir or self.variant_dir) / filename
             if p.exists():
                 try:
@@ -366,7 +363,7 @@ class SlotGenerator:
             if p2.exists():
                 try:
                     img = Image.open(p2).convert("RGBA")
-                    print(f"  Info: {filename} not in variant dir — loaded from .Master/")
+                    print(f"  Info: {filename} not in variant dir — loaded from .master/")
                     return img, "master"
                 except Exception as e:
                     print(f"  Warning: Could not load {p2}: {e}")
@@ -376,10 +373,10 @@ class SlotGenerator:
         buttons_img, buttons_loc = _resolve_source(source_buttons)
 
         if items_img is None:
-            print(f"  ERROR: {source_items} not found in variant dir or .Master/")
+            print(f"  ERROR: {source_items} not found in variant dir or .master/")
             return False
         if buttons_img is None:
-            print(f"  ERROR: {source_buttons} not found in variant dir or .Master/")
+            print(f"  ERROR: {source_buttons} not found in variant dir or .master/")
             return False
 
         items_src = items_img
@@ -589,7 +586,7 @@ def discover_variants(base_dir: Path) -> list[str]:
 
 def discover_classes(master_dir: Path) -> list[str]:
     classes: list[str] = []
-    classes_dir = master_dir / ".Classes"
+    classes_dir = master_dir / "classes"
     if not classes_dir.exists():
         return classes
     for item in sorted(classes_dir.iterdir()):
@@ -604,7 +601,7 @@ def discover_classes(master_dir: Path) -> list[str]:
 
 def discover_themes(master_dir: Path) -> list[str]:
     themes: list[str] = []
-    themes_dir = master_dir / ".Themes"
+    themes_dir = master_dir / "themes"
     if not themes_dir.exists():
         return themes
     for item in sorted(themes_dir.iterdir()):
@@ -616,11 +613,11 @@ def discover_themes(master_dir: Path) -> list[str]:
 def resolve_class_dir(master_dir: Path, class_name: str | None) -> tuple[str, Path]:
     if not class_name or class_name.strip().lower() in {"base", "master", ".master", "default"}:
         return "Base", master_dir
-    return class_name, master_dir / ".Classes" / class_name
+    return class_name, master_dir / "classes" / class_name
 
 
 def resolve_theme_dir(master_dir: Path, theme_name: str) -> Path:
-    return master_dir / ".Themes" / theme_name
+    return master_dir / "themes" / theme_name
 
 
 # ---------------------------------------------------------------------------
@@ -640,8 +637,8 @@ Examples:
   python regen_slots.py Gold Silver Metal       # Legacy standalone variants
 
     Combo mode notes:
-    - Themes live in Options/Slots/.Master/.Themes/<Theme>/.regen_slots.json
-    - Classes live in Options/Slots/.Master/.Classes/<Class>/ with item_atlas_thorne01.tga
+    - Themes live in .master/themes/<Theme>/.regen_slots.json
+    - Classes live in .master/classes/<Class>/ with item_atlas_thorne01.tga
     - Output is written to Options/Slots/<Class>/<Theme>/
         """,
     )
@@ -659,17 +656,17 @@ Examples:
     parser.add_argument(
         "--master",
         action="store_true",
-        help="Explicitly allow operations on .Master/ directory (required safety gate)",
+        help="Explicitly allow operations on .master/ directory (required safety gate)",
     )
     parser.add_argument(
         "--class",
         dest="class_name",
-        help="Class name for class/theme combos (auto-uses .Master/.Classes/<Class>/)",
+        help="Class name for class/theme combos (auto-uses .master/classes/<Class>/)",
     )
     parser.add_argument(
         "--theme",
         dest="theme_name",
-        help="Theme name for class/theme combos (auto-uses .Master/.Themes/<Theme>/)",
+        help="Theme name for class/theme combos (auto-uses .master/themes/<Theme>/)",
     )
     parser.add_argument(
         "--all-combos",
@@ -687,9 +684,9 @@ Examples:
     script_dir = Path(__file__).parent
     base_dir = script_dir.parent
 
-    # Safety check: prevent direct .Master operations without --master flag
-    if args.variants and ".Master" in args.variants and not args.master:
-        print("ERROR: Direct .Master/ updates require --master flag")
+    # Safety check: prevent direct .master operations without --master flag
+    if args.variants and ".master" in args.variants and not args.master:
+        print("ERROR: Direct .master/ updates require --master flag")
         print("  Usage: python regen_slots.py --master")
         print("\nFor safer class/theme updates:")
         print("  python regen_slots.py --all-combos")
@@ -726,7 +723,7 @@ Examples:
     regenerated_variants: list[tuple[str, Path]] = []
 
     if combo_mode:
-        master_dir = base_dir / "thorne_drak" / "Options" / "Slots" / ".Master"
+        master_dir = base_dir / ".master"
         if not master_dir.exists():
             print(f"ERROR: Master directory not found: {master_dir}")
             return 1
@@ -735,7 +732,7 @@ Examples:
         themes = discover_themes(master_dir) if args.all_combos or not args.theme_name else [args.theme_name]
 
         if not themes:
-            print(f"ERROR: No themes found under {master_dir / '.Themes'}")
+            print(f"ERROR: No themes found under {master_dir / 'themes'}")
             return 1
 
         if not classes:

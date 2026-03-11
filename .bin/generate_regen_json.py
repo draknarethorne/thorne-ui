@@ -2,24 +2,24 @@
 """Generate .regen_thorne.json files for all 15 EQ classes.
 
 Reads class_icon_picks.json (from pick_class_icons.py) and produces one
-.regen_thorne.json per class in the .Research directory. Each file contains
+.regen_thorne.json per class in the research/ directory. Each file contains
 item_overrides that map the top-scoring icon per equipment slot to the
 master atlas grid position.
 
 Usage:
     python .bin/generate_regen_json.py
 
-Input:  thorne_drak/Options/Slots/.Master/.Items/.cache/class_icon_picks.json
-Output: thorne_drak/Options/Slots/.Master/.Research/{ClassName}/.regen_thorne.json
+Input:  .master/items/.cache/class_icon_picks.json
+Output: .master/research/{ClassName}/.regen_thorne.json
 """
 
 import json
 import os
 
 # ----- paths -----
-BASE = os.path.join("thorne_drak", "Options", "Slots", ".Master")
-PICKS_FILE = os.path.join(BASE, ".Items", ".cache", "class_icon_picks.json")
-RESEARCH_DIR = os.path.join(BASE, ".Research")
+BASE = os.path.join(".master")
+PICKS_FILE = os.path.join(BASE, "items", ".cache", "class_icon_picks.json")
+RESEARCH_DIR = os.path.join(BASE, "research")
 MASTER_REGEN = os.path.join(BASE, ".regen_thorne.json")
 
 # ----- slot name mapping: pipeline name -> regen name -----

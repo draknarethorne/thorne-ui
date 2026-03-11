@@ -1,0 +1,97 @@
+{
+  "_comment": "Druid class item overrides (auto-generated from item data pipeline)",
+  "_note": "Leather priest \u2014 wisdom, nature, versatile",
+  "class_name": "Druid",
+  "item_overrides": [
+    {
+      "name": "ear",
+      "out_row": 1, "out_col": 1,
+      "src_row": 5, "src_col": 2, "source_file": "dragitem4.tga"
+    },
+    {
+      "name": "neck",
+      "out_row": 1, "out_col": 2,
+      "src_row": 5, "src_col": 5, "source_file": "dragitem10.tga"
+    },
+    {
+      "name": "head",
+      "out_row": 1, "out_col": 3,
+      "src_row": 3, "src_col": 6, "source_file": "dragitem4.tga"
+    },
+    {
+      "name": "face",
+      "out_row": 1, "out_col": 4,
+      "src_row": 2, "src_col": 4, "source_file": "dragitem8.tga"
+    },
+    {
+      "name": "chest",
+      "out_row": 1, "out_col": 5,
+      "src_row": 5, "src_col": 3, "source_file": "dragitem4.tga"
+    },
+    {
+      "name": "secondary",
+      "out_row": 1, "out_col": 6,
+      "src_row": 1, "src_col": 5, "source_file": "dragitem21.tga"
+    },
+    {
+      "name": "back",
+      "out_row": 2, "out_col": 1,
+      "src_row": 2, "src_col": 3, "source_file": "dragitem5.tga"
+    },
+    {
+      "name": "arms",
+      "out_row": 2, "out_col": 2,
+      "src_row": 3, "src_col": 5, "source_file": "dragitem4.tga"
+    },
+    {
+      "name": "shoulders",
+      "out_row": 2, "out_col": 3,
+      "src_row": 3, "src_col": 4, "source_file": "dragitem5.tga"
+    },
+    {
+      "name": "wrist",
+      "out_row": 2, "out_col": 4,
+      "src_row": 5, "src_col": 3, "source_file": "dragitem1.tga"
+    },
+    {
+      "name": "belt",
+      "out_row": 2, "out_col": 5,
+      "src_row": 4, "src_col": 5, "source_file": "dragitem2.tga"
+    },
+    {
+      "name": "range",
+      "out_row": 2, "out_col": 6,
+      "src_row": 3, "src_col": 6, "source_file": "dragitem3.tga"
+    },
+    {
+      "name": "hands",
+      "out_row": 3, "out_col": 1,
+      "src_row": 5, "src_col": 5, "source_file": "dragitem4.tga"
+    },
+    {
+      "name": "fingers",
+      "out_row": 3, "out_col": 2,
+      "src_row": 4, "src_col": 3, "source_file": "dragitem11.tga"
+    },
+    {
+      "name": "legs",
+      "out_row": 3, "out_col": 3,
+      "src_row": 6, "src_col": 2, "source_file": "dragitem5.tga"
+    },
+    {
+      "name": "feet",
+      "out_row": 3, "out_col": 4,
+      "src_row": 2, "src_col": 5, "source_file": "dragitem4.tga"
+    },
+    {
+      "name": "primary",
+      "out_row": 3, "out_col": 5,
+      "src_row": 1, "src_col": 6, "source_file": "dragitem3.tga"
+    },
+    {
+      "name": "ammo",
+      "out_row": 3, "out_col": 6,
+      "src_row": 5, "src_col": 4, "source_file": "dragitem1.tga"
+    }
+  ]
+}

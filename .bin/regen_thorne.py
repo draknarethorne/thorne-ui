@@ -5,8 +5,9 @@ grayscale item icon atlases. Output (thorne_item01.tga + variants) is consumed b
 regen_slots.py to generate finished slot textures.
 
 Usage:
-    python regen_thorne.py --all                 # All class overrides under .Master/.Classes/
+    python regen_thorne.py --all                 # All class overrides (.Classes/ + .Research/)
     python regen_thorne.py --class Thorne        # Generate a single class override
+    python regen_thorne.py --research            # Generate only .Research/ directories
     python regen_thorne.py --master              # Update .Master/ directory
     python regen_thorne.py --help                # Show help
 
@@ -445,18 +446,23 @@ def _merge_config(base: dict, override: dict) -> dict:
     return merged
 
 
-def _discover_class_overrides(master_dir: Path) -> list[Path]:
+def _discover_class_overrides(master_dir: Path, *, include_classes: bool = True, include_research: bool = True) -> list[Path]:
     class_dirs: list[Path] = []
-    classes_dir = master_dir / ".Classes"
-    if not classes_dir.exists():
-        return class_dirs
-    for item in sorted(classes_dir.iterdir()):
-        if not item.is_dir():
+    search_dirs: list[Path] = []
+    if include_classes:
+        search_dirs.append(master_dir / ".Classes")
+    if include_research:
+        search_dirs.append(master_dir / ".Research")
+    for search_dir in search_dirs:
+        if not search_dir.exists():
             continue
-        if item.name.startswith("."):
-            continue
-        if (item / CONFIG_FILENAME).exists():
-            class_dirs.append(item)
+        for item in sorted(search_dir.iterdir()):
+            if not item.is_dir():
+                continue
+            if item.name.startswith("."):
+                continue
+            if (item / CONFIG_FILENAME).exists():
+                class_dirs.append(item)
     return class_dirs
 
 
@@ -467,8 +473,9 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python regen_thorne.py --all              # Generate all classes under .Master/.Classes/
+  python regen_thorne.py --all              # Generate all (.Classes/ + .Research/)
   python regen_thorne.py --class Thorne     # Generate single class override
+  python regen_thorne.py --research         # Generate only .Research/ directories
   python regen_thorne.py --master           # Update .Master directory (REQUIRES --master flag)
 
 SAFETY:
@@ -493,17 +500,22 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
     parser.add_argument(
         "--class",
         dest="class_name",
-        help="Class name under .Master/.Classes to generate (uses base + class overrides).",
+        help="Class name under .Master/.Classes or .Research to generate (uses base + class overrides).",
     )
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Generate atlases for all class overrides under .Master/.Classes/",
+        help="Generate atlases for all class overrides (.Classes/ + .Research/)",
     )
     parser.add_argument(
         "--all-classes",
         action="store_true",
         help="(Alias for --all) Generate all class override atlases",
+    )
+    parser.add_argument(
+        "--research",
+        action="store_true",
+        help="Generate atlases for .Research/ directories only (experimental class picks)",
     )
     parser.add_argument(
         "--verbose",
@@ -534,23 +546,27 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
         return 1
 
     # If no flags provided, show usage
-    if not args.master and not args.class_name and not args.all_classes:
+    if not args.master and not args.class_name and not args.all_classes and not args.research:
         print("ERROR: No target specified.")
         print("\nUsage:")
         print("  python regen_thorne.py --all                 # All class atlases")
         print("  python regen_thorne.py --class Thorne        # Single class atlas")
+        print("  python regen_thorne.py --research            # .Research/ only")
         print("  python regen_thorne.py --master              # Update .Master/")
         print("\nFor help: python regen_thorne.py --help")
         return 1
 
     if args.class_name:
         master_dir = slots_dir / ".Master"
-        class_dir = master_dir / ".Classes" / args.class_name
         if not master_dir.exists():
             print(f"ERROR: Master directory not found: {master_dir}")
             return 1
+        # Search .Classes first, then .Research
+        class_dir = master_dir / ".Classes" / args.class_name
         if not class_dir.exists():
-            print(f"ERROR: Class directory not found: {class_dir}")
+            class_dir = master_dir / ".Research" / args.class_name
+        if not class_dir.exists():
+            print(f"ERROR: Class directory not found in .Classes/ or .Research/: {args.class_name}")
             return 1
 
         base_config_path = master_dir / CONFIG_FILENAME
@@ -583,6 +599,44 @@ Directory must contain .regen_thorne.json config file and source dragitem TGA fi
             return 0
         print("\n[FAILED] Generation did not complete successfully.\n")
         return 1
+
+    if args.research:
+        master_dir = slots_dir / ".Master"
+        base_config_path = master_dir / CONFIG_FILENAME
+        if not base_config_path.exists():
+            print(f"ERROR: Config not found: {base_config_path}")
+            return 1
+        with open(base_config_path, "r", encoding="utf-8") as f:
+            base_config = json.load(f)
+
+        class_dirs = _discover_class_overrides(master_dir, include_classes=False, include_research=True)
+        if not class_dirs:
+            print("No .Research/ class directories found.")
+            return 1
+        total = len(class_dirs)
+        success = 0
+        items_dir = master_dir / ".Items"
+
+        for class_dir in class_dirs:
+            class_config_path = class_dir / CONFIG_FILENAME
+            with open(class_config_path, "r", encoding="utf-8") as f:
+                class_config = json.load(f)
+            merged_config = _merge_config(base_config, class_config)
+            generator = ThorneGenerator(
+                class_dir,
+                config_override=merged_config,
+                source_dir=items_dir,
+                fallback_dir=master_dir,
+                verbose=args.verbose,
+            )
+            if generator.generate():
+                generator.save_stats()
+                success += 1
+
+        print(f"\n{'='*70}")
+        print(f"SUMMARY: Generated {success}/{total} .Research atlas(es)")
+        print(f"{'='*70}\n")
+        return 0 if success == total else 1
 
     if args.all_classes:
         master_dir = slots_dir / ".Master"

@@ -10,13 +10,13 @@ It allows you to override **which item icon** is used for each slot, while keepi
 Class configs live in:
 
 ```
-Options/Slots/.Master/.Classes/<Class>/.regen_thorne.json
+.master/classes/<Class>/.regen_thorne.json
 ```
 
 These configs **patch** the master atlas definition from:
 
 ```
-Options/Slots/.Master/.regen_thorne.json
+.master/.regen_thorne.json
 ```
 
 ## Quick Start: Add a New Class
@@ -24,7 +24,7 @@ Options/Slots/.Master/.regen_thorne.json
 1. **Create a class folder**:
 
 ```
-Options/Slots/.Master/.Classes/Necro/
+.master/classes/Necro/
 ```
 
 1. **Create `.regen_thorne.json`** with only overrides.
@@ -52,7 +52,7 @@ Example (override only chest and primary):
 }
 ```
 
-> Only include items you want to override. Everything else stays as defined in `.Master/.regen_thorne.json`.
+> Only include items you want to override. Everything else stays as defined in `.master/.regen_thorne.json`.
 
 1. **Generate the class atlas and slots**:
 
@@ -67,7 +67,7 @@ This regenerates the class atlas and the class’s theme outputs in one step.
 Dragitem sources are stored in:
 
 ```
-Options/Slots/.Master/.Items/
+.master/items/
 ```
 
 Each `dragitem*.tga` is a grid of 40×40 tiles (6×6 tiles). Coordinates are **1-based**.
@@ -105,8 +105,8 @@ Each override can include `tone` adjustments:
 
 ## Logos and Special Sources
 
-- Logos are sourced from `logo_atlas_thorne01.tga`, which lives in `.Master/`.
-- `.Items/` is reserved for dragitems only.
+- Logos are sourced from `logo_atlas_thorne01.tga`, which lives in `.master/`.
+- `items/` is reserved for dragitems only.
 
 ## Workflow Notes
 
@@ -115,5 +115,5 @@ Each override can include `tone` adjustments:
 
 ## Reference
 
-- Master items list: `Options/Slots/.Master/.regen_thorne.json`
-- Class examples: `Options/Slots/.Master/.Classes/Thorne/`, `Caster/`, `Melee/`, `Hybrid/`
+- Master items list: `.master/.regen_thorne.json`
+- Class examples: `.master/classes/Thorne/`, `Caster/`, `Melee/`, `Hybrid/`

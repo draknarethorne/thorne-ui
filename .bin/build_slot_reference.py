@@ -5,8 +5,8 @@ Reads eq_items.csv (produced by extract_eq_items.py) and generates a
 reference mapping of which dragitem icons are used by which EQ class
 archetypes at each equipment slot.
 
-Output: thorne_drak/Options/Slots/.Master/.Items/.cache/slot_icon_reference.json
-        thorne_drak/Options/Slots/.Master/.Items/.cache/slot_icon_reference.csv
+Output: .master/items/.cache/slot_icon_reference.json
+        .master/items/.cache/slot_icon_reference.csv
 
 Usage:
     python .bin/build_slot_reference.py
@@ -19,8 +19,7 @@ from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-CACHE_DIR = os.path.join(PROJECT_ROOT, 'thorne_drak', 'Options', 'Slots',
-                        '.Master', '.Items', '.cache')
+CACHE_DIR = os.path.join(PROJECT_ROOT, '.master', 'items', '.cache')
 
 CSV_IN = os.path.join(CACHE_DIR, 'eq_items.csv')
 JSON_OUT = os.path.join(CACHE_DIR, 'slot_icon_reference.json')
@@ -42,13 +41,13 @@ CLASS_BITS = {
 }
 
 # Thorne UI class archetypes — which EQ classes map to each
-# Broad archetypes (active in .Classes/)
+# Broad archetypes (active in classes/)
 ARCHETYPES = {
     'Caster':  {'NEC', 'WIZ', 'MAG', 'ENC'},
     'Hybrid':  {'PAL', 'RNG', 'SHD', 'BRD', 'BST'},
     'Melee':   {'WAR', 'MNK', 'ROG', 'BER'},
     'Priest':  {'CLR', 'DRU', 'SHM'},
-    # Individual class configs (staged in .Research/)
+    # Individual class configs (staged in research/)
     'Bard':    {'BRD'},
     'Druid':   {'DRU'},
     'Monk':    {'MNK'},

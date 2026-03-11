@@ -8,13 +8,13 @@ A **theme** is a collection of gradient presets and style overrides used by `reg
 Themes live in:
 
 ```
-Options/Slots/.Master/.Themes/<Theme>/
+.master/themes/<Theme>/
 ```
 
 Each theme provides a `.regen_slots.json` that **overrides** master defaults from:
 
 ```
-Options/Slots/.Master/.regen_slots.json
+.master/.regen_slots.json
 ```
 
 ## Quick Start: Add a New Theme
@@ -22,7 +22,7 @@ Options/Slots/.Master/.regen_slots.json
 1. **Create a theme folder** (example: `Ashen`):
 
 ```
-Options/Slots/.Master/.Themes/Ashen/
+.master/themes/Ashen/
 ```
 
 2. **Create `.regen_slots.json`** in that folder.
@@ -109,5 +109,5 @@ Use `item_overrides` to apply special gradients to specific slots (logos, weapon
 
 ## Reference
 
-- Master presets: `Options/Slots/.Master/.regen_slots.json`
-- Theme examples: `Options/Slots/.Master/.Themes/Gold/`, `Silver/`, `Bronze/`, `Patriot/`, `Thorne/`
+- Master presets: `.master/.regen_slots.json`
+- Theme examples: `.master/themes/Gold/`, `Silver/`, `Bronze/`, `Patriot/`, `Thorne/`

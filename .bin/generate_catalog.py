@@ -43,11 +43,11 @@ Status Levels:
     confirmed — human verified, NEVER overwritten
 
 Files:
-    .Master/.Items/item_catalog.json   — Source of truth (compact, one item/line)
-    .Master/.Items/item_catalog.md     — Regenerated readable view
-    .Master/.Items/.cache/             — Feature cache and ASCII renders
-    .Master/.Items/.cache/dragitemN/   — Per-file extracted cell PNGs
-    .Master/.Items/.cache/dragitemN.html — Per-file visual contact sheet
+    .master/items/item_catalog.json     — Source of truth (compact, one item/line)
+    .master/items/item_catalog.md       — Regenerated readable view
+    .master/items/.cache/               — Feature cache and ASCII renders
+    .master/items/.cache/dragitemN/     — Per-file extracted cell PNGs
+    .master/items/.cache/dragitemN.html — Per-file visual contact sheet
 """
 from __future__ import annotations
 
@@ -68,7 +68,7 @@ from PIL import Image
 # ─── Paths ───────────────────────────────────────────────────────────
 
 REPO = Path(__file__).resolve().parent.parent
-ITEMS_DIR = REPO / "thorne_drak" / "Options" / "Slots" / ".Master" / ".Items"
+ITEMS_DIR = REPO / ".master" / "items"
 CATALOG_JSON = ITEMS_DIR / "item_catalog.json"
 CATALOG_MD = ITEMS_DIR / "item_catalog.md"
 CACHE_DIR = ITEMS_DIR / ".cache"

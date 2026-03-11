@@ -1,14 +1,14 @@
-# .Master Directory - Thorne UI Slot System Control Center
+# .master/ — Thorne UI Slot System Control Center
 
 This directory contains the authoritative source of truth for the Thorne UI slot generation system.
 
 ## Directory Structure
 
 ```
-.Master/
+.master/
 ├── .regen_slots.json          Master config: slot layout, button styles, all gradient presets
-├── .Items/                    Source dragitem textures (36 files)
-├── .Themes/                   Theme-specific gradient overrides
+├── items/                     Source dragitem textures (36 files)
+├── themes/                    Theme-specific gradient overrides
 │   ├── Thorne/               Default personal theme
 │   ├── Gold/                 Gold variant
 │   ├── Silver/               Silver variant
@@ -16,7 +16,7 @@ This directory contains the authoritative source of truth for the Thorne UI slot
 │   ├── Bronze/               Bronze variant
 │   ├── Transparent/          Transparent background variant
 │   └── Texture/              Textured background variant
-└── .Classes/                  Class-specific item overrides
+└── classes/                   Class-specific item overrides
     ├── Thorne/               Personal class (mostly mirrors master)
     ├── Caster/               Caster armor/weapon selections
     ├── Melee/                Melee armor/weapon selections
@@ -28,20 +28,20 @@ This directory contains the authoritative source of truth for the Thorne UI slot
 ### Two-Step Generation
 
 **STEP 1 - `regen_thorne.py`**: Generates class-specific item atlases
-- Input: `.Items/dragitem*.tga` (source items)
-- Process: Apply class-specific item selections from `.Classes/<Class>/.regen_thorne.json`
-- Output: `.Classes/<Class>/item_atlas_thorne01.tga` (+ icon variant)
+- Input: `items/dragitem*.tga` (source items)
+- Process: Apply class-specific item selections from `classes/<Class>/.regen_thorne.json`
+- Output: `classes/<Class>/item_atlas_thorne01.tga` (+ icon variant)
 
 **STEP 2 - `regen_slots.py`**: Composites atlases with buttons and theme gradients
-- Input: `.Classes/<Class>/item_atlas_thorne01.tga` + `.Themes/<Theme>/.regen_slots.json`
+- Input: `classes/<Class>/item_atlas_thorne01.tga` + `themes/<Theme>/.regen_slots.json`
 - Process: Apply theme gradients, composite with buttons from master config
 - Output: `Options/Slots/<Class>/<Theme>/item_slots_thorne01.tga`
 
 ### Configuration Inheritance Model
 
 - **Master Config** (`.regen_slots.json`): Complete slot layout + all gradient presets
-- **Class Overrides** (`.Classes/<Class>/.regen_thorne.json`): Only dragitems that differ from master
-- **Theme Overrides** (`.Themes/<Theme>/.regen_slots.json`): Only gradients that differ from master
+- **Class Overrides** (`classes/<Class>/.regen_thorne.json`): Only dragitems that differ from master
+- **Theme Overrides** (`themes/<Theme>/.regen_slots.json`): Only gradients that differ from master
 
 ## Key Files
 
@@ -52,9 +52,9 @@ Contains:
 - `gradient_presets`: All color gradients (gold, silver, bronze, platinum, gleams, etc.)
 - `source_items` & `source_buttons`: Atlas source file references
 
-**Do NOT add theme-specific values here.** Theme-specific overrides go in `.Themes/`.
+**Do NOT add theme-specific values here.** Theme-specific overrides go in `themes/`.
 
-### `.Classes/<Class>/.regen_thorne.json`
+### `classes/<Class>/.regen_thorne.json`
 
 Example structure:
 ```json
@@ -75,7 +75,7 @@ Example structure:
 - Master items: All armor from a general dragitem file
 - Caster overrides: Caster-specific robes, spell focus items
 
-### `.Themes/<Theme>/.regen_slots.json`
+### `themes/<Theme>/.regen_slots.json`
 
 Example structure:
 ```json
@@ -175,7 +175,7 @@ regen_slots.py --class Caster --theme Gold
 - Fire: Warm orange/red color palette
 - Blood: Deep red/crimson variants
 - Nature: Green/earth tones
-- These can be added as new `.Themes/<Name>/` directories when ready
+- These can be added as new `themes/<Name>/` directories when ready
 
 ## Notes for Future Architecture
 

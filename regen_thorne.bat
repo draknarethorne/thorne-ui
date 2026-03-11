@@ -2,7 +2,7 @@
 REM regen_thorne.bat - Wrapper to run .bin\regen_thorne.py from PowerShell/CMD
 REM Generates grayscale item atlases from dragitem source files, auto-triggers slot regen
 REM Usage:
-REM   regen_thorne.bat                                     (Default: .Master directory)
+REM   regen_thorne.bat                                     (Default: .master directory)
 REM   regen_thorne.bat --class Thorne                      (Generate single class + auto-regen slots)
 REM   regen_thorne.bat --all                               (Generate all class overrides + auto-regen slots)
 REM   regen_thorne.bat --verbose                           (Detailed per-item output)
@@ -11,9 +11,9 @@ REM   regen_thorne.bat --class Thorne --verbose            (Class regen with det
 setlocal EnableDelayedExpansion
 set "SCRIPT_DIR=%~dp0"
 
-REM If no arguments provided, default to .Master directory
+REM If no arguments provided, default to .master directory
 if "%~1"=="" (
-    python "%SCRIPT_DIR%.bin\regen_thorne.py" .Master
+    python "%SCRIPT_DIR%.bin\regen_thorne.py" .master
 ) else (
     python "%SCRIPT_DIR%.bin\regen_thorne.py" %*
 )

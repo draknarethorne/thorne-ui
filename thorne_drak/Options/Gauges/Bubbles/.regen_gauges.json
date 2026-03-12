@@ -5,6 +5,9 @@
     "background": { "preserve_black": false },
     "fill":       { "preserve_black": false },
     "lines":      { "preserve_black": false },
-    "linesfill":  { "preserve_black": false }
+    "linesfill":  { "preserve_black": false },
+    "solidfill":  { "preserve_black": false, "fill_gaps": false },
+    "overlay":    { "preserve_black": false },
+    "gridfill":   { "preserve_black": false, "bake_overlay": false }
   }
 }

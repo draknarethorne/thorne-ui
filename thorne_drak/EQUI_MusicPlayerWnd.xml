@@ -1135,9 +1135,9 @@
   <!-- ============================================================== -->
 
   <!-- ======================== ROW R: Red Shades Composite (Nillipuss technique) ========= -->
-  <!-- 5 red shades from lightest (top/drops first) to darkest (base/stays longest)        -->
-  <!-- At full HP: light salmon. As HP drops: brightens→current red→dark→blood red          -->
-  <!-- Z-order: BG > Darkest(0) > Dark(1A+1B) > Current(2A+2B) > Bright(3A+3B) > Light(4) -->
+  <!-- 5 red shades from blood red (top/drops first) to white-hot (base/stays longest)     -->
+  <!-- At full HP: blood red. As HP drops: warms→brightens→white-hot alarm                 -->
+  <!-- Z-order: BG > WhiteHot(0) > Light(1A+1B) > Mid(2A+2B) > Warm(3A+3B) > Blood(4)    -->
 
   <Label item="EXP_LabelR">
     <ScreenID>EXP_LabelR</ScreenID>
@@ -1168,7 +1168,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Base: Darkest red (always visible, lowest layer) -->
+  <!-- RC Base: White-hot (always visible, lowest layer = critical HP) -->
   <Gauge item="EXP_RC_HP0">
     <ScreenID>EXP_RC_HP0</ScreenID>
     <EQType>1</EQType>
@@ -1180,14 +1180,14 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>100</R><G>0</G><B>0</B></FillTint>
+    <FillTint><R>255</R><G>210</G><B>210</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 1A: Dark red (25% threshold) -->
+  <!-- RC Band 1A: Light red (25% threshold) -->
   <Gauge item="EXP_RC_1A">
     <ScreenID>EXP_RC_1A</ScreenID>
     <EQType>1</EQType>
@@ -1199,7 +1199,7 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>160</R><G>10</G><B>10</B></FillTint>
+    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_OversizedGridFill_120t_Band1</Fill>
@@ -1223,14 +1223,14 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>160</R><G>10</G><B>10</B></FillTint>
+    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 2A: Current red (50% threshold, middle shade) -->
+  <!-- RC Band 2A: Mid red (50% threshold) -->
   <Gauge item="EXP_RC_2A">
     <ScreenID>EXP_RC_2A</ScreenID>
     <EQType>1</EQType>
@@ -1242,7 +1242,7 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>220</R><G>20</G><B>20</B></FillTint>
+    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_OversizedGridFill_120t_Band2</Fill>
@@ -1266,14 +1266,14 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>220</R><G>20</G><B>20</B></FillTint>
+    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 3A: Bright red (75% threshold) -->
+  <!-- RC Band 3A: Warm red (75% threshold) -->
   <Gauge item="EXP_RC_3A">
     <ScreenID>EXP_RC_3A</ScreenID>
     <EQType>1</EQType>
@@ -1285,7 +1285,7 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>245</R><G>70</G><B>60</B></FillTint>
+    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_OversizedGridFill_120t_Band3</Fill>
@@ -1309,14 +1309,14 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>245</R><G>70</G><B>60</B></FillTint>
+    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 4A: Lightest salmon-red (80% threshold, drops first) -->
+  <!-- RC Band 4A: Blood red (80% threshold, drops first = full HP) -->
   <Gauge item="EXP_RC_4A">
     <ScreenID>EXP_RC_4A</ScreenID>
     <EQType>1</EQType>
@@ -1328,7 +1328,7 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>130</G><B>120</B></FillTint>
+    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_OversizedGridFill_120t_Band4</Fill>
@@ -1352,7 +1352,7 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>130</G><B>120</B></FillTint>
+    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Fill>A_GaugeGridFill_120t</Fill>
@@ -1360,15 +1360,15 @@
   </Gauge>
 
   <!-- ======================== ROWS R0-R4: Individual Red Shades ======================== -->
-  <!-- Each shade shown separately so you can see threshold behavior in isolation           -->
+  <!-- Each shade shown separately with same BG+GridFill as composite                      -->
 
-  <!-- R0: Darkest red (no threshold, base) -->
+  <!-- R0: White-hot (no threshold, base = critical HP) -->
   <Label item="EXP_LabelR0">
     <ScreenID>EXP_LabelR0</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>78</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R0: Darkest (100,0,0)</Text>
+    <Text>R0: WhiteHot (255,210,210)</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1384,21 +1384,21 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>100</R><G>0</G><B>0</B></FillTint>
+    <FillTint><R>255</R><G>210</G><B>210</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeFill_120t</Fill>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R1: Dark red (25% threshold) -->
+  <!-- R1: Light red (25% threshold) -->
   <Label item="EXP_LabelR1">
     <ScreenID>EXP_LabelR1</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>110</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R1: Dark (160,10,10) @25%</Text>
+    <Text>R1: Light (255,160,160) @25%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1414,21 +1414,21 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>160</R><G>10</G><B>10</B></FillTint>
+    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeFill_120t</Fill>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R2: Current red (50% threshold, middle shade) -->
+  <!-- R2: Mid red (50% threshold) -->
   <Label item="EXP_LabelR2">
     <ScreenID>EXP_LabelR2</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>142</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R2: Current (220,20,20) @50%</Text>
+    <Text>R2: Mid (255,100,100) @50%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1444,21 +1444,21 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>220</R><G>20</G><B>20</B></FillTint>
+    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeFill_120t</Fill>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R3: Bright red (75% threshold) -->
+  <!-- R3: Warm red (75% threshold) -->
   <Label item="EXP_LabelR3">
     <ScreenID>EXP_LabelR3</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>174</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R3: Bright (245,70,60) @75%</Text>
+    <Text>R3: Warm (255,50,50) @75%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1474,21 +1474,21 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>245</R><G>70</G><B>60</B></FillTint>
+    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeFill_120t</Fill>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R4: Lightest salmon-red (80% threshold) -->
+  <!-- R4: Blood red (80% threshold, drops first = full HP) -->
   <Label item="EXP_LabelR4">
     <ScreenID>EXP_LabelR4</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>206</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R4: Light (255,130,120) @80%</Text>
+    <Text>R4: Blood (255,0,0) @80%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1504,11 +1504,11 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>130</G><B>120</B></FillTint>
+    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeFill_120t</Fill>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1751,7 +1751,7 @@
 
   <!-- ======================== ROWS N0-N4: Individual Threshold Tests ======================== -->
   <!-- Simple gauges with GaugeOffsetX thresholds (no oversized technique)                     -->
-  <!-- Tests if simple negative offsets work at normal scale                                    -->
+  <!-- Same BG+GridFill as composite — tests threshold behavior in isolation                   -->
 
   <!-- N0: Red base (offset=0, always fills from 0%) -->
   <Label item="EXP_LabelN0">
@@ -1779,8 +1779,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1810,8 +1809,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1841,8 +1839,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1872,8 +1869,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1903,8 +1899,7 @@
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 

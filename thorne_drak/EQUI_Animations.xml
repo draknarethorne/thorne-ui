@@ -111,10 +111,22 @@
       <CY>64</CY>
     </Size>
   </TextureInfo>
+  <TextureInfo item="gauge_inlay120t_thorne02.tga">
+    <Size>
+      <CX>120</CX>
+      <CY>32</CY>
+    </Size>
+  </TextureInfo>
   <TextureInfo item="gauge_inlay120_thorne01.tga">
     <Size>
       <CX>120</CX>
       <CY>32</CY>
+    </Size>
+  </TextureInfo>
+  <TextureInfo item="gauge_inlay120_thorne02.tga">
+    <Size>
+      <CX>120</CX>
+      <CY>16</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay150t_thorne01.tga">
@@ -123,10 +135,22 @@
       <CY>64</CY>
     </Size>
   </TextureInfo>
+  <TextureInfo item="gauge_inlay150t_thorne02.tga">
+    <Size>
+      <CX>150</CX>
+      <CY>32</CY>
+    </Size>
+  </TextureInfo>
   <TextureInfo item="gauge_inlay150_thorne01.tga">
     <Size>
       <CX>150</CX>
       <CY>32</CY>
+    </Size>
+  </TextureInfo>
+  <TextureInfo item="gauge_inlay150_thorne02.tga">
+    <Size>
+      <CX>150</CX>
+      <CY>16</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay230t_thorne01.tga">
@@ -135,10 +159,22 @@
       <CY>64</CY>
     </Size>
   </TextureInfo>
+  <TextureInfo item="gauge_inlay230t_thorne02.tga">
+    <Size>
+      <CX>230</CX>
+      <CY>32</CY>
+    </Size>
+  </TextureInfo>
   <TextureInfo item="gauge_inlay240t_thorne01.tga">
     <Size>
       <CX>240</CX>
       <CY>64</CY>
+    </Size>
+  </TextureInfo>
+  <TextureInfo item="gauge_inlay240t_thorne02.tga">
+    <Size>
+      <CX>240</CX>
+      <CY>32</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay250t_thorne01.tga">
@@ -147,10 +183,22 @@
       <CY>64</CY>
     </Size>
   </TextureInfo>
+  <TextureInfo item="gauge_inlay250t_thorne02.tga">
+    <Size>
+      <CX>250</CX>
+      <CY>32</CY>
+    </Size>
+  </TextureInfo>
   <TextureInfo item="gauge_inlay260t_thorne01.tga">
     <Size>
       <CX>260</CX>
       <CY>64</CY>
+    </Size>
+  </TextureInfo>
+  <TextureInfo item="gauge_inlay260t_thorne02.tga">
+    <Size>
+      <CX>260</CX>
+      <CY>32</CY>
     </Size>
   </TextureInfo>
 

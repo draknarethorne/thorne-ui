@@ -5850,6 +5850,253 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
+
+  <!-- Hybrid 4x stretch fills for gauge experiment (Row D) -->
+  <!-- Each band offsets the 120px source texture within a 480px canvas -->
+  <Ui2DAnimation item="A_HybridFill_120t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>480</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_HybridFill_120t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>-120</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>480</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_HybridFill_120t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>-240</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>480</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_HybridFill_120t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>-360</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>480</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized Nillipuss-style fills for gauge experiment (Row N)         -->
+  <!-- CX=10000 with negative X offsets create threshold fill behavior      -->
+  <!-- Based on Nillipuss technique: animation offset = gauge GaugeOffsetX  -->
+  <Ui2DAnimation item="A_OversizedFill_120t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedFill_120t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedFill_120t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedFill_120t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne01.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- ================================================================== -->
+  <!-- SolidFill and Overlay for composite gauge stacking (120t)           -->
+  <!-- Composite file: gauge_inlay120t_thorne02.tga (separate from main)    -->
+  <!-- Overlay: row 1 (Y=0), dark tick marks on transparent background      -->
+  <!-- SolidFill: row 2 (Y=16), opaque fill with gaps filled               -->
+  <!-- ================================================================== -->
+
+  <!-- Standard SolidFill reference (120t) -->
+  <Ui2DAnimation item="A_GaugeSolidFill_120t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Standard Overlay reference (120t) -->
+  <Ui2DAnimation item="A_GaugeOverlay_120t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized Nillipuss-style SolidFill bands for composite stacking    -->
+  <!-- Same technique as OversizedFill but using SolidFill row (Y=16)      -->
+  <!-- Prevents color bleed between stacked fill layers                    -->
+  <Ui2DAnimation item="A_OversizedSolidFill_120t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedSolidFill_120t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedSolidFill_120t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedSolidFill_120t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
   <Ui2DAnimation item="A_GaugeBackground_150t">
     <Cycle>true</Cycle>
     <Frames>

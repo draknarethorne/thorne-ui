@@ -2,23 +2,32 @@
 """
 Properly regenerate tall and wide gauge textures by scaling each section individually.
 
-Standard gauge sections (60px wide, 8px tall each):
+Source master (4 rows x 8px = 32px tall):
   Y=0-7:   Background
   Y=8-15:  Fill
   Y=16-23: Lines
   Y=24-31: LinesFill
 
-Tall gauge sections (120px wide, 16px tall each, 2x vertical scale):
-  Y=0-15:   Background
-  Y=16-31:  Fill
-  Y=32-47:  Lines
-  Y=48-63:  LinesFill
+Generated main output (_thorne01.tga, ORIGINAL dimensions preserved):
+  Standard (4 rows x 8px = 32px):   BG / Fill / Lines / LinesFill
+  Tall     (4 rows x 16px = 64px):  BG / Fill / Lines / LinesFill
 
-Wide gauge sections (120px wide, 8px tall each, 2x horizontal scale):
-  Y=0-7:   Background
-  Y=8-15:  Fill
-  Y=16-23: Lines
-  Y=24-31: LinesFill
+Generated composite output (_thorne02.tga, SEPARATE file):
+  Standard (2 rows x 8px = 16px):
+    Y=0-7:   Overlay    (auto: dark marks from Background on transparent)
+    Y=8-15:  SolidFill  (auto: Fill with transparent gaps filled)
+  Tall (2 rows x 16px = 32px):
+    Y=0-15:   Overlay    (auto-generated)
+    Y=16-31:  SolidFill  (auto-generated)
+
+Composite rows enable clean multi-color gauge stacking:
+  - Overlay: dark tick marks on transparent (renders on top of stacked fills)
+  - SolidFill: opaque fill with no transparent gaps (prevents color bleed)
+
+CRITICAL: Composite data lives in a separate _thorne02 file so that the
+original _thorne01 texture dimensions are preserved. EQ client computes UV
+coordinates relative to total texture height — changing .tga dimensions
+breaks all existing animation Y-offset mappings.
 """
 
 from PIL import Image, ImageOps
@@ -93,6 +102,8 @@ class GaugeGenerator:
                 "fill":       {"preserve_black": False},
                 "lines":      {"preserve_black": True},
                 "linesfill":  {"preserve_black": False},
+                "solidfill":  {"preserve_black": False},
+                "overlay":    {"preserve_black": True},
             }
         }
 
@@ -190,6 +201,17 @@ class GaugeGenerator:
         size_str = f"{width}t" if is_tall else str(width)
         return f"{prefix}{size_str}{suffix}.tga"  # e.g., "gauge_inlay120t_thorne01.tga"
     
+    def get_composite_filename(self, base_name, width, is_tall=False):
+        """Generate output filename for composite (Overlay+SolidFill) texture.
+        
+        Replaces '01' suffix with '02' to create a companion file, e.g.:
+          gauge_inlay120t_thorne01.tga  (main, 4 rows)
+          gauge_inlay120t_thorne02.tga  (composite, 2 rows: Overlay + SolidFill)
+        """
+        # Derive from get_output_filename and swap 01 -> 02
+        main_filename = self.get_output_filename(base_name, width, is_tall)
+        return main_filename.replace('01.tga', '02.tga')
+    
     def fix_tga_file(self, file_path):
         """Check if file is actually PNG (mislabeled as TGA) and convert if needed."""
         try:
@@ -275,16 +297,29 @@ class GaugeGenerator:
             debug_bucket=debug_sections, debug_label="linesfill"
         )
         
-        # Create new image
+        # Auto-generate composite rows from scaled sections
+        solidfill_wide = self._generate_solidfill(fill_wide)
+        overlay_wide = self._generate_overlay(bg_wide)
+        
+        # Create main image (4 rows x 8px = 32px, ORIGINAL dimensions preserved)
         result = Image.new('RGBA', (width, 32), (0, 0, 0, 0))
         result.paste(bg_wide, (0, 0))
         result.paste(fill_wide, (0, 8))
         result.paste(lines_wide, (0, 16))
         result.paste(linesfill_wide, (0, 24))
         
-        # Save
+        # Save main gauge (unchanged dimensions)
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
+        
+        # Save composite file (Overlay + SolidFill, 2 rows x 8px = 16px)
+        composite_filename = self.get_composite_filename(base_name, width, is_tall=False)
+        composite_file = self.variant_dir / composite_filename
+        composite = Image.new('RGBA', (width, 16), (0, 0, 0, 0))
+        composite.paste(overlay_wide, (0, 0))
+        composite.paste(solidfill_wide, (0, 8))
+        composite.save(str(composite_file), format='TGA')
+        print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
             self._write_debug_canvas(output_file, debug_sections)
         self.stats["generated"]["wide"].append(output_filename)
@@ -362,16 +397,29 @@ class GaugeGenerator:
             lines_tall = self._scale_horizontal_with_borders(lines_tall, target_width, interp_method=self._section_interpolation("lines"), preserve_black=self._section_preserve_black("lines"))
             linesfill_tall = self._scale_horizontal_with_borders(linesfill_tall, target_width, interp_method=self._section_interpolation("linesfill"), preserve_black=self._section_preserve_black("linesfill"))
         
-        # Create new image (120×64)
+        # Auto-generate composite rows from scaled sections
+        solidfill_tall = self._generate_solidfill(fill_tall)
+        overlay_tall = self._generate_overlay(bg_tall)
+        
+        # Create main image (120x64, 4 rows x 16px — ORIGINAL dimensions preserved)
         result = Image.new('RGBA', (target_width, 64), (0, 0, 0, 0))
         result.paste(bg_tall, (0, 0))
         result.paste(fill_tall, (0, 16))
         result.paste(lines_tall, (0, 32))
         result.paste(linesfill_tall, (0, 48))
         
-        # Save
+        # Save main gauge (unchanged dimensions)
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
+        
+        # Save composite file (Overlay + SolidFill, 2 rows x 16px = 32px)
+        composite_filename = self.get_composite_filename(base_name, 120, is_tall=True)
+        composite_file = self.variant_dir / composite_filename
+        composite = Image.new('RGBA', (target_width, 32), (0, 0, 0, 0))
+        composite.paste(overlay_tall, (0, 0))
+        composite.paste(solidfill_tall, (0, 16))
+        composite.save(str(composite_file), format='TGA')
+        print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
             self._write_debug_canvas(output_file, debug_sections)
         self.stats["generated"]["tall"].append(output_filename)
@@ -388,7 +436,7 @@ class GaugeGenerator:
         """
         base_name = self.extract_base_name()
         
-        # Get 120t source (must be generated first)
+        # Get 120t main source (must be generated first)
         source_filename = self.get_output_filename(base_name, 120, is_tall=True)
         source = self.variant_dir / source_filename
         
@@ -396,17 +444,21 @@ class GaugeGenerator:
             # Source not yet generated, skip
             return False
         
+        # Get 120t composite source
+        composite_source_filename = self.get_composite_filename(base_name, 120, is_tall=True)
+        composite_source = self.variant_dir / composite_source_filename
+        
         output_filename = self.get_output_filename(base_name, width, is_tall=True)
         output_file = self.variant_dir / output_filename
         
         scale_factor = width / 120.0
-        print(f"  Generating tall gauge @ {width}×64 ({scale_factor:.2f}x from 120t)...")
+        print(f"  Generating tall gauge @ {width}x64 ({scale_factor:.2f}x from 120t)...")
         
-        # Load 120t source
+        # Load 120t main source (4 rows x 16px = 64px)
         tall = Image.open(source)
         tall_width = tall.size[0]  # Should be 120
         
-        # Extract individual sections (16px each)
+        # Extract main sections (16px each, 4 rows from 64px source)
         bg = tall.crop((0, 0, tall_width, 16))
         fill = tall.crop((0, 16, tall_width, 32))
         lines = tall.crop((0, 32, tall_width, 48))
@@ -436,20 +488,130 @@ class GaugeGenerator:
             debug_bucket=debug_sections, debug_label="linesfill"
         )
         
-        # Create new image at target dimensions
+        # Create main image at target dimensions (4 rows x 16px = 64px)
         result = Image.new('RGBA', (width, 64), (0, 0, 0, 0))
         result.paste(bg_scaled, (0, 0))
         result.paste(fill_scaled, (0, 16))
         result.paste(lines_scaled, (0, 32))
         result.paste(linesfill_scaled, (0, 48))
         
-        # Save
+        # Save main gauge
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
+        
+        # Scale composite rows if composite source exists
+        if composite_source.exists():
+            comp = Image.open(composite_source)
+            comp_width = comp.size[0]
+            
+            # Extract composite sections (Overlay@Y=0, SolidFill@Y=16)
+            overlay = comp.crop((0, 0, comp_width, 16))
+            solidfill = comp.crop((0, 16, comp_width, 32))
+            
+            overlay_scaled = self._scale_horizontal_with_borders(
+                overlay, width, interp_method=self._section_interpolation("overlay"),
+                preserve_black=self._section_preserve_black("overlay"),
+                debug_bucket=debug_sections, debug_label="overlay"
+            )
+            solidfill_scaled = self._scale_horizontal_with_borders(
+                solidfill, width, interp_method=self._section_interpolation("solidfill"),
+                preserve_black=self._section_preserve_black("solidfill"),
+                debug_bucket=debug_sections, debug_label="solidfill"
+            )
+            
+            # Save composite file (Overlay + SolidFill, 2 rows x 16px = 32px)
+            composite_filename = self.get_composite_filename(base_name, width, is_tall=True)
+            composite_file = self.variant_dir / composite_filename
+            composite = Image.new('RGBA', (width, 32), (0, 0, 0, 0))
+            composite.paste(overlay_scaled, (0, 0))
+            composite.paste(solidfill_scaled, (0, 16))
+            composite.save(str(composite_file), format='TGA')
+            print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
             self._write_debug_canvas(output_file, debug_sections)
         self.stats["generated"]["tall"].append(output_filename)
         return True
+    
+    def _generate_solidfill(self, fill_section):
+        """Generate SolidFill by filling transparent vertical gaps in Fill section.
+        
+        Scans each row horizontally and fills non-fully-opaque pixel gaps using
+        interpolated colors from the nearest fully opaque neighbors. Entirely
+        transparent rows (top/bottom borders) are preserved as-is.
+        
+        Uses alpha=255 as the threshold because bilinear scaling spreads
+        transparency from hard gaps into semi-transparent transition zones.
+        """
+        result = fill_section.copy()
+        px = result.load()
+        width, height = result.size
+        
+        for y in range(height):
+            # Collect fully opaque pixel positions and colors
+            opaque_positions = []
+            for x in range(width):
+                r, g, b, a = px[x, y]
+                if a == 255:
+                    opaque_positions.append((x, (r, g, b, 255)))
+            
+            if not opaque_positions:
+                continue  # Entirely transparent row (border), skip
+            
+            # Fill non-fully-opaque pixels from nearest opaque neighbors
+            for x in range(width):
+                r, g, b, a = px[x, y]
+                if a == 255:
+                    continue  # Already fully opaque
+                
+                # Find nearest left and right fully opaque pixels
+                left = None
+                right = None
+                for pos, color in opaque_positions:
+                    if pos < x:
+                        left = (pos, color)
+                    elif pos > x:
+                        right = (pos, color)
+                        break
+                
+                if left and right:
+                    # Interpolate between neighbors
+                    lx, (lr, lg, lb, _) = left
+                    rx, (rr, rg, rb, _) = right
+                    t = (x - lx) / (rx - lx)
+                    px[x, y] = (
+                        int(lr + (rr - lr) * t),
+                        int(lg + (rg - lg) * t),
+                        int(lb + (rb - lb) * t),
+                        255,
+                    )
+                elif left:
+                    px[x, y] = left[1]
+                elif right:
+                    px[x, y] = right[1]
+        
+        return result
+    
+    def _generate_overlay(self, bg_section, threshold=None):
+        """Generate Overlay by extracting dark tick-mark pixels from Background.
+        
+        Creates a transparent canvas with only black/dark mark pixels from
+        the Background section preserved at full opacity.
+        """
+        if threshold is None:
+            threshold = self.black_threshold
+        
+        width, height = bg_section.size
+        result = Image.new('RGBA', (width, height), (0, 0, 0, 0))
+        src_px = bg_section.load()
+        dst_px = result.load()
+        
+        for y in range(height):
+            for x in range(width):
+                r, g, b, a = src_px[x, y]
+                if a > 0 and r <= threshold and g <= threshold and b <= threshold:
+                    dst_px[x, y] = (r, g, b, 255)
+        
+        return result
     
     def _scale_with_borders(self, section, width, interp_method="BILINEAR", preserve_black=False, debug_bucket=None, debug_label=None):
         """Scale 8px section to 16px preserving 1px top/bottom borders.

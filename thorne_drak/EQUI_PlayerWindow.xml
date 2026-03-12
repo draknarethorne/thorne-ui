@@ -171,11 +171,11 @@
 		<ScreenID>PW_HP_Values</ScreenID>
 		<EQType>70</EQType>
 		<Location>
-			<X>170</X>
+			<X>160</X>
 			<Y>26</Y>
 		</Location>
 		<Size>
-			<CX>50</CX>
+			<CX>72</CX>
 			<CY>12</CY>
 		</Size>
 		<TextColor>
@@ -274,11 +274,11 @@
 		<ScreenID>PW_Mana_Values</ScreenID>
 		<EQType>80</EQType>
 		<Location>
-			<X>170</X>
+			<X>160</X>
 			<Y>43</Y>
 		</Location>
 		<Size>
-			<CX>50</CX>
+			<CX>72</CX>
 			<CY>12</CY>
 		</Size>
 		<TextColor>

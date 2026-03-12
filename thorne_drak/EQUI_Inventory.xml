@@ -771,7 +771,7 @@
     <ScreenID>IW_HP_Icon</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>339</X>
+      <X>337</X>
       <Y>4</Y>
     </Location>
     <Size>
@@ -830,7 +830,7 @@
     <ScreenID>IW_Mana_Icon</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>339</X>
+      <X>337</X>
       <Y>20</Y>
     </Location>
     <Size>
@@ -889,7 +889,7 @@
     <ScreenID>IW_AC_Icon</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>339</X>
+      <X>337</X>
       <Y>36</Y>
     </Location>
     <Size>
@@ -948,7 +948,7 @@
     <ScreenID>IW_ATK_Icon</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location>
-      <X>339</X>
+      <X>337</X>
       <Y>52</Y>
     </Location>
     <Size>

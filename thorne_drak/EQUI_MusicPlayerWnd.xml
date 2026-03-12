@@ -1187,7 +1187,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 1A: Light red (25% threshold) -->
+  <!-- RC Band 1A: Light red (20% threshold) -->
   <Gauge item="EXP_RC_1A">
     <ScreenID>EXP_RC_1A</ScreenID>
     <EQType>1</EQType>
@@ -1230,7 +1230,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 2A: Mid red (50% threshold) -->
+  <!-- RC Band 2A: Mid red (40% threshold) -->
   <Gauge item="EXP_RC_2A">
     <ScreenID>EXP_RC_2A</ScreenID>
     <EQType>1</EQType>
@@ -1273,7 +1273,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 3A: Warm red (75% threshold) -->
+  <!-- RC Band 3A: Warm red (60% threshold) -->
   <Gauge item="EXP_RC_3A">
     <ScreenID>EXP_RC_3A</ScreenID>
     <EQType>1</EQType>
@@ -1392,13 +1392,13 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R1: Light red (25% threshold) -->
+  <!-- R1: Light red (20% threshold) -->
   <Label item="EXP_LabelR1">
     <ScreenID>EXP_LabelR1</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>110</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R1: Light (255,160,160) @25%</Text>
+    <Text>R1: Light (255,160,160) @20%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1422,13 +1422,13 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R2: Mid red (50% threshold) -->
+  <!-- R2: Mid red (40% threshold) -->
   <Label item="EXP_LabelR2">
     <ScreenID>EXP_LabelR2</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>142</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R2: Mid (255,100,100) @50%</Text>
+    <Text>R2: Mid (255,100,100) @40%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1452,13 +1452,13 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R3: Warm red (75% threshold) -->
+  <!-- R3: Warm red (60% threshold) -->
   <Label item="EXP_LabelR3">
     <ScreenID>EXP_LabelR3</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>174</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R3: Warm (255,50,50) @75%</Text>
+    <Text>R3: Warm (255,50,50) @60%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1515,7 +1515,7 @@
   <!-- ======================== ROW N: Nillipuss Oversized (Composite) ======================== -->
   <!-- Oversized A gauges with GaugeOffsetX thresholds + Screen clipping                       -->
   <!-- Z-order: BG > Red base > Orange(1A+1B) > Yellow(2A+2B) > GrnYlw(3A+3B) > Green(4A+4B) -->
-  <!-- Thresholds: 25% / 50% / 75% / 100% (scaled from Nillipuss 240px to our 120px bar)      -->
+  <!-- Thresholds: 20% / 40% / 60% / 80% (5 equal bands across 120px bar)                    -->
 
   <Label item="EXP_LabelN">
     <ScreenID>EXP_LabelN</ScreenID>
@@ -1565,7 +1565,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- NC Band 1A: Orange threshold (CX=8000, offset=-2000 = 25% threshold) -->
+  <!-- NC Band 1A: Orange threshold (CX=8000, offset=-2000 = 20% threshold) -->
   <Gauge item="EXP_NC_1A">
     <ScreenID>EXP_NC_1A</ScreenID>
     <EQType>1</EQType>
@@ -1611,7 +1611,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- NC Band 2A: Yellow threshold (CX=6000, offset=-4000 = ~67% threshold) -->
+  <!-- NC Band 2A: Yellow threshold (CX=6000, offset=-4000 = 40% threshold) -->
   <Gauge item="EXP_NC_2A">
     <ScreenID>EXP_NC_2A</ScreenID>
     <EQType>1</EQType>
@@ -1954,7 +1954,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- NX Band 1A: Orange (25% threshold) -->
+  <!-- NX Band 1A: Orange (20% threshold) -->
   <Gauge item="EXP_NX_1A">
     <ScreenID>EXP_NX_1A</ScreenID>
     <EQType>1</EQType>
@@ -1997,7 +1997,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- NX Band 2A: Yellow (50% threshold) -->
+  <!-- NX Band 2A: Yellow (40% threshold) -->
   <Gauge item="EXP_NX_2A">
     <ScreenID>EXP_NX_2A</ScreenID>
     <EQType>1</EQType>
@@ -2040,7 +2040,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- NX Band 3A: GreenYellow (75% threshold) -->
+  <!-- NX Band 3A: GreenYellow (60% threshold) -->
   <Gauge item="EXP_NX_3A">
     <ScreenID>EXP_NX_3A</ScreenID>
     <EQType>1</EQType>
@@ -2083,7 +2083,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- NX Band 4A: Green (100% threshold) -->
+  <!-- NX Band 4A: Green (80% threshold) -->
   <Gauge item="EXP_NX_4A">
     <ScreenID>EXP_NX_4A</ScreenID>
     <EQType>1</EQType>

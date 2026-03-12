@@ -13,16 +13,20 @@ Generated main output (_thorne01.tga, ORIGINAL dimensions preserved):
   Tall     (4 rows x 16px = 64px):  BG / Fill / Lines / LinesFill
 
 Generated composite output (_thorne02.tga, SEPARATE file):
-  Standard (2 rows x 8px = 16px):
+  Standard (3 rows x 8px = 24px):
     Y=0-7:   Overlay    (auto: dark marks from Background on transparent)
     Y=8-15:  SolidFill  (auto: Fill with transparent gaps filled)
-  Tall (2 rows x 16px = 32px):
+    Y=16-23: GridFill   (auto: SolidFill with Lines baked in)
+  Tall (3 rows x 16px = 48px):
     Y=0-15:   Overlay    (auto-generated)
     Y=16-31:  SolidFill  (auto-generated)
+    Y=32-47:  GridFill   (auto-generated)
 
 Composite rows enable clean multi-color gauge stacking:
   - Overlay: dark tick marks on transparent (renders on top of stacked fills)
   - SolidFill: opaque fill with no transparent gaps (prevents color bleed)
+  - GridFill: SolidFill with grid lines baked in (for stacked gauges where
+    the XML Lines slot renders gauge-wide rather than fill-clipped)
 
 CRITICAL: Composite data lives in a separate _thorne02 file so that the
 original _thorne01 texture dimensions are preserved. EQ client computes UV
@@ -300,6 +304,7 @@ class GaugeGenerator:
         # Auto-generate composite rows from scaled sections
         solidfill_wide = self._generate_solidfill(fill_wide)
         overlay_wide = self._generate_overlay(bg_wide)
+        gridfill_wide = self._generate_gridfill(fill_wide, bg_wide)
         
         # Create main image (4 rows x 8px = 32px, ORIGINAL dimensions preserved)
         result = Image.new('RGBA', (width, 32), (0, 0, 0, 0))
@@ -312,12 +317,13 @@ class GaugeGenerator:
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
         
-        # Save composite file (Overlay + SolidFill, 2 rows x 8px = 16px)
+        # Save composite file (Overlay + SolidFill + GridFill, 3 rows x 8px = 24px)
         composite_filename = self.get_composite_filename(base_name, width, is_tall=False)
         composite_file = self.variant_dir / composite_filename
-        composite = Image.new('RGBA', (width, 16), (0, 0, 0, 0))
+        composite = Image.new('RGBA', (width, 24), (0, 0, 0, 0))
         composite.paste(overlay_wide, (0, 0))
         composite.paste(solidfill_wide, (0, 8))
+        composite.paste(gridfill_wide, (0, 16))
         composite.save(str(composite_file), format='TGA')
         print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
@@ -400,6 +406,7 @@ class GaugeGenerator:
         # Auto-generate composite rows from scaled sections
         solidfill_tall = self._generate_solidfill(fill_tall)
         overlay_tall = self._generate_overlay(bg_tall)
+        gridfill_tall = self._generate_gridfill(fill_tall, bg_tall)
         
         # Create main image (120x64, 4 rows x 16px — ORIGINAL dimensions preserved)
         result = Image.new('RGBA', (target_width, 64), (0, 0, 0, 0))
@@ -412,12 +419,13 @@ class GaugeGenerator:
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
         
-        # Save composite file (Overlay + SolidFill, 2 rows x 16px = 32px)
+        # Save composite file (Overlay + SolidFill + GridFill, 3 rows x 16px = 48px)
         composite_filename = self.get_composite_filename(base_name, 120, is_tall=True)
         composite_file = self.variant_dir / composite_filename
-        composite = Image.new('RGBA', (target_width, 32), (0, 0, 0, 0))
+        composite = Image.new('RGBA', (target_width, 48), (0, 0, 0, 0))
         composite.paste(overlay_tall, (0, 0))
         composite.paste(solidfill_tall, (0, 16))
+        composite.paste(gridfill_tall, (0, 32))
         composite.save(str(composite_file), format='TGA')
         print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
@@ -504,9 +512,10 @@ class GaugeGenerator:
             comp = Image.open(composite_source)
             comp_width = comp.size[0]
             
-            # Extract composite sections (Overlay@Y=0, SolidFill@Y=16)
+            # Extract composite sections (Overlay@Y=0, SolidFill@Y=16, GridFill@Y=32)
             overlay = comp.crop((0, 0, comp_width, 16))
             solidfill = comp.crop((0, 16, comp_width, 32))
+            gridfill = comp.crop((0, 32, comp_width, 48))
             
             overlay_scaled = self._scale_horizontal_with_borders(
                 overlay, width, interp_method=self._section_interpolation("overlay"),
@@ -518,13 +527,19 @@ class GaugeGenerator:
                 preserve_black=self._section_preserve_black("solidfill"),
                 debug_bucket=debug_sections, debug_label="solidfill"
             )
+            gridfill_scaled = self._scale_horizontal_with_borders(
+                gridfill, width, interp_method=self._section_interpolation("solidfill"),
+                preserve_black=self._section_preserve_black("solidfill"),
+                debug_bucket=debug_sections, debug_label="gridfill"
+            )
             
-            # Save composite file (Overlay + SolidFill, 2 rows x 16px = 32px)
+            # Save composite file (Overlay + SolidFill + GridFill, 3 rows x 16px = 48px)
             composite_filename = self.get_composite_filename(base_name, width, is_tall=True)
             composite_file = self.variant_dir / composite_filename
-            composite = Image.new('RGBA', (width, 32), (0, 0, 0, 0))
+            composite = Image.new('RGBA', (width, 48), (0, 0, 0, 0))
             composite.paste(overlay_scaled, (0, 0))
             composite.paste(solidfill_scaled, (0, 16))
+            composite.paste(gridfill_scaled, (0, 32))
             composite.save(str(composite_file), format='TGA')
             print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
@@ -590,6 +605,21 @@ class GaugeGenerator:
                     px[x, y] = right[1]
         
         return result
+    
+    def _generate_gridfill(self, fill_section, bg_section):
+        """Generate GridFill: SolidFill with Overlay dark marks baked in.
+        
+        Creates a plain SolidFill first (transparent gaps filled), then
+        generates an Overlay (dark tick marks extracted from Background)
+        and alpha-composites it on top. The grid marks become part of
+        the fill pixels — they only exist where fill exists.
+        
+        This is essential for composite (stacked) gauges where the XML
+        Lines slot renders gauge-wide rather than clipped to the fill area.
+        """
+        solidfill = self._generate_solidfill(fill_section)
+        overlay = self._generate_overlay(bg_section)
+        return Image.alpha_composite(solidfill, overlay)
     
     def _generate_overlay(self, bg_section, threshold=None):
         """Generate Overlay by extracting dark tick-mark pixels from Background.

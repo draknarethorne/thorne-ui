@@ -114,7 +114,7 @@
   <TextureInfo item="gauge_inlay120t_thorne02.tga">
     <Size>
       <CX>120</CX>
-      <CY>32</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay120_thorne01.tga">
@@ -126,7 +126,7 @@
   <TextureInfo item="gauge_inlay120_thorne02.tga">
     <Size>
       <CX>120</CX>
-      <CY>16</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay150t_thorne01.tga">
@@ -138,7 +138,7 @@
   <TextureInfo item="gauge_inlay150t_thorne02.tga">
     <Size>
       <CX>150</CX>
-      <CY>32</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay150_thorne01.tga">
@@ -150,7 +150,7 @@
   <TextureInfo item="gauge_inlay150_thorne02.tga">
     <Size>
       <CX>150</CX>
-      <CY>16</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay230t_thorne01.tga">
@@ -162,7 +162,7 @@
   <TextureInfo item="gauge_inlay230t_thorne02.tga">
     <Size>
       <CX>230</CX>
-      <CY>32</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay240t_thorne01.tga">
@@ -174,7 +174,7 @@
   <TextureInfo item="gauge_inlay240t_thorne02.tga">
     <Size>
       <CX>240</CX>
-      <CY>32</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay250t_thorne01.tga">
@@ -186,7 +186,7 @@
   <TextureInfo item="gauge_inlay250t_thorne02.tga">
     <Size>
       <CX>250</CX>
-      <CY>32</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay260t_thorne01.tga">
@@ -198,7 +198,7 @@
   <TextureInfo item="gauge_inlay260t_thorne02.tga">
     <Size>
       <CX>260</CX>
-      <CY>32</CY>
+      <CY>48</CY>
     </Size>
   </TextureInfo>
 
@@ -6035,13 +6035,14 @@
   </Ui2DAnimation>
 
   <!-- ================================================================== -->
-  <!-- SolidFill and Overlay for composite gauge stacking (120t)           -->
-  <!-- Composite file: gauge_inlay120t_thorne02.tga (separate from main)    -->
-  <!-- Overlay: row 1 (Y=0), dark tick marks on transparent background      -->
-  <!-- SolidFill: row 2 (Y=16), opaque fill with gaps filled               -->
+  <!-- Composite gauge stacking rows (120t thorne02)                       -->
+  <!-- Composite file: gauge_inlay120t_thorne02.tga (3 rows x 16px = 48px) -->
+  <!-- Row 1 - Overlay:   Y=0,  dark tick marks on transparent background  -->
+  <!-- Row 2 - SolidFill: Y=16, opaque fill with gaps filled (no grid)     -->
+  <!-- Row 3 - GridFill:  Y=32, SolidFill with Lines grid baked in         -->
   <!-- ================================================================== -->
 
-  <!-- Standard SolidFill reference (120t) -->
+  <!-- Standard SolidFill reference (120t) — plain fill, no grid -->
   <Ui2DAnimation item="A_GaugeSolidFill_120t">
     <Cycle>true</Cycle>
     <Frames>
@@ -6049,6 +6050,24 @@
       <Location>
         <X>0</X>
         <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Standard GridFill reference (120t) — fill with baked grid lines -->
+  <Ui2DAnimation item="A_GaugeGridFill_120t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>32</Y>
       </Location>
       <Size>
         <CX>120</CX>
@@ -6077,8 +6096,7 @@
     </Frames>
   </Ui2DAnimation>
 
-  <!-- Oversized Nillipuss-style SolidFill bands for composite stacking    -->
-  <!-- Same technique as OversizedFill but using SolidFill row (Y=16)      -->
+  <!-- Oversized Nillipuss-style SolidFill bands (Y=16, no grid)           -->
   <!-- Prevents color bleed between stacked fill layers                    -->
   <Ui2DAnimation item="A_OversizedSolidFill_120t_Band1">
     <Cycle>true</Cycle>
@@ -6135,6 +6153,73 @@
       <Location>
         <X>-8000</X>
         <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized Nillipuss-style GridFill bands (Y=32, grid baked in)      -->
+  <!-- Same offset technique but using GridFill row for visible grid lines -->
+  <Ui2DAnimation item="A_OversizedGridFill_120t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedGridFill_120t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedGridFill_120t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedGridFill_120t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>32</Y>
       </Location>
       <Size>
         <CX>10000</CX>

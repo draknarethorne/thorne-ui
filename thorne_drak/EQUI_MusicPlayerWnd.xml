@@ -1183,8 +1183,7 @@
     <FillTint><R>100</R><G>0</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1203,8 +1202,7 @@
     <FillTint><R>160</R><G>10</G><B>10</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band1</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band1</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="EXP_RC_1A_X">
@@ -1228,8 +1226,7 @@
     <FillTint><R>160</R><G>10</G><B>10</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1248,8 +1245,7 @@
     <FillTint><R>220</R><G>20</G><B>20</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band2</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band2</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="EXP_RC_2A_X">
@@ -1273,8 +1269,7 @@
     <FillTint><R>220</R><G>20</G><B>20</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1293,8 +1288,7 @@
     <FillTint><R>245</R><G>70</G><B>60</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band3</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band3</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="EXP_RC_3A_X">
@@ -1318,8 +1312,7 @@
     <FillTint><R>245</R><G>70</G><B>60</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1338,8 +1331,7 @@
     <FillTint><R>255</R><G>130</G><B>120</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band4</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band4</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="EXP_RC_4A_X">
@@ -1363,8 +1355,7 @@
     <FillTint><R>255</R><G>130</G><B>120</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1570,8 +1561,7 @@
     <FillTint><R>240</R><G>0</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1590,8 +1580,7 @@
     <FillTint><R>240</R><G>102</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band1</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band1</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <!-- Clip screen: shows only first 24px (20% of 120) of 1A -->
@@ -1618,8 +1607,7 @@
     <FillTint><R>240</R><G>102</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1638,8 +1626,7 @@
     <FillTint><R>240</R><G>240</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band2</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band2</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <!-- Clip screen: shows only first 48px (40% of 120) of 2A -->
@@ -1666,8 +1653,7 @@
     <FillTint><R>240</R><G>240</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1686,8 +1672,7 @@
     <FillTint><R>173</R><G>255</G><B>47</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band3</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band3</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <!-- Clip screen: shows only first 72px (60% of 120) of 3A -->
@@ -1714,8 +1699,7 @@
     <FillTint><R>173</R><G>255</G><B>47</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -1734,8 +1718,7 @@
     <FillTint><R>0</R><G>240</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedSolidFill_120t_Band4</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_OversizedGridFill_120t_Band4</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <!-- Clip screen: shows only first 96px (80% of 120) of 4A -->
@@ -1762,8 +1745,7 @@
     <FillTint><R>0</R><G>240</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeSolidFill_120t</Fill>
-      <Lines>A_GaugeOverlay_120t</Lines>
+      <Fill>A_GaugeGridFill_120t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 

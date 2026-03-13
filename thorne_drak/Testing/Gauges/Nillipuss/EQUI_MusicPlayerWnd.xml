@@ -1128,388 +1128,10 @@
 		</ButtonDrawTemplate>
 	</Button>
 
-  <!-- ============================================================== -->
   <!-- ================================================================== -->
-  <!-- GAUGE EXPERIMENT: Thorne Fire HP + Ocean Mana comparison           -->
+  <!-- GAUGE EXPERIMENT: Nillipuss HP + Ocean Mana                         -->
+  <!-- Left: Nillipuss composite + individuals | Right: Ocean Mana         -->
   <!-- ================================================================== -->
-
-  <!-- ======================== ROW F: Thorne Fire HP Composite (Nillipuss technique) ========= -->
-  <!-- 5 bands: Blood Red (full) -> Ember Glow -> Forge Fire -> Smolder -> Vein (exhaustion)   -->
-  <!-- At full HP: Blood Red (255,0,0). Depleting arcs bright through Forge Fire then dark      -->
-  <!-- Z-order: BG > Vein(0) > Smolder(1A+1B) > ForgeFire(2A+2B) > EmberGlow(3A+3B) > BloodRed(4) -->
-
-  <Label item="EXP_LabelF">
-    <ScreenID>EXP_LabelF</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>46</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>F: Thorne Fire HP (5-band)</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-
-  <!-- FC Background gauge -->
-  <Gauge item="EXP_FC_BG">
-    <ScreenID>EXP_FC_BG</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- FC Base: Vein (base = exhaustion) -->
-  <Gauge item="EXP_FC_HP0">
-    <ScreenID>EXP_FC_HP0</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>175</R><G>25</G><B>120</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- FC Band 1A: Smolder (20% threshold) -->
-  <Gauge item="EXP_FC_1A">
-    <ScreenID>EXP_FC_1A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>200</R><G>40</G><B>80</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band1</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_FC_1A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>24</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_FC_1A</Pieces>
-  </Screen>
-  <Gauge item="EXP_FC_1B">
-    <ScreenID>EXP_FC_1B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-24</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>29</X><Y>58</Y></Location>
-    <Size><CX>96</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>200</R><G>40</G><B>80</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- FC Band 2A: Forge Fire (40% threshold) -->
-  <Gauge item="EXP_FC_2A">
-    <ScreenID>EXP_FC_2A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>240</R><G>85</G><B>25</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band2</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_FC_2A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>48</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_FC_2A</Pieces>
-  </Screen>
-  <Gauge item="EXP_FC_2B">
-    <ScreenID>EXP_FC_2B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-48</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>53</X><Y>58</Y></Location>
-    <Size><CX>72</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>240</R><G>85</G><B>25</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- FC Band 3A: Ember Glow (60% threshold) -->
-  <Gauge item="EXP_FC_3A">
-    <ScreenID>EXP_FC_3A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>60</G><B>10</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band3</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_FC_3A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>72</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_FC_3A</Pieces>
-  </Screen>
-  <Gauge item="EXP_FC_3B">
-    <ScreenID>EXP_FC_3B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-72</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>77</X><Y>58</Y></Location>
-    <Size><CX>48</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>60</G><B>10</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- FC Band 4A: Blood Red (80%, drops first = full HP) -->
-  <Gauge item="EXP_FC_4A">
-    <ScreenID>EXP_FC_4A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band4</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_FC_4A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>96</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_FC_4A</Pieces>
-  </Screen>
-  <Gauge item="EXP_FC_4B">
-    <ScreenID>EXP_FC_4B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-96</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>101</X><Y>58</Y></Location>
-    <Size><CX>24</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- ======================== ROWS F0-F4: Individual Fire HP Shades ========================= -->
-  <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
-
-  <!-- F0: Vein (no threshold) -->
-  <Label item="EXP_LabelF0">
-    <ScreenID>EXP_LabelF0</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>206</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>F0: Vein (175,25,120)</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_F0_HP">
-    <ScreenID>EXP_F0_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>218</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>175</R><G>25</G><B>120</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- F1: Smolder (20%) -->
-  <Label item="EXP_LabelF1">
-    <ScreenID>EXP_LabelF1</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>174</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>F1: Smolder (200,40,80) @20%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_F1_HP">
-    <ScreenID>EXP_F1_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-24</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>186</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>200</R><G>40</G><B>80</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- F2: Forge Fire (40%) -->
-  <Label item="EXP_LabelF2">
-    <ScreenID>EXP_LabelF2</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>142</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>F2: Forge Fire (240,85,25) @40%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_F2_HP">
-    <ScreenID>EXP_F2_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-48</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>154</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>240</R><G>85</G><B>25</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- F3: Ember Glow (60%) -->
-  <Label item="EXP_LabelF3">
-    <ScreenID>EXP_LabelF3</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>110</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>F3: Ember Glow (255,60,10) @60%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_F3_HP">
-    <ScreenID>EXP_F3_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-72</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>122</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>60</G><B>10</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- F4: Blood Red (80%) -->
-  <Label item="EXP_LabelF4">
-    <ScreenID>EXP_LabelF4</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>78</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>F4: Blood Red (255,0,0) @80%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_F4_HP">
-    <ScreenID>EXP_F4_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-96</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>90</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
 
   <!-- ======================== ROW M: Thorne Ocean Mana Composite (Nillipuss technique) ====== -->
   <!-- 5 bands: Tidal Blue (full) -> Ocean Current -> Wave Crest -> Deep Sea -> Abyss (empty)  -->
@@ -1889,390 +1511,6 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-
-  <!-- GAUGE EXPERIMENT: Multi-color HP gauge comparison               -->
-  <!-- Placed below stats row (Y=46+) for testing                     -->
-  <!-- All bound to EQType 1 (Player HP)                              -->
-  <!-- ============================================================== -->
-
-  <!-- ======================== ROW R: Red Shades Composite (Nillipuss technique) ========= -->
-  <!-- 5 red shades from blood red (top/drops first) to white-hot (base/stays longest)     -->
-  <!-- At full HP: blood red. As HP drops: warms→brightens→white-hot alarm                 -->
-  <!-- Z-order: BG > WhiteHot(0) > Light(1A+1B) > Mid(2A+2B) > Warm(3A+3B) > Blood(4)    -->
-
-  <Label item="EXP_LabelR">
-    <ScreenID>EXP_LabelR</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>246</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R: Red Shades (5-band)</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-
-  <!-- RC Background gauge -->
-  <Gauge item="EXP_RC_BG">
-    <ScreenID>EXP_RC_BG</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- RC Base: White-hot (always visible, lowest layer = critical HP) -->
-  <Gauge item="EXP_RC_HP0">
-    <ScreenID>EXP_RC_HP0</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>210</G><B>210</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- RC Band 1A: Light red (20% threshold) -->
-  <Gauge item="EXP_RC_1A">
-    <ScreenID>EXP_RC_1A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band1</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_RC_1A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>24</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_RC_1A</Pieces>
-  </Screen>
-  <Gauge item="EXP_RC_1B">
-    <ScreenID>EXP_RC_1B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-24</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>29</X><Y>258</Y></Location>
-    <Size><CX>96</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- RC Band 2A: Mid red (40% threshold) -->
-  <Gauge item="EXP_RC_2A">
-    <ScreenID>EXP_RC_2A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band2</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_RC_2A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>48</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_RC_2A</Pieces>
-  </Screen>
-  <Gauge item="EXP_RC_2B">
-    <ScreenID>EXP_RC_2B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-48</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>53</X><Y>258</Y></Location>
-    <Size><CX>72</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- RC Band 3A: Warm red (60% threshold) -->
-  <Gauge item="EXP_RC_3A">
-    <ScreenID>EXP_RC_3A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band3</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_RC_3A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>72</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_RC_3A</Pieces>
-  </Screen>
-  <Gauge item="EXP_RC_3B">
-    <ScreenID>EXP_RC_3B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-72</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>77</X><Y>258</Y></Location>
-    <Size><CX>48</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- RC Band 4A: Blood red (80% threshold, drops first = full HP) -->
-  <Gauge item="EXP_RC_4A">
-    <ScreenID>EXP_RC_4A</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_120t_Band4</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="EXP_RC_4A_X">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>96</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>EXP_RC_4A</Pieces>
-  </Screen>
-  <Gauge item="EXP_RC_4B">
-    <ScreenID>EXP_RC_4B</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-96</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>101</X><Y>258</Y></Location>
-    <Size><CX>24</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- ======================== ROWS R0-R4: Individual Red Shades ======================== -->
-  <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
-
-  <!-- R0: White-hot (no threshold, base = critical HP) -->
-  <Label item="EXP_LabelR0">
-    <ScreenID>EXP_LabelR0</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>406</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R0: WhiteHot (255,210,210)</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_R0_HP">
-    <ScreenID>EXP_R0_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>418</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>210</G><B>210</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- R1: Light red (20% threshold) -->
-  <Label item="EXP_LabelR1">
-    <ScreenID>EXP_LabelR1</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>374</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R1: Light (255,160,160) @20%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_R1_HP">
-    <ScreenID>EXP_R1_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-24</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>386</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- R2: Mid red (40% threshold) -->
-  <Label item="EXP_LabelR2">
-    <ScreenID>EXP_LabelR2</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>342</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R2: Mid (255,100,100) @40%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_R2_HP">
-    <ScreenID>EXP_R2_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-48</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>354</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- R3: Warm red (60% threshold) -->
-  <Label item="EXP_LabelR3">
-    <ScreenID>EXP_LabelR3</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>310</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R3: Warm (255,50,50) @60%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_R3_HP">
-    <ScreenID>EXP_R3_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-72</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>322</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- R4: Red (80% threshold, drops first = full HP) -->
-  <Label item="EXP_LabelR4">
-    <ScreenID>EXP_LabelR4</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>278</Y></Location>
-    <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R4: Red (255,0,0) @80%</Text>
-    <Font>3</Font>
-    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
-    <NoWrap>true</NoWrap>
-  </Label>
-  <Gauge item="EXP_R4_HP">
-    <ScreenID>EXP_R4_HP</ScreenID>
-    <EQType>1</EQType>
-    <GaugeOffsetX>-96</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>5</X><Y>290</Y></Location>
-    <Size><CX>120</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_120t</Background>
-      <Fill>A_GaugeGridFill_120t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
   <!-- ======================== ROW N: Nillipuss Oversized (Composite) ======================== -->
   <!-- Oversized A gauges with GaugeOffsetX thresholds + Screen clipping                       -->
   <!-- Z-order: BG > Red base > Orange(1A+1B) > Yellow(2A+2B) > GrnYlw(3A+3B) > Green(4A+4B) -->
@@ -2281,7 +1519,7 @@
   <Label item="EXP_LabelN">
     <ScreenID>EXP_LabelN</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>246</Y></Location>
+    <Location><X>5</X><Y>46</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
     <Text>N: Nillipuss Composite</Text>
     <Font>3</Font>
@@ -2296,7 +1534,7 @@
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>258</Y></Location>
+    <Location><X>5</X><Y>58</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2314,7 +1552,7 @@
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>258</Y></Location>
+    <Location><X>5</X><Y>58</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2347,7 +1585,7 @@
   <!-- Clip screen: shows only first 24px (20% of 120) of 1A -->
   <Screen item="EXP_NC_1A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>258</Y></Location>
+    <Location><X>5</X><Y>58</Y></Location>
     <Size><CX>24</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NC_1A</Pieces>
@@ -2360,7 +1598,7 @@
     <GaugeOffsetX>-24</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>239</X><Y>258</Y></Location>
+    <Location><X>29</X><Y>58</Y></Location>
     <Size><CX>96</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2393,7 +1631,7 @@
   <!-- Clip screen: shows only first 48px (40% of 120) of 2A -->
   <Screen item="EXP_NC_2A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>258</Y></Location>
+    <Location><X>5</X><Y>58</Y></Location>
     <Size><CX>48</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NC_2A</Pieces>
@@ -2406,7 +1644,7 @@
     <GaugeOffsetX>-48</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>263</X><Y>258</Y></Location>
+    <Location><X>53</X><Y>58</Y></Location>
     <Size><CX>72</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2439,7 +1677,7 @@
   <!-- Clip screen: shows only first 72px (60% of 120) of 3A -->
   <Screen item="EXP_NC_3A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>258</Y></Location>
+    <Location><X>5</X><Y>58</Y></Location>
     <Size><CX>72</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NC_3A</Pieces>
@@ -2452,7 +1690,7 @@
     <GaugeOffsetX>-72</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>287</X><Y>258</Y></Location>
+    <Location><X>77</X><Y>58</Y></Location>
     <Size><CX>48</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2485,7 +1723,7 @@
   <!-- Clip screen: shows only first 96px (80% of 120) of 4A -->
   <Screen item="EXP_NC_4A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>258</Y></Location>
+    <Location><X>5</X><Y>58</Y></Location>
     <Size><CX>96</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NC_4A</Pieces>
@@ -2498,7 +1736,7 @@
     <GaugeOffsetX>-96</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>311</X><Y>258</Y></Location>
+    <Location><X>101</X><Y>58</Y></Location>
     <Size><CX>24</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2517,7 +1755,7 @@
   <Label item="EXP_LabelN0">
     <ScreenID>EXP_LabelN0</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>406</Y></Location>
+    <Location><X>5</X><Y>206</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
     <Text>N0: Red (no threshold)</Text>
     <Font>3</Font>
@@ -2530,7 +1768,7 @@
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>418</Y></Location>
+    <Location><X>5</X><Y>218</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2547,7 +1785,7 @@
   <Label item="EXP_LabelN1">
     <ScreenID>EXP_LabelN1</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>374</Y></Location>
+    <Location><X>5</X><Y>174</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
     <Text>N1: Orange @20% off=-24</Text>
     <Font>3</Font>
@@ -2560,7 +1798,7 @@
     <GaugeOffsetX>-24</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>386</Y></Location>
+    <Location><X>5</X><Y>186</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2577,7 +1815,7 @@
   <Label item="EXP_LabelN2">
     <ScreenID>EXP_LabelN2</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>342</Y></Location>
+    <Location><X>5</X><Y>142</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
     <Text>N2: Yellow @40% off=-48</Text>
     <Font>3</Font>
@@ -2590,7 +1828,7 @@
     <GaugeOffsetX>-48</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>354</Y></Location>
+    <Location><X>5</X><Y>154</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2607,7 +1845,7 @@
   <Label item="EXP_LabelN3">
     <ScreenID>EXP_LabelN3</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>310</Y></Location>
+    <Location><X>5</X><Y>110</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
     <Text>N3: GrnYlw @60% off=-72</Text>
     <Font>3</Font>
@@ -2620,7 +1858,7 @@
     <GaugeOffsetX>-72</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>322</Y></Location>
+    <Location><X>5</X><Y>122</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2637,7 +1875,7 @@
   <Label item="EXP_LabelN4">
     <ScreenID>EXP_LabelN4</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>278</Y></Location>
+    <Location><X>5</X><Y>78</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
     <Text>N4: Green @80% off=-96</Text>
     <Font>3</Font>
@@ -2650,7 +1888,7 @@
     <GaugeOffsetX>-96</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>290</Y></Location>
+    <Location><X>5</X><Y>90</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2669,7 +1907,7 @@
   <Label item="EXP_LabelNX">
     <ScreenID>EXP_LabelNX</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>438</Y></Location>
+    <Location><X>5</X><Y>238</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
     <Text>NX: Composite (no overlay)</Text>
     <Font>3</Font>
@@ -2684,7 +1922,7 @@
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>450</Y></Location>
+    <Location><X>5</X><Y>250</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2702,7 +1940,7 @@
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>450</Y></Location>
+    <Location><X>5</X><Y>250</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2734,7 +1972,7 @@
   </Gauge>
   <Screen item="EXP_NX_1A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>450</Y></Location>
+    <Location><X>5</X><Y>250</Y></Location>
     <Size><CX>24</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NX_1A</Pieces>
@@ -2745,7 +1983,7 @@
     <GaugeOffsetX>-24</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>239</X><Y>450</Y></Location>
+    <Location><X>29</X><Y>250</Y></Location>
     <Size><CX>96</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2777,7 +2015,7 @@
   </Gauge>
   <Screen item="EXP_NX_2A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>450</Y></Location>
+    <Location><X>5</X><Y>250</Y></Location>
     <Size><CX>48</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NX_2A</Pieces>
@@ -2788,7 +2026,7 @@
     <GaugeOffsetX>-48</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>263</X><Y>450</Y></Location>
+    <Location><X>53</X><Y>250</Y></Location>
     <Size><CX>72</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2820,7 +2058,7 @@
   </Gauge>
   <Screen item="EXP_NX_3A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>450</Y></Location>
+    <Location><X>5</X><Y>250</Y></Location>
     <Size><CX>72</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NX_3A</Pieces>
@@ -2831,7 +2069,7 @@
     <GaugeOffsetX>-72</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>287</X><Y>450</Y></Location>
+    <Location><X>77</X><Y>250</Y></Location>
     <Size><CX>48</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2863,7 +2101,7 @@
   </Gauge>
   <Screen item="EXP_NX_4A_X">
     <RelativePosition>true</RelativePosition>
-    <Location><X>215</X><Y>450</Y></Location>
+    <Location><X>5</X><Y>250</Y></Location>
     <Size><CX>96</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NX_4A</Pieces>
@@ -2874,7 +2112,7 @@
     <GaugeOffsetX>-96</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>311</X><Y>450</Y></Location>
+    <Location><X>101</X><Y>250</Y></Location>
     <Size><CX>24</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2940,29 +2178,29 @@
 		<Pieces>MPW_Stat_Poison_Value</Pieces>
 
 		<!-- ====== GAUGE EXPERIMENT PIECES ====== -->
-		<!-- Row F: Thorne Fire HP Composite (blood->forge fire->vein, 5 bands) -->
-		<Pieces>EXP_LabelF</Pieces>
-		<Pieces>EXP_FC_BG</Pieces>
-		<Pieces>EXP_FC_HP0</Pieces>
-		<Pieces>EXP_FC_1A_X</Pieces>
-		<Pieces>EXP_FC_1B</Pieces>
-		<Pieces>EXP_FC_2A_X</Pieces>
-		<Pieces>EXP_FC_2B</Pieces>
-		<Pieces>EXP_FC_3A_X</Pieces>
-		<Pieces>EXP_FC_3B</Pieces>
-		<Pieces>EXP_FC_4A_X</Pieces>
-		<Pieces>EXP_FC_4B</Pieces>
-		<!-- Rows F0-F4: Individual fire HP shade tests -->
-		<Pieces>EXP_LabelF0</Pieces>
-		<Pieces>EXP_F0_HP</Pieces>
-		<Pieces>EXP_LabelF1</Pieces>
-		<Pieces>EXP_F1_HP</Pieces>
-		<Pieces>EXP_LabelF2</Pieces>
-		<Pieces>EXP_F2_HP</Pieces>
-		<Pieces>EXP_LabelF3</Pieces>
-		<Pieces>EXP_F3_HP</Pieces>
-		<Pieces>EXP_LabelF4</Pieces>
-		<Pieces>EXP_F4_HP</Pieces>
+		<!-- Row N: Nillipuss Composite (z-order: BG > Red > Orange > Yellow > GrnYlw > Green) -->
+		<Pieces>EXP_LabelN</Pieces>
+		<Pieces>EXP_NC_BG</Pieces>
+		<Pieces>EXP_NC_HP0</Pieces>
+		<Pieces>EXP_NC_1A_X</Pieces>
+		<Pieces>EXP_NC_1B</Pieces>
+		<Pieces>EXP_NC_2A_X</Pieces>
+		<Pieces>EXP_NC_2B</Pieces>
+		<Pieces>EXP_NC_3A_X</Pieces>
+		<Pieces>EXP_NC_3B</Pieces>
+		<Pieces>EXP_NC_4A_X</Pieces>
+		<Pieces>EXP_NC_4B</Pieces>
+		<!-- Rows N0-N4: Individual Nillipuss threshold tests -->
+		<Pieces>EXP_LabelN0</Pieces>
+		<Pieces>EXP_N0_HP</Pieces>
+		<Pieces>EXP_LabelN1</Pieces>
+		<Pieces>EXP_N1_HP</Pieces>
+		<Pieces>EXP_LabelN2</Pieces>
+		<Pieces>EXP_N2_HP</Pieces>
+		<Pieces>EXP_LabelN3</Pieces>
+		<Pieces>EXP_N3_HP</Pieces>
+		<Pieces>EXP_LabelN4</Pieces>
+		<Pieces>EXP_N4_HP</Pieces>
 		<!-- Row M: Thorne Ocean Mana Composite (tidal->wave crest->abyss, 5 bands) -->
 		<Pieces>EXP_LabelM</Pieces>
 		<Pieces>EXP_MC_BG</Pieces>
@@ -2986,52 +2224,6 @@
 		<Pieces>EXP_M3_HP</Pieces>
 		<Pieces>EXP_LabelM4</Pieces>
 		<Pieces>EXP_M4_HP</Pieces>
-		<!-- Row R: Red Shades Nillipuss Composite (blood->white-hot, 5 bands) -->
-		<Pieces>EXP_LabelR</Pieces>
-		<Pieces>EXP_RC_BG</Pieces>
-		<Pieces>EXP_RC_HP0</Pieces>
-		<Pieces>EXP_RC_1A_X</Pieces>
-		<Pieces>EXP_RC_1B</Pieces>
-		<Pieces>EXP_RC_2A_X</Pieces>
-		<Pieces>EXP_RC_2B</Pieces>
-		<Pieces>EXP_RC_3A_X</Pieces>
-		<Pieces>EXP_RC_3B</Pieces>
-		<Pieces>EXP_RC_4A_X</Pieces>
-		<Pieces>EXP_RC_4B</Pieces>
-		<!-- Rows R0-R4: Individual red shade threshold tests -->
-		<Pieces>EXP_LabelR0</Pieces>
-		<Pieces>EXP_R0_HP</Pieces>
-		<Pieces>EXP_LabelR1</Pieces>
-		<Pieces>EXP_R1_HP</Pieces>
-		<Pieces>EXP_LabelR2</Pieces>
-		<Pieces>EXP_R2_HP</Pieces>
-		<Pieces>EXP_LabelR3</Pieces>
-		<Pieces>EXP_R3_HP</Pieces>
-		<Pieces>EXP_LabelR4</Pieces>
-		<Pieces>EXP_R4_HP</Pieces>
-		<!-- Row N: Nillipuss Composite (z-order: BG > Red > Orange > Yellow > GrnYlw > Green) -->
-		<Pieces>EXP_LabelN</Pieces>
-		<Pieces>EXP_NC_BG</Pieces>
-		<Pieces>EXP_NC_HP0</Pieces>
-		<Pieces>EXP_NC_1A_X</Pieces>
-		<Pieces>EXP_NC_1B</Pieces>
-		<Pieces>EXP_NC_2A_X</Pieces>
-		<Pieces>EXP_NC_2B</Pieces>
-		<Pieces>EXP_NC_3A_X</Pieces>
-		<Pieces>EXP_NC_3B</Pieces>
-		<Pieces>EXP_NC_4A_X</Pieces>
-		<Pieces>EXP_NC_4B</Pieces>
-		<!-- Rows N0-N4: Individual threshold tests (simple GaugeOffsetX) -->
-		<Pieces>EXP_LabelN0</Pieces>
-		<Pieces>EXP_N0_HP</Pieces>
-		<Pieces>EXP_LabelN1</Pieces>
-		<Pieces>EXP_N1_HP</Pieces>
-		<Pieces>EXP_LabelN2</Pieces>
-		<Pieces>EXP_N2_HP</Pieces>
-		<Pieces>EXP_LabelN3</Pieces>
-		<Pieces>EXP_N3_HP</Pieces>
-		<Pieces>EXP_LabelN4</Pieces>
-		<Pieces>EXP_N4_HP</Pieces>
 		<!-- Row NX: Composite WITHOUT overlay (darkening test) -->
 		<Pieces>EXP_LabelNX</Pieces>
 		<Pieces>EXP_NX_BG</Pieces>

@@ -1070,7 +1070,7 @@ Add these Pieces lines **before** the client-required hidden children comment:
 2. **Add experiment elements** to `EQUI_MusicPlayerWnd.xml` (before the Screen definition)
 3. **Add Pieces references** to the MusicPlayerWnd Screen (before the hidden client pieces)
 4. **Change CY** from 42 to 180 in the MusicPlayerWnd Screen Size
-5. **Sync**: `.\sync-thorne-ui.bat`
+5. **Sync**: `.bin\sync-thorne-ui.bat`
 6. **Test**: `/loadskin thorne_dev` in-game
 
 ### What to Look For

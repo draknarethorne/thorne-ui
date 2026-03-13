@@ -108,9 +108,9 @@ This project builds on the work and ideas of many contributors:
 ### Want to customize Thorne UI?
 
 - **Contributing Guidelines** - See [STANDARDS.md](.docs/STANDARDS.md)
-- **Development Workflow** - See [DEVELOPMENT.md](DEVELOPMENT.md)
-- **Architecture & Decisions** - See [DEVELOPMENT.md](DEVELOPMENT.md)
-- **Roadmap & Priorities** - See [TODO.md](TODO.md)
+- **Development Workflow** - See [DEVELOPMENT.md](.docs/DEVELOPMENT.md)
+- **Architecture & Decisions** - See [DEVELOPMENT.md](.docs/DEVELOPMENT.md)
+- **Roadmap & Priorities** - See [TODO.md](.docs/TODO.md)
 
 ### Creating Your Own Variant
 
@@ -131,8 +131,8 @@ This project includes comprehensive guides:
 | Document                                  | Purpose                                                                      |
 | ----------------------------------------- | ---------------------------------------------------------------------------- |
 | [STANDARDS.md](.docs/STANDARDS.md)        | UI development standards, button layouts, gauge styling, EQType reference    |
-| [DEVELOPMENT.md](DEVELOPMENT.md)          | Architecture, implementation guide, development roadmap, technical reference |
-| [TODO.md](TODO.md)                        | Current work items, planned features, investigations                         |
+| [DEVELOPMENT.md](.docs/DEVELOPMENT.md)          | Architecture, implementation guide, development roadmap, technical reference |
+| [TODO.md](.docs/TODO.md)                        | Current work items, planned features, investigations                         |
 | [RELEASES.md](.docs/releases/RELEASES.md) | How to create and publish releases                                           |
 
 ---
@@ -140,7 +140,7 @@ This project includes comprehensive guides:
 ## 🔗 Quick Links
 
 - 📥 **[Download Latest Release](https://github.com/draknarethorne/thorne-ui/releases)** - Get the newest version
-- 📖 **[Full Documentation](DEVELOPMENT.md)** - Architecture, workflow, technical details
+- 📖 **[Full Documentation](.docs/DEVELOPMENT.md)** - Architecture, workflow, technical details
 - 📋 **[Standards Guide](.docs/STANDARDS.md)** - UI development standards and patterns
 - 🛠️ **[Roadmap & Issues](https://github.com/draknarethorne/thorne-ui/issues)** - What we're working on
 - 💬 **[GitHub Discussions](https://github.com/draknarethorne/thorne-ui/discussions)** - Chat with the community
@@ -319,7 +319,7 @@ We're iterating toward **v1.0.0** with focused releases:
 - ✅ Options system migration to Thorne-first variants
   - Window option baselines migrated from `Default/` to `Thorne/` where applicable
   - Added dedicated Thorne sync tooling for window option backups and metadata updates
-  - Added `sync-option-thorne.bat` wrapper for maintainable Windows-native sync workflow
+  - Added `.bin/sync-option-thorne.bat` wrapper for maintainable Windows-native sync workflow
 - ✅ Icon and variant refresh
   - Regenerated gem icon packs across option themes and root assets
   - Updated option metadata/readmes to match current Thorne workflow

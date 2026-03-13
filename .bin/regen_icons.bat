@@ -1,5 +1,5 @@
 @echo off
-REM regen_icons.bat - Wrapper to run .bin\regen_icons.py from PowerShell/CMD
+REM regen_icons.bat - Wrapper to run regen_icons.py from .bin directory
 REM Usage:
 REM   regen_icons.bat                                      (Default: --all variants)
 REM   regen_icons.bat --all
@@ -12,9 +12,9 @@ set "SCRIPT_DIR=%~dp0"
 
 REM If no arguments provided, default to processing all variants
 if "%~1"=="" (
-    python "%SCRIPT_DIR%.bin\regen_icons.py" --all
+    python "%SCRIPT_DIR%regen_icons.py" --all
 ) else (
-    python "%SCRIPT_DIR%.bin\regen_icons.py" %*
+    python "%SCRIPT_DIR%regen_icons.py" %*
 )
 
 exit /b %errorlevel%

@@ -10,10 +10,10 @@ setlocal
 
 REM Get the directory where this batch file is located
 set "SCRIPT_DIR=%~dp0"
-set "PYTHON_EXE=%SCRIPT_DIR%.venv\Scripts\python.exe"
+set "PYTHON_EXE=%SCRIPT_DIR%..\.venv\Scripts\python.exe"
 
 REM Ensure relative paths resolve from repo root
-pushd "%SCRIPT_DIR%" >nul
+pushd "%SCRIPT_DIR%.." >nul
 
 REM Prefer local venv python if available, otherwise fall back to system python
 if not exist "%PYTHON_EXE%" (
@@ -38,7 +38,7 @@ if "%~1"=="" (
     exit /b 1
 )
 
-%PYTHON_EXE% "%SCRIPT_DIR%.bin\options_thorne_sync.py" %*
+%PYTHON_EXE% "%SCRIPT_DIR%options_thorne_sync.py" %*
 
 set "EXIT_CODE=%errorlevel%"
 popd >nul

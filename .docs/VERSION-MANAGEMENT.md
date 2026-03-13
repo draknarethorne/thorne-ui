@@ -154,7 +154,7 @@ To keep release commits focused and avoid noisy documentation churn:
   - `README.md` (Version History)
 
 - **Update only if content actually changed:**
-  - `DEVELOPMENT.md`
+  - `.docs/DEVELOPMENT.md`
   - `.docs/VERSION-MANAGEMENT.md`
   - `.docs/releases/*` guides, templates, and index files
 

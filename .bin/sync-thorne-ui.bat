@@ -13,7 +13,7 @@ echo ========================================
 echo.
 
 REM Define source and destination paths
-set "SOURCE_DIR=%~dp0thorne_drak"
+set "SOURCE_DIR=%~dp0..\thorne_drak"
 set "DEST_DIR=C:\TAKP\uifiles\thorne_dev"
 
 echo Source: %SOURCE_DIR%

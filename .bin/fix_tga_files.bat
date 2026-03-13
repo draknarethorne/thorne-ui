@@ -1,5 +1,5 @@
 @echo off
-REM fix_tga_files.bat - Wrapper to run .bin\fix_tga_files.py from PowerShell/CMD
+REM fix_tga_files.bat - Wrapper to run fix_tga_files.py from .bin directory
 REM Converts mislabeled PNG files (with .tga extension) to proper TGA format
 REM
 REM Usage:
@@ -15,9 +15,9 @@ set "SCRIPT_DIR=%~dp0"
 
 REM If no arguments provided, default to scanning current directory
 if "%~1"=="" (
-    python "%SCRIPT_DIR%.bin\fix_tga_files.py" --scan .
+    python "%SCRIPT_DIR%fix_tga_files.py" --scan .
 ) else (
-    python "%SCRIPT_DIR%.bin\fix_tga_files.py" %*
+    python "%SCRIPT_DIR%fix_tga_files.py" %*
 )
 
 exit /b %errorlevel%

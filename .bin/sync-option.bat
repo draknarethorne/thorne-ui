@@ -22,11 +22,11 @@ if "%~1"=="" (
     echo   sync-option.bat spellbook
     echo   sync-option.bat "Music/Thorne 14 Row"
     echo.
-    python "%SCRIPT_DIR%.bin\sync_option.py" --help
+    python "%SCRIPT_DIR%sync_option.py" --help
     exit /b 1
 )
 
 REM Pass all original arguments through to Python (supports spaces, flags, etc.)
-python "%SCRIPT_DIR%.bin\sync_option.py" %*
+python "%SCRIPT_DIR%sync_option.py" %*
 
 exit /b %errorlevel%

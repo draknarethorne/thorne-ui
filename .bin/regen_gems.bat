@@ -1,5 +1,5 @@
 @echo off
-REM regen_gems.bat - Wrapper to run .bin\regen_gems.py from PowerShell/CMD
+REM regen_gems.bat - Wrapper to run regen_gems.py from .bin directory
 REM Usage:
 REM   regen_gems.bat                                       (Default: --all variants)
 REM   regen_gems.bat --all
@@ -13,9 +13,9 @@ set "SCRIPT_DIR=%~dp0"
 
 REM If no arguments provided, default to processing all variants
 if "%~1"=="" (
-    python "%SCRIPT_DIR%.bin\regen_gems.py" --all
+    python "%SCRIPT_DIR%regen_gems.py" --all
 ) else (
-    python "%SCRIPT_DIR%.bin\regen_gems.py" %*
+    python "%SCRIPT_DIR%regen_gems.py" %*
 )
 
 exit /b %errorlevel%

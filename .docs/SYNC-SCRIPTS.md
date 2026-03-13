@@ -12,10 +12,10 @@ The Thorne UI project uses a **development → testing → release** workflow:
 
 ### Full Development Sync
 
-**`sync-thorne-ui.bat`** - Syncs entire thorne_drak to thorne_dev
+**`.bin\sync-thorne-ui.bat`** - Syncs entire thorne_drak to thorne_dev
 
 ```bash
-.\sync-thorne-ui.bat
+.bin\sync-thorne-ui.bat
 ```
 
 **When to use:**
@@ -33,18 +33,18 @@ The Thorne UI project uses a **development → testing → release** workflow:
 
 ### Option Variant Sync
 
-**`sync-option.bat`** - Copy specific Option variant to thorne_dev for testing
+**`.bin\sync-option.bat`** - Copy specific Option variant to thorne_dev for testing
 
 ```bash
 # Sync specific option directly
-.\sync-option.bat spellbook/large
+.bin\sync-option.bat spellbook/large
 
 # Show all options in category (numbered selection)
-.\sync-option.bat spellbook
-.\sync-option.bat inventory
+.bin\sync-option.bat spellbook
+.bin\sync-option.bat inventory
 
 # Sync inventory variant
-.\sync-option.bat inventory/enhanced
+.bin\sync-option.bat inventory/enhanced
 ```
 
 **When to use:**
@@ -78,7 +78,7 @@ thorne_drak/
 **Example Usage:**
 ```bash
 # Test Large Icons spellbook
-.\sync-option.bat spellbook/large
+.bin\sync-option.bat spellbook/large
 
 # In EQ client
 /loadskin thorne_dev
@@ -97,7 +97,7 @@ thorne_drak/
 
 ### During Active Testing
 - ✅ **Sync after each change** - Rapid iteration with immediate in-game feedback
-- ✅ **Use sync-option.bat** - Test specific variants without full sync
+- ✅ **Use `.bin\sync-option.bat`** - Test specific variants without full sync
 - ✅ **Document findings** - Note issues discovered during testing
 
 ### After Testing
@@ -114,12 +114,12 @@ thorne_drak/
 
 ## Technical Details
 
-### sync-thorne-ui.bat
+### .bin\sync-thorne-ui.bat
 - Uses robocopy with `/MIR` (mirror)
 - Excludes: `.git`, `__pycache__`, `.vscode`, `*.backup_*`, `*.bak`, `*.old`, `*.tmp`
 - Copies: All UI files, textures, animations, configurations
 
-### sync-option.bat
+### .bin\sync-option.bat
 
 - Python script: `.bin/sync_option.py`
 - Uses Python's `shutil.copy2` for file copying (preserves metadata)

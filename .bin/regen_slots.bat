@@ -1,5 +1,5 @@
 @echo off
-REM regen_slots.bat - Wrapper to run .bin\regen_slots.py from PowerShell/CMD
+REM regen_slots.bat - Wrapper to run regen_slots.py from .bin directory
 REM Composites item atlases onto button backgrounds for themed inventory slots
 REM Usage:
 REM   regen_slots.bat                                      (Regenerate all class/theme combos)
@@ -15,9 +15,9 @@ set "SCRIPT_DIR=%~dp0"
 
 REM If no arguments provided, default to --all
 if "%~1"=="" (
-    python "%SCRIPT_DIR%.bin\regen_slots.py" --all
+    python "%SCRIPT_DIR%regen_slots.py" --all
 ) else (
-    python "%SCRIPT_DIR%.bin\regen_slots.py" %*
+    python "%SCRIPT_DIR%regen_slots.py" %*
 )
 
 exit /b %errorlevel%

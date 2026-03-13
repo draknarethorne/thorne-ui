@@ -51,7 +51,7 @@ Each theme provides a `.regen_slots.json` that **overrides** master defaults fro
 4. **Regenerate theme output**:
 
 - For all classes:
-  - `regen_slots.bat --theme Ashen`
+  - `.bin/regen_slots.bat --theme Ashen`
 - For a specific class:
   - `regen_slots.py --class Thorne --theme Ashen`
 
@@ -104,7 +104,7 @@ Use `item_overrides` to apply special gradients to specific slots (logos, weapon
 ## Troubleshooting
 
 - **Everything is gold** → Theme override file is empty or `default_button.gradient` not set.
-- **No visible change** → Regenerate outputs using `regen_slots.py` or `regen_slots.bat`.
+- **No visible change** → Regenerate outputs using `regen_slots.py` or `.bin/regen_slots.bat`.
 - **Wrong direction** → Use `diagonal_tl` or `diagonal_tr` in preset.
 
 ## Reference

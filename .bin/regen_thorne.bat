@@ -1,5 +1,5 @@
 @echo off
-REM regen_thorne.bat - Wrapper to run .bin\regen_thorne.py from PowerShell/CMD
+REM regen_thorne.bat - Wrapper to run regen_thorne.py from .bin directory
 REM Generates grayscale item atlases from dragitem source files, auto-triggers slot regen
 REM Usage:
 REM   regen_thorne.bat                                     (Default: .master directory)
@@ -13,9 +13,9 @@ set "SCRIPT_DIR=%~dp0"
 
 REM If no arguments provided, default to .master directory
 if "%~1"=="" (
-    python "%SCRIPT_DIR%.bin\regen_thorne.py" .master
+    python "%SCRIPT_DIR%regen_thorne.py" .master
 ) else (
-    python "%SCRIPT_DIR%.bin\regen_thorne.py" %*
+    python "%SCRIPT_DIR%regen_thorne.py" %*
 )
 
 if %errorlevel% neq 0 (

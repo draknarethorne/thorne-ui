@@ -56,7 +56,7 @@ Example (override only chest and primary):
 
 1. **Generate the class atlas and slots**:
 
-- `regen_thorne.bat --class Necro`
+- `.bin/regen_thorne.bat --class Necro`
 
 This regenerates the class atlas and the class’s theme outputs in one step.
 
@@ -110,7 +110,7 @@ Each override can include `tone` adjustments:
 
 ## Workflow Notes
 
-- `regen_thorne.bat --class <Class>` regenerates the class atlas **and** triggers slot regeneration.
+- `.bin/regen_thorne.bat --class <Class>` regenerates the class atlas **and** triggers slot regeneration.
 - `regen_thorne.py --class <Class>` only builds the atlas; run `regen_slots.py` separately if needed.
 
 ## Reference

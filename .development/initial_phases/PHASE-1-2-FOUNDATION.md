@@ -1,4 +1,4 @@
-[← Back to Development Guide](../../DEVELOPMENT.md#development-phases)
+[← Back to Development Guide](../../.docs/DEVELOPMENT.md#development-phases)
 
 # Phase 1-2: Foundation ✅
 
@@ -38,4 +38,4 @@ This phase laid the groundwork for:
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Standards](../../.docs/STANDARDS.md)
+[← Back to Phases](README.md) | [Development Guide](../../.docs/DEVELOPMENT.md) | [Standards](../../.docs/STANDARDS.md)

@@ -6,7 +6,7 @@ Implementation details, architecture decisions, and development roadmap for the 
 **Last Updated**: March 2026  
 **Maintainer**: Draknare Thorne
 
-**Quick Links**: [Standards](.docs/STANDARDS.md) | [Phases](.development/initial_phases/) | [Technical References](.docs/technical/) | [TODO](TODO.md) | [Releases Guide](.docs/releases/RELEASES.md) | [Roadmaps](.docs/)
+**Quick Links**: [Standards](STANDARDS.md) | [Phases](../.development/initial_phases/) | [Technical References](technical/) | [TODO](TODO.md) | [Releases Guide](releases/RELEASES.md) | [Roadmaps](./)
 
 ---
 
@@ -307,7 +307,7 @@ Comprehensive architectural patterns and implementation guidance are documented 
 
 The numbered phase plan was the original scaffolding for early/mid project delivery and is now treated as historical planning context.
 
-- Archived reference: [.development/initial_phases/](.development/initial_phases/)
+- Archived reference: [.development/initial_phases/](../.development/initial_phases/)
 - Use this for historical rationale and implementation chronology, not day-to-day prioritization.
 
 ### Current planning model
@@ -317,7 +317,7 @@ Current execution is now driven by:
 - **v0.7.0 milestone focus** (see section above)
 - **`TODO.md` active queue** for next implementation items
 - **GitHub Issues/PRs** for live status tracking and scoping
-- **`.docs/STANDARDS.md`** for implementation constraints and conventions
+- **`STANDARDS.md`** for implementation constraints and conventions
 
 ### What changed
 
@@ -478,7 +478,7 @@ For comprehensive technical documentation, see:
 ## 📖 Documentation Structure
 
 - **README.md** - Project vision, philosophy, and variants overview
-- **.docs/STANDARDS.md** - UI standards and guidelines
+- **STANDARDS.md** - UI standards and guidelines
 - **DEVELOPMENT.md** (this file) - Implementation guide and roadmap
 - **TODO.md** - Planned features and work items
 - **Individual window docs** - Specific `EQUI_*.md` files with detailed notes

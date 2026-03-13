@@ -1,6 +1,6 @@
 # EQType Reference Guide
 
-[← Back to Development Guide](../../DEVELOPMENT.md#technical-reference)
+[← Back to Development Guide](../DEVELOPMENT.md#technical-reference)
 
 ---
 
@@ -305,7 +305,7 @@ Standard label colors (matching Inventory window canonical scheme):
 ## Related Documentation
 
 - [Zeal Client Features](ZEAL-FEATURES.md) - Comprehensive guide to Zeal-specific EQTypes and client features
-- [Development Guide](../../DEVELOPMENT.md) - Main development documentation
+- [Development Guide](../DEVELOPMENT.md) - Main development documentation
 - [Standards Guide](../STANDARDS.md) - UI design standards and best practices
 
 ---

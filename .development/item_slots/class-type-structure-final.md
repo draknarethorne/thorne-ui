@@ -281,7 +281,7 @@ to activate it in your UI.
 #### Rule 1: Full Workflow (both steps)
 
 ```bash
-regen_thorne.bat --all-classes
+.bin/regen_thorne.bat --all-classes
 # STEP 1: Generates all class atlases in .Master/.Classes/
 # STEP 2: Triggers regen_slots with --all-combos
 #         Generates all class/theme combinations
@@ -291,7 +291,7 @@ regen_thorne.bat --all-classes
 #### Rule 2: Specific Class (both steps)
 
 ```bash
-regen_thorne.bat --class Caster
+.bin/regen_thorne.bat --class Caster
 # STEP 1: Generates Caster atlas in .Master/.Classes/Caster/
 # STEP 2: Triggers regen_slots with --class Caster
 #         Generates all Caster/theme combinations
@@ -301,7 +301,7 @@ regen_thorne.bat --class Caster
 #### Rule 3: Specific Theme (STEP 2 only)
 
 ```bash
-regen_slots.bat --theme Gold
+.bin/regen_slots.bat --theme Gold
 # Generates all class/Gold combinations
 # Copy-back: NONE   ← Exploring variants, not changing active UI
 ```
@@ -319,7 +319,7 @@ regen_slots.py --class Caster --theme Gold
 
 ```bash
 # Create all variants while keeping Thorne/Thorne active
-regen_thorne.bat --all-classes
+.bin/regen_thorne.bat --all-classes
 # All class/theme combos generated
 # thorne_drak/item_slots_thorne01.tga now has Thorne/Thorne
 
@@ -329,7 +329,7 @@ regen_slots.py --class Caster --theme Gold
 # Does NOT copy back (still have Thorne/Thorne active)
 
 # Try a different class
-regen_thorne.bat --class Melee
+.bin/regen_thorne.bat --class Melee
 # Generates Melee atlas + all Melee/theme combos
 # Copies Melee/Thorne to thorne_drak/ (now Melee is active)
 
@@ -349,7 +349,7 @@ cp Options/Slots/Melee/Patriot/item_slots_thorne01.tga thorne_drak/item_slots_th
 ### Command: Generate All Classes + All Themes (Full Workflow)
 
 ```bash
-regen_thorne.bat --all-classes
+.bin/regen_thorne.bat --all-classes
 ```
 
 **What it does** (complete pipeline):
@@ -360,7 +360,7 @@ regen_thorne.bat --all-classes
 3. For each class, generates `.Master/.Classes/<Class>/item_atlas.tga` with config overrides
 
 **STEP 2** - Slot Composition:
-4. Triggers `regen_slots.bat --all-combos`
+4. Triggers `.bin/regen_slots.bat --all-combos`
 5. For each class+theme combination:
 - Reads class atlas from `.Master/.Classes/<Class>/item_atlas.tga`
 - Applies theme gradients from `.Master/.Themes/<Theme>/.regen_slots.json`
@@ -377,7 +377,7 @@ regen_thorne.bat --all-classes
 ### Command: Generate Specific Class (Both Steps)
 
 ```bash
-regen_thorne.bat --class Caster
+.bin/regen_thorne.bat --class Caster
 ```
 
 **What it does**:
@@ -388,7 +388,7 @@ regen_thorne.bat --class Caster
    (other class atlases not regenerated)
 
 **STEP 2** - Slot Composition:
-3. Triggers `regen_slots.bat --class Caster`
+3. Triggers `.bin/regen_slots.bat --class Caster`
 4. For each Caster+theme combination:
 - Reads from `.Master/.Classes/Caster/item_atlas.tga`
 - Applies theme from `.Master/.Themes/<Theme>/.regen_slots.json`
@@ -401,10 +401,10 @@ regen_thorne.bat --class Caster
 ### Command: Generate Specific Theme (All Classes)
 
 ```bash
-regen_slots.bat --theme Gold
+.bin/regen_slots.bat --theme Gold
 ```
 
-**Prerequisites**: Class atlases must already exist in `.Master/.Classes/<Class>/` (run `regen_thorne.bat --all-classes` first if needed)
+**Prerequisites**: Class atlases must already exist in `.Master/.Classes/<Class>/` (run `.bin/regen_thorne.bat --all-classes` first if needed)
 
 **What it does** (STEP 2 only):
 
@@ -423,7 +423,7 @@ regen_slots.bat --theme Gold
 regen_slots.py --class Caster --theme Gold --verbose
 ```
 
-**Prerequisites**: Caster atlas must exist in `.Master/.Classes/Caster/` (run `regen_thorne.bat --class Caster` first if needed)
+**Prerequisites**: Caster atlas must exist in `.Master/.Classes/Caster/` (run `.bin/regen_thorne.bat --class Caster` first if needed)
 
 **What it does** (STEP 2 only):
 
@@ -494,8 +494,8 @@ Generating slots for Thorne + Thorne...
 
 ### Phase 4: Testing
 
-1. Test `regen_thorne.bat --all-classes`
-2. Test `regen_slots.bat --all-combos`
+1. Test `.bin/regen_thorne.bat --all-classes`
+2. Test `.bin/regen_slots.bat --all-combos`
 3. Verify all class+theme combinations generate correctly
 4. Test `--verbose` flag output
 5. Verify output files in `Options/Slots/<Class>/<Theme>/`

@@ -39,7 +39,7 @@ Assist with development, customization, and modification of EverQuest UI files f
   - Player/Group/Pet/Bank/Trade/Loot slot mappings
   - Zeal client extensions (EQTypes 69-73, 80-86)
   
-- **`DEVELOPMENT.md`** - Project roadmap and architecture decisions
+- **`.docs/DEVELOPMENT.md`** - Project roadmap and architecture decisions
   - Design philosophy, implementation patterns, architecture notes
   
 - **Versioned Roadmaps** (`.docs/ROADMAP-v*.md`):
@@ -48,7 +48,7 @@ Assist with development, customization, and modification of EverQuest UI files f
   - `ROADMAP-v0.8.0.md` — Next (multi-color gauges, group displays)
   - `ROADMAP-v1.0.0.md` — Release polish and future tracking
 
-- **`TODO.md`** - Lean development tracker with roadmap links and shipped release summary
+- **`.docs/TODO.md`** - Lean development tracker with roadmap links and shipped release summary
 
 - **`.development/`** - Internal workshop (NOT published in releases)
   - `initial_phases/` — Phase documentation (completed phases)
@@ -63,14 +63,14 @@ Assist with development, customization, and modification of EverQuest UI files f
 
 #### After Feature/UI Work
 1. **README.md** — Update "What We're Working On" checkmarks and "Recent Releases" if applicable
-2. **TODO.md** — Update shipped release table or active task status
+2. **`.docs/TODO.md`** — Update shipped release table or active task status
 3. **Active ROADMAP** (`.docs/ROADMAP-v*.md`) — Check off completed items in the current milestone
 
 #### After a Release
 1. **`VERSION`** file — Bump version (single source of truth, plain text like `0.7.4`)
 2. **README.md** — Add Version History entry with date and bullet points, update "Current Development" section
 3. **Git tag** — `git tag -a vX.Y.Z -m "Release vX.Y.Z: description"`
-4. **TODO.md** — Add row to "Shipped Releases" table
+4. **`.docs/TODO.md`** — Add row to "Shipped Releases" table
 
 #### Documentation File Conventions
 - **Naming**: `UPPERCASE-WITH-HYPHENS.md` for docs, `README.md` for directory indexes
@@ -81,8 +81,8 @@ Assist with development, customization, and modification of EverQuest UI files f
 
 #### Cross-Reference Rules
 When updating documentation, check for cross-references that may need updating:
-- `README.md` ↔ `TODO.md` (version numbers, release lists)
-- `DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
+- `README.md` ↔ `.docs/TODO.md` (version numbers, release lists)
+- `.docs/DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
 - `.development/README.md` ↔ `.docs/ROADMAP-v*.md` (current focus)
 - `.docs/releases/INDEX.md` (current release pointer)
 - Options `README.md` files (when Options are added/changed)
@@ -201,7 +201,7 @@ Always read `.docs/STANDARDS.md` "XML Organization Best Practices" before modify
 
 **Options structure**: `thorne_drak/Options/<Category>/<Variant>/`
 - Each Option directory contains ONLY the XML file(s) that differ from main
-- Options are tested by syncing: `.\sync-option.bat <category>/<variant>`
+- Options are tested by syncing: `.bin\sync-option.bat <category>/<variant>`
 - Always update `thorne_drak/Options/<Category>/README.md` when adding/changing variants
 
 ### SIDL XML Structure
@@ -279,11 +279,11 @@ When assisting with UI customizations:
 7. **Implement**: Make targeted XML modifications in `C:\Thorne-UI\thorne_drak\`
 8. **Validate XML**: Run XML syntax validation if making significant changes
 9. **Sync for Testing** (when actively testing/refining):
-   - **Full sync**: `.\sync-thorne-ui.bat` - Copies entire thorne_drak to thorne_dev
-   - **Option sync**: `.\sync-option.bat <option_path>` - Copies specific Option variant to thorne_dev
+   - **Full sync**: `.bin\sync-thorne-ui.bat` - Copies entire thorne_drak to thorne_dev
+   - **Option sync**: `.bin\sync-option.bat <option_path>` - Copies specific Option variant to thorne_dev
    - Examples:
-     - `.\sync-option.bat spellbook/large` - Test Large Icons spellbook variant
-     - `.\sync-option.bat inventory` - Shows all inventory options (numbered selection)
+     - `.bin\sync-option.bat spellbook/large` - Test Large Icons spellbook variant
+     - `.bin\sync-option.bat inventory` - Shows all inventory options (numbered selection)
 10. **In-Game Testing**: User tests with `/loadskin thorne_dev` command in TAKP
 11. **Present Changes**: Show user modifications and ask for approval before committing
    - Summarize key changes made
@@ -296,17 +296,17 @@ When assisting with UI customizations:
 
 ```bash
 # Full development sync (all files from thorne_drak)
-.\sync-thorne-ui.bat
+.bin\sync-thorne-ui.bat
 
 # Test specific option variant (copies option XML to thorne_dev root)
-.\sync-option.bat spellbook/large     # Direct specific option
-.\sync-option.bat spellbook           # Show all spellbook options (numbered)
-.\sync-option.bat inventory/enhanced  # Specific inventory variant
+.bin\sync-option.bat spellbook/large     # Direct specific option
+.bin\sync-option.bat spellbook           # Show all spellbook options (numbered)
+.bin\sync-option.bat inventory/enhanced  # Specific inventory variant
 ```
 
 **When to Sync:**
 - ✅ **During active testing/refinement** - Sync after each change to validate in-game
-- ✅ **When testing Options** - Use `sync-option.bat` to test alternative window variants
+- ✅ **When testing Options** - Use `.bin\sync-option.bat` to test alternative window variants
 - ❌ **During major development** - Wait until ready to begin testing phase
 - ❌ **Before committing** - Syncing is for testing only, not a commit prerequisite
 
@@ -422,7 +422,7 @@ When providing guidance and responding to requests, maintain **engaging but conc
 ### Communication Style
 - **Engaging**: Make EQ UI development feel achievable and rewarding; celebrate craftsmanship and player autonomy
 - **Concise**: Get to the point quickly; avoid unnecessary fluff or repetition
-- **Accurate**: Verify technical details; cite standards (STANDARDS.md, DEVELOPMENT.md) when recommending patterns
+- **Accurate**: Verify technical details; cite standards (STANDARDS.md, .docs/DEVELOPMENT.md) when recommending patterns
 - **Helpful**: Explain the "why" behind recommendations, not just the "how"
 
 ### Era-Appropriate Theme

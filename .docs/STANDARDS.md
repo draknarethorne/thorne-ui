@@ -2,7 +2,7 @@
 
 Complete guidelines for maintaining consistency across all Thorne UI variants and ongoing development.
 
-**Quick Links**: [Development Guide](../DEVELOPMENT.md) | [Phases](../.development/initial_phases/README.md) | [Technical References](technical/README.md) | [Releases](releases/RELEASES.md)
+**Quick Links**: [Development Guide](DEVELOPMENT.md) | [Phases](../.development/initial_phases/README.md) | [Technical References](technical/README.md) | [Releases](releases/RELEASES.md)
 
 ---
 
@@ -453,7 +453,7 @@ thorne_drak/
 
 ### Implementation Patterns
 
-> **See [DEVELOPMENT.md - Architecture Decisions](../DEVELOPMENT.md#architecture-decisions--lessons-learned) for detailed implementation guidance**
+> **See [DEVELOPMENT.md - Architecture Decisions](DEVELOPMENT.md#architecture-decisions--lessons-learned) for detailed implementation guidance**
 
 **Key Architectural Patterns**:
 
@@ -743,7 +743,7 @@ Consider restructuring when documentation exceeds **2000 lines** or **8+ major p
 
 # Phase 3.9: Inventory Window Redesign
 
-[← Back to Development Guide](../DEVELOPMENT.md#phases)
+[← Back to Development Guide](DEVELOPMENT.md#phases)
 ```
 
 **Benefits**: Easier navigation, focused docs, better GitHub UI  

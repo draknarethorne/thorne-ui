@@ -108,10 +108,10 @@ cat thorne_drak/Options/[Window]/.sync-status.json
 
 | Pipeline | Command                                       | Output                     |
 | -------- | --------------------------------------------- | -------------------------- |
-| Gauges   | `regen_gauges.bat`                            | `Options/Gauges/[variant]` |
-| Gems     | `regen_gems.bat`                              | `Options/Icons/[variant]`  |
-| Icons    | `regen_icons.bat`                             | `stat_icons_thorne01.tga`  |
-| Slots    | `regen_slots.bat`                             | `Options/Slots/[class]/`   |
+| Gauges   | `.bin\regen_gauges.bat`                       | `Options/Gauges/[variant]` |
+| Gems     | `.bin\regen_gems.bat`                         | `Options/Icons/[variant]`  |
+| Icons    | `.bin\regen_icons.bat`                        | `stat_icons_thorne01.tga`  |
+| Slots    | `.bin\regen_slots.bat`                        | `Options/Slots/[class]/`   |
 | Buttons  | `.bin/generate_thorne_buttons_transparent.py` | `Options/Buttons/`         |
 
 ---

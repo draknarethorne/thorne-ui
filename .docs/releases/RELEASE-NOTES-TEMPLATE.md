@@ -58,7 +58,7 @@ Custom UI files for **The Al'Kabor Project (TAKP)** - EverQuest Planes of Power 
 
 - [README.md](https://github.com/draknarethorne/thorne-ui/blob/main/README.md) - Project overview and features
 - [STANDARDS.md](https://github.com/draknarethorne/thorne-ui/blob/main/.docs/STANDARDS.md) - UI development standards
-- [DEVELOPMENT.md](https://github.com/draknarethorne/thorne-ui/blob/main/DEVELOPMENT.md) - Development guide
+- [DEVELOPMENT.md](https://github.com/draknarethorne/thorne-ui/blob/main/.docs/DEVELOPMENT.md) - Development guide
 
 ## Support
 

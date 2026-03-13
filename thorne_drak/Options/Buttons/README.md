@@ -30,7 +30,7 @@ Each variant contains:
 Copy all three `.tga` files from the desired variant to `thorne_drak/` root:
 
 ```bash
-sync-option.bat Buttons/Ghost
+.bin/sync-option.bat Buttons/Ghost
 ```
 
 Or manually copy files and reload with `/loadskin thorne_drak 1`.

@@ -39,7 +39,7 @@ Created comprehensive documentation for managing releases:
 Updated existing documentation to reference releases:
 
 - **README.md** - Added "From GitHub Releases" installation section
-- **DEVELOPMENT.md** - Added releases section with workflow summary
+- **`.docs/DEVELOPMENT.md`** - Added releases section with workflow summary
 - **STANDARDS.md** - Added releases link to quick links
 - **.docs/README.md** - Added releases documentation to index
 
@@ -98,13 +98,13 @@ Each release includes:
 ### Complete Package ZIP
 - `thorne-ui-v{VERSION}.zip` - thorne_drak plus:
   - README.md
-  - DEVELOPMENT.md
+  - .docs/DEVELOPMENT.md
   - STANDARDS.md
   - .docs/ directory
 
 **Excluded from ZIPs:**
 - Git files (`.git`, `.gitignore`)
-- TODO.md (internal planning document)
+- .docs/TODO.md (internal planning document)
 - Development markdown files in variant folders
 - Community UI reference directories (duxaUI, Infiniti-Blue, QQQuarm)
 

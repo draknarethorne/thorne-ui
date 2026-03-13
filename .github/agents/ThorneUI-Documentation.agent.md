@@ -374,8 +374,8 @@ Before returning documentation:
 
 **Root-level docs** (player-facing + project overview):
 - `README.md` — Version History, Current Development, feature overview
-- `DEVELOPMENT.md` — Design philosophy, quick links, architecture notes
-- `TODO.md` — Lean roadmap table linking to versioned roadmaps, shipped releases summary
+- `.docs/DEVELOPMENT.md` — Design philosophy, quick links, architecture notes
+- `.docs/TODO.md` — Lean roadmap table linking to versioned roadmaps, shipped releases summary
 
 **`.docs/`** (standards, roadmaps, release tracking):
 - `STANDARDS.md` — UI development standards (sizing, colors, spacing)
@@ -406,7 +406,7 @@ Before returning documentation:
    - Options sync for Target, Actions, Animations
    ```
 
-2. **TODO.md Shipped Releases** — Add row to the table when a version ships:
+2. **`.docs/TODO.md` Shipped Releases** — Add row to the table when a version ships:
    ```markdown
    | v0.7.4 | 2026-02-22 | Container spacing, Options sync |
    ```
@@ -422,8 +422,8 @@ Before returning documentation:
 ### Cross-Reference Checklist
 
 When updating documentation, verify these stay in sync:
-- `README.md` ↔ `TODO.md` (version numbers, shipped release lists)
-- `DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
+- `README.md` ↔ `.docs/TODO.md` (version numbers, shipped release lists)
+- `.docs/DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
 - `.development/README.md` ↔ `.docs/ROADMAP-v*.md` (current focus)
 - `.docs/releases/INDEX.md` (current release pointer)
 - Options `README.md` files (when Options are added/changed)

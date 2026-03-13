@@ -33,8 +33,8 @@ Specialized agent for complex implementation tasks that require:
 - **Options**: `C:\Thorne-UI\thorne_drak\Options\<Category>\<Variant>\`
 
 **Sync for Testing** (use when actively testing/refining):
-- `.\sync-thorne-ui.bat` - Full sync of thorne_drak to thorne_dev
-- `.\sync-option.bat <option>` - Sync specific Option variant for testing
+- `.bin\sync-thorne-ui.bat` - Full sync of thorne_drak to thorne_dev
+- `.bin\sync-option.bat <option>` - Sync specific Option variant for testing
 
 ### 1. Window Restructuring
 - Create new subwindow `<Screen>` elements
@@ -221,8 +221,8 @@ manage_todo_list(operation: "write", todoList: [
 - `.docs/technical/EQTYPES.md` - EQType reference for all elements
 - `.docs/ROADMAP-v*.md` - Active milestone specs and completed items
 - `.development/` - Phase docs, analysis, and working notes
-- `DEVELOPMENT.md` - Project design philosophy and architecture
-- `TODO.md` - Lean roadmap table and shipped releases summary
+- `.docs/DEVELOPMENT.md` - Project design philosophy and architecture
+- `.docs/TODO.md` - Lean roadmap table and shipped releases summary
 
 ### Documentation Updates After Implementation
 

@@ -360,4 +360,4 @@ from raw assets, then copy to the variant directory.
 
 - [README.md](README.md) — Script index
 - [STANDARDS.md](STANDARDS.md) — Script documentation standards
-- [DEVELOPMENT.md](../DEVELOPMENT.md) — Project roadmap and phase details
+- [DEVELOPMENT.md](../.docs/DEVELOPMENT.md) — Project roadmap and phase details

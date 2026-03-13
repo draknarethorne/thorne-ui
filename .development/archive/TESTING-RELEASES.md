@@ -125,7 +125,7 @@ Step 2: Checking required directories and files exist...
 ✓ Directory exists: thorne_drak
 ✓ Directory exists: docs
 ✓ File exists: README.md
-✓ File exists: DEVELOPMENT.md
+✓ File exists: .docs/DEVELOPMENT.md
 ✓ File exists: STANDARDS.md
 
 Step 3: Simulating version extraction...
@@ -162,10 +162,10 @@ All Tests Passed!
 **thorne-ui-v{VERSION}.zip should contain:**
 - `thorne_drak/` directory (complete UI)
 - `README.md`
-- `DEVELOPMENT.md`
+- `.docs/DEVELOPMENT.md`
 - `STANDARDS.md`
 - `.docs/` directory with all documentation
-- NO `TODO.md` (excluded)
+- NO `.docs/TODO.md` (excluded)
 
 ---
 
@@ -269,7 +269,7 @@ Before creating a production release, verify:
 - `thorne_drak/` - UI files directory
 - `.docs/` - Documentation directory
 - `README.md` - Project readme
-- `DEVELOPMENT.md` - Development guide
+- `.docs/DEVELOPMENT.md` - Development guide
 - `STANDARDS.md` - Standards document
 
 ---

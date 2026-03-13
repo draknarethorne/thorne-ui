@@ -61,7 +61,7 @@ Includes:
 - **[Release Documentation](releases/)** 📦 Release procedures & notes
 - **[Technical Reference](technical/)** 🔧 EQ types and feature references
 - [Main Project README](../README.md)
-- [Development Guide](../DEVELOPMENT.md)
+- [Development Guide](DEVELOPMENT.md)
 - [Standards](STANDARDS.md)
 - [Version Management](VERSION-MANAGEMENT.md)
 

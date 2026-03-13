@@ -1,6 +1,6 @@
 # Zeal Client Features Guide
 
-[← Back to Development Guide](../../DEVELOPMENT.md#zeal-client-features)
+[← Back to Development Guide](../DEVELOPMENT.md#zeal-client-features)
 
 ---
 
@@ -636,7 +636,7 @@ Limit excessive label updates:
 ## Related Documentation
 
 - [EQType Reference Guide](EQTYPES.md) - Comprehensive EQType tables including standard and Zeal-specific values
-- [Development Guide](../../DEVELOPMENT.md) - Main development documentation
+- [Development Guide](../DEVELOPMENT.md) - Main development documentation
 - [Standards Guide](../STANDARDS.md) - UI design standards and best practices
 
 ---

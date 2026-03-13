@@ -180,8 +180,8 @@ When completing analysis task, return:
 - `.development/ui_analysis/` - Existing community variant analysis docs
 - `.development/initial_phases/` - Completed phase documentation
 - `.development/archive/` - Superseded docs (preserved for history)
-- `DEVELOPMENT.md` - Project design philosophy and architecture
-- `TODO.md` - Lean roadmap table and shipped releases summary
+- `.docs/DEVELOPMENT.md` - Project design philosophy and architecture
+- `.docs/TODO.md` - Lean roadmap table and shipped releases summary
 
 ### Documentation Awareness
 

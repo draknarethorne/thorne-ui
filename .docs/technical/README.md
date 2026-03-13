@@ -18,4 +18,4 @@ Maintainer-only technical notes live in `.development/technical/` and are not sh
 
 ---
 
-[← Back to Documentation](../README.md) | [Development Guide](../../DEVELOPMENT.md) | [Standards](../STANDARDS.md)
+[← Back to Documentation](../README.md) | [Development Guide](../DEVELOPMENT.md) | [Standards](../STANDARDS.md)

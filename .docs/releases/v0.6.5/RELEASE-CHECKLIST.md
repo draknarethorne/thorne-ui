@@ -26,7 +26,7 @@
 
 ```bash
 # 1) Commit release prep
-git add VERSION README.md DEVELOPMENT.md .docs/VERSION-MANAGEMENT.md .docs/releases
+git add VERSION README.md .docs/DEVELOPMENT.md .docs/VERSION-MANAGEMENT.md .docs/releases
 git commit -m "chore(release): prepare v0.6.5"
 
 # 2) Push branch commit

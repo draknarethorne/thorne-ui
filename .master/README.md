@@ -100,21 +100,21 @@ Example structure:
 ### Recommended (Batch Wrappers)
 
 ```bash
-regen_thorne.bat --all-classes
+.bin/regen_thorne.bat --all-classes
 ```
 
 - Generates **all class atlases**
 - Regenerates **all class/theme slot outputs**
 
 ```bash
-regen_thorne.bat --class Caster
+.bin/regen_thorne.bat --class Caster
 ```
 
 - Generates **Caster** atlas
 - Regenerates **Caster + all themes**
 
 ```bash
-regen_slots.bat --theme Gold
+.bin/regen_slots.bat --theme Gold
 ```
 
 - Regenerates **all classes** with the **Gold** theme only
@@ -133,21 +133,21 @@ python .bin/regen_slots.py --class Caster
 ### Generate All Classes + All Themes
 
 ```bash
-regen_thorne.bat --all-classes
+.bin/regen_thorne.bat --all-classes
 # Generates all class/theme combos
 ```
 
 ### Generate Specific Class
 
 ```bash
-regen_thorne.bat --class Caster
+.bin/regen_thorne.bat --class Caster
 # Generates Caster atlas + all Caster/theme combos
 ```
 
 ### Generate Specific Theme
 
 ```bash
-regen_slots.bat --theme Gold
+.bin/regen_slots.bat --theme Gold
 # Generates all class/Gold combos
 ```
 

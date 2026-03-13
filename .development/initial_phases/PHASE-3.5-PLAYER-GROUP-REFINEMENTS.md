@@ -1,4 +1,4 @@
-[← Back to Development Guide](../../DEVELOPMENT.md#development-phases)
+[← Back to Development Guide](../../.docs/DEVELOPMENT.md#development-phases)
 
 # Phase 3.5: Player, Pet & Group Window Refinements ✅
 
@@ -173,4 +173,4 @@
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)
+[← Back to Phases](README.md) | [Development Guide](../../.docs/DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)

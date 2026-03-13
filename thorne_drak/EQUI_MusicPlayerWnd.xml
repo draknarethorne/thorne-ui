@@ -1530,7 +1530,7 @@
   <!-- MC Background gauge -->
   <Gauge item="EXP_MC_BG">
     <ScreenID>EXP_MC_BG</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1548,7 +1548,7 @@
   <!-- MC Base: Purple/Blue (base = exhaustion) -->
   <Gauge item="EXP_MC_HP0">
     <ScreenID>EXP_MC_HP0</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1567,7 +1567,7 @@
   <!-- MC Band 1A: Deep Waves (20% threshold) -->
   <Gauge item="EXP_MC_1A">
     <ScreenID>EXP_MC_1A</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-2000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1591,7 +1591,7 @@
   </Screen>
   <Gauge item="EXP_MC_1B">
     <ScreenID>EXP_MC_1B</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-24</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1610,7 +1610,7 @@
   <!-- MC Band 2A: Wave Blue (40% threshold) -->
   <Gauge item="EXP_MC_2A">
     <ScreenID>EXP_MC_2A</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-4000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1634,7 +1634,7 @@
   </Screen>
   <Gauge item="EXP_MC_2B">
     <ScreenID>EXP_MC_2B</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-48</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1653,7 +1653,7 @@
   <!-- MC Band 3A: Surf Blue (60% threshold) -->
   <Gauge item="EXP_MC_3A">
     <ScreenID>EXP_MC_3A</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-6000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1677,7 +1677,7 @@
   </Screen>
   <Gauge item="EXP_MC_3B">
     <ScreenID>EXP_MC_3B</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-72</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1696,7 +1696,7 @@
   <!-- MC Band 4A: Ocean Blue (80%, drops first = full) -->
   <Gauge item="EXP_MC_4A">
     <ScreenID>EXP_MC_4A</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-8000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1720,7 +1720,7 @@
   </Screen>
   <Gauge item="EXP_MC_4B">
     <ScreenID>EXP_MC_4B</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-96</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1752,7 +1752,7 @@
   </Label>
   <Gauge item="EXP_M0_HP">
     <ScreenID>EXP_M0_HP</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>0</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1782,7 +1782,7 @@
   </Label>
   <Gauge item="EXP_M1_HP">
     <ScreenID>EXP_M1_HP</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-24</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1812,7 +1812,7 @@
   </Label>
   <Gauge item="EXP_M2_HP">
     <ScreenID>EXP_M2_HP</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-48</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1842,7 +1842,7 @@
   </Label>
   <Gauge item="EXP_M3_HP">
     <ScreenID>EXP_M3_HP</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-72</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
@@ -1872,7 +1872,7 @@
   </Label>
   <Gauge item="EXP_M4_HP">
     <ScreenID>EXP_M4_HP</ScreenID>
-    <EQType>1</EQType>
+    <EQType>2</EQType>
     <GaugeOffsetX>-96</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>

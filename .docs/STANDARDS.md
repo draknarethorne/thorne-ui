@@ -630,6 +630,106 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 - ⚠️ **Valid exceptions**: Themed variants, accessibility needs, special UI modes
 - ❌ **Avoid**: Random RGB values without documentation
 
+### Composite Gauge Palettes (Nillipuss Multi-Color Technique)
+
+> **5-band layered gauges** — Each gauge uses oversized A-parts with `GaugeOffsetX` thresholds
+> to create multi-color gradients. Band 4 (top layer) drops first at 80%, revealing
+> progressive bands as value decreases.
+
+**Technique Summary:**
+
+| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
+| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
+| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
+| 1    | 20%       | -2000        | 8000        | 24px       | 96px             |
+| 2    | 40%       | -4000        | 6000        | 48px       | 72px             |
+| 3    | 60%       | -6000        | 4000        | 72px       | 48px             |
+| 4    | 80%       | -8000        | 2000        | 96px       | 24px             |
+
+#### Player HP: Fire Arc (Blood Red)
+
+The signature HP palette. At full health: Blood Red. Depleting reveals warm colors through an ember arc.
+
+| Band | Name          | RGB           | Hex     | Description                |
+| ---- | ------------- | ------------- | ------- | -------------------------- |
+| 4    | Blood Red     | 255, 0, 0     | #FF0000 | Full HP — drops first      |
+| 3    | Ember Glow    | 255, 60, 10   | #FF3C0A | 60% — hot ember            |
+| 2    | Forge Fire    | 240, 85, 25   | #F05519 | 40% — peak brightness      |
+| 1    | Smolder       | 200, 40, 80   | #C82850 | 20% — cooling              |
+| 0    | Vein          | 175, 25, 120  | #AF1978 | Critical — always visible  |
+
+**Gradient choice: Red Shades** (linear fade to white)
+
+| Band | Name              | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Crimson           | 255, 0, 0     | #FF0000 | Full HP — drops first      |
+| 3    | Scorched Rose     | 255, 50, 50   | #FF3232 | 60%                        |
+| 2    | Heated Blush      | 255, 100, 100 | #FF6464 | 40%                        |
+| 1    | Fading Wound      | 255, 160, 160 | #FFA0A0 | 20%                        |
+| 0    | White-hot Ember   | 255, 210, 210 | #FFD2D2 | Critical — always visible  |
+
+#### Player Mana: Ocean Arc (Tidal Blue)
+
+The signature Mana palette. At full mana: Tidal Blue. Depleting reveals deep-sea colors through an ocean arc.
+
+| Band | Name          | RGB           | Hex     | Description                |
+| ---- | ------------- | ------------- | ------- | -------------------------- |
+| 4    | Tidal Blue    | 30, 30, 255   | #1E1EFF | Full Mana — drops first    |
+| 3    | Ocean Current | 40, 80, 252   | #2850FC | 60% — deep flow            |
+| 2    | Wave Crest    | 55, 120, 250  | #3778FA | 40% — peak brightness      |
+| 1    | Deep Sea      | 80, 55, 220   | #5037DC | 20% — depth                |
+| 0    | Abyss         | 125, 30, 190  | #7D1EBE | Critical — always visible  |
+
+**Gradient choice: Blue Shades** (linear fade to white)
+
+| Band | Name              | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Sapphire          | 0, 0, 255     | #0000FF | Full Mana — drops first    |
+| 3    | Frozen Azure      | 50, 50, 255   | #3232FF | 60%                        |
+| 2    | Starlit Pool      | 100, 100, 255 | #6464FF | 40%                        |
+| 1    | Pale Ether        | 160, 160, 255 | #A0A0FF | 20%                        |
+| 0    | Icebloom          | 210, 210, 255 | #D2D2FF | Critical — always visible  |
+
+#### Pet HP: Purple Shades (linear fade to white)
+
+Purple Shades Pet HP palette. At full pet health: Conjured Violet. Depleting lightens toward spectral wisp.
+
+| Band | Name              | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Conjured Violet   | 200, 0, 200   | #C800C8 | Full Pet HP — drops first  |
+| 3    | Enchanted Orchid  | 210, 50, 210  | #D232D2 | 60%                        |
+| 2    | Mystic Haze       | 220, 100, 220 | #DC64DC | 40%                        |
+| 1    | Faded Familiar    | 230, 160, 230 | #E6A0E6 | 20%                        |
+| 0    | Spectral Wisp     | 240, 210, 240 | #F0D2F0 | Critical — always visible  |
+
+#### Pet HP: Amethyst V-Arc (bright peak)
+
+Amethyst Arc Pet HP palette. At full pet health: Conjured Violet. Depleting arcs through bright Arcane Bloom then fades dark.
+
+| Band | Name              | RGB           | Hex     | Description                    |
+| ---- | ----------------- | ------------- | ------- | ------------------------------ |
+| 4    | Conjured Violet   | 200, 0, 200   | #C800C8 | Full Pet HP — drops first      |
+| 3    | Spirit Amethyst   | 180, 60, 200  | #B43CC8 | 60% — settling                 |
+| 2    | Arcane Bloom      | 220, 100, 240 | #DC64F0 | 40% — luminous peak            |
+| 1    | Twilight Shade    | 170, 50, 180  | #AA32B4 | 20% — dimming                  |
+| 0    | Deep Grape        | 120, 20, 120  | #781478 | Critical — dark, always visible|
+
+#### Nillipuss Classic (Green-Yellow-Red)
+
+The original Nillipuss community palette. Traffic-light inspired: green at full, red at critical.
+
+| Band | Name              | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Verdant           | 0, 240, 0     | #00F000 | Full — drops first         |
+| 3    | Greenleaf Gold    | 173, 255, 47  | #ADFF2F | 60%                        |
+| 2    | Sunstone          | 240, 240, 0   | #F0F000 | 40%                        |
+| 1    | Pyre Orange       | 240, 102, 0   | #F06600 | 20%                        |
+| 0    | Bloodfire         | 240, 0, 0     | #F00000 | Critical — always visible  |
+
+> **Band 4 identity rule**: Both palette variants for the same EQType MUST share the same Band 4 color.
+> Band 4 represents "full value" — the visual identity of the gauge at 100%. When comparing
+> Purple Shades vs Amethyst Arc, both use Conjured Violet (200,0,200) for Band 4.
+
 **Text Alignment Standards**:
 
 ```xml

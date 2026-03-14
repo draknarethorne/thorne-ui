@@ -1905,7 +1905,7 @@
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>246</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R: Red Shades (5-band)</Text>
+    <Text>R: Red Shades HP (5-band)</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1948,7 +1948,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 1A: Light red (20% threshold) -->
+  <!-- RC Band 1A: Fading Wound (20% threshold) -->
   <Gauge item="EXP_RC_1A">
     <ScreenID>EXP_RC_1A</ScreenID>
     <EQType>1</EQType>
@@ -1991,7 +1991,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 2A: Mid red (40% threshold) -->
+  <!-- RC Band 2A: Heated Blush (40% threshold) -->
   <Gauge item="EXP_RC_2A">
     <ScreenID>EXP_RC_2A</ScreenID>
     <EQType>1</EQType>
@@ -2034,7 +2034,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 3A: Warm red (60% threshold) -->
+  <!-- RC Band 3A: Scorched Rose (60% threshold) -->
   <Gauge item="EXP_RC_3A">
     <ScreenID>EXP_RC_3A</ScreenID>
     <EQType>1</EQType>
@@ -2077,7 +2077,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- RC Band 4A: Blood red (80% threshold, drops first = full HP) -->
+  <!-- RC Band 4A: Crimson (80% threshold, drops first = full HP) -->
   <Gauge item="EXP_RC_4A">
     <ScreenID>EXP_RC_4A</ScreenID>
     <EQType>1</EQType>
@@ -2129,7 +2129,7 @@
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>406</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R0: WhiteHot (255,210,210)</Text>
+    <Text>R0: White-hot Ember (255,210,210)</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -2153,13 +2153,13 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R1: Light red (20% threshold) -->
+  <!-- R1: Fading Wound (20% threshold) -->
   <Label item="EXP_LabelR1">
     <ScreenID>EXP_LabelR1</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>374</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R1: Light (255,160,160) @20%</Text>
+    <Text>R1: Fading Wound (255,160,160) @20%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -2183,13 +2183,13 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R2: Mid red (40% threshold) -->
+  <!-- R2: Heated Blush (40% threshold) -->
   <Label item="EXP_LabelR2">
     <ScreenID>EXP_LabelR2</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>342</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R2: Mid (255,100,100) @40%</Text>
+    <Text>R2: Heated Blush (255,100,100) @40%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -2213,13 +2213,13 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R3: Warm red (60% threshold) -->
+  <!-- R3: Scorched Rose (60% threshold) -->
   <Label item="EXP_LabelR3">
     <ScreenID>EXP_LabelR3</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>310</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R3: Warm (255,50,50) @60%</Text>
+    <Text>R3: Scorched Rose (255,50,50) @60%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -2243,13 +2243,13 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- R4: Red (80% threshold, drops first = full HP) -->
+  <!-- R4: Crimson (80% threshold, drops first = full HP) -->
   <Label item="EXP_LabelR4">
     <ScreenID>EXP_LabelR4</ScreenID>
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>278</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R4: Red (255,0,0) @80%</Text>
+    <Text>R4: Crimson (255,0,0) @80%</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>

@@ -488,51 +488,50 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 
 **Label Colors** (for stats, attributes, resistances):
 
-| Label Type            | RGB Value     | Hex     | Usage                                                |
-| --------------------- | ------------- | ------- | ---------------------------------------------------- |
-| **White**             | 255, 255, 255 | #FFFFFF | Default text, player name, stat values               |
-| **Blue (Attributes)** | 70, 180, 255  | #46B4FF | Attribute labels (STR, STA, AGI, DEX, WIS, INT, CHA) |
-| **HP Value Red**      | 255, 100, 100 | #FF6464 | HP current/max text values                           |
-| **Mana Value Blue**   | 100, 150, 255 | #6496FF | Mana current/max text values                         |
-| **Orange**            | 255, 185, 30  | #FFB91E | AC label, ATK label                                  |
-| **Fire Red**          | 255, 113, 46  | #FF712E | FIRE resist                                          |
-| **Cold Blue**         | 15, 182, 240  | #0FB6F0 | COLD resist                                          |
-| **Magic Purple**      | 255, 113, 255 | #FF71FF | MAGIC resist                                         |
-| **Disease Yellow**    | 230, 230, 0   | #E6E600 | DISEASE resist                                       |
-| **Poison Green**      | 0, 220, 0     | #00DC00 | POISON resist                                        |
-| **Green**             | 0, 205, 0     | #00CD00 | XP gauge, positive indicators                        |
+| Label Type       | Color Name       | RGB           | Hex     | Usage                                    |
+| ---------------- | ---------------- | ------------- | ------- | ---------------------------------------- |
+| **Default Text** | White            | 255, 255, 255 | #FFFFFF | Player name, stat values                 |
+| **Attributes**   | Sky Blue         | 70, 180, 255  | #46B4FF | STR, STA, AGI, DEX, WIS, INT, CHA       |
+| **HP Value**     | Heated Blush     | 255, 100, 100 | #FF6464 | HP current/max text                      |
+| **Mana Value**   | Crystal Blue     | 100, 150, 255 | #6496FF | Mana current/max text                    |
+| **AC / ATK**     | Amber            | 255, 185, 30  | #FFB91E | AC label, ATK label                      |
+| **FIRE Resist**  | Fire Red         | 255, 113, 46  | #FF712E | FIRE resist value                        |
+| **COLD Resist**  | Frost Blue       | 15, 182, 240  | #0FB6F0 | COLD resist value                        |
+| **MAGIC Resist** | Arcane Violet    | 255, 113, 255 | #FF71FF | MAGIC resist value                       |
+| **DISEASE Resist** | Plague Yellow  | 230, 230, 0   | #E6E600 | DISEASE resist value                     |
+| **POISON Resist** | Venom Green     | 0, 220, 0     | #00DC00 | POISON resist value                      |
+| **Positive**     | Verdant          | 0, 205, 0     | #00CD00 | XP gauge text, positive indicators       |
 
 **Gauge Fill Colors**:
 
-> **Standard Gauge RGB Values** - Use these exact values across all windows for consistency
+> **Standard Gauge RGB Values** — Use these exact values across all windows for consistency
 
-| Gauge Type               | Fill RGB      | LinesFill RGB | Hex (Fill) | EQType | Notes                                                     |
-| ------------------------ | ------------- | ------------- | ---------- | ------ | --------------------------------------------------------- |
-| **Player HP**            | 255, 0, 0     | 220, 220, 0   | #FF0000    | 1      | Bright red fill (main Player/Target windows)              |
-| **Player Mana**          | 30, 30, 255   | 0, 220, 220   | #1E1EFF    | 2      | Deep blue fill; text labels use RGB(100,150,255)          |
-| **Pet Health**           | 200, 80, 200  | 0, 0, 0       | #C850C8    | 16     | Purple (LinesFill varies by window; see Window-Specific)  |
-| **Pet Mana**             | 100, 150, 255 | 70, 105, 180  | #6496FF    | 17     | Blue; also EQType for group pet HP in GroupWindow context |
-| **Stamina**              | 240, 240, 0   | 0, 220, 0     | #F0F000    | 3      | Yellow fill with green line tint                          |
-| **Experience (XP)**      | 220, 150, 0   | 100, 160, 255 | #DC9600    | 4      | Orange fill with blue line tint                           |
-| **AA Points**            | 220, 200, 0   | 0, 220, 220   | #DCC800    | 5      | Yellow fill with cyan line tint                           |
-| **Breath Meter**         | 0, 240, 240   | 0, 0, 0       | #00F0F0    | 8      | Cyan for underwater breathing                             |
-| **Mana Tick (Standard)** | 0, 220, 220   | 0, 220, 220   | #00DCDC    | 24     | LinesFill only, 103px wide (compact windows)              |
-| **Mana Tick (Tall)**     | 0, 220, 220   | 0, 220, 220   | #00DCDC    | 24     | LinesFill only, 120px wide (Player/Pet windows)           |
-| **Target HP**            | 240, 0, 0     | 220, 220, 0   | #F00000    | 6      | Oval gauge style                                          |
-| **Casting Bar**          | 240, 0, 240   | 220, 220, 0   | #F000F0    | 7      | Magenta for spell casting                                 |
-| **Global Recast**        | 255, 210, 250 | 255, 235, 255 | #FFD2FA    | 25     | Light pink; thin 3px bar (CastSpellWnd, TargetWindow)     |
-| **Spell Recast (gems)**  | 200, 0, 200   | 0, 220, 220   | #C800C8    | 26–33  | Dark magenta; per-spell cooldown bars (CastSpellWnd)      |
-| **Attack Timer**         | 220, 180, 0   | 220, 180, 0   | #DCB400    | 34     | Gold/amber tick bar (TargetWindow)                        |
+| Gauge Type          | Color Name      | Fill RGB      | Lines RGB     | Hex     | EQType | Description                          |
+| ------------------- | --------------- | ------------- | ------------- | ------- | ------ | ------------------------------------ |
+| **Player HP**       | Blood Red       | 255, 0, 0     | 220, 220, 0   | #FF0000 | 1      | Standard Player/Target windows       |
+| **Player Mana**     | Tidal Blue      | 30, 30, 255   | 0, 220, 220   | #1E1EFF | 2      | Text labels use RGB(100,150,255)     |
+| **Pet Health**      | Conjured Violet | 200, 80, 200  | 0, 0, 0       | #C850C8 | 16     | LinesFill varies by window           |
+| **Pet Mana**        | Crystal Blue    | 100, 150, 255 | 70, 105, 180  | #6496FF | 17     | Also group pet HP in GroupWindow     |
+| **Stamina**         | Sunburst        | 240, 240, 0   | 0, 220, 0     | #F0F000 | 3      | Yellow fill, green line tint         |
+| **Experience (XP)** | Ember Amber     | 220, 150, 0   | 100, 160, 255 | #DC9600 | 4      | Orange fill, blue line tint          |
+| **AA Points**       | Golden Aura     | 220, 200, 0   | 0, 220, 220   | #DCC800 | 5      | Yellow fill, cyan line tint          |
+| **Breath Meter**    | Aqua            | 0, 240, 240   | 0, 0, 0       | #00F0F0 | 8      | Underwater breathing                 |
+| **Mana Tick**       | Cyan Pulse      | 0, 220, 220   | 0, 220, 220   | #00DCDC | 24     | LinesFill only; 103px or 120px wide  |
+| **Target HP**       | Sanguine        | 240, 0, 0     | 220, 220, 0   | #F00000 | 6      | Oval gauge style                     |
+| **Casting Bar**     | Arcane Surge    | 240, 0, 240   | 220, 220, 0   | #F000F0 | 7      | Magenta spell casting                |
+| **Global Recast**   | Fading Rose     | 255, 210, 250 | 255, 235, 255 | #FFD2FA | 25     | Thin 3px bar (CastSpell, Target)     |
+| **Spell Recast**    | Dark Orchid     | 200, 0, 200   | 0, 220, 220   | #C800C8 | 26–33  | Per-spell cooldown bars              |
+| **Attack Timer**    | Burnished Gold  | 220, 180, 0   | 220, 180, 0   | #DCB400 | 34     | Tick bar (TargetWindow)              |
 
 **Window-Specific Gauge Colors**:
 
 > Some gauges use intentionally different colors depending on window context.
 > These are **not** overrides — they reflect the design intent for each window.
 
-| Gauge Type          | Fill RGB     | LinesFill RGB | EQType | Window      | Notes                                            |
-| ------------------- | ------------ | ------------- | ------ | ----------- | ------------------------------------------------ |
-| **Group Member HP** | 220, 0, 0    | 220, 220, 0   | 11–15  | GroupWindow | Slightly darker red than Player HP (220 vs 255)  |
-| **Group Pet HP**    | 170, 60, 170 | 220, 220, 0   | 17–21  | GroupWindow | Dark purple; thin 2px bars under group HP gauges |
+| Gauge Type          | Color Name    | Fill RGB     | Lines RGB    | Hex     | EQType | Window      | Description                         |
+| ------------------- | ------------- | ------------ | ------------ | ------- | ------ | ----------- | ----------------------------------- |
+| **Group Member HP** | Tempered Red  | 220, 0, 0    | 220, 220, 0  | #DC0000 | 11–15  | GroupWindow | Darker than Player HP (220 vs 255)  |
+| **Group Pet HP**    | Shadow Orchid | 170, 60, 170 | 220, 220, 0  | #AA3CAA | 17–21  | GroupWindow | Thin 2px bars under group HP gauges |
 
 **Standard Gauge Sizes**:
 
@@ -650,7 +649,7 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 
 The signature HP palette. At full health: Blood Red. Depleting reveals warm colors through an ember arc.
 
-| Band | Name          | RGB           | Hex     | Description                |
+| Band | Color Name    | RGB           | Hex     | Description                |
 | ---- | ------------- | ------------- | ------- | -------------------------- |
 | 4    | Blood Red     | 255, 0, 0     | #FF0000 | Full HP — drops first      |
 | 3    | Ember Glow    | 255, 60, 10   | #FF3C0A | 60% — hot ember            |
@@ -660,7 +659,7 @@ The signature HP palette. At full health: Blood Red. Depleting reveals warm colo
 
 **Gradient choice: Red Shades** (linear fade to white)
 
-| Band | Name              | RGB           | Hex     | Description                |
+| Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
 | 4    | Crimson           | 255, 0, 0     | #FF0000 | Full HP — drops first      |
 | 3    | Scorched Rose     | 255, 50, 50   | #FF3232 | 60%                        |
@@ -672,7 +671,7 @@ The signature HP palette. At full health: Blood Red. Depleting reveals warm colo
 
 The signature Mana palette. At full mana: Tidal Blue. Depleting reveals deep-sea colors through an ocean arc.
 
-| Band | Name          | RGB           | Hex     | Description                |
+| Band | Color Name    | RGB           | Hex     | Description                |
 | ---- | ------------- | ------------- | ------- | -------------------------- |
 | 4    | Tidal Blue    | 30, 30, 255   | #1E1EFF | Full Mana — drops first    |
 | 3    | Ocean Current | 40, 80, 252   | #2850FC | 60% — deep flow            |
@@ -682,7 +681,7 @@ The signature Mana palette. At full mana: Tidal Blue. Depleting reveals deep-sea
 
 **Gradient choice: Blue Shades** (linear fade to white)
 
-| Band | Name              | RGB           | Hex     | Description                |
+| Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
 | 4    | Sapphire          | 0, 0, 255     | #0000FF | Full Mana — drops first    |
 | 3    | Frozen Azure      | 50, 50, 255   | #3232FF | 60%                        |
@@ -694,7 +693,7 @@ The signature Mana palette. At full mana: Tidal Blue. Depleting reveals deep-sea
 
 Purple Shades Pet HP palette. At full pet health: Conjured Violet. Depleting lightens toward spectral wisp.
 
-| Band | Name              | RGB           | Hex     | Description                |
+| Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
 | 4    | Conjured Violet   | 200, 0, 200   | #C800C8 | Full Pet HP — drops first  |
 | 3    | Enchanted Orchid  | 210, 50, 210  | #D232D2 | 60%                        |
@@ -706,7 +705,7 @@ Purple Shades Pet HP palette. At full pet health: Conjured Violet. Depleting lig
 
 Amethyst Arc Pet HP palette. At full pet health: Conjured Violet. Depleting arcs through bright Arcane Bloom then fades dark.
 
-| Band | Name              | RGB           | Hex     | Description                    |
+| Band | Color Name        | RGB           | Hex     | Description                    |
 | ---- | ----------------- | ------------- | ------- | ------------------------------ |
 | 4    | Conjured Violet   | 200, 0, 200   | #C800C8 | Full Pet HP — drops first      |
 | 3    | Spirit Amethyst   | 180, 60, 200  | #B43CC8 | 60% — settling                 |
@@ -718,7 +717,7 @@ Amethyst Arc Pet HP palette. At full pet health: Conjured Violet. Depleting arcs
 
 The original Nillipuss community palette. Traffic-light inspired: green at full, red at critical.
 
-| Band | Name              | RGB           | Hex     | Description                |
+| Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
 | 4    | Verdant           | 0, 240, 0     | #00F000 | Full — drops first         |
 | 3    | Greenleaf Gold    | 173, 255, 47  | #ADFF2F | 60%                        |

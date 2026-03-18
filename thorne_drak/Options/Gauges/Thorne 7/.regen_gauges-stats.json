@@ -2,20 +2,16 @@
   "variant": "Thorne 7",
   "variant_path": "C:\\Thorne-UI\\thorne_drak\\Options\\Gauges\\Thorne 7",
   "source_base_found": true,
-  "source_base_name": "gauge_inlay_thorne01",
+  "source_base_name": "gauge_inlay105t105t_thorne01",
   "config_loaded": true,
   "generated": {
     "wide": [
-      "gauge_inlay120_thorne01.tga",
-      "gauge_inlay150_thorne01.tga"
+      "gauge_inlay105t120_thorne01.tga",
+      "gauge_inlay105t150_thorne01.tga"
     ],
     "tall": [
-      "gauge_inlay120t_thorne01.tga",
-      "gauge_inlay150t_thorne01.tga",
-      "gauge_inlay230t_thorne01.tga",
-      "gauge_inlay240t_thorne01.tga",
-      "gauge_inlay250t_thorne01.tga",
-      "gauge_inlay260t_thorne01.tga"
+      "gauge_inlay105t120t_thorne01.tga",
+      "gauge_inlay105t105t_thorne01.tga"
     ]
   }
 }

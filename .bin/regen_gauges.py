@@ -46,8 +46,8 @@ import shutil
 # ============================================================================
 # To add a new wide size: add to WIDE_WIDTHS
 # To add a new tall size: add to TALL_WIDTHS
-WIDE_WIDTHS = [120, 150]  # Base is 120, can expand with 150, 160, etc.
-TALL_WIDTHS = [120, 150, 230, 240, 250, 260]  # Base is 120 (from standard), others scale from 120t
+WIDE_WIDTHS = [120]  # Base is 120, can expand with 150, 160, etc.
+TALL_WIDTHS = [105, 120, 250]  # Base is 120 (from standard), others scale from 120t
 CANONICAL_BASE_WIDTH = 120  # Normalize source section width before scaling variants
 
 
@@ -185,7 +185,15 @@ class GaugeGenerator:
         for file in self.variant_dir.glob('gauge_inlay*_thorne*.tga'):
             name = file.stem  # Remove .tga
             # Check if this looks like the base file (not containing dimension markers like "120t", "150", etc.)
-            if not any(marker in name for marker in ['120t', '120', '150t', '150', '230t', '230', '240t', '240', '250t', '250', '260t', '260']):
+            # Build dynamic marker list from active width configs
+            _markers = []
+            for w in sorted(set(TALL_WIDTHS), reverse=True):
+                _markers.append(f'{w}t')
+                _markers.append(str(w))
+            for w in sorted(set(WIDE_WIDTHS), reverse=True):
+                if str(w) not in _markers:
+                    _markers.append(str(w))
+            if not any(marker in name for marker in _markers):
                 self.stats["source_base_found"] = True
                 self.stats["source_base_name"] = name
                 return name
@@ -1163,6 +1171,52 @@ class GaugeGenerator:
             return False
 
 
+def cleanup_orphaned_gauges(search_dirs):
+    """Remove gauge .tga files whose size suffix is not in WIDE_WIDTHS or TALL_WIDTHS.
+
+    Builds valid suffixes from the active width lists (e.g. '120', '105t', '250t')
+    and deletes any gauge_inlay*_thorne*.tga that carries an unrecognised suffix.
+    Base files (no suffix) are never touched.
+
+    Args:
+        search_dirs: Iterable of Path objects to scan for orphaned files.
+
+    Returns:
+        Number of files removed.
+    """
+    import re
+
+    # Build the set of valid size markers from current config
+    valid_markers = set()
+    for w in WIDE_WIDTHS:
+        valid_markers.add(str(w))
+    for w in TALL_WIDTHS:
+        valid_markers.add(f'{w}t')
+        valid_markers.add(str(w))
+
+    # Pattern: gauge_inlay<SIZE_MARKER>_thorne0X.tga
+    # SIZE_MARKER is digits optionally followed by 't' (e.g. 120, 105t, 250t)
+    marker_re = re.compile(r'^gauge_inlay(\d+t?)_thorne\d+\.tga$', re.IGNORECASE)
+
+    removed = 0
+    for search_dir in search_dirs:
+        if not search_dir.exists():
+            continue
+        for f in sorted(search_dir.glob('gauge_inlay*_thorne*.tga')):
+            if f.name.endswith('_debug.tga'):
+                continue
+            m = marker_re.match(f.name)
+            if not m:
+                # No size marker → base file, skip
+                continue
+            marker = m.group(1)
+            if marker not in valid_markers:
+                f.unlink()
+                print(f"  Removed orphan: {f.name}  (from {search_dir})")
+                removed += 1
+    return removed
+
+
 def main():
     """Main entry point."""
     import argparse
@@ -1409,6 +1463,19 @@ SIZE CONFIGURATION:
                     if src.exists():
                         shutil.copy2(src, dst)
                         print(f"  Deployed {filename}")
+        
+        # --- Orphan cleanup: remove gauge .tga files for widths no longer in config ---
+        cleanup_dirs = [root_path]
+        if base_path.exists():
+            cleanup_dirs.extend([d for d in base_path.iterdir() if d.is_dir()])
+        if thorne_dev_path.exists():
+            cleanup_dirs.append(thorne_dev_path)
+        
+        orphans_removed = cleanup_orphaned_gauges(cleanup_dirs)
+        if orphans_removed:
+            print(f"\n{'='*70}")
+            print(f"CLEANUP: Removed {orphans_removed} orphaned gauge file(s)")
+            print(f"{'='*70}")
         
         print(f"\n{'='*70}")
         print(f"SUMMARY: {len(regenerated_variants)} variant(s) regenerated successfully")

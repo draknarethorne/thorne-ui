@@ -29,6 +29,9 @@ This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 - **[Thorne Oval Weight/](Thorne Oval Weight/)**  📄
   `EQUI_TargetWindow.xml`
 
+- **[Thorne Standard/](Thorne Standard/)**    
+  `EQUI_TargetWindow.xml`
+
 ---
 
 ## Thorne Configuration

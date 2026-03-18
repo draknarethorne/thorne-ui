@@ -573,10 +573,11 @@
     <AlignRight>false</AlignRight>
   </StaticText>
 
+  <!-- Scribe into spellbook (left) / Memorize to gem (right) -->
   <Gauge item="SBW_Memorize_Gauge">
     <ScreenID>SBW_Memorize_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>65</X><Y>379</Y></Location>
+    <Location><X>265</X><Y>379</Y></Location>
     <Size><CX>102</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -592,7 +593,7 @@
   <Gauge item="SBW_Scribe_Gauge">
     <ScreenID>SBW_Scribe_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
-    <Location><X>265</X><Y>379</Y></Location>
+    <Location><X>65</X><Y>379</Y></Location>
     <Size><CX>102</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>

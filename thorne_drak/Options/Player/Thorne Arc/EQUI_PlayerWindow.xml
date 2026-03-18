@@ -130,10 +130,10 @@
 	</Label>
 
 	<!-- ====================================================================== -->
-	<!-- HP GAUGE — Red Shades (5-band composite)                               -->
+	<!-- HP GAUGE — Fire Arc (5-band composite)                               -->
 	<!-- ====================================================================== -->
-	<!-- Shades: Crimson (full) > Scorched Rose > Heated Blush > Fading Wound > White-hot Ember (critical) -->
-	<!-- Z-order: BG > White-hot Ember(0) > Fading Wound(1) > Heated Blush(2) > Scorched Rose(3) > Crimson(4) -->
+	<!-- Arc: Blood Red (full) > Ember Glow > Forge Fire > Smolder > Vein (critical) -->
+	<!-- Z-order: BG > Vein(0) > Smolder(1) > Forge Fire(2) > Ember Glow(3) > Blood Red(4) -->
 
 	<!-- Background (empty gauge frame) -->
 	<Gauge item="PW_HP_BG">
@@ -153,7 +153,7 @@
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 0: White-hot Ember (255,210,210) — base, visible at any health -->
+	<!-- Band 0: Vein (175,25,120) — base, visible at any health -->
 	<Gauge item="PW_HP_Band0">
 		<ScreenID>PW_HP_Band0</ScreenID>
 		<EQType>1</EQType>
@@ -165,14 +165,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>255</R><G>210</G><B>210</B></FillTint>
+		<FillTint><R>175</R><G>25</G><B>120</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 1A: Fading Wound (255,160,160) — 20% threshold -->
+	<!-- Band 1A: Smolder (200,40,80) — 20% threshold -->
 	<Gauge item="PW_HP_1A">
 		<ScreenID>PW_HP_1A</ScreenID>
 		<EQType>1</EQType>
@@ -184,7 +184,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>255</R><G>160</G><B>160</B></FillTint>
+		<FillTint><R>200</R><G>40</G><B>80</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band1</Fill>
@@ -197,7 +197,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_HP_1A</Pieces>
 	</Screen>
-	<!-- Band 1B: Fading Wound continuation -->
+	<!-- Band 1B: Smolder continuation -->
 	<Gauge item="PW_HP_1B">
 		<ScreenID>PW_HP_1B</ScreenID>
 		<EQType>1</EQType>
@@ -209,14 +209,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>255</R><G>160</G><B>160</B></FillTint>
+		<FillTint><R>200</R><G>40</G><B>80</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 2A: Heated Blush (255,100,100) — 40% threshold -->
+	<!-- Band 2A: Forge Fire (240,85,25) — 40% threshold -->
 	<Gauge item="PW_HP_2A">
 		<ScreenID>PW_HP_2A</ScreenID>
 		<EQType>1</EQType>
@@ -228,7 +228,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>255</R><G>100</G><B>100</B></FillTint>
+		<FillTint><R>240</R><G>85</G><B>25</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band2</Fill>
@@ -241,7 +241,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_HP_2A</Pieces>
 	</Screen>
-	<!-- Band 2B: Heated Blush continuation -->
+	<!-- Band 2B: Forge Fire continuation -->
 	<Gauge item="PW_HP_2B">
 		<ScreenID>PW_HP_2B</ScreenID>
 		<EQType>1</EQType>
@@ -253,14 +253,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>255</R><G>100</G><B>100</B></FillTint>
+		<FillTint><R>240</R><G>85</G><B>25</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 3A: Scorched Rose (255,50,50) — 60% threshold -->
+	<!-- Band 3A: Ember Glow (255,60,10) — 60% threshold -->
 	<Gauge item="PW_HP_3A">
 		<ScreenID>PW_HP_3A</ScreenID>
 		<EQType>1</EQType>
@@ -272,7 +272,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>255</R><G>50</G><B>50</B></FillTint>
+		<FillTint><R>255</R><G>60</G><B>10</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band3</Fill>
@@ -285,7 +285,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_HP_3A</Pieces>
 	</Screen>
-	<!-- Band 3B: Scorched Rose continuation -->
+	<!-- Band 3B: Ember Glow continuation -->
 	<Gauge item="PW_HP_3B">
 		<ScreenID>PW_HP_3B</ScreenID>
 		<EQType>1</EQType>
@@ -297,14 +297,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>255</R><G>50</G><B>50</B></FillTint>
+		<FillTint><R>255</R><G>60</G><B>10</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 4A: Crimson (255,0,0) — 80% threshold -->
+	<!-- Band 4A: Blood Red (255,0,0) — 80% threshold -->
 	<Gauge item="PW_HP_4A">
 		<ScreenID>PW_HP_4A</ScreenID>
 		<EQType>1</EQType>
@@ -329,7 +329,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_HP_4A</Pieces>
 	</Screen>
-	<!-- Band 4B: Crimson continuation -->
+	<!-- Band 4B: Blood Red continuation -->
 	<Gauge item="PW_HP_4B">
 		<ScreenID>PW_HP_4B</ScreenID>
 		<EQType>1</EQType>
@@ -414,10 +414,10 @@
 	</Label>
 
 	<!-- ====================================================================== -->
-	<!-- MANA GAUGE — Blue Shades (5-band composite)                            -->
+	<!-- MANA GAUGE — Ocean Arc (5-band composite)                            -->
 	<!-- ====================================================================== -->
-	<!-- Shades: Sapphire (full) > Frozen Azure > Starlit Pool > Pale Ether > Icebloom (low) -->
-	<!-- Z-order: BG > Icebloom(0) > Pale Ether(1) > Starlit Pool(2) > Frozen Azure(3) > Sapphire(4) -->
+	<!-- Arc: Tidal Blue (full) > Ocean Current > Wave Crest > Deep Sea > Abyss (low) -->
+	<!-- Z-order: BG > Abyss(0) > Deep Sea(1) > Wave Crest(2) > Ocean Current(3) > Tidal Blue(4) -->
 
 	<!-- Background (empty gauge frame) -->
 	<Gauge item="PW_Mana_BG">
@@ -437,7 +437,7 @@
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 0: Icebloom (210,210,255) — base, visible at any mana -->
+	<!-- Band 0: Abyss (125,30,190) — base, visible at any health -->
 	<Gauge item="PW_Mana_Band0">
 		<ScreenID>PW_Mana_Band0</ScreenID>
 		<EQType>2</EQType>
@@ -449,14 +449,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>210</R><G>210</G><B>255</B></FillTint>
+		<FillTint><R>125</R><G>30</G><B>190</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 1A: Pale Ether (160,160,255) — 20% threshold -->
+	<!-- Band 1A: Deep Sea (80,55,220) — 20% threshold -->
 	<Gauge item="PW_Mana_1A">
 		<ScreenID>PW_Mana_1A</ScreenID>
 		<EQType>2</EQType>
@@ -468,7 +468,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>160</R><G>160</G><B>255</B></FillTint>
+		<FillTint><R>80</R><G>55</G><B>220</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band1</Fill>
@@ -481,7 +481,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_Mana_1A</Pieces>
 	</Screen>
-	<!-- Band 1B: Pale Ether continuation -->
+	<!-- Band 1B: Deep Sea continuation -->
 	<Gauge item="PW_Mana_1B">
 		<ScreenID>PW_Mana_1B</ScreenID>
 		<EQType>2</EQType>
@@ -493,14 +493,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>160</R><G>160</G><B>255</B></FillTint>
+		<FillTint><R>80</R><G>55</G><B>220</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 2A: Starlit Pool (100,100,255) — 40% threshold -->
+	<!-- Band 2A: Wave Crest (55,120,250) — 40% threshold -->
 	<Gauge item="PW_Mana_2A">
 		<ScreenID>PW_Mana_2A</ScreenID>
 		<EQType>2</EQType>
@@ -512,7 +512,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>100</R><G>100</G><B>255</B></FillTint>
+		<FillTint><R>55</R><G>120</G><B>250</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band2</Fill>
@@ -525,7 +525,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_Mana_2A</Pieces>
 	</Screen>
-	<!-- Band 2B: Starlit Pool continuation -->
+	<!-- Band 2B: Wave Crest continuation -->
 	<Gauge item="PW_Mana_2B">
 		<ScreenID>PW_Mana_2B</ScreenID>
 		<EQType>2</EQType>
@@ -537,14 +537,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>100</R><G>100</G><B>255</B></FillTint>
+		<FillTint><R>55</R><G>120</G><B>250</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 3A: Frozen Azure (50,50,255) — 60% threshold -->
+	<!-- Band 3A: Ocean Current (40,80,252) — 60% threshold -->
 	<Gauge item="PW_Mana_3A">
 		<ScreenID>PW_Mana_3A</ScreenID>
 		<EQType>2</EQType>
@@ -556,7 +556,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>50</R><G>50</G><B>255</B></FillTint>
+		<FillTint><R>40</R><G>80</G><B>252</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band3</Fill>
@@ -569,7 +569,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_Mana_3A</Pieces>
 	</Screen>
-	<!-- Band 3B: Frozen Azure continuation -->
+	<!-- Band 3B: Ocean Current continuation -->
 	<Gauge item="PW_Mana_3B">
 		<ScreenID>PW_Mana_3B</ScreenID>
 		<EQType>2</EQType>
@@ -581,14 +581,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>50</R><G>50</G><B>255</B></FillTint>
+		<FillTint><R>40</R><G>80</G><B>252</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 4A: Sapphire (0,0,255) — 80% threshold -->
+	<!-- Band 4A: Tidal Blue (30,30,255) — 80% threshold -->
 	<Gauge item="PW_Mana_4A">
 		<ScreenID>PW_Mana_4A</ScreenID>
 		<EQType>2</EQType>
@@ -600,7 +600,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>0</R><G>0</G><B>255</B></FillTint>
+		<FillTint><R>30</R><G>30</G><B>255</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band4</Fill>
@@ -613,7 +613,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_Mana_4A</Pieces>
 	</Screen>
-	<!-- Band 4B: Sapphire continuation -->
+	<!-- Band 4B: Tidal Blue continuation -->
 	<Gauge item="PW_Mana_4B">
 		<ScreenID>PW_Mana_4B</ScreenID>
 		<EQType>2</EQType>
@@ -625,7 +625,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>0</R><G>0</G><B>255</B></FillTint>
+		<FillTint><R>30</R><G>30</G><B>255</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
@@ -1145,10 +1145,10 @@
 	</Label>
 
 	<!-- ====================================================================== -->
-	<!-- PET HEALTH GAUGE — Purple Shades (5-band composite)                   -->
+	<!-- PET HEALTH GAUGE — Amethyst V-Arc (5-band composite)                 -->
 	<!-- ====================================================================== -->
-	<!-- Shades: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
-	<!-- Z-order: BG > Spectral Wisp(0) > Faded Familiar(1) > Mystic Haze(2) > Enchanted Orchid(3) > Conjured Violet(4) -->
+	<!-- Arc: Conjured Violet (full) > Spirit Amethyst > Arcane Bloom > Twilight Shade > Deep Grape (low) -->
+	<!-- Z-order: BG > Deep Grape(0) > Twilight Shade(1) > Arcane Bloom(2) > Spirit Amethyst(3) > Conjured Violet(4) -->
 
 	<!-- Background (empty gauge frame) -->
 	<Gauge item="PW_PetHP_BG">
@@ -1168,7 +1168,7 @@
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 0: Spectral Wisp (240,210,240) — base, visible at any health -->
+	<!-- Band 0: Deep Grape (120,20,120) — base, visible at any health -->
 	<Gauge item="PW_PetHP_Band0">
 		<ScreenID>PW_PetHP_Band0</ScreenID>
 		<EQType>16</EQType>
@@ -1180,14 +1180,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>240</R><G>210</G><B>240</B></FillTint>
+		<FillTint><R>120</R><G>20</G><B>120</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 1A: Faded Familiar (230,160,230) — 20% threshold -->
+	<!-- Band 1A: Twilight Shade (170,50,180) — 20% threshold -->
 	<Gauge item="PW_PetHP_1A">
 		<ScreenID>PW_PetHP_1A</ScreenID>
 		<EQType>16</EQType>
@@ -1199,7 +1199,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<FillTint><R>170</R><G>50</G><B>180</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band1</Fill>
@@ -1212,7 +1212,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_PetHP_1A</Pieces>
 	</Screen>
-	<!-- Band 1B: Faded Familiar continuation -->
+	<!-- Band 1B: Twilight Shade continuation -->
 	<Gauge item="PW_PetHP_1B">
 		<ScreenID>PW_PetHP_1B</ScreenID>
 		<EQType>16</EQType>
@@ -1224,14 +1224,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<FillTint><R>170</R><G>50</G><B>180</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 2A: Mystic Haze (220,100,220) — 40% threshold -->
+	<!-- Band 2A: Arcane Bloom (220,100,240) — 40% threshold -->
 	<Gauge item="PW_PetHP_2A">
 		<ScreenID>PW_PetHP_2A</ScreenID>
 		<EQType>16</EQType>
@@ -1243,7 +1243,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<FillTint><R>220</R><G>100</G><B>240</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band2</Fill>
@@ -1256,7 +1256,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_PetHP_2A</Pieces>
 	</Screen>
-	<!-- Band 2B: Mystic Haze continuation -->
+	<!-- Band 2B: Arcane Bloom continuation -->
 	<Gauge item="PW_PetHP_2B">
 		<ScreenID>PW_PetHP_2B</ScreenID>
 		<EQType>16</EQType>
@@ -1268,14 +1268,14 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<FillTint><R>220</R><G>100</G><B>240</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
 		</GaugeDrawTemplate>
 	</Gauge>
 
-	<!-- Band 3A: Enchanted Orchid (210,50,210) — 60% threshold -->
+	<!-- Band 3A: Spirit Amethyst (180,60,200) — 60% threshold -->
 	<Gauge item="PW_PetHP_3A">
 		<ScreenID>PW_PetHP_3A</ScreenID>
 		<EQType>16</EQType>
@@ -1287,7 +1287,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<FillTint><R>180</R><G>60</G><B>200</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_OversizedGridFill_120t_Band3</Fill>
@@ -1300,7 +1300,7 @@
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PW_PetHP_3A</Pieces>
 	</Screen>
-	<!-- Band 3B: Enchanted Orchid continuation -->
+	<!-- Band 3B: Spirit Amethyst continuation -->
 	<Gauge item="PW_PetHP_3B">
 		<ScreenID>PW_PetHP_3B</ScreenID>
 		<EQType>16</EQType>
@@ -1312,7 +1312,7 @@
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<FillTint><R>180</R><G>60</G><B>200</B></FillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<GaugeDrawTemplate>
 			<Fill>A_GaugeGridFill_120t</Fill>
@@ -1544,7 +1544,7 @@
 		<Pieces>PW_PlayerClass</Pieces>
 		<Pieces>PW_PlayerLevel</Pieces>
 
-		<!-- HP — Red Shades composite -->
+		<!-- HP — Fire Arc composite -->
 		<Pieces>PW_HP_BG</Pieces>
 		<Pieces>PW_HP_Band0</Pieces>
 		<Pieces>PW_HP_1A_Clip</Pieces>
@@ -1559,7 +1559,7 @@
 		<Pieces>PW_HP_PctSign</Pieces>
 		<Pieces>PW_HP_Values</Pieces>
 
-		<!-- Mana — Blue Shades composite -->
+		<!-- Mana — Ocean Arc composite -->
 		<Pieces>PW_Mana_BG</Pieces>
 		<Pieces>PW_Mana_Band0</Pieces>
 		<Pieces>PW_Mana_1A_Clip</Pieces>
@@ -1594,7 +1594,7 @@
 		<Pieces>PW_AA_Divider</Pieces>
 		<Pieces>PW_AA_Total</Pieces>
 
-		<!-- Pet HP — Purple Shades composite -->
+		<!-- Pet HP — Amethyst V-Arc composite -->
 		<Pieces>PW_PetHP_BG</Pieces>
 		<Pieces>PW_PetHP_Band0</Pieces>
 		<Pieces>PW_PetHP_1A_Clip</Pieces>

@@ -522,7 +522,7 @@
 		<EQType>69</EQType>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>74</X>
+			<X>82</X>
 			<Y>5</Y>
 		</Location>
 		<Size>
@@ -545,7 +545,7 @@
 		<Font>2</Font>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>134</X>
+			<X>142</X>
 			<Y>5</Y>
 		</Location>
 		<Size>
@@ -563,14 +563,12 @@
 		<AlignRight>false</AlignRight>
 	</Label>
 
-	<!-- END EXTRA BIT ADDED BY BRUJOLOCO FROM ORIGINAL-->
-
 	<Screen item = "PetInfoWindow">
 		<!--<ScreenID/>-->
 		<RelativePosition>false</RelativePosition>
 		<Location>
 			<X>0</X>
-			<Y>1</Y>
+			<Y>200</Y>
 		</Location>
 		<Size>
 			<CX>160</CX>

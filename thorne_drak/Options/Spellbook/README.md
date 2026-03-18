@@ -4,8 +4,8 @@
 
 This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-18  
+**Git Commit:** 550c55f
 
 ---
 

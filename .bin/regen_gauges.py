@@ -657,7 +657,16 @@ class GaugeGenerator:
         
         # Only extract interior marks (skip border pixels)
         overlay = self._generate_overlay(bg_section, interior_only=True)
-        return self._blend_overlay_into_fill(solidfill, overlay)
+        result = self._blend_overlay_into_fill(solidfill, overlay)
+        
+        # Clear first and last columns so the background border shows through
+        width, height = result.size
+        px = result.load()
+        for y in range(height):
+            px[0, y] = (0, 0, 0, 0)
+            px[width - 1, y] = (0, 0, 0, 0)
+        
+        return result
     
     def _blend_overlay_into_fill(self, solidfill, overlay, spread=1, darken=0.15):
         """Blend overlay marks into fill with subtle gradient depth.

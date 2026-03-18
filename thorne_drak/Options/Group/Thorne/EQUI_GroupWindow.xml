@@ -1073,8 +1073,8 @@
 		<ScreenID/>
 		<RelativePosition>false</RelativePosition>
 		<Location>
-			<X>516</X>
-			<Y>78</Y>
+			<X>0</X>
+			<Y>100</Y>
 		</Location>
 		<Size>
 			<CX>160</CX>

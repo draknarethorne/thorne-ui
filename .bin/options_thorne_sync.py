@@ -269,8 +269,14 @@ See [.sync-status.json](.sync-status.json) for detailed sync metadata including:
 **Part of:** [Thorne UI Options System](../../.docs/options-sync/)
 """
         
-        # Write README
+        # Write README only if content actually changed
         try:
+            if readme_path.exists():
+                existing = readme_path.read_text(encoding='utf-8')
+                if existing == content:
+                    if self.verbose:
+                        print("    [README] No changes, skipped")
+                    return
             with open(readme_path, 'w', encoding='utf-8') as f:
                 f.write(content)
             if self.verbose:

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <XML ID="EQInterfaceDefinitionLanguage">
   <Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes" />
+  <!-- Tall 120t gauge: CX=120 CY=16, no end-caps -->
   <Gauge item="BREATH_Gauge">
     <ScreenID>Gauge</ScreenID>
     <!--<Font>3</Font>-->
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>7</X>
-      <Y>5</Y>
+      <Y>6</Y>
     </Location>
     <Size>
-      <CX>116</CX>
-      <CY>8</CY>
+      <CX>120</CX>
+      <CY>16</CY>
     </Size>
     <GaugeOffsetY>0</GaugeOffsetY>
     <Style_VScroll>false</Style_VScroll>
@@ -31,12 +32,10 @@
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>8</EQType>
     <GaugeDrawTemplate>
-      <Background>A_GaugeBackground</Background>
-      <Fill>A_GaugeFill</Fill>
-      <Lines>A_GaugeLines</Lines>
-      <LinesFill>A_GaugeLinesFill</LinesFill>
-      <EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
-      <EndCapRight>A_GaugeEndCapRight</EndCapRight>
+      <Background>A_GaugeBackground_120t</Background>
+      <Fill>A_GaugeFill_120t</Fill>
+      <Lines>A_GaugeLines_120t</Lines>
+      <LinesFill>A_GaugeLinesFill_120t</LinesFill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="BreathWindow">
@@ -47,9 +46,10 @@
       <X>154</X>
       <Y>25</Y>
     </Location>
+    <!-- 7+120+7 = 134 wide, 6+16+6 = 28 tall -->
     <Size>
-      <CX>130</CX>
-      <CY>25</CY>
+      <CX>134</CX>
+      <CY>28</CY>
     </Size>
     <Text>Air Remaining</Text>
     <Style_VScroll>false</Style_VScroll>

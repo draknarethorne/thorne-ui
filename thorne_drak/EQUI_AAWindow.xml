@@ -214,6 +214,7 @@
 	</StaticText>
 
 
+	<!-- Tall 105t gauge: CX=105 CY=16, no end-caps, text hidden -->
 	<Gauge item = "AAW_ExpGauge">
 		<ScreenID>ExpGauge</ScreenID>
 		<!--<Font>3</Font>-->
@@ -223,17 +224,17 @@
 			<Y>75</Y>
 		</Location>
 		<Size>
-			<CX>108</CX>
-			<CY>28</CY>
+			<CX>105</CX>
+			<CY>16</CY>
 		</Size>
-		<GaugeOffsetY>20</GaugeOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
 		<Text>AA Exp</Text>
 		<TextColor>
 				<R>255</R>
 				<G>255</G>
 				<B>255</B>
 		</TextColor>
-		<TextOffsetY>0</TextOffsetY>
+		<TextOffsetY>-50</TextOffsetY>
 		<TextOffsetX>39</TextOffsetX>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
@@ -252,12 +253,10 @@
 		<DrawLinesFill>true</DrawLinesFill>
 		<EQType>5</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
-			<LinesFill>A_GaugeLinesFill</LinesFill>
-			<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
-			<EndCapRight>A_GaugeEndCapRight</EndCapRight>
+			<Background>A_GaugeBackground_105t</Background>
+			<Fill>A_GaugeFill_105t</Fill>
+			<Lines>A_GaugeLines_105t</Lines>
+			<LinesFill>A_GaugeLinesFill_105t</LinesFill>
 		</GaugeDrawTemplate>
 	</Gauge>
 

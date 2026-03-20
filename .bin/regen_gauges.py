@@ -117,8 +117,15 @@ class GaugeGenerator:
                               marks into the fill. When false, result = plain
                               SolidFill copy (same animations still work)
             gray_level      — gridfill/lightgridfill: RGB intensity for grid
-                              lines (0=pure black, 80=GridFill default,
+                              lines (0=pure black/GridFill default,
                               140=LightGridFill default, 255=invisible)
+            darken          — gridfill/lightgridfill: darkening factor for
+                              neighbor pixels around grid lines. Range 0.0-1.0
+                              (0=no darkening, 0.15=GridFill default,
+                              0.0=LightGridFill default, 1.0=full black)
+            spread          — gridfill/lightgridfill: pixel radius for the
+                              darkening gradient around each grid mark
+                              (1=immediate neighbors/default, 2+=wider glow)
 
         Defaults match the original hard-coded behavior so existing variants
         without a config file produce identical output.
@@ -126,14 +133,16 @@ class GaugeGenerator:
         defaults = {
             "interpolation": "BILINEAR",
             "sections": {
+                # --- thorne01 rows (original source art) ---
                 "background": {"preserve_black": True},
                 "fill":       {"preserve_black": False},
                 "lines":      {"preserve_black": True},
                 "linesfill":  {"preserve_black": False},
-                "solidfill":  {"preserve_black": False, "fill_gaps": True},
-                "overlay":    {"preserve_black": True, "enabled": True},
-                "gridfill":   {"preserve_black": False, "bake_overlay": True, "gray_level": 80},
-                "lightgridfill": {"preserve_black": False, "bake_overlay": True, "gray_level": 140},
+                # --- thorne02 rows (composite output, top to bottom) ---
+                "overlay":       {"preserve_black": True, "enabled": True},
+                "solidfill":     {"preserve_black": False, "fill_gaps": True},
+                "gridfill":      {"preserve_black": False, "bake_overlay": True, "gray_level": 0, "darken": 0.15, "spread": 1},
+                "lightgridfill": {"preserve_black": False, "bake_overlay": True, "gray_level": 140, "darken": 0.0, "spread": 1},
             }
         }
 
@@ -181,8 +190,16 @@ class GaugeGenerator:
         return self.config.get("sections", {}).get("gridfill", {}).get("bake_overlay", True)
 
     def _section_gridfill_gray_level(self):
-        """Gray intensity for GridFill grid lines (0=black, 80=default, 255=invisible)."""
-        return self.config.get("sections", {}).get("gridfill", {}).get("gray_level", 80)
+        """Gray intensity for GridFill grid lines (0=black/default, 255=invisible)."""
+        return self.config.get("sections", {}).get("gridfill", {}).get("gray_level", 0)
+
+    def _section_gridfill_darken(self):
+        """Darkening factor for GridFill neighbor pixels (0.0=none, 0.15=default, 1.0=black)."""
+        return self.config.get("sections", {}).get("gridfill", {}).get("darken", 0.15)
+
+    def _section_gridfill_spread(self):
+        """Pixel radius for GridFill darkening gradient (1=immediate neighbors/default)."""
+        return self.config.get("sections", {}).get("gridfill", {}).get("spread", 1)
 
     def _section_lightgridfill_bake_overlay(self):
         """Whether to bake overlay marks into LightGridFill (lightgridfill section config)."""
@@ -191,6 +208,27 @@ class GaugeGenerator:
     def _section_lightgridfill_gray_level(self):
         """Gray intensity for LightGridFill grid lines (0=black, 140=default, 255=invisible)."""
         return self.config.get("sections", {}).get("lightgridfill", {}).get("gray_level", 140)
+
+    def _section_lightgridfill_darken(self):
+        """Darkening factor for LightGridFill neighbor pixels (0.0=none/default, 1.0=black)."""
+        return self.config.get("sections", {}).get("lightgridfill", {}).get("darken", 0.0)
+
+    def _section_lightgridfill_spread(self):
+        """Pixel radius for LightGridFill darkening gradient (1=immediate neighbors/default)."""
+        return self.config.get("sections", {}).get("lightgridfill", {}).get("spread", 1)
+
+    def _section_fill_preserve_gaps(self):
+        """Whether to preserve 1px transparent gaps when scaling Fill (fill section config).
+
+        When True, the fill is made solid before scaling (preventing gap
+        expansion from interpolation), then 1px transparent gaps are punched
+        back at grid-line positions detected from the scaled background.
+        Suitable for structural grid variants (Basic, Grid, Thorne).
+
+        When False (default), fill is scaled normally with interpolation,
+        which may widen transparent gaps at larger target widths.
+        """
+        return self.config.get("sections", {}).get("fill", {}).get("preserve_gaps", False)
 
     def _section_fill_gaps(self):
         """Whether to fill transparent gaps in SolidFill (solidfill section config)."""
@@ -348,11 +386,19 @@ class GaugeGenerator:
             preserve_black=self._section_preserve_black("background"),
             debug_bucket=debug_sections, debug_label="background"
         )
-        fill_wide = self._scale_horizontal_with_borders(
-            fill, width, interp_method=self._section_interpolation("fill"),
-            preserve_black=self._section_preserve_black("fill"),
-            debug_bucket=debug_sections, debug_label="fill"
-        )
+        if self._section_fill_preserve_gaps():
+            fill_wide = self._scale_fill_preserving_gaps(
+                fill, bg_wide, width,
+                interp_method=self._section_interpolation("fill"),
+                preserve_black=self._section_preserve_black("fill"),
+                debug_bucket=debug_sections, debug_label="fill"
+            )
+        else:
+            fill_wide = self._scale_horizontal_with_borders(
+                fill, width, interp_method=self._section_interpolation("fill"),
+                preserve_black=self._section_preserve_black("fill"),
+                debug_bucket=debug_sections, debug_label="fill"
+            )
         lines_wide = self._scale_horizontal_with_borders(
             lines, width, interp_method=self._section_interpolation("lines"),
             preserve_black=self._section_preserve_black("lines"),
@@ -464,7 +510,10 @@ class GaugeGenerator:
 
         if std_width != target_width:
             bg_tall = self._scale_horizontal_with_borders(bg_tall, target_width, interp_method=self._section_interpolation("background"), preserve_black=self._section_preserve_black("background"))
-            fill_tall = self._scale_horizontal_with_borders(fill_tall, target_width, interp_method=self._section_interpolation("fill"), preserve_black=self._section_preserve_black("fill"))
+            if self._section_fill_preserve_gaps():
+                fill_tall = self._scale_fill_preserving_gaps(fill_tall, bg_tall, target_width, interp_method=self._section_interpolation("fill"), preserve_black=self._section_preserve_black("fill"))
+            else:
+                fill_tall = self._scale_horizontal_with_borders(fill_tall, target_width, interp_method=self._section_interpolation("fill"), preserve_black=self._section_preserve_black("fill"))
             lines_tall = self._scale_horizontal_with_borders(lines_tall, target_width, interp_method=self._section_interpolation("lines"), preserve_black=self._section_preserve_black("lines"))
             linesfill_tall = self._scale_horizontal_with_borders(linesfill_tall, target_width, interp_method=self._section_interpolation("linesfill"), preserve_black=self._section_preserve_black("linesfill"))
         
@@ -547,11 +596,19 @@ class GaugeGenerator:
             preserve_black=self._section_preserve_black("background"),
             debug_bucket=debug_sections, debug_label="background"
         )
-        fill_scaled = self._scale_horizontal_with_borders(
-            fill, width, interp_method=self._section_interpolation("fill"),
-            preserve_black=self._section_preserve_black("fill"),
-            debug_bucket=debug_sections, debug_label="fill"
-        )
+        if self._section_fill_preserve_gaps():
+            fill_scaled = self._scale_fill_preserving_gaps(
+                fill, bg_scaled, width,
+                interp_method=self._section_interpolation("fill"),
+                preserve_black=self._section_preserve_black("fill"),
+                debug_bucket=debug_sections, debug_label="fill"
+            )
+        else:
+            fill_scaled = self._scale_horizontal_with_borders(
+                fill, width, interp_method=self._section_interpolation("fill"),
+                preserve_black=self._section_preserve_black("fill"),
+                debug_bucket=debug_sections, debug_label="fill"
+            )
         lines_scaled = self._scale_horizontal_with_borders(
             lines, width, interp_method=self._section_interpolation("lines"),
             preserve_black=self._section_preserve_black("lines"),
@@ -682,8 +739,8 @@ class GaugeGenerator:
         
         When gridfill.bake_overlay is True (per-variant section config),
         extracts interior overlay marks from Background, converts them to
-        the configured gray_level, and blends into SolidFill with subtle
-        neighbor darkening for depth. Stronger visual than LightGridFill.
+        black lines (gray_level=0 default), and blends into SolidFill with
+        subtle neighbor darkening for depth. Stronger visual than LightGridFill.
         
         When gridfill.bake_overlay is False, GridFill is an identical copy
         of SolidFill. This ensures the same animations work regardless of
@@ -707,7 +764,11 @@ class GaugeGenerator:
                 if a > 0:
                     px[x, y] = (gray_level, gray_level, gray_level, a)
         
-        result = self._blend_overlay_into_fill(solidfill, gray_overlay)
+        result = self._blend_overlay_into_fill(
+            solidfill, gray_overlay,
+            spread=self._section_gridfill_spread(),
+            darken=self._section_gridfill_darken(),
+        )
         
         # Clear first and last columns so the background border shows through
         width, height = result.size
@@ -749,14 +810,174 @@ class GaugeGenerator:
                 if a > 0:
                     px[x, y] = (gray_level, gray_level, gray_level, a)
         
-        # Composite gray marks onto SolidFill (no neighbor darkening)
-        result = Image.alpha_composite(solidfill, gray_overlay)
+        # Composite gray marks onto SolidFill (with optional neighbor darkening)
+        darken = self._section_lightgridfill_darken()
+        if darken > 0:
+            result = self._blend_overlay_into_fill(
+                solidfill, gray_overlay,
+                spread=self._section_lightgridfill_spread(),
+                darken=darken,
+            )
+        else:
+            result = Image.alpha_composite(solidfill, gray_overlay)
         
         # Clear first and last columns so the background border shows through
         res_px = result.load()
         for y in range(height):
             res_px[0, y] = (0, 0, 0, 0)
             res_px[width - 1, y] = (0, 0, 0, 0)
+        
+        return result
+    
+    def _scale_fill_preserving_gaps(self, fill_section, bg_scaled, target_width,
+                                     interp_method="BILINEAR", preserve_black=False,
+                                     debug_bucket=None, debug_label=None):
+        """Scale fill section while keeping transparent gaps at 1px wide.
+        
+        Segment-based approach that preserves internal shading:
+          1) Identify opaque segments (contiguous non-gap columns) in source fill
+          2) Detect grid-line columns from the already-scaled background
+          3) Calculate proportional target widths for each segment
+          4) Scale each segment independently (preserving its shading)
+          5) Reassemble with 1px transparent gaps at grid-line positions
+        
+        Args:
+            fill_section: Source fill image (with transparent gap columns)
+            bg_scaled: Already-scaled background at target_width (used to
+                       detect grid-line column positions)
+            target_width: Target width in pixels
+            interp_method: Interpolation method for scaling
+            preserve_black: If True, use preserve-black pipeline
+            debug_bucket: Optional debug stage collector
+            debug_label: Optional debug label
+        
+        Returns:
+            Scaled fill image (target_width × height) with 1px transparent
+            gaps at each grid-line column, inner shading preserved
+        """
+        src_width, src_height = fill_section.size
+        fill_px = fill_section.load()
+        
+        # Step 1: Identify gap columns in source fill (fully transparent interior columns)
+        src_gap_cols = set()
+        for x in range(1, src_width - 1):       # Skip border columns
+            is_gap = True
+            for y in range(1, src_height - 1):   # Check interior rows only
+                _, _, _, a = fill_px[x, y]
+                if a > 0:
+                    is_gap = False
+                    break
+            if is_gap:
+                src_gap_cols.add(x)
+        
+        # If no gaps found, fall back to normal scaling
+        if not src_gap_cols:
+            return self._scale_horizontal_with_borders(
+                fill_section, target_width, interp_method=interp_method,
+                preserve_black=preserve_black,
+                debug_bucket=debug_bucket, debug_label=debug_label,
+            )
+        
+        # Step 2: Detect grid-line columns from scaled background
+        bg_width, bg_height = bg_scaled.size
+        bg_px = bg_scaled.load()
+        threshold = self.black_threshold
+        
+        dst_gap_cols = sorted(set(
+            x for x in range(1, bg_width - 1)
+            if any(
+                bg_px[x, y][3] > 0 and bg_px[x, y][0] <= threshold
+                and bg_px[x, y][1] <= threshold and bg_px[x, y][2] <= threshold
+                for y in range(1, bg_height - 1)
+            )
+        ))
+        
+        # Step 3: Parse source into segments (runs of non-gap columns)
+        # A segment is a contiguous run of columns that are NOT gap columns
+        # and NOT border columns (first/last)
+        interior_cols = list(range(1, src_width - 1))  # Exclude border pixels
+        segments = []  # List of (start_x, width) tuples
+        seg_start = None
+        for x in interior_cols:
+            if x not in src_gap_cols:
+                if seg_start is None:
+                    seg_start = x
+            else:
+                if seg_start is not None:
+                    segments.append((seg_start, x - seg_start))
+                    seg_start = None
+        if seg_start is not None:
+            segments.append((seg_start, (src_width - 1) - seg_start))
+        
+        num_gaps = len(dst_gap_cols)
+        # Available interior pixels = target - 2 borders - gap pixels
+        available = target_width - 2 - num_gaps
+        
+        if available <= 0 or not segments:
+            # Degenerate case: fall back to normal scaling
+            return self._scale_horizontal_with_borders(
+                fill_section, target_width, interp_method=interp_method,
+                preserve_black=preserve_black,
+                debug_bucket=debug_bucket, debug_label=debug_label,
+            )
+        
+        # Step 4: Distribute available width proportionally among segments
+        total_src_seg_width = sum(w for _, w in segments)
+        seg_target_widths = []
+        assigned = 0
+        for i, (_, seg_w) in enumerate(segments):
+            if i == len(segments) - 1:
+                # Last segment gets remainder to avoid rounding drift
+                tw = available - assigned
+            else:
+                tw = max(1, round(seg_w / total_src_seg_width * available))
+            seg_target_widths.append(tw)
+            assigned += tw
+        
+        # Choose interpolation
+        if interp_method == "LANCZOS":
+            interp = Image.Resampling.LANCZOS
+        elif interp_method == "NEAREST":
+            interp = Image.Resampling.NEAREST
+        else:
+            interp = Image.Resampling.BILINEAR
+        
+        # Step 5: Scale each segment and reassemble
+        result = Image.new('RGBA', (target_width, src_height), (0, 0, 0, 0))
+        
+        # Copy left border column
+        left_border = fill_section.crop((0, 0, 1, src_height))
+        result.paste(left_border, (0, 0))
+        
+        # Build sorted gap set for fast lookup during assembly
+        gap_set = set(dst_gap_cols)
+        
+        # Place segments into the result, skipping gap columns
+        cursor = 1  # Start after left border
+        seg_idx = 0
+        for seg_idx, ((src_x, src_w), tgt_w) in enumerate(zip(segments, seg_target_widths)):
+            # Skip any gap columns at current cursor position
+            while cursor < target_width - 1 and cursor in gap_set:
+                cursor += 1  # Gap column stays transparent
+            
+            if cursor + tgt_w > target_width - 1:
+                tgt_w = target_width - 1 - cursor  # Clamp to fit
+            if tgt_w <= 0:
+                break
+            
+            # Extract source segment
+            seg_img = fill_section.crop((src_x, 0, src_x + src_w, src_height))
+            
+            # Scale segment to target width
+            seg_scaled = seg_img.resize((tgt_w, src_height), interp)
+            
+            # Paste into result
+            result.paste(seg_scaled, (cursor, 0))
+            cursor += tgt_w
+        
+        # Copy right border column
+        right_border = fill_section.crop((src_width - 1, 0, src_width, src_height))
+        result.paste(right_border, (target_width - 1, 0))
         
         return result
     

@@ -30,9 +30,11 @@ from datetime import datetime
 # Window configuration - maps window name to one or more EQUI_*.xml files
 WINDOW_MAPPING = {
     "Actions": "EQUI_ActionsWindow.xml",
+    "AltAdvance": "EQUI_AAWindow.xml",
     "Animations": "EQUI_Animations.xml",
     "Bank": "EQUI_BankWnd.xml",
     "Bazaar": ["EQUI_BazaarWnd.xml", "EQUI_BazaarSearchWnd.xml"],
+    "Breath": "EQUI_BreathWindow.xml",
     "Buff": "EQUI_BuffWindow.xml",
     "Cast": "EQUI_CastSpellWnd.xml",
     "Container": "EQUI_Container.xml",

@@ -1,0 +1,612 @@
+<?xml version = "1.0"?>
+<XML ID = "EQInterfaceDefinitionLanguage">
+	<Schema xmlns = "EverQuestData" xmlns:dt = "EverQuestDataTypes"/>
+
+<!--  Original: Edited by Nanan of Order of the Phoenix, on Saryrn server  -->
+	<!-- ODAKU pet window Modified for QQQuarm by Brujoloco  Nov 6 2023-->
+	<!-- 
+		Thorne UI Modifications (Feb 2026) by Draknare Thorne:
+		- Added dismiss button (PIW_LostButton) at X=110, Y=23 - red "X" button
+		- Dismiss button positioned to avoid accidental Attack button clicks
+		- Mana gauge color changed to RGB(100,150,255) for "Thorne blue" consistency
+		- Part of Phase 5 standardization across all windows
+		- Pet HP: Purple Shades 5-band composite gauge (120x16, standardized from 128x15)
+		- Pet name text overlay renders on top of composite bands
+	-->
+	<Button item = "PIW_AttackButton">
+		<ScreenID>AttackButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>32</Y>
+		</Location>
+		<Size>
+			<CX>154</CX>
+			<CY>20</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Attack</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<!--<RadioGroup/>-->
+		<Text>Attack</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "PIW_FollowButton">
+		<ScreenID>FollowButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>77</CX>
+			<CY>20</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Follow Me</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<!--<RadioGroup/>-->
+		<Text>Follow</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "PIW_TauntButton">
+		<ScreenID>TauntButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>77</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>77</CX>
+			<CY>20</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Taunt</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<!--<RadioGroup/>-->
+		<Text>Taunt</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "PIW_GuardButton">
+		<ScreenID>GuardButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>74</Y>
+		</Location>
+		<Size>
+			<CX>77</CX>
+			<CY>20</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Guard Here</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<!--<RadioGroup/>-->
+		<Text>Guard</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "PIW_SitButton">
+		<ScreenID>SitButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>77</X>
+			<Y>74</Y>
+		</Location>
+		<Size>
+			<CX>77</CX>
+			<CY>20</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Sit Down</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<!--<RadioGroup/>-->
+		<Text>Sit</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "PIW_BackButton">
+		<ScreenID>BackButton</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>95</Y>
+		</Location>
+		<Size>
+			<CX>154</CX>
+			<CY>20</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Back Off</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<!--<RadioGroup/>-->
+		<Text>Back</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "PIW_LostButton">
+		<ScreenID>LostButton</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>125</X>
+			<Y>20</Y>
+		</Location>
+		<Size>
+			<CX>24</CX>
+			<CY>10</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Pet Get Lost (Dismiss)</TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+		<!--<RadioGroup/>-->
+		<Text>X</Text>
+		<TextColor>
+				<R>255</R>
+				<G>100</G>
+				<B>100</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<!-- ====================================================================== -->
+	<!-- PET HEALTH GAUGE — Purple Shades (5-band composite)                   -->
+	<!-- ====================================================================== -->
+	<!-- Shades: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
+	<!-- Z-order: BG > Spectral Wisp(0) > Faded Familiar(1) > Mystic Haze(2) > Enchanted Orchid(3) > Conjured Violet(4) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="PIW_PetHP_BG">
+		<ScreenID>PetHPGauge</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Spectral Wisp (240,210,240) — base, visible at any health -->
+	<Gauge item="PIW_PetHP_Band0">
+		<ScreenID>PIW_PetHP_Band0</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>240</R><G>210</G><B>240</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Faded Familiar (230,160,230) — 20% threshold -->
+	<Gauge item="PIW_PetHP_1A">
+		<ScreenID>PIW_PetHP_1A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-2000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>8000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Faded Familiar continuation -->
+	<Gauge item="PIW_PetHP_1B">
+		<ScreenID>PIW_PetHP_1B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>25</X><Y>4</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Mystic Haze (220,100,220) — 40% threshold -->
+	<Gauge item="PIW_PetHP_2A">
+		<ScreenID>PIW_PetHP_2A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-4000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>6000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Mystic Haze continuation -->
+	<Gauge item="PIW_PetHP_2B">
+		<ScreenID>PIW_PetHP_2B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>49</X><Y>4</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Enchanted Orchid (210,50,210) — 60% threshold -->
+	<Gauge item="PIW_PetHP_3A">
+		<ScreenID>PIW_PetHP_3A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-6000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Enchanted Orchid continuation -->
+	<Gauge item="PIW_PetHP_3B">
+		<ScreenID>PIW_PetHP_3B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>73</X><Y>4</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Conjured Violet (200,0,200) — 80% threshold -->
+	<Gauge item="PIW_PetHP_4A">
+		<ScreenID>PIW_PetHP_4A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-8000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>200</R><G>0</G><B>200</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Conjured Violet continuation -->
+	<Gauge item="PIW_PetHP_4B">
+		<ScreenID>PIW_PetHP_4B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>97</X><Y>4</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>200</R><G>0</G><B>200</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Pet name text overlay — rendered on top of all bands -->
+	<Gauge item="PIW_PetHP_Text">
+		<ScreenID>PIW_PetHP_Text</ScreenID>
+		<EQType>16</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<Text>No Pet</Text>
+		<TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+		<Style_Transparent>true</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+	</Gauge>
+
+	<Gauge item = "PIW_PetManaGauge">
+		<ScreenID>PetManaGauge</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>1</X>
+			<Y>20</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>4</CY>
+		</Size>
+		<TextOffsetY>-50</TextOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint>
+				<R>100</R>
+				<G>150</G>
+				<B>255</B>
+		</FillTint>
+		<LinesFillTint>
+				<R>70</R>
+				<G>105</G>
+				<B>180</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<EQType>17</EQType>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- START EXTRA BIT ADDED BY BRUJOLOCO FROM ORIGINAL-->
+<Label item ="PIW_Pet_HPLabel">
+		<ScreenID>PIW_PetHPLabel</ScreenID>
+		<Font>2</Font>
+		<EQType>69</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>82</X>
+			<Y>5</Y>
+		</Location>
+		<Size>
+			<CX>60</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>Playername123456</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item ="PIW_Pet_HPPercLabel">
+		<ScreenID>PIW_PetHPPercLabel</ScreenID>
+		<Font>2</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>142</X>
+			<Y>5</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<Screen item = "PetInfoWindow">
+		<!--<ScreenID/>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>200</Y>
+		</Location>
+		<Size>
+			<CX>160</CX>
+			<CY>125</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+		<Text></Text>
+		<DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+		<Style_Titlebar>false</Style_Titlebar>
+		<Style_Closebox>false</Style_Closebox>
+		<Style_Minimizebox>false</Style_Minimizebox>
+		<Style_Border>true</Style_Border>
+		<Style_Sizable>false</Style_Sizable>
+		<Pieces>PIW_AttackButton</Pieces>
+		<Pieces>PIW_LostButton</Pieces>
+		<Pieces>PIW_BackButton</Pieces>
+		<Pieces>PIW_GuardButton</Pieces>
+		<Pieces>PIW_FollowButton</Pieces>
+		<Pieces>PIW_TauntButton</Pieces>
+		<Pieces>PIW_SitButton</Pieces>
+		<!-- Pet HP — Purple Shades composite -->
+		<Pieces>PIW_PetHP_BG</Pieces>
+		<Pieces>PIW_PetHP_Band0</Pieces>
+		<Pieces>PIW_PetHP_1A_Clip</Pieces>
+		<Pieces>PIW_PetHP_1B</Pieces>
+		<Pieces>PIW_PetHP_2A_Clip</Pieces>
+		<Pieces>PIW_PetHP_2B</Pieces>
+		<Pieces>PIW_PetHP_3A_Clip</Pieces>
+		<Pieces>PIW_PetHP_3B</Pieces>
+		<Pieces>PIW_PetHP_4A_Clip</Pieces>
+		<Pieces>PIW_PetHP_4B</Pieces>
+		<Pieces>PIW_PetHP_Text</Pieces>
+		<Pieces>PIW_PetManaGauge</Pieces>
+		<Pieces>PIW_Pet_HPLabel</Pieces>
+		<Pieces>PIW_Pet_HPPercLabel</Pieces>
+	</Screen>
+
+</XML>

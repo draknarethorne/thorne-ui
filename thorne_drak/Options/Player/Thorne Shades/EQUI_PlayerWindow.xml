@@ -1,0 +1,1619 @@
+<?xml version="1.0"?>
+<XML ID="EQInterfaceDefinitionLanguage">
+	<Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes"/>
+	<!--
+		Thorne UI Player Window (Jan 2026) by Draknare Thorne:
+		- Complete redesign with blended design elements
+		- Design: Infiniti-Blue gauge styling, duxaUI icon methodology, vert stats layout
+		- Enhanced visual presentation and information density
+		- Status: First Draft Implementation - AA and XP Bottom configuration
+	-->
+
+	<!-- ====================================================================== -->
+	<!-- ATTACK INDICATOR (combat state border) -->
+	<!-- ====================================================================== -->
+  <TextureInfo item="AttackIndicator.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+
+  <Ui2DAnimation item="A_AttackIndicator">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>AttackIndicator.tga</Texture>
+      <Location>
+        <X>6</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>0</CX>
+        <CY>0</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <StaticAnimation item="A_AttackIndicatorAnim">
+    <ScreenID>A_AttackIndicatorAnim</ScreenID>
+    <Animation>A_AttackIndicator</Animation>
+  </StaticAnimation>
+
+	<!-- ====================================================================== -->
+	<!-- PLAYER NAME LABEL (top-left) -->
+	<!-- ====================================================================== -->
+	
+	<Label item="PW_PlayerName">
+		<ScreenID>PW_PlayerName</ScreenID>
+		<EQType>1</EQType>
+		<Location>
+			<X>5</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>100</CX>
+			<CY>14</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- PLAYER CLASS LABEL (top-right, after name, before level) -->
+	<!-- ====================================================================== -->
+	
+	<Label item="PW_PlayerClass">
+		<ScreenID>PW_PlayerClass</ScreenID>
+		<EQType>3</EQType>
+		<Location>
+			<X>107</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>90</CX>
+			<CY>14</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- PLAYER LEVEL VALUE (top-right) -->
+	<!-- ====================================================================== -->
+	<!-- Level label removed - redundant since max level is 60 (2 digits) -->
+	<!--
+	<Label item="PW_LevelLabel">
+		<ScreenID>PW_LevelLabel</ScreenID>
+		<Location>
+			<X>165</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>35</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>Level</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+	</Label>
+	-->
+
+	<Label item="PW_PlayerLevel">
+		<ScreenID>PW_PlayerLevel</ScreenID>
+		<EQType>2</EQType>
+		<Location>
+			<X>200</X>
+			<Y>6</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>14</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- HP GAUGE — Red Shades (5-band composite)                               -->
+	<!-- ====================================================================== -->
+	<!-- Shades: Crimson (full) > Scorched Rose > Heated Blush > Fading Wound > White-hot Ember (critical) -->
+	<!-- Z-order: BG > White-hot Ember(0) > Fading Wound(1) > Heated Blush(2) > Scorched Rose(3) > Crimson(4) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="PW_HP_BG">
+		<ScreenID>PW_HP_BG</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>26</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: White-hot Ember (255,210,210) — base, visible at any health -->
+	<Gauge item="PW_HP_Band0">
+		<ScreenID>PW_HP_Band0</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>26</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>210</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Fading Wound (255,160,160) — 20% threshold -->
+	<Gauge item="PW_HP_1A">
+		<ScreenID>PW_HP_1A</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-2000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>8000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_HP_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>26</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_HP_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Fading Wound continuation -->
+	<Gauge item="PW_HP_1B">
+		<ScreenID>PW_HP_1B</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>26</X><Y>26</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Heated Blush (255,100,100) — 40% threshold -->
+	<Gauge item="PW_HP_2A">
+		<ScreenID>PW_HP_2A</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-4000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>6000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_HP_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>26</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_HP_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Heated Blush continuation -->
+	<Gauge item="PW_HP_2B">
+		<ScreenID>PW_HP_2B</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>50</X><Y>26</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Scorched Rose (255,50,50) — 60% threshold -->
+	<Gauge item="PW_HP_3A">
+		<ScreenID>PW_HP_3A</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-6000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_HP_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>26</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_HP_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Scorched Rose continuation -->
+	<Gauge item="PW_HP_3B">
+		<ScreenID>PW_HP_3B</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>74</X><Y>26</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Crimson (255,0,0) — 80% threshold -->
+	<Gauge item="PW_HP_4A">
+		<ScreenID>PW_HP_4A</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-8000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_HP_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>26</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_HP_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Crimson continuation -->
+	<Gauge item="PW_HP_4B">
+		<ScreenID>PW_HP_4B</ScreenID>
+		<EQType>1</EQType>
+		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>98</X><Y>26</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>255</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<Label item="PW_HP_Values">
+		<ScreenID>PW_HP_Values</ScreenID>
+		<EQType>70</EQType>
+		<Location>
+			<X>160</X>
+			<Y>26</Y>
+		</Location>
+		<Size>
+			<CX>72</CX>
+			<CY>12</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>100</G>
+			<B>100</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+	</Label>
+
+	<!-- HP Percent -->
+	<Label item="PW_HP_Pct">
+		<ScreenID>PW_HP_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>19</EQType>
+		<Location>
+			<X>123</X>
+			<Y>26</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_HP_PctSign">
+		<ScreenID>PW_HP_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>26</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- MANA GAUGE — Blue Shades (5-band composite)                            -->
+	<!-- ====================================================================== -->
+	<!-- Shades: Sapphire (full) > Frozen Azure > Starlit Pool > Pale Ether > Icebloom (low) -->
+	<!-- Z-order: BG > Icebloom(0) > Pale Ether(1) > Starlit Pool(2) > Frozen Azure(3) > Sapphire(4) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="PW_Mana_BG">
+		<ScreenID>PW_Mana_BG</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>43</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Icebloom (210,210,255) — base, visible at any mana -->
+	<Gauge item="PW_Mana_Band0">
+		<ScreenID>PW_Mana_Band0</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>43</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>210</R><G>210</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Pale Ether (160,160,255) — 20% threshold -->
+	<Gauge item="PW_Mana_1A">
+		<ScreenID>PW_Mana_1A</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-2000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>8000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>160</R><G>160</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_Mana_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>43</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_Mana_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Pale Ether continuation -->
+	<Gauge item="PW_Mana_1B">
+		<ScreenID>PW_Mana_1B</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>26</X><Y>43</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>160</R><G>160</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Starlit Pool (100,100,255) — 40% threshold -->
+	<Gauge item="PW_Mana_2A">
+		<ScreenID>PW_Mana_2A</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-4000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>6000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>100</R><G>100</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_Mana_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>43</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_Mana_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Starlit Pool continuation -->
+	<Gauge item="PW_Mana_2B">
+		<ScreenID>PW_Mana_2B</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>50</X><Y>43</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>100</R><G>100</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Frozen Azure (50,50,255) — 60% threshold -->
+	<Gauge item="PW_Mana_3A">
+		<ScreenID>PW_Mana_3A</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-6000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>50</R><G>50</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_Mana_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>43</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_Mana_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Frozen Azure continuation -->
+	<Gauge item="PW_Mana_3B">
+		<ScreenID>PW_Mana_3B</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>74</X><Y>43</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>50</R><G>50</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Sapphire (0,0,255) — 80% threshold -->
+	<Gauge item="PW_Mana_4A">
+		<ScreenID>PW_Mana_4A</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-8000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>0</R><G>0</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_Mana_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>43</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_Mana_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Sapphire continuation -->
+	<Gauge item="PW_Mana_4B">
+		<ScreenID>PW_Mana_4B</ScreenID>
+		<EQType>2</EQType>
+		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>98</X><Y>43</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>0</R><G>0</G><B>255</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<Label item="PW_Mana_Values">
+		<ScreenID>PW_Mana_Values</ScreenID>
+		<EQType>80</EQType>
+		<Location>
+			<X>160</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>72</CX>
+			<CY>12</CY>
+		</Size>
+		<TextColor>
+			<R>100</R>
+			<G>150</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+	</Label>
+
+	<!-- Mana Percent -->
+	<Label item="PW_Mana_Pct">
+		<ScreenID>PW_Mana_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>20</EQType>
+		<Location>
+			<X>123</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_Mana_PctSign">
+		<ScreenID>PW_Mana_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- MANA TICK (mana regen timer - positioned after Mana) -->
+	<!-- Zeal addon feature - represents mana regeneration countdown -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Mana_Tick">
+		<ScreenID>ManaTick</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>52</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>9</CY>
+		</Size>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<TextOffsetX>-500</TextOffsetX>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>true</Style_Transparent>
+		<FillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>220</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>220</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<EQType>24</EQType>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeLinesFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- ====================================================================== -->
+	<!-- STAMINA GAUGE -->
+	<!-- ====================================================================== -->
+	
+	<Gauge item="PW_Gauge_Stamina">
+		<ScreenID>PW_Gauge_Stamina</ScreenID>
+		<EQType>3</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>64</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>8</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Stamina</TooltipReference>
+		<FillTint>
+			<R>240</R>
+			<G>240</G>
+			<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>0</B>
+		</LinesFillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Stamina Percent -->
+	<Label item="PW_Stamina_Pct">
+		<ScreenID>PW_Stamina_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>21</EQType>
+		<Location>
+			<X>123</X>
+			<Y>60</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_Stamina_PctSign">
+		<ScreenID>PW_Stamina_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>60</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- EXPERIENCE GAUGE -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Gauge_XP">
+		<ScreenID>PW_Gauge_XP</ScreenID>
+		<EQType>4</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>76</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>16</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>Experience</TooltipReference>
+		<FillTint>
+			<R>220</R>
+			<G>150</G>
+			<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>100</R>
+			<G>160</G>
+			<B>255</B>
+		</LinesFillTint>
+		<DrawLinesFill>true</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
+			<Lines>A_GaugeLines_120t</Lines>
+			<LinesFill>A_GaugeLinesFill_120t</LinesFill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- XP Percent -->
+	<Label item="PW_XP_Pct">
+		<ScreenID>PW_XP_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>26</EQType>
+		<Location>
+			<X>123</X>
+			<Y>76</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_XP_PctSign">
+		<ScreenID>PW_XP_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>76</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- XP per hour readout (XP/H xxx%) -->
+	<Label item="PW_XP_PerHour_Label">
+		<ScreenID>PW_XP_PerHour_Label</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>163</X>
+			<Y>76</Y>
+		</Location>
+		<Size>
+			<CX>30</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>XP/H</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+	<Label item="PW_XP_PerHour_Value">
+		<ScreenID>PW_XP_PerHour_Value</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>81</EQType>
+		<Location>
+			<X>193</X>
+			<Y>76</Y>
+		</Location>
+		<Size>
+			<CX>21</CX>
+			<CY>12</CY>
+		</Size>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- XP/H percent sign -->
+	<Label item="PW_XP_PerHour_PctSign">
+		<ScreenID>PW_XP_PerHour_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>214</X>
+			<Y>76</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- ALTERNATE ADVANCEMENT GAUGE -->
+	<!-- ====================================================================== -->
+
+	<Gauge item="PW_Gauge_AAXP">
+		<ScreenID>PW_Gauge_AAXP</ScreenID>
+		<EQType>5</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>2</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>16</CY>
+		</Size>
+		<TextOffsetY>-250</TextOffsetY>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference>AA Experience</TooltipReference>
+		<FillTint>
+			<R>220</R>
+			<G>200</G>
+			<B>0</B>
+		</FillTint>
+		<LinesFillTint>
+			<R>0</R>
+			<G>220</G>
+			<B>220</B>
+		</LinesFillTint>
+		<DrawLinesFill>true</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+			<Fill>A_GaugeFill_120t</Fill>
+			<Lines>A_GaugeLines_120t</Lines>
+			<LinesFill>A_GaugeLinesFill_120t</LinesFill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<Label item="PW_AA_Label">
+		<ScreenID>PW_AA_Label</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>163</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>30</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>AA</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+	<!-- AA XP Percent -->
+	<Label item="PW_AAXP_Pct">
+		<ScreenID>PW_AAXP_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>27</EQType>
+		<Location>
+			<X>123</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_AAXP_PctSign">
+		<ScreenID>PW_AAXP_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- AA Current Points (unspent) -->
+	<Label item="PW_AA_Current">
+		<ScreenID>PW_AA_Current</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>36</EQType>
+		<Location>
+			<X>176</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- AA Divider -->
+	<Label item="PW_AA_Divider">
+		<ScreenID>PW_AA_Divider</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>203</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>4</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>/</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- AA Total Points (spent) -->
+	<Label item="PW_AA_Total">
+		<ScreenID>PW_AA_Total</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>37</EQType>
+		<Location>
+			<X>206</X>
+			<Y>94</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>0</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- PET HEALTH GAUGE — Purple Shades (5-band composite)                   -->
+	<!-- ====================================================================== -->
+	<!-- Shades: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
+	<!-- Z-order: BG > Spectral Wisp(0) > Faded Familiar(1) > Mystic Haze(2) > Enchanted Orchid(3) > Conjured Violet(4) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="PW_PetHP_BG">
+		<ScreenID>PW_PetHP_BG</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>111</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Spectral Wisp (240,210,240) — base, visible at any health -->
+	<Gauge item="PW_PetHP_Band0">
+		<ScreenID>PW_PetHP_Band0</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>111</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>240</R><G>210</G><B>240</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Faded Familiar (230,160,230) — 20% threshold -->
+	<Gauge item="PW_PetHP_1A">
+		<ScreenID>PW_PetHP_1A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-2000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>8000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_PetHP_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>111</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_PetHP_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Faded Familiar continuation -->
+	<Gauge item="PW_PetHP_1B">
+		<ScreenID>PW_PetHP_1B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>26</X><Y>111</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Mystic Haze (220,100,220) — 40% threshold -->
+	<Gauge item="PW_PetHP_2A">
+		<ScreenID>PW_PetHP_2A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-4000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>6000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_PetHP_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>111</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_PetHP_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Mystic Haze continuation -->
+	<Gauge item="PW_PetHP_2B">
+		<ScreenID>PW_PetHP_2B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>50</X><Y>111</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Enchanted Orchid (210,50,210) — 60% threshold -->
+	<Gauge item="PW_PetHP_3A">
+		<ScreenID>PW_PetHP_3A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-6000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_PetHP_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>111</Y></Location>
+		<Size><CX>72</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_PetHP_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Enchanted Orchid continuation -->
+	<Gauge item="PW_PetHP_3B">
+		<ScreenID>PW_PetHP_3B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>74</X><Y>111</Y></Location>
+		<Size><CX>48</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Conjured Violet (200,0,200) — 80% threshold -->
+	<Gauge item="PW_PetHP_4A">
+		<ScreenID>PW_PetHP_4A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-8000</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2000</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>200</R><G>0</G><B>200</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PW_PetHP_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>2</X><Y>111</Y></Location>
+		<Size><CX>96</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PW_PetHP_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Conjured Violet continuation -->
+	<Gauge item="PW_PetHP_4B">
+		<ScreenID>PW_PetHP_4B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>98</X><Y>111</Y></Location>
+		<Size><CX>24</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>200</R><G>0</G><B>200</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Pet HP Percent (aligns to same column as player percentages) -->
+	<Label item="PW_Pet_Pct">
+		<ScreenID>PW_Pet_Pct</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>69</EQType>
+		<Location>
+			<X>123</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>100</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+	<Label item="PW_Pet_PctSign">
+		<ScreenID>PW_Pet_PctSign</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>148</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+	<!-- ====================================================================== -->
+	<!-- WEIGHT DISPLAY (cur/max aligned under HP/Mana dividers) -->
+	<!-- ====================================================================== -->
+	<!-- Current Weight (right-aligned, EQType 24) -->
+	<Label item="PW_Weight_Current">
+		<ScreenID>PW_Weight_Current</ScreenID>
+    <Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<EQType>24</EQType>
+		<Location>
+			<X>176</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>9999</Text>
+		<TooltipReference>Current Weight</TooltipReference>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>true</AlignRight>
+	</Label>
+
+	<!-- Weight Divider "/" (centered under HP/Mana dividers) -->
+	<Label item="PW_Weight_Divider">
+		<ScreenID>PW_Weight_Divider</ScreenID>
+    <Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>203</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>4</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>/</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- Max Weight (left-aligned, EQType 25) -->
+	<Label item="PW_Weight_Max">
+		<ScreenID>PW_Weight_Max</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<EQType>25</EQType>
+   	<Font>3</Font>		
+		<Location>
+			<X>206</X>
+			<Y>111</Y>
+		</Location>
+		<Size>
+			<CX>27</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>9999</Text>
+		<TooltipReference>Max Weight</TooltipReference>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+    <AlignLeft>true</AlignLeft>
+	</Label>
+
+	<!-- Pet HP Value (dummy - client doesn't provide actual value, but label needed for tooltip reference) -->
+	<Label item="Pet_HP">
+		<ScreenID>PetHP</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
+		<Location>
+			<X>0</X>
+			<Y>0</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+	</Label>
+
+
+	<!-- ====================================================================== -->
+	<!-- SCREEN DEFINITION AND UI ELEMENTS -->
+	<!-- ====================================================================== -->
+
+	<Screen item="PlayerWindow">
+		<ScreenID>PlayerWindow</ScreenID>
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>10</X>
+			<Y>10</Y>
+		</Location>
+		<Size>
+			<CX>234</CX>
+			<CY>142</CY>
+		</Size>
+		<Text>Player</Text>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+		<Style_Titlebar>false</Style_Titlebar>
+		<Style_Closebox>false</Style_Closebox>
+		<Style_Minimizebox>false</Style_Minimizebox>
+		<Style_Border>true</Style_Border>
+		<Style_Sizable>false</Style_Sizable>
+
+		<!-- Attack Indicator -->
+		<Pieces>A_AttackIndicatorAnim</Pieces>
+
+		<!-- Player identity -->
+		<Pieces>PW_PlayerName</Pieces>
+		<Pieces>PW_PlayerClass</Pieces>
+		<Pieces>PW_PlayerLevel</Pieces>
+
+		<!-- HP — Red Shades composite -->
+		<Pieces>PW_HP_BG</Pieces>
+		<Pieces>PW_HP_Band0</Pieces>
+		<Pieces>PW_HP_1A_Clip</Pieces>
+		<Pieces>PW_HP_1B</Pieces>
+		<Pieces>PW_HP_2A_Clip</Pieces>
+		<Pieces>PW_HP_2B</Pieces>
+		<Pieces>PW_HP_3A_Clip</Pieces>
+		<Pieces>PW_HP_3B</Pieces>
+		<Pieces>PW_HP_4A_Clip</Pieces>
+		<Pieces>PW_HP_4B</Pieces>
+		<Pieces>PW_HP_Pct</Pieces>
+		<Pieces>PW_HP_PctSign</Pieces>
+		<Pieces>PW_HP_Values</Pieces>
+
+		<!-- Mana — Blue Shades composite -->
+		<Pieces>PW_Mana_BG</Pieces>
+		<Pieces>PW_Mana_Band0</Pieces>
+		<Pieces>PW_Mana_1A_Clip</Pieces>
+		<Pieces>PW_Mana_1B</Pieces>
+		<Pieces>PW_Mana_2A_Clip</Pieces>
+		<Pieces>PW_Mana_2B</Pieces>
+		<Pieces>PW_Mana_3A_Clip</Pieces>
+		<Pieces>PW_Mana_3B</Pieces>
+		<Pieces>PW_Mana_4A_Clip</Pieces>
+		<Pieces>PW_Mana_4B</Pieces>
+		<Pieces>PW_Mana_Pct</Pieces>
+		<Pieces>PW_Mana_PctSign</Pieces>
+		<Pieces>PW_Mana_Values</Pieces>
+		<Pieces>PW_Mana_Tick</Pieces>
+
+		<Pieces>PW_Gauge_Stamina</Pieces>
+		<Pieces>PW_Stamina_Pct</Pieces>
+		<Pieces>PW_Stamina_PctSign</Pieces>
+
+		<Pieces>PW_Gauge_XP</Pieces>
+		<Pieces>PW_XP_Pct</Pieces>
+		<Pieces>PW_XP_PctSign</Pieces>
+		<Pieces>PW_XP_PerHour_Label</Pieces>
+		<Pieces>PW_XP_PerHour_Value</Pieces>
+		<Pieces>PW_XP_PerHour_PctSign</Pieces>
+
+		<Pieces>PW_Gauge_AAXP</Pieces>
+		<Pieces>PW_AA_Label</Pieces>
+		<Pieces>PW_AAXP_Pct</Pieces>
+		<Pieces>PW_AAXP_PctSign</Pieces>
+		<Pieces>PW_AA_Current</Pieces>
+		<Pieces>PW_AA_Divider</Pieces>
+		<Pieces>PW_AA_Total</Pieces>
+
+		<!-- Pet HP — Purple Shades composite -->
+		<Pieces>PW_PetHP_BG</Pieces>
+		<Pieces>PW_PetHP_Band0</Pieces>
+		<Pieces>PW_PetHP_1A_Clip</Pieces>
+		<Pieces>PW_PetHP_1B</Pieces>
+		<Pieces>PW_PetHP_2A_Clip</Pieces>
+		<Pieces>PW_PetHP_2B</Pieces>
+		<Pieces>PW_PetHP_3A_Clip</Pieces>
+		<Pieces>PW_PetHP_3B</Pieces>
+		<Pieces>PW_PetHP_4A_Clip</Pieces>
+		<Pieces>PW_PetHP_4B</Pieces>
+		<Pieces>PW_Pet_Pct</Pieces>
+		<Pieces>PW_Pet_PctSign</Pieces>
+
+		<Pieces>PW_Weight_Current</Pieces>
+		<Pieces>PW_Weight_Divider</Pieces>
+		<Pieces>PW_Weight_Max</Pieces>
+
+		<!-- Dummy for client-->
+		<Pieces>Pet_HP</Pieces>
+	</Screen>
+
+</XML>

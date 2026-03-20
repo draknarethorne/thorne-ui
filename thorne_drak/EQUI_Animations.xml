@@ -114,7 +114,7 @@
   <TextureInfo item="gauge_inlay105t_thorne02.tga">
     <Size>
       <CX>105</CX>
-      <CY>48</CY>
+      <CY>64</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay120t_thorne01.tga">
@@ -126,7 +126,7 @@
   <TextureInfo item="gauge_inlay120t_thorne02.tga">
     <Size>
       <CX>120</CX>
-      <CY>48</CY>
+      <CY>64</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay120_thorne01.tga">
@@ -138,7 +138,7 @@
   <TextureInfo item="gauge_inlay120_thorne02.tga">
     <Size>
       <CX>120</CX>
-      <CY>48</CY>
+      <CY>32</CY>
     </Size>
   </TextureInfo>
   <TextureInfo item="gauge_inlay250t_thorne01.tga">
@@ -150,7 +150,7 @@
   <TextureInfo item="gauge_inlay250t_thorne02.tga">
     <Size>
       <CX>250</CX>
-      <CY>48</CY>
+      <CY>64</CY>
     </Size>
   </TextureInfo>
 
@@ -5662,7 +5662,7 @@
   <!-- ================================================================== -->
   <!-- 105t gauge templates (spellbook gauges)                            -->
   <!-- Texture: gauge_inlay105t_thorne01.tga (4 rows x 16px = 64px)       -->
-  <!-- Texture: gauge_inlay105t_thorne02.tga (3 rows x 16px = 48px)       -->
+  <!-- Texture: gauge_inlay105t_thorne02.tga (4 rows x 16px = 64px)       -->
   <!-- Band math: 105 / 5 = 21px per band (clean division)                -->
   <!-- ================================================================== -->
   <Ui2DAnimation item="A_GaugeBackground_105t">
@@ -5849,10 +5849,11 @@
 
   <!-- ================================================================== -->
   <!-- Composite gauge stacking rows (105t thorne02)                       -->
-  <!-- Composite file: gauge_inlay105t_thorne02.tga (3 rows x 16px = 48px) -->
-  <!-- Row 1 - Overlay:   Y=0,  dark tick marks on transparent background  -->
-  <!-- Row 2 - SolidFill: Y=16, opaque fill with gaps filled (no grid)     -->
-  <!-- Row 3 - GridFill:  Y=32, SolidFill with Lines grid baked in         -->
+  <!-- Composite file: gauge_inlay105t_thorne02.tga (4 rows x 16px = 64px) -->
+  <!-- Row 1 - Overlay:        Y=0,  dark tick marks on transparent        -->
+  <!-- Row 2 - SolidFill:      Y=16, opaque fill with gaps filled (no grid)-->
+  <!-- Row 3 - GridFill:       Y=32, SolidFill with black grid lines       -->
+  <!-- Row 4 - LightGridFill:  Y=48, SolidFill with gray grid lines       -->
   <!-- ================================================================== -->
 
   <!-- Standard SolidFill reference (105t) - plain fill, no grid -->
@@ -6031,6 +6032,90 @@
       <Location>
         <X>-8000</X>
         <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Standard LightGridFill reference (105t) - fill with gray grid lines -->
+  <Ui2DAnimation item="A_GaugeLightGridFill_105t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay105t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>105</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized Nillipuss-style LightGridFill bands (105t, Y=48, gray grid) -->
+  <Ui2DAnimation item="A_OversizedLightGridFill_105t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay105t_thorne02.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_105t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay105t_thorne02.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_105t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay105t_thorne02.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_105t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay105t_thorne02.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>48</Y>
       </Location>
       <Size>
         <CX>10000</CX>
@@ -6237,10 +6322,11 @@
 
   <!-- ================================================================== -->
   <!-- Composite gauge stacking rows (120t thorne02)                       -->
-  <!-- Composite file: gauge_inlay120t_thorne02.tga (3 rows x 16px = 48px) -->
-  <!-- Row 1 - Overlay:   Y=0,  dark tick marks on transparent background  -->
-  <!-- Row 2 - SolidFill: Y=16, opaque fill with gaps filled (no grid)     -->
-  <!-- Row 3 - GridFill:  Y=32, SolidFill with Lines grid baked in         -->
+  <!-- Composite file: gauge_inlay120t_thorne02.tga (4 rows x 16px = 64px) -->
+  <!-- Row 1 - Overlay:        Y=0,  dark tick marks on transparent        -->
+  <!-- Row 2 - SolidFill:      Y=16, opaque fill with gaps filled (no grid)-->
+  <!-- Row 3 - GridFill:       Y=32, SolidFill with black grid lines       -->
+  <!-- Row 4 - LightGridFill:  Y=48, SolidFill with gray grid lines       -->
   <!-- ================================================================== -->
 
   <!-- Standard SolidFill reference (120t) - plain fill, no grid -->
@@ -6431,6 +6517,90 @@
     </Frames>
   </Ui2DAnimation>
 
+  <!-- Standard LightGridFill reference (120t) - fill with gray grid lines -->
+  <Ui2DAnimation item="A_GaugeLightGridFill_120t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>120</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized Nillipuss-style LightGridFill bands (120t, Y=48, gray grid) -->
+  <Ui2DAnimation item="A_OversizedLightGridFill_120t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_120t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_120t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_120t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay120t_thorne02.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
   <Ui2DAnimation item="A_GaugeBackground_250t">
     <Cycle>true</Cycle>
     <Frames>
@@ -6485,6 +6655,87 @@
         <X>0</X>
         <Y>0</Y>
       </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- ================================================================== -->
+  <!-- Composite gauge stacking rows (250t thorne02)                       -->
+  <!-- Composite file: gauge_inlay250t_thorne02.tga (4 rows x 16px = 64px) -->
+  <!-- Row 1 - Overlay:        Y=0,  dark tick marks on transparent        -->
+  <!-- Row 2 - SolidFill:      Y=16, opaque fill with gaps filled (no grid)-->
+  <!-- Row 3 - GridFill:       Y=32, SolidFill with black grid lines       -->
+  <!-- Row 4 - LightGridFill:  Y=48, SolidFill with gray grid lines       -->
+  <!-- ================================================================== -->
+
+  <!-- Standard SolidFill reference (250t) - plain fill, no grid -->
+  <Ui2DAnimation item="A_GaugeSolidFill_250t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>250</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Standard GridFill reference (250t) - fill with baked grid lines -->
+  <Ui2DAnimation item="A_GaugeGridFill_250t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>250</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Standard LightGridFill reference (250t) - fill with gray grid lines -->
+  <Ui2DAnimation item="A_GaugeLightGridFill_250t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>250</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Standard Overlay reference (250t) -->
+  <Ui2DAnimation item="A_GaugeOverlay_250t">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>250</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>

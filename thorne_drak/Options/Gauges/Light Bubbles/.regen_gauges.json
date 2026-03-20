@@ -2,12 +2,13 @@
   "description": "Light Bubbles gauge variant - light gradient bubbles, minimal incidental black",
   "interpolation": "BILINEAR",
   "sections": {
-    "background": { "preserve_black": false },
-    "fill":       { "preserve_black": false },
-    "lines":      { "preserve_black": false },
-    "linesfill":  { "preserve_black": false },
-    "solidfill":  { "preserve_black": false, "fill_gaps": false },
-    "overlay":    { "preserve_black": false, "enabled": false },
-    "gridfill":   { "preserve_black": false, "bake_overlay": false }
+    "background":    { "preserve_black": false },
+    "fill":          { "preserve_black": false, "preserve_gaps": false },
+    "lines":         { "preserve_black": false },
+    "linesfill":     { "preserve_black": false },
+    "overlay":       { "preserve_black": false, "enabled": false },
+    "solidfill":     { "preserve_black": false, "fill_gaps": false },
+    "gridfill":      { "preserve_black": false, "bake_overlay": false, "gray_level": 0,   "darken": 0.0, "spread": 1 },
+    "lightgridfill": { "preserve_black": false, "bake_overlay": false, "gray_level": 140, "darken": 0.0, "spread": 1 }
   }
 }

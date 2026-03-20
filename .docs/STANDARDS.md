@@ -635,15 +635,20 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 > to create multi-color gradients. Band 4 (top layer) drops first at 80%, revealing
 > progressive bands as value decreases.
 
-**Technique Summary:**
+**Technique Summary (120px gauge, grid-aligned):**
 
 | Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
 | ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
 | 0    | 0% (base) | 0            | Full gauge  | —          | —                |
 | 1    | 20%       | -2000        | 8000        | 24px       | 96px             |
 | 2    | 40%       | -4000        | 6000        | 48px       | 72px             |
-| 3    | 60%       | -6000        | 4000        | 72px       | 48px             |
-| 4    | 80%       | -8000        | 2000        | 96px       | 24px             |
+| 3    | 60%       | -6000        | 4000        | **71px**   | **49px**         |
+| 4    | 80%       | -8000        | 2000        | **94px**   | **26px**         |
+
+> **Grid alignment note:** Clip widths for Bands 3–4 are adjusted to land on actual
+> Thorne texture grid lines. Formula-derived values (72/96) are 1–2px off from the
+> grid marks in the scaled 120px art. Grid positions: 0, 24, 48, **71**, **94**, 119.
+> For 105px gauges: 0, 21, 42, **62**, **82**, 104 (Band 3=62px, Band 4=82px).
 
 #### Player HP: Fire Arc (Blood Red)
 

@@ -7,7 +7,7 @@
     "lines":      { "preserve_black": true },
     "linesfill":  { "preserve_black": false },
     "solidfill":  { "preserve_black": false, "fill_gaps": true },
-    "overlay":    { "preserve_black": true },
+    "overlay":    { "preserve_black": true, "enabled": true },
     "gridfill":   { "preserve_black": false, "bake_overlay": false }
   }
 }

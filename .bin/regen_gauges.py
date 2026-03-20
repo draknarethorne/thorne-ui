@@ -13,20 +13,23 @@ Generated main output (_thorne01.tga, ORIGINAL dimensions preserved):
   Tall     (4 rows x 16px = 64px):  BG / Fill / Lines / LinesFill
 
 Generated composite output (_thorne02.tga, SEPARATE file):
-  Standard (3 rows x 8px = 24px):
-    Y=0-7:   Overlay    (auto: dark marks from Background on transparent)
-    Y=8-15:  SolidFill  (auto: Fill with transparent gaps filled)
-    Y=16-23: GridFill   (auto: SolidFill with Lines baked in)
-  Tall (3 rows x 16px = 48px):
-    Y=0-15:   Overlay    (auto-generated)
-    Y=16-31:  SolidFill  (auto-generated)
-    Y=32-47:  GridFill   (auto-generated)
+  Standard (4 rows x 8px = 32px):
+    Y=0-7:   Overlay        (auto: dark marks from Background on transparent)
+    Y=8-15:  SolidFill      (auto: Fill with transparent gaps filled)
+    Y=16-23: GridFill       (auto: SolidFill with gray grid lines + depth)
+    Y=24-31: LightGridFill  (auto: SolidFill with light gray grid lines)
+  Tall (4 rows x 16px = 64px):
+    Y=0-15:   Overlay        (auto-generated)
+    Y=16-31:  SolidFill      (auto-generated)
+    Y=32-47:  GridFill       (auto: gray grid + depth)
+    Y=48-63:  LightGridFill  (auto: light gray grid)
 
 Composite rows enable clean multi-color gauge stacking:
   - Overlay: dark tick marks on transparent (renders on top of stacked fills)
   - SolidFill: opaque fill with no transparent gaps (prevents color bleed)
-  - GridFill: SolidFill with grid lines baked in (for stacked gauges where
-    the XML Lines slot renders gauge-wide rather than fill-clipped)
+  - GridFill: SolidFill with gray grid lines + neighbor darkening for depth
+    (for stacked gauges where XML Lines renders gauge-wide not fill-clipped)
+  - LightGridFill: SolidFill with light gray grid lines, no darkening (subtle)
 
 CRITICAL: Composite data lives in a separate _thorne02 file so that the
 original _thorne01 texture dimensions are preserved. EQ client computes UV
@@ -94,7 +97,7 @@ class GaugeGenerator:
                     "lines":      { "preserve_black": true },
                     "linesfill":  { "preserve_black": false },
                     "solidfill":  { "preserve_black": false, "fill_gaps": true },
-                    "overlay":    { "preserve_black": true },
+                    "overlay":    { "preserve_black": true, "enabled": true },
                     "gridfill":   { "preserve_black": false, "bake_overlay": true }
                 }
             }
@@ -105,9 +108,17 @@ class GaugeGenerator:
             fill_gaps       — solidfill only: whether to fill transparent gaps
                               with interpolated colors (true=solid bar, false=
                               preserve original fill shape with its contours)
-            bake_overlay    — gridfill only: whether to blend overlay marks into
-                              the GridFill. When false, GridFill = plain SolidFill
-                              copy (same animations still work for all variants)
+            enabled         — overlay only: whether to generate overlay marks.
+                              When false, the overlay row is fully transparent
+                              (useful for variants without structural grid lines,
+                              e.g. Bubbles, where dark pixel extraction picks up
+                              unwanted artifacts)
+            bake_overlay    — gridfill/lightgridfill: whether to blend overlay
+                              marks into the fill. When false, result = plain
+                              SolidFill copy (same animations still work)
+            gray_level      — gridfill/lightgridfill: RGB intensity for grid
+                              lines (0=pure black, 80=GridFill default,
+                              140=LightGridFill default, 255=invisible)
 
         Defaults match the original hard-coded behavior so existing variants
         without a config file produce identical output.
@@ -120,8 +131,9 @@ class GaugeGenerator:
                 "lines":      {"preserve_black": True},
                 "linesfill":  {"preserve_black": False},
                 "solidfill":  {"preserve_black": False, "fill_gaps": True},
-                "overlay":    {"preserve_black": True},
-                "gridfill":   {"preserve_black": False, "bake_overlay": True},
+                "overlay":    {"preserve_black": True, "enabled": True},
+                "gridfill":   {"preserve_black": False, "bake_overlay": True, "gray_level": 80},
+                "lightgridfill": {"preserve_black": False, "bake_overlay": True, "gray_level": 140},
             }
         }
 
@@ -155,9 +167,30 @@ class GaugeGenerator:
         """Get preserve_black setting for a specific section."""
         return self.config.get("sections", {}).get(section_name, {}).get("preserve_black", False)
 
+    def _section_overlay_enabled(self):
+        """Whether to generate overlay marks (overlay section config).
+
+        When False, the overlay row is fully transparent — no dark pixel
+        extraction from Background. Useful for variants like Bubbles where
+        the source art has no structural grid lines.
+        """
+        return self.config.get("sections", {}).get("overlay", {}).get("enabled", True)
+
     def _section_bake_overlay(self):
         """Whether to bake overlay marks into GridFill (gridfill section config)."""
         return self.config.get("sections", {}).get("gridfill", {}).get("bake_overlay", True)
+
+    def _section_gridfill_gray_level(self):
+        """Gray intensity for GridFill grid lines (0=black, 80=default, 255=invisible)."""
+        return self.config.get("sections", {}).get("gridfill", {}).get("gray_level", 80)
+
+    def _section_lightgridfill_bake_overlay(self):
+        """Whether to bake overlay marks into LightGridFill (lightgridfill section config)."""
+        return self.config.get("sections", {}).get("lightgridfill", {}).get("bake_overlay", True)
+
+    def _section_lightgridfill_gray_level(self):
+        """Gray intensity for LightGridFill grid lines (0=black, 140=default, 255=invisible)."""
+        return self.config.get("sections", {}).get("lightgridfill", {}).get("gray_level", 140)
 
     def _section_fill_gaps(self):
         """Whether to fill transparent gaps in SolidFill (solidfill section config)."""
@@ -335,6 +368,7 @@ class GaugeGenerator:
         solidfill_wide = self._generate_solidfill(fill_wide)
         overlay_wide = self._generate_overlay(bg_wide)
         gridfill_wide = self._generate_gridfill(fill_wide, bg_wide)
+        lightgridfill_wide = self._generate_lightgridfill(fill_wide, bg_wide)
         
         # Create main image (4 rows x 8px = 32px, ORIGINAL dimensions preserved)
         result = Image.new('RGBA', (width, 32), (0, 0, 0, 0))
@@ -347,13 +381,14 @@ class GaugeGenerator:
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
         
-        # Save composite file (Overlay + SolidFill + GridFill, 3 rows x 8px = 24px)
+        # Save composite file (Overlay + SolidFill + GridFill + LightGridFill, 4 rows x 8px = 32px)
         composite_filename = self.get_composite_filename(base_name, width, is_tall=False)
         composite_file = self.variant_dir / composite_filename
-        composite = Image.new('RGBA', (width, 24), (0, 0, 0, 0))
+        composite = Image.new('RGBA', (width, 32), (0, 0, 0, 0))
         composite.paste(overlay_wide, (0, 0))
         composite.paste(solidfill_wide, (0, 8))
         composite.paste(gridfill_wide, (0, 16))
+        composite.paste(lightgridfill_wide, (0, 24))
         composite.save(str(composite_file), format='TGA')
         print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
@@ -437,6 +472,7 @@ class GaugeGenerator:
         solidfill_tall = self._generate_solidfill(fill_tall)
         overlay_tall = self._generate_overlay(bg_tall)
         gridfill_tall = self._generate_gridfill(fill_tall, bg_tall)
+        lightgridfill_tall = self._generate_lightgridfill(fill_tall, bg_tall)
         
         # Create main image (120x64, 4 rows x 16px — ORIGINAL dimensions preserved)
         result = Image.new('RGBA', (target_width, 64), (0, 0, 0, 0))
@@ -449,13 +485,14 @@ class GaugeGenerator:
         result.save(str(output_file), format='TGA')
         print(f"    Saved: {output_filename}")
         
-        # Save composite file (Overlay + SolidFill + GridFill, 3 rows x 16px = 48px)
+        # Save composite file (Overlay + SolidFill + GridFill + LightGridFill, 4 rows x 16px = 64px)
         composite_filename = self.get_composite_filename(base_name, 120, is_tall=True)
         composite_file = self.variant_dir / composite_filename
-        composite = Image.new('RGBA', (target_width, 48), (0, 0, 0, 0))
+        composite = Image.new('RGBA', (target_width, 64), (0, 0, 0, 0))
         composite.paste(overlay_tall, (0, 0))
         composite.paste(solidfill_tall, (0, 16))
         composite.paste(gridfill_tall, (0, 32))
+        composite.paste(lightgridfill_tall, (0, 48))
         composite.save(str(composite_file), format='TGA')
         print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
@@ -561,14 +598,16 @@ class GaugeGenerator:
             # rather than scaling the pre-blended 120t GridFill (which causes
             # interpolation to spread darkened pixels into wide bands)
             gridfill_scaled = self._generate_gridfill(fill_scaled, bg_scaled)
+            lightgridfill_scaled = self._generate_lightgridfill(fill_scaled, bg_scaled)
             
-            # Save composite file (Overlay + SolidFill + GridFill, 3 rows x 16px = 48px)
+            # Save composite file (Overlay + SolidFill + GridFill + LightGridFill, 4 rows x 16px = 64px)
             composite_filename = self.get_composite_filename(base_name, width, is_tall=True)
             composite_file = self.variant_dir / composite_filename
-            composite = Image.new('RGBA', (width, 48), (0, 0, 0, 0))
+            composite = Image.new('RGBA', (width, 64), (0, 0, 0, 0))
             composite.paste(overlay_scaled, (0, 0))
             composite.paste(solidfill_scaled, (0, 16))
             composite.paste(gridfill_scaled, (0, 32))
+            composite.paste(lightgridfill_scaled, (0, 48))
             composite.save(str(composite_file), format='TGA')
             print(f"    Saved: {composite_filename}")
         if self.debug and debug_sections:
@@ -639,13 +678,12 @@ class GaugeGenerator:
         return result
     
     def _generate_gridfill(self, fill_section, bg_section):
-        """Generate GridFill: SolidFill optionally with Overlay marks blended in.
+        """Generate GridFill: SolidFill with gray grid lines and depth shading.
         
         When gridfill.bake_overlay is True (per-variant section config),
-        extracts interior overlay marks (excluding borders) from Background
-        and blends them into the SolidFill with subtle gradient depth —
-        lightly darkening immediate neighbor pixels for a smooth transition
-        while preserving the black mark core.
+        extracts interior overlay marks from Background, converts them to
+        the configured gray_level, and blends into SolidFill with subtle
+        neighbor darkening for depth. Stronger visual than LightGridFill.
         
         When gridfill.bake_overlay is False, GridFill is an identical copy
         of SolidFill. This ensures the same animations work regardless of
@@ -657,14 +695,68 @@ class GaugeGenerator:
         
         # Only extract interior marks (skip border pixels)
         overlay = self._generate_overlay(bg_section, interior_only=True)
-        result = self._blend_overlay_into_fill(solidfill, overlay)
+        gray_level = self._section_gridfill_gray_level()
+        
+        # Convert overlay marks to configured gray level
+        gray_overlay = overlay.copy()
+        px = gray_overlay.load()
+        w, h = gray_overlay.size
+        for y in range(h):
+            for x in range(w):
+                r, g, b, a = px[x, y]
+                if a > 0:
+                    px[x, y] = (gray_level, gray_level, gray_level, a)
+        
+        result = self._blend_overlay_into_fill(solidfill, gray_overlay)
         
         # Clear first and last columns so the background border shows through
         width, height = result.size
-        px = result.load()
+        res_px = result.load()
         for y in range(height):
-            px[0, y] = (0, 0, 0, 0)
-            px[width - 1, y] = (0, 0, 0, 0)
+            res_px[0, y] = (0, 0, 0, 0)
+            res_px[width - 1, y] = (0, 0, 0, 0)
+        
+        return result
+    
+    def _generate_lightgridfill(self, fill_section, bg_section):
+        """Generate LightGridFill: SolidFill with gray grid lines (softer than GridFill).
+        
+        Same grid structure as GridFill but marks are rendered in gray instead
+        of black, with no neighbor darkening. Produces a subtle, soft grid
+        appearance that's visible but not as harsh as the full GridFill.
+        
+        When lightgridfill.bake_overlay is True (per-variant section config),
+        extracts interior overlay marks from Background, converts them to gray,
+        and composites onto SolidFill without neighbor darkening.
+        
+        When lightgridfill.bake_overlay is False, LightGridFill is an identical
+        copy of SolidFill.
+        """
+        solidfill = self._generate_solidfill(fill_section)
+        if not self._section_lightgridfill_bake_overlay():
+            return solidfill
+        
+        overlay = self._generate_overlay(bg_section, interior_only=True)
+        gray_level = self._section_lightgridfill_gray_level()
+        
+        # Convert black overlay marks to gray
+        gray_overlay = overlay.copy()
+        px = gray_overlay.load()
+        width, height = gray_overlay.size
+        for y in range(height):
+            for x in range(width):
+                r, g, b, a = px[x, y]
+                if a > 0:
+                    px[x, y] = (gray_level, gray_level, gray_level, a)
+        
+        # Composite gray marks onto SolidFill (no neighbor darkening)
+        result = Image.alpha_composite(solidfill, gray_overlay)
+        
+        # Clear first and last columns so the background border shows through
+        res_px = result.load()
+        for y in range(height):
+            res_px[0, y] = (0, 0, 0, 0)
+            res_px[width - 1, y] = (0, 0, 0, 0)
         
         return result
     
@@ -729,12 +821,17 @@ class GaugeGenerator:
         Creates a transparent canvas with only black/dark mark pixels from
         the Background section preserved at full opacity.
         
+        If overlay is disabled via config ("enabled": false), returns a fully
+        transparent canvas (no marks extracted).
+        
         Args:
             bg_section: Background image section to extract marks from
             threshold: Max RGB value considered dark (default: self.black_threshold)
             interior_only: If True, skip edge pixels (first/last row & column).
                           Used for GridFill baking where borders are already in BG slot.
         """
+        if not self._section_overlay_enabled():
+            return Image.new('RGBA', bg_section.size, (0, 0, 0, 0))
         if threshold is None:
             threshold = self.black_threshold
         

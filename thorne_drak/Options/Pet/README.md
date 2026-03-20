@@ -4,8 +4,8 @@
 
 This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 
-**Last Synced:** 2026-03-18  
-**Git Commit:** dff77d8
+**Last Synced:** 2026-03-20  
+**Git Commit:** 25534fd
 
 ---
 

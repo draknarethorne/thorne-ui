@@ -252,7 +252,7 @@
 			<Y>4</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>15</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
@@ -318,9 +318,9 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>17</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_120t</Background>
-			<Fill>A_GaugeFill_120t</Fill>
-			<Lines>A_GaugeLines</Lines>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 

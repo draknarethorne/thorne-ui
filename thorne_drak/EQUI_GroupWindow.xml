@@ -8,8 +8,8 @@
 		- Enhanced visual clarity for group management
 
 		v0.8.0 Gauge Upgrade:
-		- HP gauges: 120t tall templates (CX=128, CY=16), red fill, name inside gauge
-		- Pet gauges: standard templates (CX=128, CY=8), blue fill (100,150,255)
+		- HP gauges: 120t tall templates (CX=120, CY=16), red fill, name inside gauge
+		- Pet gauges: standard templates (CX=120, CY=8), blue fill (100,150,255)
 		- F-key labels: right-aligned (X=128, CY=10), overlapping pet row
 		- HP value labels: right-aligned inside gauge, with % suffix
 		- Layout per member row (28px step, base offsets):
@@ -65,7 +65,7 @@
 			<Y>1</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>16</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
@@ -157,7 +157,7 @@
 			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
@@ -180,9 +180,9 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>17</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -237,7 +237,7 @@
 			<Y>29</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>16</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
@@ -329,7 +329,7 @@
 			<Y>46</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
@@ -352,9 +352,9 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>18</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -409,7 +409,7 @@
 			<Y>57</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>16</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
@@ -501,7 +501,7 @@
 			<Y>74</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
@@ -524,9 +524,9 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>19</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -581,7 +581,7 @@
 			<Y>85</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>16</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
@@ -673,7 +673,7 @@
 			<Y>102</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
@@ -696,9 +696,9 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>20</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -753,7 +753,7 @@
 			<Y>113</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>16</CY>
 		</Size>
 		<TextOffsetX>4</TextOffsetX>
@@ -845,7 +845,7 @@
 			<Y>130</Y>
 		</Location>
 		<Size>
-			<CX>128</CX>
+			<CX>120</CX>
 			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
@@ -868,9 +868,9 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>21</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 

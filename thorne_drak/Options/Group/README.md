@@ -4,8 +4,8 @@
 
 This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 
-**Last Synced:** 2026-03-19  
-**Git Commit:** e1ae754
+**Last Synced:** 2026-03-20  
+**Git Commit:** 68d2f89
 
 ---
 

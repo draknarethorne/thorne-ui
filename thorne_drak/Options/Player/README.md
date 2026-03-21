@@ -20,10 +20,10 @@ This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 - **[Thorne Arc/](Thorne Arc/)**  📄
   `EQUI_PlayerWindow.xml`
 
-- **[Thorne Veil/](Thorne Veil/)**    
+- **[Thorne Standard/](Thorne Standard/)**  📄
   `EQUI_PlayerWindow.xml`
 
-- **[Thorne Standard/](Thorne Standard/)**  📄
+- **[Thorne Veil/](Thorne Veil/)**    
   `EQUI_PlayerWindow.xml`
 
 ---

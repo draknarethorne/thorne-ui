@@ -629,13 +629,50 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 - ⚠️ **Valid exceptions**: Themed variants, accessibility needs, special UI modes
 - ❌ **Avoid**: Random RGB values without documentation
 
-### Composite Gauge Palettes (Nillipuss Multi-Color Technique)
+### Composite Gauge System (Multi-Color Veil Technique)
 
 > **5-band layered gauges** — Each gauge uses oversized A-parts with `GaugeOffsetX` thresholds
 > to create multi-color gradients. Band 4 (top layer) drops first at 80%, revealing
 > progressive bands as value decreases.
 
-**Technique Summary (120px gauge, grid-aligned):**
+#### Technique Variants
+
+- **Veil** — Linear fade from saturated (Band 4, full) toward white/pastel (Band 0, critical).
+  Clean, readable gradient. Used for all production gauges.
+- **Arc** — Bright peak in the middle bands (Band 2 is brightest), with dark ends.
+  More dramatic but less readable. Available as Player Options only.
+- **Nillipuss Classic** — Traffic-light green→yellow→red. Community-inspired.
+  Available as a Player Option only (not available for other windows).
+
+#### Composite Structure (XML Layer Order)
+
+Every composite gauge replaces a single `<Gauge>` with this layered structure:
+
+```
+BG gauge        — Background texture only (no Fill), hides text offscreen
+Band 0 gauge    — Base color (GridFill), always visible, hides text
+Band 1A gauge   — Oversized A-part (GaugeOffsetX=-2000), hides text
+  Screen clip   — Crops 1A to clip width
+  Band 1B gauge — GridFill continuation, hides text
+Band 2A gauge   — Oversized A-part (GaugeOffsetX=-4000)
+  Screen clip   — Crops 2A to clip width
+  Band 2B gauge — GridFill continuation
+Band 3A/clip/3B — Same pattern (GaugeOffsetX=-6000)
+Band 4A/clip/4B — Same pattern (GaugeOffsetX=-8000)
+Text overlay    — Original ScreenID preserved for client binding, no Fill/Background
+```
+
+**Key rules:**
+- The **text overlay** gauge keeps the original `ScreenID` (e.g., `TargetHP`, `Gauge1`) so the
+  client binds the EQType correctly. All other layers use unique ScreenIDs.
+- All layers except BG use `Style_Transparent=true` to stack properly.
+- Text is hidden on all layers except the overlay via `TextOffsetX/Y` pushed offscreen.
+- BG uses `<Background>` only. Band 0 uses `<Fill>` with GridFill. Bands 1-4 A-parts use
+  Oversized animations; B-parts use GridFill.
+
+#### Band Threshold Tables
+
+**120px gauge (120t, grid-aligned):**
 
 | Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
 | ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
@@ -645,10 +682,47 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 | 3    | 60%       | -6000        | 4000        | **71px**   | **49px**         |
 | 4    | 80%       | -8000        | 2000        | **94px**   | **26px**         |
 
-> **Grid alignment note:** Clip widths for Bands 3–4 are adjusted to land on actual
-> Thorne texture grid lines. Formula-derived values (72/96) are 1–2px off from the
-> grid marks in the scaled 120px art. Grid positions: 0, 24, 48, **71**, **94**, 119.
-> For 105px gauges: 0, 21, 42, **62**, **82**, 104 (Band 3=62px, Band 4=82px).
+> Grid positions (120px): 0, 24, 48, **71**, **94**, 119.
+> Bands 3-4 are adjusted 1-2px from formula values to land on texture grid lines.
+
+**105px gauge (105t, grid-aligned):**
+
+| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
+| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
+| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
+| 1    | 20%       | -2000        | 8000        | 21px       | 84px             |
+| 2    | 40%       | -4000        | 6000        | 42px       | 63px             |
+| 3    | 60%       | -6000        | 4000        | **62px**   | **43px**         |
+| 4    | 80%       | -8000        | 2000        | **82px**   | **23px**         |
+
+> Grid positions (105px): 0, 21, 42, **62**, **82**, 104.
+
+**250px gauge (250t, even spacing):**
+
+| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
+| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
+| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
+| 1    | 20%       | -2000        | 8000        | 50px       | 200px            |
+| 2    | 40%       | -4000        | 6000        | 100px      | 150px            |
+| 3    | 60%       | -6000        | 4000        | 150px      | 100px            |
+| 4    | 80%       | -8000        | 2000        | 200px      | 50px             |
+
+> 250px divides evenly into 50px bands — no grid adjustment needed.
+
+#### Oversized Animation Naming
+
+All Oversized animations follow the pattern: `A_Oversized{Type}_{size}_Band{n}`
+
+| Type           | Texture Source | Row (Y offset) | Purpose                    |
+| -------------- | -------------- | -------------- | -------------------------- |
+| `Fill`         | thorne01       | Y=0 (16px)     | A-part fill for Veil bands |
+| `SolidFill`    | thorne02       | Y=0 (16px)     | A-part solid fill variant  |
+| `GridFill`     | thorne02       | Y=16 (32px)    | A-part grid fill variant   |
+
+Sizes with full Oversized animation sets: `105t`, `120t`, `250t`.
+
+> **Missing:** No Oversized animations exist for standard 103x8px gauges. The `gauge_inlay_thorne02.tga`
+> texture does not exist yet. This blocks composite treatment of 8px gauges (Target player HP/Mana, Pet HP).
 
 #### Player HP: Fire Arc (Blood Red)
 
@@ -718,9 +792,59 @@ Amethyst Arc Pet HP palette. At full pet health: Conjured Violet. Depleting arcs
 | 1    | Twilight Shade    | 170, 50, 180  | #AA32B4 | 20% — dimming                  |
 | 0    | Deep Grape        | 120, 20, 120  | #781478 | Critical — dark, always visible|
 
+#### Group HP: Tempered Red Veil (linear fade to white, dimmed)
+
+Tempered variant of Red Veil for group member HP. Uses R=220 (vs 255 for player) to
+visually distinguish group members from the player's own HP gauge.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Tempered Red      | 220, 0, 0     | #DC0000 | Full HP — drops first      |
+| 3    | Smoldering Red    | 220, 50, 50   | #DC3232 | 60%                        |
+| 2    | Warming Red       | 220, 100, 100 | #DC6464 | 40%                        |
+| 1    | Fading Red        | 220, 160, 160 | #DCA0A0 | 20%                        |
+| 0    | Ashen Red         | 220, 210, 210 | #DCD2D2 | Critical — always visible  |
+
+#### Breath: Cyan Veil (linear fade to white)
+
+Breath meter palette. At full breath: Deep Aqua. Depleting lightens toward Frost Spray.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Deep Aqua         | 0, 240, 240   | #00F0F0 | Full breath — drops first  |
+| 3    | Shallow Aqua      | 50, 240, 240  | #32F0F0 | 60%                        |
+| 2    | Tidal Aqua        | 100, 240, 240 | #64F0F0 | 40%                        |
+| 1    | Sea Mist          | 160, 240, 240 | #A0F0F0 | 20%                        |
+| 0    | Frost Spray       | 210, 240, 240 | #D2F0F0 | Critical — always visible  |
+
+#### SpellBook Scribe: Gold Veil (linear fade to white)
+
+SpellBook scribe progress gauge. At full: Ancient Gold. Depleting lightens toward Aureate Glow.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Ancient Gold      | 210, 110, 0   | #D26E00 | Full scribe — drops first  |
+| 3    | Molten Script     | 240, 140, 0   | #F08C00 | 60%                        |
+| 2    | Gilded Quill      | 255, 170, 40  | #FFAA28 | 40%                        |
+| 1    | Sunlit Parchment  | 255, 200, 100 | #FFC864 | 20%                        |
+| 0    | Aureate Glow      | 255, 230, 160 | #FFE6A0 | Starting — always visible  |
+
+#### SpellBook Memorize: Sapphire Veil (cool blue gradient)
+
+SpellBook memorize progress gauge. At full: Abyssal Cyan. Depleting lightens toward Frostlight.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Abyssal Cyan      | 0, 120, 210   | #0078D2 | Full memorize — drops first|
+| 3    | Deep Tide         | 0, 150, 240   | #0096F0 | 60%                        |
+| 2    | Crystal Current   | 40, 180, 255  | #28B4FF | 40%                        |
+| 1    | Arctic Glow       | 100, 210, 255 | #64D2FF | 20%                        |
+| 0    | Frostlight        | 170, 235, 255 | #AAEBFF | Starting — always visible  |
+
 #### Nillipuss Classic (Green-Yellow-Red)
 
 The original Nillipuss community palette. Traffic-light inspired: green at full, red at critical.
+Available as **Player Option only** — not used in other windows.
 
 | Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
@@ -733,6 +857,24 @@ The original Nillipuss community palette. Traffic-light inspired: green at full,
 > **Band 4 identity rule**: Both palette variants for the same EQType MUST share the same Band 4 color.
 > Band 4 represents "full value" — the visual identity of the gauge at 100%. When comparing
 > Purple Veil vs Amethyst Arc, both use Conjured Violet (200,0,200) for Band 4.
+
+#### Composite Gauge Deployment
+
+| Window         | Gauge        | Palette           | Size  | EQType | Texture Set |
+| -------------- | ------------ | ----------------- | ----- | ------ | ----------- |
+| PlayerWindow   | Player HP    | Red Veil          | 120t  | 1      | 120t        |
+| PlayerWindow   | Player Mana  | Blue Veil         | 120t  | 2      | 120t        |
+| PlayerWindow   | Pet HP       | Purple Veil       | 120t  | 16     | 120t        |
+| TargetWindow   | Target HP    | Red Veil          | 250t  | 6      | 250t        |
+| GroupWindow     | Member 1-5   | Tempered Red Veil | 120t  | 11-15  | 120t        |
+| PetInfoWindow  | Pet HP       | Purple Veil       | 120t  | 16     | 120t        |
+| BreathWindow   | Breath       | Cyan Veil         | 120t  | 8      | 120t        |
+| SpellBookWnd   | Scribe       | Gold Veil         | 105t  | 10     | 105t        |
+| SpellBookWnd   | Memorize     | Sapphire Veil     | 105t  | 9      | 105t        |
+
+> **Options variants** (Player Options only): Fire Arc (HP), Ocean Arc (Mana),
+> Amethyst Arc (Pet HP), Nillipuss Classic (HP). These are alternatives to the
+> standard Veil palettes, selectable per-player via Options directory.
 
 **Text Alignment Standards**:
 

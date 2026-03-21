@@ -17,10 +17,10 @@ This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 - **[Thorne/](Thorne/)**    
   `EQUI_PetInfoWindow.xml`
 
-- **[Thorne Veil/](Thorne Veil/)**    
+- **[Thorne Standard/](Thorne Standard/)**    
   `EQUI_PetInfoWindow.xml`
 
-- **[Thorne Standard/](Thorne Standard/)**    
+- **[Thorne Veil/](Thorne Veil/)**    
   `EQUI_PetInfoWindow.xml`
 
 ---

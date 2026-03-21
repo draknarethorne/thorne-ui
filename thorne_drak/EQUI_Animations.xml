@@ -6740,6 +6740,211 @@
     </Frames>
   </Ui2DAnimation>
 
+
+  <!-- ================================================================== -->
+  <!-- Oversized composite fills for 250t gauges                          -->
+  <!-- CX=10000 with negative X offsets create threshold fill behavior    -->
+  <!-- Based on Nillipuss technique: animation offset = gauge GaugeOffsetX -->
+  <!-- ================================================================== -->
+
+  <!-- Oversized fills (250t thorne01, Y=16) -->
+  <Ui2DAnimation item="A_OversizedFill_250t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedFill_250t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedFill_250t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedFill_250t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne01.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized SolidFill (250t thorne02, Y=16) -->
+  <Ui2DAnimation item="A_OversizedSolidFill_250t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedSolidFill_250t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedSolidFill_250t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedSolidFill_250t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>16</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized GridFill (250t thorne02, Y=32, grid baked) -->
+  <Ui2DAnimation item="A_OversizedGridFill_250t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-2000</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedGridFill_250t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-4000</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedGridFill_250t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-6000</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedGridFill_250t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-8000</X>
+        <Y>32</Y>
+      </Location>
+      <Size>
+        <CX>10000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
   <!-- Wide gauges (120x8 - horizontal 2x stretch) -->
   <Ui2DAnimation item="A_GaugeBackground_120">
     <Cycle>true</Cycle>

@@ -1358,7 +1358,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS F0-F4: Individual Fire HP Shades ========================= -->
+  <!-- ======================== ROWS F0-F4: Individual Fire HP Veil ========================= -->
   <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
 
   <!-- F0: Vein (no threshold) -->
@@ -1736,7 +1736,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS M0-M4: Individual Ocean Mana Shades ====================== -->
+  <!-- ======================== ROWS M0-M4: Individual Ocean Mana Veil ====================== -->
   <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
 
   <!-- M0: Abyss (no threshold) -->

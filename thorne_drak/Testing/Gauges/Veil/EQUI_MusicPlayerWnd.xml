@@ -1130,10 +1130,10 @@
 
   <!-- ============================================================== -->
   <!-- ================================================================== -->
-  <!-- GAUGE EXPERIMENT: Red Shades HP + Blue Shades Mana comparison       -->
+  <!-- GAUGE EXPERIMENT: Red Veil HP + Blue Veil Mana comparison       -->
   <!-- ================================================================== -->
 
-  <!-- ======================== ROW R: Red Shades Composite (Nillipuss technique) ========= -->
+  <!-- ======================== ROW R: Red Veil Composite (Nillipuss technique) ========= -->
   <!-- 5 red shades from blood red (top/drops first) to white-hot (base/stays longest)     -->
   <!-- At full HP: blood red. As HP drops: warms→brightens→white-hot alarm                 -->
   <!-- Z-order: BG > WhiteHot(0) > Light(1A+1B) > Mid(2A+2B) > Warm(3A+3B) > Blood(4)    -->
@@ -1143,7 +1143,7 @@
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>46</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R: Red Shades HP (5-band)</Text>
+    <Text>R: Red Veil HP (5-band)</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1358,7 +1358,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS R0-R4: Individual Red Shades ======================== -->
+  <!-- ======================== ROWS R0-R4: Individual Red Veil ======================== -->
   <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
 
   <!-- R0: White-hot (no threshold, base = critical HP) -->
@@ -1511,7 +1511,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROW M: Blue Shades Mana Composite (Nillipuss technique) ======= -->
+  <!-- ======================== ROW M: Blue Veil Mana Composite (Nillipuss technique) ======= -->
   <!-- 5 bands: Blue (full) -> Azure -> Mid -> Light -> WhiteBlue (empty)                      -->
   <!-- At full mana: Blue (0,0,255). Depleting lightens through azure to white-blue alarm       -->
   <!-- Z-order: BG > WhiteBlue(0) > Light(1A+1B) > Mid(2A+2B) > Azure(3A+3B) > Blue(4)        -->
@@ -1521,7 +1521,7 @@
     <RelativePosition>true</RelativePosition>
     <Location><X>215</X><Y>46</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>M: Blue Shades Mana (5-band)</Text>
+    <Text>M: Blue Veil Mana (5-band)</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1736,8 +1736,8 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS M0-M4: Individual Blue Mana Shades ======================= -->
-  <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
+  <!-- ======================== ROWS M0-M4: Individual Blue Mana Veil Bands ======================= -->
+  <!-- Each band shown separately, full-to-empty top-to-bottom                               -->
 
   <!-- M0: WhiteBlue (no threshold) -->
   <Label item="EXP_LabelM0">
@@ -1941,7 +1941,7 @@
 		<Pieces>MPW_Stat_Poison_Value</Pieces>
 
 		<!-- ====== GAUGE EXPERIMENT PIECES ====== -->
-		<!-- Row R: Red Shades Nillipuss Composite (blood->white-hot, 5 bands) -->
+		<!-- Row R: Red Veil Nillipuss Composite (blood->white-hot, 5 bands) -->
 		<Pieces>EXP_LabelR</Pieces>
 		<Pieces>EXP_RC_BG</Pieces>
 		<Pieces>EXP_RC_HP0</Pieces>
@@ -1964,7 +1964,7 @@
 		<Pieces>EXP_R3_HP</Pieces>
 		<Pieces>EXP_LabelR4</Pieces>
 		<Pieces>EXP_R4_HP</Pieces>
-		<!-- Row M: Blue Shades Mana Composite (blue->white-blue, 5 bands) -->
+		<!-- Row M: Blue Veil Mana Composite (blue->white-blue, 5 bands) -->
 		<Pieces>EXP_LabelM</Pieces>
 		<Pieces>EXP_MC_BG</Pieces>
 		<Pieces>EXP_MC_HP0</Pieces>

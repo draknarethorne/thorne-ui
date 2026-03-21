@@ -10,7 +10,7 @@
 		- Dismiss button positioned to avoid accidental Attack button clicks
 		- Mana gauge color changed to RGB(100,150,255) for "Thorne blue" consistency
 		- Part of Phase 5 standardization across all windows
-		- Pet HP: Purple Shades 5-band composite gauge (120x16, standardized from 128x15)
+		- Pet HP: Purple Veil 5-band composite gauge (120x16, standardized from 128x15)
 		- Pet name text overlay renders on top of composite bands
 	-->
 	<Button item = "PIW_AttackButton">
@@ -245,9 +245,9 @@
 	</Button>
 
 	<!-- ====================================================================== -->
-	<!-- PET HEALTH GAUGE — Purple Shades (5-band composite)                   -->
+	<!-- PET HEALTH GAUGE — Purple Veil (5-band composite)                   -->
 	<!-- ====================================================================== -->
-	<!-- Shades: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
+	<!-- Veil: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
 	<!-- Z-order: BG > Spectral Wisp(0) > Faded Familiar(1) > Mystic Haze(2) > Enchanted Orchid(3) > Conjured Violet(4) -->
 
 	<!-- Background (empty gauge frame) -->
@@ -592,7 +592,7 @@
 		<Pieces>PIW_FollowButton</Pieces>
 		<Pieces>PIW_TauntButton</Pieces>
 		<Pieces>PIW_SitButton</Pieces>
-		<!-- Pet HP — Purple Shades composite -->
+		<!-- Pet HP — Purple Veil composite -->
 		<Pieces>PIW_PetHP_BG</Pieces>
 		<Pieces>PIW_PetHP_Band0</Pieces>
 		<Pieces>PIW_PetHP_1A_Clip</Pieces>

@@ -1130,10 +1130,10 @@
 
   <!-- ============================================================== -->
   <!-- ================================================================== -->
-  <!-- GAUGE EXPERIMENT: Pet HP â€” Purple Shades vs Amethyst Arc           -->
+  <!-- GAUGE EXPERIMENT: Pet HP â€” Purple Veil vs Amethyst Arc           -->
   <!-- ================================================================== -->
 
-  <!-- ======================== ROW S: Purple Shades Pet HP Composite (Nillipuss technique) === -->
+  <!-- ======================== ROW S: Purple Veil Pet HP Composite (Nillipuss technique) === -->
   <!-- 5 bands: Conjured Violet (full) â†’ Enchanted Orchid â†’ Mystic Haze â†’ Faded Familiar â†’ Spectral Wisp (critical) -->
   <!-- At full pet HP: Conjured Violet (200,0,200). Depleting lightens toward Spectral Wisp alarm -->
   <!-- Z-order: BG > SpectralWisp(0) > FadedFamiliar(1A+1B) > MysticHaze(2A+2B) > EnchantedOrchid(3A+3B) > ConjuredViolet(4) -->
@@ -1143,7 +1143,7 @@
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>46</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>S: Purple Shades Pet HP (5-band)</Text>
+    <Text>S: Purple Veil Pet HP (5-band)</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -1359,7 +1359,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS S0-S4: Individual Purple Shades ========================= -->
+  <!-- ======================== ROWS S0-S4: Individual Purple Veil ========================= -->
   <!-- Each shade shown separately â€” full-to-empty top-to-bottom                               -->
 
   <!-- S4: Conjured Violet (80%, drops first = full pet HP) -->
@@ -1737,7 +1737,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS V0-V4: Individual Amethyst Arc Shades ==================== -->
+  <!-- ======================== ROWS V0-V4: Individual Amethyst Arc Bands ==================== -->
   <!-- Each shade shown separately â€” full-to-empty top-to-bottom                               -->
 
   <!-- V4: Conjured Violet (80%, drops first = full pet HP) -->
@@ -1941,7 +1941,7 @@
 		<Pieces>MPW_Stat_Poison_Value</Pieces>
 
 		<!-- ====== GAUGE EXPERIMENT PIECES ====== -->
-		<!-- Row S: Purple Shades Pet HP Composite (Conjured Violet->Spectral Wisp, 5 bands) -->
+		<!-- Row S: Purple Veil Pet HP Composite (Conjured Violet->Spectral Wisp, 5 bands) -->
 		<Pieces>EXP_LabelS</Pieces>
 		<Pieces>EXP_SC_BG</Pieces>
 		<Pieces>EXP_SC_HP0</Pieces>

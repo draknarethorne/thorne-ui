@@ -130,9 +130,9 @@
 	</Label>
 
 	<!-- ====================================================================== -->
-	<!-- HP GAUGE — Red Shades (5-band composite)                               -->
+	<!-- HP GAUGE — Red Veil (5-band composite)                               -->
 	<!-- ====================================================================== -->
-	<!-- Shades: Crimson (full) > Scorched Rose > Heated Blush > Fading Wound > White-hot Ember (critical) -->
+	<!-- Veil: Crimson (full) > Scorched Rose > Heated Blush > Fading Wound > White-hot Ember (critical) -->
 	<!-- Z-order: BG > White-hot Ember(0) > Fading Wound(1) > Heated Blush(2) > Scorched Rose(3) > Crimson(4) -->
 
 	<!-- Background (empty gauge frame) -->
@@ -414,9 +414,9 @@
 	</Label>
 
 	<!-- ====================================================================== -->
-	<!-- MANA GAUGE — Blue Shades (5-band composite)                            -->
+	<!-- MANA GAUGE — Blue Veil (5-band composite)                            -->
 	<!-- ====================================================================== -->
-	<!-- Shades: Sapphire (full) > Frozen Azure > Starlit Pool > Pale Ether > Icebloom (low) -->
+	<!-- Veil: Sapphire (full) > Frozen Azure > Starlit Pool > Pale Ether > Icebloom (low) -->
 	<!-- Z-order: BG > Icebloom(0) > Pale Ether(1) > Starlit Pool(2) > Frozen Azure(3) > Sapphire(4) -->
 
 	<!-- Background (empty gauge frame) -->
@@ -1145,9 +1145,9 @@
 	</Label>
 
 	<!-- ====================================================================== -->
-	<!-- PET HEALTH GAUGE — Purple Shades (5-band composite)                   -->
+	<!-- PET HEALTH GAUGE — Purple Veil (5-band composite)                   -->
 	<!-- ====================================================================== -->
-	<!-- Shades: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
+	<!-- Veil: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
 	<!-- Z-order: BG > Spectral Wisp(0) > Faded Familiar(1) > Mystic Haze(2) > Enchanted Orchid(3) > Conjured Violet(4) -->
 
 	<!-- Background (empty gauge frame) -->
@@ -1544,7 +1544,7 @@
 		<Pieces>PW_PlayerClass</Pieces>
 		<Pieces>PW_PlayerLevel</Pieces>
 
-		<!-- HP — Red Shades composite -->
+		<!-- HP — Red Veil composite -->
 		<Pieces>PW_HP_BG</Pieces>
 		<Pieces>PW_HP_Band0</Pieces>
 		<Pieces>PW_HP_1A_Clip</Pieces>
@@ -1559,7 +1559,7 @@
 		<Pieces>PW_HP_PctSign</Pieces>
 		<Pieces>PW_HP_Values</Pieces>
 
-		<!-- Mana — Blue Shades composite -->
+		<!-- Mana — Blue Veil composite -->
 		<Pieces>PW_Mana_BG</Pieces>
 		<Pieces>PW_Mana_Band0</Pieces>
 		<Pieces>PW_Mana_1A_Clip</Pieces>
@@ -1594,7 +1594,7 @@
 		<Pieces>PW_AA_Divider</Pieces>
 		<Pieces>PW_AA_Total</Pieces>
 
-		<!-- Pet HP — Purple Shades composite -->
+		<!-- Pet HP — Purple Veil composite -->
 		<Pieces>PW_PetHP_BG</Pieces>
 		<Pieces>PW_PetHP_Band0</Pieces>
 		<Pieces>PW_PetHP_1A_Clip</Pieces>

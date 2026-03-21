@@ -662,7 +662,7 @@ The signature HP palette. At full health: Blood Red. Depleting reveals warm colo
 | 1    | Smolder       | 200, 40, 80   | #C82850 | 20% — cooling              |
 | 0    | Vein          | 175, 25, 120  | #AF1978 | Critical — always visible  |
 
-**Gradient choice: Red Shades** (linear fade to white)
+**Gradient choice: Red Veil** (linear fade to white)
 
 | Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
@@ -684,7 +684,7 @@ The signature Mana palette. At full mana: Tidal Blue. Depleting reveals deep-sea
 | 1    | Deep Sea      | 80, 55, 220   | #5037DC | 20% — depth                |
 | 0    | Abyss         | 125, 30, 190  | #7D1EBE | Critical — always visible  |
 
-**Gradient choice: Blue Shades** (linear fade to white)
+**Gradient choice: Blue Veil** (linear fade to white)
 
 | Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
@@ -694,9 +694,9 @@ The signature Mana palette. At full mana: Tidal Blue. Depleting reveals deep-sea
 | 1    | Pale Ether        | 160, 160, 255 | #A0A0FF | 20%                        |
 | 0    | Icebloom          | 210, 210, 255 | #D2D2FF | Critical — always visible  |
 
-#### Pet HP: Purple Shades (linear fade to white)
+#### Pet HP: Purple Veil (linear fade to white)
 
-Purple Shades Pet HP palette. At full pet health: Conjured Violet. Depleting lightens toward spectral wisp.
+Purple Veil Pet HP palette. At full pet health: Conjured Violet. Depleting lightens toward spectral wisp.
 
 | Band | Color Name        | RGB           | Hex     | Description                |
 | ---- | ----------------- | ------------- | ------- | -------------------------- |
@@ -732,7 +732,7 @@ The original Nillipuss community palette. Traffic-light inspired: green at full,
 
 > **Band 4 identity rule**: Both palette variants for the same EQType MUST share the same Band 4 color.
 > Band 4 represents "full value" — the visual identity of the gauge at 100%. When comparing
-> Purple Shades vs Amethyst Arc, both use Conjured Violet (200,0,200) for Band 4.
+> Purple Veil vs Amethyst Arc, both use Conjured Violet (200,0,200) for Band 4.
 
 **Text Alignment Standards**:
 

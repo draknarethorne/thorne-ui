@@ -574,9 +574,9 @@
   </StaticText>
 
   <!-- ====================================================================== -->
-  <!-- SCRIBE GAUGE - Gold Shades (5-band composite)  EQType 10              -->
+  <!-- SCRIBE GAUGE - Gold Veil (5-band composite)  EQType 10              -->
   <!-- ====================================================================== -->
-  <!-- Shades: Ancient Gold (full) > Gilded Quill > Molten Script > Sunlit Parchment > Aureate Glow (starting) -->
+  <!-- Veil: Ancient Gold (full) > Gilded Quill > Molten Script > Sunlit Parchment > Aureate Glow (starting) -->
   <!-- Z-order: BG > Aureate Glow(0) > Sunlit Parchment(1) > Molten Script(2) > Gilded Quill(3) > Ancient Gold(4) -->
   <!-- 105px / 5 bands = 21px per band -->
 
@@ -794,9 +794,9 @@
   </Gauge>
 
   <!-- ====================================================================== -->
-  <!-- MEMORIZE GAUGE - Cyan Shades (5-band composite)  EQType 9             -->
+  <!-- MEMORIZE GAUGE - Cyan Veil (5-band composite)  EQType 9             -->
   <!-- ====================================================================== -->
-  <!-- Shades: Abyssal Cyan (full) > Deep Tide > Crystal Current > Arctic Glow > Frostlight (starting) -->
+  <!-- Veil: Abyssal Cyan (full) > Deep Tide > Crystal Current > Arctic Glow > Frostlight (starting) -->
   <!-- Z-order: BG > Frostlight(0) > Arctic Glow(1) > Crystal Current(2) > Deep Tide(3) > Abyssal Cyan(4) -->
   <!-- 105px / 5 bands = 21px per band -->
 
@@ -1217,7 +1217,7 @@
     <Pieces>SBW_SpellName14</Pieces>
     <Pieces>SBW_Spell15</Pieces>
     <Pieces>SBW_SpellName15</Pieces>
-    <!-- Scribe Gold Shades (left gauge) -->
+    <!-- Scribe Gold Veil (left gauge) -->
     <Pieces>SBW_Scribe_BG</Pieces>
     <Pieces>SBW_Scribe_Band0</Pieces>
     <Pieces>SBW_Scribe_1A_Clip</Pieces>
@@ -1228,7 +1228,7 @@
     <Pieces>SBW_Scribe_3B</Pieces>
     <Pieces>SBW_Scribe_4A_Clip</Pieces>
     <Pieces>SBW_Scribe_4B</Pieces>
-    <!-- Memorize Cyan Shades (right gauge) -->
+    <!-- Memorize Cyan Veil (right gauge) -->
     <Pieces>SBW_Mem_BG</Pieces>
     <Pieces>SBW_Mem_Band0</Pieces>
     <Pieces>SBW_Mem_1A_Clip</Pieces>

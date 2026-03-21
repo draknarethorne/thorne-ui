@@ -20,7 +20,7 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 - **[Thorne Large/](Thorne Large/)**    
   `EQUI_SpellBookWnd.xml`
 
-- **[Thorne Shades/](Thorne Shades/)**    
+- **[Thorne Veil/](Thorne Veil/)**    
   `EQUI_SpellBookWnd.xml`
 
 - **[Thorne Standard/](Thorne Standard/)**    

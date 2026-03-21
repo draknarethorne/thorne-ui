@@ -1358,7 +1358,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS F0-F4: Individual Fire HP Shades ========================= -->
+  <!-- ======================== ROWS F0-F4: Individual Fire HP Veil ========================= -->
   <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
 
   <!-- F0: Vein (no threshold) -->
@@ -1736,7 +1736,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS M0-M4: Individual Ocean Mana Shades ====================== -->
+  <!-- ======================== ROWS M0-M4: Individual Ocean Mana Veil ====================== -->
   <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
 
   <!-- M0: Abyss (no threshold) -->
@@ -1895,7 +1895,7 @@
   <!-- All bound to EQType 1 (Player HP)                              -->
   <!-- ============================================================== -->
 
-  <!-- ======================== ROW R: Red Shades Composite (Nillipuss technique) ========= -->
+  <!-- ======================== ROW R: Red Veil Composite (Nillipuss technique) ========= -->
   <!-- 5 red shades from blood red (top/drops first) to white-hot (base/stays longest)     -->
   <!-- At full HP: blood red. As HP drops: warms→brightens→white-hot alarm                 -->
   <!-- Z-order: BG > WhiteHot(0) > Light(1A+1B) > Mid(2A+2B) > Warm(3A+3B) > Blood(4)    -->
@@ -1905,7 +1905,7 @@
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>246</Y></Location>
     <Size><CX>200</CX><CY>12</CY></Size>
-    <Text>R: Red Shades HP (5-band)</Text>
+    <Text>R: Red Veil HP (5-band)</Text>
     <Font>3</Font>
     <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
     <NoWrap>true</NoWrap>
@@ -2120,7 +2120,7 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- ======================== ROWS R0-R4: Individual Red Shades ======================== -->
+  <!-- ======================== ROWS R0-R4: Individual Red Veil ======================== -->
   <!-- Each shade shown separately — full-to-empty top-to-bottom                               -->
 
   <!-- R0: White-hot (no threshold, base = critical HP) -->
@@ -2986,7 +2986,7 @@
 		<Pieces>EXP_M3_HP</Pieces>
 		<Pieces>EXP_LabelM4</Pieces>
 		<Pieces>EXP_M4_HP</Pieces>
-		<!-- Row R: Red Shades Nillipuss Composite (blood->white-hot, 5 bands) -->
+		<!-- Row R: Red Veil Nillipuss Composite (blood->white-hot, 5 bands) -->
 		<Pieces>EXP_LabelR</Pieces>
 		<Pieces>EXP_RC_BG</Pieces>
 		<Pieces>EXP_RC_HP0</Pieces>

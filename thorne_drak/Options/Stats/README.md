@@ -4,8 +4,8 @@
 
 This directory contains variants for the Stats window (EQUI_MusicPlayerWnd.xml).
 
-**Last Synced:** 2026-03-15  
-**Git Commit:** b091f24
+**Last Synced:** 2026-03-20  
+**Git Commit:** 085efe6
 
 ---
 

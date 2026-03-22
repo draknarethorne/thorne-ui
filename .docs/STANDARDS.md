@@ -672,30 +672,31 @@ Text overlay    — Original ScreenID preserved for client binding, no Fill/Back
 
 #### Band Threshold Tables
 
-**120px gauge (120t, grid-aligned):**
+**120px gauge (120t, percentage-aligned):**
 
 | Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
 | ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
 | 0    | 0% (base) | 0            | Full gauge  | —          | —                |
 | 1    | 20%       | -2000        | 8000        | 24px       | 96px             |
 | 2    | 40%       | -4000        | 6000        | 48px       | 72px             |
-| 3    | 60%       | -6000        | 4000        | **71px**   | **49px**         |
-| 4    | 80%       | -8000        | 2000        | **94px**   | **26px**         |
+| 3    | 60%       | -6000        | 4000        | **72px**   | **48px**         |
+| 4    | 80%       | -8000        | 2000        | **96px**   | **24px**         |
 
-> Grid positions (120px): 0, 24, 48, **71**, **94**, 119.
-> Bands 3-4 are adjusted 1-2px from formula values to land on texture grid lines.
+> Clips track true 20% fill positions: `floor(120 × 0.2/0.4/0.6/0.8)` = 24, 48, 72, 96.
+> Texture grid marks at X=71, 94 are 1-2px off due to the ~117px effective image width.
 
-**105px gauge (105t, grid-aligned):**
+**105px gauge (105t, percentage-aligned):**
 
 | Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
 | ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
 | 0    | 0% (base) | 0            | Full gauge  | —          | —                |
 | 1    | 20%       | -2000        | 8000        | 21px       | 84px             |
 | 2    | 40%       | -4000        | 6000        | 42px       | 63px             |
-| 3    | 60%       | -6000        | 4000        | **62px**   | **43px**         |
-| 4    | 80%       | -8000        | 2000        | **82px**   | **23px**         |
+| 3    | 60%       | -6000        | 4000        | **63px**   | **42px**         |
+| 4    | 80%       | -8000        | 2000        | **84px**   | **21px**         |
 
-> Grid positions (105px): 0, 21, 42, **62**, **82**, 104.
+> Clips track true 20% fill positions: `floor(105 × 0.2/0.4/0.6/0.8)` = 21, 42, 63, 84.
+> Texture grid marks at X=62, 82 are 1-2px off due to the ~102px effective image width.
 
 **250px gauge (250t, even spacing):**
 

@@ -1,8 +1,12 @@
 # Multi-Color Gauges via Hybrid Stretch — Design Document
 
+> **ARCHIVED**: This was an early exploration of moderate stretch factors.
+> The final implementation uses full oversized (100×) animations. See
+> [README.md](README.md) for the implemented system.
+
 **Date**: March 4, 2026  
 **Author**: Draknare Thorne  
-**Status**: Research — Third Approach to Multi-Color Gauges  
+**Status**: Archived — evolved into current 100× oversized approach  
 **Prerequisites**:
 
 - [gauges-analysis.md](gauges-analysis.md) (core technique, full inventory)

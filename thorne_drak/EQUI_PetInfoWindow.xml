@@ -291,11 +291,11 @@
 	<Gauge item="PIW_PetHP_1A">
 		<ScreenID>PIW_PetHP_1A</ScreenID>
 		<EQType>16</EQType>
-		<GaugeOffsetX>-2000</GaugeOffsetX>
+		<GaugeOffsetX>-2400</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
 		<Location><X>0</X><Y>0</Y></Location>
-		<Size><CX>8000</CX><CY>16</CY></Size>
+		<Size><CX>9600</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -335,11 +335,11 @@
 	<Gauge item="PIW_PetHP_2A">
 		<ScreenID>PIW_PetHP_2A</ScreenID>
 		<EQType>16</EQType>
-		<GaugeOffsetX>-4000</GaugeOffsetX>
+		<GaugeOffsetX>-4800</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
 		<Location><X>0</X><Y>0</Y></Location>
-		<Size><CX>6000</CX><CY>16</CY></Size>
+		<Size><CX>7200</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -379,11 +379,11 @@
 	<Gauge item="PIW_PetHP_3A">
 		<ScreenID>PIW_PetHP_3A</ScreenID>
 		<EQType>16</EQType>
-		<GaugeOffsetX>-6000</GaugeOffsetX>
+		<GaugeOffsetX>-7200</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
 		<Location><X>0</X><Y>0</Y></Location>
-		<Size><CX>4000</CX><CY>16</CY></Size>
+		<Size><CX>4800</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -396,7 +396,7 @@
 	<Screen item="PIW_PetHP_3A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>4</Y></Location>
-		<Size><CX>70</CX><CY>16</CY></Size>
+		<Size><CX>71</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PIW_PetHP_3A</Pieces>
 	</Screen>
@@ -404,11 +404,11 @@
 	<Gauge item="PIW_PetHP_3B">
 		<ScreenID>PIW_PetHP_3B</ScreenID>
 		<EQType>16</EQType>
-		<GaugeOffsetX>-70</GaugeOffsetX>
+		<GaugeOffsetX>-71</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>72</X><Y>4</Y></Location>
-		<Size><CX>50</CX><CY>16</CY></Size>
+		<Location><X>73</X><Y>4</Y></Location>
+		<Size><CX>49</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -423,11 +423,11 @@
 	<Gauge item="PIW_PetHP_4A">
 		<ScreenID>PIW_PetHP_4A</ScreenID>
 		<EQType>16</EQType>
-		<GaugeOffsetX>-8000</GaugeOffsetX>
+		<GaugeOffsetX>-9600</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
 		<Location><X>0</X><Y>0</Y></Location>
-		<Size><CX>2000</CX><CY>16</CY></Size>
+		<Size><CX>2400</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -440,7 +440,7 @@
 	<Screen item="PIW_PetHP_4A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>4</Y></Location>
-		<Size><CX>93</CX><CY>16</CY></Size>
+		<Size><CX>95</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>PIW_PetHP_4A</Pieces>
 	</Screen>
@@ -448,11 +448,11 @@
 	<Gauge item="PIW_PetHP_4B">
 		<ScreenID>PIW_PetHP_4B</ScreenID>
 		<EQType>16</EQType>
-		<GaugeOffsetX>-93</GaugeOffsetX>
+		<GaugeOffsetX>-95</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>96</X><Y>4</Y></Location>
-		<Size><CX>27</CX><CY>16</CY></Size>
+		<Location><X>98</X><Y>4</Y></Location>
+		<Size><CX>25</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>

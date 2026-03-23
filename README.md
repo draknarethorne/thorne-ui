@@ -191,16 +191,11 @@ When you modify a window:
 
 ---
 
-## 🚀 Current Development (v0.8.0)
+## 🚀 Current Development (v1.0.0)
 
 We're iterating toward **v1.0.0** with focused releases:
 
-### Coming Up (v0.8.0)
-
-- ⏳ **Multi-color health gauges** - 4 variants on MusicPlayerWnd, roll out to Player/Target/Group/Pet
-- ⏳ **Enhanced group displays** - Analysis and implementation
-
-### Future (v1.0.0)
+### Coming Up (v1.0.0)
 
 - **Logo branding** - CharSelect, Inventory & key screens
 - **Documentation pass** - 60 XML files, Options READMEs, registry docs
@@ -208,6 +203,7 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ### Recent Releases
 
+- **v0.8.0** - Multi-color composite gauges (Player, Target, Group, Pet, Breath, Spellbook), snap_columns pipeline, audit tooling
 - **v0.7.5** - Class-specific slot art (15 classes × 7 themes), auto-tone, weapon archetype scoring
 - **v0.7.4** - Container slot spacing, inventory logos, Thorne option sync
 - **v0.7.3** - Logo atlas, tab icon branding, gauge polish
@@ -219,6 +215,26 @@ We're iterating toward **v1.0.0** with focused releases:
 ---
 
 ## 📅 Version History
+
+**v0.8.0** (June 2026)
+
+- ✅ Multi-color composite gauge system
+  - Two-layer A/B architecture: oversized ×100 animations + Screen viewport clipping for threshold transitions
+  - 5-band color gradients (Veils): Red for HP, Blue for Mana — from desaturated alarm to full saturation
+  - Deployed across 7 windows + variants: Player, Target, Group, Pet, Breath, Spellbook, MusicPlayer (23 XML files total)
+  - 48 oversized animations in 3 sizes (105t, 120t, 250t) × 4 fill styles (Fill, SolidFill, GridFill, LightGridFill)
+- ✅ Snap-columns texture pipeline
+  - Config-driven `snap_columns` in `regen_gauges.py` — grid markers land at exact pixel-perfect fifths
+  - Fill gap snapping ensures bg and fill textures align at band boundaries
+  - Eliminated BILINEAR interpolation artifacts that spread dark marker pixels during width-scaling
+- ✅ Gauge audit and bulk-fix tooling
+  - `audit_gauges.py` — verifies all 48 animations + 32 XML files for correct offsets, clips, and sizes
+  - `fix_gauge_offsets.py` — applied 826 corrections across 24 files in one pass
+  - ALL CLEAR audit verification on final deployed state
+- ✅ Renamed "Shades" veil palettes to "Veil" naming convention
+- ✅ Group window alignment refinements
+- ✅ Added 250t LightGridFill oversized animations (4 bands)
+- ✅ Removed 8 unused HybridFill animations
 
 **v0.7.5** (March 10, 2026)
 

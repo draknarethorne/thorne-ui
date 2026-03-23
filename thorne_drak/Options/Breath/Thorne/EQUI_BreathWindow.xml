@@ -49,11 +49,11 @@
   <Gauge item="BREATH_1A">
     <ScreenID>BREATH_1A</ScreenID>
     <EQType>8</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>9600</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -93,11 +93,11 @@
   <Gauge item="BREATH_2A">
     <ScreenID>BREATH_2A</ScreenID>
     <EQType>8</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>7200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -137,11 +137,11 @@
   <Gauge item="BREATH_3A">
     <ScreenID>BREATH_3A</ScreenID>
     <EQType>8</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4800</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -154,7 +154,7 @@
   <Screen item="BREATH_3A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>5</Y></Location>
-    <Size><CX>70</CX><CY>16</CY></Size>
+    <Size><CX>71</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>BREATH_3A</Pieces>
   </Screen>
@@ -162,11 +162,11 @@
   <Gauge item="BREATH_3B">
     <ScreenID>BREATH_3B</ScreenID>
     <EQType>8</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>75</X><Y>5</Y></Location>
-    <Size><CX>50</CX><CY>16</CY></Size>
+    <Location><X>76</X><Y>5</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -181,11 +181,11 @@
   <Gauge item="BREATH_4A">
     <ScreenID>BREATH_4A</ScreenID>
     <EQType>8</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -198,7 +198,7 @@
   <Screen item="BREATH_4A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>5</Y></Location>
-    <Size><CX>93</CX><CY>16</CY></Size>
+    <Size><CX>95</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>BREATH_4A</Pieces>
   </Screen>
@@ -206,11 +206,11 @@
   <Gauge item="BREATH_4B">
     <ScreenID>BREATH_4B</ScreenID>
     <EQType>8</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>98</X><Y>5</Y></Location>
-    <Size><CX>27</CX><CY>16</CY></Size>
+    <Location><X>100</X><Y>5</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>

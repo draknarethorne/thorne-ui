@@ -10,5 +10,10 @@
     "solidfill":     { "preserve_black": false, "fill_gaps": true },
     "gridfill":      { "preserve_black": false, "bake_overlay": true, "gray_level": 0,   "darken": 0.0, "spread": 1 },
     "lightgridfill": { "preserve_black": false, "bake_overlay": true, "gray_level": 140, "darken": 0.0,  "spread": 1 }
+  },
+  "snap_columns": {
+    "105": [21, 42, 63, 84],
+    "120": [24, 48, 72, 96],
+    "250": [50, 100, 150, 200]
   }
 }

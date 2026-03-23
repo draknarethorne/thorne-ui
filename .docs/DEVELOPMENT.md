@@ -2,8 +2,8 @@
 
 Implementation details, architecture decisions, and development roadmap for the Thorne UI project.
 
-**Version**: 0.7.3  
-**Last Updated**: March 2026  
+**Version**: 0.8.0  
+**Last Updated**: June 2026  
 **Maintainer**: Draknare Thorne
 
 **Quick Links**: [Standards](STANDARDS.md) | [Phases](../.development/initial_phases/) | [Technical References](technical/) | [TODO](TODO.md) | [Releases Guide](releases/RELEASES.md) | [Roadmaps](./)
@@ -76,24 +76,23 @@ As we continue expanding Thorne UI, we're committed to:
 
 ## 🎯 Current Milestone
 
-**Active:** v0.7.5 — Slot art expansion and class item overrides  
-**Branch:** `feature/class-slot-images-v0.7.5`
+**Latest Shipped:** v0.8.0 — Multi-color composite gauges  
+**Branch:** `main`
 
-### v0.7.0 through v0.7.3 — ✅ Shipped
+### v0.7.0 through v0.7.5 — ✅ Shipped
 
-All v0.7.0 features shipped (spell recast timers, stat icons, target enhancements, options modernization). Post-release iterations v0.7.1–v0.7.3 added HotButton 14-stat layout, slot art expansion across Actions/Inspect windows, logo atlas generation with 7 lighting modes, and tab icon branding.
+All v0.7.x features shipped: spell recast timers, stat icons, target enhancements, options modernization, slot art expansion, class-specific overrides, logo atlas, and tab icon branding.
 
 See [ROADMAP-v0.7.0](.docs/ROADMAP-v0.7.0.md) and [ROADMAP-v0.7.5](.docs/ROADMAP-v0.7.5.md) for details.
 
-### Current focus (v0.7.5)
+### v0.8.0 — ✅ Shipped
 
-- ⏳ Populate class-specific `item_overrides` in slot configs (Caster, Melee, Hybrid, Thorne)
-- ⏳ Regenerate slot atlases (4 classes × 7 themes = 28 outputs)
-- ⏳ Visual verification and in-game testing
+Multi-color composite gauge system using A/B architecture (oversized ×100 animations + Screen viewport clipping). Deployed across Player, Target, Group, Pet, Breath, Spellbook, and MusicPlayer windows. Snap-columns pipeline for pixel-perfect grid markers. Comprehensive audit tooling.
+
+See [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) for details.
 
 ### Upcoming milestones
 
-- **v0.8.0** — Multi-color health gauges, enhanced group displays → [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md)
 - **v1.0.0** — Logo branding, documentation pass, release polish → [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md)
 
 ---

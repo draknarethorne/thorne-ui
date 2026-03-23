@@ -1,8 +1,12 @@
 # Multi-Color Gauge System — Holistic Analysis
 
+> **ARCHIVED**: This is the original pre-implementation research document from
+> March 2026. The system is now implemented. See [README.md](README.md) for
+> current data (clips, colors, animation values, tooling).
+
 **Date**: March 4, 2026 (revised March 5, 2026)  
 **Author**: Draknare Thorne  
-**Status**: Research — Pre-Implementation Analysis  
+**Status**: Archived — original research (implementation complete)  
 **Sources**: Nillipuss, DuxaUI, Thorne codebase audit (40+ gauges across 12 windows)
 
 ---

@@ -579,11 +579,11 @@
   <Gauge item="TW_THP_1A">
     <ScreenID>TW_THP_1A</ScreenID>
     <EQType>6</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-5000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>20000</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -623,11 +623,11 @@
   <Gauge item="TW_THP_2A">
     <ScreenID>TW_THP_2A</ScreenID>
     <EQType>6</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-10000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>15000</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -667,11 +667,11 @@
   <Gauge item="TW_THP_3A">
     <ScreenID>TW_THP_3A</ScreenID>
     <EQType>6</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-15000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>10000</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -684,7 +684,7 @@
   <Screen item="TW_THP_3A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>1</X><Y>36</Y></Location>
-    <Size><CX>148</CX><CY>16</CY></Size>
+    <Size><CX>149</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>TW_THP_3A</Pieces>
   </Screen>
@@ -692,11 +692,11 @@
   <Gauge item="TW_THP_3B">
     <ScreenID>TW_THP_3B</ScreenID>
     <EQType>6</EQType>
-    <GaugeOffsetX>-148</GaugeOffsetX>
+    <GaugeOffsetX>-149</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>149</X><Y>36</Y></Location>
-    <Size><CX>102</CX><CY>16</CY></Size>
+    <Location><X>150</X><Y>36</Y></Location>
+    <Size><CX>101</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -711,11 +711,11 @@
   <Gauge item="TW_THP_4A">
     <ScreenID>TW_THP_4A</ScreenID>
     <EQType>6</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-20000</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>5000</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -728,7 +728,7 @@
   <Screen item="TW_THP_4A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>1</X><Y>36</Y></Location>
-    <Size><CX>196</CX><CY>16</CY></Size>
+    <Size><CX>199</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>TW_THP_4A</Pieces>
   </Screen>
@@ -736,11 +736,11 @@
   <Gauge item="TW_THP_4B">
     <ScreenID>TW_THP_4B</ScreenID>
     <EQType>6</EQType>
-    <GaugeOffsetX>-196</GaugeOffsetX>
+    <GaugeOffsetX>-199</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>197</X><Y>36</Y></Location>
-    <Size><CX>54</CX><CY>16</CY></Size>
+    <Location><X>200</X><Y>36</Y></Location>
+    <Size><CX>51</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>

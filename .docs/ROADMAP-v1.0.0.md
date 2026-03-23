@@ -41,7 +41,7 @@ The **TAKP (The Al'Kabor Project)** client is a restored Macintosh-era EverQuest
 | 5   | FriendsWnd Polish              | Not started  |
 | 6   | PetInfoWindow Commands Button  | Not started  |
 
-> **Context:** Stat icons (#4 original), gauge refactor (#5 original), and spellbook icon reconciliation shipped in v0.7.0. Slot class overrides moved to [v0.7.5](ROADMAP-v0.7.5.md). Multi-color gauges moved to [v0.8.0](ROADMAP-v0.8.0.md).
+> **Context:** Stat icons (#4 original), gauge refactor (#5 original), and spellbook icon reconciliation shipped in v0.7.0. Slot class overrides shipped in [v0.7.5](ROADMAP-v0.7.5.md). Multi-color gauges shipped in [v0.8.0](ROADMAP-v0.8.0.md). Enhanced Group Displays deferred from v0.8.0 to this milestone.
 
 ---
 

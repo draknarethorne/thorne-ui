@@ -626,11 +626,11 @@
   <Gauge item="SBW_Scribe_1A">
     <ScreenID>SBW_Scribe_1A</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2100</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>8400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -643,7 +643,7 @@
   <Screen item="SBW_Scribe_1A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>21</CX><CY>16</CY></Size>
+    <Size><CX>20</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Scribe_1A</Pieces>
   </Screen>
@@ -651,11 +651,11 @@
   <Gauge item="SBW_Scribe_1B">
     <ScreenID>SBW_Scribe_1B</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-21</GaugeOffsetX>
+    <GaugeOffsetX>-20</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>85</X><Y>373</Y></Location>
-    <Size><CX>84</CX><CY>16</CY></Size>
+    <Location><X>84</X><Y>373</Y></Location>
+    <Size><CX>85</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -670,11 +670,11 @@
   <Gauge item="SBW_Scribe_2A">
     <ScreenID>SBW_Scribe_2A</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>6300</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -687,7 +687,7 @@
   <Screen item="SBW_Scribe_2A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>42</CX><CY>16</CY></Size>
+    <Size><CX>41</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Scribe_2A</Pieces>
   </Screen>
@@ -695,11 +695,11 @@
   <Gauge item="SBW_Scribe_2B">
     <ScreenID>SBW_Scribe_2B</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-42</GaugeOffsetX>
+    <GaugeOffsetX>-41</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>106</X><Y>373</Y></Location>
-    <Size><CX>63</CX><CY>16</CY></Size>
+    <Location><X>105</X><Y>373</Y></Location>
+    <Size><CX>64</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -714,11 +714,11 @@
   <Gauge item="SBW_Scribe_3A">
     <ScreenID>SBW_Scribe_3A</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-6300</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -731,7 +731,7 @@
   <Screen item="SBW_Scribe_3A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>63</CX><CY>16</CY></Size>
+    <Size><CX>62</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Scribe_3A</Pieces>
   </Screen>
@@ -739,11 +739,11 @@
   <Gauge item="SBW_Scribe_3B">
     <ScreenID>SBW_Scribe_3B</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-63</GaugeOffsetX>
+    <GaugeOffsetX>-62</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>127</X><Y>373</Y></Location>
-    <Size><CX>42</CX><CY>16</CY></Size>
+    <Location><X>126</X><Y>373</Y></Location>
+    <Size><CX>43</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -758,11 +758,11 @@
   <Gauge item="SBW_Scribe_4A">
     <ScreenID>SBW_Scribe_4A</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-8400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2100</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -775,7 +775,7 @@
   <Screen item="SBW_Scribe_4A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>84</CX><CY>16</CY></Size>
+    <Size><CX>83</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Scribe_4A</Pieces>
   </Screen>
@@ -783,11 +783,11 @@
   <Gauge item="SBW_Scribe_4B">
     <ScreenID>SBW_Scribe_4B</ScreenID>
     <EQType>10</EQType>
-    <GaugeOffsetX>-84</GaugeOffsetX>
+    <GaugeOffsetX>-83</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>148</X><Y>373</Y></Location>
-    <Size><CX>21</CX><CY>16</CY></Size>
+    <Location><X>147</X><Y>373</Y></Location>
+    <Size><CX>22</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -850,11 +850,11 @@
   <Gauge item="SBW_Mem_1A">
     <ScreenID>SBW_Mem_1A</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2100</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>8400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -867,7 +867,7 @@
   <Screen item="SBW_Mem_1A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>21</CX><CY>16</CY></Size>
+    <Size><CX>20</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Mem_1A</Pieces>
   </Screen>
@@ -875,11 +875,11 @@
   <Gauge item="SBW_Mem_1B">
     <ScreenID>SBW_Mem_1B</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-21</GaugeOffsetX>
+    <GaugeOffsetX>-20</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>285</X><Y>373</Y></Location>
-    <Size><CX>84</CX><CY>16</CY></Size>
+    <Location><X>284</X><Y>373</Y></Location>
+    <Size><CX>85</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -894,11 +894,11 @@
   <Gauge item="SBW_Mem_2A">
     <ScreenID>SBW_Mem_2A</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>6300</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -911,7 +911,7 @@
   <Screen item="SBW_Mem_2A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>42</CX><CY>16</CY></Size>
+    <Size><CX>41</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Mem_2A</Pieces>
   </Screen>
@@ -919,11 +919,11 @@
   <Gauge item="SBW_Mem_2B">
     <ScreenID>SBW_Mem_2B</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-42</GaugeOffsetX>
+    <GaugeOffsetX>-41</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>306</X><Y>373</Y></Location>
-    <Size><CX>63</CX><CY>16</CY></Size>
+    <Location><X>305</X><Y>373</Y></Location>
+    <Size><CX>64</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -938,11 +938,11 @@
   <Gauge item="SBW_Mem_3A">
     <ScreenID>SBW_Mem_3A</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-6300</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -955,7 +955,7 @@
   <Screen item="SBW_Mem_3A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>63</CX><CY>16</CY></Size>
+    <Size><CX>62</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Mem_3A</Pieces>
   </Screen>
@@ -963,11 +963,11 @@
   <Gauge item="SBW_Mem_3B">
     <ScreenID>SBW_Mem_3B</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-63</GaugeOffsetX>
+    <GaugeOffsetX>-62</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>327</X><Y>373</Y></Location>
-    <Size><CX>42</CX><CY>16</CY></Size>
+    <Location><X>326</X><Y>373</Y></Location>
+    <Size><CX>43</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -982,11 +982,11 @@
   <Gauge item="SBW_Mem_4A">
     <ScreenID>SBW_Mem_4A</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-8400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2100</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -999,7 +999,7 @@
   <Screen item="SBW_Mem_4A_Clip">
     <RelativePosition>true</RelativePosition>
     <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>84</CX><CY>16</CY></Size>
+    <Size><CX>83</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>SBW_Mem_4A</Pieces>
   </Screen>
@@ -1007,11 +1007,11 @@
   <Gauge item="SBW_Mem_4B">
     <ScreenID>SBW_Mem_4B</ScreenID>
     <EQType>9</EQType>
-    <GaugeOffsetX>-84</GaugeOffsetX>
+    <GaugeOffsetX>-83</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>348</X><Y>373</Y></Location>
-    <Size><CX>21</CX><CY>16</CY></Size>
+    <Location><X>347</X><Y>373</Y></Location>
+    <Size><CX>22</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>

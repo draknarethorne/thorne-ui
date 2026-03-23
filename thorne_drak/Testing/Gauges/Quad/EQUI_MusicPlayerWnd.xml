@@ -1190,11 +1190,11 @@
   <Gauge item="EXP_FC_1A">
     <ScreenID>EXP_FC_1A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>9600</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1233,11 +1233,11 @@
   <Gauge item="EXP_FC_2A">
     <ScreenID>EXP_FC_2A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>7200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1276,11 +1276,11 @@
   <Gauge item="EXP_FC_3A">
     <ScreenID>EXP_FC_3A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4800</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1293,18 +1293,18 @@
   <Screen item="EXP_FC_3A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>70</CX><CY>16</CY></Size>
+    <Size><CX>71</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_FC_3A</Pieces>
   </Screen>
   <Gauge item="EXP_FC_3B">
     <ScreenID>EXP_FC_3B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>75</X><Y>58</Y></Location>
-    <Size><CX>50</CX><CY>16</CY></Size>
+    <Location><X>76</X><Y>58</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1319,11 +1319,11 @@
   <Gauge item="EXP_FC_4A">
     <ScreenID>EXP_FC_4A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1336,18 +1336,18 @@
   <Screen item="EXP_FC_4A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>58</Y></Location>
-    <Size><CX>93</CX><CY>16</CY></Size>
+    <Size><CX>95</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_FC_4A</Pieces>
   </Screen>
   <Gauge item="EXP_FC_4B">
     <ScreenID>EXP_FC_4B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>98</X><Y>58</Y></Location>
-    <Size><CX>27</CX><CY>16</CY></Size>
+    <Location><X>100</X><Y>58</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1465,10 +1465,10 @@
   <Gauge item="EXP_F3_HP">
     <ScreenID>EXP_F3_HP</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>4</X><Y>122</Y></Location>
+    <Location><X>5</X><Y>122</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -1495,10 +1495,10 @@
   <Gauge item="EXP_F4_HP">
     <ScreenID>EXP_F4_HP</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>3</X><Y>90</Y></Location>
+    <Location><X>5</X><Y>90</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -1568,11 +1568,11 @@
   <Gauge item="EXP_MC_1A">
     <ScreenID>EXP_MC_1A</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>9600</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1611,11 +1611,11 @@
   <Gauge item="EXP_MC_2A">
     <ScreenID>EXP_MC_2A</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>7200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1654,11 +1654,11 @@
   <Gauge item="EXP_MC_3A">
     <ScreenID>EXP_MC_3A</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4800</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1671,18 +1671,18 @@
   <Screen item="EXP_MC_3A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>215</X><Y>58</Y></Location>
-    <Size><CX>70</CX><CY>16</CY></Size>
+    <Size><CX>71</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_MC_3A</Pieces>
   </Screen>
   <Gauge item="EXP_MC_3B">
     <ScreenID>EXP_MC_3B</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>285</X><Y>58</Y></Location>
-    <Size><CX>50</CX><CY>16</CY></Size>
+    <Location><X>286</X><Y>58</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1697,11 +1697,11 @@
   <Gauge item="EXP_MC_4A">
     <ScreenID>EXP_MC_4A</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1714,18 +1714,18 @@
   <Screen item="EXP_MC_4A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>215</X><Y>58</Y></Location>
-    <Size><CX>93</CX><CY>16</CY></Size>
+    <Size><CX>95</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_MC_4A</Pieces>
   </Screen>
   <Gauge item="EXP_MC_4B">
     <ScreenID>EXP_MC_4B</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>308</X><Y>58</Y></Location>
-    <Size><CX>27</CX><CY>16</CY></Size>
+    <Location><X>310</X><Y>58</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1843,10 +1843,10 @@
   <Gauge item="EXP_M3_HP">
     <ScreenID>EXP_M3_HP</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>212</X><Y>122</Y></Location>
+    <Location><X>213</X><Y>122</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -1873,10 +1873,10 @@
   <Gauge item="EXP_M4_HP">
     <ScreenID>EXP_M4_HP</ScreenID>
     <EQType>2</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>210</X><Y>90</Y></Location>
+    <Location><X>212</X><Y>90</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -1952,11 +1952,11 @@
   <Gauge item="EXP_RC_1A">
     <ScreenID>EXP_RC_1A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>9600</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -1995,11 +1995,11 @@
   <Gauge item="EXP_RC_2A">
     <ScreenID>EXP_RC_2A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>7200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2038,11 +2038,11 @@
   <Gauge item="EXP_RC_3A">
     <ScreenID>EXP_RC_3A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4800</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2055,18 +2055,18 @@
   <Screen item="EXP_RC_3A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>70</CX><CY>16</CY></Size>
+    <Size><CX>71</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_RC_3A</Pieces>
   </Screen>
   <Gauge item="EXP_RC_3B">
     <ScreenID>EXP_RC_3B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>75</X><Y>258</Y></Location>
-    <Size><CX>50</CX><CY>16</CY></Size>
+    <Location><X>76</X><Y>258</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2081,11 +2081,11 @@
   <Gauge item="EXP_RC_4A">
     <ScreenID>EXP_RC_4A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2098,18 +2098,18 @@
   <Screen item="EXP_RC_4A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>5</X><Y>258</Y></Location>
-    <Size><CX>93</CX><CY>16</CY></Size>
+    <Size><CX>95</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_RC_4A</Pieces>
   </Screen>
   <Gauge item="EXP_RC_4B">
     <ScreenID>EXP_RC_4B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>98</X><Y>258</Y></Location>
-    <Size><CX>27</CX><CY>16</CY></Size>
+    <Location><X>100</X><Y>258</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2227,10 +2227,10 @@
   <Gauge item="EXP_R3_HP">
     <ScreenID>EXP_R3_HP</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>4</X><Y>322</Y></Location>
+    <Location><X>5</X><Y>322</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2257,10 +2257,10 @@
   <Gauge item="EXP_R4_HP">
     <ScreenID>EXP_R4_HP</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>3</X><Y>290</Y></Location>
+    <Location><X>5</X><Y>290</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2330,11 +2330,11 @@
   <Gauge item="EXP_NC_1A">
     <ScreenID>EXP_NC_1A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>9600</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2376,11 +2376,11 @@
   <Gauge item="EXP_NC_2A">
     <ScreenID>EXP_NC_2A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>7200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2422,11 +2422,11 @@
   <Gauge item="EXP_NC_3A">
     <ScreenID>EXP_NC_3A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4800</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2440,7 +2440,7 @@
   <Screen item="EXP_NC_3A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>215</X><Y>258</Y></Location>
-    <Size><CX>70</CX><CY>16</CY></Size>
+    <Size><CX>71</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NC_3A</Pieces>
   </Screen>
@@ -2449,11 +2449,11 @@
   <Gauge item="EXP_NC_3B">
     <ScreenID>EXP_NC_3B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>285</X><Y>258</Y></Location>
-    <Size><CX>50</CX><CY>16</CY></Size>
+    <Location><X>286</X><Y>258</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2468,11 +2468,11 @@
   <Gauge item="EXP_NC_4A">
     <ScreenID>EXP_NC_4A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2486,7 +2486,7 @@
   <Screen item="EXP_NC_4A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>215</X><Y>258</Y></Location>
-    <Size><CX>93</CX><CY>16</CY></Size>
+    <Size><CX>95</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NC_4A</Pieces>
   </Screen>
@@ -2495,11 +2495,11 @@
   <Gauge item="EXP_NC_4B">
     <ScreenID>EXP_NC_4B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>308</X><Y>258</Y></Location>
-    <Size><CX>27</CX><CY>16</CY></Size>
+    <Location><X>310</X><Y>258</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2617,10 +2617,10 @@
   <Gauge item="EXP_N3_HP">
     <ScreenID>EXP_N3_HP</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>212</X><Y>322</Y></Location>
+    <Location><X>213</X><Y>322</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2647,10 +2647,10 @@
   <Gauge item="EXP_N4_HP">
     <ScreenID>EXP_N4_HP</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>210</X><Y>290</Y></Location>
+    <Location><X>212</X><Y>290</Y></Location>
     <Size><CX>120</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
@@ -2718,11 +2718,11 @@
   <Gauge item="EXP_NX_1A">
     <ScreenID>EXP_NX_1A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-2000</GaugeOffsetX>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8000</CX><CY>16</CY></Size>
+    <Size><CX>9600</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2761,11 +2761,11 @@
   <Gauge item="EXP_NX_2A">
     <ScreenID>EXP_NX_2A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-4000</GaugeOffsetX>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6000</CX><CY>16</CY></Size>
+    <Size><CX>7200</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2804,11 +2804,11 @@
   <Gauge item="EXP_NX_3A">
     <ScreenID>EXP_NX_3A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-6000</GaugeOffsetX>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4000</CX><CY>16</CY></Size>
+    <Size><CX>4800</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2821,18 +2821,18 @@
   <Screen item="EXP_NX_3A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>215</X><Y>450</Y></Location>
-    <Size><CX>70</CX><CY>16</CY></Size>
+    <Size><CX>71</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NX_3A</Pieces>
   </Screen>
   <Gauge item="EXP_NX_3B">
     <ScreenID>EXP_NX_3B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-70</GaugeOffsetX>
+    <GaugeOffsetX>-71</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>285</X><Y>450</Y></Location>
-    <Size><CX>50</CX><CY>16</CY></Size>
+    <Location><X>286</X><Y>450</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2847,11 +2847,11 @@
   <Gauge item="EXP_NX_4A">
     <ScreenID>EXP_NX_4A</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-8000</GaugeOffsetX>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
     <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2000</CX><CY>16</CY></Size>
+    <Size><CX>2400</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
@@ -2864,18 +2864,18 @@
   <Screen item="EXP_NX_4A_X">
     <RelativePosition>true</RelativePosition>
     <Location><X>215</X><Y>450</Y></Location>
-    <Size><CX>93</CX><CY>16</CY></Size>
+    <Size><CX>95</CX><CY>16</CY></Size>
     <Style_Transparent>true</Style_Transparent>
     <Pieces>EXP_NX_4A</Pieces>
   </Screen>
   <Gauge item="EXP_NX_4B">
     <ScreenID>EXP_NX_4B</ScreenID>
     <EQType>1</EQType>
-    <GaugeOffsetX>-93</GaugeOffsetX>
+    <GaugeOffsetX>-95</GaugeOffsetX>
     <GaugeOffsetY>0</GaugeOffsetY>
     <RelativePosition>true</RelativePosition>
-    <Location><X>308</X><Y>450</Y></Location>
-    <Size><CX>27</CX><CY>16</CY></Size>
+    <Location><X>310</X><Y>450</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>

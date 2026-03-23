@@ -165,6 +165,10 @@ class GaugeGenerator:
                             **defaults["sections"][section_name],
                             **user_config["sections"][section_name],
                         }
+            # snap_columns: per-width column snapping for grid marks
+            # Format: { "105": [21, 42, 63, 84], "120": [24, 48, 72, 96], ... }
+            if "snap_columns" in user_config:
+                merged["snap_columns"] = user_config["snap_columns"]
 
             print(f"  Loaded config: {config_file.name}")
             return merged
@@ -216,6 +220,154 @@ class GaugeGenerator:
     def _section_lightgridfill_spread(self):
         """Pixel radius for LightGridFill darkening gradient (1=immediate neighbors/default)."""
         return self.config.get("sections", {}).get("lightgridfill", {}).get("spread", 1)
+
+    def _get_snap_columns(self, width):
+        """Get snap column positions for a given target width, or None if not configured.
+
+        Returns list of integer column positions, or None.
+        """
+        snap_cfg = self.config.get("snap_columns")
+        if not snap_cfg:
+            return None
+        # Config keys are strings (JSON keys), so look up by string
+        positions = snap_cfg.get(str(width))
+        if positions and isinstance(positions, list):
+            return [int(p) for p in positions]
+        return None
+
+    def _snap_dark_columns(self, section, width):
+        """Snap dark mark columns to exact configured positions.
+
+        Detects current dark-pixel columns in the section interior, clears them,
+        then redraws 1px dark columns at the configured snap positions.
+        Only modifies columns if snap_columns is configured for this width.
+
+        Args:
+            section: RGBA image to modify (mutated in place and returned)
+            width: Target width (used to look up snap_columns config)
+
+        Returns:
+            The (possibly modified) section image.
+        """
+        snap_positions = self._get_snap_columns(width)
+        if not snap_positions:
+            return section
+
+        threshold = self.black_threshold
+        w, h = section.size
+        px = section.load()
+
+        # Step 1: Detect existing dark mark columns (interior only, skip borders)
+        dark_cols = set()
+        for x in range(1, w - 1):
+            for y in range(1, h - 1):
+                r, g, b, a = px[x, y]
+                if a > 0 and r <= threshold and g <= threshold and b <= threshold:
+                    dark_cols.add(x)
+                    break
+
+        if not dark_cols:
+            return section  # No marks to snap
+
+        # Step 2: Sample the background color of a non-dark interior column
+        # for use when clearing old dark columns
+        bg_sample = None
+        for x in range(1, w - 1):
+            if x not in dark_cols:
+                # Use the middle interior row as representative
+                mid_y = h // 2
+                r, g, b, a = px[x, mid_y]
+                if a > 0:
+                    bg_sample = (r, g, b, a)
+                    break
+
+        # Step 3: Clear old dark mark columns (replace with neighbor colors)
+        for x in sorted(dark_cols):
+            # Find nearest non-dark neighbor column for color blending
+            left_x = x - 1 if x - 1 >= 1 and x - 1 not in dark_cols else None
+            right_x = x + 1 if x + 1 < w - 1 and x + 1 not in dark_cols else None
+            for y in range(1, h - 1):
+                r, g, b, a = px[x, y]
+                if a > 0 and r <= threshold and g <= threshold and b <= threshold:
+                    # Replace with neighbor color
+                    if left_x is not None:
+                        px[x, y] = px[left_x, y]
+                    elif right_x is not None:
+                        px[x, y] = px[right_x, y]
+                    elif bg_sample is not None:
+                        px[x, y] = bg_sample
+                    else:
+                        px[x, y] = (0, 0, 0, 0)
+
+        # Step 4: Draw new dark marks at snap positions
+        for target_x in snap_positions:
+            if 1 <= target_x < w - 1:
+                for y in range(1, h - 1):
+                    px[target_x, y] = (0, 0, 0, 255)
+
+        snapped_from = sorted(dark_cols)
+        print(f"    Snapped grid marks: {snapped_from} -> {snap_positions}")
+        return section
+
+    def _snap_fill_gaps(self, fill_section, width):
+        """Snap transparent gap columns in fill to match configured snap positions.
+
+        After bg dark columns are snapped, the fill's transparent gaps may remain
+        at old interpolated positions.  This method detects those gaps, fills them
+        using neighbor colors, then punches new 1px transparent columns at the
+        configured snap positions so fill and bg stay aligned in thorne01 output.
+
+        Args:
+            fill_section: RGBA fill image (mutated in place and returned)
+            width: Target width for snap_columns config lookup
+
+        Returns:
+            The (possibly modified) fill image.
+        """
+        snap_positions = self._get_snap_columns(width)
+        if not snap_positions:
+            return fill_section
+
+        w, h = fill_section.size
+        px = fill_section.load()
+
+        # Detect gap columns: interior columns where majority of pixels are transparent
+        gap_cols = set()
+        for x in range(1, w - 1):
+            transparent_count = 0
+            total = 0
+            for y in range(1, h - 1):
+                _, _, _, a = px[x, y]
+                total += 1
+                if a < 128:
+                    transparent_count += 1
+            if total > 0 and transparent_count > total * 0.5:
+                gap_cols.add(x)
+
+        if not gap_cols:
+            return fill_section
+
+        # Fill in old gap columns with neighbor colors
+        for x in sorted(gap_cols):
+            left_x = x - 1 if x - 1 >= 1 and x - 1 not in gap_cols else None
+            right_x = x + 1 if x + 1 < w - 1 and x + 1 not in gap_cols else None
+            for y in range(1, h - 1):
+                _, _, _, a = px[x, y]
+                if a < 255:
+                    if left_x is not None:
+                        px[x, y] = px[left_x, y]
+                    elif right_x is not None:
+                        px[x, y] = px[right_x, y]
+
+        # Punch new transparent gaps at snap positions
+        for target_x in snap_positions:
+            if 1 <= target_x < w - 1:
+                for y in range(1, h - 1):
+                    px[target_x, y] = (0, 0, 0, 0)
+
+        snapped_from = sorted(gap_cols)
+        print(f"    Snapped fill gaps: {snapped_from} -> {snap_positions}")
+        return fill_section
 
     def _section_fill_preserve_gaps(self):
         """Whether to preserve 1px transparent gaps when scaling Fill (fill section config).
@@ -517,6 +669,10 @@ class GaugeGenerator:
             lines_tall = self._scale_horizontal_with_borders(lines_tall, target_width, interp_method=self._section_interpolation("lines"), preserve_black=self._section_preserve_black("lines"))
             linesfill_tall = self._scale_horizontal_with_borders(linesfill_tall, target_width, interp_method=self._section_interpolation("linesfill"), preserve_black=self._section_preserve_black("linesfill"))
         
+        # Snap grid marks and fill gaps to exact configured positions
+        bg_tall = self._snap_dark_columns(bg_tall, target_width)
+        fill_tall = self._snap_fill_gaps(fill_tall, target_width)
+
         # Auto-generate composite rows from scaled sections
         solidfill_tall = self._generate_solidfill(fill_tall)
         overlay_tall = self._generate_overlay(bg_tall)
@@ -596,6 +752,8 @@ class GaugeGenerator:
             preserve_black=self._section_preserve_black("background"),
             debug_bucket=debug_sections, debug_label="background"
         )
+        # Snap bg marks before fill gap detection uses them
+        bg_scaled = self._snap_dark_columns(bg_scaled, width)
         if self._section_fill_preserve_gaps():
             fill_scaled = self._scale_fill_preserving_gaps(
                 fill, bg_scaled, width,
@@ -619,7 +777,7 @@ class GaugeGenerator:
             preserve_black=self._section_preserve_black("linesfill"),
             debug_bucket=debug_sections, debug_label="linesfill"
         )
-        
+
         # Create main image at target dimensions (4 rows x 16px = 64px)
         result = Image.new('RGBA', (width, 64), (0, 0, 0, 0))
         result.paste(bg_scaled, (0, 0))
@@ -645,6 +803,8 @@ class GaugeGenerator:
                 preserve_black=self._section_preserve_black("overlay"),
                 debug_bucket=debug_sections, debug_label="overlay"
             )
+            # Snap overlay marks to match bg_scaled snap positions
+            overlay_scaled = self._snap_dark_columns(overlay_scaled, width)
             solidfill_scaled = self._scale_horizontal_with_borders(
                 solidfill, width, interp_method=self._section_interpolation("solidfill"),
                 preserve_black=self._section_preserve_black("solidfill"),

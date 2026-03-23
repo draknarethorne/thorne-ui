@@ -1,8 +1,12 @@
 # Multi-Color Gauge Experiment — HP Side-by-Side Test
 
+> **ARCHIVED**: This was the original 4-row experiment plan. Current testing
+> uses `build_mpw_test2.py` with a composite + A|B piece layout. See
+> [README.md](README.md) for current approach and tooling.
+
 **Date**: March 4, 2026  
 **Author**: Draknare Thorne  
-**Status**: Ready for testing  
+**Status**: Archived — superseded by build_mpw_test2.py approach  
 **Purpose**: Compare all three multi-color gauge approaches side-by-side using HP (EQType=1)
 
 ---

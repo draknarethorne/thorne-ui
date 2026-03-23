@@ -2,7 +2,7 @@
 
 Development tracker for Thorne UI. For detailed implementation plans, see the versioned roadmaps in `.docs/`.
 
-**Current Branch:** `feature/gauges-v0.8.0`
+**Current Branch:** `main`
 **Maintainer:** Draknare Thorne
 
 ---
@@ -13,7 +13,7 @@ Development tracker for Thorne UI. For detailed implementation plans, see the ve
 | ------- | ----------- | ----------------------------------- | ----------------------------------------- |
 | v0.7.0  | ✅ Shipped  | Recast timers, stat icons, options  | [ROADMAP-v0.7.0](.docs/ROADMAP-v0.7.0.md) |
 | v0.7.5  | ✅ Shipped  | Slot art expansion, class overrides | [ROADMAP-v0.7.5](.docs/ROADMAP-v0.7.5.md) |
-| v0.8.0  | 🔨 Active  | Multi-color gauges, group displays  | [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) |
+| v0.8.0  | ✅ Shipped  | Multi-color composite gauges, snap-columns pipeline | [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) |
 | v1.0.0  | ⏳ Planning | Logo branding, docs, release polish | [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md) |
 
 ---
@@ -24,6 +24,7 @@ Development tracker for Thorne UI. For detailed implementation plans, see the ve
 
 | Version | Date       | Highlights                                                                 |
 | ------- | ---------- | -------------------------------------------------------------------------- |
+| v0.8.0  | 2026-06    | Multi-color composite gauges (A/B architecture, 23 XMLs), snap-columns, audit tooling |
 | v0.7.5  | 2026-03-10 | Class slot art (15 classes × 7 themes), auto-tone, weapon archetypes      |
 | v0.7.3  | 2026-03-04 | Logo atlas (7 lighting modes), tab icon branding, gauge polish             |
 | v0.7.2  | 2026-03-03 | Slot art expansion (Actions 28×28, Inspect 40×40), dark rounded templates  |
@@ -62,12 +63,14 @@ Group Window, Pet Window, Player Window, Inventory (Phase 3.9), Actions Window (
 - [x] Run `regen_slots.py --all` for 16 classes × 7 themes (112 combos)
 - [x] Visual verification and in-game testing
 
-### v0.8.0 — Advanced Visual Systems
+### v0.8.0 — Multi-Color Composite Gauges (✅ Shipped)
 
-- [ ] Multi-color health gauge experiment (4 variants on MusicPlayerWnd)
-- [ ] Select winning gauge approach (Full Stretch / Clipping / Hybrid)
-- [ ] Roll out multi-color gauges to Player, Target, Group, Pet (40+ gauges)
-- [ ] Enhanced Group Displays analysis and implementation (10-15h)
+- [x] Multi-color health gauge experiment (4 variants on MusicPlayerWnd)
+- [x] Select winning gauge approach → Clipping (A/B composite architecture)
+- [x] Roll out multi-color gauges to Player, Target, Group, Pet, Breath, Spellbook (23 XMLs)
+- [x] Snap-columns texture pipeline for pixel-perfect grid markers
+- [x] Audit and bulk-fix tooling (audit_gauges.py, fix_gauge_offsets.py)
+- [ ] Enhanced Group Displays analysis and implementation (deferred to v1.0.0)
 
 ### v1.0.0 — Logo Branding & Release Polish
 

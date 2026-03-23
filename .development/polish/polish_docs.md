@@ -8,7 +8,10 @@
 
 ## Scope
 
-Comprehensive audit and update of all Thorne-based Options: README.md files, XML file quality (headers, comments, organization), `.bin/` scripts for options workflows, and all `.md` cross-references. Non-Thorne options (Standard/Original) are out of scope.
+Comprehensive audit and update of all Thorne-based Options: README.md files,
+XML file quality (headers, comments, organization), `.bin/` scripts for options
+workflows, and all `.md` cross-references. Non-Thorne options (Standard/Original)
+are out of scope.
 
 ---
 
@@ -18,7 +21,7 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 
 | Script | Status | Notes |
 |--------|--------|-------|
-| `options_thorne_sync.py` | ✅ Current | Generates parent READMEs from directory scan. Template is clean but only produces ~30-line PARTIAL docs. Running `--all` will fix stale references caused by the rename. |
+| `options_thorne_sync.py` | ✅ Current | Generates parent READMEs from dir scan. ~30-line PARTIAL docs. `--all` fixes stale refs from rename. |
 | `options_generate_readme.py` | ⚠️ Needs review | Creates skeletal sub-variant README templates. Quality of templates may be outdated. |
 | `options_fix_readme.py` | ⚠️ Needs review | Auto-fixes mechanical issues (author, dates, paths). May not handle new naming (Thorne Classic, Thorne Veil). |
 | `options_readme_checker.py` | ⚠️ Needs review | Auditor: checks README placement, completeness, sync status. Output: `.reports/options_thorne_compare.json`. |
@@ -51,7 +54,12 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 
 ### Variant Sub-README Coverage (Thorne Variants Only)
 
-**With sub-README (11):** Actions/{Thorne Bags, Thorne Classic, Thorne Fading}, Cast/{Thorne, Thorne Classic}, Group/{Thorne, Thorne Classic}, Hotbutton/Thorne Inventory Stacked, Merchant/Thorne Bags, Player/{Thorne Arc, Thorne Classic}, Skin/Thorne Classic, Spellbook/Thorne Classic, Target/Thorne Oval
+**With sub-README (11):**
+Actions/{Thorne Bags, Thorne Classic, Thorne Fading},
+Cast/{Thorne, Thorne Classic}, Group/{Thorne, Thorne Classic},
+Hotbutton/Thorne Inventory Stacked, Merchant/Thorne Bags,
+Player/{Thorne Arc, Thorne Classic}, Skin/Thorne Classic,
+Spellbook/Thorne Classic, Target/Thorne Oval
 
 **Without sub-README (37):** All other Thorne variant directories  
 (Most are single-XML variants where the parent README provides sufficient context)
@@ -68,13 +76,44 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 ## Incremental Work Plan
 
 ### Phase 1: Regenerate Parent READMEs (Quick Win)
+
 **Goal:** Fix all stale references in the 23 auto-generated parent READMEs  
 **Method:** Run `python .bin/options_thorne_sync.py --all`  
 **Risk:** Low — this is the designed workflow  
 **Validates:** Script reads actual directory names (post-rename)  
-**Status:** ☐ Not started
+**Status:** ✅ Complete
+
+#### Phase 1 Results
+
+**Executed:** `python .bin/options_thorne_sync.py --all --verbose`  
+**Commit:** `7c1827b` (tracking doc initial state committed first)
+
+**5 READMEs updated** (stale references fixed):
+
+| File | Change |
+|------|--------|
+| `Options/Group/README.md` | "Thorne Standard" → "Thorne Classic" |
+| `Options/Pet/README.md` | "Thorne Standard" → "Thorne Classic" |
+| `Options/Player/README.md` | "Thorne Standard" → "Thorne Classic" |
+| `Options/Spellbook/README.md` | "Thorne Standard" → "Thorne Classic" (+ alphabetical reorder) |
+| `Options/Target/README.md` | Removed Oval Basic/Pet/Weight, "Thorne Standard" → "Thorne Classic", added "Thorne Veil" |
+
+**18 READMEs unchanged** — no stale content detected by sync script.
+
+**Issues encountered:** None. Script ran cleanly. All XML files were already in sync
+(0 copies needed). `--help` flag crashes due to encoding issue in Python 3.14
+(`_print_message` error on Unicode characters in epilog) — cosmetic bug, does not
+affect normal operation.
+
+**Observation:** Sync report saved to `.reports/sync_report.json` (gitignored).
+Parent READMEs are ~30-line templates — adequate for navigation but thin on variant
+descriptions. Phase 2 will address the manually-maintained READMEs that the sync
+script doesn't touch.
+
+---
 
 ### Phase 2: Fix Root Options README + Manual READMEs
+
 **Goal:** Update `Options/README.md` (root) to reflect current variants  
 **Scope:**
 - Remove stale Target variant references (Oval Basic/Pet/Weight)
@@ -83,7 +122,10 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 - Fix other manual READMEs (Player/Thorne Classic, Player/Thorne Arc)  
 **Status:** ☐ Not started
 
+---
+
 ### Phase 3: Script Assessment & Updates
+
 **Goal:** Run audit scripts, assess output quality, fix if needed  
 **Scope:**
 - Run `options_readme_checker.py` — review output
@@ -94,7 +136,10 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 - Update AltAdvance to have .sync-status.json and README  
 **Status:** ☐ Not started
 
+---
+
 ### Phase 4: XML Quality Audit (Thorne Options)
+
 **Goal:** Assess and improve XML file quality across Thorne options  
 **Scope:**
 - Check all 55 Thorne option XMLs for header banners, section comments
@@ -109,7 +154,10 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 - 4e: Remaining single-variant categories (28 XMLs)  
 **Status:** ☐ Not started
 
+---
+
 ### Phase 5: XML Quality Audit (Main thorne_drak)
+
 **Goal:** Assess main working XMLs for header and comment quality  
 **Scope:**
 - Focus on files modified during v0.7.x–v0.8.0 development
@@ -117,7 +165,10 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 - Add zone comments, section dividers where missing  
 **Status:** ☐ Not started
 
+---
+
 ### Phase 6: Cross-Reference Documentation Updates
+
 **Goal:** Update all .md files that reference Options variants  
 **Scope:**
 - `.docs/STANDARDS.md` — Options variant pattern section
@@ -129,7 +180,10 @@ Comprehensive audit and update of all Thorne-based Options: README.md files, XML
 - `README.md` (root) — Options section accuracy  
 **Status:** ☐ Not started
 
+---
+
 ### Phase 7: Screenshot Integration
+
 **Goal:** Prepare Option README files for screenshot inclusion  
 **Scope:**
 - User provides screenshots for key Options variants

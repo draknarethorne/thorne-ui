@@ -1,16 +1,16 @@
 """generate_thorne_button_atlas.py -- Generate transparency variants of the button source atlas.
 
 Reads configuration from .bin/generate_thorne_button_atlas.json, loads the solid-row button atlas from
-Options/Slots/.Master/, detects all buttons in the top row, and generates additional opacity rows below
+.master/, detects all buttons in the top row, and generates additional opacity rows below
 them while preserving opaque borders and all original pixel colors.
 
-Run this after editing the solid button row in .Master/button_atlas_thorne01.tga.
+Run this after editing the solid button row in .master/button_atlas_thorne01.tga.
 
 Usage:
   python .bin/generate_thorne_button_atlas.py [--dry-run]
 
 Output:
-  Options/Slots/.Master/button_atlas_thorne01.tga  (updated in-place with 6 rows: solid + 5 opacity levels)
+  .master/button_atlas_thorne01.tga  (updated in-place with 6 rows: solid + 5 opacity levels)
 """
 
 import json
@@ -22,7 +22,7 @@ from PIL import Image
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 CONFIG_FILE = SCRIPT_DIR / "generate_thorne_button_atlas.json"
-MASTER_DIR = SCRIPT_DIR.parent / "thorne_drak" / "Options" / "Slots" / ".Master"
+MASTER_DIR = SCRIPT_DIR.parent / ".master"
 
 
 def load_config() -> dict:

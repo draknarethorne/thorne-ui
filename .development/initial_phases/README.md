@@ -26,4 +26,4 @@ Detailed documentation for each development phase of the Thorne UI project.
 
 ---
 
-[← Back to Documentation](../README.md) | [Development Guide](../../DEVELOPMENT.md)
+[← Back to Documentation](../README.md) | [Development Guide](../../.docs/DEVELOPMENT.md)

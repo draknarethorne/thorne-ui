@@ -130,7 +130,7 @@ git add -A
 git commit -m "feat(icons): Updated stat icon appearance"
 
 # 5. Full sync to TAKP (if needed):
-.\sync-thorne-ui.bat
+.bin\sync-thorne-ui.bat
 ```
 
 ### Workflow 4: Bulk Update All Variants
@@ -451,7 +451,7 @@ If `icons_v2.tga` doesn't exist, generates placeholder instead of crashing.
 
 - [README.md](README.md) - Script index
 - [.bin/STANDARDS.md](STANDARDS.md) - Script documentation standards
-- [DEVELOPMENT.md](../DEVELOPMENT.md) - Phase 3.9 icon redesign details
+- [DEVELOPMENT.md](../.docs/DEVELOPMENT.md) - Phase 3.9 icon redesign details
 - [.docs/STANDARDS.md](../.docs/STANDARDS.md) - UI design standards
 - [regen_icons.json](regen_icons.json) - Icon coordinate configuration
 

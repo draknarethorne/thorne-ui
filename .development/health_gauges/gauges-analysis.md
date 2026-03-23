@@ -1,8 +1,12 @@
 # Multi-Color Gauge System — Holistic Analysis
 
+> **ARCHIVED**: This is the original pre-implementation research document from
+> March 2026. The system is now implemented. See [README.md](README.md) for
+> current data (clips, colors, animation values, tooling).
+
 **Date**: March 4, 2026 (revised March 5, 2026)  
 **Author**: Draknare Thorne  
-**Status**: Research — Pre-Implementation Analysis  
+**Status**: Archived — original research (implementation complete)  
 **Sources**: Nillipuss, DuxaUI, Thorne codebase audit (40+ gauges across 12 windows)
 
 ---
@@ -242,8 +246,10 @@ B_GaugeOffsetX[i]= −Screen_CX[i]
 | Base (0) | 0 | 0% | 0 | 120 | 120 | — | — |
 | Band 1 | 1 | 20% | −2000 | 8000 | 24 | 96 | −24 |
 | Band 2 | 2 | 40% | −4000 | 6000 | 48 | 72 | −48 |
-| Band 3 | 3 | 60% | −6000 | 4000 | 72 | 48 | −72 |
-| Band 4 | 4 | 80% | −8000 | 2000 | 96 | 24 | −96 |
+| Band 3 | 3 | 60% | −6000 | 4000 | **71** | **49** | **−71** |
+| Band 4 | 4 | 80% | −8000 | 2000 | **94** | **26** | **−94** |
+
+> Grid-aligned: Bands 3–4 adjusted to match Thorne texture grid lines (0, 24, 48, 71, 94, 119).
 
 **Same formula for W=250 (TargetWindow):**
 
@@ -410,12 +416,15 @@ For any gauge at width **W** with **5 bands** (base + 4 colored):
 ```
 ┌─────────────────────────────────────────────────┐
 │  Gauge Width: W = ___px                         │
-│  Band Width:  W/5 = ___px                       │
+│  Band Width:  W/5 = ___px  (approximate)        │
 │                                                 │
 │  Band 1: Screen CX = W/5     B CX = 4×W/5      │
 │  Band 2: Screen CX = 2×W/5   B CX = 3×W/5      │
 │  Band 3: Screen CX = 3×W/5   B CX = 2×W/5      │
 │  Band 4: Screen CX = 4×W/5   B CX = W/5         │
+│                                                 │
+│  NOTE: Adjust to grid-line positions in Thorne  │
+│  textures. W/5 multiples may be 1-2px off.      │
 │                                                 │
 │  All A gauges use: A_MCFill_Band1–4             │
 │  All B gauges use: A_MCFill_Base                │
@@ -609,12 +618,12 @@ PW_HP_1B         B gauge CX=96, GaugeOffsetX=-24, A_MCFill_Base
 PW_HP_2A_X       Screen CX=48 clipping PW_HP_2A
   PW_HP_2A       A gauge CX=6000, GaugeOffsetX=-4000, A_MCFill_Band2
 PW_HP_2B         B gauge CX=72, GaugeOffsetX=-48, A_MCFill_Base
-PW_HP_3A_X       Screen CX=72 clipping PW_HP_3A
+PW_HP_3A_X       Screen CX=71 clipping PW_HP_3A    (grid-aligned: 71, not 72)
   PW_HP_3A       A gauge CX=4000, GaugeOffsetX=-6000, A_MCFill_Band3
-PW_HP_3B         B gauge CX=48, GaugeOffsetX=-72, A_MCFill_Base
-PW_HP_4A_X       Screen CX=96 clipping PW_HP_4A
+PW_HP_3B         B gauge CX=49, GaugeOffsetX=-71, A_MCFill_Base
+PW_HP_4A_X       Screen CX=94 clipping PW_HP_4A    (grid-aligned: 94, not 96)
   PW_HP_4A       A gauge CX=2000, GaugeOffsetX=-8000, A_MCFill_Band4
-PW_HP_4B         B gauge CX=24, GaugeOffsetX=-96, A_MCFill_Base
+PW_HP_4B         B gauge CX=26, GaugeOffsetX=-94, A_MCFill_Base
 ```
 
 **All A gauges reference the shared `A_MCFill_Band1–4` — same as every other window.**

@@ -10,7 +10,8 @@
 		- Dismiss button positioned to avoid accidental Attack button clicks
 		- Mana gauge color changed to RGB(100,150,255) for "Thorne blue" consistency
 		- Part of Phase 5 standardization across all windows
-		- Tall Gauge variant: Uses 15px HP gauge height matching target window aesthetic
+		- Pet HP: Purple Veil 5-band composite gauge (120x16, standardized from 128x15)
+		- Pet name text overlay renders on top of composite bands
 	-->
 	<Button item = "PIW_AttackButton">
 		<ScreenID>AttackButton</ScreenID>
@@ -243,48 +244,238 @@
 		</ButtonDrawTemplate>
 	</Button>
 
-	<Gauge item = "PIW_PetHPGauge">
+	<!-- ====================================================================== -->
+	<!-- PET HEALTH GAUGE — Purple Veil (5-band composite)                   -->
+	<!-- ====================================================================== -->
+	<!-- Veil: Conjured Violet (full) > Enchanted Orchid > Mystic Haze > Faded Familiar > Spectral Wisp (critical) -->
+	<!-- Z-order: BG > Spectral Wisp(0) > Faded Familiar(1) > Mystic Haze(2) > Enchanted Orchid(3) > Conjured Violet(4) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="PIW_PetHP_BG">
 		<ScreenID>PetHPGauge</ScreenID>
-		<!--<Font>3</Font>-->
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>1</X>
-			<Y>4</Y>
-		</Location>
-		<Size>
-			<CX>128</CX>
-			<CY>15</CY>
-		</Size>
-		<TextOffsetX>4</TextOffsetX>
-		<TextOffsetY>0</TextOffsetY>
+		<EQType>16</EQType>
 		<GaugeOffsetX>0</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
-		<Text>No Pet</Text>
-		<TextColor>
-				<R>255</R>
-				<G>255</G>
-				<B>255</B>
-		</TextColor>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
-		<!--<TooltipReference/>-->
-		<FillTint>
-				<R>200</R>
-				<G>80</G>
-				<B>200</B>
-		</FillTint>
-		<LinesFillTint>
-				<R>0</R>
-				<G>0</G>
-				<B>0</B>
-		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
-		<EQType>16</EQType>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_120t</Background>
-			<Fill>A_GaugeFill_120t</Fill>
 		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Spectral Wisp (240,210,240) — base, visible at any health -->
+	<Gauge item="PIW_PetHP_Band0">
+		<ScreenID>PIW_PetHP_Band0</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>240</R><G>210</G><B>240</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Faded Familiar (230,160,230) — 20% threshold -->
+	<Gauge item="PIW_PetHP_1A">
+		<ScreenID>PIW_PetHP_1A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-2400</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>9600</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>23</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Faded Familiar continuation -->
+	<Gauge item="PIW_PetHP_1B">
+		<ScreenID>PIW_PetHP_1B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-23</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>24</X><Y>4</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>230</R><G>160</G><B>230</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Mystic Haze (220,100,220) — 40% threshold -->
+	<Gauge item="PIW_PetHP_2A">
+		<ScreenID>PIW_PetHP_2A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-4800</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>7200</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>47</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Mystic Haze continuation -->
+	<Gauge item="PIW_PetHP_2B">
+		<ScreenID>PIW_PetHP_2B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-47</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>48</X><Y>4</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>220</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Enchanted Orchid (210,50,210) — 60% threshold -->
+	<Gauge item="PIW_PetHP_3A">
+		<ScreenID>PIW_PetHP_3A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-7200</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4800</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>71</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Enchanted Orchid continuation -->
+	<Gauge item="PIW_PetHP_3B">
+		<ScreenID>PIW_PetHP_3B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-71</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>73</X><Y>4</Y></Location>
+		<Size><CX>49</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>210</R><G>50</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Conjured Violet (200,0,200) — 80% threshold -->
+	<Gauge item="PIW_PetHP_4A">
+		<ScreenID>PIW_PetHP_4A</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-9600</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2400</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>200</R><G>0</G><B>200</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="PIW_PetHP_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>95</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>PIW_PetHP_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Conjured Violet continuation -->
+	<Gauge item="PIW_PetHP_4B">
+		<ScreenID>PIW_PetHP_4B</ScreenID>
+		<EQType>16</EQType>
+		<GaugeOffsetX>-95</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>98</X><Y>4</Y></Location>
+		<Size><CX>25</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>200</R><G>0</G><B>200</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Pet name text overlay — rendered on top of all bands -->
+	<Gauge item="PIW_PetHP_Text">
+		<ScreenID>PIW_PetHP_Text</ScreenID>
+		<EQType>16</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>4</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<Text>No Pet</Text>
+		<TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+		<Style_Transparent>true</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
 	</Gauge>
 
 	<Gauge item = "PIW_PetManaGauge">
@@ -318,9 +509,9 @@
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>17</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground_120t</Background>
-			<Fill>A_GaugeFill_120t</Fill>
-			<Lines>A_GaugeLines</Lines>
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -372,14 +563,12 @@
 		<AlignRight>false</AlignRight>
 	</Label>
 
-	<!-- END EXTRA BIT ADDED BY BRUJOLOCO FROM ORIGINAL-->
-
 	<Screen item = "PetInfoWindow">
 		<!--<ScreenID/>-->
 		<RelativePosition>false</RelativePosition>
 		<Location>
 			<X>0</X>
-			<Y>1</Y>
+			<Y>200</Y>
 		</Location>
 		<Size>
 			<CX>160</CX>
@@ -403,7 +592,18 @@
 		<Pieces>PIW_FollowButton</Pieces>
 		<Pieces>PIW_TauntButton</Pieces>
 		<Pieces>PIW_SitButton</Pieces>
-		<Pieces>PIW_PetHPGauge</Pieces>
+		<!-- Pet HP — Purple Veil composite -->
+		<Pieces>PIW_PetHP_BG</Pieces>
+		<Pieces>PIW_PetHP_Band0</Pieces>
+		<Pieces>PIW_PetHP_1A_Clip</Pieces>
+		<Pieces>PIW_PetHP_1B</Pieces>
+		<Pieces>PIW_PetHP_2A_Clip</Pieces>
+		<Pieces>PIW_PetHP_2B</Pieces>
+		<Pieces>PIW_PetHP_3A_Clip</Pieces>
+		<Pieces>PIW_PetHP_3B</Pieces>
+		<Pieces>PIW_PetHP_4A_Clip</Pieces>
+		<Pieces>PIW_PetHP_4B</Pieces>
+		<Pieces>PIW_PetHP_Text</Pieces>
 		<Pieces>PIW_PetManaGauge</Pieces>
 		<Pieces>PIW_Pet_HPLabel</Pieces>
 		<Pieces>PIW_Pet_HPPercLabel</Pieces>

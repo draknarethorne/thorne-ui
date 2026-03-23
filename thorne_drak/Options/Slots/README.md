@@ -43,7 +43,7 @@ Each style contains:
 ## Usage
 
 ```bash
-sync-option.bat Slots/Caster/Gold
+.bin/sync-option.bat Slots/Caster/Gold
 ```
 
 Or manually copy `item_slots_thorne01.tga` from the desired class/style combination

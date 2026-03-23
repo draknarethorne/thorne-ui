@@ -1,8 +1,12 @@
 # Multi-Color Gauges via Clipping — Design Document
 
+> **ARCHIVED**: This approach (rainbow bar clipping) was explored but **not
+> adopted**. Thorne uses the oversized A/B split pattern instead. See
+> [README.md](README.md) for the implemented system.
+
 **Date**: March 4, 2026  
 **Author**: Draknare Thorne  
-**Status**: Research — Alternative Approach to Multi-Color Gauges  
+**Status**: Archived — approach not adopted (rainbow bar, not threshold)  
 **Prerequisite**: [gauges-analysis.md](gauges-analysis.md) (core technique reference)
 
 ---

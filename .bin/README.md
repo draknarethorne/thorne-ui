@@ -110,7 +110,7 @@ python .bin/options_readme_checker.py --help
 **sync-thorne-ui.bat** - Full UI sync from source to TAKP testing directory
 
 ```bash
-.\sync-thorne-ui.bat
+.bin\sync-thorne-ui.bat
 ```
 
 Syncs entire `thorne_drak/` to `<TAKP>\uifiles\thorne_dev\` for in-game testing.
@@ -165,7 +165,7 @@ python .bin/pick_class_icons.py      # Step 3: CSV → .Items/.cache/class_icon_
 | Extract items from SQL dump | `python .bin/extract_eq_items.py` |
 | Build slot icon reference | `python .bin/build_slot_reference.py` |
 | Pick class icons + HTML | `python .bin/pick_class_icons.py` |
-| Full sync to TAKP | `.\sync-thorne-ui.bat` |
+| Full sync to TAKP | `.bin\sync-thorne-ui.bat` |
 | Fix TGA files | `python .bin/fix_tga_files.py <dir>` |
 | Get help | `python .bin/<script>.py --help` |
 

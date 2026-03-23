@@ -1,4 +1,4 @@
-[← Back to Development Guide](../../DEVELOPMENT.md#development-phases)
+[← Back to Development Guide](../../.docs/DEVELOPMENT.md#development-phases)
 
 # Phase 3.7: UI Infrastructure & Template Standardization ✅
 
@@ -327,4 +327,4 @@ Users now have 11 Options subdirectories (Actions, Animations, Group, Hotbutton,
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)
+[← Back to Phases](README.md) | [Development Guide](../../.docs/DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)

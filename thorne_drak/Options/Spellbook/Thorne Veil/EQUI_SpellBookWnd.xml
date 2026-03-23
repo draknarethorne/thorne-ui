@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<XML ID="EQInterfaceDefinitionLanguage">
+  <Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes" />
+  <!--
+    Thorne UI SpellBookWnd (Feb 2026) by Draknare Thorne:
+    - Readability-focused 2-column layout
+    - 8 spells per column (left: 0-7, right: 8-15)
+    - Square spell icons with larger border-button framing
+    - Wrapped spell names with tighter icon/name spacing
+  -->
+
+  <Ui2DAnimation item="SBW_A_NoteFill2">
+    <Cycle>false</Cycle>
+    <Frames>
+      <!-- <Texture>note01.tga</Texture> -->
+      <Location>
+        <X>74</X>
+        <Y>54</Y>
+      </Location>
+      <Size>
+        <CX>180</CX>
+        <CY>201</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="SBW_A_NoteFill4">
+    <Cycle>false</Cycle>
+    <Frames>
+      <!-- <Texture>note03.tga</Texture> -->
+      <Location>
+        <X>74</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>180</CX>
+        <CY>100</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- LEFT COLUMN ICONS (0-7) -->
+  <Button item="SBW_Spell0">
+    <ScreenID>SBW_Spell0</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>12</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell1">
+    <ScreenID>SBW_Spell1</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>55</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell2">
+    <ScreenID>SBW_Spell2</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>98</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell3">
+    <ScreenID>SBW_Spell3</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>141</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell4">
+    <ScreenID>SBW_Spell4</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>184</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell5">
+    <ScreenID>SBW_Spell5</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>227</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell6">
+    <ScreenID>SBW_Spell6</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>270</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell7">
+    <ScreenID>SBW_Spell7</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>12</X><Y>313</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+
+  <!-- RIGHT COLUMN ICONS (8-15) -->
+  <Button item="SBW_Spell8">
+    <ScreenID>SBW_Spell8</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>12</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell9">
+    <ScreenID>SBW_Spell9</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>55</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell10">
+    <ScreenID>SBW_Spell10</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>98</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell11">
+    <ScreenID>SBW_Spell11</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>141</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell12">
+    <ScreenID>SBW_Spell12</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>184</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell13">
+    <ScreenID>SBW_Spell13</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>227</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell14">
+    <ScreenID>SBW_Spell14</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>270</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+  <Button item="SBW_Spell15">
+    <ScreenID>SBW_Spell15</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>228</X><Y>313</Y></Location>
+    <Size><CX>40</CX><CY>40</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate><Normal>BlueIconBackground</Normal></ButtonDrawTemplate>
+    <DecalOffset><X>2</X><Y>2</Y></DecalOffset>
+    <DecalSize><CX>36</CX><CY>36</CY></DecalSize>
+  </Button>
+
+  <!-- SPELL NAMES: larger font + wrap -->
+  <StaticText item="SBW_SpellName0">
+    <ScreenID>SBW_SpellName0</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>18</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName1">
+    <ScreenID>SBW_SpellName1</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>61</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Melodious Concord</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName2">
+    <ScreenID>SBW_SpellName2</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>104</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName3">
+    <ScreenID>SBW_SpellName3</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>147</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName4">
+    <ScreenID>SBW_SpellName4</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>190</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName5">
+    <ScreenID>SBW_SpellName5</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>233</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName6">
+    <ScreenID>SBW_SpellName6</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>276</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName7">
+    <ScreenID>SBW_SpellName7</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>319</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+
+  <StaticText item="SBW_SpellName8">
+    <ScreenID>SBW_SpellName8</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>18</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName9">
+    <ScreenID>SBW_SpellName9</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>61</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName10">
+    <ScreenID>SBW_SpellName10</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>104</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName11">
+    <ScreenID>SBW_SpellName11</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>147</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName12">
+    <ScreenID>SBW_SpellName12</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>190</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName13">
+    <ScreenID>SBW_SpellName13</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>233</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName14">
+    <ScreenID>SBW_SpellName14</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>276</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_SpellName15">
+    <ScreenID>SBW_SpellName15</ScreenID>
+    <Font>3</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>276</X>
+      <Y>319</Y>
+    </Location>
+    <Size>
+      <CX>148</CX>
+      <CY>40</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Text>Blahblah's Complete Healing</Text>
+    <NoWrap>false</NoWrap>
+    <AlignCenter>false</AlignCenter>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+
+  <!-- ====================================================================== -->
+  <!-- SCRIBE GAUGE - Gold Veil (5-band composite)  EQType 10              -->
+  <!-- ====================================================================== -->
+  <!-- Veil: Ancient Gold (full) > Gilded Quill > Molten Script > Sunlit Parchment > Aureate Glow (starting) -->
+  <!-- Z-order: BG > Aureate Glow(0) > Sunlit Parchment(1) > Molten Script(2) > Gilded Quill(3) > Ancient Gold(4) -->
+  <!-- 105px / 5 bands = 21px per band -->
+
+  <!-- Background (empty gauge frame) -->
+  <Gauge item="SBW_Scribe_BG">
+    <ScreenID>SBW_Scribe_BG</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>64</X><Y>373</Y></Location>
+    <Size><CX>105</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground_105t</Background>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 0: Aureate Glow (255,230,160) - base, visible at any progress -->
+  <Gauge item="SBW_Scribe_Band0">
+    <ScreenID>SBW_Scribe_Band0</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>64</X><Y>373</Y></Location>
+    <Size><CX>105</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>230</G><B>160</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 1A: Sunlit Parchment (255,200,100) - 20% threshold -->
+  <Gauge item="SBW_Scribe_1A">
+    <ScreenID>SBW_Scribe_1A</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-2100</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>8400</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>200</G><B>100</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Scribe_1A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>64</X><Y>373</Y></Location>
+    <Size><CX>20</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Scribe_1A</Pieces>
+  </Screen>
+  <!-- Band 1B: Sunlit Parchment continuation -->
+  <Gauge item="SBW_Scribe_1B">
+    <ScreenID>SBW_Scribe_1B</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-20</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>84</X><Y>373</Y></Location>
+    <Size><CX>85</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>200</G><B>100</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 2A: Molten Script (255,170,40) - 40% threshold -->
+  <Gauge item="SBW_Scribe_2A">
+    <ScreenID>SBW_Scribe_2A</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-4200</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>6300</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>170</G><B>40</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Scribe_2A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>64</X><Y>373</Y></Location>
+    <Size><CX>41</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Scribe_2A</Pieces>
+  </Screen>
+  <!-- Band 2B: Molten Script continuation -->
+  <Gauge item="SBW_Scribe_2B">
+    <ScreenID>SBW_Scribe_2B</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-41</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>105</X><Y>373</Y></Location>
+    <Size><CX>64</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>170</G><B>40</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 3A: Gilded Quill (240,140,0) - 60% threshold -->
+  <Gauge item="SBW_Scribe_3A">
+    <ScreenID>SBW_Scribe_3A</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-6300</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>4200</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>240</R><G>140</G><B>0</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Scribe_3A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>64</X><Y>373</Y></Location>
+    <Size><CX>62</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Scribe_3A</Pieces>
+  </Screen>
+  <!-- Band 3B: Gilded Quill continuation -->
+  <Gauge item="SBW_Scribe_3B">
+    <ScreenID>SBW_Scribe_3B</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-62</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>126</X><Y>373</Y></Location>
+    <Size><CX>43</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>240</R><G>140</G><B>0</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 4A: Ancient Gold (210,110,0) - 80% threshold -->
+  <Gauge item="SBW_Scribe_4A">
+    <ScreenID>SBW_Scribe_4A</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-8400</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>2100</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>210</R><G>110</G><B>0</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Scribe_4A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>64</X><Y>373</Y></Location>
+    <Size><CX>83</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Scribe_4A</Pieces>
+  </Screen>
+  <!-- Band 4B: Ancient Gold continuation -->
+  <Gauge item="SBW_Scribe_4B">
+    <ScreenID>SBW_Scribe_4B</ScreenID>
+    <EQType>10</EQType>
+    <GaugeOffsetX>-83</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>147</X><Y>373</Y></Location>
+    <Size><CX>22</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>210</R><G>110</G><B>0</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- ====================================================================== -->
+  <!-- MEMORIZE GAUGE - Cyan Veil (5-band composite)  EQType 9             -->
+  <!-- ====================================================================== -->
+  <!-- Veil: Abyssal Cyan (full) > Deep Tide > Crystal Current > Arctic Glow > Frostlight (starting) -->
+  <!-- Z-order: BG > Frostlight(0) > Arctic Glow(1) > Crystal Current(2) > Deep Tide(3) > Abyssal Cyan(4) -->
+  <!-- 105px / 5 bands = 21px per band -->
+
+  <!-- Background (empty gauge frame) -->
+  <Gauge item="SBW_Mem_BG">
+    <ScreenID>SBW_Mem_BG</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>264</X><Y>373</Y></Location>
+    <Size><CX>105</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground_105t</Background>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 0: Frostlight (170,235,255) - base, visible at any progress -->
+  <Gauge item="SBW_Mem_Band0">
+    <ScreenID>SBW_Mem_Band0</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>264</X><Y>373</Y></Location>
+    <Size><CX>105</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 1A: Arctic Glow (100,210,255) - 20% threshold -->
+  <Gauge item="SBW_Mem_1A">
+    <ScreenID>SBW_Mem_1A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-2100</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>8400</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Mem_1A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>264</X><Y>373</Y></Location>
+    <Size><CX>20</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Mem_1A</Pieces>
+  </Screen>
+  <!-- Band 1B: Arctic Glow continuation -->
+  <Gauge item="SBW_Mem_1B">
+    <ScreenID>SBW_Mem_1B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-20</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>284</X><Y>373</Y></Location>
+    <Size><CX>85</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 2A: Crystal Current (40,180,255) - 40% threshold -->
+  <Gauge item="SBW_Mem_2A">
+    <ScreenID>SBW_Mem_2A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-4200</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>6300</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Mem_2A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>264</X><Y>373</Y></Location>
+    <Size><CX>41</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Mem_2A</Pieces>
+  </Screen>
+  <!-- Band 2B: Crystal Current continuation -->
+  <Gauge item="SBW_Mem_2B">
+    <ScreenID>SBW_Mem_2B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-41</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>305</X><Y>373</Y></Location>
+    <Size><CX>64</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 3A: Deep Tide (0,150,240) - 60% threshold -->
+  <Gauge item="SBW_Mem_3A">
+    <ScreenID>SBW_Mem_3A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-6300</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>4200</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Mem_3A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>264</X><Y>373</Y></Location>
+    <Size><CX>62</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Mem_3A</Pieces>
+  </Screen>
+  <!-- Band 3B: Deep Tide continuation -->
+  <Gauge item="SBW_Mem_3B">
+    <ScreenID>SBW_Mem_3B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-62</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>326</X><Y>373</Y></Location>
+    <Size><CX>43</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 4A: Abyssal Cyan (0,120,210) - 80% threshold -->
+  <Gauge item="SBW_Mem_4A">
+    <ScreenID>SBW_Mem_4A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-8400</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>2100</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_105t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="SBW_Mem_4A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>264</X><Y>373</Y></Location>
+    <Size><CX>83</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>SBW_Mem_4A</Pieces>
+  </Screen>
+  <!-- Band 4B: Abyssal Cyan continuation -->
+  <Gauge item="SBW_Mem_4B">
+    <ScreenID>SBW_Mem_4B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-83</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>347</X><Y>373</Y></Location>
+    <Size><CX>22</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <Button item="SBW_MemPage0_Button">
+    <ScreenID>SBW_MemPage0_Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>1</CX><CY>1</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Text>Mem. This Page</Text>
+    <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+    <ButtonDrawTemplate>
+      <Normal>A_BtnNormal</Normal>
+      <Pressed>A_BtnPressed</Pressed>
+      <Flyby>A_BtnFlyby</Flyby>
+      <Disabled>A_BtnDisabled</Disabled>
+      <PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="SBW_MemPage1_Button">
+    <ScreenID>SBW_MemPage1_Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>1</CX><CY>1</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Text>Mem. This Page</Text>
+    <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+    <ButtonDrawTemplate>
+      <Normal>A_BtnNormal</Normal>
+      <Pressed>A_BtnPressed</Pressed>
+      <Flyby>A_BtnFlyby</Flyby>
+      <Disabled>A_BtnDisabled</Disabled>
+      <PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+
+  <Button item="SBW_PageDown_Button">
+    <ScreenID>SBW_PageDown_Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>8</X><Y>368</Y></Location>
+    <Size><CX>30</CX><CY>25</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Text />
+    <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+    <ButtonDrawTemplate>
+      <Normal>A_LeftArrowBtnNormal</Normal>
+      <Pressed>A_LeftArrowBtnPressed</Pressed>
+      <Flyby>A_LeftArrowBtnFlyby</Flyby>
+      <Disabled>A_LeftArrowBtnDisabled</Disabled>
+      <PressedFlyby>A_LeftArrowBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="SBW_PageUp_Button">
+    <ScreenID>SBW_PageUp_Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>393</X><Y>368</Y></Location>
+    <Size><CX>30</CX><CY>25</CY></Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Text />
+    <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+    <ButtonDrawTemplate>
+      <Normal>A_RightArrowBtnNormal</Normal>
+      <Pressed>A_RightArrowBtnPressed</Pressed>
+      <Flyby>A_RightArrowBtnFlyby</Flyby>
+      <Disabled>A_RightArrowBtnDisabled</Disabled>
+      <PressedFlyby>A_RightArrowBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <StaticText item="SBW_LeftPageNum">
+    <ScreenID>SBW_LeftPageNum</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>41</X><Y>373</Y></Location>
+    <Size><CX>20</CX><CY>15</CY></Size>
+    <Text>98</Text>
+    <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>true</AlignCenter>
+    <AlignLeft>false</AlignLeft>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+  <StaticText item="SBW_RightPageNum">
+    <ScreenID>SBW_RightPageNum</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>370</X><Y>373</Y></Location>
+    <Size><CX>20</CX><CY>15</CY></Size>
+    <Text>99</Text>
+    <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>true</AlignCenter>
+    <AlignLeft>false</AlignLeft>
+    <AlignRight>false</AlignRight>
+  </StaticText>
+
+  <StaticAnimation item="SBW_SpellBook1">
+    <ScreenID>BG01</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>17</X><Y>0</Y></Location>
+    <Size><CX>256</CX><CY>256</CY></Size>
+    <!-- <Animation>A_SpellBook01</Animation> -->
+  </StaticAnimation>
+  <StaticAnimation item="SBW_SpellBook2">
+    <ScreenID>BG02</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>273</X><Y>0</Y></Location>
+    <Size><CX>256</CX><CY>256</CY></Size>
+    <!-- <Animation>A_SpellBook02</Animation> -->
+  </StaticAnimation>
+  <StaticAnimation item="SBW_SpellBook3">
+    <ScreenID>BG03</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>17</X><Y>256</Y></Location>
+    <Size><CX>256</CX><CY>75</CY></Size>
+    <!-- <Animation>A_SpellBook03</Animation> -->
+  </StaticAnimation>
+  <StaticAnimation item="SBW_SpellBook4">
+    <ScreenID>BG04</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>273</X><Y>256</Y></Location>
+    <Size><CX>256</CX><CY>75</CY></Size>
+    <!-- <Animation>A_SpellBook04</Animation> -->
+  </StaticAnimation>
+
+  <Button item="SBW_DoneButton">
+    <Font>3</Font>
+    <ScreenID>DoneButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>174</X><Y>371</Y></Location>
+    <Size><CX>84</CX><CY>20</CY></Size>
+    <Text>Done</Text>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <TooltipReference>Done</TooltipReference>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate>
+      <Normal>A_BtnNormal</Normal>
+      <Pressed>A_BtnPressed</Pressed>
+      <Flyby>A_BtnFlyby</Flyby>
+      <Disabled>A_BtnDisabled</Disabled>
+      <PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <AutoStretch>False</AutoStretch>
+    <TextColor><R>255</R><G>255</G><B>255</B></TextColor>
+  </Button>
+
+  <Button item="SBW_MeditateButton">
+    <ScreenID>MeditateButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>1</CX><CY>1</CY></Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+  </Button>
+
+  <Screen item="SpellBookWnd">
+    <RelativePosition>false</RelativePosition>
+    <Location><X>150</X><Y>0</Y></Location>
+    <Size><CX>440</CX><CY>407</CY></Size>
+    <Text>Spell Book</Text>
+    <Style_Transparent>false</Style_Transparent>
+    <TooltipReference>Your Spell Book</TooltipReference>
+    <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+    <Style_Titlebar>false</Style_Titlebar>
+    <Style_Closebox>true</Style_Closebox>
+    <Style_Minimizebox>False</Style_Minimizebox>
+    <Style_Maximizebox>false</Style_Maximizebox>
+    <Style_Qmarkbox>false</Style_Qmarkbox>
+    <Style_Border>true</Style_Border>
+    <Style_Sizable>false</Style_Sizable>
+    <Pieces>SBW_Spell0</Pieces>
+    <Pieces>SBW_SpellName0</Pieces>
+    <Pieces>SBW_Spell1</Pieces>
+    <Pieces>SBW_SpellName1</Pieces>
+    <Pieces>SBW_Spell2</Pieces>
+    <Pieces>SBW_SpellName2</Pieces>
+    <Pieces>SBW_Spell3</Pieces>
+    <Pieces>SBW_SpellName3</Pieces>
+    <Pieces>SBW_Spell4</Pieces>
+    <Pieces>SBW_SpellName4</Pieces>
+    <Pieces>SBW_Spell5</Pieces>
+    <Pieces>SBW_SpellName5</Pieces>
+    <Pieces>SBW_Spell6</Pieces>
+    <Pieces>SBW_SpellName6</Pieces>
+    <Pieces>SBW_Spell7</Pieces>
+    <Pieces>SBW_SpellName7</Pieces>
+    <Pieces>SBW_Spell8</Pieces>
+    <Pieces>SBW_SpellName8</Pieces>
+    <Pieces>SBW_Spell9</Pieces>
+    <Pieces>SBW_SpellName9</Pieces>
+    <Pieces>SBW_Spell10</Pieces>
+    <Pieces>SBW_SpellName10</Pieces>
+    <Pieces>SBW_Spell11</Pieces>
+    <Pieces>SBW_SpellName11</Pieces>
+    <Pieces>SBW_Spell12</Pieces>
+    <Pieces>SBW_SpellName12</Pieces>
+    <Pieces>SBW_Spell13</Pieces>
+    <Pieces>SBW_SpellName13</Pieces>
+    <Pieces>SBW_Spell14</Pieces>
+    <Pieces>SBW_SpellName14</Pieces>
+    <Pieces>SBW_Spell15</Pieces>
+    <Pieces>SBW_SpellName15</Pieces>
+    <!-- Scribe Gold Veil (left gauge) -->
+    <Pieces>SBW_Scribe_BG</Pieces>
+    <Pieces>SBW_Scribe_Band0</Pieces>
+    <Pieces>SBW_Scribe_1A_Clip</Pieces>
+    <Pieces>SBW_Scribe_1B</Pieces>
+    <Pieces>SBW_Scribe_2A_Clip</Pieces>
+    <Pieces>SBW_Scribe_2B</Pieces>
+    <Pieces>SBW_Scribe_3A_Clip</Pieces>
+    <Pieces>SBW_Scribe_3B</Pieces>
+    <Pieces>SBW_Scribe_4A_Clip</Pieces>
+    <Pieces>SBW_Scribe_4B</Pieces>
+    <!-- Memorize Cyan Veil (right gauge) -->
+    <Pieces>SBW_Mem_BG</Pieces>
+    <Pieces>SBW_Mem_Band0</Pieces>
+    <Pieces>SBW_Mem_1A_Clip</Pieces>
+    <Pieces>SBW_Mem_1B</Pieces>
+    <Pieces>SBW_Mem_2A_Clip</Pieces>
+    <Pieces>SBW_Mem_2B</Pieces>
+    <Pieces>SBW_Mem_3A_Clip</Pieces>
+    <Pieces>SBW_Mem_3B</Pieces>
+    <Pieces>SBW_Mem_4A_Clip</Pieces>
+    <Pieces>SBW_Mem_4B</Pieces>
+    <Pieces>SBW_MemPage0_Button</Pieces>
+    <Pieces>SBW_MemPage1_Button</Pieces>
+    <Pieces>SBW_PageDown_Button</Pieces>
+    <Pieces>SBW_PageUp_Button</Pieces>
+    <Pieces>SBW_LeftPageNum</Pieces>
+    <Pieces>SBW_RightPageNum</Pieces>
+    <Pieces>SBW_DoneButton</Pieces>
+  </Screen>
+</XML>

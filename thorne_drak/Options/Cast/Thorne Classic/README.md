@@ -49,7 +49,7 @@ Choose **Enhanced** if you:
 1. **Backup Current:** Make a copy of your current cast spell window configuration
 2. **Copy to Thorne Dev:**
    ```
-   .\sync-option.bat cast/thorne-classic
+   .bin\sync-option.bat cast/thorne-classic
    ```
 3. **Reload in Game:** `/loadskin thorne_dev`
 4. **Verify Position:** Use `/windowpos CastSpellWnd` to set preferred location if needed

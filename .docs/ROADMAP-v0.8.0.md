@@ -1,16 +1,17 @@
 # Thorne UI v0.8.0 Roadmap
 
-**Version:** 0.8.0-dev
-**Status:** Planning (Q2 2026)
+**Version:** 0.8.0
+**Status:** ✅ Shipped (June 2026)
+**Branch:** `feature/gauges-v0.8.0` (PR #68)
 **Previous:** [ROADMAP-v0.7.5.md](ROADMAP-v0.7.5.md)
 
 ---
 
 ## Vision
 
-v0.8.0 introduces advanced visual systems — dynamic multi-color health gauges and enhanced group displays — pushing Thorne UI's combat readability to the next level.
+v0.8.0 delivers advanced visual systems — dynamic multi-color health gauges using a novel A/B composite architecture with oversized animation clipping. This gives Thorne UI color-band health transitions (green → yellow → orange → red as HP drops) while preserving texture detail through the two-part rendering technique.
 
-> **Context:** Zeal tick mana visuals, hotbar layout variants, and buff display variants were originally scoped for v0.8.0 but shipped ahead of schedule in v0.7.x releases.
+> **Context:** Zeal tick mana visuals, hotbar layout variants, and buff display variants were originally scoped for v0.8.0 but shipped ahead of schedule in v0.7.x releases. Enhanced Group Displays deferred to a future milestone.
 
 ---
 
@@ -18,41 +19,54 @@ v0.8.0 introduces advanced visual systems — dynamic multi-color health gauges 
 
 | Feature                   | Status                     | Effort    |
 | ------------------------- | -------------------------- | --------- |
-| Multi-Color Health Gauges | Research complete          | Medium-Hi |
-| Enhanced Group Displays   | Requires detailed analysis | 10-15h    |
+| Multi-Color Health Gauges | ✅ Shipped                  | Medium-Hi |
+| Snap-Columns Pipeline     | ✅ Shipped                  | Medium    |
+| Gauge Audit Tooling       | ✅ Shipped                  | Medium    |
+| Enhanced Group Displays   | ⏳ Deferred (future)        | 10-15h    |
 
 ---
 
-## ⏳ Remaining Features
+## ✅ Shipped Features
 
 ### 1. Multi-Color Health & Mana Gauge System
 
-**Priority:** 🔴 High | **Impact:** Combat readability
+**Priority:** 🔴 High | **Impact:** Combat readability | **Status:** ✅ Shipped
 
-Implement dynamic multi-color gauge fills that transition through color bands as HP/Mana changes (green → yellow → orange → red as HP drops), inspired by Nillipuss and DuxaUI implementations.
+Implemented dynamic multi-color gauge fills that transition through color bands as HP/Mana changes (green → yellow → orange → red as HP drops), using a novel **two-part A/B composite architecture**.
 
-**Research Status:** Extensive analysis complete in `.development/health_gauges/`:
+**Architecture:**
 
-- [gauges-analysis.md](../.development/health_gauges/gauges-analysis.md) — Full inventory of 40+ gauges across 12 windows, core technique (oversized gauge layering with opaque occlusion)
-- [gauges-clipping-design.md](../.development/health_gauges/gauges-clipping-design.md) — Clipping approach preserving Thorne's fill texture patterns
-- [gauges-hybrid-design.md](../.development/health_gauges/gauges-hybrid-design.md) — Hybrid 4× stretch approach: solid-color-that-changes with reduced pattern degradation
-- [gauges-experiment-plan.md](../.development/health_gauges/gauges-experiment-plan.md) — Side-by-side test plan using MusicPlayerWnd
+- **A-part**: Oversized ×100 animation inside Screen viewport clip — creates threshold visibility effect
+- **B-part**: Native-resolution animation with offset — preserves texture detail for the continuation
+- **5 color bands** per gauge, stacked via opaque layer occlusion (not transparency blending)
+- **Veil palettes**: Red (HP), Blue (Mana) — desaturated alarm → full saturation gradient
 
-**Three Approaches Under Consideration:**
+**Scope Deployed:**
 
-1. **Full Stretch** (Nillipuss/DuxaUI style) — CX=10000, solid color that changes. Destroys Thorne fill patterns.
-2. **Clipping** — Screen clip containers, perfect pattern fidelity, rainbow bar always visible. Moderate complexity.
-3. **Hybrid Stretch** — CX=480 (4× display width), solid color with recognizable patterns. Best of both worlds.
+- 7 production windows: Player, Target, Group, Pet, Breath, Spellbook, MusicPlayer
+- 23 XML files total (including Options and Testing variants)
+- 48 oversized animations across 3 sizes (105t, 120t, 250t) × 4 fill styles
+- All Option variants updated: Bars, Thorne, Thorne Arc, Thorne Veil
 
-**Next Step:** Run the side-by-side experiment (4 HP gauge variants on expanded MusicPlayerWnd) to visually compare approaches and select the winner.
+**Tooling Built:**
 
-**Rollout Scope:** Player, Target, Group, and Pet windows (40+ gauges total).
+- `regen_gauges.py` enhanced with `snap_columns` for pixel-perfect grid markers at exact fifths
+- `audit_gauges.py` — comprehensive audit of all animations + XML files
+- `fix_gauge_offsets.py` — bulk correction tool (826 fixes applied across 24 files)
+
+**Research & Design:** `.development/health_gauges/`
+
+- [gauges-analysis.md](../.development/health_gauges/gauges-analysis.md) — Full gauge inventory and technique analysis
+- [gauges-clipping-design.md](../.development/health_gauges/gauges-clipping-design.md) — Clipping approach (selected)
+- [gauges-hybrid-design.md](../.development/health_gauges/gauges-hybrid-design.md) — Hybrid approach (evaluated)
+- [README.md](../.development/health_gauges/README.md) — Technical reference for the composite gauge system
 
 ---
 
-### 2. Enhanced Group Displays
+### 2. Enhanced Group Displays (⏳ Deferred)
 
 **Priority:** 🟡 Medium | **Impact:** Raid/group awareness | **Effort:** 10-15 hours
+**Deferred to:** Future milestone (v1.0.0+)
 
 Enhanced player displays and status indicators for the Group Window, informed by Nillipuss analysis (1972 line difference, 174% larger implementation).
 
@@ -64,12 +78,14 @@ Enhanced player displays and status indicators for the Group Window, informed by
 
 ## Timeline
 
-| Milestone                    | Target  | Status              |
-| ---------------------------- | ------- | ------------------- |
-| Multi-color gauge experiment | Q2 2026 | ⏳ Ready to execute |
-| Gauge rollout (all windows)  | Q2 2026 | ⏳ After experiment |
-| Enhanced group displays      | Q2 2026 | 🔴 Needs analysis   |
-| v0.8.0 Release               | Q2 2026 | ⏳ Planning         |
+| Milestone                    | Target  | Status               |
+| ---------------------------- | ------- | -------------------- |
+| Multi-color gauge experiment | Q2 2026 | ✅ Shipped            |
+| Gauge rollout (all windows)  | Q2 2026 | ✅ Shipped            |
+| Snap-columns pipeline        | Q2 2026 | ✅ Shipped            |
+| Gauge audit tooling          | Q2 2026 | ✅ Shipped            |
+| Enhanced group displays      | ---     | ⏳ Deferred           |
+| v0.8.0 Release               | Q2 2026 | ✅ Shipped            |
 
 ---
 
@@ -83,4 +99,4 @@ Enhanced player displays and status indicators for the Group Window, informed by
 ---
 
 **Maintained by:** Draknare Thorne
-**Last Updated:** March 2026
+**Last Updated:** June 2026

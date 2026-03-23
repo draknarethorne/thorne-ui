@@ -4,8 +4,8 @@
 
 This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 
-**Last Synced:** 2026-03-04  
-**Git Commit:** c5de808
+**Last Synced:** 2026-03-20  
+**Git Commit:** 68d2f89
 
 ---
 
@@ -15,6 +15,9 @@ This directory contains variants for the Group window (EQUI_GroupWindow.xml).
   `EQUI_GroupWindow.xml`
 
 - **[Thorne/](Thorne/)**  📄
+  `EQUI_GroupWindow.xml`
+
+- **[Thorne Standard/](Thorne Standard/)**  📄
   `EQUI_GroupWindow.xml`
 
 ---

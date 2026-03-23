@@ -166,11 +166,11 @@ def build_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawTextHelpFormatter,
         epilog=(
             "Examples:\n"
-            "  sync-option.bat spellbook/large\n"
-            "  sync-option.bat \"Music/Thorne 14 Row\"\n"
-            "  sync-option.bat --list\n"
-            "  sync-option.bat --list music\n"
-            "  sync-option.bat --option inventory/enhanced --dry-run --verbose"
+            "  .bin\\sync-option.bat spellbook/large\n"
+            "  .bin\\sync-option.bat \"Music/Thorne 14 Row\"\n"
+            "  .bin\\sync-option.bat --list\n"
+            "  .bin\\sync-option.bat --list music\n"
+            "  .bin\\sync-option.bat --option inventory/enhanced --dry-run --verbose"
         ),
     )
 

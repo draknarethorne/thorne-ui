@@ -6,16 +6,12 @@
   "config_loaded": true,
   "generated": {
     "wide": [
-      "gauge_inlay120_thorne01.tga",
-      "gauge_inlay150_thorne01.tga"
+      "gauge_inlay120_thorne01.tga"
     ],
     "tall": [
       "gauge_inlay120t_thorne01.tga",
-      "gauge_inlay150t_thorne01.tga",
-      "gauge_inlay230t_thorne01.tga",
-      "gauge_inlay240t_thorne01.tga",
-      "gauge_inlay250t_thorne01.tga",
-      "gauge_inlay260t_thorne01.tga"
+      "gauge_inlay105t_thorne01.tga",
+      "gauge_inlay250t_thorne01.tga"
     ]
   }
 }

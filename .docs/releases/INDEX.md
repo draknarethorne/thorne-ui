@@ -1,12 +1,12 @@
 # Thorne UI Release Documentation Index
 
-## 📌 CURRENT RELEASE: v0.7.0 ✅
+## 📌 CURRENT RELEASE: v0.8.0 ✅
 
-**Status:** Minor release (options framework modernization + slot foundation)  
-**Release Date:** February 22, 2026  
+**Status:** Feature release (multi-color composite gauges)  
+**Release Date:** June 2026  
 **Ready for Production:** Yes!
 
-**Release Documentation:** [v0.7.0/](v0.7.0/)
+**Release Documentation:** See [ROADMAP-v0.8.0.md](../ROADMAP-v0.8.0.md)
 
 ## 📚 Documentation Structure (Updated Feb 18, 2026)
 
@@ -127,7 +127,7 @@ git push origin v0.7.0
 **Documentation:**
 
 - [Main README](../README.md) - Project overview
-- [Development Guide](../../DEVELOPMENT.md) - Development roadmap
+- [Development Guide](../DEVELOPMENT.md) - Development roadmap
 - [Standards](../STANDARDS.md) - Code standards
 - [Phases](../../.development/initial_phases/) - Development phases (maintainer-only)
 

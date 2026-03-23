@@ -2,9 +2,13 @@
   "description": "Bars gauge variant - dark bar segments with 5 structural ticks at 20px intervals",
   "interpolation": "BILINEAR",
   "sections": {
-    "background": { "preserve_black": true },
-    "fill":       { "preserve_black": false },
-    "lines":      { "preserve_black": true },
-    "linesfill":  { "preserve_black": false }
+    "background":    { "preserve_black": true },
+    "fill":          { "preserve_black": false, "preserve_gaps": false },
+    "lines":         { "preserve_black": true },
+    "linesfill":     { "preserve_black": false },
+    "overlay":       { "preserve_black": true,  "enabled": true },
+    "solidfill":     { "preserve_black": false, "fill_gaps": true },
+    "gridfill":      { "preserve_black": false, "bake_overlay": false, "gray_level": 0,   "darken": 0.15, "spread": 1 },
+    "lightgridfill": { "preserve_black": false, "bake_overlay": false, "gray_level": 140, "darken": 0.0,  "spread": 1 }
   }
 }

@@ -5,7 +5,7 @@ user-invokable: true
 disable-model-invocation: false
 model: Claude Opus 4.6 (copilot)
 target: vscode
-tools: [vscode/getProjectSetupInfo, vscode/installExtension, vscode/newWorkspace, vscode/openSimpleBrowser, vscode/runCommand, vscode/askQuestions, vscode/vscodeAPI, vscode/extensions, execute/runNotebookCell, execute/testFailure, execute/getTerminalOutput, execute/awaitTerminal, execute/killTerminal, execute/createAndRunTask, execute/runInTerminal, execute/runTests, read/getNotebookSummary, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, github/add_comment_to_pending_review, github/add_issue_comment, github/assign_copilot_to_issue, github/create_branch, github/create_or_update_file, github/create_pull_request, github/create_repository, github/delete_file, github/fork_repository, github/get_commit, github/get_file_contents, github/get_label, github/get_latest_release, github/get_me, github/get_release_by_tag, github/get_tag, github/get_team_members, github/get_teams, github/issue_read, github/issue_write, github/list_branches, github/list_commits, github/list_issue_types, github/list_issues, github/list_pull_requests, github/list_releases, github/list_tags, github/merge_pull_request, github/pull_request_read, github/pull_request_review_write, github/push_files, github/request_copilot_review, github/search_code, github/search_issues, github/search_pull_requests, github/search_repositories, github/search_users, github/sub_issue_write, github/update_pull_request, github/update_pull_request_branch, pylance-mcp-server/pylanceDocuments, pylance-mcp-server/pylanceFileSyntaxErrors, pylance-mcp-server/pylanceImports, pylance-mcp-server/pylanceInstalledTopLevelModules, pylance-mcp-server/pylanceInvokeRefactoring, pylance-mcp-server/pylancePythonEnvironments, pylance-mcp-server/pylanceRunCodeSnippet, pylance-mcp-server/pylanceSettings, pylance-mcp-server/pylanceSyntaxErrors, pylance-mcp-server/pylanceUpdatePythonEnvironment, pylance-mcp-server/pylanceWorkspaceRoots, pylance-mcp-server/pylanceWorkspaceUserFiles, vscode.mermaid-chat-features/renderMermaidDiagram, memory, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/suggest-fix, github.vscode-pull-request-github/searchSyntax, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/renderIssues, github.vscode-pull-request-github/activePullRequest, github.vscode-pull-request-github/openPullRequest, ms-python.python/getPythonEnvironmentInfo, ms-python.python/getPythonExecutableCommand, ms-python.python/installPythonPackage, ms-python.python/configurePythonEnvironment, todo]
+tools: [vscode/getProjectSetupInfo, vscode/installExtension, vscode/memory, vscode/newWorkspace, vscode/runCommand, vscode/vscodeAPI, vscode/extensions, vscode/askQuestions, execute/runNotebookCell, execute/testFailure, execute/getTerminalOutput, execute/awaitTerminal, execute/killTerminal, execute/createAndRunTask, execute/runInTerminal, execute/runTests, read/getNotebookSummary, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, github/add_comment_to_pending_review, github/add_issue_comment, github/add_reply_to_pull_request_comment, github/assign_copilot_to_issue, github/create_branch, github/create_or_update_file, github/create_pull_request, github/create_pull_request_with_copilot, github/create_repository, github/delete_file, github/fork_repository, github/get_commit, github/get_copilot_job_status, github/get_file_contents, github/get_label, github/get_latest_release, github/get_me, github/get_release_by_tag, github/get_tag, github/get_team_members, github/get_teams, github/issue_read, github/issue_write, github/list_branches, github/list_commits, github/list_issue_types, github/list_issues, github/list_pull_requests, github/list_releases, github/list_tags, github/merge_pull_request, github/pull_request_read, github/pull_request_review_write, github/push_files, github/request_copilot_review, github/search_code, github/search_issues, github/search_pull_requests, github/search_repositories, github/search_users, github/sub_issue_write, github/update_pull_request, github/update_pull_request_branch, pylance-mcp-server/pylanceDocString, pylance-mcp-server/pylanceDocuments, pylance-mcp-server/pylanceFileSyntaxErrors, pylance-mcp-server/pylanceImports, pylance-mcp-server/pylanceInstalledTopLevelModules, pylance-mcp-server/pylanceInvokeRefactoring, pylance-mcp-server/pylancePythonEnvironments, pylance-mcp-server/pylanceRunCodeSnippet, pylance-mcp-server/pylanceSettings, pylance-mcp-server/pylanceSyntaxErrors, pylance-mcp-server/pylanceUpdatePythonEnvironment, pylance-mcp-server/pylanceWorkspaceRoots, pylance-mcp-server/pylanceWorkspaceUserFiles, vscode.mermaid-chat-features/renderMermaidDiagram, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/labels_fetch, github.vscode-pull-request-github/notification_fetch, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/activePullRequest, github.vscode-pull-request-github/pullRequestStatusChecks, github.vscode-pull-request-github/openPullRequest, ms-python.python/getPythonEnvironmentInfo, ms-python.python/getPythonExecutableCommand, ms-python.python/installPythonPackage, ms-python.python/configurePythonEnvironment, todo]
 argument-hint: 'UI component or window to customize'
 ---
 
@@ -39,7 +39,7 @@ Assist with development, customization, and modification of EverQuest UI files f
   - Player/Group/Pet/Bank/Trade/Loot slot mappings
   - Zeal client extensions (EQTypes 69-73, 80-86)
   
-- **`DEVELOPMENT.md`** - Project roadmap and architecture decisions
+- **`.docs/DEVELOPMENT.md`** - Project roadmap and architecture decisions
   - Design philosophy, implementation patterns, architecture notes
   
 - **Versioned Roadmaps** (`.docs/ROADMAP-v*.md`):
@@ -48,7 +48,7 @@ Assist with development, customization, and modification of EverQuest UI files f
   - `ROADMAP-v0.8.0.md` — Next (multi-color gauges, group displays)
   - `ROADMAP-v1.0.0.md` — Release polish and future tracking
 
-- **`TODO.md`** - Lean development tracker with roadmap links and shipped release summary
+- **`.docs/TODO.md`** - Lean development tracker with roadmap links and shipped release summary
 
 - **`.development/`** - Internal workshop (NOT published in releases)
   - `initial_phases/` — Phase documentation (completed phases)
@@ -63,14 +63,14 @@ Assist with development, customization, and modification of EverQuest UI files f
 
 #### After Feature/UI Work
 1. **README.md** — Update "What We're Working On" checkmarks and "Recent Releases" if applicable
-2. **TODO.md** — Update shipped release table or active task status
+2. **`.docs/TODO.md`** — Update shipped release table or active task status
 3. **Active ROADMAP** (`.docs/ROADMAP-v*.md`) — Check off completed items in the current milestone
 
 #### After a Release
 1. **`VERSION`** file — Bump version (single source of truth, plain text like `0.7.4`)
 2. **README.md** — Add Version History entry with date and bullet points, update "Current Development" section
 3. **Git tag** — `git tag -a vX.Y.Z -m "Release vX.Y.Z: description"`
-4. **TODO.md** — Add row to "Shipped Releases" table
+4. **`.docs/TODO.md`** — Add row to "Shipped Releases" table
 
 #### Documentation File Conventions
 - **Naming**: `UPPERCASE-WITH-HYPHENS.md` for docs, `README.md` for directory indexes
@@ -81,8 +81,8 @@ Assist with development, customization, and modification of EverQuest UI files f
 
 #### Cross-Reference Rules
 When updating documentation, check for cross-references that may need updating:
-- `README.md` ↔ `TODO.md` (version numbers, release lists)
-- `DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
+- `README.md` ↔ `.docs/TODO.md` (version numbers, release lists)
+- `.docs/DEVELOPMENT.md` ↔ `.docs/ROADMAP-v*.md` (milestone status)
 - `.development/README.md` ↔ `.docs/ROADMAP-v*.md` (current focus)
 - `.docs/releases/INDEX.md` (current release pointer)
 - Options `README.md` files (when Options are added/changed)
@@ -201,7 +201,7 @@ Always read `.docs/STANDARDS.md` "XML Organization Best Practices" before modify
 
 **Options structure**: `thorne_drak/Options/<Category>/<Variant>/`
 - Each Option directory contains ONLY the XML file(s) that differ from main
-- Options are tested by syncing: `.\sync-option.bat <category>/<variant>`
+- Options are tested by syncing: `.bin\sync-option.bat <category>/<variant>`
 - Always update `thorne_drak/Options/<Category>/README.md` when adding/changing variants
 
 ### SIDL XML Structure
@@ -279,11 +279,11 @@ When assisting with UI customizations:
 7. **Implement**: Make targeted XML modifications in `C:\Thorne-UI\thorne_drak\`
 8. **Validate XML**: Run XML syntax validation if making significant changes
 9. **Sync for Testing** (when actively testing/refining):
-   - **Full sync**: `.\sync-thorne-ui.bat` - Copies entire thorne_drak to thorne_dev
-   - **Option sync**: `.\sync-option.bat <option_path>` - Copies specific Option variant to thorne_dev
+   - **Full sync**: `.bin\sync-thorne-ui.bat` - Copies entire thorne_drak to thorne_dev
+   - **Option sync**: `.bin\sync-option.bat <option_path>` - Copies specific Option variant to thorne_dev
    - Examples:
-     - `.\sync-option.bat spellbook/large` - Test Large Icons spellbook variant
-     - `.\sync-option.bat inventory` - Shows all inventory options (numbered selection)
+     - `.bin\sync-option.bat spellbook/large` - Test Large Icons spellbook variant
+     - `.bin\sync-option.bat inventory` - Shows all inventory options (numbered selection)
 10. **In-Game Testing**: User tests with `/loadskin thorne_dev` command in TAKP
 11. **Present Changes**: Show user modifications and ask for approval before committing
    - Summarize key changes made
@@ -296,17 +296,17 @@ When assisting with UI customizations:
 
 ```bash
 # Full development sync (all files from thorne_drak)
-.\sync-thorne-ui.bat
+.bin\sync-thorne-ui.bat
 
 # Test specific option variant (copies option XML to thorne_dev root)
-.\sync-option.bat spellbook/large     # Direct specific option
-.\sync-option.bat spellbook           # Show all spellbook options (numbered)
-.\sync-option.bat inventory/enhanced  # Specific inventory variant
+.bin\sync-option.bat spellbook/large     # Direct specific option
+.bin\sync-option.bat spellbook           # Show all spellbook options (numbered)
+.bin\sync-option.bat inventory/enhanced  # Specific inventory variant
 ```
 
 **When to Sync:**
 - ✅ **During active testing/refinement** - Sync after each change to validate in-game
-- ✅ **When testing Options** - Use `sync-option.bat` to test alternative window variants
+- ✅ **When testing Options** - Use `.bin\sync-option.bat` to test alternative window variants
 - ❌ **During major development** - Wait until ready to begin testing phase
 - ❌ **Before committing** - Syncing is for testing only, not a commit prerequisite
 
@@ -422,7 +422,7 @@ When providing guidance and responding to requests, maintain **engaging but conc
 ### Communication Style
 - **Engaging**: Make EQ UI development feel achievable and rewarding; celebrate craftsmanship and player autonomy
 - **Concise**: Get to the point quickly; avoid unnecessary fluff or repetition
-- **Accurate**: Verify technical details; cite standards (STANDARDS.md, DEVELOPMENT.md) when recommending patterns
+- **Accurate**: Verify technical details; cite standards (STANDARDS.md, .docs/DEVELOPMENT.md) when recommending patterns
 - **Helpful**: Explain the "why" behind recommendations, not just the "how"
 
 ### Era-Appropriate Theme

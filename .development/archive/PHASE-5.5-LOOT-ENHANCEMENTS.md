@@ -1,4 +1,4 @@
-[← Back to Development Guide](../../DEVELOPMENT.md#development-phases)
+[← Back to Development Guide](../../.docs/DEVELOPMENT.md#development-phases)
 
 # Phase 5.5: Loot Window Enhancements
 
@@ -245,4 +245,4 @@ If button space is too constrained:
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Standards](../../.docs/STANDARDS.md)
+[← Back to Phases](README.md) | [Development Guide](../../.docs/DEVELOPMENT.md) | [Standards](../../.docs/STANDARDS.md)

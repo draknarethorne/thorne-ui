@@ -1,4 +1,4 @@
-[← Back to Development Guide](../../DEVELOPMENT.md#development-phases)
+[← Back to Development Guide](../../.docs/DEVELOPMENT.md#development-phases)
 
 # Phase 3.9: Inventory Window Character Sheet Redesign
 
@@ -6,7 +6,7 @@
 **Priority**: ✅ Completed  
 **Completion Date**: February 6, 2026  
 
-> **Note**: This phase was successfully implemented and shipped in Thorne UI v0.6.0. This document is archived as a reference for understanding the design pattern and implementation. See [DEVELOPMENT.md](../../DEVELOPMENT.md#major-releases) for release notes.
+> **Note**: This phase was successfully implemented and shipped in Thorne UI v0.6.0. This document is archived as a reference for understanding the design pattern and implementation. See [DEVELOPMENT.md](../../.docs/DEVELOPMENT.md#major-releases) for release notes.
 
 ## Vision
 
@@ -582,4 +582,4 @@ Players develop muscle memory for slot positions, reducing time spent searching 
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)
+[← Back to Phases](README.md) | [Development Guide](../../.docs/DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)

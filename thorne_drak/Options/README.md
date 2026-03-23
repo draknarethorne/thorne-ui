@@ -25,8 +25,8 @@ Options are curated UI variants organized by window category. Each option provid
 
 **Method 2: Sync Script (Development)**
 ```batch
-sync-option.bat [Category] [Variant]
-# Example: sync-option.bat Gauges Bubbles
+.bin/sync-option.bat [Category] [Variant]
+# Example: .bin/sync-option.bat Gauges Bubbles
 ```
 
 ---
@@ -235,8 +235,8 @@ Target frame display styles.
 
 Options are installed by copying files to the `thorne_drak/` root directory. The sync scripts automate this:
 
-1. `sync-option.bat` — Syncs a specific option variant
-2. `sync-thorne-ui.bat` — Resets to Thorne defaults
+1. `.bin\sync-option.bat` — Syncs a specific option variant
+2. `.bin\sync-thorne-ui.bat` — Resets to Thorne defaults
 
 ### Cross-Window Consistency
 
@@ -265,7 +265,7 @@ See [Actions/README.md](Actions/README.md) for a well-documented template exampl
 
 - [STANDARDS.md](../../.docs/STANDARDS.md) — Visual standards and color specifications
 - [EQTYPES.md](../../.docs/technical/EQTYPES.md) — EQType reference for data bindings
-- [DEVELOPMENT.md](../../DEVELOPMENT.md) — Contribution guidelines
+- [DEVELOPMENT.md](../../.docs/DEVELOPMENT.md) — Contribution guidelines
 
 ---
 

@@ -2,7 +2,7 @@
 
 Complete guidelines for maintaining consistency across all Thorne UI variants and ongoing development.
 
-**Quick Links**: [Development Guide](../DEVELOPMENT.md) | [Phases](../.development/initial_phases/README.md) | [Technical References](technical/README.md) | [Releases](releases/RELEASES.md)
+**Quick Links**: [Development Guide](DEVELOPMENT.md) | [Phases](../.development/initial_phases/README.md) | [Technical References](technical/README.md) | [Releases](releases/RELEASES.md)
 
 ---
 
@@ -453,7 +453,7 @@ thorne_drak/
 
 ### Implementation Patterns
 
-> **See [DEVELOPMENT.md - Architecture Decisions](../DEVELOPMENT.md#architecture-decisions--lessons-learned) for detailed implementation guidance**
+> **See [DEVELOPMENT.md - Architecture Decisions](DEVELOPMENT.md#architecture-decisions--lessons-learned) for detailed implementation guidance**
 
 **Key Architectural Patterns**:
 
@@ -488,51 +488,50 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 
 **Label Colors** (for stats, attributes, resistances):
 
-| Label Type            | RGB Value     | Hex     | Usage                                                |
-| --------------------- | ------------- | ------- | ---------------------------------------------------- |
-| **White**             | 255, 255, 255 | #FFFFFF | Default text, player name, stat values               |
-| **Blue (Attributes)** | 70, 180, 255  | #46B4FF | Attribute labels (STR, STA, AGI, DEX, WIS, INT, CHA) |
-| **HP Value Red**      | 255, 100, 100 | #FF6464 | HP current/max text values                           |
-| **Mana Value Blue**   | 100, 150, 255 | #6496FF | Mana current/max text values                         |
-| **Orange**            | 255, 185, 30  | #FFB91E | AC label, ATK label                                  |
-| **Fire Red**          | 255, 113, 46  | #FF712E | FIRE resist                                          |
-| **Cold Blue**         | 15, 182, 240  | #0FB6F0 | COLD resist                                          |
-| **Magic Purple**      | 255, 113, 255 | #FF71FF | MAGIC resist                                         |
-| **Disease Yellow**    | 230, 230, 0   | #E6E600 | DISEASE resist                                       |
-| **Poison Green**      | 0, 220, 0     | #00DC00 | POISON resist                                        |
-| **Green**             | 0, 205, 0     | #00CD00 | XP gauge, positive indicators                        |
+| Label Type       | Color Name       | RGB           | Hex     | Usage                                    |
+| ---------------- | ---------------- | ------------- | ------- | ---------------------------------------- |
+| **Default Text** | White            | 255, 255, 255 | #FFFFFF | Player name, stat values                 |
+| **Attributes**   | Sky Blue         | 70, 180, 255  | #46B4FF | STR, STA, AGI, DEX, WIS, INT, CHA       |
+| **HP Value**     | Heated Blush     | 255, 100, 100 | #FF6464 | HP current/max text                      |
+| **Mana Value**   | Crystal Blue     | 100, 150, 255 | #6496FF | Mana current/max text                    |
+| **AC / ATK**     | Amber            | 255, 185, 30  | #FFB91E | AC label, ATK label                      |
+| **FIRE Resist**  | Fire Red         | 255, 113, 46  | #FF712E | FIRE resist value                        |
+| **COLD Resist**  | Frost Blue       | 15, 182, 240  | #0FB6F0 | COLD resist value                        |
+| **MAGIC Resist** | Arcane Violet    | 255, 113, 255 | #FF71FF | MAGIC resist value                       |
+| **DISEASE Resist** | Plague Yellow  | 230, 230, 0   | #E6E600 | DISEASE resist value                     |
+| **POISON Resist** | Venom Green     | 0, 220, 0     | #00DC00 | POISON resist value                      |
+| **Positive**     | Verdant          | 0, 205, 0     | #00CD00 | XP gauge text, positive indicators       |
 
 **Gauge Fill Colors**:
 
-> **Standard Gauge RGB Values** - Use these exact values across all windows for consistency
+> **Standard Gauge RGB Values** — Use these exact values across all windows for consistency
 
-| Gauge Type               | Fill RGB      | LinesFill RGB | Hex (Fill) | EQType | Notes                                                     |
-| ------------------------ | ------------- | ------------- | ---------- | ------ | --------------------------------------------------------- |
-| **Player HP**            | 255, 0, 0     | 220, 220, 0   | #FF0000    | 1      | Bright red fill (main Player/Target windows)              |
-| **Player Mana**          | 30, 30, 255   | 0, 220, 220   | #1E1EFF    | 2      | Deep blue fill; text labels use RGB(100,150,255)          |
-| **Pet Health**           | 200, 80, 200  | 0, 0, 0       | #C850C8    | 16     | Purple (LinesFill varies by window; see Window-Specific)  |
-| **Pet Mana**             | 100, 150, 255 | 70, 105, 180  | #6496FF    | 17     | Blue; also EQType for group pet HP in GroupWindow context |
-| **Stamina**              | 240, 240, 0   | 0, 220, 0     | #F0F000    | 3      | Yellow fill with green line tint                          |
-| **Experience (XP)**      | 220, 150, 0   | 100, 160, 255 | #DC9600    | 4      | Orange fill with blue line tint                           |
-| **AA Points**            | 220, 200, 0   | 0, 220, 220   | #DCC800    | 5      | Yellow fill with cyan line tint                           |
-| **Breath Meter**         | 0, 240, 240   | 0, 0, 0       | #00F0F0    | 8      | Cyan for underwater breathing                             |
-| **Mana Tick (Standard)** | 0, 220, 220   | 0, 220, 220   | #00DCDC    | 24     | LinesFill only, 103px wide (compact windows)              |
-| **Mana Tick (Tall)**     | 0, 220, 220   | 0, 220, 220   | #00DCDC    | 24     | LinesFill only, 120px wide (Player/Pet windows)           |
-| **Target HP**            | 240, 0, 0     | 220, 220, 0   | #F00000    | 6      | Oval gauge style                                          |
-| **Casting Bar**          | 240, 0, 240   | 220, 220, 0   | #F000F0    | 7      | Magenta for spell casting                                 |
-| **Global Recast**        | 255, 210, 250 | 255, 235, 255 | #FFD2FA    | 25     | Light pink; thin 3px bar (CastSpellWnd, TargetWindow)     |
-| **Spell Recast (gems)**  | 200, 0, 200   | 0, 220, 220   | #C800C8    | 26–33  | Dark magenta; per-spell cooldown bars (CastSpellWnd)      |
-| **Attack Timer**         | 220, 180, 0   | 220, 180, 0   | #DCB400    | 34     | Gold/amber tick bar (TargetWindow)                        |
+| Gauge Type          | Color Name      | Fill RGB      | Lines RGB     | Hex     | EQType | Description                          |
+| ------------------- | --------------- | ------------- | ------------- | ------- | ------ | ------------------------------------ |
+| **Player HP**       | Blood Red       | 255, 0, 0     | 220, 220, 0   | #FF0000 | 1      | Standard Player/Target windows       |
+| **Player Mana**     | Tidal Blue      | 30, 30, 255   | 0, 220, 220   | #1E1EFF | 2      | Text labels use RGB(100,150,255)     |
+| **Pet Health**      | Conjured Violet | 200, 80, 200  | 0, 0, 0       | #C850C8 | 16     | LinesFill varies by window           |
+| **Pet Mana**        | Crystal Blue    | 100, 150, 255 | 70, 105, 180  | #6496FF | 17     | Also group pet HP in GroupWindow     |
+| **Stamina**         | Sunburst        | 240, 240, 0   | 0, 220, 0     | #F0F000 | 3      | Yellow fill, green line tint         |
+| **Experience (XP)** | Ember Amber     | 220, 150, 0   | 100, 160, 255 | #DC9600 | 4      | Orange fill, blue line tint          |
+| **AA Points**       | Golden Aura     | 220, 200, 0   | 0, 220, 220   | #DCC800 | 5      | Yellow fill, cyan line tint          |
+| **Breath Meter**    | Aqua            | 0, 240, 240   | 0, 0, 0       | #00F0F0 | 8      | Underwater breathing                 |
+| **Mana Tick**       | Cyan Pulse      | 0, 220, 220   | 0, 220, 220   | #00DCDC | 24     | LinesFill only; 103px or 120px wide  |
+| **Target HP**       | Sanguine        | 240, 0, 0     | 220, 220, 0   | #F00000 | 6      | Oval gauge style                     |
+| **Casting Bar**     | Arcane Surge    | 240, 0, 240   | 220, 220, 0   | #F000F0 | 7      | Magenta spell casting                |
+| **Global Recast**   | Fading Rose     | 255, 210, 250 | 255, 235, 255 | #FFD2FA | 25     | Thin 3px bar (CastSpell, Target)     |
+| **Spell Recast**    | Dark Orchid     | 200, 0, 200   | 0, 220, 220   | #C800C8 | 26–33  | Per-spell cooldown bars              |
+| **Attack Timer**    | Burnished Gold  | 220, 180, 0   | 220, 180, 0   | #DCB400 | 34     | Tick bar (TargetWindow)              |
 
 **Window-Specific Gauge Colors**:
 
 > Some gauges use intentionally different colors depending on window context.
 > These are **not** overrides — they reflect the design intent for each window.
 
-| Gauge Type          | Fill RGB     | LinesFill RGB | EQType | Window      | Notes                                            |
-| ------------------- | ------------ | ------------- | ------ | ----------- | ------------------------------------------------ |
-| **Group Member HP** | 220, 0, 0    | 220, 220, 0   | 11–15  | GroupWindow | Slightly darker red than Player HP (220 vs 255)  |
-| **Group Pet HP**    | 170, 60, 170 | 220, 220, 0   | 17–21  | GroupWindow | Dark purple; thin 2px bars under group HP gauges |
+| Gauge Type          | Color Name    | Fill RGB     | Lines RGB    | Hex     | EQType | Window      | Description                         |
+| ------------------- | ------------- | ------------ | ------------ | ------- | ------ | ----------- | ----------------------------------- |
+| **Group Member HP** | Tempered Red  | 220, 0, 0    | 220, 220, 0  | #DC0000 | 11–15  | GroupWindow | Darker than Player HP (220 vs 255)  |
+| **Group Pet HP**    | Shadow Orchid | 170, 60, 170 | 220, 220, 0  | #AA3CAA | 17–21  | GroupWindow | Thin 2px bars under group HP gauges |
 
 **Standard Gauge Sizes**:
 
@@ -629,6 +628,255 @@ If temporary testing is needed, use a non-critical sandbox window instead (for e
 - ✅ **Document deviations** in window-specific comments if you change a color
 - ⚠️ **Valid exceptions**: Themed variants, accessibility needs, special UI modes
 - ❌ **Avoid**: Random RGB values without documentation
+
+### Composite Gauge System (Multi-Color Veil Technique)
+
+> **5-band layered gauges** — Each gauge uses oversized A-parts with `GaugeOffsetX` thresholds
+> to create multi-color gradients. Band 4 (top layer) drops first at 80%, revealing
+> progressive bands as value decreases.
+
+#### Technique Variants
+
+- **Veil** — Linear fade from saturated (Band 4, full) toward white/pastel (Band 0, critical).
+  Clean, readable gradient. Used for all production gauges.
+- **Arc** — Bright peak in the middle bands (Band 2 is brightest), with dark ends.
+  More dramatic but less readable. Available as Player Options only.
+- **Nillipuss Classic** — Traffic-light green→yellow→red. Community-inspired.
+  Available as a Player Option only (not available for other windows).
+
+#### Composite Structure (XML Layer Order)
+
+Every composite gauge replaces a single `<Gauge>` with this layered structure:
+
+```
+BG gauge        — Background texture only (no Fill), hides text offscreen
+Band 0 gauge    — Base color (GridFill), always visible, hides text
+Band 1A gauge   — Oversized A-part (GaugeOffsetX=-2000), hides text
+  Screen clip   — Crops 1A to clip width
+  Band 1B gauge — GridFill continuation, hides text
+Band 2A gauge   — Oversized A-part (GaugeOffsetX=-4000)
+  Screen clip   — Crops 2A to clip width
+  Band 2B gauge — GridFill continuation
+Band 3A/clip/3B — Same pattern (GaugeOffsetX=-6000)
+Band 4A/clip/4B — Same pattern (GaugeOffsetX=-8000)
+Text overlay    — Original ScreenID preserved for client binding, no Fill/Background
+```
+
+**Key rules:**
+- The **text overlay** gauge keeps the original `ScreenID` (e.g., `TargetHP`, `Gauge1`) so the
+  client binds the EQType correctly. All other layers use unique ScreenIDs.
+- All layers except BG use `Style_Transparent=true` to stack properly.
+- Text is hidden on all layers except the overlay via `TextOffsetX/Y` pushed offscreen.
+- BG uses `<Background>` only. Band 0 uses `<Fill>` with GridFill. Bands 1-4 A-parts use
+  Oversized animations; B-parts use GridFill.
+
+#### Band Threshold Tables
+
+**120px gauge (120t, visual-aligned):**
+
+| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
+| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
+| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
+| 1    | 20%       | -2000        | 8000        | 23px       | 97px             |
+| 2    | 40%       | -4000        | 6000        | 47px       | 73px             |
+| 3    | 60%       | -6000        | 4000        | 70px       | 50px             |
+| 4    | 80%       | -8000        | 2000        | 93px       | 27px             |
+
+> Clips set 1px left of the Thorne texture grid marks to prevent visible color bleed
+> at band transitions. Texture marks land at 24, 48, 71, 94; clips at 23, 47, 70, 93.
+
+**105px gauge (105t, visual-aligned):**
+
+| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
+| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
+| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
+| 1    | 20%       | -2000        | 8000        | 20px       | 85px             |
+| 2    | 40%       | -4000        | 6000        | 41px       | 64px             |
+| 3    | 60%       | -6000        | 4000        | 61px       | 44px             |
+| 4    | 80%       | -8000        | 2000        | 81px       | 24px             |
+
+> Clips set 1px left of the Thorne texture grid marks to prevent visible color bleed
+> at band transitions. Texture marks land at 21, 42, 62, 82; clips at 20, 41, 61, 81.
+
+**250px gauge (250t, visual-aligned):**
+
+| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
+| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
+| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
+| 1    | 20%       | -2000        | 8000        | 49px       | 201px            |
+| 2    | 40%       | -4000        | 6000        | 99px       | 151px            |
+| 3    | 60%       | -6000        | 4000        | 148px      | 102px            |
+| 4    | 80%       | -8000        | 2000        | 196px      | 54px             |
+
+> Clips set 1px left of the Thorne texture grid marks to prevent visible color bleed
+> at band transitions. Texture marks land at 50, 100, 149, 197; clips at 49, 99, 148, 196.
+
+#### Oversized Animation Naming
+
+All Oversized animations follow the pattern: `A_Oversized{Type}_{size}_Band{n}`
+
+| Type           | Texture Source | Row (Y offset) | Purpose                    |
+| -------------- | -------------- | -------------- | -------------------------- |
+| `Fill`         | thorne01       | Y=0 (16px)     | A-part fill for Veil bands |
+| `SolidFill`    | thorne02       | Y=0 (16px)     | A-part solid fill variant  |
+| `GridFill`     | thorne02       | Y=16 (32px)    | A-part grid fill variant   |
+
+Sizes with full Oversized animation sets: `105t`, `120t`, `250t`.
+
+> **Missing:** No Oversized animations exist for standard 103x8px gauges. The `gauge_inlay_thorne02.tga`
+> texture does not exist yet. This blocks composite treatment of 8px gauges (Target player HP/Mana, Pet HP).
+
+#### Player HP: Fire Arc (Blood Red)
+
+The signature HP palette. At full health: Blood Red. Depleting reveals warm colors through an ember arc.
+
+| Band | Color Name    | RGB           | Hex     | Description                |
+| ---- | ------------- | ------------- | ------- | -------------------------- |
+| 4    | Blood Red     | 255, 0, 0     | #FF0000 | Full HP — drops first      |
+| 3    | Ember Glow    | 255, 60, 10   | #FF3C0A | 60% — hot ember            |
+| 2    | Forge Fire    | 240, 85, 25   | #F05519 | 40% — peak brightness      |
+| 1    | Smolder       | 200, 40, 80   | #C82850 | 20% — cooling              |
+| 0    | Vein          | 175, 25, 120  | #AF1978 | Critical — always visible  |
+
+**Gradient choice: Red Veil** (linear fade to white)
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Crimson           | 255, 0, 0     | #FF0000 | Full HP — drops first      |
+| 3    | Scorched Rose     | 255, 50, 50   | #FF3232 | 60%                        |
+| 2    | Heated Blush      | 255, 100, 100 | #FF6464 | 40%                        |
+| 1    | Fading Wound      | 255, 160, 160 | #FFA0A0 | 20%                        |
+| 0    | White-hot Ember   | 255, 210, 210 | #FFD2D2 | Critical — always visible  |
+
+#### Player Mana: Ocean Arc (Tidal Blue)
+
+The signature Mana palette. At full mana: Tidal Blue. Depleting reveals deep-sea colors through an ocean arc.
+
+| Band | Color Name    | RGB           | Hex     | Description                |
+| ---- | ------------- | ------------- | ------- | -------------------------- |
+| 4    | Tidal Blue    | 30, 30, 255   | #1E1EFF | Full Mana — drops first    |
+| 3    | Ocean Current | 40, 80, 252   | #2850FC | 60% — deep flow            |
+| 2    | Wave Crest    | 55, 120, 250  | #3778FA | 40% — peak brightness      |
+| 1    | Deep Sea      | 80, 55, 220   | #5037DC | 20% — depth                |
+| 0    | Abyss         | 125, 30, 190  | #7D1EBE | Critical — always visible  |
+
+**Gradient choice: Blue Veil** (linear fade to white)
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Sapphire          | 0, 0, 255     | #0000FF | Full Mana — drops first    |
+| 3    | Frozen Azure      | 50, 50, 255   | #3232FF | 60%                        |
+| 2    | Starlit Pool      | 100, 100, 255 | #6464FF | 40%                        |
+| 1    | Pale Ether        | 160, 160, 255 | #A0A0FF | 20%                        |
+| 0    | Icebloom          | 210, 210, 255 | #D2D2FF | Critical — always visible  |
+
+#### Pet HP: Purple Veil (linear fade to white)
+
+Purple Veil Pet HP palette. At full pet health: Conjured Violet. Depleting lightens toward spectral wisp.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Conjured Violet   | 200, 0, 200   | #C800C8 | Full Pet HP — drops first  |
+| 3    | Enchanted Orchid  | 210, 50, 210  | #D232D2 | 60%                        |
+| 2    | Mystic Haze       | 220, 100, 220 | #DC64DC | 40%                        |
+| 1    | Faded Familiar    | 230, 160, 230 | #E6A0E6 | 20%                        |
+| 0    | Spectral Wisp     | 240, 210, 240 | #F0D2F0 | Critical — always visible  |
+
+#### Pet HP: Amethyst V-Arc (bright peak)
+
+Amethyst Arc Pet HP palette. At full pet health: Conjured Violet. Depleting arcs through bright Arcane Bloom then fades dark.
+
+| Band | Color Name        | RGB           | Hex     | Description                    |
+| ---- | ----------------- | ------------- | ------- | ------------------------------ |
+| 4    | Conjured Violet   | 200, 0, 200   | #C800C8 | Full Pet HP — drops first      |
+| 3    | Spirit Amethyst   | 180, 60, 200  | #B43CC8 | 60% — settling                 |
+| 2    | Arcane Bloom      | 220, 100, 240 | #DC64F0 | 40% — luminous peak            |
+| 1    | Twilight Shade    | 170, 50, 180  | #AA32B4 | 20% — dimming                  |
+| 0    | Deep Grape        | 120, 20, 120  | #781478 | Critical — dark, always visible|
+
+#### Group HP: Tempered Red Veil (linear fade to white, dimmed)
+
+Tempered variant of Red Veil for group member HP. Uses R=220 (vs 255 for player) to
+visually distinguish group members from the player's own HP gauge.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Tempered Red      | 220, 0, 0     | #DC0000 | Full HP — drops first      |
+| 3    | Smoldering Red    | 220, 50, 50   | #DC3232 | 60%                        |
+| 2    | Warming Red       | 220, 100, 100 | #DC6464 | 40%                        |
+| 1    | Fading Red        | 220, 160, 160 | #DCA0A0 | 20%                        |
+| 0    | Ashen Red         | 220, 210, 210 | #DCD2D2 | Critical — always visible  |
+
+#### Breath: Cyan Veil (linear fade to white)
+
+Breath meter palette. At full breath: Deep Aqua. Depleting lightens toward Frost Spray.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Deep Aqua         | 0, 240, 240   | #00F0F0 | Full breath — drops first  |
+| 3    | Shallow Aqua      | 50, 240, 240  | #32F0F0 | 60%                        |
+| 2    | Tidal Aqua        | 100, 240, 240 | #64F0F0 | 40%                        |
+| 1    | Sea Mist          | 160, 240, 240 | #A0F0F0 | 20%                        |
+| 0    | Frost Spray       | 210, 240, 240 | #D2F0F0 | Critical — always visible  |
+
+#### SpellBook Scribe: Gold Veil (linear fade to white)
+
+SpellBook scribe progress gauge. At full: Ancient Gold. Depleting lightens toward Aureate Glow.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Ancient Gold      | 210, 110, 0   | #D26E00 | Full scribe — drops first  |
+| 3    | Molten Script     | 240, 140, 0   | #F08C00 | 60%                        |
+| 2    | Gilded Quill      | 255, 170, 40  | #FFAA28 | 40%                        |
+| 1    | Sunlit Parchment  | 255, 200, 100 | #FFC864 | 20%                        |
+| 0    | Aureate Glow      | 255, 230, 160 | #FFE6A0 | Starting — always visible  |
+
+#### SpellBook Memorize: Sapphire Veil (cool blue gradient)
+
+SpellBook memorize progress gauge. At full: Abyssal Cyan. Depleting lightens toward Frostlight.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Abyssal Cyan      | 0, 120, 210   | #0078D2 | Full memorize — drops first|
+| 3    | Deep Tide         | 0, 150, 240   | #0096F0 | 60%                        |
+| 2    | Crystal Current   | 40, 180, 255  | #28B4FF | 40%                        |
+| 1    | Arctic Glow       | 100, 210, 255 | #64D2FF | 20%                        |
+| 0    | Frostlight        | 170, 235, 255 | #AAEBFF | Starting — always visible  |
+
+#### Nillipuss Classic (Green-Yellow-Red)
+
+The original Nillipuss community palette. Traffic-light inspired: green at full, red at critical.
+Available as **Player Option only** — not used in other windows.
+
+| Band | Color Name        | RGB           | Hex     | Description                |
+| ---- | ----------------- | ------------- | ------- | -------------------------- |
+| 4    | Verdant           | 0, 240, 0     | #00F000 | Full — drops first         |
+| 3    | Greenleaf Gold    | 173, 255, 47  | #ADFF2F | 60%                        |
+| 2    | Sunstone          | 240, 240, 0   | #F0F000 | 40%                        |
+| 1    | Pyre Orange       | 240, 102, 0   | #F06600 | 20%                        |
+| 0    | Bloodfire         | 240, 0, 0     | #F00000 | Critical — always visible  |
+
+> **Band 4 identity rule**: Both palette variants for the same EQType MUST share the same Band 4 color.
+> Band 4 represents "full value" — the visual identity of the gauge at 100%. When comparing
+> Purple Veil vs Amethyst Arc, both use Conjured Violet (200,0,200) for Band 4.
+
+#### Composite Gauge Deployment
+
+| Window         | Gauge        | Palette           | Size  | EQType | Texture Set |
+| -------------- | ------------ | ----------------- | ----- | ------ | ----------- |
+| PlayerWindow   | Player HP    | Red Veil          | 120t  | 1      | 120t        |
+| PlayerWindow   | Player Mana  | Blue Veil         | 120t  | 2      | 120t        |
+| PlayerWindow   | Pet HP       | Purple Veil       | 120t  | 16     | 120t        |
+| TargetWindow   | Target HP    | Red Veil          | 250t  | 6      | 250t        |
+| GroupWindow     | Member 1-5   | Tempered Red Veil | 120t  | 11-15  | 120t        |
+| PetInfoWindow  | Pet HP       | Purple Veil       | 120t  | 16     | 120t        |
+| BreathWindow   | Breath       | Cyan Veil         | 120t  | 8      | 120t        |
+| SpellBookWnd   | Scribe       | Gold Veil         | 105t  | 10     | 105t        |
+| SpellBookWnd   | Memorize     | Sapphire Veil     | 105t  | 9      | 105t        |
+
+> **Options variants** (Player Options only): Fire Arc (HP), Ocean Arc (Mana),
+> Amethyst Arc (Pet HP), Nillipuss Classic (HP). These are alternatives to the
+> standard Veil palettes, selectable per-player via Options directory.
 
 **Text Alignment Standards**:
 
@@ -743,7 +991,7 @@ Consider restructuring when documentation exceeds **2000 lines** or **8+ major p
 
 # Phase 3.9: Inventory Window Redesign
 
-[← Back to Development Guide](../DEVELOPMENT.md#phases)
+[← Back to Development Guide](DEVELOPMENT.md#phases)
 ```
 
 **Benefits**: Easier navigation, focused docs, better GitHub UI  

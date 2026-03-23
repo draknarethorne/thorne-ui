@@ -325,7 +325,7 @@ For questions about releases or the release process:
 
 - Test the workflow: [TESTING-RELEASES.md](../../.development/archive/TESTING-RELEASES.md) (maintainer-only)
 - Open an issue on GitHub
-- Check the [DEVELOPMENT.md](../../DEVELOPMENT.md) guide
+- Check the [DEVELOPMENT.md](../DEVELOPMENT.md) guide
 - Review existing releases for examples
 
 ---

@@ -36,7 +36,7 @@ Each variant contains a complete icon texture set:
 ## Usage
 
 ```bash
-sync-option.bat Icons/Duxa
+.bin/sync-option.bat Icons/Duxa
 ```
 
 Or manually copy all `.tga` files from the desired variant to `thorne_drak/` root.

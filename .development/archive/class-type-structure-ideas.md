@@ -12,7 +12,7 @@ Author: Draknare Thorne
 ## Current Layout (Baseline)
 
 - **Master layout:** `.bin/regen_slots.json` (slot map + base gradients).
-- **Atlas generation:** `regen_thorne.bat` → `.bin/regen_thorne.py` → `.Master` atlases.
+- **Atlas generation:** `.bin/regen_thorne.bat` → `.bin/regen_thorne.py` → `.Master` atlases.
 - **Variants:** `thorne_drak/Options/Slots/<Variant>/.regen_slots.json` (gradient overrides).
 
 ## Option A — Multiple Master Atlases by Class Type (Recommended)
@@ -34,14 +34,14 @@ thorne_drak/Options/Slots/
 ### A Workflow
 
 - Use a flag to choose master atlas source:
-  - `regen_thorne.bat .Master_Caster`
-  - `regen_thorne.bat .Master_Melee`
-  - `regen_thorne.bat .Master_Hybrid`
+  - `.bin/regen_thorne.bat .Master_Caster`
+  - `.bin/regen_thorne.bat .Master_Melee`
+  - `.bin/regen_thorne.bat .Master_Hybrid`
 
 ### A Impact
 
 - **Minimal change** to scripts (already support argument input).
-- `regen_slots.bat --all` still works, as it references `item_atlas_thorne01.tga` from the chosen master.
+- `.bin/regen_slots.bat --all` still works, as it references `item_atlas_thorne01.tga` from the chosen master.
 - Each master can share the **same** gradient presets, allowing metal variants to be compared cleanly.
 
 ### A Pros
@@ -98,8 +98,8 @@ The **class** only affects the atlas (source art). The **theme** only affects gr
 
 - Add an optional flag to `regen_slots.py` for **output folder** and **theme path**.
 - Example usage:
-  - `regen_thorne.bat .Master_Caster`
-  - `regen_slots.bat --theme Themes/Gold --out Output/Caster/Gold`
+  - `.bin/regen_thorne.bat .Master_Caster`
+  - `.bin/regen_slots.bat --theme Themes/Gold --out Output/Caster/Gold`
 
 ### A2 Pros
 
@@ -272,7 +272,7 @@ Each output folder contains the generated `item_slots_thorne01.tga` and any `.re
 
 ## Script Considerations
 
-- `regen_thorne.bat` already supports a master argument; keep using this to pick class type.
+- `.bin/regen_thorne.bat` already supports a master argument; keep using this to pick class type.
 - If class-type masters expand, consider adding a selector wrapper:
   - `regen_thorne_class.bat Caster`
 - No changes needed in `regen_slots.py` if all masters keep the same slot layout.

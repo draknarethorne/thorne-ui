@@ -6,6 +6,15 @@
 		- Fixed F-key label overlap with player names for better readability
 		- Optimized layout and positioning for group member information
 		- Enhanced visual clarity for group management
+
+		v0.8.0 Gauge Upgrade:
+		- HP gauges: 120t tall templates (CX=120, CY=16), red fill, name inside gauge
+		- Pet gauges: standard templates (CX=120, CY=8), blue fill (100,150,255)
+		- F-key labels: right-aligned (X=128, CY=10), overlapping pet row
+		- HP value labels: right-aligned inside gauge, with % suffix
+		- Layout per member row (28px step, base offsets):
+		  Gauge(+0) → HPLabel(+0) → HPPercLabel(+0) → PetGauge(+17) → FLabel(+14) → Divider(+26)
+		- Row bases: 1, 29, 57, 85, 113
 	-->
 
 	<Ui2DAnimation item = "PW_LineDivider">
@@ -42,19 +51,258 @@
 		<Animation>A_CornerSquare</Animation>
 	</StaticAnimation>
 	
-	<Label item ="GW_F2Label">
-		<ScreenID>GW_F2Label</ScreenID>
-		<Font>1</Font>
+	<!-- GROUP MEMBER 1 HP - Red Veil (5-band composite) EQType 11          -->
+	<!-- ====================================================================== -->
+	<!-- Veil: Tempered Red (full) > Smoldering > Warming > Fading > Ashen (critical) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="GW_HP1_BG">
+		<ScreenID>GW_HP1_BG</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>1</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Ashen Red (220,210,210) - base, visible at any health -->
+	<Gauge item="GW_HP1_Band0">
+		<ScreenID>GW_HP1_Band0</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>1</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>210</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Fading Red (220,160,160) - 20% threshold -->
+	<Gauge item="GW_HP1_1A">
+		<ScreenID>GW_HP1_1A</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-2400</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>9600</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP1_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>1</Y></Location>
+		<Size><CX>23</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP1_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Fading Red continuation -->
+	<Gauge item="GW_HP1_1B">
+		<ScreenID>GW_HP1_1B</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-23</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>24</X><Y>1</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Warming Red (220,100,100) - 40% threshold -->
+	<Gauge item="GW_HP1_2A">
+		<ScreenID>GW_HP1_2A</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-4800</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>7200</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP1_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>1</Y></Location>
+		<Size><CX>47</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP1_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Warming Red continuation -->
+	<Gauge item="GW_HP1_2B">
+		<ScreenID>GW_HP1_2B</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-47</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>48</X><Y>1</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Smoldering Red (220,50,50) - 60% threshold -->
+	<Gauge item="GW_HP1_3A">
+		<ScreenID>GW_HP1_3A</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-7200</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4800</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP1_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>1</Y></Location>
+		<Size><CX>71</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP1_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Smoldering Red continuation -->
+	<Gauge item="GW_HP1_3B">
+		<ScreenID>GW_HP1_3B</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-71</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>72</X><Y>1</Y></Location>
+		<Size><CX>49</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Tempered Red (220,0,0) - 80% threshold -->
+	<Gauge item="GW_HP1_4A">
+		<ScreenID>GW_HP1_4A</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-9600</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2400</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP1_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>1</Y></Location>
+		<Size><CX>95</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP1_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Tempered Red continuation -->
+	<Gauge item="GW_HP1_4B">
+		<ScreenID>GW_HP1_4B</ScreenID>
+		<EQType>11</EQType>
+		<GaugeOffsetX>-95</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>96</X><Y>1</Y></Location>
+		<Size><CX>25</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Text overlay: preserves Gauge1 ScreenID for member name -->
+	<Gauge item="GW_Gauge1">
+		<ScreenID>Gauge1</ScreenID>
+		<EQType>11</EQType>
+		<TextColor><R>240</R><G>240</G><B>240</B></TextColor>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>1</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<!-- Text-only: no Background/Fill, preserves ScreenID for member name -->
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- ====================================================================== -->
+
+	<Label item ="GW_HPLabel1">
+		<ScreenID>HPLabel1</ScreenID>
+		<Font>2</Font>
+		<EQType>35</EQType>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>0</X>
-			<Y>13</Y>
+			<X>82</X>
+			<Y>1</Y>
 		</Location>
 		<Size>
-			<CX>12</CX>
+			<CX>60</CX>
 			<CY>12</CY>
 		</Size>
-		<Text>F2</Text>
+		<Text>0</Text>
 		<TextColor>
 				<R>240</R>
 				<G>240</G>
@@ -62,55 +310,31 @@
 		</TextColor>
 		<NoWrap>true</NoWrap>
 		<AlignCenter>false</AlignCenter>
-		<AlignRight>false</AlignRight>
+		<AlignRight>true</AlignRight>
 		<Style_Tooltip>false</Style_Tooltip>
 	</Label>
 
-	<Gauge item = "GW_Gauge1">
-		<ScreenID>Gauge1</ScreenID>
-		<!--<Font>3</Font>-->
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
+	<Label item ="GW_HPPercLabel1">
+		<ScreenID>HPPercLabel1</ScreenID>
 		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
 		<Location>
-			<X>11</X>
-			<Y>0</Y>
+			<X>142</X>
+			<Y>1</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>24</CY>
+			<CX>16</CX>
+			<CY>12</CY>
 		</Size>
-		<TextOffsetX>4</TextOffsetX>
-		<TextOffsetY>4</TextOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-		<!--<TooltipReference/>-->
-		<FillTint>
-				<R>220</R>
-				<G>0</G>
-				<B>0</B>
-		</FillTint>
-		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
-		</LinesFillTint>
-		<DrawLinesFill>false</DrawLinesFill>
-		<EQType>11</EQType>
-		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
-			<LinesFill>A_GaugeLinesFill</LinesFill>
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
-			<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
-		</GaugeDrawTemplate>
-	</Gauge>
+		<Text>%</Text>
+		<TextColor>
+			<R>240</R>
+			<G>240</G>
+			<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
 
 	<Gauge item = "GW_PetGauge1">
 		<ScreenID>PetGauge1</ScreenID>
@@ -122,41 +346,62 @@
 		</TextColor>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>11</X>
-			<Y>22</Y>
+			<X>1</X>
+			<Y>18</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>2</CY>
+			<CX>120</CX>
+			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
-		<GaugeOffsetY>-2</GaugeOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>170</R>
-				<G>60</G>
-				<B>170</B>
+				<R>100</R>
+				<G>150</G>
+				<B>255</B>
 		</FillTint>
 		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
+				<R>70</R>
+				<G>105</G>
+				<B>180</B>
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>17</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<!--<Lines>A_GaugeLines</Lines>-->
-			<!--<LinesFill>A_GaugeLinesFill</LinesFill>-->
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>-->
-			<!--<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
+
+	<Label item ="GW_F2Label">
+		<ScreenID>GW_F2Label</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>128</X>
+			<Y>15</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>10</CY>
+		</Size>
+		<Text>F2</Text>
+		<TextColor>
+				<R>240</R>
+				<G>240</G>
+				<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<Style_Tooltip>false</Style_Tooltip>
+	</Label>
 
 	<StaticAnimation item= "PW_LineDivider1">
 		<ScreenID>PW_LineDivider1</ScreenID>
@@ -171,19 +416,258 @@
 		<Animation>PW_LineDivider</Animation>
 	</StaticAnimation>	
 
-	<Label item ="GW_F3Label">
-		<ScreenID>GW_F3Label</ScreenID>
-		<Font>1</Font>
+	<!-- GROUP MEMBER 2 HP - Red Veil (5-band composite) EQType 12          -->
+	<!-- ====================================================================== -->
+	<!-- Veil: Tempered Red (full) > Smoldering > Warming > Fading > Ashen (critical) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="GW_HP2_BG">
+		<ScreenID>GW_HP2_BG</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>29</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Ashen Red (220,210,210) - base, visible at any health -->
+	<Gauge item="GW_HP2_Band0">
+		<ScreenID>GW_HP2_Band0</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>29</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>210</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Fading Red (220,160,160) - 20% threshold -->
+	<Gauge item="GW_HP2_1A">
+		<ScreenID>GW_HP2_1A</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-2400</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>9600</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP2_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>29</Y></Location>
+		<Size><CX>23</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP2_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Fading Red continuation -->
+	<Gauge item="GW_HP2_1B">
+		<ScreenID>GW_HP2_1B</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-23</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>24</X><Y>29</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Warming Red (220,100,100) - 40% threshold -->
+	<Gauge item="GW_HP2_2A">
+		<ScreenID>GW_HP2_2A</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-4800</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>7200</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP2_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>29</Y></Location>
+		<Size><CX>47</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP2_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Warming Red continuation -->
+	<Gauge item="GW_HP2_2B">
+		<ScreenID>GW_HP2_2B</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-47</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>48</X><Y>29</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Smoldering Red (220,50,50) - 60% threshold -->
+	<Gauge item="GW_HP2_3A">
+		<ScreenID>GW_HP2_3A</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-7200</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4800</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP2_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>29</Y></Location>
+		<Size><CX>71</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP2_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Smoldering Red continuation -->
+	<Gauge item="GW_HP2_3B">
+		<ScreenID>GW_HP2_3B</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-71</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>72</X><Y>29</Y></Location>
+		<Size><CX>49</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Tempered Red (220,0,0) - 80% threshold -->
+	<Gauge item="GW_HP2_4A">
+		<ScreenID>GW_HP2_4A</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-9600</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2400</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP2_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>29</Y></Location>
+		<Size><CX>95</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP2_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Tempered Red continuation -->
+	<Gauge item="GW_HP2_4B">
+		<ScreenID>GW_HP2_4B</ScreenID>
+		<EQType>12</EQType>
+		<GaugeOffsetX>-95</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>96</X><Y>29</Y></Location>
+		<Size><CX>25</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Text overlay: preserves Gauge2 ScreenID for member name -->
+	<Gauge item="GW_Gauge2">
+		<ScreenID>Gauge2</ScreenID>
+		<EQType>12</EQType>
+		<TextColor><R>240</R><G>240</G><B>240</B></TextColor>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>29</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<!-- Text-only: no Background/Fill, preserves ScreenID for member name -->
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- ====================================================================== -->
+
+	<Label item ="GW_HPLabel2">
+		<ScreenID>HPLabel2</ScreenID>
+		<Font>2</Font>
+		<EQType>36</EQType>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>0</X>
-			<Y>41</Y>
+			<X>82</X>
+			<Y>29</Y>
 		</Location>
 		<Size>
-			<CX>12</CX>
+			<CX>60</CX>
 			<CY>12</CY>
 		</Size>
-		<Text>F3</Text>
+		<Text>0</Text>
 		<TextColor>
 				<R>240</R>
 				<G>240</G>
@@ -191,55 +675,31 @@
 		</TextColor>
 		<NoWrap>true</NoWrap>
 		<AlignCenter>false</AlignCenter>
-		<AlignRight>false</AlignRight>
+		<AlignRight>true</AlignRight>
 		<Style_Tooltip>false</Style_Tooltip>
 	</Label>
-	
-	<Gauge item = "GW_Gauge2">
-		<ScreenID>Gauge2</ScreenID>
-		<!--<Font>3</Font>-->
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
+
+	<Label item ="GW_HPPercLabel2">
+		<ScreenID>HPPercLabel2</ScreenID>
 		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
 		<Location>
-			<X>11</X>
-			<Y>28</Y>
+			<X>142</X>
+			<Y>29</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>24</CY>
+			<CX>16</CX>
+			<CY>12</CY>
 		</Size>
-		<TextOffsetX>4</TextOffsetX>
-		<TextOffsetY>4</TextOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>true</Style_Transparent>
-		<!--<TooltipReference/>-->
-		<FillTint>
-				<R>220</R>
-				<G>0</G>
-				<B>0</B>
-		</FillTint>
-		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
-		</LinesFillTint>
-		<DrawLinesFill>false</DrawLinesFill>
-		<EQType>12</EQType>
-		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
-			<LinesFill>A_GaugeLinesFill</LinesFill>
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
-			<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
-		</GaugeDrawTemplate>
-	</Gauge>
+		<Text>%</Text>
+		<TextColor>
+			<R>240</R>
+			<G>240</G>
+			<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
 
 	<Gauge item = "GW_PetGauge2">
 		<ScreenID>PetGauge2</ScreenID>
@@ -251,42 +711,63 @@
 		</TextColor>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>11</X>
-			<Y>50</Y>
+			<X>1</X>
+			<Y>46</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>2</CY>
+			<CX>120</CX>
+			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
-		<GaugeOffsetY>-2</GaugeOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>true</Style_Transparent>
+		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>170</R>
-				<G>60</G>
-				<B>170</B>
+				<R>100</R>
+				<G>150</G>
+				<B>255</B>
 		</FillTint>
 		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
+				<R>70</R>
+				<G>105</G>
+				<B>180</B>
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>18</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<!--<Lines>A_GaugeLines</Lines>-->
-			<!--<LinesFill>A_GaugeLinesFill</LinesFill>-->
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>-->
-			<!--<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
+	<Label item ="GW_F3Label">
+		<ScreenID>GW_F3Label</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>128</X>
+			<Y>43</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>10</CY>
+		</Size>
+		<Text>F3</Text>
+		<TextColor>
+				<R>240</R>
+				<G>240</G>
+				<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<Style_Tooltip>false</Style_Tooltip>
+	</Label>
+	
 	<StaticAnimation item= "PW_LineDivider2">
 		<ScreenID>PW_LineDivider2</ScreenID>
 		<Location>
@@ -300,19 +781,258 @@
 		<Animation>PW_LineDivider</Animation>
 	</StaticAnimation>		
 	
-	<Label item ="GW_F4Label">
-		<ScreenID>GW_F4Label</ScreenID>
-		<Font>1</Font>
+	<!-- GROUP MEMBER 3 HP - Red Veil (5-band composite) EQType 13          -->
+	<!-- ====================================================================== -->
+	<!-- Veil: Tempered Red (full) > Smoldering > Warming > Fading > Ashen (critical) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="GW_HP3_BG">
+		<ScreenID>GW_HP3_BG</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>57</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Ashen Red (220,210,210) - base, visible at any health -->
+	<Gauge item="GW_HP3_Band0">
+		<ScreenID>GW_HP3_Band0</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>57</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>210</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Fading Red (220,160,160) - 20% threshold -->
+	<Gauge item="GW_HP3_1A">
+		<ScreenID>GW_HP3_1A</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-2400</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>9600</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP3_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>57</Y></Location>
+		<Size><CX>23</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP3_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Fading Red continuation -->
+	<Gauge item="GW_HP3_1B">
+		<ScreenID>GW_HP3_1B</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-23</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>24</X><Y>57</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Warming Red (220,100,100) - 40% threshold -->
+	<Gauge item="GW_HP3_2A">
+		<ScreenID>GW_HP3_2A</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-4800</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>7200</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP3_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>57</Y></Location>
+		<Size><CX>47</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP3_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Warming Red continuation -->
+	<Gauge item="GW_HP3_2B">
+		<ScreenID>GW_HP3_2B</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-47</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>48</X><Y>57</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Smoldering Red (220,50,50) - 60% threshold -->
+	<Gauge item="GW_HP3_3A">
+		<ScreenID>GW_HP3_3A</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-7200</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4800</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP3_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>57</Y></Location>
+		<Size><CX>71</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP3_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Smoldering Red continuation -->
+	<Gauge item="GW_HP3_3B">
+		<ScreenID>GW_HP3_3B</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-71</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>72</X><Y>57</Y></Location>
+		<Size><CX>49</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Tempered Red (220,0,0) - 80% threshold -->
+	<Gauge item="GW_HP3_4A">
+		<ScreenID>GW_HP3_4A</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-9600</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2400</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP3_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>57</Y></Location>
+		<Size><CX>95</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP3_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Tempered Red continuation -->
+	<Gauge item="GW_HP3_4B">
+		<ScreenID>GW_HP3_4B</ScreenID>
+		<EQType>13</EQType>
+		<GaugeOffsetX>-95</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>96</X><Y>57</Y></Location>
+		<Size><CX>25</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Text overlay: preserves Gauge3 ScreenID for member name -->
+	<Gauge item="GW_Gauge3">
+		<ScreenID>Gauge3</ScreenID>
+		<EQType>13</EQType>
+		<TextColor><R>240</R><G>240</G><B>240</B></TextColor>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>57</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<!-- Text-only: no Background/Fill, preserves ScreenID for member name -->
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- ====================================================================== -->
+
+	<Label item ="GW_HPLabel3">
+		<ScreenID>HPLabel3</ScreenID>
+		<Font>2</Font>
+		<EQType>37</EQType>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>0</X>
-			<Y>69</Y>
+			<X>82</X>
+			<Y>57</Y>
 		</Location>
 		<Size>
-			<CX>12</CX>
+			<CX>60</CX>
 			<CY>12</CY>
 		</Size>
-		<Text>F4</Text>
+		<Text>0</Text>
 		<TextColor>
 				<R>240</R>
 				<G>240</G>
@@ -320,55 +1040,31 @@
 		</TextColor>
 		<NoWrap>true</NoWrap>
 		<AlignCenter>false</AlignCenter>
-		<AlignRight>false</AlignRight>
+		<AlignRight>true</AlignRight>
 		<Style_Tooltip>false</Style_Tooltip>
 	</Label>
 
-	<Gauge item = "GW_Gauge3">
-		<ScreenID>Gauge3</ScreenID>
-		<!--<Font>3</Font>-->
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
+	<Label item ="GW_HPPercLabel3">
+		<ScreenID>HPPercLabel3</ScreenID>
 		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
 		<Location>
-			<X>11</X>
-			<Y>56</Y>
+			<X>142</X>
+			<Y>57</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>24</CY>
+			<CX>16</CX>
+			<CY>12</CY>
 		</Size>
-		<TextOffsetX>4</TextOffsetX>
-		<TextOffsetY>4</TextOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-		<!--<TooltipReference/>-->
-		<FillTint>
-				<R>220</R>
-				<G>0</G>
-				<B>0</B>
-		</FillTint>
-		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
-		</LinesFillTint>
-		<DrawLinesFill>false</DrawLinesFill>
-		<EQType>13</EQType>
-		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
-			<LinesFill>A_GaugeLinesFill</LinesFill>
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
-			<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
-		</GaugeDrawTemplate>
-	</Gauge>
+		<Text>%</Text>
+		<TextColor>
+			<R>240</R>
+			<G>240</G>
+			<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
 
 	<Gauge item = "GW_PetGauge3">
 		<ScreenID>PetGauge3</ScreenID>
@@ -380,41 +1076,62 @@
 		</TextColor>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>11</X>
-			<Y>78</Y>
+			<X>1</X>
+			<Y>74</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>2</CY>
+			<CX>120</CX>
+			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
-		<GaugeOffsetY>-2</GaugeOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>170</R>
-				<G>60</G>
-				<B>170</B>
+				<R>100</R>
+				<G>150</G>
+				<B>255</B>
 		</FillTint>
 		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
+				<R>70</R>
+				<G>105</G>
+				<B>180</B>
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>19</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<!--<Lines>A_GaugeLines</Lines>-->
-			<!--<LinesFill>A_GaugeLinesFill</LinesFill>-->
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>-->
-			<!--<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
+
+	<Label item ="GW_F4Label">
+		<ScreenID>GW_F4Label</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>128</X>
+			<Y>71</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>10</CY>
+		</Size>
+		<Text>F4</Text>
+		<TextColor>
+				<R>240</R>
+				<G>240</G>
+				<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<Style_Tooltip>false</Style_Tooltip>
+	</Label>
 
 	<StaticAnimation item= "PW_LineDivider3">
 		<ScreenID>PW_LineDivider3</ScreenID>
@@ -427,21 +1144,260 @@
 			<CY>1</CY>
 		</Size>
 		<Animation>PW_LineDivider</Animation>
-	</StaticAnimation>		
-	
-	<Label item ="GW_F5Label">
-		<ScreenID>GW_F5Label</ScreenID>
-		<Font>1</Font>
+	</StaticAnimation>	
+
+	<!-- GROUP MEMBER 4 HP - Red Veil (5-band composite) EQType 14          -->
+	<!-- ====================================================================== -->
+	<!-- Veil: Tempered Red (full) > Smoldering > Warming > Fading > Ashen (critical) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="GW_HP4_BG">
+		<ScreenID>GW_HP4_BG</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>85</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Ashen Red (220,210,210) - base, visible at any health -->
+	<Gauge item="GW_HP4_Band0">
+		<ScreenID>GW_HP4_Band0</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>85</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>210</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Fading Red (220,160,160) - 20% threshold -->
+	<Gauge item="GW_HP4_1A">
+		<ScreenID>GW_HP4_1A</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-2400</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>9600</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP4_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>85</Y></Location>
+		<Size><CX>23</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP4_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Fading Red continuation -->
+	<Gauge item="GW_HP4_1B">
+		<ScreenID>GW_HP4_1B</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-23</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>24</X><Y>85</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Warming Red (220,100,100) - 40% threshold -->
+	<Gauge item="GW_HP4_2A">
+		<ScreenID>GW_HP4_2A</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-4800</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>7200</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP4_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>85</Y></Location>
+		<Size><CX>47</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP4_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Warming Red continuation -->
+	<Gauge item="GW_HP4_2B">
+		<ScreenID>GW_HP4_2B</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-47</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>48</X><Y>85</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Smoldering Red (220,50,50) - 60% threshold -->
+	<Gauge item="GW_HP4_3A">
+		<ScreenID>GW_HP4_3A</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-7200</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4800</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP4_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>85</Y></Location>
+		<Size><CX>71</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP4_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Smoldering Red continuation -->
+	<Gauge item="GW_HP4_3B">
+		<ScreenID>GW_HP4_3B</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-71</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>72</X><Y>85</Y></Location>
+		<Size><CX>49</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Tempered Red (220,0,0) - 80% threshold -->
+	<Gauge item="GW_HP4_4A">
+		<ScreenID>GW_HP4_4A</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-9600</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2400</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP4_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>85</Y></Location>
+		<Size><CX>95</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP4_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Tempered Red continuation -->
+	<Gauge item="GW_HP4_4B">
+		<ScreenID>GW_HP4_4B</ScreenID>
+		<EQType>14</EQType>
+		<GaugeOffsetX>-95</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>96</X><Y>85</Y></Location>
+		<Size><CX>25</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Text overlay: preserves Gauge4 ScreenID for member name -->
+	<Gauge item="GW_Gauge4">
+		<ScreenID>Gauge4</ScreenID>
+		<EQType>14</EQType>
+		<TextColor><R>240</R><G>240</G><B>240</B></TextColor>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>85</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<!-- Text-only: no Background/Fill, preserves ScreenID for member name -->
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- ====================================================================== -->
+
+	<Label item ="GW_HPLabel4">
+		<ScreenID>HPLabel4</ScreenID>
+		<Font>2</Font>
+		<EQType>38</EQType>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>0</X>
-			<Y>97</Y>
+			<X>82</X>
+			<Y>85</Y>
 		</Location>
 		<Size>
-			<CX>12</CX>
+			<CX>60</CX>
 			<CY>12</CY>
 		</Size>
-		<Text>F5</Text>
+		<Text>0</Text>
 		<TextColor>
 				<R>240</R>
 				<G>240</G>
@@ -449,55 +1405,31 @@
 		</TextColor>
 		<NoWrap>true</NoWrap>
 		<AlignCenter>false</AlignCenter>
-		<AlignRight>false</AlignRight>
+		<AlignRight>true</AlignRight>
 		<Style_Tooltip>false</Style_Tooltip>
 	</Label>
 
-	<Gauge item = "GW_Gauge4">
-		<ScreenID>Gauge4</ScreenID>
-		<!--<Font>3</Font>-->
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
+	<Label item ="GW_HPPercLabel4">
+		<ScreenID>HPPercLabel4</ScreenID>
 		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
 		<Location>
-			<X>11</X>
-			<Y>84</Y>
+			<X>142</X>
+			<Y>85</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>24</CY>
+			<CX>16</CX>
+			<CY>12</CY>
 		</Size>
-		<TextOffsetX>4</TextOffsetX>
-		<TextOffsetY>4</TextOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-		<!--<TooltipReference/>-->
-		<FillTint>
-				<R>220</R>
-				<G>0</G>
-				<B>0</B>
-		</FillTint>
-		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
-		</LinesFillTint>
-		<DrawLinesFill>false</DrawLinesFill>
-		<EQType>14</EQType>
-		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
-			<LinesFill>A_GaugeLinesFill</LinesFill>
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
-			<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
-		</GaugeDrawTemplate>
-	</Gauge>
+		<Text>%</Text>
+		<TextColor>
+			<R>240</R>
+			<G>240</G>
+			<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
 
 	<Gauge item = "GW_PetGauge4">
 		<ScreenID>PetGauge4</ScreenID>
@@ -509,41 +1441,62 @@
 		</TextColor>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>11</X>
-			<Y>106</Y>
+			<X>1</X>
+			<Y>102</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>2</CY>
+			<CX>120</CX>
+			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
-		<GaugeOffsetY>-2</GaugeOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>170</R>
-				<G>60</G>
-				<B>170</B>
+				<R>100</R>
+				<G>150</G>
+				<B>255</B>
 		</FillTint>
 		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
+				<R>70</R>
+				<G>105</G>
+				<B>180</B>
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>20</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<!--<Lines>A_GaugeLines</Lines>-->
-			<!--<LinesFill>A_GaugeLinesFill</LinesFill>-->
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>-->
-			<!--<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
+
+	<Label item ="GW_F5Label">
+		<ScreenID>GW_F5Label</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>128</X>
+			<Y>99</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>10</CY>
+		</Size>
+		<Text>F5</Text>
+		<TextColor>
+				<R>240</R>
+				<G>240</G>
+				<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<Style_Tooltip>false</Style_Tooltip>
+	</Label>
 
 	<StaticAnimation item= "PW_LineDivider4">
 		<ScreenID>PW_LineDivider4</ScreenID>
@@ -558,19 +1511,256 @@
 		<Animation>PW_LineDivider</Animation>
 	</StaticAnimation>		
 	
-	<Label item ="GW_F6Label">
-		<ScreenID>GW_F6Label</ScreenID>
-		<Font>1</Font>
+	<!-- GROUP MEMBER 5 HP - Red Veil (5-band composite) EQType 15          -->
+	<!-- ====================================================================== -->
+	<!-- Veil: Tempered Red (full) > Smoldering > Warming > Fading > Ashen (critical) -->
+
+	<!-- Background (empty gauge frame) -->
+	<Gauge item="GW_HP5_BG">
+		<ScreenID>GW_HP5_BG</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>113</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground_120t</Background>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 0: Ashen Red (220,210,210) - base, visible at any health -->
+	<Gauge item="GW_HP5_Band0">
+		<ScreenID>GW_HP5_Band0</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>113</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>210</G><B>210</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 1A: Fading Red (220,160,160) - 20% threshold -->
+	<Gauge item="GW_HP5_1A">
+		<ScreenID>GW_HP5_1A</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-2400</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>9600</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band1</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP5_1A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>113</Y></Location>
+		<Size><CX>23</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP5_1A</Pieces>
+	</Screen>
+	<!-- Band 1B: Fading Red continuation -->
+	<Gauge item="GW_HP5_1B">
+		<ScreenID>GW_HP5_1B</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-23</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>24</X><Y>113</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>160</G><B>160</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 2A: Warming Red (220,100,100) - 40% threshold -->
+	<Gauge item="GW_HP5_2A">
+		<ScreenID>GW_HP5_2A</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-4800</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>7200</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band2</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP5_2A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>113</Y></Location>
+		<Size><CX>47</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP5_2A</Pieces>
+	</Screen>
+	<!-- Band 2B: Warming Red continuation -->
+	<Gauge item="GW_HP5_2B">
+		<ScreenID>GW_HP5_2B</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-47</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>48</X><Y>113</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>100</G><B>100</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 3A: Smoldering Red (220,50,50) - 60% threshold -->
+	<Gauge item="GW_HP5_3A">
+		<ScreenID>GW_HP5_3A</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-7200</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>4800</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band3</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP5_3A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>113</Y></Location>
+		<Size><CX>71</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP5_3A</Pieces>
+	</Screen>
+	<!-- Band 3B: Smoldering Red continuation -->
+	<Gauge item="GW_HP5_3B">
+		<ScreenID>GW_HP5_3B</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-71</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>72</X><Y>113</Y></Location>
+		<Size><CX>49</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>50</G><B>50</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Band 4A: Tempered Red (220,0,0) - 80% threshold -->
+	<Gauge item="GW_HP5_4A">
+		<ScreenID>GW_HP5_4A</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-9600</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>0</X><Y>0</Y></Location>
+		<Size><CX>2400</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_OversizedGridFill_120t_Band4</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+	<Screen item="GW_HP5_4A_Clip">
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>113</Y></Location>
+		<Size><CX>95</CX><CY>16</CY></Size>
+		<Style_Transparent>true</Style_Transparent>
+		<Pieces>GW_HP5_4A</Pieces>
+	</Screen>
+	<!-- Band 4B: Tempered Red continuation -->
+	<Gauge item="GW_HP5_4B">
+		<ScreenID>GW_HP5_4B</ScreenID>
+		<EQType>15</EQType>
+		<GaugeOffsetX>-95</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>96</X><Y>113</Y></Location>
+		<Size><CX>25</CX><CY>16</CY></Size>
+		<TextOffsetX>8000</TextOffsetX>
+		<TextOffsetY>8000</TextOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<FillTint><R>220</R><G>0</G><B>0</B></FillTint>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<Fill>A_GaugeGridFill_120t</Fill>
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<!-- Text overlay: preserves Gauge5 ScreenID for member name -->
+	<Gauge item="GW_Gauge5">
+		<ScreenID>Gauge5</ScreenID>
+		<EQType>15</EQType>
+		<TextColor><R>240</R><G>240</G><B>240</B></TextColor>
+		<RelativePosition>true</RelativePosition>
+		<Location><X>1</X><Y>113</Y></Location>
+		<Size><CX>120</CX><CY>16</CY></Size>
+		<TextOffsetX>4</TextOffsetX>
+		<TextOffsetY>0</TextOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawLinesFill>false</DrawLinesFill>
+		<GaugeDrawTemplate>
+			<!-- Text-only: no Background/Fill, preserves ScreenID for member name -->
+		</GaugeDrawTemplate>
+	</Gauge>
+
+	<Label item ="GW_HPLabel5">
+		<ScreenID>HPLabel5</ScreenID>
+		<Font>2</Font>
+		<EQType>39</EQType>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>0</X>
-			<Y>125</Y>
+			<X>82</X>
+			<Y>113</Y>
 		</Location>
 		<Size>
-			<CX>12</CX>
+			<CX>60</CX>
 			<CY>12</CY>
 		</Size>
-		<Text>F6</Text>
+		<Text>0</Text>
 		<TextColor>
 				<R>240</R>
 				<G>240</G>
@@ -578,55 +1768,31 @@
 		</TextColor>
 		<NoWrap>true</NoWrap>
 		<AlignCenter>false</AlignCenter>
-		<AlignRight>false</AlignRight>
+		<AlignRight>true</AlignRight>
 		<Style_Tooltip>false</Style_Tooltip>
 	</Label>
 
-	<Gauge item = "GW_Gauge5">
-		<ScreenID>Gauge5</ScreenID>
-		<!--<Font>3</Font>-->
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
+	<Label item ="GW_HPPercLabel5">
+		<ScreenID>HPPercLabel5</ScreenID>
 		<RelativePosition>true</RelativePosition>
+		<Font>2</Font>
 		<Location>
-			<X>11</X>
-			<Y>112</Y>
+			<X>142</X>
+			<Y>113</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>24</CY>
+			<CX>16</CX>
+			<CY>12</CY>
 		</Size>
-		<TextOffsetX>4</TextOffsetX>
-		<TextOffsetY>4</TextOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
-		<Style_VScroll>false</Style_VScroll>
-		<Style_HScroll>false</Style_HScroll>
-		<Style_Transparent>false</Style_Transparent>
-		<!--<TooltipReference/>-->
-		<FillTint>
-				<R>220</R>
-				<G>0</G>
-				<B>0</B>
-		</FillTint>
-		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
-		</LinesFillTint>
-		<DrawLinesFill>false</DrawLinesFill>
-		<EQType>15</EQType>
-		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<Lines>A_GaugeLines</Lines>
-			<LinesFill>A_GaugeLinesFill</LinesFill>
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
-			<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
-		</GaugeDrawTemplate>
-	</Gauge>
+		<Text>%</Text>
+		<TextColor>
+			<R>240</R>
+			<G>240</G>
+			<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignRight>false</AlignRight>
+	</Label>
 
 	<Gauge item = "GW_PetGauge5">
 		<ScreenID>PetGauge5</ScreenID>
@@ -638,41 +1804,62 @@
 		</TextColor>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>11</X>
-			<Y>134</Y>
+			<X>1</X>
+			<Y>130</Y>
 		</Location>
 		<Size>
-			<CX>114</CX>
-			<CY>2</CY>
+			<CX>120</CX>
+			<CY>8</CY>
 		</Size>
 		<TextOffsetY>-50</TextOffsetY>
-		<GaugeOffsetY>-2</GaugeOffsetY>
-		<GaugeOffsetX>3</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>170</R>
-				<G>60</G>
-				<B>170</B>
+				<R>100</R>
+				<G>150</G>
+				<B>255</B>
 		</FillTint>
 		<LinesFillTint>
-				<R>220</R>
-				<G>220</G>
-				<B>0</B>
+				<R>70</R>
+				<G>105</G>
+				<B>180</B>
 		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>21</EQType>
 		<GaugeDrawTemplate>
-			<Background>A_GaugeBackground</Background>
-			<Fill>A_GaugeFill</Fill>
-			<!--<Lines>A_GaugeLines</Lines>-->
-			<!--<LinesFill>A_GaugeLinesFill</LinesFill>-->
-			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>-->
-			<!--<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
+			<Background>A_GaugeBackground_120</Background>
+			<Fill>A_GaugeFill_120</Fill>
+			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
+
+	<Label item ="GW_F6Label">
+		<ScreenID>GW_F6Label</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>128</X>
+			<Y>127</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>10</CY>
+		</Size>
+		<Text>F6</Text>
+		<TextColor>
+				<R>240</R>
+				<G>240</G>
+				<B>240</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<Style_Tooltip>false</Style_Tooltip>
+	</Label>
 	
 	<StaticAnimation item= "PW_LineDivider5">
 		<ScreenID>PW_LineDivider5</ScreenID>
@@ -686,232 +1873,6 @@
 		</Size>
 		<Animation>PW_LineDivider</Animation>
 	</StaticAnimation>	
-
-	<Label item ="GW_HPLabel1">
-		<ScreenID>HPLabel1</ScreenID>
-		<Font>2</Font>
-		<EQType>35</EQType>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>82</X>
-			<Y>12</Y>
-		</Location>
-		<Size>
-			<CX>60</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>0</Text>
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignCenter>false</AlignCenter>
-		<AlignRight>true</AlignRight>
-		<Style_Tooltip>false</Style_Tooltip>
-	</Label>
-	<Label item ="GW_HPPercLabel1">
-		<ScreenID>HPPercLabel1</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Font>2</Font>
-		<Location>
-			<X>142</X>
-			<Y>12</Y>
-		</Location>
-		<Size>
-			<CX>16</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>%</Text>
-		<TextColor>
-			<R>240</R>
-			<G>240</G>
-			<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignRight>false</AlignRight>
-	</Label>
-	<Label item ="GW_HPLabel2">
-		<ScreenID>HPLabel2</ScreenID>
-		<Font>2</Font>
-		<EQType>36</EQType>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>82</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>60</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>0</Text>
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignCenter>false</AlignCenter>
-		<AlignRight>true</AlignRight>
-		<Style_Tooltip>false</Style_Tooltip>
-	</Label>
-	<Label item ="GW_HPPercLabel2">
-		<ScreenID>HPPercLabel2</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Font>2</Font>
-		<Location>
-			<X>142</X>
-			<Y>40</Y>
-		</Location>
-		<Size>
-			<CX>16</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>%</Text>
-		<TextColor>
-			<R>240</R>
-			<G>240</G>
-			<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignRight>false</AlignRight>
-	</Label>
-	<Label item ="GW_HPLabel3">
-		<ScreenID>HPLabel3</ScreenID>
-		<Font>2</Font>
-		<EQType>37</EQType>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>82</X>
-			<Y>68</Y>
-		</Location>
-		<Size>
-			<CX>60</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>0</Text>
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignCenter>false</AlignCenter>
-		<AlignRight>true</AlignRight>
-		<Style_Tooltip>false</Style_Tooltip>
-	</Label>
-	<Label item ="GW_HPPercLabel3">
-		<ScreenID>HPPercLabel3</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Font>2</Font>
-		<Location>
-			<X>142</X>
-			<Y>68</Y>
-		</Location>
-		<Size>
-			<CX>16</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>%</Text>
-		<TextColor>
-			<R>240</R>
-			<G>240</G>
-			<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignRight>false</AlignRight>
-	</Label>
-	<Label item ="GW_HPLabel4">
-		<ScreenID>HPLabel4</ScreenID>
-		<Font>2</Font>
-		<EQType>38</EQType>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>82</X>
-			<Y>96</Y>
-		</Location>
-		<Size>
-			<CX>60</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>0</Text>
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignCenter>false</AlignCenter>
-		<AlignRight>true</AlignRight>
-		<Style_Tooltip>false</Style_Tooltip>
-	</Label>
-	<Label item ="GW_HPPercLabel4">
-		<ScreenID>HPPercLabel4</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Font>2</Font>
-		<Location>
-			<X>142</X>
-			<Y>96</Y>
-		</Location>
-		<Size>
-			<CX>16</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>%</Text>
-		<TextColor>
-			<R>240</R>
-			<G>240</G>
-			<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignRight>false</AlignRight>
-	</Label>
-	<Label item ="GW_HPLabel5">
-		<ScreenID>HPLabel5</ScreenID>
-		<Font>2</Font>
-		<EQType>39</EQType>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-			<X>82</X>
-			<Y>124</Y>
-		</Location>
-		<Size>
-			<CX>60</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>0</Text>
-		<TextColor>
-				<R>240</R>
-				<G>240</G>
-				<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignCenter>false</AlignCenter>
-		<AlignRight>true</AlignRight>
-		<Style_Tooltip>false</Style_Tooltip>
-	</Label>
-	<Label item ="GW_HPPercLabel5">
-		<ScreenID>HPPercLabel5</ScreenID>
-		<RelativePosition>true</RelativePosition>
-		<Font>2</Font>
-		<Location>
-			<X>142</X>
-			<Y>124</Y>
-		</Location>
-		<Size>
-			<CX>16</CX>
-			<CY>12</CY>
-		</Size>
-		<Text>%</Text>
-		<TextColor>
-			<R>240</R>
-			<G>240</G>
-			<B>240</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignRight>false</AlignRight>
-	</Label>
 
 	<Button item = "GW_InviteButton">
 		<ScreenID>InviteButton</ScreenID>
@@ -1073,8 +2034,8 @@
 		<ScreenID/>
 		<RelativePosition>false</RelativePosition>
 		<Location>
-			<X>516</X>
-			<Y>78</Y>
+			<X>0</X>
+			<Y>100</Y>
 		</Location>
 		<Size>
 			<CX>160</CX>
@@ -1097,22 +2058,77 @@
 		<Pieces>GW_FollowButton</Pieces>
 		<Pieces>GW_DeclineButton</Pieces>
 		<Pieces>GW_F2Label</Pieces>
+		<!-- Member 1 HP - Red Veil composite -->
+		<Pieces>GW_HP1_BG</Pieces>
+		<Pieces>GW_HP1_Band0</Pieces>
+		<Pieces>GW_HP1_1A_Clip</Pieces>
+		<Pieces>GW_HP1_1B</Pieces>
+		<Pieces>GW_HP1_2A_Clip</Pieces>
+		<Pieces>GW_HP1_2B</Pieces>
+		<Pieces>GW_HP1_3A_Clip</Pieces>
+		<Pieces>GW_HP1_3B</Pieces>
+		<Pieces>GW_HP1_4A_Clip</Pieces>
+		<Pieces>GW_HP1_4B</Pieces>
 		<Pieces>GW_Gauge1</Pieces>
 		<Pieces>GW_PetGauge1</Pieces>
 		<Pieces>PW_LineDivider1</Pieces>
 		<Pieces>GW_F3Label</Pieces>
+		<!-- Member 2 HP - Red Veil composite -->
+		<Pieces>GW_HP2_BG</Pieces>
+		<Pieces>GW_HP2_Band0</Pieces>
+		<Pieces>GW_HP2_1A_Clip</Pieces>
+		<Pieces>GW_HP2_1B</Pieces>
+		<Pieces>GW_HP2_2A_Clip</Pieces>
+		<Pieces>GW_HP2_2B</Pieces>
+		<Pieces>GW_HP2_3A_Clip</Pieces>
+		<Pieces>GW_HP2_3B</Pieces>
+		<Pieces>GW_HP2_4A_Clip</Pieces>
+		<Pieces>GW_HP2_4B</Pieces>
 		<Pieces>GW_Gauge2</Pieces>
 		<Pieces>GW_PetGauge2</Pieces>
 		<Pieces>PW_LineDivider2</Pieces>
 		<Pieces>GW_F4Label</Pieces>
+		<!-- Member 3 HP - Red Veil composite -->
+		<Pieces>GW_HP3_BG</Pieces>
+		<Pieces>GW_HP3_Band0</Pieces>
+		<Pieces>GW_HP3_1A_Clip</Pieces>
+		<Pieces>GW_HP3_1B</Pieces>
+		<Pieces>GW_HP3_2A_Clip</Pieces>
+		<Pieces>GW_HP3_2B</Pieces>
+		<Pieces>GW_HP3_3A_Clip</Pieces>
+		<Pieces>GW_HP3_3B</Pieces>
+		<Pieces>GW_HP3_4A_Clip</Pieces>
+		<Pieces>GW_HP3_4B</Pieces>
 		<Pieces>GW_Gauge3</Pieces>
 		<Pieces>GW_PetGauge3</Pieces>
 		<Pieces>PW_LineDivider3</Pieces>
 		<Pieces>GW_F5Label</Pieces>
+		<!-- Member 4 HP - Red Veil composite -->
+		<Pieces>GW_HP4_BG</Pieces>
+		<Pieces>GW_HP4_Band0</Pieces>
+		<Pieces>GW_HP4_1A_Clip</Pieces>
+		<Pieces>GW_HP4_1B</Pieces>
+		<Pieces>GW_HP4_2A_Clip</Pieces>
+		<Pieces>GW_HP4_2B</Pieces>
+		<Pieces>GW_HP4_3A_Clip</Pieces>
+		<Pieces>GW_HP4_3B</Pieces>
+		<Pieces>GW_HP4_4A_Clip</Pieces>
+		<Pieces>GW_HP4_4B</Pieces>
 		<Pieces>GW_Gauge4</Pieces>
 		<Pieces>GW_PetGauge4</Pieces>
 		<Pieces>PW_LineDivider4</Pieces>
 		<Pieces>GW_F6Label</Pieces>
+		<!-- Member 5 HP - Red Veil composite -->
+		<Pieces>GW_HP5_BG</Pieces>
+		<Pieces>GW_HP5_Band0</Pieces>
+		<Pieces>GW_HP5_1A_Clip</Pieces>
+		<Pieces>GW_HP5_1B</Pieces>
+		<Pieces>GW_HP5_2A_Clip</Pieces>
+		<Pieces>GW_HP5_2B</Pieces>
+		<Pieces>GW_HP5_3A_Clip</Pieces>
+		<Pieces>GW_HP5_3B</Pieces>
+		<Pieces>GW_HP5_4A_Clip</Pieces>
+		<Pieces>GW_HP5_4B</Pieces>
 		<Pieces>GW_Gauge5</Pieces>
 		<Pieces>GW_PetGauge5</Pieces>
 		<Pieces>PW_LineDivider5</Pieces>

@@ -173,7 +173,7 @@ Based on the original Lunakin Oval Target design, the following modifications ha
 ### Window Transparency
 - `Style_Transparent=false` prevents client-enforced fading
 - Window remains fully visible at all times (non-fadeable)
-- See [DEVELOPMENT.md](../../../../DEVELOPMENT.md#client-enforced-fading) for fading limitations
+- See [DEVELOPMENT.md](../../../../.docs/DEVELOPMENT.md#client-enforced-fading) for fading limitations
 
 ### Credits
 - **Original Design**: Lunakin (Oval Target)
@@ -215,7 +215,7 @@ EQTypes 70 and 80 (Player HP/Mana cur/max values) **only work with Zeal client**
 ## See Also
 
 - [STANDARDS.md](../../../../.docs/STANDARDS.md) - Thorne UI design standards
-- [DEVELOPMENT.md](../../../../DEVELOPMENT.md) - Development workflow and architecture
+- [DEVELOPMENT.md](../../../../.docs/DEVELOPMENT.md) - Development workflow and architecture
 - [.docs/technical/eqtypes.md](../../../../.docs/technical/EQTYPES.md) - Complete EQType reference
 - [.docs/technical/zeal-features.md](../../../../.docs/technical/ZEAL-FEATURES.md) - Zeal client enhancements
 

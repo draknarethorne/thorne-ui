@@ -96,7 +96,7 @@ git add -A
 git commit -m "refactor(gauges): Updated Thorne gauge appearance"
 
 # 5. Full sync to TAKP (if needed):
-.\sync-thorne-ui.bat
+.bin\sync-thorne-ui.bat
 ```
 
 ### Workflow 3: Bulk Update All Variants
@@ -323,6 +323,6 @@ To experiment: Change the `interp_method=` parameter and re-run the script.
 
 - [README.md](README.md) - Script index
 - [.bin/STANDARDS.md](STANDARDS.md) - Script documentation standards
-- [DEVELOPMENT.md](../DEVELOPMENT.md) - Phase 3.9 gauge redesign details
+- [DEVELOPMENT.md](../.docs/DEVELOPMENT.md) - Phase 3.9 gauge redesign details
 - [.docs/STANDARDS.md](../.docs/STANDARDS.md) - UI design standards
 

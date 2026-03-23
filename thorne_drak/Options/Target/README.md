@@ -4,8 +4,8 @@
 
 This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 
-**Last Synced:** 2026-03-06  
-**Git Commit:** 0b78b6f
+**Last Synced:** 2026-03-20  
+**Git Commit:** 68d2f89
 
 ---
 
@@ -27,6 +27,9 @@ This directory contains variants for the Target window (EQUI_TargetWindow.xml).
   `EQUI_TargetWindow.xml`
 
 - **[Thorne Oval Weight/](Thorne Oval Weight/)**  📄
+  `EQUI_TargetWindow.xml`
+
+- **[Thorne Standard/](Thorne Standard/)**    
   `EQUI_TargetWindow.xml`
 
 ---

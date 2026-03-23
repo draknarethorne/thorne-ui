@@ -25,8 +25,8 @@ The **TAKP (The Al'Kabor Project)** client is a restored Macintosh-era EverQuest
 | **Gauge colors & textures** | `<FillTint>` RGB values and `<GaugeDrawTemplate>` referencing TGA textures. See [STANDARDS.md](STANDARDS.md). |
 | **Window sizing**           | `<Size>` and `<Location>` with inner `<Screen>` containers using `<RelativePosition>`.                        |
 | **Logo/branding placement** | `.tga` images via `<StaticAnimation>` positioned with `<Location>` inside the desired window.                 |
-| **Slot option themes**      | Organized by archetype × color theme in `Options/Slots/`. Generated via `regen_slots.bat`.                    |
-| **Testing workflow**        | `sync-thorne-ui.bat` (full) or `sync-option.bat <path>` (variant) → `/loadskin thorne_dev`.                   |
+| **Slot option themes**      | Organized by archetype × color theme in `Options/Slots/`. Generated via `.bin\regen_slots.bat`.                    |
+| **Testing workflow**        | `.bin\sync-thorne-ui.bat` (full) or `.bin\sync-option.bat <path>` (variant) → `/loadskin thorne_dev`.                   |
 
 ---
 
@@ -41,7 +41,7 @@ The **TAKP (The Al'Kabor Project)** client is a restored Macintosh-era EverQuest
 | 5   | FriendsWnd Polish              | Not started  |
 | 6   | PetInfoWindow Commands Button  | Not started  |
 
-> **Context:** Stat icons (#4 original), gauge refactor (#5 original), and spellbook icon reconciliation shipped in v0.7.0. Slot class overrides moved to [v0.7.5](ROADMAP-v0.7.5.md). Multi-color gauges moved to [v0.8.0](ROADMAP-v0.8.0.md).
+> **Context:** Stat icons (#4 original), gauge refactor (#5 original), and spellbook icon reconciliation shipped in v0.7.0. Slot class overrides shipped in [v0.7.5](ROADMAP-v0.7.5.md). Multi-color gauges shipped in [v0.8.0](ROADMAP-v0.8.0.md). Enhanced Group Displays deferred from v0.8.0 to this milestone.
 
 ---
 
@@ -140,7 +140,7 @@ The **TAKP (The Al'Kabor Project)** client is a restored Macintosh-era EverQuest
 Compact mini-gauges for health and mana — styled as potion bottles or small bars — for quick-glance validation. Place on the hotbutton bar or other window locations.
 
 **Status:** Not started — experimental/creative exploration
-**Infrastructure:** 7 gauge variants already ship with size-specific outputs via `regen_gauges.bat`.
+**Infrastructure:** 7 gauge variants already ship with size-specific outputs via `.bin\regen_gauges.bat`.
 
 ---
 
@@ -175,10 +175,10 @@ Items identified during analysis that are too large or speculative for v1.0.0. T
 
 | Pipeline        | Script                                        | Output Location                       |
 | --------------- | --------------------------------------------- | ------------------------------------- |
-| Gauge textures  | `regen_gauges.bat` / `.bin/regen_gauges.py`   | `Options/Gauges/[variant]/`           |
-| Spell gem icons | `regen_gems.bat` / `.bin/regen_gems.py`       | `Options/Icons/[variant]/`            |
-| Stat icons      | `regen_icons.bat` / `.bin/regen_icons.py`     | `thorne_drak/stat_icons_thorne01.tga` |
-| Slot textures   | `regen_slots.bat` / `.bin/regen_slots.py`     | `Options/Slots/[class]/[theme]/`      |
+| Gauge textures  | `.bin\regen_gauges.bat` / `.bin/regen_gauges.py`   | `Options/Gauges/[variant]/`           |
+| Spell gem icons | `.bin\regen_gems.bat` / `.bin/regen_gems.py`       | `Options/Icons/[variant]/`            |
+| Stat icons      | `.bin\regen_icons.bat` / `.bin/regen_icons.py`     | `thorne_drak/stat_icons_thorne01.tga` |
+| Slot textures   | `.bin\regen_slots.bat` / `.bin/regen_slots.py`     | `Options/Slots/[class]/[theme]/`      |
 | Button textures | `.bin/generate_thorne_buttons_transparent.py` | `Options/Buttons/[variant]/`          |
 
 ---
@@ -190,7 +190,7 @@ Items identified during analysis that are too large or speculative for v1.0.0. T
 - [ROADMAP-v0.7.0.md](ROADMAP-v0.7.0.md) — Archived (shipped)
 - [STANDARDS.md](STANDARDS.md) — UI design standards
 - [README.md](../README.md) — Full version history
-- [DEVELOPMENT.md](../DEVELOPMENT.md) — Architecture and contribution guide
+- [DEVELOPMENT.md](DEVELOPMENT.md) — Architecture and contribution guide
 
 ---
 

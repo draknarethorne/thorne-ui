@@ -2,9 +2,13 @@
   "description": "Grid gauge variant - dense structural black grid across all sections",
   "interpolation": "BILINEAR",
   "sections": {
-    "background": { "preserve_black": true },
-    "fill":       { "preserve_black": false },
-    "lines":      { "preserve_black": true },
-    "linesfill":  { "preserve_black": false }
+    "background":    { "preserve_black": true },
+    "fill":          { "preserve_black": false, "preserve_gaps": true },
+    "lines":         { "preserve_black": true },
+    "linesfill":     { "preserve_black": false },
+    "overlay":       { "preserve_black": true,  "enabled": true },
+    "solidfill":     { "preserve_black": false, "fill_gaps": true },
+    "gridfill":      { "preserve_black": false, "bake_overlay": true, "gray_level": 0,   "darken": 0.0, "spread": 1 },
+    "lightgridfill": { "preserve_black": false, "bake_overlay": true, "gray_level": 140, "darken": 0.0,  "spread": 1 }
   }
 }

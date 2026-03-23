@@ -14,7 +14,7 @@ Usage:
   python .bin/generate_thorne_logo_atlas.py [--dry-run]
 
 Output:
-  Options/Slots/.Master/logo_atlas_thorne01.tga  (updated in-place)
+  .master/logo_atlas_thorne01.tga  (updated in-place)
 """
 
 import json
@@ -29,7 +29,7 @@ from PIL import Image
 # Paths
 SCRIPT_DIR = Path(__file__).resolve().parent
 CONFIG_FILE = SCRIPT_DIR / "generate_thorne_logo_atlas.json"
-MASTER_DIR = SCRIPT_DIR.parent / "thorne_drak" / "Options" / "Slots" / ".Master"
+MASTER_DIR = SCRIPT_DIR.parent / ".master"
 
 
 def load_config() -> dict:

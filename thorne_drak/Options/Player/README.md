@@ -4,8 +4,8 @@
 
 This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-18  
+**Git Commit:** b091f24
 
 ---
 
@@ -14,7 +14,16 @@ This directory contains variants for the Player window (EQUI_PlayerWindow.xml).
 - **[Standard/](Standard/)**    
   `EQUI_PlayerWindow.xml`
 
-- **[Thorne/](Thorne/)**  📄
+- **[Thorne/](Thorne/)**    
+  `EQUI_PlayerWindow.xml`
+
+- **[Thorne Arc/](Thorne Arc/)**  📄
+  `EQUI_PlayerWindow.xml`
+
+- **[Thorne Standard/](Thorne Standard/)**  📄
+  `EQUI_PlayerWindow.xml`
+
+- **[Thorne Veil/](Thorne Veil/)**    
   `EQUI_PlayerWindow.xml`
 
 ---

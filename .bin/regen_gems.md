@@ -284,4 +284,4 @@ python .bin/regen_icons.py Thorne
 - [README.md](README.md) — Script index
 - [regen_icons.md](regen_icons.md) — Downstream stat icon regeneration
 - [STANDARDS.md](STANDARDS.md) — Script documentation standards
-- [DEVELOPMENT.md](../DEVELOPMENT.md) — Project roadmap and phase details
+- [DEVELOPMENT.md](../.docs/DEVELOPMENT.md) — Project roadmap and phase details

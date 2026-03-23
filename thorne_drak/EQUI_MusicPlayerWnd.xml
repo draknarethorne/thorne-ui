@@ -1,4 +1,4 @@
-<?xml version = "1.0"?>
+﻿<?xml version = "1.0"?>
 <XML ID = "EQInterfaceDefinitionLanguage">
 	<Schema xmlns = "EverQuestData" xmlns:dt = "EverQuestDataTypes"/>
 
@@ -1128,6 +1128,1368 @@
 		</ButtonDrawTemplate>
 	</Button>
 
+  <!-- ============================================================== -->
+  <!-- GAUGE CLIP TEST: Composite + A|B pieces for each band          -->
+  <!-- ============================================================== -->
+  <!-- All bands: uniform marker-1 clips                              -->
+  <!-- Uses Mem EQType 9 (Cyan Veil) for identical fill levels         -->
+  <!-- Composite on top, then bands 4-0 A|B pieces below               -->
+
+  <!-- ======================================================== -->
+  <!-- TEST 1 (105t): marker-1 clips [20,41,62,83]          -->
+  <!-- ======================================================== -->
+  <Label item="T1_Lbl">
+    <ScreenID>T1_Lbl</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>46</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>TEST 1 (105t): marker-1 clips [20,41,62,83]</Text>
+    <Font>3</Font>
+    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <!-- Background -->
+  <Gauge item="T1_BG">
+    <ScreenID>T1_BG</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>62</Y></Location>
+    <Size><CX>105</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground_105t</Background>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 0: Frostlight (full width, no clip) -->
+  <Gauge item="T1_B0">
+    <ScreenID>T1_B0</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>62</Y></Location>
+    <Size><CX>105</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 1A: Arctic Glow clip=20 (marker-1) -->
+  <Gauge item="T1_1A">
+    <ScreenID>T1_1A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-2100</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>8400</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_1AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>62</Y></Location>
+    <Size><CX>20</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_1A</Pieces>
+  </Screen>
+  <!-- Band 1B: clip=20 -->
+  <Gauge item="T1_1B">
+    <ScreenID>T1_1B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-20</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>25</X><Y>62</Y></Location>
+    <Size><CX>85</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 2A: Crystal Current clip=41 (marker-1) -->
+  <Gauge item="T1_2A">
+    <ScreenID>T1_2A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-4200</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>6300</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_2AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>62</Y></Location>
+    <Size><CX>41</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_2A</Pieces>
+  </Screen>
+  <!-- Band 2B: clip=41 -->
+  <Gauge item="T1_2B">
+    <ScreenID>T1_2B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-41</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>46</X><Y>62</Y></Location>
+    <Size><CX>64</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 3A: Deep Tide clip=62 (marker-1) -->
+  <Gauge item="T1_3A">
+    <ScreenID>T1_3A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-6300</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>4200</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_3AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>62</Y></Location>
+    <Size><CX>62</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_3A</Pieces>
+  </Screen>
+  <!-- Band 3B: clip=62 -->
+  <Gauge item="T1_3B">
+    <ScreenID>T1_3B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-62</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>67</X><Y>62</Y></Location>
+    <Size><CX>43</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 4A: Abyssal Cyan clip=83 (marker-1) -->
+  <Gauge item="T1_4A">
+    <ScreenID>T1_4A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-8400</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>2100</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_4AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>62</Y></Location>
+    <Size><CX>83</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_4A</Pieces>
+  </Screen>
+  <!-- Band 4B: clip=83 -->
+  <Gauge item="T1_4B">
+    <ScreenID>T1_4B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-83</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>88</X><Y>62</Y></Location>
+    <Size><CX>22</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T1_P4L">
+    <ScreenID>T1_P4L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>82</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B4: A[0..82] | B[83..104]  clip=83</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T1_PA4">
+    <ScreenID>T1_PA4</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-8400</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>2100</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_PAC4">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>96</Y></Location>
+    <Size><CX>83</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_PA4</Pieces>
+  </Screen>
+  <Gauge item="T1_PB4">
+    <ScreenID>T1_PB4</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-83</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>94</X><Y>96</Y></Location>
+    <Size><CX>22</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T1_P3L">
+    <ScreenID>T1_P3L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>124</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B3: A[0..61] | B[62..104]  clip=62</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T1_PA3">
+    <ScreenID>T1_PA3</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-6300</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>4200</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_PAC3">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>138</Y></Location>
+    <Size><CX>62</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_PA3</Pieces>
+  </Screen>
+  <Gauge item="T1_PB3">
+    <ScreenID>T1_PB3</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-62</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>73</X><Y>138</Y></Location>
+    <Size><CX>43</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T1_P2L">
+    <ScreenID>T1_P2L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>166</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B2: A[0..40] | B[41..104]  clip=41</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T1_PA2">
+    <ScreenID>T1_PA2</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-4200</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>6300</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_PAC2">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>180</Y></Location>
+    <Size><CX>41</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_PA2</Pieces>
+  </Screen>
+  <Gauge item="T1_PB2">
+    <ScreenID>T1_PB2</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-41</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>52</X><Y>180</Y></Location>
+    <Size><CX>64</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T1_P1L">
+    <ScreenID>T1_P1L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>208</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B1: A[0..19] | B[20..104]  clip=20</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T1_PA1">
+    <ScreenID>T1_PA1</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-2100</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>8400</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_105t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T1_PAC1">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>222</Y></Location>
+    <Size><CX>20</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T1_PA1</Pieces>
+  </Screen>
+  <Gauge item="T1_PB1">
+    <ScreenID>T1_PB1</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-20</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>31</X><Y>222</Y></Location>
+    <Size><CX>85</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T1_P0L">
+    <ScreenID>T1_P0L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>250</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B0: Full gauge (no clip) - Frostlight</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T1_PF0">
+    <ScreenID>T1_PF0</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>264</Y></Location>
+    <Size><CX>105</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- ======================================================== -->
+  <!-- TEST 2 (120t): marker-1 clips [23,47,71,95]          -->
+  <!-- ======================================================== -->
+  <Label item="T2_Lbl">
+    <ScreenID>T2_Lbl</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>286</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>TEST 2 (120t): marker-1 clips [23,47,71,95]</Text>
+    <Font>3</Font>
+    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <!-- Background -->
+  <Gauge item="T2_BG">
+    <ScreenID>T2_BG</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>302</Y></Location>
+    <Size><CX>120</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground_120t</Background>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 0: Frostlight (full width, no clip) -->
+  <Gauge item="T2_B0">
+    <ScreenID>T2_B0</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>302</Y></Location>
+    <Size><CX>120</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 1A: Arctic Glow clip=23 (marker-1) -->
+  <Gauge item="T2_1A">
+    <ScreenID>T2_1A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>9600</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_1AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>302</Y></Location>
+    <Size><CX>23</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_1A</Pieces>
+  </Screen>
+  <!-- Band 1B: clip=23 -->
+  <Gauge item="T2_1B">
+    <ScreenID>T2_1B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-23</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>28</X><Y>302</Y></Location>
+    <Size><CX>97</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 2A: Crystal Current clip=47 (marker-1) -->
+  <Gauge item="T2_2A">
+    <ScreenID>T2_2A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>7200</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_2AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>302</Y></Location>
+    <Size><CX>47</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_2A</Pieces>
+  </Screen>
+  <!-- Band 2B: clip=47 -->
+  <Gauge item="T2_2B">
+    <ScreenID>T2_2B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-47</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>52</X><Y>302</Y></Location>
+    <Size><CX>73</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 3A: Deep Tide clip=71 (marker-1) -->
+  <Gauge item="T2_3A">
+    <ScreenID>T2_3A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>4800</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_3AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>302</Y></Location>
+    <Size><CX>71</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_3A</Pieces>
+  </Screen>
+  <!-- Band 3B: clip=71 -->
+  <Gauge item="T2_3B">
+    <ScreenID>T2_3B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-71</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>76</X><Y>302</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 4A: Abyssal Cyan clip=95 (marker-1) -->
+  <Gauge item="T2_4A">
+    <ScreenID>T2_4A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>2400</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_4AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>302</Y></Location>
+    <Size><CX>95</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_4A</Pieces>
+  </Screen>
+  <!-- Band 4B: clip=95 -->
+  <Gauge item="T2_4B">
+    <ScreenID>T2_4B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-95</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>100</X><Y>302</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T2_P4L">
+    <ScreenID>T2_P4L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>322</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B4: A[0..94] | B[95..119]  clip=95</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T2_PA4">
+    <ScreenID>T2_PA4</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-9600</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>2400</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_PAC4">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>336</Y></Location>
+    <Size><CX>95</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_PA4</Pieces>
+  </Screen>
+  <Gauge item="T2_PB4">
+    <ScreenID>T2_PB4</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-95</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>106</X><Y>336</Y></Location>
+    <Size><CX>25</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T2_P3L">
+    <ScreenID>T2_P3L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>364</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B3: A[0..70] | B[71..119]  clip=71</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T2_PA3">
+    <ScreenID>T2_PA3</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-7200</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>4800</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_PAC3">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>378</Y></Location>
+    <Size><CX>71</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_PA3</Pieces>
+  </Screen>
+  <Gauge item="T2_PB3">
+    <ScreenID>T2_PB3</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-71</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>82</X><Y>378</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T2_P2L">
+    <ScreenID>T2_P2L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>406</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B2: A[0..46] | B[47..119]  clip=47</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T2_PA2">
+    <ScreenID>T2_PA2</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-4800</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>7200</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_PAC2">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>420</Y></Location>
+    <Size><CX>47</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_PA2</Pieces>
+  </Screen>
+  <Gauge item="T2_PB2">
+    <ScreenID>T2_PB2</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-47</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>58</X><Y>420</Y></Location>
+    <Size><CX>73</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T2_P1L">
+    <ScreenID>T2_P1L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>448</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B1: A[0..22] | B[23..119]  clip=23</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T2_PA1">
+    <ScreenID>T2_PA1</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-2400</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>9600</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_120t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T2_PAC1">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>462</Y></Location>
+    <Size><CX>23</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T2_PA1</Pieces>
+  </Screen>
+  <Gauge item="T2_PB1">
+    <ScreenID>T2_PB1</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-23</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>34</X><Y>462</Y></Location>
+    <Size><CX>97</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T2_P0L">
+    <ScreenID>T2_P0L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>490</Y></Location>
+    <Size><CX>280</CX><CY>16</CY></Size>
+    <Text>B0: Full gauge (no clip) - Frostlight</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T2_PF0">
+    <ScreenID>T2_PF0</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>504</Y></Location>
+    <Size><CX>120</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_120t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- ======================================================== -->
+  <!-- TEST 3 (250t): marker-1 clips [49,99,149,199]        -->
+  <!-- ======================================================== -->
+  <Label item="T3_Lbl">
+    <ScreenID>T3_Lbl</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>526</Y></Location>
+    <Size><CX>330</CX><CY>16</CY></Size>
+    <Text>TEST 3 (250t): marker-1 clips [49,99,149,199]</Text>
+    <Font>3</Font>
+    <TextColor><R>200</R><G>200</G><B>200</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <!-- Background -->
+  <Gauge item="T3_BG">
+    <ScreenID>T3_BG</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>542</Y></Location>
+    <Size><CX>250</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground_250t</Background>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 0: Frostlight (full width, no clip) -->
+  <Gauge item="T3_B0">
+    <ScreenID>T3_B0</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>542</Y></Location>
+    <Size><CX>250</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 1A: Arctic Glow clip=49 (marker-1) -->
+  <Gauge item="T3_1A">
+    <ScreenID>T3_1A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-5000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>20000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_1AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>542</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_1A</Pieces>
+  </Screen>
+  <!-- Band 1B: clip=49 -->
+  <Gauge item="T3_1B">
+    <ScreenID>T3_1B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-49</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>54</X><Y>542</Y></Location>
+    <Size><CX>201</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 2A: Crystal Current clip=99 (marker-1) -->
+  <Gauge item="T3_2A">
+    <ScreenID>T3_2A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-10000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>15000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_2AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>542</Y></Location>
+    <Size><CX>99</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_2A</Pieces>
+  </Screen>
+  <!-- Band 2B: clip=99 -->
+  <Gauge item="T3_2B">
+    <ScreenID>T3_2B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-99</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>104</X><Y>542</Y></Location>
+    <Size><CX>151</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 3A: Deep Tide clip=149 (marker-1) -->
+  <Gauge item="T3_3A">
+    <ScreenID>T3_3A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-15000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>10000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_3AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>542</Y></Location>
+    <Size><CX>149</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_3A</Pieces>
+  </Screen>
+  <!-- Band 3B: clip=149 -->
+  <Gauge item="T3_3B">
+    <ScreenID>T3_3B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-149</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>154</X><Y>542</Y></Location>
+    <Size><CX>101</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <!-- Band 4A: Abyssal Cyan clip=199 (marker-1) -->
+  <Gauge item="T3_4A">
+    <ScreenID>T3_4A</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-20000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>5000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_4AC">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>542</Y></Location>
+    <Size><CX>199</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_4A</Pieces>
+  </Screen>
+  <!-- Band 4B: clip=199 -->
+  <Gauge item="T3_4B">
+    <ScreenID>T3_4B</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-199</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>204</X><Y>542</Y></Location>
+    <Size><CX>51</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T3_P4L">
+    <ScreenID>T3_P4L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>562</Y></Location>
+    <Size><CX>330</CX><CY>16</CY></Size>
+    <Text>B4: A[0..198] | B[199..249]  clip=199</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T3_PA4">
+    <ScreenID>T3_PA4</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-20000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>5000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_PAC4">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>576</Y></Location>
+    <Size><CX>199</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_PA4</Pieces>
+  </Screen>
+  <Gauge item="T3_PB4">
+    <ScreenID>T3_PB4</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-199</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>210</X><Y>576</Y></Location>
+    <Size><CX>51</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T3_P3L">
+    <ScreenID>T3_P3L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>604</Y></Location>
+    <Size><CX>330</CX><CY>16</CY></Size>
+    <Text>B3: A[0..148] | B[149..249]  clip=149</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T3_PA3">
+    <ScreenID>T3_PA3</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-15000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>10000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_PAC3">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>618</Y></Location>
+    <Size><CX>149</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_PA3</Pieces>
+  </Screen>
+  <Gauge item="T3_PB3">
+    <ScreenID>T3_PB3</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-149</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>160</X><Y>618</Y></Location>
+    <Size><CX>101</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T3_P2L">
+    <ScreenID>T3_P2L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>646</Y></Location>
+    <Size><CX>330</CX><CY>16</CY></Size>
+    <Text>B2: A[0..98] | B[99..249]  clip=99</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T3_PA2">
+    <ScreenID>T3_PA2</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-10000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>15000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_PAC2">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>660</Y></Location>
+    <Size><CX>99</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_PA2</Pieces>
+  </Screen>
+  <Gauge item="T3_PB2">
+    <ScreenID>T3_PB2</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-99</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>110</X><Y>660</Y></Location>
+    <Size><CX>151</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T3_P1L">
+    <ScreenID>T3_P1L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>688</Y></Location>
+    <Size><CX>330</CX><CY>16</CY></Size>
+    <Text>B1: A[0..48] | B[49..249]  clip=49</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T3_PA1">
+    <ScreenID>T3_PA1</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-5000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>20000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedLightGridFill_250t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="T3_PAC1">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>702</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>T3_PA1</Pieces>
+  </Screen>
+  <Gauge item="T3_PB1">
+    <ScreenID>T3_PB1</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>-49</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>60</X><Y>702</Y></Location>
+    <Size><CX>201</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Label item="T3_P0L">
+    <ScreenID>T3_P0L</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>730</Y></Location>
+    <Size><CX>330</CX><CY>16</CY></Size>
+    <Text>B0: Full gauge (no clip) - Frostlight</Text>
+    <Font>3</Font>
+    <TextColor><R>180</R><G>180</G><B>180</B></TextColor>
+    <NoWrap>true</NoWrap>
+  </Label>
+  <Gauge item="T3_PF0">
+    <ScreenID>T3_PF0</ScreenID>
+    <EQType>9</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>5</X><Y>744</Y></Location>
+    <Size><CX>250</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeLightGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
 	<Screen item = "MusicPlayerWnd">
 		<ScreenID/>
 		<RelativePosition>false</RelativePosition>
@@ -1137,19 +2499,19 @@
 		</Location>
 		<Size>
 			<CX>426</CX>
-			<CY>42</CY>
+			<CY>820</CY>
 		</Size>
 		<Text></Text>
 		<Style_VScroll>false</Style_VScroll>
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 		<TooltipReference>Character Stats Window</TooltipReference>
-		<DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
-		<Style_Titlebar>false</Style_Titlebar>
-		<Style_Closebox>false</Style_Closebox>
+		<DrawTemplate>WDT_RoundedCompactTitle</DrawTemplate>
+		<Style_Titlebar>true</Style_Titlebar>
+		<Style_Closebox>true</Style_Closebox>
 		<Style_Minimizebox>false</Style_Minimizebox>
 		<Style_Border>true</Style_Border>
-		<Style_Sizable>false</Style_Sizable>
+		<Style_Sizable>true</Style_Sizable>
 		<Pieces>MPW_Stat_AC_Icon</Pieces>
 		<Pieces>MPW_Stat_AC_Value</Pieces>
 		<Pieces>MPW_Stat_ATK_Icon</Pieces>
@@ -1179,6 +2541,85 @@
 		<Pieces>MPW_Stat_Poison_Icon</Pieces>
 		<Pieces>MPW_Stat_Poison_Value</Pieces>
 
+								<!-- ====== GAUGE CLIP TEST PIECES ====== -->
+		<!-- T1 -->
+		<Pieces>T1_Lbl</Pieces>
+		<Pieces>T1_BG</Pieces>
+		<Pieces>T1_B0</Pieces>
+		<Pieces>T1_1AC</Pieces>
+		<Pieces>T1_1B</Pieces>
+		<Pieces>T1_2AC</Pieces>
+		<Pieces>T1_2B</Pieces>
+		<Pieces>T1_3AC</Pieces>
+		<Pieces>T1_3B</Pieces>
+		<Pieces>T1_4AC</Pieces>
+		<Pieces>T1_4B</Pieces>
+		<Pieces>T1_P4L</Pieces>
+		<Pieces>T1_PAC4</Pieces>
+		<Pieces>T1_PB4</Pieces>
+		<Pieces>T1_P3L</Pieces>
+		<Pieces>T1_PAC3</Pieces>
+		<Pieces>T1_PB3</Pieces>
+		<Pieces>T1_P2L</Pieces>
+		<Pieces>T1_PAC2</Pieces>
+		<Pieces>T1_PB2</Pieces>
+		<Pieces>T1_P1L</Pieces>
+		<Pieces>T1_PAC1</Pieces>
+		<Pieces>T1_PB1</Pieces>
+		<Pieces>T1_P0L</Pieces>
+		<Pieces>T1_PF0</Pieces>
+		<!-- T2 -->
+		<Pieces>T2_Lbl</Pieces>
+		<Pieces>T2_BG</Pieces>
+		<Pieces>T2_B0</Pieces>
+		<Pieces>T2_1AC</Pieces>
+		<Pieces>T2_1B</Pieces>
+		<Pieces>T2_2AC</Pieces>
+		<Pieces>T2_2B</Pieces>
+		<Pieces>T2_3AC</Pieces>
+		<Pieces>T2_3B</Pieces>
+		<Pieces>T2_4AC</Pieces>
+		<Pieces>T2_4B</Pieces>
+		<Pieces>T2_P4L</Pieces>
+		<Pieces>T2_PAC4</Pieces>
+		<Pieces>T2_PB4</Pieces>
+		<Pieces>T2_P3L</Pieces>
+		<Pieces>T2_PAC3</Pieces>
+		<Pieces>T2_PB3</Pieces>
+		<Pieces>T2_P2L</Pieces>
+		<Pieces>T2_PAC2</Pieces>
+		<Pieces>T2_PB2</Pieces>
+		<Pieces>T2_P1L</Pieces>
+		<Pieces>T2_PAC1</Pieces>
+		<Pieces>T2_PB1</Pieces>
+		<Pieces>T2_P0L</Pieces>
+		<Pieces>T2_PF0</Pieces>
+		<!-- T3 -->
+		<Pieces>T3_Lbl</Pieces>
+		<Pieces>T3_BG</Pieces>
+		<Pieces>T3_B0</Pieces>
+		<Pieces>T3_1AC</Pieces>
+		<Pieces>T3_1B</Pieces>
+		<Pieces>T3_2AC</Pieces>
+		<Pieces>T3_2B</Pieces>
+		<Pieces>T3_3AC</Pieces>
+		<Pieces>T3_3B</Pieces>
+		<Pieces>T3_4AC</Pieces>
+		<Pieces>T3_4B</Pieces>
+		<Pieces>T3_P4L</Pieces>
+		<Pieces>T3_PAC4</Pieces>
+		<Pieces>T3_PB4</Pieces>
+		<Pieces>T3_P3L</Pieces>
+		<Pieces>T3_PAC3</Pieces>
+		<Pieces>T3_PB3</Pieces>
+		<Pieces>T3_P2L</Pieces>
+		<Pieces>T3_PAC2</Pieces>
+		<Pieces>T3_PB2</Pieces>
+		<Pieces>T3_P1L</Pieces>
+		<Pieces>T3_PAC1</Pieces>
+		<Pieces>T3_PB1</Pieces>
+		<Pieces>T3_P0L</Pieces>
+		<Pieces>T3_PF0</Pieces>
 		<!-- Client-required hidden children to prevent MusicPlayer missing-piece UI errors -->
 		<Pieces>MPW_SongSelector</Pieces>
 		<Pieces>MPW_SongTimer</Pieces>

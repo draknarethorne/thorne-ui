@@ -1,4 +1,4 @@
-[← Back to Development Guide](../../DEVELOPMENT.md#development-phases)
+[← Back to Development Guide](../../.docs/DEVELOPMENT.md#development-phases)
 
 # Phase 3: Merchant Window Enhancements ✅
 
@@ -157,4 +157,4 @@ All labels and values use canonical Inventory window color palette:
 
 ---
 
-[← Back to Phases](README.md) | [Development Guide](../../DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)
+[← Back to Phases](README.md) | [Development Guide](../../.docs/DEVELOPMENT.md) | [Technical References](../../.docs/technical/EQTYPES.md)

@@ -4,8 +4,8 @@
 
 This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-03-20  
+**Git Commit:** 25534fd
 
 ---
 
@@ -15,6 +15,12 @@ This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
   `EQUI_PetInfoWindow.xml`
 
 - **[Thorne/](Thorne/)**    
+  `EQUI_PetInfoWindow.xml`
+
+- **[Thorne Standard/](Thorne Standard/)**    
+  `EQUI_PetInfoWindow.xml`
+
+- **[Thorne Veil/](Thorne Veil/)**    
   `EQUI_PetInfoWindow.xml`
 
 ---

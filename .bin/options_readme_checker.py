@@ -25,7 +25,7 @@ from datetime import datetime
 from collections import defaultdict
 
 class OptionsReadmeChecker:
-    def __init__(self, options_root, min_readme_lines=80, deep_analysis_threshold=150):
+    def __init__(self, options_root, min_readme_lines=80, deep_analysis_threshold=120):
         self.options_root = Path(options_root)
         self.min_readme_lines = min_readme_lines
         self.deep_analysis_threshold = deep_analysis_threshold  # Line count below which needs deep analysis

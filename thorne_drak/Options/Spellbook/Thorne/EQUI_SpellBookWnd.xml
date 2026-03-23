@@ -581,7 +581,7 @@
   <!-- Z-order: BG > Aureate Glow(0) > Sunlit Parchment(1) > Molten Script(2) > Gilded Quill(3) > Ancient Gold(4) -->
   <!--                                                                        -->
   <!-- 105px gauge — grid positions (0-based): 0, 21, 42, 62, 82, 104        -->
-  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84)             -->
+  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84) -->
   <!--   Band 1: clip 21  Band 2: clip 42  Band 3: clip 63  Band 4: clip 84  -->
   <!--   B-part: X = base + clip, CX = 105 - clip, GaugeOffsetX = -clip      -->
 
@@ -805,7 +805,7 @@
   <!-- Z-order: BG > Frostlight(0) > Arctic Glow(1) > Crystal Current(2) > Deep Tide(3) > Abyssal Cyan(4) -->
   <!--                                                                        -->
   <!-- 105px gauge — grid positions (0-based): 0, 21, 42, 62, 82, 104        -->
-  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84)             -->
+  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84) -->
   <!--   Band 1: clip 21  Band 2: clip 42  Band 3: clip 63  Band 4: clip 84  -->
   <!--   B-part: X = base + clip, CX = 105 - clip, GaugeOffsetX = -clip      -->
 
@@ -1181,7 +1181,7 @@
 
   <Screen item="SpellBookWnd">
     <RelativePosition>false</RelativePosition>
-    <Location><X>148</X><Y>0</Y></Location>
+    <Location><X>150</X><Y>0</Y></Location>
     <Size><CX>440</CX><CY>407</CY></Size>
     <Text>Spell Book</Text>
     <Style_Transparent>false</Style_Transparent>

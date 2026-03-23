@@ -5714,84 +5714,17 @@
     </Frames>
   </Ui2DAnimation>
 
-  <!-- Hybrid 4x stretch fills for gauge experiment (105t Row D)          -->
-  <!-- Each band offsets the 105px source texture within a 420px canvas   -->
-  <Ui2DAnimation item="A_HybridFill_105t_Band1">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay105t_thorne01.tga</Texture>
-      <Location>
-        <X>0</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>420</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-  <Ui2DAnimation item="A_HybridFill_105t_Band2">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay105t_thorne01.tga</Texture>
-      <Location>
-        <X>-105</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>420</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-  <Ui2DAnimation item="A_HybridFill_105t_Band3">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay105t_thorne01.tga</Texture>
-      <Location>
-        <X>-210</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>420</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-  <Ui2DAnimation item="A_HybridFill_105t_Band4">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay105t_thorne01.tga</Texture>
-      <Location>
-        <X>-315</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>420</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-
   <!-- Oversized Nillipuss-style fills (105t thorne01 Row B)              -->
   <Ui2DAnimation item="A_OversizedFill_105t_Band1">
     <Cycle>true</Cycle>
     <Frames>
       <Texture>gauge_inlay105t_thorne01.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2100</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5803,11 +5736,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne01.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4200</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5819,11 +5752,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne01.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-6300</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5835,11 +5768,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne01.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-8400</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5916,11 +5849,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2100</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5932,11 +5865,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4200</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5948,11 +5881,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-6300</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5964,11 +5897,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-8400</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5982,11 +5915,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2100</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -5998,11 +5931,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4200</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6014,11 +5947,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-6300</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6030,11 +5963,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-8400</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6066,11 +5999,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2100</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6082,11 +6015,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4200</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6098,11 +6031,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-6300</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6114,11 +6047,11 @@
     <Frames>
       <Texture>gauge_inlay105t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-8400</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>10500</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6185,73 +6118,6 @@
     </Frames>
   </Ui2DAnimation>
 
-  <!-- Hybrid 4x stretch fills for gauge experiment (Row D) -->
-  <!-- Each band offsets the 120px source texture within a 480px canvas -->
-  <Ui2DAnimation item="A_HybridFill_120t_Band1">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay120t_thorne01.tga</Texture>
-      <Location>
-        <X>0</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>480</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-  <Ui2DAnimation item="A_HybridFill_120t_Band2">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay120t_thorne01.tga</Texture>
-      <Location>
-        <X>-120</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>480</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-  <Ui2DAnimation item="A_HybridFill_120t_Band3">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay120t_thorne01.tga</Texture>
-      <Location>
-        <X>-240</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>480</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-  <Ui2DAnimation item="A_HybridFill_120t_Band4">
-    <Cycle>true</Cycle>
-    <Frames>
-      <Texture>gauge_inlay120t_thorne01.tga</Texture>
-      <Location>
-        <X>-360</X>
-        <Y>16</Y>
-      </Location>
-      <Size>
-        <CX>480</CX>
-        <CY>16</CY>
-      </Size>
-      <Hotspot><X>0</X><Y>0</Y></Hotspot>
-      <Duration>1000</Duration>
-    </Frames>
-  </Ui2DAnimation>
-
   <!-- Oversized Nillipuss-style fills for gauge experiment (Row N)         -->
   <!-- CX=10000 with negative X offsets create threshold fill behavior      -->
   <!-- Based on Nillipuss technique: animation offset = gauge GaugeOffsetX  -->
@@ -6260,11 +6126,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2400</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6276,11 +6142,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4800</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6292,11 +6158,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-7200</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6308,11 +6174,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne01.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-9600</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6390,11 +6256,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2400</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6406,11 +6272,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4800</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6422,11 +6288,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-7200</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6438,11 +6304,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-9600</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6457,11 +6323,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2400</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6473,11 +6339,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4800</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6489,11 +6355,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-7200</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6505,11 +6371,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-9600</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6541,11 +6407,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-2400</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6557,11 +6423,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-4800</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6573,11 +6439,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-7200</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6589,11 +6455,11 @@
     <Frames>
       <Texture>gauge_inlay120t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-9600</X>
         <Y>48</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>12000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6753,11 +6619,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-5000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6769,11 +6635,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-10000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6785,11 +6651,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-15000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6801,11 +6667,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne01.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-20000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6819,11 +6685,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-5000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6835,11 +6701,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-10000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6851,11 +6717,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-15000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6867,11 +6733,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-20000</X>
         <Y>16</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6885,11 +6751,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-2000</X>
+        <X>-5000</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6901,11 +6767,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-4000</X>
+        <X>-10000</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6917,11 +6783,11 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-6000</X>
+        <X>-15000</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>
@@ -6933,11 +6799,77 @@
     <Frames>
       <Texture>gauge_inlay250t_thorne02.tga</Texture>
       <Location>
-        <X>-8000</X>
+        <X>-20000</X>
         <Y>32</Y>
       </Location>
       <Size>
-        <CX>10000</CX>
+        <CX>25000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Oversized LightGridFill (250t thorne02, Y=48, light grid baked) -->
+  <Ui2DAnimation item="A_OversizedLightGridFill_250t_Band1">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-5000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>25000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_250t_Band2">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-10000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>25000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_250t_Band3">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-15000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>25000</CX>
+        <CY>16</CY>
+      </Size>
+      <Hotspot><X>0</X><Y>0</Y></Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+  <Ui2DAnimation item="A_OversizedLightGridFill_250t_Band4">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>gauge_inlay250t_thorne02.tga</Texture>
+      <Location>
+        <X>-20000</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <CX>25000</CX>
         <CY>16</CY>
       </Size>
       <Hotspot><X>0</X><Y>0</Y></Hotspot>

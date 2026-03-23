@@ -1,7 +1,7 @@
 # 📂 Thorne UI Options Directory
 
-**Version**: 0.7.2  
-**Last Updated**: March 4, 2026  
+**Version**: 0.8.0  
+**Last Updated**: March 23, 2026  
 **Author**: Draknare Thorne
 
 ---
@@ -10,7 +10,7 @@
 
 Options are curated UI variants organized by window category. Each option provides a complete, tested configuration ready for immediate use. No two adventurers need identical interfaces—choose the variants that match your playstyle.
 
-**24 Categories** | **82+ Variants** | **One Unified Experience**
+**27 Categories** | **106 Variants** | **One Unified Experience**
 
 ---
 
@@ -36,35 +36,39 @@ Options are curated UI variants organized by window category. Each option provid
 | Category | Variants | Description | Default |
 |----------|:--------:|-------------|---------|
 | [Actions](Actions/README.md) | 5 | Socials, abilities, combat actions | Thorne |
+| [AltAdvance](AltAdvance/README.md) | 2 | Alternate Advancement window | Thorne |
 | [Animations](Animations/README.md) | 1 | Gauge fills, borders, UI effects | Thorne |
 | [Bank](Bank/README.md) | 2 | Bank window layout | Thorne |
 | [Bazaar](Bazaar/README.md) | 2 | Bazaar search and listing | Thorne |
+| [Breath](Breath/README.md) | 2 | Breath/endurance window | Thorne |
 | [Buff](Buff/README.md) | 3 | Buff icons display | Thorne |
 | [Buttons](Buttons/README.md) | 3 | Button textures (ghost, phantom) | Thorne |
 | [Cast](Cast/README.md) | 3 | Casting bar and gem window | Thorne |
-| [Gauges](Gauges/README.md) | 8 | HP/Mana bar visual styles | Thorne |
-| [Group](Group/README.md) | 2 | Party member frames | Thorne |
+| [Container](Container/README.md) | 2 | Bag/container window | Thorne |
+| [Gauges](Gauges/README.md) | 7 | HP/Mana bar visual styles | Thorne |
+| [Group](Group/README.md) | 3 | Party member frames | Thorne |
 | [Hotbutton](Hotbutton/README.md) | 5 | Hotbar layouts and sizes | Thorne |
 | [Icons](Icons/README.md) | 6 | Spell/ability icon sets | Thorne |
 | [Inspect](Inspect/README.md) | 2 | Inspect window layout | Thorne |
 | [Inventory](Inventory/README.md) | 5 | Inventory window and bags | Thorne |
 | [Loot](Loot/README.md) | 2 | Loot window layout | Thorne |
 | [Merchant](Merchant/README.md) | 3 | Merchant/vendor window | Thorne |
-| [Pet](Pet/README.md) | 2 | Pet status and controls | Thorne |
-| [Player](Player/README.md) | 2 | Player status window | Thorne |
+| [Pet](Pet/README.md) | 4 | Pet status and controls | Thorne |
+| [Player](Player/README.md) | 5 | Player status window | Thorne |
 | [Selector](Selector/README.md) | 2 | Window selector toolbar | Thorne |
 | [ShortBuffs](ShortBuffs/README.md) | 2 | Short duration buff display | Thorne |
 | [Skin](Skin/README.md) | 3 | Window frames and backgrounds | Thorne |
-| [Slots](Slots/README.md) | 4 | Equipment slot appearances | Thorne |
-| [Spellbook](Spellbook/README.md) | 3 | Spellbook layout | Thorne |
+| [Slots](Slots/README.md) | 16 | Equipment slot appearances | Thorne |
+| [Spellbook](Spellbook/README.md) | 5 | Spellbook layout | Thorne |
 | [Stats](Stats/README.md) | 6 | Stats/resist display layouts | Thorne |
-| [Target](Target/README.md) | 6 | Target frame styles | Thorne |
+| [Target](Target/README.md) | 5 | Target frame styles | Thorne |
 
 ---
 
 ## 📁 Category Details
 
 ### Actions
+
 Controls socials window, abilities, and combat action layouts.
 - **Standard** — EQ client default
 - **Thorne** — Streamlined layout *(default)*
@@ -72,39 +76,64 @@ Controls socials window, abilities, and combat action layouts.
 - **Thorne Classic** — Original Thorne style
 - **Thorne Fading** — Fades when inactive
 
+### AltAdvance
+
+Alternate Advancement (AA) window.
+- **Standard** — EQ client default
+- **Thorne** — Enhanced layout *(default)*
+
 ### Animations
+
 Animation textures for gauges, borders, and UI effects.
 - **Thorne** — Custom gauge fills and tick marks *(default)*
 
 ### Bank
+
 Bank window layout and slot arrangement.
 - **Standard** — EQ client default
 - **Thorne** — Optimized layout *(default)*
 
 ### Bazaar
+
 Bazaar search and trader windows.
 - **Standard** — EQ client default
 - **Thorne** — Enhanced search layout *(default)*
 
+### Breath
+
+Breath/endurance underwater indicator.
+- **Standard** — EQ client default
+- **Thorne** — Compact display *(default)*
+
 ### Buff
+
 Buff icon display and arrangement.
 - **Original** — Classic EQ arrangement
 - **Standard** — EQ client default
 - **Thorne** — Compact grid layout *(default)*
 
 ### Buttons
+
 Button texture variations for hotbars and actions.
 - **Ghost** — Semi-transparent buttons
 - **Phantom** — Minimal visibility buttons
 - **Thorne** — Standard visibility *(default)*
 
 ### Cast
+
 Casting bar and spell gem window.
 - **Standard** — EQ client default
 - **Thorne** — Enhanced casting bar *(default)*
 - **Thorne Classic** — Original Thorne style
 
+### Container
+
+Bag and container windows.
+- **Standard** — EQ client default
+- **Thorne** — Optimized layout *(default)*
+
 ### Gauges
+
 HP, Mana, and status bar visual styles.
 - **Bars** — Flat bar style
 - **Basic** — Simple fills
@@ -113,14 +142,16 @@ HP, Mana, and status bar visual styles.
 - **Light Bubbles** — Lighter bubble variant
 - **Oval** — Rounded oval gauges
 - **Thorne** — Signature style *(default)*
-- **Thorne 7** — 7-segment variant
 
 ### Group
+
 Party member display frames (F2-F6).
 - **Standard** — EQ client default
 - **Thorne** — Compact group frames *(default)*
+- **Thorne Classic** — Original Thorne style
 
 ### Hotbutton
+
 Hotbar sizes and layout options.
 - **Standard** — EQ client default
 - **Thorne** — Optimized spacing *(default)*
@@ -129,6 +160,7 @@ Hotbar sizes and layout options.
 - **Thorne Inventory Stacked** — Stacked with inventory
 
 ### Icons
+
 Spell and ability icon texture sets.
 - **Classic** — Original EQ icons
 - **Duxa** — DuxaUI icon set
@@ -138,11 +170,13 @@ Spell and ability icon texture sets.
 - **WoW** — WoW-inspired icons
 
 ### Inspect
+
 Character inspection window.
 - **Standard** — EQ client default
 - **Thorne** — Enhanced layout *(default)*
 
 ### Inventory
+
 Main inventory and bag windows.
 - **Standard** — EQ client default
 - **Thorne** — Slot-focused layout *(default)*
@@ -151,56 +185,85 @@ Main inventory and bag windows.
 - **Thorne Fading** — Fades when inactive
 
 ### Loot
+
 Loot window layout.
 - **Standard** — EQ client default
 - **Thorne** — Streamlined layout *(default)*
 
 ### Merchant
+
 Merchant and vendor window.
 - **Standard** — EQ client default
 - **Thorne** — Enhanced layout *(default)*
 - **Thorne Bags** — With bag display
 
 ### Pet
+
 Pet status and control window.
 - **Standard** — EQ client default
 - **Thorne** — Enhanced pet display *(default)*
+- **Thorne Classic** — Original Thorne style
+- **Thorne Veil** — Veil-themed variant
 
 ### Player
+
 Player status and resource display.
 - **Standard** — EQ client default
 - **Thorne** — Optimized layout *(default)*
+- **Thorne Arc** — Arc gauge variant
+- **Thorne Classic** — Original Thorne style
+- **Thorne Veil** — Veil-themed variant
 
 ### Selector
+
 Window selector toolbar.
 - **Standard** — EQ client default
 - **Thorne** — Compact selector *(default)*
 
 ### ShortBuffs
+
 Short duration buff display.
 - **Standard** — EQ client default
 - **Thorne** — Compact display *(default)*
 
 ### Skin
+
 Window frames, backgrounds, and chrome.
 - **Standard** — EQ client default
 - **Thorne** — Dark theme *(default)*
 - **Thorne Classic** — Original Thorne style
 
 ### Slots
+
 Equipment slot appearances (class-aware generation).
-- **Caster** — Caster class equipment
-- **Hybrid** — Hybrid class equipment
-- **Melee** — Melee class equipment
+- **Bard** — Bard class equipment
+- **Beastlord** — Beastlord class equipment
+- **Cleric** — Cleric class equipment
+- **Druid** — Druid class equipment
+- **Enchanter** — Enchanter class equipment
+- **Magician** — Magician class equipment
+- **Monk** — Monk class equipment
+- **Necromancer** — Necromancer class equipment
+- **Paladin** — Paladin class equipment
+- **Ranger** — Ranger class equipment
+- **Rogue** — Rogue class equipment
+- **Shadowknight** — Shadowknight class equipment
+- **Shaman** — Shaman class equipment
 - **Thorne** — Universal set *(default)*
+- **Warrior** — Warrior class equipment
+- **Wizard** — Wizard class equipment
 
 ### Spellbook
+
 Spellbook window layout.
 - **Standard** — EQ client default
 - **Thorne** — Enhanced layout *(default)*
+- **Thorne Classic** — Original Thorne style
 - **Thorne Large** — Larger spell icons
+- **Thorne Veil** — Veil-themed variant
 
 ### Stats
+
 Character stats and resistance display.
 - **Music** — Music player window variant
 - **Thorne** — Standard layout *(default)*
@@ -210,13 +273,13 @@ Character stats and resistance display.
 - **Thorne 7x2 Stacked** — Seven columns
 
 ### Target
+
 Target frame display styles.
 - **Standard** — EQ client default
 - **Thorne** — Compact frame *(default)*
+- **Thorne Classic** — Original Thorne style
 - **Thorne Oval** — Oval gauge style
-- **Thorne Oval Basic** — Simplified oval
-- **Thorne Oval Pet** — Oval with pet info
-- **Thorne Oval Weight** — Oval with weight display
+- **Thorne Veil** — Veil-themed variant
 
 ---
 

@@ -101,9 +101,8 @@ Spellbook/Thorne Classic, Target/Thorne Oval
 **18 READMEs unchanged** — no stale content detected by sync script.
 
 **Issues encountered:** None. Script ran cleanly. All XML files were already in sync
-(0 copies needed). `--help` flag crashes due to encoding issue in Python 3.14
-(`_print_message` error on Unicode characters in epilog) — cosmetic bug, does not
-affect normal operation.
+(0 copies needed). `--help` flag encoding crash noted — **fixed separately** (replaced
+Unicode \u2713 checkmarks with ASCII `*` across 6 scripts, commit `5051794`).
 
 **Observation:** Sync report saved to `.reports/sync_report.json` (gitignored).
 Parent READMEs are ~30-line templates — adequate for navigation but thin on variant
@@ -120,7 +119,20 @@ script doesn't touch.
 - Add Thorne Veil entries where missing
 - Update any "Thorne Standard" → "Thorne Classic" references
 - Fix other manual READMEs (Player/Thorne Classic, Player/Thorne Arc)  
-**Status:** ☐ Not started
+**Status:** ✅ Complete
+
+#### Phase 2 Results
+
+**3 files updated:**
+
+| File | Changes |
+|------|---------|
+| `Options/README.md` | Version→0.8.0, counts→27/106, +3 categories, updated variant counts, replaced stale refs, fixed headings |
+| `Player/Thorne Arc/README.md` | "Thorne Standard" → "Thorne Classic" |
+| `Player/Thorne Classic/README.md` | "Thorne Standard" → "Thorne Classic" |
+
+**Verification:** `grep -rn` across all Options .md files confirms zero remaining
+stale references to "Thorne Standard", "Thorne Oval Basic/Pet/Weight".
 
 ---
 

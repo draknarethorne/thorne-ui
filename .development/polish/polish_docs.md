@@ -198,8 +198,34 @@ stale references to "Thorne Standard", "Thorne Oval Basic/Pet/Weight".
 | `options_fix_readme.py` | ✅ Fixed | Title format unified to `# Window: X - Y Variant`; 20 READMEs fixed |
 | `options_readme_checker.py` | ✅ Fixed | Section aliases added (`## Overview` = `## Purpose`, etc.) |
 | `options_thorne_compare.py` | ✅ Working | Correctly identified 4 Veil placeholders and 47 custom variants |
-| `options_duplicate_detector.py` | ✅ Fixed | Skips Thorne vs Thorne-prefixed pairs (intentional snapshots) |
 | `sync_option.py` | ✅ Current | Test deployment tool — not readme-related |
+
+## v0.8.1 Phase 3b-4: Documentation Polish Completion (2026-03-23)
+
+### Summary of Work
+
+- **All Thorne-based Options variant README.md files reviewed for technical accuracy and usefulness.**
+- **Flagged files fully rewritten:**
+  - `Actions/Thorne Classic/README.md` — Hallucinated/boilerplate content removed, now accurately documents dual-TabBox layout, slot mapping, and technical specs.
+  - `Hotbutton/Thorne Inventory Stacked/README.md` — Hallucinated/boilerplate content removed, now accurately documents 4-row hybrid layout, slot mapping, and technical specs.
+- **Other files updated:**
+  - `Cast/Thorne Classic/README.md` — Fixed variant naming in comparison table, canonicalized metadata.
+  - `Merchant/Standard/README.md` — Added cross-reference to Thorne Bags variant.
+  - `options_readme_checker.py` — Lowered deep analysis threshold to 120 lines for more granular review.
+
+### Checker Results
+
+- Ran `python .bin/options_readme_checker.py --verbose` after all rewrites:
+  - **Result:** 0 issues, 50 properly documented variant READMEs.
+  - All flagged hallucinated/boilerplate content removed.
+  - All technical and content issues addressed.
+
+### Process Notes
+
+- All changes staged for commit after this documentation update.
+- This completes Phase 3b (content polish) and prepares for Phase 4 (XML quality audit).
+
+---
 
 #### Phase 3b: Script Alignment & README Standardization
 

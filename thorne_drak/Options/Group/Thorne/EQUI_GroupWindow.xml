@@ -113,7 +113,7 @@
 	<Screen item="GW_HP1_1A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>1</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Size><CX>23</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP1_1A</Pieces>
 	</Screen>
@@ -121,11 +121,11 @@
 	<Gauge item="GW_HP1_1B">
 		<ScreenID>GW_HP1_1B</ScreenID>
 		<EQType>11</EQType>
-		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetX>-23</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>25</X><Y>1</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Location><X>24</X><Y>1</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -157,7 +157,7 @@
 	<Screen item="GW_HP1_2A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>1</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Size><CX>47</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP1_2A</Pieces>
 	</Screen>
@@ -165,11 +165,11 @@
 	<Gauge item="GW_HP1_2B">
 		<ScreenID>GW_HP1_2B</ScreenID>
 		<EQType>11</EQType>
-		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetX>-47</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>49</X><Y>1</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Location><X>48</X><Y>1</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -201,7 +201,7 @@
 	<Screen item="GW_HP1_3A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>1</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Size><CX>70</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP1_3A</Pieces>
 	</Screen>
@@ -209,11 +209,11 @@
 	<Gauge item="GW_HP1_3B">
 		<ScreenID>GW_HP1_3B</ScreenID>
 		<EQType>11</EQType>
-		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetX>-70</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>73</X><Y>1</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Location><X>71</X><Y>1</Y></Location>
+		<Size><CX>50</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -245,7 +245,7 @@
 	<Screen item="GW_HP1_4A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>1</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Size><CX>93</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP1_4A</Pieces>
 	</Screen>
@@ -253,11 +253,11 @@
 	<Gauge item="GW_HP1_4B">
 		<ScreenID>GW_HP1_4B</ScreenID>
 		<EQType>11</EQType>
-		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetX>-93</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>97</X><Y>1</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Location><X>94</X><Y>1</Y></Location>
+		<Size><CX>27</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -478,7 +478,7 @@
 	<Screen item="GW_HP2_1A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>29</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Size><CX>23</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP2_1A</Pieces>
 	</Screen>
@@ -486,11 +486,11 @@
 	<Gauge item="GW_HP2_1B">
 		<ScreenID>GW_HP2_1B</ScreenID>
 		<EQType>12</EQType>
-		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetX>-23</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>25</X><Y>29</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Location><X>24</X><Y>29</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -522,7 +522,7 @@
 	<Screen item="GW_HP2_2A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>29</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Size><CX>47</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP2_2A</Pieces>
 	</Screen>
@@ -530,11 +530,11 @@
 	<Gauge item="GW_HP2_2B">
 		<ScreenID>GW_HP2_2B</ScreenID>
 		<EQType>12</EQType>
-		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetX>-47</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>49</X><Y>29</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Location><X>48</X><Y>29</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -566,7 +566,7 @@
 	<Screen item="GW_HP2_3A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>29</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Size><CX>70</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP2_3A</Pieces>
 	</Screen>
@@ -574,11 +574,11 @@
 	<Gauge item="GW_HP2_3B">
 		<ScreenID>GW_HP2_3B</ScreenID>
 		<EQType>12</EQType>
-		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetX>-70</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>73</X><Y>29</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Location><X>71</X><Y>29</Y></Location>
+		<Size><CX>50</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -610,7 +610,7 @@
 	<Screen item="GW_HP2_4A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>29</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Size><CX>93</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP2_4A</Pieces>
 	</Screen>
@@ -618,11 +618,11 @@
 	<Gauge item="GW_HP2_4B">
 		<ScreenID>GW_HP2_4B</ScreenID>
 		<EQType>12</EQType>
-		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetX>-93</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>97</X><Y>29</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Location><X>94</X><Y>29</Y></Location>
+		<Size><CX>27</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -843,7 +843,7 @@
 	<Screen item="GW_HP3_1A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>57</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Size><CX>23</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP3_1A</Pieces>
 	</Screen>
@@ -851,11 +851,11 @@
 	<Gauge item="GW_HP3_1B">
 		<ScreenID>GW_HP3_1B</ScreenID>
 		<EQType>13</EQType>
-		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetX>-23</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>25</X><Y>57</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Location><X>24</X><Y>57</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -887,7 +887,7 @@
 	<Screen item="GW_HP3_2A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>57</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Size><CX>47</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP3_2A</Pieces>
 	</Screen>
@@ -895,11 +895,11 @@
 	<Gauge item="GW_HP3_2B">
 		<ScreenID>GW_HP3_2B</ScreenID>
 		<EQType>13</EQType>
-		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetX>-47</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>49</X><Y>57</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Location><X>48</X><Y>57</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -931,7 +931,7 @@
 	<Screen item="GW_HP3_3A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>57</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Size><CX>70</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP3_3A</Pieces>
 	</Screen>
@@ -939,11 +939,11 @@
 	<Gauge item="GW_HP3_3B">
 		<ScreenID>GW_HP3_3B</ScreenID>
 		<EQType>13</EQType>
-		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetX>-70</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>73</X><Y>57</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Location><X>71</X><Y>57</Y></Location>
+		<Size><CX>50</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -975,7 +975,7 @@
 	<Screen item="GW_HP3_4A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>57</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Size><CX>93</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP3_4A</Pieces>
 	</Screen>
@@ -983,11 +983,11 @@
 	<Gauge item="GW_HP3_4B">
 		<ScreenID>GW_HP3_4B</ScreenID>
 		<EQType>13</EQType>
-		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetX>-93</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>97</X><Y>57</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Location><X>94</X><Y>57</Y></Location>
+		<Size><CX>27</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1208,7 +1208,7 @@
 	<Screen item="GW_HP4_1A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>85</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Size><CX>23</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP4_1A</Pieces>
 	</Screen>
@@ -1216,11 +1216,11 @@
 	<Gauge item="GW_HP4_1B">
 		<ScreenID>GW_HP4_1B</ScreenID>
 		<EQType>14</EQType>
-		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetX>-23</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>25</X><Y>85</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Location><X>24</X><Y>85</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1252,7 +1252,7 @@
 	<Screen item="GW_HP4_2A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>85</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Size><CX>47</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP4_2A</Pieces>
 	</Screen>
@@ -1260,11 +1260,11 @@
 	<Gauge item="GW_HP4_2B">
 		<ScreenID>GW_HP4_2B</ScreenID>
 		<EQType>14</EQType>
-		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetX>-47</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>49</X><Y>85</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Location><X>48</X><Y>85</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1296,7 +1296,7 @@
 	<Screen item="GW_HP4_3A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>85</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Size><CX>70</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP4_3A</Pieces>
 	</Screen>
@@ -1304,11 +1304,11 @@
 	<Gauge item="GW_HP4_3B">
 		<ScreenID>GW_HP4_3B</ScreenID>
 		<EQType>14</EQType>
-		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetX>-70</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>73</X><Y>85</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Location><X>71</X><Y>85</Y></Location>
+		<Size><CX>50</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1340,7 +1340,7 @@
 	<Screen item="GW_HP4_4A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>85</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Size><CX>93</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP4_4A</Pieces>
 	</Screen>
@@ -1348,11 +1348,11 @@
 	<Gauge item="GW_HP4_4B">
 		<ScreenID>GW_HP4_4B</ScreenID>
 		<EQType>14</EQType>
-		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetX>-93</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>97</X><Y>85</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Location><X>94</X><Y>85</Y></Location>
+		<Size><CX>27</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1573,7 +1573,7 @@
 	<Screen item="GW_HP5_1A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>113</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Size><CX>23</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP5_1A</Pieces>
 	</Screen>
@@ -1581,11 +1581,11 @@
 	<Gauge item="GW_HP5_1B">
 		<ScreenID>GW_HP5_1B</ScreenID>
 		<EQType>15</EQType>
-		<GaugeOffsetX>-24</GaugeOffsetX>
+		<GaugeOffsetX>-23</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>25</X><Y>113</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Location><X>24</X><Y>113</Y></Location>
+		<Size><CX>97</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1617,7 +1617,7 @@
 	<Screen item="GW_HP5_2A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>113</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Size><CX>47</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP5_2A</Pieces>
 	</Screen>
@@ -1625,11 +1625,11 @@
 	<Gauge item="GW_HP5_2B">
 		<ScreenID>GW_HP5_2B</ScreenID>
 		<EQType>15</EQType>
-		<GaugeOffsetX>-48</GaugeOffsetX>
+		<GaugeOffsetX>-47</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>49</X><Y>113</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Location><X>48</X><Y>113</Y></Location>
+		<Size><CX>73</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1661,7 +1661,7 @@
 	<Screen item="GW_HP5_3A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>113</Y></Location>
-		<Size><CX>72</CX><CY>16</CY></Size>
+		<Size><CX>70</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP5_3A</Pieces>
 	</Screen>
@@ -1669,11 +1669,11 @@
 	<Gauge item="GW_HP5_3B">
 		<ScreenID>GW_HP5_3B</ScreenID>
 		<EQType>15</EQType>
-		<GaugeOffsetX>-72</GaugeOffsetX>
+		<GaugeOffsetX>-70</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>73</X><Y>113</Y></Location>
-		<Size><CX>48</CX><CY>16</CY></Size>
+		<Location><X>71</X><Y>113</Y></Location>
+		<Size><CX>50</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>
@@ -1705,7 +1705,7 @@
 	<Screen item="GW_HP5_4A_Clip">
 		<RelativePosition>true</RelativePosition>
 		<Location><X>1</X><Y>113</Y></Location>
-		<Size><CX>96</CX><CY>16</CY></Size>
+		<Size><CX>93</CX><CY>16</CY></Size>
 		<Style_Transparent>true</Style_Transparent>
 		<Pieces>GW_HP5_4A</Pieces>
 	</Screen>
@@ -1713,11 +1713,11 @@
 	<Gauge item="GW_HP5_4B">
 		<ScreenID>GW_HP5_4B</ScreenID>
 		<EQType>15</EQType>
-		<GaugeOffsetX>-96</GaugeOffsetX>
+		<GaugeOffsetX>-93</GaugeOffsetX>
 		<GaugeOffsetY>0</GaugeOffsetY>
 		<RelativePosition>true</RelativePosition>
-		<Location><X>97</X><Y>113</Y></Location>
-		<Size><CX>24</CX><CY>16</CY></Size>
+		<Location><X>94</X><Y>113</Y></Location>
+		<Size><CX>27</CX><CY>16</CY></Size>
 		<TextOffsetX>8000</TextOffsetX>
 		<TextOffsetY>8000</TextOffsetY>
 		<Style_Transparent>false</Style_Transparent>

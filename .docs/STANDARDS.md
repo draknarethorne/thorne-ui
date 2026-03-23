@@ -672,43 +672,44 @@ Text overlay    — Original ScreenID preserved for client binding, no Fill/Back
 
 #### Band Threshold Tables
 
-**120px gauge (120t, percentage-aligned):**
+**120px gauge (120t, visual-aligned):**
 
 | Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
 | ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
 | 0    | 0% (base) | 0            | Full gauge  | —          | —                |
-| 1    | 20%       | -2000        | 8000        | 24px       | 96px             |
-| 2    | 40%       | -4000        | 6000        | 48px       | 72px             |
-| 3    | 60%       | -6000        | 4000        | **72px**   | **48px**         |
-| 4    | 80%       | -8000        | 2000        | **96px**   | **24px**         |
+| 1    | 20%       | -2000        | 8000        | 23px       | 97px             |
+| 2    | 40%       | -4000        | 6000        | 47px       | 73px             |
+| 3    | 60%       | -6000        | 4000        | 70px       | 50px             |
+| 4    | 80%       | -8000        | 2000        | 93px       | 27px             |
 
-> Clips track true 20% fill positions: `floor(120 × 0.2/0.4/0.6/0.8)` = 24, 48, 72, 96.
-> Texture grid marks at X=71, 94 are 1-2px off due to the ~117px effective image width.
+> Clips set 1px left of the Thorne texture grid marks to prevent visible color bleed
+> at band transitions. Texture marks land at 24, 48, 71, 94; clips at 23, 47, 70, 93.
 
-**105px gauge (105t, percentage-aligned):**
-
-| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
-| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
-| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
-| 1    | 20%       | -2000        | 8000        | 21px       | 84px             |
-| 2    | 40%       | -4000        | 6000        | 42px       | 63px             |
-| 3    | 60%       | -6000        | 4000        | **63px**   | **42px**         |
-| 4    | 80%       | -8000        | 2000        | **84px**   | **21px**         |
-
-> Clips track true 20% fill positions: `floor(105 × 0.2/0.4/0.6/0.8)` = 21, 42, 63, 84.
-> Texture grid marks at X=62, 82 are 1-2px off due to the ~102px effective image width.
-
-**250px gauge (250t, even spacing):**
+**105px gauge (105t, visual-aligned):**
 
 | Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
 | ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
 | 0    | 0% (base) | 0            | Full gauge  | —          | —                |
-| 1    | 20%       | -2000        | 8000        | 50px       | 200px            |
-| 2    | 40%       | -4000        | 6000        | 100px      | 150px            |
-| 3    | 60%       | -6000        | 4000        | 150px      | 100px            |
-| 4    | 80%       | -8000        | 2000        | 200px      | 50px             |
+| 1    | 20%       | -2000        | 8000        | 20px       | 85px             |
+| 2    | 40%       | -4000        | 6000        | 41px       | 64px             |
+| 3    | 60%       | -6000        | 4000        | 61px       | 44px             |
+| 4    | 80%       | -8000        | 2000        | 81px       | 24px             |
 
-> 250px divides evenly into 50px bands — no grid adjustment needed.
+> Clips set 1px left of the Thorne texture grid marks to prevent visible color bleed
+> at band transitions. Texture marks land at 21, 42, 62, 82; clips at 20, 41, 61, 81.
+
+**250px gauge (250t, visual-aligned):**
+
+| Band | Threshold | GaugeOffsetX | A-Part Size | Clip Width | B-Part Remainder |
+| ---- | --------- | ------------ | ----------- | ---------- | ---------------- |
+| 0    | 0% (base) | 0            | Full gauge  | —          | —                |
+| 1    | 20%       | -2000        | 8000        | 49px       | 201px            |
+| 2    | 40%       | -4000        | 6000        | 99px       | 151px            |
+| 3    | 60%       | -6000        | 4000        | 148px      | 102px            |
+| 4    | 80%       | -8000        | 2000        | 196px      | 54px             |
+
+> Clips set 1px left of the Thorne texture grid marks to prevent visible color bleed
+> at band transitions. Texture marks land at 50, 100, 149, 197; clips at 49, 99, 148, 196.
 
 #### Oversized Animation Naming
 

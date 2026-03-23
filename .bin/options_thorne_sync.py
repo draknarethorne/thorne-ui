@@ -146,13 +146,29 @@ class WindowSyncer:
 
         if not synced_files and not self.force:
             # Files identical, but still update parent README for navigation
+            readme_updated = False
             if not self.dry_run:
                 try:
                     with open(sync_status_file, 'r') as f:
                         metadata = json.load(f)
-                    self._generate_parent_readme(window_name, xml_files, metadata)
                 except Exception:
-                    pass  # If metadata read fails, skip README update
+                    # No metadata file yet — create minimal metadata so README
+                    # can still be generated (fixes AltAdvance and new windows)
+                    metadata = {
+                        "window": window_name,
+                        "filenames": xml_files,
+                        "description": f"{window_name} window Thorne configuration",
+                        "last_sync_date": datetime.now().isoformat(),
+                        "last_sync_commit": self.results["git_commit"],
+                        "in_sync": True
+                    }
+                    try:
+                        with open(sync_status_file, 'w') as f:
+                            json.dump(metadata, f, indent=2)
+                    except Exception:
+                        pass
+                self._generate_parent_readme(window_name, xml_files, metadata)
+                readme_updated = True
 
             self.results["skipped"].append({
                 "window": window_name,
@@ -161,7 +177,8 @@ class WindowSyncer:
             })
             if self.verbose:
                 print("    [SKIP] All files already identical")
-                print("    [README] Parent README updated")
+                if readme_updated:
+                    print("    [README] Parent README updated")
             return False
         
         # Update metadata

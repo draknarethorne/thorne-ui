@@ -57,7 +57,7 @@ class SkeletalReadmeGenerator:
         self.workspace_root = Path(workspace_root)
         self.options_root = self.workspace_root / "thorne_drak" / "Options"
     
-    def generate(self, window_name, variant_name, xml_file):
+    def generate(self, window_name, variant_name, xml_file=None):
         """Generate skeletal README for a variant."""
         # Validate window exists
         window_dir = self.options_root / window_name
@@ -68,6 +68,21 @@ class SkeletalReadmeGenerator:
         # Create variant directory
         variant_dir = window_dir / variant_name
         variant_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Auto-detect XML file if not provided
+        if not xml_file:
+            existing_xmls = list(variant_dir.glob("EQUI_*.xml"))
+            if existing_xmls:
+                xml_file = existing_xmls[0].name
+            else:
+                # Fall back to finding XML in Thorne/ sibling dir
+                thorne_dir = window_dir / "Thorne"
+                if thorne_dir.exists():
+                    thorne_xmls = list(thorne_dir.glob("EQUI_*.xml"))
+                    if thorne_xmls:
+                        xml_file = thorne_xmls[0].name
+                if not xml_file:
+                    xml_file = "EQUI_Window.xml"
         
         # Create README
         readme_path = variant_dir / "README.md"
@@ -159,7 +174,7 @@ CREATED:\
     parser.add_argument(
         "--xml",
         metavar="FILE",
-        help="XML filename (default: EQUI_Window.xml)"
+        help="XML filename (auto-detected from variant or Thorne dir if omitted)"
     )
     
     args = parser.parse_args()
@@ -170,7 +185,7 @@ CREATED:\
     
     # Generate
     generator = SkeletalReadmeGenerator(workspace_root)
-    if generator.generate(args.window, args.variant, args.xml or "EQUI_Window.xml"):
+    if generator.generate(args.window, args.variant, args.xml):
         sys.exit(0)
     else:
         sys.exit(1)

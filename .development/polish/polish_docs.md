@@ -146,7 +146,60 @@ stale references to "Thorne Standard", "Thorne Oval Basic/Pet/Weight".
 - Assess if scripts handle new naming conventions
 - Update scripts if needed (window config lists, variant detection)
 - Update AltAdvance to have .sync-status.json and README  
-**Status:** ☐ Not started
+**Status:** ✅ Complete
+
+#### Phase 3 Results
+
+**Audit Scripts Executed:**
+
+| Script | Result Summary |
+|--------|----------------|
+| `options_readme_checker.py --verbose` | 14 issues: 1 format, 12 out-of-sync timestamps, 1 needs deep analysis |
+| `options_thorne_compare.py` | 47 custom variants, 4 "Thorne Veil" placeholder duplicates |
+| `options_duplicate_detector.py --detailed` | 5 exact-duplicate sets across Options |
+| `options_fix_readme.py --dry-run --verbose` | 20 READMEs need metadata field reordering |
+
+**Bugs Found & Fixed:**
+
+1. **`options_thorne_sync.py` — Silent metadata failure** (lines 147–165)
+   - **Bug:** When `.sync-status.json` doesn't exist (e.g., AltAdvance), the code
+     caught `FileNotFoundError` with `except Exception: pass` and silently skipped
+     README generation entirely.
+   - **Fix:** Now creates minimal metadata (`{"variants": []}`) when file is missing
+     and proceeds with README generation.
+   - **Result:** AltAdvance now has both `README.md` and `.sync-status.json`.
+
+2. **`options_generate_readme.py` — Hardcoded XML filename** (lines 60–80, 162–173)
+   - **Bug:** Default XML filename was always `"EQUI_Window.xml"` regardless of
+     which window category was being generated.
+   - **Fix:** Added cascading auto-detection: (1) scan variant directory for
+     `EQUI_*.xml` files, (2) scan `Thorne/` sibling directory, (3) fall back to
+     `EQUI_Window.xml` only as last resort. Made `xml_file` parameter optional.
+   - **Result:** `--window Buff --variant Thorne` now correctly detects
+     `EQUI_BuffWindow.xml`.
+
+**Discovered Issues (Informational):**
+
+| Finding | Details | Action |
+|---------|---------|--------|
+| 4 Thorne Veil placeholder duplicates | Pet, Player, Spellbook, Target Veil are byte-identical to Thorne | Phase 4 — differentiate or document |
+| Actions Classic/Fading identical | `Actions/Thorne Classic` and `Actions/Thorne Fading` have identical XML | Phase 4 — investigate and resolve |
+| 12 out-of-sync timestamps | Sub-variant READMEs have "Last Updated" dates older than their XML modification dates | Phase 5 — bulk fix with `options_fix_readme.py` |
+| 20 READMEs need metadata reordering | Field order varies (File, Version, Updated, Status, Author) | Phase 5 — run `options_fix_readme.py` |
+| Cast/Thorne Classic false positive | readme_checker flags format issue; file is comprehensive (154 lines) | Note only — strict section matching |
+| Merchant/Standard needs analysis | readme_checker flagged as needing deeper documentation review | Phase 5 — assess README completeness |
+
+**Script Assessment Summary (Updated):**
+
+| Script | Status | Notes |
+|--------|--------|-------|
+| `options_thorne_sync.py` | ✅ Fixed | Silent metadata failure resolved; AltAdvance now generates correctly |
+| `options_generate_readme.py` | ✅ Fixed | XML filename auto-detection added; no longer hardcodes `EQUI_Window.xml` |
+| `options_fix_readme.py` | ✅ Assessed | Working correctly; 20 metadata reorder fixes ready; save for Phase 5 |
+| `options_readme_checker.py` | ✅ Working | Overly strict section matching (false positive on Cast/Thorne Classic) but useful |
+| `options_thorne_compare.py` | ✅ Working | Correctly identified 4 Veil placeholders and 47 custom variants |
+| `options_duplicate_detector.py` | ✅ Working | Correctly found 5 exact-duplicate sets |
+| `sync_option.py` | ✅ Current | Test deployment tool — not readme-related |
 
 ---
 

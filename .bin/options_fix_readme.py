@@ -138,11 +138,7 @@ class ReadmeHeaderFixer:
             
             # Construct proper title if we have window/variant names
             if window_name and variant_name:
-                if variant_name.lower() in ('default', 'thorne'):
-                    proper_title = f"# Window: {window_name} - {variant_name} Variant"
-                else:
-                    # Standard, Custom, etc.
-                    proper_title = f"# {window_name} Window - {variant_name} Variant"
+                proper_title = f"# Window: {window_name} - {variant_name} Variant"
                 title = proper_title
             
             # Rebuild header

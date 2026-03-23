@@ -1,4 +1,4 @@
-# Hotbutton Window - Enhanced Four Rows Variant
+# Window: Hotbutton - Thorne Inventory Stacked Variant
 
 **File**: [EQUI_HotButtonWnd.xml](./EQUI_HotButtonWnd.xml)  
 **Version**: 1.0.0  

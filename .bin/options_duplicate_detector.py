@@ -121,13 +121,20 @@ class DuplicateDetector:
                     checksums[checksum] = []
                 checksums[checksum].append(loc)
             
-            # Report exact duplicates
+            # Report exact duplicates (skip Thorne vs Thorne-prefixed pairs — intentional snapshots)
             for checksum, dupes in checksums.items():
                 if len(dupes) > 1:
+                    variant_names = [d['variant'] for d in dupes]
+                    # Filter: if one is "Thorne" and all others start with "Thorne ",
+                    # these are intentional baseline snapshots — skip them
+                    if 'Thorne' in variant_names:
+                        non_thorne = [v for v in variant_names if v != 'Thorne']
+                        if all(v.startswith('Thorne ') for v in non_thorne):
+                            continue
                     window_results["exact_duplicates"].append({
                         "xml_file": xml_name,
                         "count": len(dupes),
-                        "variants": [d['variant'] for d in dupes],
+                        "variants": variant_names,
                         "checksum": checksum,
                         "size": dupes[0]['size']
                     })
@@ -138,6 +145,12 @@ class DuplicateDetector:
                 for i, loc1 in enumerate(locations):
                     for loc2 in locations[i+1:]:
                         if loc1['path'] == loc2['path']:
+                            continue
+                        
+                        # Skip Thorne vs Thorne-prefixed pairs (intentional snapshots)
+                        v1, v2 = loc1['variant'], loc2['variant']
+                        if (v1 == 'Thorne' and v2.startswith('Thorne ')) or \
+                           (v2 == 'Thorne' and v1.startswith('Thorne ')):
                             continue
                         
                         # Get cached lines or read
@@ -250,6 +263,7 @@ class DuplicateDetector:
             removal_list = []
             
             # Exact duplicates: recommend removing non-Thorne variants
+            # (Thorne vs Thorne-prefixed pairs already filtered out in scan)
             for dup in window_data['exact_duplicates']:
                 variants = dup['variants']
                 if 'Thorne' in variants and len(variants) > 1:

@@ -1,4 +1,4 @@
-# Window: Group - Thorne Variant
+# Window: Group - Thorne Classic Variant
 
 **File**: [EQUI_GroupWindow.xml](./EQUI_GroupWindow.xml)  
 **Version**: 1.0.0  

@@ -10,7 +10,7 @@
 
 Options are curated UI variants organized by window category. Each option provides a complete, tested configuration ready for immediate use. No two adventurers need identical interfaces—choose the variants that match your playstyle.
 
-**27 Categories** | **106 Variants** | **One Unified Experience**
+**27 Categories** | **105 Variants** | **One Unified Experience**
 
 ---
 
@@ -35,7 +35,7 @@ Options are curated UI variants organized by window category. Each option provid
 
 | Category | Variants | Description | Default |
 |----------|:--------:|-------------|---------|
-| [Actions](Actions/README.md) | 5 | Socials, abilities, combat actions | Thorne |
+| [Actions](Actions/README.md) | 4 | Socials, abilities, combat actions | Thorne |
 | [AltAdvance](AltAdvance/README.md) | 2 | Alternate Advancement window | Thorne |
 | [Animations](Animations/README.md) | 1 | Gauge fills, borders, UI effects | Thorne |
 | [Bank](Bank/README.md) | 2 | Bank window layout | Thorne |
@@ -74,7 +74,6 @@ Controls socials window, abilities, and combat action layouts.
 - **Thorne** — Streamlined layout *(default)*
 - **Thorne Bags** — With integrated bag buttons
 - **Thorne Classic** — Original Thorne style
-- **Thorne Fading** — Fades when inactive
 
 ### AltAdvance
 
@@ -182,7 +181,6 @@ Main inventory and bag windows.
 - **Thorne** — Slot-focused layout *(default)*
 - **Thorne Bags Row** — Horizontal bag row
 - **Thorne Classic** — Original Thorne style
-- **Thorne Fading** — Fades when inactive
 
 ### Loot
 

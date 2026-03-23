@@ -1,4 +1,4 @@
-# Target Window - Standard Variant
+# Window: Target - Standard Variant
 
 **File**: [EQUI_TargetWindow.xml](./EQUI_TargetWindow.xml)
 **Version**: 1.0.0  

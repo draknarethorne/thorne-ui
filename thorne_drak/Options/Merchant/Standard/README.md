@@ -1,4 +1,4 @@
-# Merchant Window - Standard Variant
+# Window: Merchant - Standard Variant
 
 **File**: [EQUI_MerchantWnd.xml](./EQUI_MerchantWnd.xml)
 **Version**: 1.0.0  

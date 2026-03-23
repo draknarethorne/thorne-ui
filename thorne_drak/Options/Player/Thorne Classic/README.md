@@ -1,4 +1,4 @@
-# Window: Player - Thorne Variant
+# Window: Player - Thorne Classic Variant
 
 **File**: [EQUI_PlayerWindow.xml](./EQUI_PlayerWindow.xml)  
 **Version**: 1.0.0  

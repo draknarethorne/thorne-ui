@@ -17,35 +17,36 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
-SKELETAL_TEMPLATE = """# {window_name} - {variant_name}
+SKELETAL_TEMPLATE = """# Window: {window_name} - {variant_name} Variant
 
-## Overview
+**File**: [{xml_file}](./{xml_file})  
+**Version**: 0.1.0  
+**Last Updated**: {created_date}
+**Status**: Draft  
+**Author**: Draknare Thorne
+
+---
+
+## Purpose
 
 This variant of the {window_name} window provides {description_placeholder}.
 
-## Key Features
-
+**Key Features**:
 - Feature 1
 - Feature 2
 - Feature 3
 
-## File Information
+---
 
-- **XML File**: {xml_file}
-- **Location**: `Options/{window_name}/{variant_name}/`
-- **Created**: {created_date}
+## Specifications
 
-## Description
+| Property | Value |
+|----------|-------|
+| **Window Size** | TBD |
+| **Layout Type** | TBD |
+| **Draw Template** | TBD |
 
-[Detailed description to be added by agent analysis]
-
-## Configuration
-
-[Configuration details to be added by agent analysis]
-
-## Element Specifications
-
-[Element table and specifications to be added by agent analysis]
+---
 
 ## Usage Notes
 

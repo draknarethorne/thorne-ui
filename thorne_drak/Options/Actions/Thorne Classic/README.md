@@ -1,4 +1,4 @@
-# Window: Actions - Thorne Variant
+# Window: Actions - Thorne Classic Variant
 
 **File**: [EQUI_ActionsWindow.xml](./EQUI_ActionsWindow.xml)  
 **Version**: 1.0.0  

@@ -194,12 +194,56 @@ stale references to "Thorne Standard", "Thorne Oval Basic/Pet/Weight".
 | Script | Status | Notes |
 |--------|--------|-------|
 | `options_thorne_sync.py` | ✅ Fixed | Silent metadata failure resolved; AltAdvance now generates correctly |
-| `options_generate_readme.py` | ✅ Fixed | XML filename auto-detection added; no longer hardcodes `EQUI_Window.xml` |
-| `options_fix_readme.py` | ✅ Assessed | Working correctly; 20 metadata reorder fixes ready; save for Phase 5 |
-| `options_readme_checker.py` | ✅ Working | Overly strict section matching (false positive on Cast/Thorne Classic) but useful |
+| `options_generate_readme.py` | ✅ Fixed | Template rewritten to canonical format; XML auto-detection added |
+| `options_fix_readme.py` | ✅ Fixed | Title format unified to `# Window: X - Y Variant`; 20 READMEs fixed |
+| `options_readme_checker.py` | ✅ Fixed | Section aliases added (`## Overview` = `## Purpose`, etc.) |
 | `options_thorne_compare.py` | ✅ Working | Correctly identified 4 Veil placeholders and 47 custom variants |
-| `options_duplicate_detector.py` | ✅ Working | Correctly found 5 exact-duplicate sets |
+| `options_duplicate_detector.py` | ✅ Fixed | Skips Thorne vs Thorne-prefixed pairs (intentional snapshots) |
 | `sync_option.py` | ✅ Current | Test deployment tool — not readme-related |
+
+#### Phase 3b: Script Alignment & README Standardization
+
+**Problem:** All four Options README scripts (generator, checker, fixer, duplicate
+detector) used inconsistent formats. Generated READMEs immediately failed the
+checker. Thorne base snapshots were falsely flagged as duplicates.
+
+**Canonical format established** (matches best existing READMEs):
+```markdown
+# Window: {Window} - {Variant} Variant
+
+**File**: [EQUI_xxx.xml](./EQUI_xxx.xml)
+**Version**: x.x.x
+**Last Updated**: YYYY-MM-DD
+**Status**: ...
+**Author**: Draknare Thorne
+
+---
+## Purpose
+**Key Features**:
+---
+## Specifications
+```
+
+**Changes made:**
+
+| Script | Change |
+|--------|--------|
+| `options_generate_readme.py` | Template rewritten to canonical format with metadata header, Purpose, Key Features, Specifications |
+| `options_readme_checker.py` | Added section aliases: `## Overview` accepted as `## Purpose`, `## Element Specifications` as `## Specifications` |
+| `options_fix_readme.py` | Unified title format: always `# Window: {Window} - {Variant} Variant` regardless of variant type |
+| `options_duplicate_detector.py` | Skips exact duplicates and similarity comparisons for Thorne vs Thorne-prefixed pairs |
+
+**Fixer applied to 20 READMEs** — standardized metadata field ordering and title
+format. Checker results improved: **14 issues → 3 issues**.
+
+**Remaining 3 checker issues (legitimate):**
+- Cast/Thorne Classic: Non-canonical README format (uses Overview/Features instead of Purpose/Specifications) — Phase 5
+- Pet/Standard: 1 out-of-sync timestamp — doc freshness signal
+- Merchant/Standard: 149 lines, just under 150-line deep analysis threshold
+
+**Actions/Thorne Fading removed** — was byte-identical duplicate of Thorne Classic.
+Inventory/Thorne Fading retained (genuine variant with unique XML). Root
+Options/README.md updated: removed Fading from Actions, count 106→105.
 
 ---
 

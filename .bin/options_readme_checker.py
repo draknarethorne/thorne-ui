@@ -149,9 +149,9 @@ class OptionsReadmeChecker:
             if location == "variant":
                 # Variant files MUST have Purpose, Specifications, Key Features
                 required = {
-                    "Purpose": "## Purpose",
+                    "Purpose": ["## Purpose", "## Overview"],
                     "Key Features": ["**Key Features**", "### Key Features"],
-                    "Specifications": "## Specifications"
+                    "Specifications": ["## Specifications", "## Element Specifications"]
                 }
                 
                 for section_name, pattern in required.items():

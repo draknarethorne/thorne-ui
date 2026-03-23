@@ -1,4 +1,4 @@
-# Actions Window - Bags and Inventory Variant
+# Window: Actions - Thorne Bags Variant
 
 **File**: [EQUI_ActionsWindow.xml](./EQUI_ActionsWindow.xml)
 **Version**: 1.1.1 (documentation update)  

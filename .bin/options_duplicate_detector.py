@@ -288,11 +288,11 @@ Scans Options/ directory structure to find identical or similar variant files
 within the same window. Uses similarity threshold for fuzzy matching.
 
 FEATURES:
-  ✓ Exact duplicate detection (100% match)
-  ✓ Fuzzy matching with configurable similarity threshold
-  ✓ Window-level analysis with variant grouping
-  ✓ Removal candidates report (safe to delete)
-  ✓ Detailed hash-based comparison
+  * Exact duplicate detection (100% match)
+  * Fuzzy matching with configurable similarity threshold
+  * Window-level analysis with variant grouping
+  * Removal candidates report (safe to delete)
+  * Detailed hash-based comparison
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""

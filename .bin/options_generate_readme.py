@@ -110,10 +110,10 @@ sections, descriptions, and metadata. Useful for getting organized documentation
 quickly without manual formatting.
 
 FEATURES:
-  ✓ Standard README structure with sections for all variants
-  ✓ Automatic metadata (window name, variant name, XML file)
-  ✓ Ready-to-edit templates with placeholder text
-  ✓ Preserves existing files (won't overwrite)
+  * Standard README structure with sections for all variants
+  * Automatic metadata (window name, variant name, XML file)
+  * Ready-to-edit templates with placeholder text
+  * Preserves existing files (won't overwrite)
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""

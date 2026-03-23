@@ -392,12 +392,12 @@ def main():
 and updates sync metadata with current timestamp and git commit information.
 
 FEATURES:
-    ✓ Single window or bulk sync of all {window_count} configured windows
-  ✓ Dry-run mode to preview changes before applying
-  ✓ Automatic parent README generation for navigation
-  ✓ Metadata tracking with git commit information
-  ✓ Duplicate detection (skips if already identical)
-    ✓ Force mode to re-copy files and refresh metadata/readme
+    * Single window or bulk sync of all {window_count} configured windows
+  * Dry-run mode to preview changes before applying
+  * Automatic parent README generation for navigation
+  * Metadata tracking with git commit information
+  * Duplicate detection (skips if already identical)
+    * Force mode to re-copy files and refresh metadata/readme
 
 CAUTION: This is a DESTRUCTIVE OPERATOR. Use --dry-run first to preview.
 """,

@@ -348,11 +348,11 @@ Scans Options/ variants and fixes README.md files to conform to standards:
 - Standard section ordering
 
 FEATURES:
-  ✓ Bulk fix all READMEs or target specific window
-  ✓ Dry-run mode to preview changes
-  ✓ Preserves content while fixing formatting
-  ✓ Automatic backup before modifications
-  ✓ Detailed change reporting
+  * Bulk fix all READMEs or target specific window
+  * Dry-run mode to preview changes
+  * Preserves content while fixing formatting
+  * Automatic backup before modifications
+  * Detailed change reporting
 
 CAUTION: This is a DESTRUCTIVE OPERATOR. Use --dry-run first to preview.
 """,

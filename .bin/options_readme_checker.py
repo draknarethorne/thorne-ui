@@ -443,11 +443,11 @@ Audits Options/ variant directories to detect documentation issues:
 - Missing required sections
 
 FEATURES:
-  ✓ Comprehensive README quality audit
-  ✓ Identification of orphaned variants (no README)
-  ✓ Detection of incomplete documentation
-  ✓ Deep analysis for variants needing attention
-  ✓ Detailed reporting with recommendations
+  * Comprehensive README quality audit
+  * Identification of orphaned variants (no README)
+  * Detection of incomplete documentation
+  * Deep analysis for variants needing attention
+  * Detailed reporting with recommendations
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""

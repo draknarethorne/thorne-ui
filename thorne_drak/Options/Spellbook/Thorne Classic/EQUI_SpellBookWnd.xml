@@ -574,22 +574,6 @@
   </StaticText>
 
   <!-- Scribe into spellbook (left) / Memorize to gem (right) -->
-  <Gauge item="SBW_Memorize_Gauge">
-    <ScreenID>SBW_Memorize_Gauge</ScreenID>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>265</X><Y>379</Y></Location>
-    <Size><CX>102</CX><CY>8</CY></Size>
-    <GaugeOffsetY>-2</GaugeOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
-    <LinesFillTint><R>0</R><G>0</G><B>0</B></LinesFillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <EQType>9</EQType>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground</Background>
-      <Fill>A_GaugeFill</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
   <Gauge item="SBW_Scribe_Gauge">
     <ScreenID>SBW_Scribe_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -597,10 +581,26 @@
     <Size><CX>102</CX><CY>8</CY></Size>
     <GaugeOffsetY>-2</GaugeOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>200</R><G>0</G><B>200</B></FillTint>
+    <FillTint><R>210</R><G>110</G><B>0</B></FillTint>
     <LinesFillTint><R>0</R><G>0</G><B>0</B></LinesFillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>10</EQType>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground</Background>
+      <Fill>A_GaugeFill</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Gauge item="SBW_Memorize_Gauge">
+    <ScreenID>SBW_Memorize_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>265</X><Y>379</Y></Location>
+    <Size><CX>102</CX><CY>8</CY></Size>
+    <GaugeOffsetY>-2</GaugeOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
+    <LinesFillTint><R>0</R><G>0</G><B>0</B></LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>9</EQType>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground</Background>
       <Fill>A_GaugeFill</Fill>
@@ -811,10 +811,13 @@
     <Pieces>SBW_SpellName14</Pieces>
     <Pieces>SBW_Spell15</Pieces>
     <Pieces>SBW_SpellName15</Pieces>
-    <Pieces>SBW_Memorize_Gauge</Pieces>
+
     <Pieces>SBW_Scribe_Gauge</Pieces>
+    <Pieces>SBW_Memorize_Gauge</Pieces>
+
     <Pieces>SBW_MemPage0_Button</Pieces>
     <Pieces>SBW_MemPage1_Button</Pieces>
+
     <Pieces>SBW_PageDown_Button</Pieces>
     <Pieces>SBW_PageUp_Button</Pieces>
     <Pieces>SBW_LeftPageNum</Pieces>

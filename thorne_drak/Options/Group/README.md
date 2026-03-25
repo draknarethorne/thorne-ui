@@ -17,7 +17,7 @@ This directory contains variants for the Group window (EQUI_GroupWindow.xml).
 - **[Thorne/](Thorne/)**  📄
   `EQUI_GroupWindow.xml`
 
-- **[Thorne Standard/](Thorne Standard/)**  📄
+- **[Thorne Classic/](Thorne Classic/)**  📄
   `EQUI_GroupWindow.xml`
 
 ---

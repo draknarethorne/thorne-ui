@@ -23,9 +23,6 @@ This directory contains variants for the Actions window (EQUI_ActionsWindow.xml)
 - **[Thorne Classic/](Thorne Classic/)**  📄
   `EQUI_ActionsWindow.xml`
 
-- **[Thorne Fading/](Thorne Fading/)**    
-  `EQUI_ActionsWindow.xml`
-
 ---
 
 ## Thorne Configuration

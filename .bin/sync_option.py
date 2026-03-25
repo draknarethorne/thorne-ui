@@ -286,7 +286,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\n✗ {message}")
         return 1
 
-    print(f"\n✓ {message}")
+    print(f"\n* {message}")
     if not args.dry_run:
         print("\nReady to test in TAKP")
         print("In-game command: /loadskin thorne_dev")

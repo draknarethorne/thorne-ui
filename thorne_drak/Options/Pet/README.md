@@ -17,7 +17,7 @@ This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 - **[Thorne/](Thorne/)**    
   `EQUI_PetInfoWindow.xml`
 
-- **[Thorne Standard/](Thorne Standard/)**    
+- **[Thorne Classic/](Thorne Classic/)**    
   `EQUI_PetInfoWindow.xml`
 
 - **[Thorne Veil/](Thorne Veil/)**    

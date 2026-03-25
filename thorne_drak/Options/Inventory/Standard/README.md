@@ -1,4 +1,4 @@
-# Inventory Window - Standard Variant
+# Window: Inventory - Standard Variant
 
 **File**: [EQUI_Inventory.xml](./EQUI_Inventory.xml)
 **Version**: 1.0.0  

@@ -1,4 +1,4 @@
-# Window: Player - Thorne Variant
+# Window: Player - Thorne Arc Variant
 
 **File**: [EQUI_PlayerWindow.xml](./EQUI_PlayerWindow.xml)  
 **Version**: 1.0.0  
@@ -174,7 +174,7 @@ This Player Window variant represents the optimal balance:
 - **Pet Support**: Small pet gauge included without compromising main information
 - **Space Efficient**: 70px height balances info with screen real estate usage
 - **Reference Implementation**: Serves as middle ground between compact and comprehensive variants
-- **Thorne Standard**: Matches overall design philosophy of accessibility + customization
+- **Thorne Classic**: Matches overall design philosophy of accessibility + customization
 
 ### Design Advantages
 

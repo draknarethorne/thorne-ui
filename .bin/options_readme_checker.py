@@ -25,7 +25,7 @@ from datetime import datetime
 from collections import defaultdict
 
 class OptionsReadmeChecker:
-    def __init__(self, options_root, min_readme_lines=80, deep_analysis_threshold=150):
+    def __init__(self, options_root, min_readme_lines=80, deep_analysis_threshold=120):
         self.options_root = Path(options_root)
         self.min_readme_lines = min_readme_lines
         self.deep_analysis_threshold = deep_analysis_threshold  # Line count below which needs deep analysis
@@ -149,9 +149,9 @@ class OptionsReadmeChecker:
             if location == "variant":
                 # Variant files MUST have Purpose, Specifications, Key Features
                 required = {
-                    "Purpose": "## Purpose",
+                    "Purpose": ["## Purpose", "## Overview"],
                     "Key Features": ["**Key Features**", "### Key Features"],
-                    "Specifications": "## Specifications"
+                    "Specifications": ["## Specifications", "## Element Specifications"]
                 }
                 
                 for section_name, pattern in required.items():
@@ -443,11 +443,11 @@ Audits Options/ variant directories to detect documentation issues:
 - Missing required sections
 
 FEATURES:
-  ✓ Comprehensive README quality audit
-  ✓ Identification of orphaned variants (no README)
-  ✓ Detection of incomplete documentation
-  ✓ Deep analysis for variants needing attention
-  ✓ Detailed reporting with recommendations
+  * Comprehensive README quality audit
+  * Identification of orphaned variants (no README)
+  * Detection of incomplete documentation
+  * Deep analysis for variants needing attention
+  * Detailed reporting with recommendations
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""

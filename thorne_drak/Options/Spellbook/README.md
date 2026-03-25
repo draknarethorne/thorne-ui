@@ -4,8 +4,8 @@
 
 This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml).
 
-**Last Synced:** 2026-03-23  
-**Git Commit:** bea21da
+**Last Synced:** 2026-03-25  
+**Git Commit:** 84de9fc
 
 ---
 
@@ -17,10 +17,13 @@ This directory contains variants for the Spellbook window (EQUI_SpellBookWnd.xml
 - **[Thorne/](Thorne/)**    
   `EQUI_SpellBookWnd.xml`
 
-- **[Thorne Large/](Thorne Large/)**    
+- **[Thorne Basic/](Thorne Basic/)**    
   `EQUI_SpellBookWnd.xml`
 
-- **[Thorne Standard/](Thorne Standard/)**    
+- **[Thorne Classic/](Thorne Classic/)**    
+  `EQUI_SpellBookWnd.xml`
+
+- **[Thorne Large/](Thorne Large/)**    
   `EQUI_SpellBookWnd.xml`
 
 - **[Thorne Veil/](Thorne Veil/)**    

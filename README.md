@@ -29,14 +29,13 @@ Every core window has **variants** to suit your preferences:
 
 ---
 
-
 ### Main View: Full UI at 1920x1080
-
 
 This screenshot shows the default Thorne UI layout as it appears in-game at 1920x1080 resolution. All core windows are visible in their standard positions.
 ![Thorne UI Main](.docs/images/screenshots/thorne_ui_main.bmp)
 
 ### Detailed View: Inventory & Spells
+
 This view highlights the Inventory, Spellbook, and related windows, with Player, Pet, Actions, Hotbar, and Buffs all visible for reference.
 ![Thorne UI Inventory and Spells](.docs/images/screenshots/thorne_ui_inv_spell.bmp)
 

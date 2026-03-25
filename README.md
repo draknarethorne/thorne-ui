@@ -4,7 +4,7 @@
 
 **The legendary UI for TAKP**—Crafted by Draknare Thorne, where classic EverQuest aesthetics meet modern playability.
 
-Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQQuarm mod**, now evolved into a standalone, fully-documented UI suite focused on **usability, flexibility, and player choice**.
+Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQ, DuxaiUI and Nillipuss mods**, now evolved into a standalone, fully-documented UI suite focused on **usability, flexibility, and player choice**.
 
 ---
 
@@ -101,9 +101,10 @@ See the [Options Guide](#-window-options--variants) below for details.
 
 This project builds on the work and ideas of many contributors:
 
-- **QQQuarm mod** - Foundation and early layout concepts
+- **QQ mod** - Foundation and early layout concepts
+- **DuxaiUI** - Inspiration for clean, modernized aesthetics
 - **Nillipuss UI** - Feature inspiration and quality targets
-- **Community UIs** - DuxaUI, Infiniti-Blue, QQ, vert, zeal, and default UI files informed our design
+- **Community UIs** - Infiniti-Blue, Vert, various others and default UI files informed our design
 - **TAKP Community** - Feedback and play-testing from eager players
 
 **Maintained by**: Draknare Thorne
@@ -160,7 +161,7 @@ Most windows have **alternative layouts** available in the `Options/` directory.
 
 ### Using Options
 
-1. Navigate to `thorne_drak/Options/YourWindow/`
+1. Navigate to `thorne_drak/Options/WindowName/`
 2. Read the variant's `README.md` to understand what's different
 3. Copy the XML file to test (e.g., `Options/Player/Thorne/EQUI_PlayerWindow.xml` → `EQUI_PlayerWindow.xml`)
 4. Reload with `/loadskin thorne_drak` to see changes in-game
@@ -190,7 +191,7 @@ Each option includes everything needed (XML + textures). Just copy the variant, 
 
 When you modify a window:
 
-1. Create a folder in `Options/YourWindow/MyVariant/`
+1. Create a folder in `Options/WindowName/YourVariant`
 2. Copy your modified `EQUI_WindowName.xml` into it
 3. Include any custom `.tga` texture files it needs
 4. Write a `README.md` documenting what changed and why

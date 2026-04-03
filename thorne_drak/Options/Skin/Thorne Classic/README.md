@@ -1,4 +1,4 @@
-# Skin Window - Slightly Taller and Wider Variant
+# Window: Skin - Thorne Classic Variant
 
 **File**: [EQUI_LoadskinWnd.xml](./EQUI_LoadskinWnd.xml)
 **Version**: 1.0.0  

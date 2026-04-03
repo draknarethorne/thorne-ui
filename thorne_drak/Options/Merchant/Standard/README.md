@@ -1,4 +1,4 @@
-# Merchant Window - Standard Variant
+# Window: Merchant - Standard Variant
 
 **File**: [EQUI_MerchantWnd.xml](./EQUI_MerchantWnd.xml)
 **Version**: 1.0.0  
@@ -144,6 +144,8 @@ Column 1 (X=5)   Column 2 (X=50)
 - **No VScroll/HScroll Styles**: Individual slots have `Style_VScroll=false, Style_HScroll=false`
 - **Merchant Name Width**: 115px label width fits within 125px window (5px margins)
 - **Draw Template**: WDT_RoundedNoTitle provides rounded window without prominent titlebar background
+
+See also: [Merchant/Thorne Bags](../Thorne%20Bags/) for integrated inventory variant.
 
 ---
 

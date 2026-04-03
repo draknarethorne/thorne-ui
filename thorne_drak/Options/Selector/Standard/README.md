@@ -1,4 +1,4 @@
-# Selector Window - Standard Variant
+# Window: Selector - Standard Variant
 
 **File**: [EQUI_SelectorWnd.xml](./EQUI_SelectorWnd.xml)
 **Version**: 1.0.0  

@@ -9,7 +9,7 @@
 
 		v0.8.0 Gauge Upgrade:
 		- HP gauges: 120t tall templates (CX=120, CY=16), red fill, name inside gauge
-		- Pet gauges: standard templates (CX=120, CY=8), blue fill (100,150,255)
+		- Pet gauges: standard templates (CX=120, CY=8), magenta fill (220,80,220)
 		- F-key labels: right-aligned (X=128, CY=10), overlapping pet row
 		- HP value labels: right-aligned inside gauge, with % suffix
 		- Layout per member row (28px step, base offsets):
@@ -360,22 +360,17 @@
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
+		<!-- Pet gauge: Lighter magenta (220,80,220) for clarity and distinction -->
 		<FillTint>
-				<R>100</R>
-				<G>150</G>
-				<B>255</B>
+			<R>220</R>
+			<G>80</G>
+			<B>220</B>
 		</FillTint>
-		<LinesFillTint>
-				<R>70</R>
-				<G>105</G>
-				<B>180</B>
-		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>17</EQType>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_120</Background>
 			<Fill>A_GaugeFill_120</Fill>
-			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -725,22 +720,17 @@
 		<Style_HScroll>false</Style_HScroll>
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
+		<!-- Pet gauge: Lighter magenta (220,80,220) for clarity and distinction -->
 		<FillTint>
-				<R>100</R>
-				<G>150</G>
-				<B>255</B>
+			<R>220</R>
+			<G>80</G>
+			<B>220</B>
 		</FillTint>
-		<LinesFillTint>
-				<R>70</R>
-				<G>105</G>
-				<B>180</B>
-		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>18</EQType>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_120</Background>
 			<Fill>A_GaugeFill_120</Fill>
-			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -1091,21 +1081,15 @@
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>100</R>
-				<G>150</G>
-				<B>255</B>
+			<R>220</R>
+			<G>80</G>
+			<B>220</B>
 		</FillTint>
-		<LinesFillTint>
-				<R>70</R>
-				<G>105</G>
-				<B>180</B>
-		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>19</EQType>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_120</Background>
 			<Fill>A_GaugeFill_120</Fill>
-			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -1456,21 +1440,15 @@
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>100</R>
-				<G>150</G>
-				<B>255</B>
+			<R>220</R>
+			<G>80</G>
+			<B>220</B>
 		</FillTint>
-		<LinesFillTint>
-				<R>70</R>
-				<G>105</G>
-				<B>180</B>
-		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>20</EQType>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_120</Background>
 			<Fill>A_GaugeFill_120</Fill>
-			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 
@@ -1819,21 +1797,15 @@
 		<Style_Transparent>false</Style_Transparent>
 		<!--<TooltipReference/>-->
 		<FillTint>
-				<R>100</R>
-				<G>150</G>
-				<B>255</B>
+			<R>220</R>
+			<G>80</G>
+			<B>220</B>
 		</FillTint>
-		<LinesFillTint>
-				<R>70</R>
-				<G>105</G>
-				<B>180</B>
-		</LinesFillTint>
 		<DrawLinesFill>false</DrawLinesFill>
 		<EQType>21</EQType>
 		<GaugeDrawTemplate>
 			<Background>A_GaugeBackground_120</Background>
 			<Fill>A_GaugeFill_120</Fill>
-			<Lines>A_GaugeLines_120</Lines>
 		</GaugeDrawTemplate>
 	</Gauge>
 

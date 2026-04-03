@@ -1,32 +1,44 @@
-# Cast Spell Window - Enhanced Variant
+# Window: Cast - Thorne Classic Variant
 
-**Status:** ✅ ACTIVE  
-**Version:** 0.7.0  
-**Last Updated:** February 18, 2026  
-**Author:** Draknare Thorne
+**File**: [EQUI_CastSpellWnd.xml](./EQUI_CastSpellWnd.xml)  
+**Status**: ✅ Active  
+**Version**: 0.7.0  
+**Last Updated**: 2026-02-18  
+**Author**: Draknare Thorne
 
-## Overview
+---
 
-The **Enhanced** variant of the cast spell window features custom button-style spell gems with improved visibility and contrast, but without individual spell recast timer displays.
+## Purpose
 
-## Features
+The **Thorne Classic** variant of the cast spell window features custom button-style spell gems with improved visibility and contrast, but without individual spell recast timer displays.
 
-### Custom Button-Style Spell Gems
+**Key Features**:
 - **Wider buttons**: 150px × 24px (vs 120px × 23px in Nillipuss)
 - **Custom textures**: Dark and light button states for clear ready/cooldown feedback
 - **Clear typography**: Spell names displayed prominently with improved readability
 - **Consistent layout**: All spell gems use identical sizing and styling
+- **No recast timers**: Clean, uncluttered design (see Cast/Thorne for recast timer variant)
 
-### Design Characteristics
-- Window size: **160px × 242px** (slightly wider than standard)
-- Spell gem styling: Custom `A_CastBtnNormal` / `A_CastBtnReady` animations
-- Texture assets: `buttons_dark_thorne01.tga` and `buttons_light_thorne01.tga`
-- Visual feedback: Button state changes indicate when spells are ready to cast
-- No individual spell cooldown indicators (see Default variant for recast timers)
+---
+
+## Specifications
+
+| Property | Value |
+|----------|-------|
+| **Window Size** | 160 × 242px |
+| **Layout Type** | Vertical spell gem stack |
+| **Resizable** | No |
+| **Button Size** | 150 × 24px per spell gem |
+| **Spell Gems** | 9 (EQTypes 60-67, 133) |
+| **Textures** | `buttons_dark_thorne01.tga`, `buttons_light_thorne01.tga` |
+| **Animations** | `A_CastBtnNormal`, `A_CastBtnReady` |
+| **Recast Timers** | No |
+
+---
 
 ## When to Use This Variant
 
-Choose **Enhanced** if you:
+Choose **Thorne Classic** if you:
 - Prefer clean, uncluttered spell buttons
 - Want to rely on visual button state changes for readiness feedback
 - Prefer less information density on screen
@@ -34,8 +46,8 @@ Choose **Enhanced** if you:
 
 ## Comparison with Other Variants
 
-| Feature | Enhanced | Default |
-|---------|----------|---------|
+| Feature | Thorne Classic | Thorne |
+|---------|----------------|--------|
 | **Button Width** | 150px | 150px |
 | **Button Height** | 24px | 24px |
 | **Custom Textures** | Yes | Yes |
@@ -57,23 +69,27 @@ Choose **Enhanced** if you:
 ## Technical Details
 
 ### Spell Gems (CSPW_Spell0-8)
+
 - **SpellGem type**: Custom button layout
 - **Draw template**: Uses A_CastBtnNormal (inactive) and A_CastBtnReady (active)
 - **Icon offsets**: X=2, Y=0 for proper alignment within button frames
 - **EQTypes**: 60-67 for spell names, 133 for 9th gem
 
 ### Spell Names (CSPW_Spell#_Name)
+
 - **Font**: Font 1 (smaller than Font 2)
 - **Position**: X=47 (right side of icon area)
 - **Alignment**: Center-aligned for visual balance
 - **Truncation**: Handles longer spell names without overflow
 
 ### Spell Numbers (CSPW_Spell#_No)
+
 - **Font**: Font 4 (very small)
 - **Purpose**: Shows gem number (1-9) for quick reference
 - **Position**: Top-left of button
 
 ### Custom Textures
+
 - **buttons_dark_thorne01.tga** (256×256)
   - Contains normal button state (120×24px at coordinates 100,0)
   - Used for inactive/normal spell gems
@@ -99,12 +115,14 @@ Choose **Enhanced** if you:
 ## Customization Options
 
 ### Change Button Colors
+
 Edit the texture files or modify the ColorInfo sections in EQUI_CastSpellWnd.xml to adjust:
 - Button background colors
 - Text colors for spell names
 - Number label colors
 
 ### Adjust Spell Button Size
+
 Modify the `<Size>` elements for CSPW_Spell# items:
 ```xml
 <Size>
@@ -114,6 +132,7 @@ Modify the `<Size>` elements for CSPW_Spell# items:
 ```
 
 ### Reposition Window
+
 Use in-game: `/windowpos CastSpellWnd X Y` to move the window to your preferred location
 
 ## Known Limitations
@@ -126,9 +145,9 @@ Use in-game: `/windowpos CastSpellWnd X Y` to move the window to your preferred 
 ## Variants Reference
 
 **Current Cast Spell Window Options:**
-- **Enhanced** (this file) - Custom buttons, no recast timers
-- **Default** - Custom buttons with individual spell recast timer gauges
-- *Future: Standard* - Original spell gem graphics (when implemented)
+- **Thorne Classic** (this file) - Custom buttons, no recast timers
+- **Thorne** - Custom buttons with individual spell recast timer gauges
+- **Standard** - Original spell gem graphics (traditional EQ appearance)
 
 ## Support & Feedback
 

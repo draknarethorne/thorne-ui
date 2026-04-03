@@ -17,19 +17,13 @@ This directory contains variants for the Target window (EQUI_TargetWindow.xml).
 - **[Thorne/](Thorne/)**    
   `EQUI_TargetWindow.xml`
 
+- **[Thorne Classic/](Thorne Classic/)**    
+  `EQUI_TargetWindow.xml`
+
 - **[Thorne Oval/](Thorne Oval/)**  📄
   `EQUI_TargetWindow.xml`
 
-- **[Thorne Oval Basic/](Thorne Oval Basic/)**  📄
-  `EQUI_TargetWindow.xml`
-
-- **[Thorne Oval Pet/](Thorne Oval Pet/)**  📄
-  `EQUI_TargetWindow.xml`
-
-- **[Thorne Oval Weight/](Thorne Oval Weight/)**  📄
-  `EQUI_TargetWindow.xml`
-
-- **[Thorne Standard/](Thorne Standard/)**    
+- **[Thorne Veil/](Thorne Veil/)**    
   `EQUI_TargetWindow.xml`
 
 ---

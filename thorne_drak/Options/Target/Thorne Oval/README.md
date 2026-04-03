@@ -1,4 +1,4 @@
-# Window: Target - Thorne Variant
+# Window: Target - Thorne Oval Variant
 
 **File**: [EQUI_TargetWindow.xml](./EQUI_TargetWindow.xml)  
 **Version**: 2.5.0  

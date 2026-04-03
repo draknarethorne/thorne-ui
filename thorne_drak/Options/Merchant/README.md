@@ -4,8 +4,8 @@
 
 This directory contains variants for the Merchant window (EQUI_MerchantWnd.xml).
 
-**Last Synced:** 2026-02-27  
-**Git Commit:** 9ac32db
+**Last Synced:** 2026-04-03  
+**Git Commit:** 3f3c2c2
 
 ---
 

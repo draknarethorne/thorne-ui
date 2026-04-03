@@ -575,35 +575,10 @@
   </StaticText>
 
   <!-- ====================================================================== -->
-  <!-- SCRIBE GAUGE - Gold Veil (5-band composite)  EQType 10              -->
+  <!-- SCRIBE GAUGE - Ancient Gold - EQType 10                                -->
   <!-- ====================================================================== -->
-  <!-- Veil: Ancient Gold (full) > Gilded Quill > Molten Script > Sunlit Parchment > Aureate Glow (starting) -->
-  <!-- Z-order: BG > Aureate Glow(0) > Sunlit Parchment(1) > Molten Script(2) > Gilded Quill(3) > Ancient Gold(4) -->
-  <!--                                                                        -->
-  <!-- 105px gauge — grid positions (0-based): 0, 21, 42, 62, 82, 104        -->
-  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84) -->
-  <!--   Band 1: clip 21  Band 2: clip 42  Band 3: clip 63  Band 4: clip 84  -->
-  <!--   B-part: X = base + clip, CX = 105 - clip, GaugeOffsetX = -clip      -->
 
-  <!-- Background (empty gauge frame) -->
-  <Gauge item="SBW_Scribe_BG">
-    <ScreenID>SBW_Scribe_BG</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>105</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Background>A_GaugeBackground_105t</Background>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 0: Aureate Glow (255,230,160) - base, visible at any progress -->
+  <!-- Band 0: Ancient Gold (210,110,0) - 100% visible -->
   <Gauge item="SBW_Scribe_Band0">
     <ScreenID>SBW_Scribe_Band0</ScreenID>
     <EQType>10</EQType>
@@ -615,219 +590,19 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>230</G><B>160</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 1A: Sunlit Parchment (255,200,100) - 20% threshold -->
-  <Gauge item="SBW_Scribe_1A">
-    <ScreenID>SBW_Scribe_1A</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-2100</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8400</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>200</G><B>100</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band1</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Scribe_1A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>20</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Scribe_1A</Pieces>
-  </Screen>
-  <!-- Band 1B: Sunlit Parchment continuation -->
-  <Gauge item="SBW_Scribe_1B">
-    <ScreenID>SBW_Scribe_1B</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-20</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>84</X><Y>373</Y></Location>
-    <Size><CX>85</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>200</G><B>100</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 2A: Molten Script (255,170,40) - 40% threshold -->
-  <Gauge item="SBW_Scribe_2A">
-    <ScreenID>SBW_Scribe_2A</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-4200</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6300</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>170</G><B>40</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band2</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Scribe_2A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>41</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Scribe_2A</Pieces>
-  </Screen>
-  <!-- Band 2B: Molten Script continuation -->
-  <Gauge item="SBW_Scribe_2B">
-    <ScreenID>SBW_Scribe_2B</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-41</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>105</X><Y>373</Y></Location>
-    <Size><CX>64</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>255</R><G>170</G><B>40</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 3A: Gilded Quill (240,140,0) - 60% threshold -->
-  <Gauge item="SBW_Scribe_3A">
-    <ScreenID>SBW_Scribe_3A</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-6300</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4200</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>240</R><G>140</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band3</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Scribe_3A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>62</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Scribe_3A</Pieces>
-  </Screen>
-  <!-- Band 3B: Gilded Quill continuation -->
-  <Gauge item="SBW_Scribe_3B">
-    <ScreenID>SBW_Scribe_3B</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-62</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>126</X><Y>373</Y></Location>
-    <Size><CX>43</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>240</R><G>140</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 4A: Ancient Gold (210,110,0) - 80% threshold -->
-  <Gauge item="SBW_Scribe_4A">
-    <ScreenID>SBW_Scribe_4A</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-8400</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2100</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
     <FillTint><R>210</R><G>110</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band4</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Scribe_4A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>64</X><Y>373</Y></Location>
-    <Size><CX>83</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Scribe_4A</Pieces>
-  </Screen>
-  <!-- Band 4B: Ancient Gold continuation -->
-  <Gauge item="SBW_Scribe_4B">
-    <ScreenID>SBW_Scribe_4B</ScreenID>
-    <EQType>10</EQType>
-    <GaugeOffsetX>-83</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>147</X><Y>373</Y></Location>
-    <Size><CX>22</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>210</R><G>110</G><B>0</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- ====================================================================== -->
-  <!-- MEMORIZE GAUGE - Cyan Veil (5-band composite)  EQType 9             -->
-  <!-- ====================================================================== -->
-  <!-- Veil: Abyssal Cyan (full) > Deep Tide > Crystal Current > Arctic Glow > Frostlight (starting) -->
-  <!-- Z-order: BG > Frostlight(0) > Arctic Glow(1) > Crystal Current(2) > Deep Tide(3) > Abyssal Cyan(4) -->
-  <!--                                                                        -->
-  <!-- 105px gauge — grid positions (0-based): 0, 21, 42, 62, 82, 104        -->
-  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84) -->
-  <!--   Band 1: clip 21  Band 2: clip 42  Band 3: clip 63  Band 4: clip 84  -->
-  <!--   B-part: X = base + clip, CX = 105 - clip, GaugeOffsetX = -clip      -->
-
-  <!-- Background (empty gauge frame) -->
-  <Gauge item="SBW_Mem_BG">
-    <ScreenID>SBW_Mem_BG</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>0</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>105</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
       <Background>A_GaugeBackground_105t</Background>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- Band 0: Frostlight (170,235,255) - base, visible at any progress -->
+  <!-- ====================================================================== -->
+  <!-- MEMORIZE GAUGE - Abyssal Cyan - EQType 9                               -->
+  <!-- ====================================================================== -->
+
+  <!-- Band 0: Abyssal Cyan (0,120,210) - 100% visible -->
   <Gauge item="SBW_Mem_Band0">
     <ScreenID>SBW_Mem_Band0</ScreenID>
     <EQType>9</EQType>
@@ -839,185 +614,10 @@
     <TextOffsetX>8000</TextOffsetX>
     <TextOffsetY>8000</TextOffsetY>
     <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 1A: Arctic Glow (100,210,255) - 20% threshold -->
-  <Gauge item="SBW_Mem_1A">
-    <ScreenID>SBW_Mem_1A</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-2100</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>8400</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band1</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Mem_1A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>20</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Mem_1A</Pieces>
-  </Screen>
-  <!-- Band 1B: Arctic Glow continuation -->
-  <Gauge item="SBW_Mem_1B">
-    <ScreenID>SBW_Mem_1B</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-20</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>284</X><Y>373</Y></Location>
-    <Size><CX>85</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 2A: Crystal Current (40,180,255) - 40% threshold -->
-  <Gauge item="SBW_Mem_2A">
-    <ScreenID>SBW_Mem_2A</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-4200</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>6300</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band2</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Mem_2A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>41</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Mem_2A</Pieces>
-  </Screen>
-  <!-- Band 2B: Crystal Current continuation -->
-  <Gauge item="SBW_Mem_2B">
-    <ScreenID>SBW_Mem_2B</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-41</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>305</X><Y>373</Y></Location>
-    <Size><CX>64</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 3A: Deep Tide (0,150,240) - 60% threshold -->
-  <Gauge item="SBW_Mem_3A">
-    <ScreenID>SBW_Mem_3A</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-6300</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>4200</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band3</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Mem_3A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>62</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Mem_3A</Pieces>
-  </Screen>
-  <!-- Band 3B: Deep Tide continuation -->
-  <Gauge item="SBW_Mem_3B">
-    <ScreenID>SBW_Mem_3B</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-62</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>326</X><Y>373</Y></Location>
-    <Size><CX>43</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
-      <Fill>A_GaugeLightGridFill_105t</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-
-  <!-- Band 4A: Abyssal Cyan (0,120,210) - 80% threshold -->
-  <Gauge item="SBW_Mem_4A">
-    <ScreenID>SBW_Mem_4A</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-8400</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>0</X><Y>0</Y></Location>
-    <Size><CX>2100</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
     <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedLightGridFill_105t_Band4</Fill>
-    </GaugeDrawTemplate>
-  </Gauge>
-  <Screen item="SBW_Mem_4A_Clip">
-    <RelativePosition>true</RelativePosition>
-    <Location><X>264</X><Y>373</Y></Location>
-    <Size><CX>83</CX><CY>16</CY></Size>
-    <Style_Transparent>true</Style_Transparent>
-    <Pieces>SBW_Mem_4A</Pieces>
-  </Screen>
-  <!-- Band 4B: Abyssal Cyan continuation -->
-  <Gauge item="SBW_Mem_4B">
-    <ScreenID>SBW_Mem_4B</ScreenID>
-    <EQType>9</EQType>
-    <GaugeOffsetX>-83</GaugeOffsetX>
-    <GaugeOffsetY>0</GaugeOffsetY>
-    <RelativePosition>true</RelativePosition>
-    <Location><X>347</X><Y>373</Y></Location>
-    <Size><CX>22</CX><CY>16</CY></Size>
-    <TextOffsetX>8000</TextOffsetX>
-    <TextOffsetY>8000</TextOffsetY>
-    <Style_Transparent>false</Style_Transparent>
-    <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground_105t</Background>
       <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
@@ -1226,30 +826,13 @@
     <Pieces>SBW_SpellName14</Pieces>
     <Pieces>SBW_Spell15</Pieces>
     <Pieces>SBW_SpellName15</Pieces>
-    <!-- Scribe Gold Veil (left gauge) -->
-    <Pieces>SBW_Scribe_BG</Pieces>
+
     <Pieces>SBW_Scribe_Band0</Pieces>
-    <Pieces>SBW_Scribe_1A_Clip</Pieces>
-    <Pieces>SBW_Scribe_1B</Pieces>
-    <Pieces>SBW_Scribe_2A_Clip</Pieces>
-    <Pieces>SBW_Scribe_2B</Pieces>
-    <Pieces>SBW_Scribe_3A_Clip</Pieces>
-    <Pieces>SBW_Scribe_3B</Pieces>
-    <Pieces>SBW_Scribe_4A_Clip</Pieces>
-    <Pieces>SBW_Scribe_4B</Pieces>
-    <!-- Memorize Cyan Veil (right gauge) -->
-    <Pieces>SBW_Mem_BG</Pieces>
     <Pieces>SBW_Mem_Band0</Pieces>
-    <Pieces>SBW_Mem_1A_Clip</Pieces>
-    <Pieces>SBW_Mem_1B</Pieces>
-    <Pieces>SBW_Mem_2A_Clip</Pieces>
-    <Pieces>SBW_Mem_2B</Pieces>
-    <Pieces>SBW_Mem_3A_Clip</Pieces>
-    <Pieces>SBW_Mem_3B</Pieces>
-    <Pieces>SBW_Mem_4A_Clip</Pieces>
-    <Pieces>SBW_Mem_4B</Pieces>
+
     <Pieces>SBW_MemPage0_Button</Pieces>
     <Pieces>SBW_MemPage1_Button</Pieces>
+
     <Pieces>SBW_PageDown_Button</Pieces>
     <Pieces>SBW_PageUp_Button</Pieces>
     <Pieces>SBW_LeftPageNum</Pieces>

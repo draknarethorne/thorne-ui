@@ -18,11 +18,10 @@
     - Mana color standardization: RGB(100,150,255) for "Thorne blue"
     - Part of Phase 5 Target Window enhancements
     
-    Phase 6 Experimental Additions (Feb 2026):
+    Phase 6 Additions (Feb 2026):
     - Added player weight display (EQType 24/25) centered between HP/Mana gauges
     - Position: X=90-147, Y=20 (vertically centered in gauge area)
-    - Format: "999/999" (current/max) in compact Font 2
-    - EXPERIMENTAL: May be removed if cluttered or not useful in testing
+    - Format: "999/999" (current/max) in compact Font 1
   -->
   <Label item="necessary">
     <ScreenID>HPPercLabel</ScreenID>
@@ -122,11 +121,11 @@
       <Y>0</Y>
     </Location>
   </Label>
-  <!-- EXPERIMENTAL: Player Weight Display (centered between HP/Mana gauges) -->
+  <!-- Player Weight Display (centered between HP/Mana gauges) -->
   <!-- Current Weight (right-aligned, EQType 24) -->
   <Label item="TW_Weight_Current">
     <ScreenID>TW_Weight_Current</ScreenID>
-    <Font>2</Font>
+    <Font>1</Font>
     <EQType>24</EQType>
     <RelativePosition>true</RelativePosition>
     <Location>
@@ -150,7 +149,7 @@
   <!-- Weight Divider "/" -->
   <Label item="TW_Weight_Divider">
     <ScreenID>TW_Weight_Divider</ScreenID>
-    <Font>2</Font>
+    <Font>1</Font>
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>123</X>
@@ -172,7 +171,7 @@
   <!-- Max Weight (left-aligned, EQType 25) -->
   <Label item="TW_Weight_Max">
     <ScreenID>TW_Weight_Max</ScreenID>
-    <Font>2</Font>
+    <Font>1</Font>
     <EQType>25</EQType>
     <RelativePosition>true</RelativePosition>
     <Location>
@@ -272,7 +271,7 @@
     </Size>
     <Text>100</Text>
     <TextColor>
-      <R>100</R>
+      <R>150</R>
       <G>150</G>
       <B>255</B>
     </TextColor>
@@ -353,7 +352,7 @@
       <Duration>1000</Duration>
     </Frames>
   </Ui2DAnimation>
-  <!-- Pet Health Gauge (standard 122x8 version for Target Window) -->
+  <!-- Pet Health Gauge (standard 103x8 version for Target Window) -->
   <Gauge item="TW_PetHealth_Gauge">
     <ScreenID>PetHealth_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -362,7 +361,7 @@
       <Y>24</Y>
     </Location>
     <Size>
-      <CX>122</CX>
+      <CX>103</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
@@ -424,7 +423,42 @@
     </GaugeDrawTemplate>
   </Gauge>
 
-  <!-- Experimental: Player HP and Mana Gauges on Target Window -->
+  <!-- Attack Tick Gauge (combat timer - positioned under Pet HP) -->
+  <Gauge item="TW_AttackTick_Gauge">
+    <ScreenID>AttackTick_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>33</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>4</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetY>-50</TextOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>220</R>
+      <G>180</G>
+      <B>0</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>220</R>
+      <G>180</G>
+      <B>0</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>34</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeTick_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Player HP and Mana Gauges on Target Window -->
   <Gauge item="TW_PlayerHP_Gauge">
     <ScreenID>PlayerHP_Gauge</ScreenID>
     <RelativePosition>true</RelativePosition>
@@ -433,7 +467,7 @@
       <Y>16</Y>
     </Location>
     <Size>
-      <CX>122</CX>
+      <CX>103</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
@@ -467,7 +501,7 @@
       <Y>16</Y>
     </Location>
     <Size>
-      <CX>122</CX>
+      <CX>103</CX>
       <CY>8</CY>
     </Size>
     <GaugeOffsetX>0</GaugeOffsetX>
@@ -493,6 +527,231 @@
       <Fill>A_GaugeFill</Fill>
     </GaugeDrawTemplate>
   </Gauge>
+
+
+  <!-- ====================================================================== -->
+  <!-- TARGET HP - Red Veil (5-band composite, 250x16, EQType 6)             -->
+  <!-- Veil: Ashen Red (critical) > Fading > Warming > Smoldering > Crimson  -->
+  <!-- Z-order: StaticBG > Ashen(0) > Fading(1) > Warming(2) > Smoldering(3) > Crimson(4) > Text -->
+  <!-- Band clips: [50, 100, 150, 200]  (50px per band, 250px / 5)          -->
+  <!-- Base position: X=1, Y=36                                              -->
+  <!-- ====================================================================== -->
+
+  <!-- Target HP Background - StaticAnimation, always visible even with no target -->
+  <!-- Unlike PlayerWindow where EQType 1 is always available, EQType 6 only      -->
+  <!-- activates when a target is selected. StaticAnimation ensures the empty      -->
+  <!-- gauge frame is always rendered.                                             -->
+  <StaticAnimation item="TW_TargetHP_BG">
+    <ScreenID>TargetHP_BG</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>36</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>16</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Animation>A_GaugeBackground_250t</Animation>
+  </StaticAnimation>
+
+  <!-- Band 0: Ashen Red (255,210,210) - base, visible at any health -->
+  <Gauge item="TW_THP_Band0">
+    <ScreenID>TW_THP_Band0</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>1</X><Y>36</Y></Location>
+    <Size><CX>250</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>210</G><B>210</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 1A: Fading Red (255,160,160) - 20% threshold -->
+  <Gauge item="TW_THP_1A">
+    <ScreenID>TW_THP_1A</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-5000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>20000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_250t_Band1</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="TW_THP_1A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>1</X><Y>36</Y></Location>
+    <Size><CX>49</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>TW_THP_1A</Pieces>
+  </Screen>
+  <!-- Band 1B: Fading Red continuation -->
+  <Gauge item="TW_THP_1B">
+    <ScreenID>TW_THP_1B</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-49</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>50</X><Y>36</Y></Location>
+    <Size><CX>201</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>160</G><B>160</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 2A: Warming Red (255,100,100) - 40% threshold -->
+  <Gauge item="TW_THP_2A">
+    <ScreenID>TW_THP_2A</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-10000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>15000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_250t_Band2</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="TW_THP_2A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>1</X><Y>36</Y></Location>
+    <Size><CX>99</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>TW_THP_2A</Pieces>
+  </Screen>
+  <!-- Band 2B: Warming Red continuation -->
+  <Gauge item="TW_THP_2B">
+    <ScreenID>TW_THP_2B</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-99</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>100</X><Y>36</Y></Location>
+    <Size><CX>151</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>100</G><B>100</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 3A: Smoldering Red (255,50,50) - 60% threshold -->
+  <Gauge item="TW_THP_3A">
+    <ScreenID>TW_THP_3A</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-15000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>10000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_250t_Band3</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="TW_THP_3A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>1</X><Y>36</Y></Location>
+    <Size><CX>149</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>TW_THP_3A</Pieces>
+  </Screen>
+  <!-- Band 3B: Smoldering Red continuation -->
+  <Gauge item="TW_THP_3B">
+    <ScreenID>TW_THP_3B</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-149</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>150</X><Y>36</Y></Location>
+    <Size><CX>101</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>50</G><B>50</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Band 4A: Crimson (255,0,0) - 80% threshold -->
+  <Gauge item="TW_THP_4A">
+    <ScreenID>TW_THP_4A</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-20000</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>0</X><Y>0</Y></Location>
+    <Size><CX>5000</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_OversizedGridFill_250t_Band4</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+  <Screen item="TW_THP_4A_Clip">
+    <RelativePosition>true</RelativePosition>
+    <Location><X>1</X><Y>36</Y></Location>
+    <Size><CX>199</CX><CY>16</CY></Size>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>TW_THP_4A</Pieces>
+  </Screen>
+  <!-- Band 4B: Crimson continuation -->
+  <Gauge item="TW_THP_4B">
+    <ScreenID>TW_THP_4B</ScreenID>
+    <EQType>6</EQType>
+    <GaugeOffsetX>-199</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <RelativePosition>true</RelativePosition>
+    <Location><X>200</X><Y>36</Y></Location>
+    <Size><CX>51</CX><CY>16</CY></Size>
+    <TextOffsetX>8000</TextOffsetX>
+    <TextOffsetY>8000</TextOffsetY>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint><R>255</R><G>0</G><B>0</B></FillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeGridFill_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
+  <!-- Target HP text overlay - preserves ScreenID for client binding -->
   <Gauge item="TW_TargetHP_Gauge">
     <ScreenID>TargetHP</ScreenID>
     <Font>4</Font>
@@ -502,40 +761,55 @@
       <B>240</B>
     </TextColor>
     <RelativePosition>true</RelativePosition>
+    <Location><X>1</X><Y>36</Y></Location>
+    <Size><CX>250</CX><CY>16</CY></Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>5</TextOffsetX>
+    <TextOffsetY>-1</TextOffsetY>
+    <Style_Transparent>true</Style_Transparent>
+    <EQType>6</EQType>
+    <GaugeDrawTemplate />
+  </Gauge>
+
+  <!-- Target Casting Background -->
+  <StaticAnimation item="TW_Casting_BG">
+    <ScreenID>Casting_BG</ScreenID>
+    <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>1</Y>
+      <Y>54</Y>
     </Location>
     <Size>
       <CX>250</CX>
-      <CY>60</CY>
+      <CY>16</CY>
     </Size>
-    <GaugeOffsetY>35</GaugeOffsetY>
-    <TextOffsetX>5</TextOffsetX>
-    <Style_VScroll>false</Style_VScroll>
-    <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
-    <TooltipReference />
-    <FillTint>
-      <R>240</R>
-      <G>0</G>
-      <B>0</B>
-    </FillTint>
-    <LinesFillTint>
-      <R>220</R>
-      <G>220</G>
-      <B>0</B>
-    </LinesFillTint>
-    <DrawLinesFill>false</DrawLinesFill>
-    <EQType>6</EQType>
-    <GaugeDrawTemplate>
-      <Background>A_OvalTarBG</Background>
-      <Fill>A_OvalTarFill</Fill>
-    </GaugeDrawTemplate>
-    <TextOffsetY>33</TextOffsetY>
-  </Gauge>
-  <Gauge item="TW_TargetCasting_Gauge">
-    <ScreenID>Target_Casting_Gauge</ScreenID>
+    <Animation>A_GaugeBackground_250t</Animation>
+  </StaticAnimation>
+
+  <Label item="TW_Casting_Spell_Name">
+    <ScreenID>Casting_Spell_Name</ScreenID>
+    <Font>2</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>5</X>
+      <Y>54</Y>
+    </Location>
+    <Size>
+      <CX>240</CX>
+      <CY>16</CY>
+    </Size>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <EQType>134</EQType>
+  </Label>
+
+  <Gauge item="TW_Casting_Gauge">
+    <ScreenID>Casting_Gauge</ScreenID>
     <Font>4</Font>
     <TextColor>
       <R>240</R>
@@ -545,14 +819,16 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>1</X>
-      <Y>1</Y>
+      <Y>54</Y>
     </Location>
     <Size>
       <CX>250</CX>
-      <CY>60</CY>
+      <CY>16</CY>
     </Size>
-    <GaugeOffsetY>48</GaugeOffsetY>
+		<GaugeOffsetX>0</GaugeOffsetX>
+		<GaugeOffsetY>0</GaugeOffsetY>
     <TextOffsetX>5</TextOffsetX>
+    <TextOffsetY>2</TextOffsetY>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
     <Style_Transparent>false</Style_Transparent>
@@ -570,11 +846,46 @@
     <DrawLinesFill>false</DrawLinesFill>
     <EQType>7</EQType>
     <GaugeDrawTemplate>
-      <Background>A_OvalTarBG</Background>
-      <Fill>A_OvalTarFill</Fill>
+      <Background>A_GaugeBackground_250t</Background>
+      <Fill>A_GaugeFill_250t</Fill>
     </GaugeDrawTemplate>
-    <TextOffsetY>46</TextOffsetY>
   </Gauge>
+
+  <!-- Global Recast Timer (from CastSpellWnd EQType 25), overlaid at top of casting gauge -->
+  <Gauge item="TW_Global_Recast_Gauge">
+    <ScreenID>TW_Global_Recast_Gauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>52</Y>
+    </Location>
+    <Size>
+      <CX>250</CX>
+      <CY>3</CY>
+    </Size>
+    <GaugeOffsetX>0</GaugeOffsetX>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <TextOffsetX>-500</TextOffsetX>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <FillTint>
+      <R>255</R>
+      <G>210</G>
+      <B>250</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>255</R>
+      <G>235</G>
+      <B>255</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>25</EQType>
+    <GaugeDrawTemplate>
+      <Fill>A_GaugeTick_250t</Fill>
+    </GaugeDrawTemplate>
+  </Gauge>
+
   <Screen item="TargetWindow">
     <ScreenID />
     <RelativePosition>false</RelativePosition>
@@ -584,7 +895,7 @@
     </Location>
     <Size>
       <CX>260</CX>
-      <CY>76</CY>
+      <CY>78</CY>
     </Size>
     <Text>Target</Text>
     <Style_VScroll>false</Style_VScroll>
@@ -597,23 +908,43 @@
     <Style_Minimizebox>false</Style_Minimizebox>
     <Style_Border>true</Style_Border>
     <Style_Sizable>false</Style_Sizable>
-    <Pieces>TW_PlayerHP_Gauge</Pieces>
-    <Pieces>TW_PetHealth_Gauge</Pieces>
-    <Pieces>TW_PlayerMana_Gauge</Pieces>
-    <Pieces>TW_ManaTick_Gauge</Pieces>
-    <Pieces>TW_TargetHP_Gauge</Pieces>
-    <Pieces>TW_TargetCasting_Gauge</Pieces>
-    <Pieces>TW_PlayerManaerManaerMana_Values</Pieces>
-    <Pieces>TW_TargetHP_Pct</Pieces>
-    <Pieces>TW_TargetHP_PctSign</Pieces>
+
     <Pieces>TW_PlayerHP_Values</Pieces>
-    <Pieces>TW_PlayerMana_Pct</Pieces>
-    <Pieces>TW_PlayerMana_PctSign</Pieces>
     <Pieces>TW_PlayerHP_Pct</Pieces>
     <Pieces>TW_PlayerHP_PctSign</Pieces>
+    <Pieces>TW_PlayerHP_Gauge</Pieces>
+    <Pieces>TW_PetHealth_Gauge</Pieces>
+
+    <Pieces>TW_PlayerMana_Values</Pieces>
+    <Pieces>TW_PlayerMana_Pct</Pieces>
+    <Pieces>TW_PlayerMana_PctSign</Pieces>
+    <Pieces>TW_PlayerMana_Gauge</Pieces>
+    <Pieces>TW_ManaTick_Gauge</Pieces>
+
     <Pieces>TW_Weight_Current</Pieces>
     <Pieces>TW_Weight_Divider</Pieces>
     <Pieces>TW_Weight_Max</Pieces>
+
+    <Pieces>TW_TargetHP_BG</Pieces>
+    <Pieces>TW_THP_Band0</Pieces>
+    <Pieces>TW_THP_1A_Clip</Pieces>
+    <Pieces>TW_THP_1B</Pieces>
+    <Pieces>TW_THP_2A_Clip</Pieces>
+    <Pieces>TW_THP_2B</Pieces>
+    <Pieces>TW_THP_3A_Clip</Pieces>
+    <Pieces>TW_THP_3B</Pieces>
+    <Pieces>TW_THP_4A_Clip</Pieces>
+    <Pieces>TW_THP_4B</Pieces>
+    <Pieces>TW_TargetHP_Gauge</Pieces>
+    <Pieces>TW_TargetHP_Pct</Pieces>
+    <Pieces>TW_TargetHP_PctSign</Pieces>
+    <Pieces>TW_AttackTick_Gauge</Pieces>
+
+    <Pieces>TW_Casting_BG</Pieces>
+    <Pieces>TW_Casting_Gauge</Pieces>
+    <Pieces>TW_Casting_Spell_Name</Pieces>
+    <Pieces>TW_Global_Recast_Gauge</Pieces>
+
     <Pieces>A_TargetBoxStaticAnim</Pieces>
     <Pieces>necessary</Pieces>
   </Screen>

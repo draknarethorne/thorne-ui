@@ -1,4 +1,4 @@
-# Cast Window - Standard Variant
+# Window: Cast - Standard Variant
 
 **File**: [EQUI_CastSpellWnd.xml](./EQUI_CastSpellWnd.xml)  
 **Version**: 1.0.0  

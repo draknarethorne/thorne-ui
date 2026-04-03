@@ -7,6 +7,7 @@
     - 8 spells per column (left: 0-7, right: 8-15)
     - Square spell icons with larger border-button framing
     - Wrapped spell names with tighter icon/name spacing
+    - Composite Veil gauges: Gold Veil (Scribe) + Cyan Veil (Memorize)
   -->
 
   <Ui2DAnimation item="SBW_A_NoteFill2">
@@ -578,7 +579,11 @@
   <!-- ====================================================================== -->
   <!-- Veil: Ancient Gold (full) > Gilded Quill > Molten Script > Sunlit Parchment > Aureate Glow (starting) -->
   <!-- Z-order: BG > Aureate Glow(0) > Sunlit Parchment(1) > Molten Script(2) > Gilded Quill(3) > Ancient Gold(4) -->
-  <!-- 105px / 5 bands = 21px per band -->
+  <!--                                                                        -->
+  <!-- 105px gauge — grid positions (0-based): 0, 21, 42, 62, 82, 104        -->
+  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84) -->
+  <!--   Band 1: clip 21  Band 2: clip 42  Band 3: clip 63  Band 4: clip 84  -->
+  <!--   B-part: X = base + clip, CX = 105 - clip, GaugeOffsetX = -clip      -->
 
   <!-- Background (empty gauge frame) -->
   <Gauge item="SBW_Scribe_BG">
@@ -613,7 +618,7 @@
     <FillTint><R>255</R><G>230</G><B>160</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -632,7 +637,7 @@
     <FillTint><R>255</R><G>200</G><B>100</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band1</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band1</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Scribe_1A_Clip">
@@ -657,7 +662,7 @@
     <FillTint><R>255</R><G>200</G><B>100</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -676,7 +681,7 @@
     <FillTint><R>255</R><G>170</G><B>40</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band2</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band2</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Scribe_2A_Clip">
@@ -701,7 +706,7 @@
     <FillTint><R>255</R><G>170</G><B>40</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -720,7 +725,7 @@
     <FillTint><R>240</R><G>140</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band3</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band3</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Scribe_3A_Clip">
@@ -745,7 +750,7 @@
     <FillTint><R>240</R><G>140</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -764,7 +769,7 @@
     <FillTint><R>210</R><G>110</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band4</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band4</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Scribe_4A_Clip">
@@ -789,7 +794,7 @@
     <FillTint><R>210</R><G>110</G><B>0</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -798,7 +803,11 @@
   <!-- ====================================================================== -->
   <!-- Veil: Abyssal Cyan (full) > Deep Tide > Crystal Current > Arctic Glow > Frostlight (starting) -->
   <!-- Z-order: BG > Frostlight(0) > Arctic Glow(1) > Crystal Current(2) > Deep Tide(3) > Abyssal Cyan(4) -->
-  <!-- 105px / 5 bands = 21px per band -->
+  <!--                                                                        -->
+  <!-- 105px gauge — grid positions (0-based): 0, 21, 42, 62, 82, 104        -->
+  <!-- Clip CX = true 20% boundaries (105 * 0.2/0.4/0.6/0.8 = 21/42/63/84) -->
+  <!--   Band 1: clip 21  Band 2: clip 42  Band 3: clip 63  Band 4: clip 84  -->
+  <!--   B-part: X = base + clip, CX = 105 - clip, GaugeOffsetX = -clip      -->
 
   <!-- Background (empty gauge frame) -->
   <Gauge item="SBW_Mem_BG">
@@ -833,7 +842,7 @@
     <FillTint><R>170</R><G>235</G><B>255</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -852,7 +861,7 @@
     <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band1</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band1</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Mem_1A_Clip">
@@ -877,7 +886,7 @@
     <FillTint><R>100</R><G>210</G><B>255</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -896,7 +905,7 @@
     <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band2</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band2</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Mem_2A_Clip">
@@ -921,7 +930,7 @@
     <FillTint><R>40</R><G>180</G><B>255</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -940,7 +949,7 @@
     <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band3</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band3</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Mem_3A_Clip">
@@ -965,7 +974,7 @@
     <FillTint><R>0</R><G>150</G><B>240</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 
@@ -984,7 +993,7 @@
     <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_OversizedGridFill_105t_Band4</Fill>
+      <Fill>A_OversizedLightGridFill_105t_Band4</Fill>
     </GaugeDrawTemplate>
   </Gauge>
   <Screen item="SBW_Mem_4A_Clip">
@@ -1009,7 +1018,7 @@
     <FillTint><R>0</R><G>120</G><B>210</B></FillTint>
     <DrawLinesFill>false</DrawLinesFill>
     <GaugeDrawTemplate>
-      <Fill>A_GaugeGridFill_105t</Fill>
+      <Fill>A_GaugeLightGridFill_105t</Fill>
     </GaugeDrawTemplate>
   </Gauge>
 

@@ -1,4 +1,4 @@
-# Loot Window - Standard Variant
+# Window: Loot - Standard Variant
 
 **File**: [EQUI_LootWnd.xml](./EQUI_LootWnd.xml)
 **Version**: 1.0.0  

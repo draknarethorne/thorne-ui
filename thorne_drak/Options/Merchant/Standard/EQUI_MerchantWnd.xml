@@ -1647,6 +1647,81 @@
 		<!--<SoundFlyby/>-->
 	</Button>
 
+	<!-- ========================================== -->
+	<!-- RECHARGE UI (Zeal feature)                 -->
+	<!-- Shown when rechargeable item is selected   -->
+	<!-- ========================================== -->
+	<Button item="MW_Recharge_Button">
+		<ScreenID>MW_Recharge_Button</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<AutoStretch>true</AutoStretch>
+		<LeftAnchorOffset>5</LeftAnchorOffset>
+		<TopAnchorOffset>170</TopAnchorOffset>
+		<RightAnchorOffset>110</RightAnchorOffset>
+		<BottomAnchorOffset>145</BottomAnchorOffset>
+		<TopAnchorToTop>false</TopAnchorToTop>
+		<BottomAnchorToTop>false</BottomAnchorToTop>
+		<Style_Transparent>false</Style_Transparent>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Recharge</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<!-- Recharge price: auto-updated, e.g. "234pp 2gp 1sp 0cp" -->
+	<Label item="MW_Recharge_Price">
+		<ScreenID>MW_Recharge_Price</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<AutoStretch>true</AutoStretch>
+		<LeftAnchorOffset>5</LeftAnchorOffset>
+		<TopAnchorOffset>140</TopAnchorOffset>
+		<RightAnchorOffset>110</RightAnchorOffset>
+		<BottomAnchorOffset>120</BottomAnchorOffset>
+		<TopAnchorToTop>false</TopAnchorToTop>
+		<BottomAnchorToTop>false</BottomAnchorToTop>
+		<Text></Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- Recharge charges: auto-updated, e.g. "Charges: 5/10" -->
+	<Label item="MW_Recharge_Charges">
+		<ScreenID>MW_Recharge_Charges</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<AutoStretch>true</AutoStretch>
+		<LeftAnchorOffset>5</LeftAnchorOffset>
+		<TopAnchorOffset>120</TopAnchorOffset>
+		<RightAnchorOffset>110</RightAnchorOffset>
+		<BottomAnchorOffset>100</BottomAnchorOffset>
+		<TopAnchorToTop>false</TopAnchorToTop>
+		<BottomAnchorToTop>false</BottomAnchorToTop>
+		<Text></Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
 
 	<Screen item = "MerchantWnd">
 		<!--<ScreenID/>-->
@@ -1671,6 +1746,9 @@
 		<Style_Sizable>true</Style_Sizable>
 		<Pieces>MW_MerchantName</Pieces>
 		<Pieces>MW_MerchantSlotsWnd</Pieces>
+		<Pieces>MW_Recharge_Button</Pieces>
+		<Pieces>MW_Recharge_Charges</Pieces>
+		<Pieces>MW_Recharge_Price</Pieces>
 		<Pieces>MW_SelectedItemLabel</Pieces>
 		<Pieces>MW_SelectedItem</Pieces>
 		<Pieces>MW_Buy_Button</Pieces>

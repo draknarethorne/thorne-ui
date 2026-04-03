@@ -1,4 +1,4 @@
-# Merchant Window - Large Inventory and Bags Variant
+# Window: Merchant - Thorne Bags Variant
 
 **File**: [EQUI_MerchantWnd.xml](./EQUI_MerchantWnd.xml)  
 **Version**: 1.0.0  

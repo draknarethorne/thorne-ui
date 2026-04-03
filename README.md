@@ -4,7 +4,7 @@
 
 **The legendary UI for TAKP**—Crafted by Draknare Thorne, where classic EverQuest aesthetics meet modern playability.
 
-Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQQuarm mod**, now evolved into a standalone, fully-documented UI suite focused on **usability, flexibility, and player choice**.
+Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQ, DuxaiUI and Nillipuss mods**, now evolved into a standalone, fully-documented UI suite focused on **usability, flexibility, and player choice**.
 
 ---
 
@@ -38,6 +38,14 @@ This screenshot shows the default Thorne UI layout as it appears in-game at 1920
 
 This view highlights the Inventory, Spellbook, and related windows, with Player, Pet, Actions, Hotbar, and Buffs all visible for reference.
 ![Thorne UI Inventory and Spells](.docs/images/screenshots/thorne_ui_inv_spell.png)
+
+### Merchant: Window and Options
+
+The Merchant window supports three layout options. The Thorne variants feature a 5-column slot grid, integrated inventory tabs, and the new recharge UI for rechargeable items.
+
+| Thorne (Default) | Thorne Bags |
+|:-:|:-:|
+| ![Thorne Merchant](.docs/images/windows/thorne_ui_merchant_thorne.png) | ![Thorne Bags Merchant](.docs/images/windows/thorne_ui_merchant_thorne_bags.png) |
 
 ---
 
@@ -101,9 +109,10 @@ See the [Options Guide](#-window-options--variants) below for details.
 
 This project builds on the work and ideas of many contributors:
 
-- **QQQuarm mod** - Foundation and early layout concepts
+- **QQ mod** - Foundation and early layout concepts
+- **DuxaiUI** - Inspiration for clean, modernized aesthetics
 - **Nillipuss UI** - Feature inspiration and quality targets
-- **Community UIs** - DuxaUI, Infiniti-Blue, QQ, vert, zeal, and default UI files informed our design
+- **Community UIs** - Infiniti-Blue, Vert, various others and default UI files informed our design
 - **TAKP Community** - Feedback and play-testing from eager players
 
 **Maintained by**: Draknare Thorne
@@ -160,7 +169,7 @@ Most windows have **alternative layouts** available in the `Options/` directory.
 
 ### Using Options
 
-1. Navigate to `thorne_drak/Options/YourWindow/`
+1. Navigate to `thorne_drak/Options/WindowName/`
 2. Read the variant's `README.md` to understand what's different
 3. Copy the XML file to test (e.g., `Options/Player/Thorne/EQUI_PlayerWindow.xml` → `EQUI_PlayerWindow.xml`)
 4. Reload with `/loadskin thorne_drak` to see changes in-game
@@ -190,7 +199,7 @@ Each option includes everything needed (XML + textures). Just copy the variant, 
 
 When you modify a window:
 
-1. Create a folder in `Options/YourWindow/MyVariant/`
+1. Create a folder in `Options/WindowName/YourVariant`
 2. Copy your modified `EQUI_WindowName.xml` into it
 3. Include any custom `.tga` texture files it needs
 4. Write a `README.md` documenting what changed and why
@@ -210,6 +219,7 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ### Recent Releases
 
+- **v0.8.1** - Recharge UI (all merchant variants), group pet gauges, spellbook polish, docs overhaul
 - **v0.8.0** - Multi-color composite gauges (Player, Target, Group, Pet, Breath, Spellbook), snap_columns pipeline, audit tooling
 - **v0.7.5** - Class-specific slot art (15 classes × 7 themes), auto-tone, weapon archetype scoring
 - **v0.7.4** - Container slot spacing, inventory logos, Thorne option sync
@@ -222,6 +232,16 @@ We're iterating toward **v1.0.0** with focused releases:
 ---
 
 ## 📅 Version History
+
+**v0.8.1** (April 3, 2026)
+
+- ✅ Recharge UI for Merchant windows
+  - Recharge button, price, and charges labels across all 3 variants (Thorne, Thorne Bags, Standard)
+  - MW_SelectedItemLabel display copy prevents auto-hide on rechargeable items
+- ✅ Group pet gauges updated to solid magenta (220,80,220), fill lines removed
+- ✅ Spellbook polish — updated all Thorne variants, added Thorne Basic
+- ✅ Documentation overhaul — standardized 20+ Options READMEs, merchant screenshots
+- ✅ Cleanup — removed .bmp screenshots, fixed Windows cp1252 script issues, renamed Thorne Standard → Thorne Classic
 
 **v0.8.0** (June 2026)
 

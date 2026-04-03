@@ -1,27 +1,21 @@
-# Pet Window Options
+# AltAdvance Window Options
 
 ## Overview
 
-This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
+This directory contains variants for the AltAdvance window (EQUI_AAWindow.xml).
 
-**Last Synced:** 2026-03-20  
-**Git Commit:** 25534fd
+**Last Synced:** 2026-03-23  
+**Git Commit:** 81736a9
 
 ---
 
 ## Available Variants
 
-- **[Standard/](Standard/)**  📄
-  `EQUI_PetInfoWindow.xml`
+- **[Standard/](Standard/)**    
+  `EQUI_AAWindow.xml`
 
 - **[Thorne/](Thorne/)**    
-  `EQUI_PetInfoWindow.xml`
-
-- **[Thorne Classic/](Thorne Classic/)**    
-  `EQUI_PetInfoWindow.xml`
-
-- **[Thorne Veil/](Thorne Veil/)**    
-  `EQUI_PetInfoWindow.xml`
+  `EQUI_AAWindow.xml`
 
 ---
 
@@ -29,7 +23,7 @@ This directory contains variants for the Pet window (EQUI_PetInfoWindow.xml).
 
 The `Thorne/` directory contains the current synchronized backup of the main working file(s) from `thorne_drak/`:
 
-- `EQUI_PetInfoWindow.xml`
+- `EQUI_AAWindow.xml`
 
 ## Metadata
 

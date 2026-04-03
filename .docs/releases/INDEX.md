@@ -1,12 +1,12 @@
 # Thorne UI Release Documentation Index
 
-## 📌 CURRENT RELEASE: v0.8.0 ✅
+## 📌 CURRENT RELEASE: v0.8.1 ✅
 
-**Status:** Feature release (multi-color composite gauges)  
-**Release Date:** June 2026  
+**Status:** Patch release (merchant recharge UI, group pet gauges, documentation polish)  
+**Release Date:** April 3, 2026  
 **Ready for Production:** Yes!
 
-**Release Documentation:** See [ROADMAP-v0.8.0.md](../ROADMAP-v0.8.0.md)
+**Release Documentation:** See [ROADMAP-v0.8.0.md](../ROADMAP-v0.8.0.md) (v0.8.1 patch section)
 
 ## 📚 Documentation Structure (Updated Feb 18, 2026)
 

@@ -1,4 +1,4 @@
-# Hotbutton Window - Standard Variant
+# Window: Hotbutton - Standard Variant
 
 **File**: [EQUI_HotButtonWnd.xml](./EQUI_HotButtonWnd.xml)
 **Version**: 1.0.0  

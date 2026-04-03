@@ -1554,9 +1554,33 @@
 		<AlignRight>false</AlignRight>
 	</Label>
 
+	<!-- MW_SelectedItemLabel: ScreenID kept for auto-hide system, text emptied -->
+	<!-- per Zeal recharge notes. Display copy below (MW_SelectedItemLabel_Display) -->
 	<Label item="MW_SelectedItemLabel">
 		<ScreenID>MW_SelectedItemLabel</ScreenID>
-		<!--<Font>2</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>10</X>
+			<Y>310</Y>
+		</Location>
+		<Size>
+			<CX>80</CX>
+			<CY>40</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>false</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+	<!-- Display copy: won't auto-hide when rechargeable item selected -->
+	<Label item="MW_SelectedItemLabel_Display">
+		<ScreenID>MW_SelectedItemLabel_Display</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>10</X>
@@ -1581,12 +1605,12 @@
 		<ScreenID>MW_SelectedItem</ScreenID>
 		<RelativePosition>true</RelativePosition>
 		<Location>
-			<X>95</X>
-			<Y>310</Y>
+			<X>93</X>
+			<Y>308</Y>
 		</Location>
 		<Size>
-			<CX>40</CX>
-			<CY>40</CY>
+			<CX>45</CX>
+			<CY>45</CY>
 		</Size>
 		<Style_Transparent>false</Style_Transparent>
 		<Style_Checkbox>false</Style_Checkbox>
@@ -1599,8 +1623,8 @@
 			<Y>0</Y>
 		</DecalOffset>
 		<DecalSize>
-			<CX>40</CX>
-			<CY>40</CY>
+			<CX>45</CX>
+			<CY>45</CY>
 		</DecalSize>
 	</Button>
 
@@ -2449,7 +2473,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>145</X>
-			<Y>310</Y>
+			<Y>336</Y>
 		</Location>
 		<Size>
 			<CX>84</CX>
@@ -2472,13 +2496,14 @@
 		</ButtonDrawTemplate>
 	</Button>
 
+	<!-- Buy/Sell overlap: client shows one at a time based on context -->
 	<Button item="MW_Sell_Button">
 		<ScreenID>MW_Sell_Button</ScreenID>
 		<!--<Font>2</Font>-->
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>145</X>
-			<Y>335</Y>
+			<Y>336</Y>
 		</Location>
 		<Size>
 			<CX>84</CX>
@@ -2507,7 +2532,7 @@
 		<RelativePosition>true</RelativePosition>
 		<Location>
 			<X>239</X>
-			<Y>310</Y>
+			<Y>336</Y>
 		</Location>
 		<Size>
 			<CX>84</CX>
@@ -3678,6 +3703,86 @@
 		<AlignLeft>true</AlignLeft>
 	</Label>
 
+	<!-- ========================================== -->
+	<!-- RECHARGE UI (Zeal feature)                 -->
+	<!-- Shown when rechargeable item is selected   -->
+	<!-- ========================================== -->
+	<Button item="MW_Recharge_Button">
+		<ScreenID>MW_Recharge_Button</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>145</X>
+			<Y>309</Y>
+		</Location>
+		<Size>
+			<CX>84</CX>
+			<CY>20</CY>
+		</Size>
+		<Style_Transparent>false</Style_Transparent>
+		<Style_Checkbox>false</Style_Checkbox>
+		<Text>Recharge</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<!-- Recharge price: auto-updated, e.g. "234pp 2gp 1sp 0cp" -->
+	<Label item="MW_Recharge_Price">
+		<ScreenID>MW_Recharge_Price</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>235</X>
+			<Y>302</Y>
+		</Location>
+		<Size>
+			<CX>95</CX>
+			<CY>16</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+
+	<!-- Recharge charges: auto-updated, e.g. "Charges: 5/10" -->
+	<Label item="MW_Recharge_Charges">
+		<ScreenID>MW_Recharge_Charges</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>235</X>
+			<Y>319</Y>
+		</Location>
+		<Size>
+			<CX>95</CX>
+			<CY>16</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+
 	<Screen item="MerchantWnd">
 		<RelativePosition>false</RelativePosition>
 		<Location>
@@ -3685,8 +3790,8 @@
 			<Y>50</Y>
 		</Location>
 		<Size>
-			<CX>340</CX>
-			<CY>380</CY>
+			<CX>342</CX>
+			<CY>382</CY>
 		</Size>
 		<Text>Merchant</Text>
 		<Style_VScroll>false</Style_VScroll>
@@ -3700,10 +3805,14 @@
 		<Style_Sizable>false</Style_Sizable>
 		<Pieces>MW_MerchantName</Pieces>
 		<Pieces>MW_SelectedItemLabel</Pieces>
+		<Pieces>MW_SelectedItemLabel_Display</Pieces>
 		<Pieces>MW_SelectedItem</Pieces>
 		<Pieces>MW_MerchantSlotsWnd</Pieces>
 		<Pieces>MW_Buy_Button</Pieces>
 		<Pieces>MW_Sell_Button</Pieces>
+		<Pieces>MW_Recharge_Button</Pieces>
+		<Pieces>MW_Recharge_Price</Pieces>
+		<Pieces>MW_Recharge_Charges</Pieces>
 		<Pieces>MW_DoneButton</Pieces>
 	</Screen>
 </XML>

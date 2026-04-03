@@ -39,6 +39,14 @@ This screenshot shows the default Thorne UI layout as it appears in-game at 1920
 This view highlights the Inventory, Spellbook, and related windows, with Player, Pet, Actions, Hotbar, and Buffs all visible for reference.
 ![Thorne UI Inventory and Spells](.docs/images/screenshots/thorne_ui_inv_spell.png)
 
+### Merchant: Window and Options
+
+The Merchant window supports three layout options. The Thorne variants feature a 5-column slot grid, integrated inventory tabs, and the new recharge UI for rechargeable items.
+
+| Thorne (Default) | Thorne Bags |
+|:-:|:-:|
+| ![Thorne Merchant](.docs/images/windows/thorne_ui_merchant_thorne.png) | ![Thorne Bags Merchant](.docs/images/windows/thorne_ui_merchant_thorne_bags.png) |
+
 ---
 
 ## 💾 Installation (2 Minutes)

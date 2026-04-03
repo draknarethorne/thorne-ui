@@ -2,8 +2,8 @@
 
 Implementation details, architecture decisions, and development roadmap for the Thorne UI project.
 
-**Version**: 0.8.0  
-**Last Updated**: June 2026  
+**Version**: 0.8.1  
+**Last Updated**: April 2026  
 **Maintainer**: Draknare Thorne
 
 **Quick Links**: [Standards](STANDARDS.md) | [Phases](../.development/initial_phases/) | [Technical References](technical/) | [TODO](TODO.md) | [Releases Guide](releases/RELEASES.md) | [Roadmaps](./)
@@ -76,7 +76,7 @@ As we continue expanding Thorne UI, we're committed to:
 
 ## 🎯 Current Milestone
 
-**Latest Shipped:** v0.8.0 — Multi-color composite gauges  
+**Latest Shipped:** v0.8.1 — Merchant recharge UI, group pet gauges, documentation polish  
 **Branch:** `main`
 
 ### v0.7.0 through v0.7.5 — ✅ Shipped
@@ -91,9 +91,15 @@ Multi-color composite gauge system using A/B architecture (oversized ×100 anima
 
 See [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) for details.
 
+### v0.8.1 — ✅ Shipped
+
+Merchant recharge UI (all 3 variants), group pet gauge polish, spellbook updates, documentation overhaul (20+ Options READMEs).
+
+See [ROADMAP-v0.8.0](ROADMAP-v0.8.0.md) (v0.8.1 patch section) for details.
+
 ### Upcoming milestones
 
-- **v1.0.0** — Logo branding, documentation pass, release polish → [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md)
+- **v1.0.0** — Logo branding, documentation pass, release polish → [ROADMAP-v1.0.0](ROADMAP-v1.0.0.md)
 
 ---
 

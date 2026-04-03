@@ -22,6 +22,8 @@ v0.8.0 delivers advanced visual systems — dynamic multi-color health gauges us
 | Multi-Color Health Gauges | ✅ Shipped                  | Medium-Hi |
 | Snap-Columns Pipeline     | ✅ Shipped                  | Medium    |
 | Gauge Audit Tooling       | ✅ Shipped                  | Medium    |
+| Merchant Recharge UI      | ✅ Shipped (v0.8.1)         | Low       |
+| Group Pet Gauge Polish    | ✅ Shipped (v0.8.1)         | Low       |
 | Enhanced Group Displays   | ⏳ Deferred (future)        | 10-15h    |
 
 ---
@@ -89,6 +91,29 @@ Enhanced player displays and status indicators for the Group Window, informed by
 
 ---
 
+---
+
+## v0.8.1 Patch (April 3, 2026)
+
+**Branch:** `feature/polish-v0.8.1` (PR #69)
+
+### New Features
+
+- **Merchant Recharge UI** — Added recharge button, price, and charges labels to all 3 merchant variants
+  - **Thorne** (main): Recharge row above Buy/Sell/Done, SelectedItemLabel display copy prevents auto-hide
+  - **Thorne Bags**: Same layout with integrated inventory bag tabs
+  - **Standard**: Anchor-based positioning matching default theme
+- **Group Pet Gauges** — Updated all 5 pet health gauges to solid magenta (220,80,220), removed fill lines for a clean look
+
+### Polish & Cleanup
+
+- **Spellbook** — Updated all Thorne spellbook variants, added Thorne Basic option
+- **Documentation** — Standardized 20+ Options READMEs, added merchant window screenshots to README
+- **Cleanup** — Removed .bmp screenshots (replaced with .png/.jpg), fixed Windows cp1252 script issues
+- **Rename** — Thorne Standard → Thorne Classic, consolidated Target variants
+
+---
+
 ## Related Documentation
 
 - [ROADMAP-v0.7.5.md](ROADMAP-v0.7.5.md) — Previous milestone
@@ -99,4 +124,4 @@ Enhanced player displays and status indicators for the Group Window, informed by
 ---
 
 **Maintained by:** Draknare Thorne
-**Last Updated:** June 2026
+**Last Updated:** April 2026

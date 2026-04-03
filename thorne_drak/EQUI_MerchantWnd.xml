@@ -1555,7 +1555,7 @@
 	</Label>
 
 	<!-- MW_SelectedItemLabel: ScreenID kept for auto-hide system, text emptied -->
-	<!-- per Zeal recharge notes. Display copy below (MW_SelectedItemLabel_Display) -->
+	<!-- per recharge notes. Display copy below (MW_SelectedItemLabel_Display) -->
 	<Label item="MW_SelectedItemLabel">
 		<ScreenID>MW_SelectedItemLabel</ScreenID>
 		<RelativePosition>true</RelativePosition>

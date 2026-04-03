@@ -24,6 +24,7 @@ Development tracker for Thorne UI. For detailed implementation plans, see the ve
 
 | Version | Date       | Highlights                                                                 |
 | ------- | ---------- | -------------------------------------------------------------------------- |
+| v0.8.1  | 2026-04-03 | Recharge UI (all merchant variants), group pet gauges, spellbook polish, docs overhaul |
 | v0.8.0  | 2026-06    | Multi-color composite gauges (A/B architecture, 23 XMLs), snap-columns, audit tooling |
 | v0.7.5  | 2026-03-10 | Class slot art (15 classes × 7 themes), auto-tone, weapon archetypes      |
 | v0.7.3  | 2026-03-04 | Logo atlas (7 lighting modes), tab icon branding, gauge polish             |

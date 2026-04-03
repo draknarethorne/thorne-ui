@@ -219,6 +219,7 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ### Recent Releases
 
+- **v0.8.1** - Recharge UI (all merchant variants), group pet gauges, spellbook polish, docs overhaul
 - **v0.8.0** - Multi-color composite gauges (Player, Target, Group, Pet, Breath, Spellbook), snap_columns pipeline, audit tooling
 - **v0.7.5** - Class-specific slot art (15 classes × 7 themes), auto-tone, weapon archetype scoring
 - **v0.7.4** - Container slot spacing, inventory logos, Thorne option sync
@@ -231,6 +232,16 @@ We're iterating toward **v1.0.0** with focused releases:
 ---
 
 ## 📅 Version History
+
+**v0.8.1** (April 3, 2026)
+
+- ✅ Recharge UI for Merchant windows
+  - Recharge button, price, and charges labels across all 3 variants (Thorne, Thorne Bags, Standard)
+  - MW_SelectedItemLabel display copy prevents auto-hide on rechargeable items
+- ✅ Group pet gauges updated to solid magenta (220,80,220), fill lines removed
+- ✅ Spellbook polish — updated all Thorne variants, added Thorne Basic
+- ✅ Documentation overhaul — standardized 20+ Options READMEs, merchant screenshots
+- ✅ Cleanup — removed .bmp screenshots, fixed Windows cp1252 script issues, renamed Thorne Standard → Thorne Classic
 
 **v0.8.0** (June 2026)
 

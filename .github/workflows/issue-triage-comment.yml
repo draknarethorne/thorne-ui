@@ -46,6 +46,53 @@ jobs:
             const body = (issue.body || '').toLowerCase();
             const text = `${title}\n${body}`;
 
+            // Detect GitHub platform support questions (e.g., "how do I enable insights")
+            const PLATFORM_QUESTION_RE = [
+              /(how (do|to|can)|enable|turn on|where (is|are|do)).*(insight|traffic|analytic|metric|activit|workflow|action|setting)/i,
+              /(insight|traffic|analytic|metric).*(enable|turn on|see|view|find|access)/i
+            ];
+            const isPlatformQuestion = PLATFORM_QUESTION_RE.some(re => re.test(text));
+
+            if (isPlatformQuestion) {
+              const supportComment = [
+                marker,
+                '👋 **This looks like a GitHub platform question**',
+                '',
+                'This issue tracker is for **Thorne UI** bugs, feature requests, and testing findings. Questions about GitHub platform features (Insights, Actions, settings, etc.) are better answered by GitHub\'s own documentation.',
+                '',
+                '**To view Insights for your repository:**',
+                '1. Go to your repository on GitHub.',
+                '2. Click the **Insights** tab in the top navigation bar.',
+                '3. From the sidebar, choose **Pulse**, **Traffic**, **Contributors**, etc.',
+                '',
+                '> **Note:** Traffic data is only visible to repository owners and collaborators with push access.',
+                '',
+                '📖 **Helpful links:**',
+                '- [GitHub Docs – Repository Insights](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository)',
+                '- [GitHub Docs – Traffic to a Repository](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/viewing-traffic-to-a-repository)',
+                '- [GitHub Support](https://support.github.com)',
+                '',
+                'If this is actually a Thorne UI issue, please reopen using one of the [issue templates](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/issues/new/choose). ⚔️'
+              ].join('\n');
+
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body: supportComment
+              });
+
+              await github.rest.issues.addLabels({
+                owner,
+                repo,
+                issue_number,
+                labels: ['invalid']
+              });
+
+              core.info('Detected platform support question; posted redirect comment and applied invalid label.');
+              return;
+            }
+
             const suggestions = [];
 
             // Priority hints

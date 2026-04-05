@@ -6,3 +6,6 @@ contact_links:
   - name: Development Roadmap
     url: https://github.com/draknarethorne/thorne-ui/blob/main/DEVELOPMENT.md
     about: Check active phases and architectural decisions.
+  - name: GitHub Platform Help (Insights, Actions, Settings)
+    url: https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository
+    about: For questions about GitHub Insights, traffic data, or other GitHub platform features — not Thorne UI issues.

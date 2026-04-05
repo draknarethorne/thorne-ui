@@ -73,3 +73,7 @@
 - name: docs
   color: "0075ca"
   description: Documentation updates.
+
+- name: invalid
+  color: "e4e669"
+  description: Not a Thorne UI issue (platform question, out of scope, etc.).

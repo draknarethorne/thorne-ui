@@ -466,6 +466,8 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ## 📝 License
 
-Custom UI for personal use with The Al'Kabor Project.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-Maintainer: Draknare Thorne
+Free to use, modify, and share. Built for the EverQuest community.
+
+Maintainer: Draknaré Thorne

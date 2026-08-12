@@ -99,7 +99,8 @@ See [ROADMAP-v0.8.0](ROADMAP-v0.8.0.md) (v0.8.1 patch section) for details.
 
 ### Upcoming milestones
 
-- **v1.0.0** — Logo branding, documentation pass, release polish → [ROADMAP-v1.0.0](ROADMAP-v1.0.0.md)
+- **v0.9.0** — Pre-release polish bridge (feature harvest, theme foundation, screenshot pipeline prep)
+- **v1.0.0** — Final branding pass, documentation completion, release hardening → [ROADMAP-v1.0.0](ROADMAP-v1.0.0.md)
 
 ---
 

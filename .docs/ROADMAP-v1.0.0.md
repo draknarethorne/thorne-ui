@@ -1,7 +1,7 @@
 # Thorne UI v1.0.0 Roadmap
 
 **Version:** 1.0.0-dev
-**Status:** Planning (2026)
+**Status:** Planning (v0.9.0 bridge + v1.0.0 final release)
 **Previous:** [ROADMAP-v0.8.0.md](ROADMAP-v0.8.0.md)
 
 > **Moved from:** `.development/additional-enhancements/additional-enhancements-v1.0.0.md` (March 2026 reorganization)
@@ -32,16 +32,48 @@ The **TAKP (The Al'Kabor Project)** client is a restored Macintosh-era EverQuest
 
 ## Feature Summary
 
-| #   | Enhancement                    | Status       |
-| --- | ------------------------------ | ------------ |
-| 1   | Logo: Character Select         | Not started  |
-| 2   | Logo: Inventory & Key Screens  | Not started  |
-| 3   | Documentation Consistency Pass | Ongoing      |
-| 4   | Field Naming Standardization   | Writeup done |
-| 5   | FriendsWnd Polish              | Not started  |
-| 6   | PetInfoWindow Commands Button  | Not started  |
+| #   | Enhancement                                | Status                             |
+| --- | ------------------------------------------ | ---------------------------------- |
+| 1   | Logo: Character Select                     | In progress (v0.8.2 implementation)  |
+| 2   | Logo: Inventory & Key Screens              | Partial (Inventory done)           |
+| 3   | Documentation Consistency Pass             | Ongoing                            |
+| 4   | Field Naming Standardization               | Writeup done, implementation partial  |
+| 5   | Feature Harvest (Duxa/Nillipuss/Infiniti) | Planned for v0.9.0                |
+| 6   | Theme System Foundation                    | Planned for v0.9.0                |
+| 7   | Option Screenshot Catalog                  | Planned for v1.0.0                |
 
-> **Context:** Stat icons (#4 original), gauge refactor (#5 original), and spellbook icon reconciliation shipped in v0.7.0. Slot class overrides shipped in [v0.7.5](ROADMAP-v0.7.5.md). Multi-color gauges shipped in [v0.8.0](ROADMAP-v0.8.0.md). Enhanced Group Displays deferred from v0.8.0 to this milestone.
+> **Context:** Stat icons, gauge refactor, spellbook icon reconciliation,
+> slot class overrides, and multi-color gauges are shipped.
+> Enhanced Group Displays remains deferred work entering the
+> v0.9.0 → v1.0.0 cycle.
+
+---
+
+## v0.9.0 Pre-Release Polish Scope
+
+v0.9.0 is the bridge milestone: lock high-value polish and feature-harvest work before the final 1.0.0 release pass.
+
+### Planned Deliverables (v0.9.0)
+
+1. **Documentation Drift Cleanup (Required)**
+Align README, TODO, DEVELOPMENT, STANDARDS, and ROADMAP status language;
+remove stale assumptions from older analysis summaries;
+validate links and cross-references (`python .bin/scan_links.py`).
+
+1. **Feature Harvest from Community UIs (Targeted)**
+Capture practical, low-risk UX improvements inspired by Duxa/Nillipuss/Infiniti;
+prioritize items that do not destabilize core window behavior;
+track each candidate as: Adopt / Option-only / Defer.
+
+1. **Theme Foundation (Color + Buttons + Window Chrome)**
+Define shared theme surface area (button atlases, draw templates, gauge/chrome colors);
+establish Theme options structure and naming conventions;
+build first set of non-gray baseline variants as proof of pipeline.
+
+1. **Option Screenshot Pipeline (toward v1.0.0 deliverable)**
+Standardize screenshot naming, framing, and coverage matrix;
+start capture pass for option families and key windows;
+prepare final v1.0.0 gallery pass.
 
 ---
 
@@ -53,14 +85,14 @@ The **TAKP (The Al'Kabor Project)** client is a restored Macintosh-era EverQuest
 
 **Approach:**
 
-1. Create logo asset — `thorne_logo.tga` (RGBA Targa, appropriate dimensions)
-2. Define `<Ui2DAnimation>` entry in `EQUI_Animations.xml` referencing the logo TGA
-3. Add `<StaticAnimation>` in `EQUI_CharacterSelect.xml` with `<Location>` / `<Size>` for visual balance
-4. Test across resolutions (1920×1080 and lower)
+1. Reuse existing `A_Logo_6` animation from `EQUI_Animations.xml`
+1. Add `CS_ThorneLogo` `<StaticAnimation>` in `EQUI_CharacterSelect.xml`
+1. Include logo in `CharacterSelectWindow` `<Pieces>` list
+1. Validate in-game placement across resolutions (1920×1080 and lower)
 
-**Dependencies:** Logo TGA asset must be created first (no asset exists yet). Logo atlas pipeline from v0.7.3 (`generate_thorne_logo_atlas.py`) may provide source material.
+**Dependencies:** None (existing logo atlas assets already available).
 
-**Status:** Not started — requires logo asset creation
+**Status:** In progress (implemented in branch; pending in-game validation)
 
 ---
 
@@ -115,19 +147,19 @@ The **TAKP (The Al'Kabor Project)** client is a restored Macintosh-era EverQuest
 
 ### 5. FriendsWnd Polish
 
-**Objective:** Add "Find" button and general layout improvements to the Friends window.
+**Objective:** Improve Friends window usability and layout consistency with modern Thorne patterns.
 
-**Effort:** 1-2 hours | **Source:** [MASTER-FEATURE-INDEX](../.development/ui_analysis/MASTER-FEATURE-INDEX.md)
+**Scope:** Button sizing/spacing pass, text alignment pass, style consistency pass.
 
 **Status:** Not started
 
 ---
 
-### 6. PetInfoWindow "Pet Commands" Button
+### 6. PetInfoWindow Command Surface Review
 
-**Objective:** Add a "Pet Commands" convenience button to the Pet Info window for quick access.
+**Objective:** Re-evaluate pet command and buff-surface UX for optional improvements.
 
-**Effort:** 1-2 hours | **Source:** [MASTER-FEATURE-INDEX](../.development/ui_analysis/MASTER-FEATURE-INDEX.md)
+**Scope:** Assess command affordances, optional buff-strip variant feasibility, and click-safety around dismiss/attack controls.
 
 **Status:** Not started
 
@@ -157,15 +189,13 @@ Compact mini-gauges for health and mana — styled as potion bottles or small ba
 
 Items identified during analysis that are too large or speculative for v1.0.0. Tracked here for reference:
 
-| Feature                    | Effort | Source                            |
-| -------------------------- | ------ | --------------------------------- |
-| GuildManagementWnd         | 20-25h | Nillipuss-only (531 lines)        |
-| CharacterCreate UI         | 10-15h | Nillipuss-only (631 lines)        |
-| BazaarSearchWnd polish     | 8-12h  | +20 lines vs Nillipuss            |
-| TradeskillWnd polish       | 6-10h  | +10 lines vs Nillipuss            |
-| Spellbook List View option | 5-8h   | Alternative to 2-column page view |
-| Dragitem Icon Set          | 4-6h   | 34 item textures from Nillipuss   |
-| Custom Cursor Variants     | 2-3h   | 6 custom cursor TGA files         |
+| Feature                    | Effort | Source                                |
+| -------------------------- | ------ | ------------------------------------- |
+| GuildManagementWnd         | 20-25h | Nillipuss-only (~914 lines)           |
+| CharacterCreate UI         | 10-15h | Nillipuss-only (~3510 lines)          |
+| Spellbook List View option | 5-8h   | Alternative to 2-column page view     |
+| Dragitem Icon Set          | 4-6h   | 34 item textures from Nillipuss       |
+| Custom Cursor Variants     | 2-3h   | Nillipuss cursor texture set concepts |
 
 **Source:** [MASTER-FEATURE-INDEX](../.development/ui_analysis/MASTER-FEATURE-INDEX.md) and [WINDOWS-BY-PRIORITY](../.development/ui_analysis/WINDOWS-BY-PRIORITY.md)
 
@@ -195,6 +225,6 @@ Items identified during analysis that are too large or speculative for v1.0.0. T
 ---
 
 **Maintained by:** Draknare Thorne
-**Last Updated:** March 2026
+**Last Updated:** May 2026
 
 _For the glory of Thorne!_

@@ -14,6 +14,7 @@ Development tracker for Thorne UI. For detailed implementation plans, see the ve
 | v0.7.0  | ✅ Shipped  | Recast timers, stat icons, options  | [ROADMAP-v0.7.0](.docs/ROADMAP-v0.7.0.md) |
 | v0.7.5  | ✅ Shipped  | Slot art expansion, class overrides | [ROADMAP-v0.7.5](.docs/ROADMAP-v0.7.5.md) |
 | v0.8.0  | ✅ Shipped  | Multi-color composite gauges, snap-columns pipeline | [ROADMAP-v0.8.0](.docs/ROADMAP-v0.8.0.md) |
+| v0.9.0  | ⏳ Planning | Feature harvest + themes + screenshot pipeline | [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md#v090-prerelease-polish-scope) |
 | v1.0.0  | ⏳ Planning | Logo branding, docs, release polish | [ROADMAP-v1.0.0](.docs/ROADMAP-v1.0.0.md) |
 
 ---
@@ -73,14 +74,22 @@ Group Window, Pet Window, Player Window, Inventory (Phase 3.9), Actions Window (
 - [x] Audit and bulk-fix tooling (audit_gauges.py, fix_gauge_offsets.py)
 - [ ] Enhanced Group Displays analysis and implementation (deferred to v1.0.0)
 
+### v0.9.0 — Pre-Release Polish Bridge
+
+- [ ] Feature harvest shortlist from Duxa/Nillipuss/Infiniti (high-value, low-risk items)
+- [ ] Theme foundation for shared window chrome/buttons (colorway options)
+- [ ] Option screenshot pipeline (capture standards + naming + coverage matrix)
+- [ ] Documentation drift cleanup (README ↔ TODO ↔ ROADMAP ↔ STANDARDS)
+- [ ] Validate parity assumptions for Bazaar/Tradeskill/Friends/PetInfo enhancement notes
+
 ### v1.0.0 — Logo Branding & Release Polish
 
-- [ ] Thorne logo: Character Select screen
-- [ ] Thorne logo: Inventory & key screens
+- [ ] Thorne logo: Character Select final placement + multi-resolution validation
+- [ ] Thorne logo: key screens completion pass (Inventory done; evaluate Player/Spellbook/Target)
 - [ ] Documentation consistency pass (60 XML files, all Options READMEs, registry docs)
-- [ ] Field naming standardization (PW*, TW*, GW\_ prefix convention)
-- [ ] FriendsWnd "Find" button polish (1-2h)
-- [ ] PetInfoWindow "Pet Commands" button (1-2h)
+- [ ] Field naming standardization completion (PW*, TW*, GW\_ prefix convention)
+- [ ] Final screenshot set for each option family (player-facing preview catalog)
+- [ ] Final release QA sweep and publish hardening
 
 ### Quality & Polish (Any Version)
 
@@ -89,6 +98,7 @@ Group Window, Pet Window, Player Window, Inventory (Phase 3.9), Actions Window (
 - [ ] **Performance review** — Texture/animation optimization opportunities
 - [ ] **Inventory stat icon alignment** — Revisit positioning on Inventory window
 - [ ] **UI affordances from variant analysis** — Document patterns from duxaui, vert, Infiniti-Blue
+- [ ] **Theme audit coverage** — Identify all shared draw templates and window chrome assets for color variants
 
 ---
 
@@ -130,4 +140,4 @@ cat thorne_drak/Options/[Window]/.sync-status.json
 ---
 
 **Maintainer:** Draknare Thorne
-**License:** Custom UI for personal use with The Al'Kabor Project.
+**License:** MIT (see [LICENSE](../LICENSE)).

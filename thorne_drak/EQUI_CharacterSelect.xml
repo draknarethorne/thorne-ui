@@ -516,6 +516,33 @@
 		</Size>
 		<Animation>A_RightTitlePiece</Animation>
 	</StaticAnimation>
+
+	<!-- Thorne branding logos (4px inset from title-bar window borders) -->
+	<StaticAnimation item = "CS_ThorneLogoLeft">
+		<ScreenID>CS_ThorneLogoLeft</ScreenID>
+		<Location>
+			<X>2</X>
+			<Y>2</Y>
+		</Location>
+		<Size>
+			<CX>26</CX>
+			<CY>26</CY>
+		</Size>
+		<Animation>A_Logo_6</Animation>
+	</StaticAnimation>
+	<StaticAnimation item = "CS_ThorneLogoRight">
+		<ScreenID>CS_ThorneLogoRight</ScreenID>
+		<Location>
+			<X>192</X>
+			<Y>2</Y>
+		</Location>
+		<Size>
+			<CX>26</CX>
+			<CY>26</CY>
+		</Size>
+		<Animation>A_Logo_6</Animation>
+	</StaticAnimation>
+
 	<Label item = "CS_TitleLabel">
 		<ScreenID>CS_TitleLabel</ScreenID>
 		<Font>4</Font>
@@ -577,6 +604,8 @@
 		<Pieces>CS_MiddleTitlePiece</Pieces>
 		<Pieces>CS_LeftCenterTitlePiece</Pieces>
 		<Pieces>CS_RightCenterTitlePiece</Pieces>
+		<Pieces>CS_ThorneLogoLeft</Pieces>
+		<Pieces>CS_ThorneLogoRight</Pieces>
 		<Pieces>CS_TitleLabel</Pieces>
 	</Screen>
 

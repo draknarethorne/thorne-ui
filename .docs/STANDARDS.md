@@ -1055,21 +1055,17 @@ Bindings discovered and verified for TAKP:
 
 ---
 
-## � Standards Under Investigation
+## Standards Decision Log
 
 ### Window Drag Affordances
 
-Research needed on how to allow dragging of windows without visible title bars. Observations from other EverQuest UI variants:
+Decision: **Not adopted as a standard pattern**.
 
-- Some windows use dummy UI elements in upper-left corners as drag targets
-- Allows moving windows that lack visible title bars (Pet, Actions, Merchant windows)
-- Questions to resolve:
-  - Which window types benefit most from visible drag affordances?
-  - Should this be standardized across all thorne_drak windows?
-  - Implementation: dummy colored element vs. transparent placeholder vs. other approach?
-  - Usability impact: does visibility improve or hinder user experience?
+- Existing window borders already provide drag capability in normal gameplay
+- Dummy drag handles add visual noise and consume high-value UI space
+- Keep titleless windows clean unless a specific window demonstrates a proven usability issue
 
-**Status**: Investigation pending (See TODO.md → UI Standards Investigation)
+**Status**: Closed (rejected as default standard; revisit only for specific window exceptions)
 
 ---
 

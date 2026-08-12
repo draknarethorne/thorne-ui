@@ -453,7 +453,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>15</X>
-      <Y>24</Y>
+      <Y>124</Y>
     </Location>
     <Size>
       <CX>22</CX>
@@ -479,7 +479,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>45</X>
-      <Y>22</Y>
+      <Y>122</Y>
     </Location>
     <Size>
       <CX>80</CX>
@@ -501,7 +501,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>133</X>
-      <Y>24</Y>
+      <Y>124</Y>
     </Location>
     <Size>
       <CX>22</CX>
@@ -530,11 +530,11 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>50</X>
-      <Y>34</Y>
+      <Y>144</Y>
     </Location>
     <Size>
-      <CX>0</CX>
-      <CY>0</CY>
+      <CX>64</CX>
+      <CY>20</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>
@@ -562,8 +562,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>15</X>
-      <!--<Turn back CY to 20 for P99 size or 140 for TAKP size - Brujoloco/>-->
-      <Y>140</Y>
+      <Y>170</Y>
     </Location>
     <Size>
       <CX>64</CX>
@@ -595,8 +594,7 @@
     <RelativePosition>true</RelativePosition>
     <Location>
       <X>89</X>
-     <!--<Turn back CY to 20 for P99 size or 140 for TAKP size - Brujoloco/>-->
-      <Y>140</Y>
+      <Y>170</Y>
     </Location>
     <Size>
       <CX>64</CX>
@@ -632,8 +630,7 @@
     </Location>
     <Size>
       <CX>175</CX>
-      <!--<Turn back CY to 50 for P99 size or 175 for TAKP size - Brujoloco/>-->
-      <CY>175</CY>
+      <CY>215</CY>
     </Size>
     <Style_VScroll>false</Style_VScroll>
     <Style_HScroll>false</Style_HScroll>

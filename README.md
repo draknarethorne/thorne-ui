@@ -4,7 +4,7 @@
 
 **The legendary UI for TAKP**—Crafted by Draknare Thorne, where classic EverQuest aesthetics meet modern playability.
 
-Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQ, DuxaiUI and Nillipuss mods**, now evolved into a standalone, fully-documented UI suite focused on **usability, flexibility, and player choice**.
+Custom UI files for **TAKP Quarm Server** (The Al'Kabor Project, PoP-era EverQuest). Originally based on the **QQ, DuxaUI and Nillipuss mods**, now evolved into a standalone, fully-documented UI suite focused on **usability, flexibility, and player choice**.
 
 ---
 
@@ -110,7 +110,7 @@ See the [Options Guide](#-window-options--variants) below for details.
 This project builds on the work and ideas of many contributors:
 
 - **QQ mod** - Foundation and early layout concepts
-- **DuxaiUI** - Inspiration for clean, modernized aesthetics
+- **DuxaUI** - Inspiration for clean, modernized aesthetics
 - **Nillipuss UI** - Feature inspiration and quality targets
 - **Community UIs** - Infiniti-Blue, Vert, various others and default UI files informed our design
 - **TAKP Community** - Feedback and play-testing from eager players
@@ -207,15 +207,23 @@ When you modify a window:
 
 ---
 
-## 🚀 Current Development (v1.0.0)
+## 🚀 Current Development (v0.9.0 → v1.0.0)
 
-We're iterating toward **v1.0.0** with focused releases:
+We're executing a focused bridge release (**v0.9.0**) to set up a strong final push into **v1.0.0**.
 
-### Coming Up (v1.0.0)
+### Next Up (v0.9.0 Pre-Release Polish)
 
-- **Logo branding** - CharSelect, Inventory & key screens
-- **Documentation pass** - 60 XML files, Options READMEs, registry docs
-- **Release polish** - Field naming, button consistency, final QA
+- **Feature harvest pass** - Prioritize practical UX upgrades inspired by Duxa/Nillipuss/Infiniti
+- **Theme foundation** - Expand color/button theme options using shared animation and texture systems
+- **Documentation drift cleanup** - Keep roadmap/TODO/standards fully aligned with shipped XML reality
+- **Option screenshot pipeline** - Define and begin capturing standardized screenshots per option variant
+
+### Final Scope (v1.0.0)
+
+- **Complete branding pass** - Character Select plus key windows with consistent logo treatment
+- **Final consistency pass** - Field naming, spacing standards, button sizing, and cross-window polish
+- **Complete option catalog previews** - Final screenshots for each option family before release
+- **Release hardening** - Comprehensive in-game QA and publish-ready documentation
 
 ### Recent Releases
 
@@ -466,6 +474,8 @@ We're iterating toward **v1.0.0** with focused releases:
 
 ## 📝 License
 
-Custom UI for personal use with The Al'Kabor Project.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+Free to use, modify, and share. Built for the EverQuest community.
 
 Maintainer: Draknare Thorne
